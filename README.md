@@ -2,7 +2,8 @@
 KDM Story app for game version 1.5. More info on: https://kdm-story.site
 
 Current release version is 2.3.
-See changelog: https://kdm-story.site/changelog
+
+See changelog at: https://kdm-story.site/changelog
 
 # Preparations
 
