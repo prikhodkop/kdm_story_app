@@ -4,11 +4,11 @@ The repository contains source code for the Kingdom Death: Monster companion sto
 
 More info on the app: https://kdm-story.site
 
-Current release version is 2.3:
+Current release version is **2.3**:
 
-Windows: [link](http://bit.ly/2JCReqg)
+_Windows_: [link](http://bit.ly/2JCReqg)
 
-Mac: [link](http://bit.ly/2VnfsqD)
+_Mac_: [link](http://bit.ly/2VnfsqD)
 
 See changelog at: https://kdm-story.site/changelog
 
