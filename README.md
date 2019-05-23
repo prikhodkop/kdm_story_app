@@ -1,4 +1,4 @@
-# ![icon-1][icon] KDM 1.5 Story app ![icon-1][icon]
+# ![icon-1][icon] KDM 1.5 Story app
 
 [icon]: http://kingdomdeath.com/images/logo_light_blue.png
 
