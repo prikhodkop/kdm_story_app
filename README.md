@@ -8,7 +8,7 @@ See changelog at: https://kdm-story.site/changelog
 # Preparations
 
 To build the app one needs electron-packager module installed. 
-This guide: https://www.christianengvall.se/electron-packager-tutorial/ explains really well how to do it.
+This guide: https://www.christianengvall.se/electron-packager-tutorial/ explains how to do it.
 
 # Building
 
