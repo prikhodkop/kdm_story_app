@@ -1,0 +1,230 @@
+#settings {
+  position: absolute;
+  background-color: Transparent;
+  top: 94%;
+  margin-top: -25px;
+  height: 50px;
+  left: 2.1%;
+  display: block;
+  font-size: 2em;
+  font-family: 'Silverado';
+  cursor: pointer;
+  border: none;
+  /* text-align: center; */
+  z-index: 16;
+  color: #888;
+  opacity: 0.5;
+}
+
+#settings.active {
+  color: #fff;
+  opacity: 0.5;
+  text-shadow: 0 0 20px #cccc00;
+}
+
+#settings-window-back0 {
+  /* width:30%; */
+  left:25%;
+  top: 2%;
+  height: 95%;
+  width: 50%;
+  position:absolute;
+  z-index: 81;
+  display:block;
+  -webkit-box-shadow: 0 0 80px #000;
+        box-shadow: 0 0 80px #000;
+  overflow:hidden;
+  --borderWidth: 1em;
+  border-radius: var(--borderWidth);
+  border: 0.2rem solid #555;
+}
+
+#settings-window-back {
+  /* width:30%; */
+  left:0%;
+  top: 15%;
+  height: 65%;
+  width: 90%;
+  left: 3%;
+  position:absolute;
+  z-index: 85;
+  display:block;
+  overflow:auto;
+}
+
+#settings-window-back-img {
+  /* width:30%; */
+  left:0%;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  z-index: 83;
+  display:block;
+  --borderWidth: 1em;
+  border-radius: var(--borderWidth);
+  -webkit-box-shadow: 0 0 80px #000;
+        box-shadow: 0 0 80px #000;
+  background: #0A0A0A;
+  overflow:auto;
+}
+
+#settings-title {
+  color: #888;
+  position:absolute;
+  z-index: 86;
+  display:block;
+  top: 5%;
+  width: 100%;
+  height: 5%;
+  font-size: 3em;
+  font-family: 'Silverado';
+  cursor: default;
+  text-align: center;
+  vertical-align: center;
+  text-shadow: 0 0 10px #000;
+}
+
+#settings-save {
+  position: absolute;
+  background-color: Transparent;
+  top: 93%;
+  height: 7%;
+  margin-top: -5%;
+  /* left: 2.1%; */
+  width: 30%;
+  left: 35%;
+  display: block;
+  font-size: 2em;
+  font-family: 'Silverado';
+  cursor: pointer;
+  /* border: none; */
+  /* align: center; */
+  text-align: center;
+  /* vertical-align: center; */
+  color: #888;
+  z-index: 86;
+  /* opacity: 0.5; */
+  --borderWidth: 1em;
+  border-radius: var(--borderWidth);
+  -webkit-box-shadow: 0 0 80px #000;
+        box-shadow: 0 0 80px #000;
+}
+
+#settings:hover {
+  color: yellow;
+  /* opacity: 0.5; */
+}
+
+#settings-window-background {
+  left:0%;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  z-index: 80;
+  display:block;
+  background: #030303;
+  opacity: 0.6;
+}
+
+/* td.prop-value {
+  color: #666 !important;
+  position:relative !important;
+  z-index: 87 !important;
+  display:block !important;
+  width: 44% !important;
+  font-size: 2em !important;
+  font-family: 'Silverado' !important;
+  cursor: default !important;
+  text-align: left !important;
+  text-shadow: 0 0 10px #000 !important;
+} */
+
+
+table.settings {
+  position:static;
+  /* display:block; */
+  /* overflow: auto; */
+  width: 100%;
+  left: 0%;
+  /* height: 100%; */
+  color: #888;
+  font-size: 30px;
+  background: Transparent;
+  float: left;
+}
+
+/* tbody.settings {
+  width: 100%;
+} */
+
+tr.settings {
+  width: 100%;
+  padding-bottom: 10px;
+  /* position:static; */
+}
+
+td#title.settings {
+  width: 40%;
+  text-align: center;
+  vertical-align:top;
+  /* position:static; */
+  /* margin-right: -30px; */
+  padding-bottom: 5px
+}
+
+td#select.settings {
+  width: 40%;
+  vertical-align:top;
+  left: 1%;
+  /* position:static; */
+}
+
+td#group.settings {
+  width: 20%;
+  text-align: right;
+  vertical-align:top;
+  /* margin-right: -30px; */
+  color: #666;
+  text-decoration: underline;
+  font-size: 25px;
+  /* position:static; */
+  padding-top: 30px;
+}
+
+td#table.settings {
+  width: 70%;
+  vertical-align:top;
+  /* position:static; */
+}
+
+select.settings {
+  width: 59%;
+  font-size: 1em;
+  font-family: 'Silverado';
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px #000;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #444;
+  /* position:static; */
+  /* margin:auto; */
+  /* align: center; */
+  text-align: center;
+  color: #888;
+}
+
+/* select.settings[level=1] {
+  width: 80% !important;
+} */
+
+select#disabled.settings {
+  border: none;
+  background: Transparent;
+}
+
+select::-ms-expand {
+    display: none; /* remove default arrow in IE 10 and 11 */
+}

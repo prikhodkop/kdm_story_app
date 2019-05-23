@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta name="viewport" charset="UTF-8" content="height=device-height, initial-scale=1">
+  <title>
+    video template
+  </title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/selectize.css">
+</head>
+
+<body bgcolor="#000000">
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/howler.core.min.js"></script>
+  <script type="text/javascript" src="js/jquery.srt.js"></script>
+
+  <script type="text/javascript" src="js/files.js"></script>
+  <script type="text/javascript" src="js/events.js"></script>
+  <script type="text/javascript" src="js/transition.js"></script>
+  <script type="text/javascript" src="js/menu.js"></script>
+  <script type="text/javascript" src="js/selectize.js"></script>
+  <script type="text/javascript" src="js/glossary.js"></script>
+
+  <script>if (window.module) module = window.module;</script>
+  <!-- <script  src="js/index.js"></script> -->
+
+  <div id="container">
+
+    <img id="back" src="images/back.jpg"/>
+
+    <video id="video" src="" width="1440" height="990"></video>
+    <div class="srt" data-video="video"></div>
+
+    <img id="img"/>
+
+    <!-- <div class="" id="label_text" >
+
+    </div> -->
+
+    <button class="button" id="mute">Mute</button>
+
+    <a id="back_button" href='#'>Back</a>
+
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function ()
+    {
+      jQuery(function(){
+
+        console.log(sessionStorage);
+
+        // UNDERSTAND WHAT EVENT TO SHOW
+        // #############
+        var myself = sessionStorage.getItem("target");
+        document.title = myself
+        // #############
+
+       // $("#label_text").hide();
+       $("#menu").hide();
+       $("#img").hide();
+       $("#video").hide();
+
+       $("#video").attr('src', "video/"+myself+".mp4");
+       $("#img").attr('src', "images/"+myself+"/img.jpg");
+
+       $(window).load(function () {
+         const electron = require('electron');
+         let screenElectron = electron.screen;
+         let mainScreen = screenElectron.getPrimaryDisplay();
+         let dimensions = mainScreen.size;
+
+          let hWide2 = ( $("#img").width()/2); //half the image's width
+          console.log(hWide2)
+          let hTall2 = ( $("#img").height()); //half the image's height, etc.
+          hWide2 = '-' + Math.floor(0.98*(dimensions.height/hTall2)*hWide2/dimensions.width*100).toString() + '%';
+           console.log(hWide2)
+           $("#img").css({
+             "margin-left" : hWide2,
+             // "margin-top" : hTall
+           });
+      });
+
+       const electron = require('electron');
+       var screenElectron = electron.screen;
+       var mainScreen = screenElectron.getPrimaryDisplay();
+       var dimensions = mainScreen.size;
+
+       console.log(dimensions.width + "x" + dimensions.height);
+
+       $("#video").attr('width', '100%');
+       $("#video").attr('height', '100%');
+
+       var start_delay = 1000; // delay before speech playing starts
+       var music_volume = 0.8; // music volume
+
+       var music = new Howl({
+         src: [events_table[myself].music],
+         // autoplay: true,
+         loop: true,
+         volume: music_volume
+       });
+
+       var state = sessionStorage.getItem(myself);
+       var transition = sessionStorage.getItem("transition");
+       var back_target = sessionStorage.getItem("back_target");
+
+       console.log("Back:");
+       console.log(back_target);
+
+       console.log("Transition:");
+       console.log(transition);
+
+       console.log("State:");
+       console.log(state);
+
+       var anew = true
+
+       if (sessionStorage.getItem("Mute") == "On") {
+         music.mute(true);
+         $("#video").prop('muted', true)
+         // speech.mute(true);
+         $("#mute.button").toggleClass('active');
+       }
+
+       if ((transition == 'back') && !(state == null)) {
+         console.log("State loaded successfully!");
+         state = JSON.parse(state)
+         console.log(state);
+
+         back_target = state.back_target;
+         var action = state.action;
+
+         // if (state.muted) {
+         //   music.mute(true);
+         //   // speech.mute(true);
+         //   $("#mute.button").toggleClass('active');
+         // }
+
+         if (!state.img_hidden) {
+           music.seek(state.music_position)
+
+           if (state.music_playing) {
+             music.volume(0.0);
+             music.play();
+             music.fade(0.0, music_volume, 500);
+           }
+
+           anew = false
+         }
+
+       } else {
+         console.log("No initialized state!");
+
+       };
+
+       if (anew) {
+         $("#video").fadeIn(4000);
+         $("#video").delay(4000).get(0).play();
+       } else {
+         $("#img").fadeIn(2000);
+         createSevereTables();
+         createReference();
+
+         $("#video").hide()
+         $("#video").get(0).pause();
+         music.play();
+       }
+
+       if ((back_target == null) || (back_target == "null") || (back_target == "undefined")) {
+         $("#back_button").hide();
+       } else {
+         $("#back_button").hide();
+         $("#back_button").text('◁'+events_table[back_target].label);
+         $("#back_button").delay(500).fadeIn(1000);
+
+       }
+
+       $('#video').on('ended',function(){
+         $("#img").fadeIn(2000);
+         $("#video").fadeOut(2000)
+         clearSubtitles();
+         music.play();
+         createSevereTables();
+         createReference();
+       });
+
+       $('#video').on('click',function(){
+          // this.currentTime = this.duration;
+          this.pause();
+          music.play();
+          $("#img").fadeIn(2000);
+          $("#video").fadeOut(2000)
+          clearSubtitles();
+          createSevereTables();
+          createReference();
+        })
+
+       createMenuButton();
+
+       createToc();
+
+       configureSubtitle(readFile(__dirname+'/video/srt/'+lang+'/'+myself+'.srt'))
+
+       $("#mute.button").click(function(){
+         if(!$(this).hasClass('active'))
+         {
+           music.mute(true);
+           $("#video").prop('muted', true)
+           sessionStorage.setItem("Mute", "On");
+           // speech.mute(true);
+         } else
+         {
+           // speech.mute(false);
+           music.mute(false);
+           $("#video").prop('muted', false)
+           sessionStorage.setItem("Mute", "Off");
+         };
+         $(this).toggleClass('active');
+       });
+
+
+       $('body').on('click','#back_button',function(){
+         let back_target = getBackBackTarget()
+         console.log(back_target);
+         setTransition(getBackTarget(), 'back', back_target, null)
+       })
+
+       $('body').on('click','#menu_item',function(){
+
+         if ($(this).attr('target') == document.title) {
+           setTransition($(this).attr('target'), 'menu', getBackTarget())
+         } else {
+           setTransition($(this).attr('target'), 'menu', document.title, current_state())
+         }
+
+       })
+
+
+       function isHidden(el) {
+         var style = window.getComputedStyle(el);
+         return (style.display === 'none')
+       }
+
+       function current_state() {
+
+           var current_state = new Object();
+
+           current_state.img_hidden = isHidden(document.getElementById("img"));
+
+           current_state.music_playing = music.playing();
+           if (music.playing()) {
+             current_state.music_position  = music.seek();
+           } else {
+             current_state.music_position  = -1;
+           }
+
+           // current_state.muted = $("#mute.button").hasClass('active');
+
+           current_state.back_target = sessionStorage.getItem("back_target");
+
+           sessionStorage.setItem(document.title, JSON.stringify(current_state));
+
+           return JSON.stringify(current_state)
+         }
+
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

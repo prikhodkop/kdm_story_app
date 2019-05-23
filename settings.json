@@ -1,0 +1,27 @@
+{
+  "subtitles": "On",
+  "language": "en",
+  "expansions": {
+    "gorm": "All content",
+    "dung beetle knight": "All content",
+    "sunstalker": "Cards only",
+    "lion god": "Cards only",
+    "dragon king": "Cards only",
+    "flower knight": "Disabled",
+    "spidicules": "Disabled",
+    "manhunter": "Cards only",
+    "slenderman": "Cards only",
+    "lion knight": "Cards only",
+    "lonely tree": "Disabled"
+  },
+  "strains": {
+    "backstabber": "Locked",
+    "etheral pact": "Locked",
+    "giants blood": "Locked",
+    "infinite lives": "Locked"
+  },
+  "whiteboxes": {
+    "allison the twilight knight": "Disabled",
+    "white speaker": "Disabled"
+  }
+}
