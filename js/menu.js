@@ -343,7 +343,7 @@ function refPadEntry(refValue) {
 	if (refValue === "space") {
 		refHiddenInput.value = refHiddenInput.value + " "	
 	} else if (refValue === "random") {
-		refHiddenInput.value = "random"
+		refHiddenInput.value = "random "
 	} else if (refValue === "clear") {
 		refHiddenInput.value = ""
 	} else {
