@@ -52,7 +52,7 @@ function createMenuButton() {
     } else
     {
       $("#menu").hide();
-    };
+    }
     $(this).toggleClass('active');
   });
 }
@@ -112,7 +112,7 @@ function addLocationTable(location, top) {
     } else
     {
       hideLocationTable()
-    };
+    }
     $(this).toggleClass('active');
   });
 
@@ -142,6 +142,8 @@ function hideLocationTable(location) {
 }
 
 function createReference() {
+  let settings = JSON.parse(sessionStorage.getItem("settings"));
+
   $('#container').append($('<div>',{id:'reference-window-background'}));
   $('#reference-window-background').hide();
 
@@ -154,6 +156,10 @@ function createReference() {
   // $('#reference-window-back').append('<label for="reference-window">Terms:</label>')
   $('#reference-window-back0').append('<select id="reference-window" class="reference-window" placeholder="Type term..."></select>')
   $('#reference-window-back0').append($('<div>',{id:'reference-window-back'}));
+  if (settings['onscreenKeypads']=='On') {
+    $('#reference-window-back0').append($('<div>',{id:'reference-window-keypad'}));
+    populateRefKeypad();
+  }
 
   $('#reference-window-back0').hide();
 
@@ -249,7 +255,7 @@ function createReference() {
         this.close();
       } else {
         $('#glossary-symbols').hide();
-      };
+      }
     },
 
     onDropdownClose: function($dropdown) {
@@ -269,6 +275,24 @@ function createReference() {
     }
   });
 
+	function populateRefKeypad() {
+		var refPadArr = ['row-start','q','w','e','r','t','y','u','i','o','p','row-end','row-start','a','s','d','f','g','h','j','k','l','row-end','row-start','z','x','c','v','b','n','m','row-end','row-start','space','clear','random','row-end']
+		var txtPad = "<input type='hidden' id='refPadHiddenValue' />"
+		var i;
+		for (i = 0; i < refPadArr.length; i++) { 
+			if (refPadArr[i] === 'row-start') { txtPad = txtPad + "<div class='refpad--row'>" }
+			else if (refPadArr[i] === 'row-end') { txtPad = txtPad + "</div>" }
+			else {
+				if (refPadArr[i].length > 0) {
+					txtPad = txtPad + "<div class='refpad__pad -" + refPadArr[i] + "' onClick='refPadEntry(\"" + refPadArr[i] + "\")'>" + refPadArr[i] + "</div>"
+				} else {
+					txtPad = txtPad + "<div class='refpad__pad' onClick='refPadEntry(\"" + refPadArr[i] + "\")'>" + refPadArr[i] + "</div>"
+				}
+			}
+		}
+		let refKeypad = document.getElementById("reference-window-keypad")
+		refKeypad.innerHTML = txtPad
+	}
 
   $('#reference').hover(function()
   {
@@ -300,7 +324,7 @@ function createReference() {
       $('#reference-window-back0').fadeOut(500);
       $('#reference-window-background').fadeOut(500);
       $('#reference').attr('src', 'images/icons/reference.png');
-    };
+    }
     $(this).toggleClass('active');
   });
 
@@ -313,6 +337,21 @@ function createReference() {
 
 }
 
+function refPadEntry(refValue) {
+	var refInput = document.getElementById("reference-window-selectized")
+	var refHiddenInput = document.getElementById("refPadHiddenValue")
+	if (refValue === "space") {
+		refHiddenInput.value = refHiddenInput.value + " "	
+	} else if (refValue === "random") {
+		refHiddenInput.value = "random"
+	} else if (refValue === "clear") {
+		refHiddenInput.value = ""
+	} else {
+		refHiddenInput.value = refHiddenInput.value + refValue	
+	}
+	refInput.value = refHiddenInput.value
+	refInput.focus()
+}
 function adapt_name(name) {
   return name.replace(/ /g, '_').replace(/\(/g, 'A').replace(/\)/g, 'A').replace(/\//g, 'A').replace(/\"/g, 'A').replace(/,/g, 'A').replace(/&/g, 'n')
 }

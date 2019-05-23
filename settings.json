@@ -1,6 +1,7 @@
 {
   "subtitles": "On",
   "language": "en",
+  "onscreenKeypads": "On",
   "expansions": {
     "gorm": "All content",
     "dung beetle knight": "All content",
