@@ -21,10 +21,10 @@ See changelog at: https://kdm-story.site/changelog
 To build the app one needs to:
 
 1. Install npm: https://www.npmjs.com/get-npm
-2. Clone the repository: 
-> \>\> git clone git@github.com:prikhodkop/kdm_story_app.git
-3. Install git lfs (it is used to handle large files): https://git-lfs.github.com
+2. Install git lfs (it is used to handle large files): https://git-lfs.github.com
 > \>\> git lfs install
+3. Clone the repository: 
+> \>\> git clone git@github.com:prikhodkop/kdm_story_app.git
 
 ## Building
 
