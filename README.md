@@ -7,6 +7,7 @@ More info on the app: https://kdm-story.site
 Current release version is 2.3:
 
 Windows: [link](http://bit.ly/2JCReqg)
+
 Mac: [link](http://bit.ly/2VnfsqD)
 
 See changelog at: https://kdm-story.site/changelog
