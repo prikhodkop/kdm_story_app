@@ -5,7 +5,7 @@ Current release version is 2.3.
 
 See changelog at: https://kdm-story.site/changelog
 
-# Preparations
+## Preparations
 
 To build the app one needs to:
 
@@ -15,7 +15,7 @@ To build the app one needs to:
 3. Install git lfs (it is used to handle large files): https://git-lfs.github.com
 > \>\> git lfs install
 
-# Building
+## Building
 
 On Windows:
 
@@ -24,3 +24,9 @@ On Windows:
 On Mac:
 
 > \>\> electron-packager ./ "Kingdom Death 1.5 Story" --platform darwin --icon ./icon.icns --overwrite --arch=x64 --verbose --prune=true --out=<path to build>
+  
+## Contributions
+
+To have your work added to master branch (from which release builds are eventually created), please submit pull request.
+
+https://help.github.com/en/articles/creating-a-pull-request
