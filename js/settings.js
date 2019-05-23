@@ -168,6 +168,16 @@ var settings_schema = {
       "en",
     ]
   },
+  "onscreenKeypads": {
+    "type": "option",
+    "title": "Onscreen Keypads",
+    "description": 'Show onscreen keypads for use with mouse.',
+    "default": "On",
+    "enum": [
+      "On",
+      "Off"
+    ]
+  },
   "expansions": {
     "type": "group",
     "title": "Expansions",
