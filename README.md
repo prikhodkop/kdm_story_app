@@ -1,5 +1,4 @@
-# kdm_story_app
-KDM Story app for game version 1.5. 
+# KDM 1.5 Story app
 
 The repository contains source code for the Kingdom Death: Monster companion story app.
 
@@ -7,8 +6,8 @@ More info on the app: https://kdm-story.site
 
 Current release version is 2.3:
 
-Windows: (link)[http://bit.ly/2JCReqg] 
-Mac: (link)[http://bit.ly/2VnfsqD]
+Windows: [link](http://bit.ly/2JCReqg)
+Mac: [link](http://bit.ly/2VnfsqD)
 
 See changelog at: https://kdm-story.site/changelog
 
