@@ -1,218 +1,218 @@
 <!DOCTYPE html>
-<html lang="en"  bgcolor="#000000">
+<html lang="en" bgcolor="#000000">
 
 <head>
-  <meta name="viewport" charset="UTF-8" content="height=device-height, initial-scale=1">
-  <title>
-    kingdom death
-  </title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/menu.css">
-  <link rel="stylesheet" href="css/settings.css">
+	<meta name="viewport" charset="UTF-8" content="height=device-height, initial-scale=1">
+	<title>
+		kingdom death
+	</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/settings.css">
 </head>
 
 <body bgcolor="#000000">
-  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+	<script>
+		if (typeof module === 'object') {
+			window.module = module;
+			module = undefined;
+		}
+	</script>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/howler.core.min.js"></script>
-  <script type="text/javascript" src="js/jquery.srt.js"></script>
-  <script type="text/javascript" src="js/files.js"></script>
-  <script type="text/javascript" src="js/settings.js"></script>
-  <script type="text/javascript" src="js/events.js"></script>
-  <script type="text/javascript" src="js/transition.js"></script>
-  <script type="text/javascript" src="js/menu.js"></script>
-  <script type="text/javascript" src="js/about.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/howler.core.min.js"></script>
+	<script type="text/javascript" src="js/jquery.srt.js"></script>
+	<script type="text/javascript" src="js/files.js"></script>
+	<script type="text/javascript" src="js/settings.js"></script>
+	<script type="text/javascript" src="js/events.js"></script>
+	<script type="text/javascript" src="js/transition.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+	<script type="text/javascript" src="js/about.js"></script>
 
-  <script>if (window.module) module = window.module;</script>
+	<script>
+		if (window.module) module = window.module;
+	</script>
 
-  <div id="container">
+	<div id="container">
+		<img id="back" src="images/back.jpg" />
 
-    <img id="back" src="images/back.jpg"/>
+		<video id="video" src="video/intro.mp4" width="1440" height="990"></video>
+		<div class="srt" data-video="video"></div>
 
-    <video id="video" src="video/intro.mp4" width="1440" height="990"></video>
-    <div class="srt" data-video="video"></div>
+		<div class="index" id="label_text">
+			KINGDOM DEATH: MONSTER 1.5
+		</div>
 
-    <div class="index" id="label_text" >
-      KINGDOM DEATH: MONSTER 1.5
-    </div>
+		<!-- <audio id="open_audio" src="audio/theme.mp3" loop="loop"></audio> -->
 
-    <!-- <audio id="open_audio" src="audio/theme.mp3" loop="loop"></audio> -->
+		<button class="button" id="mute">Mute</button>
+		<button class="button_video">Intro</button>
+	</div>
 
-    <button class="button" id="mute">Mute</button>
-    <button class="button_video">Intro</button>
-  </div>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			jQuery(function () {
+				var version = '2.4'
 
-  <script type="text/javascript">
-    $(document).ready(function ()
-    {
+				$("#label_text").hide();
+				$("#menu").hide();
+				$("#video").hide();
+				$(".button_video").hide();
 
-      jQuery(function(){
+				var settings = getSettings();
 
-       var version = '2.4'
+				console.log('Settings:');
+				console.log(settings);
+				console.log('!!!');
 
-       $("#label_text").hide();
-       $("#menu").hide();
-       $("#video").hide();
-       $(".button_video").hide();
+				const electron = require('electron');
+				var screenElectron = electron.screen;
+				var mainScreen = screenElectron.getPrimaryDisplay();
+				var dimensions = mainScreen.size;
 
-       var settings = getSettings();
+				console.log(dimensions.width + "x" + dimensions.height);
 
-       console.log('Settings:');
-       console.log(settings);
-       console.log('!!!');
+				$("#video").attr('width', '100%');
+				$("#video").attr('height', '100%');
 
-       const electron = require('electron');
-       var screenElectron = electron.screen;
-       var mainScreen = screenElectron.getPrimaryDisplay();
-       var dimensions = mainScreen.size;
+				sessionStorage.setItem("settings", JSON.stringify(settings));
+				sessionStorage.setItem("back_target", null);
+				sessionStorage.setItem("Mute", "Off");
 
-       console.log(dimensions.width + "x" + dimensions.height);
+				let lang = settings['language'];
 
-       $("#video").attr('width', '100%');
-       $("#video").attr('height', '100%');
+				var music = new Howl({
+					src: ["audio/theme.mp3"],
+					// autoplay: true,
+					loop: true,
+					volume: 0.8
+				});
 
-       sessionStorage.setItem("settings", JSON.stringify(settings));
-       sessionStorage.setItem("back_target", null);
-       sessionStorage.setItem("Mute", "Off");
+				var action = "false"
 
-       let lang = settings['language'];
+				// $("#open_audio").get(0).volume = 1.0
+				// $("#open_audio").get(0).play();
+				music.on('load', function () {
+					music.play();
+				});
 
-       var music = new Howl({
-         src: ["audio/theme.mp3"],
-         // autoplay: true,
-         loop: true,
-         volume: 0.8
-       });
+				$("#label_text").delay(2000).fadeIn(8000);
+				$(".button_video").delay(3000).fadeIn(3000);
 
-       var action = "false"
+				createMenuButton();
+				createToc();
+				createAbout(version);
+				addSettings(settings)
 
-       // $("#open_audio").get(0).volume = 1.0
-       // $("#open_audio").get(0).play();
-       music.on('load', function()
-       {
-         music.play();
-       });
+				// console.log(subtitles['intro'][lang])
+				if (settings['subtitles'] == 'On') {
+					configureSubtitle(readFile(__dirname + '/video/srt/' + lang + '/intro.srt'))
+				}
 
+				if (sessionStorage.getItem("Mute") == "On") {
+					music.mute(true);
+					$("#video").prop('muted', true)
+					// speech.mute(true);
+					$("#mute.button").toggleClass('active');
+				}
 
-       $("#label_text").delay(2000).fadeIn(8000);
-       $(".button_video").delay(3000).fadeIn(3000);
+				$("#mute.button").click(function () {
+					console.log("Here1!");
+					if (!$(this).hasClass('active')) {
+						// $("#open_audio").get(0).pause();
+						music.mute(true)
+						$("video").prop('muted', true)
+						sessionStorage.setItem("Mute", "On");
+						// $("#speech").get(0).pause();
+						console.log("Here2!");
+					} else {
+						// $("#open_audio").get(0).play();
+						music.mute(false)
+						$("video").prop('muted', false)
+						sessionStorage.setItem("Mute", "Off");
+						// $("#speech").get(0).play();
+					};
 
-       createMenuButton();
+					$(this).toggleClass('active');
+					console.log("Here3!");
+				});
 
-       createToc();
+				$(".button_video").click(function () {
+					if (!$(this).hasClass('active')) {
+						// $("#open_audio").get(0).pause();
+						music.stop()
 
-       createAbout(version);
+						$("#video").get(0).currentTime = 0
+						// $("#open_audio").get(0).currentTime = 0
+						$("#video").show();
+						$("#video").get(0).play()
+						$(".button").hide()
+						$(".button_video").hide();
+						$("#settings").hide();
+						$("#label_text").hide();
 
-       addSettings(settings)
+						console.log("Here2!");
+					} else {
+						// $("#open_audio").currentTime = 0
+						setTimeout(function () {
+							music.play();
+						}, 500);
 
-       // console.log(subtitles['intro'][lang])
-       if (settings['subtitles']=='On') {
-         configureSubtitle(readFile(__dirname+'/video/srt/'+lang+'/intro.srt'))
-       }
+						$("#video").get(0).pause()
+						$("#video").hide();
+						$(".button").show();
+						$("#settings").show();
+						$("#label_text").fadeIn(8000);
+					};
 
-       if (sessionStorage.getItem("Mute") == "On") {
-         music.mute(true);
-         $("#video").prop('muted', true)
-         // speech.mute(true);
-         $("#mute.button").toggleClass('active');
-       }
+					$(this).toggleClass('active');
+					$(this).toggleClass('fadeOut')
 
-       $("#mute.button").click(function(){
-         console.log("Here1!");
-         if(!$(this).hasClass('active'))
-         {
-           // $("#open_audio").get(0).pause();
-           music.mute(true)
-           $("video").prop('muted', true)
-           sessionStorage.setItem("Mute", "On");
-           // $("#speech").get(0).pause();
-           console.log("Here2!");
-         } else
-         {
-           // $("#open_audio").get(0).play();
-           music.mute(false)
-           $("video").prop('muted', false)
-           sessionStorage.setItem("Mute", "Off");
-           // $("#speech").get(0).play();
-         };
-         $(this).toggleClass('active');
-         console.log("Here3!");
-       });
+					console.log("Here3!");
+				});
 
-       $(".button_video").click(function(){
-         console.log("Here1!");
-         if(!$(this).hasClass('active'))
-         {
-           // $("#open_audio").get(0).pause();
-           music.stop()
-           $("#video").get(0).currentTime = 0
-           // $("#open_audio").get(0).currentTime = 0
-           $("#video").show();
-           $("#video").get(0).play()
-           $(".button").hide()
-           $(".button_video").hide();
-           $("#settings").hide();
-           $("#label_text").hide();
-           console.log("Here2!");
-         } else
-         {
-           // $("#open_audio").currentTime = 0
-           setTimeout(function()
-           {
-             music.play();
-           }, 500);
+				$('video').on('ended', function () {
+					// $("#open_audio").currentTime = 0
 
-           $("#video").get(0).pause()
-           $("#video").hide();
-           $(".button").show();
-           $("#settings").show();
-           $("#label_text").fadeIn(8000);
-         };
-         $(this).toggleClass('active');
-         $(this).toggleClass('fadeOut')
-         console.log("Here3!");
-       });
+					music.play();
 
-       $('video').on('ended',function(){
-         // $("#open_audio").currentTime = 0
-         music.play();
-         // $("#open_audio").get(0).play();
-         $("#video").hide();
-         $(".button").show()
-         $("#settings").show();
-         $(".button_video").delay(1000).fadeIn(6000);
-         $("#label_text").delay(2000).fadeIn(8000);
-         clearSubtitles();
-         $(this).removeClass('fadeOut')
-        });
+					// $("#open_audio").get(0).play();
+					$("#video").hide();
+					$(".button").show()
+					$("#settings").show();
+					$(".button_video").delay(1000).fadeIn(6000);
+					$("#label_text").delay(2000).fadeIn(8000);
 
-        $('#video').on('click',function(){
-           // this.currentTime = this.duration;
-           this.pause();
-           music.play();
-           $("#video").hide();
-           $(".button").show()
-           $("#settings").show();
-           $(".button_video").fadeIn(2000);
-           $("#label_text").delay(2000).fadeIn(4000);
-           clearSubtitles();
+					clearSubtitles();
 
-           $(this).removeClass('fadeOut')
-         })
+					$(this).removeClass('fadeOut')
+				});
 
-        // let options = localStorage.getItem('KDM_Story_options')
+				$('#video').on('click', function () {
+					// this.currentTime = this.duration;
+					this.pause();
+					music.play();
 
-        // console.log(options)
+					$("#video").hide();
+					$(".button").show()
+					$("#settings").show();
+					$(".button_video").fadeIn(2000);
+					$("#label_text").delay(2000).fadeIn(4000);
 
-        $('body').on('click','#menu_item',function(){setTransition($(this).attr('target'), 'menu')})
+					clearSubtitles();
 
-      });
+					$(this).removeClass('fadeOut')
+				})
 
-    });
+				// let options = localStorage.getItem('KDM_Story_options')
+				// console.log(options)
 
-  </script>
-
+				$('body').on('click', '#menu_item', function () {
+					setTransition($(this).attr('target'), 'menu')
+				})
+			});
+		});
+	</script>
 </body>
 
 </html>

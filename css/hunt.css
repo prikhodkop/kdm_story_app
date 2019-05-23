@@ -223,6 +223,15 @@ tr.spaceUnder>td {
     opacity: 0.3;
     /* transform: translate(-50%, -50%); */
     /* background-color: green; */
+    display: flex;
+    align-items: center;
+}
+#back_button > svg {
+  margin-right: .5em;
+  height: 1.15em;
+  fill: #ddd;
+  position: relative;
+  top: -1px;
 }
 
 #back_button:hover {
