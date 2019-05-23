@@ -215,6 +215,15 @@ var expansion_options = [
 ]
 
 var settings_schema = {
+	"language": {
+		"type": "option",
+		"title": "Language",
+		"description": 'Sets the app language.',
+		"default": "en",
+		"enum": [
+			"en",
+		]
+	},
 	"subtitles": {
 		"type": "option",
 		"title": "Subtitles",
@@ -223,15 +232,6 @@ var settings_schema = {
 		"enum": [
 			"On",
 			"Off"
-		]
-	},
-	"language": {
-		"type": "option",
-		"title": "Language",
-		"description": 'Sets the app language.',
-		"default": "en",
-		"enum": [
-			"en",
 		]
 	},
 	"onscreenKeypads": {
@@ -247,10 +247,11 @@ var settings_schema = {
 	"expansions": {
 		"type": "group",
 		"title": "Expansions",
-		"description": `Allows to set which expansion content to show in the app.
-			"All content" - show events and allow random card draw.
-			"Cards only" - allow random card draw, but hide events.
-			"None" - no events or draw, however expansion cards are still searchable in reference screen.`,
+		"description":
+		`Allows to set which expansion content to show in the app.
+"All content" - show events and allow random card draw.
+"Cards only" - allow random card draw, but hide events.
+"None" - no events or draw, however expansion cards are still searchable in reference screen.`,
 		"properties": {
 			"dragon king": {
 				"type": "option",
@@ -345,12 +346,14 @@ var settings_schema = {
 					"Cards only"
 				]
 			},
+
 		}
 	},
 	"strains": {
 		"type": "group",
 		"title": "Strains",
-		"description": `Strain fightning arts.`,
+		"description":
+		`Strain fightning arts.`,
 		"properties": {
 			"backstabber": {
 				"type": "option",
@@ -393,7 +396,8 @@ var settings_schema = {
 	"whiteboxes": {
 		"type": "group",
 		"title": "Whiteboxes",
-		"description": `Content added with whitebox expansions.`,
+		"description":
+		`Content added with whitebox expansions.`,
 		"properties": {
 			"allison the twilight knight": {
 				"type": "option",
