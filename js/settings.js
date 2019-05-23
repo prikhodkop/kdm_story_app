@@ -149,6 +149,15 @@ var expansion_options = [
 ]
 
 var settings_schema = {
+  "language": {
+    "type": "option",
+    "title": "Language",
+    "description": 'Sets the app language.',
+    "default": "en",
+    "enum": [
+      "en",
+    ]
+  },
   "subtitles": {
     "type": "option",
     "title": "Subtitles",
@@ -157,15 +166,6 @@ var settings_schema = {
     "enum": [
       "On",
       "Off"
-    ]
-  },
-  "language": {
-    "type": "option",
-    "title": "Language",
-    "description": 'Sets the app language.',
-    "default": "en",
-    "enum": [
-      "en",
     ]
   },
   "onscreenKeypads": {
