@@ -1,6 +1,6 @@
 # ![icon-1][icon] KDM 1.5 Story app
 
-[icon]: http://kingdomdeath.com/images/logo_light_blue.png
+[icon]: https://dl.dropboxusercontent.com/s/vr69eaqnvvm0kip/git_icon.png
 
 The repository contains source code for the Kingdom Death: Monster companion story app.
 
