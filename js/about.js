@@ -23,7 +23,18 @@ function createAbout(version) {
 		id: 'reference-window-back'
 	}));
 
-	$('<div><h id="about_header">KDM Story app v.' + version + '</h><p id="about_p">Created by @prikhodkop</p><p id="about_p">Almost all the art and text presented in the app are the property of Adam Poots. The guy did a great job creating the game, so please pay respect to him and <b>use the app ONLY if you own a copy of the game</b> (no exceptions)!</p><p id="about_p">The app also uses some of content created by Fen, please support him at his: </br> https://www.patreon.com/FenPaints </br>He deservers it!.</p><p id="about_p">Hope you enjoy the app and please send your feedback to me!</p></div>').appendTo('#reference-window-back')
+	$(`<div><h id="about_header">KDM Story app v.` + version + `</h>
+  <p id="about_p">Created by <a href=https://t.me/prikhodkop style="color:#888800;" target="_blank">@prikhodkop</a></p>
+  <p id="about_p">The app is an open non profit project to enchance experience with the game. Every contribution to help is welcome!</p>
+  <p id="about_p">App sources are now on github: <a href=https://github.com/prikhodkop/kdm_story_app style="color:#888800;" target="_blank">https://github.com/prikhodkop/kdm_story_app</a>.<br/></p>
+  <p id="about_p">If you face any issues, please report it here: <a href=https://kdm-story.site/changelog style="color:#888800;" target="_blank">https://kdm-story.site/changelog</a>.</p>
+  <p id="about_p">Hope you enjoy the app and please share your feedback and impressions!<br/></p>
+  <p id="about_p" style="color:#ddd"><b>Credits:</b></p>
+  <p id="about_p">Almost all the art and text presented in the app are the property of Adam Poots. The guy did a great job creating the game, so please pay respect to him and <b>use the app ONLY if you own a copy of the game</b> (no exceptions)!</p>
+  <p id="about_p">Coding: @prikhodkop, Justin Parker (jparkerweb)</p>
+  <p id="about_p">Voice acting: @prikhodkop, Katya Prikhodko</p>
+  <p id="about_p">QA: Alexander Fedorov, Creepo</p>
+  <p id="about_p">Arts, disorders, ability and weapon specialisation cards are created by Fen, please support him at his: </br> <a href=https://www.patreon.com/FenPaints style="color:#888800;" target="_blank">https://www.patreon.com/FenPaints</a> </br>He deservers it!.</p></div>`).appendTo('#reference-window-back')
 	$('#reference-window-back0').hide();
 
 	$('#about_text').click(function () {
@@ -80,4 +91,11 @@ function createAbout(version) {
 		$('#about_text').removeClass('active');
 		$('#about_text').attr('src', 'images/icons/about.png');
 	});
+
+  var shell = require('electron').shell;
+  //open links externally by default
+  $(document).on('click', 'a[href^="http"]', function(event) {
+   event.preventDefault();
+   shell.openExternal(this.href);
+  });
 }
