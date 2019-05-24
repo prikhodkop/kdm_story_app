@@ -1,4 +1,4 @@
-# ![icon-1](https://dl.dropboxusercontent.com/s/vr69eaqnvvm0kip/git_icon.png | width=100) KDM 1.5 Story app
+# ![](https://dl.dropboxusercontent.com/s/vr69eaqnvvm0kip/git_icon.png) KDM 1.5 Story app
 
 The repository contains source code for the Kingdom Death: Monster companion story app.
 
