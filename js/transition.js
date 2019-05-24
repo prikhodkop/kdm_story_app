@@ -1,37 +1,38 @@
-function setTransition(name, transition, back_target=null, state=null, transit=true) {
-  console.log("Doing the transition...");
-  console.log(transition);
-  sessionStorage.setItem("transition", transition);
-  sessionStorage.setItem("target", name);
+function setTransition(name, transition, back_target = null, state = null, transit = true) {
+	console.log("Doing the transition...");
+	console.log(transition);
 
-  if (!(back_target == null)) {
-    sessionStorage.setItem("back_target", back_target);
-  } else {
-    sessionStorage.setItem("back_target", null);
-  }
+	sessionStorage.setItem("transition", transition);
+	sessionStorage.setItem("target", name);
 
-  if (!(state == null)) {
-    sessionStorage.setItem(document.title, state);
-  } else {
-    sessionStorage.removeItem(document.title);
-  }
+	if (!(back_target == null)) {
+		sessionStorage.setItem("back_target", back_target);
+	} else {
+		sessionStorage.setItem("back_target", null);
+	}
 
-  console.log("Done!");
+	if (!(state == null)) {
+		sessionStorage.setItem(document.title, state);
+	} else {
+		sessionStorage.removeItem(document.title);
+	}
 
-  if (transit) {
-    window.location = "./"+events_table[name].type+".html";
-  }
+	console.log("Done!");
 
-  return true
-};
+	if (transit) {
+		window.location = "./" + events_table[name].type + ".html";
+	}
+
+	return true
+}
 
 function getBackTarget() {
-  return sessionStorage.getItem("back_target")
+	return sessionStorage.getItem("back_target")
 }
 
 function getBackBackTarget() {
-  let back_target = sessionStorage.getItem("back_target")
-  console.log(back_target);
-  let state = JSON.parse(sessionStorage.getItem(back_target))
-  return state.back_target
+	let back_target = sessionStorage.getItem("back_target")
+	console.log(back_target);
+	let state = JSON.parse(sessionStorage.getItem(back_target))
+	return state.back_target
 }

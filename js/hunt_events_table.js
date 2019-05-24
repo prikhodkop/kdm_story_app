@@ -1,6 +1,5 @@
 var random_hunt_events = {
-1:
-`1 | Broken Lanterns
+1: `1 | Broken Lanterns
 The survivors feel something crunching beneath their feet. The event revealer may choose to lower their lantern and investigate or ignore the sensation and continue their journey.
 
 [TO] Choice
@@ -23,11 +22,9 @@ The event revealer gains +1 courage and rolls 1d10. Otherwise, roll again on the
 [>d]
 [c] Ignore
 [dt] Survivors move on. Roll again on the hunt event table before moving on the hunt event board.
-
 `,
 
-2:
-`2 | Corpse
+2: `2 | Corpse
 
 [img] 2 # no-shadow
 
@@ -40,10 +37,10 @@ The survivors are overcome by a sudden chill, their breath seizing in their lung
 [c] Graves
 [d] The event revealer examines the corpse and gains +1 courage and +1 understanding.
 [c] Memento Mori
-[dt] The event revealer understands a little about what happened to the corpse. They gain 1 random fighting art.`,
+[dt] The event revealer understands a little about what happened to the corpse. They gain 1 random fighting art.
+`,
 
-3:
-`3 | Cancer Pigeons
+3: `3 | Cancer Pigeons
 The survivors are surrounded by the echoing coo of infant babble. Strange babyfaced birds circle overhead. Gripped with instinctual horror, the survivors break into a run! Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
 
 [i] If any survivor has noisy gear, -2 to their roll.
@@ -70,8 +67,7 @@ Each straggler rolls 1d10.
 [>d]
 [T]`,
 
-4:
-`4 | Famine
+4: `4 | Famine
 The path ahead is arid and dead. You may press on or try to find the way around.
 
 [TO] Choice
@@ -93,11 +89,9 @@ Your stomachs grumble in the dark as you stumble forward. The survivors pool the
 [>d]
 [c] Go around
 [dt] Roll again on the hunt event table before moving on the hunt board.
-
 `,
 
-5:
-`5 | Flesh Fields
+5: `5 | Flesh Fields
 Ahead, the stone faces on the ground give way to a field of man-sized, fleshy boils sprouting thick black hair. The sinuous terrain radiates moist heat. As they travel, every survivor suffers heat exhaustion, losing 1 survival. The event revealer rolls 1d10.
 
 [i] If any survivor has a sickle, they help clear a path by cutting back the thick, black hair. Add +4 to your roll.
@@ -125,10 +119,10 @@ The event revealer contracts a flesh-eating disease brushing past the giant boil
 [d] The event revealer makes the best of a bad situation and cuts a portion of the flesh free. Gain 1 hide basic resource.
 [c] 10+
 [d] Each survivor harvests 1 hide basic resource from the flesh fields.
-[T]`,
+[T]
+`,
 
-6:
-`6 | Faceless Statue
+6: `6 | Faceless Statue
 The survivors come upon a faceless statue holding a shining lantern. Basking in the warm light, the survivors are renewed.
 
 Each survivor gains 1 survival.
@@ -165,10 +159,10 @@ The survivors may rest here longer.
 [dt] Survivors continue their hunt.
 
 [>d]
-[T]`,
+[T]
+`,
 
-7:
-`7 | Hungry Ground
+7: `7 | Hungry Ground
 The ground suddenly splits and a gaping stone mouth attempts to devour the event revealer whole! The event revealer rolls 1d10.
 [i] If another survivor has a whip, they throw a line to the event revealer. Add +4 to your roll.
 
@@ -182,10 +176,10 @@ The ground suddenly splits and a gaping stone mouth attempts to devour the event
 [d] You manage to leap away in time!
 [c] 10+
 [d] Burp! Gurgle! The floor vomits a shiny piece of scrap. Gain 1 broken lantern basic resource.
-[T]`,
+[T]
+`,
 
-'8':
-`8 | Wailing Smoke
+8: `8 | Wailing Smoke
 
 [img] 8
 A constant moan follows the survivors. Eventually, they enter an area shrouded in thick fog and the wailing reaches a fevered pitch.
@@ -227,10 +221,10 @@ Each straggler rolls 1d10.
 [T]
 
 [>d]
-[T]`,
+[T]
+`,
 
-'9':
-`9 | Golden Light
+9: `9 | Golden Light
 A golden light blinds the survivors, stopping them in their tracks. The light shines from a single source. The event revealer is compelled to investigate.
 They gain +1 courage and roll 1d10.
 
@@ -244,10 +238,10 @@ They gain +1 courage and roll 1d10.
 [d] You wander through the light, bathed in a warm, awful feeling. You don't find anything other than exposure. Suffer monster level event damage to a random hit location.
 [c] 9+
 [d] Something about the light stirs you, and your resolve intensifies. Gain +1 survival.
-[T]`,
+[T]
+`,
 
-'10':
-`10 | Harvester
+10: `10 | Harvester
 
 [img] 10 # no-shadow # width:45%
 <b>This event cannot be rerolled or avoided in any way.</b>
@@ -269,10 +263,10 @@ The creature is so horrifying that the survivors' brains erase the experience fr
 The creature is so horrifying that the survivors' brains erase the experience from their memories. Do not gain the benefits of your death principle.
 
 [>d]
-[~T]`,
+[~T]
+`,
 
-'11':
-`11 | Monster Droppings
+11: `11 | Monster Droppings
 The survivors find some monster droppings, like those of their quarry. The event revealer chooses to either investigate or consume the droppings (choose only one).
 
 [TO] Choice
@@ -309,19 +303,19 @@ Gain +1 courage and roll 1d10.
 [T]
 
 [>d]
-[T]`,
+[T]
+`,
 
-'12':
-`12 | Destiny-Bound
+12: `12 | Destiny-Bound
 
 [img] 12 # no-shadow
 
 The survivors collectively feel a heightened level of anticipation. Their goal is close at hand.
 
-The event revealer gains +1 courage! The survivors may skip the next hunt space. If this movement starts the showdown, the survivors ambush their quarry. `,
+The event revealer gains +1 courage! The survivors may skip the next hunt space. If this movement starts the showdown, the survivors ambush their quarry.
+`,
 
-'13':
-`13 | Overload
+13: `13 | Overload
 The event revealer falls to their knees, sobbing uncontrollably. They've simply had too much. They lose d10 survival and gain 1 random disorder.
 
 [TO] Choice
@@ -350,10 +344,10 @@ They slowly pull themselves to their feet, promising to never give up hope. Roll
 
 [>d]
 [c] Principle not chosen
-[dt] Survivors help revealer to stand and pass on.`,
+[dt] Survivors help revealer to stand and pass on.
+`,
 
-'14':
-`14 | Chance Encounter
+14: `14 | Chance Encounter
 
 [img] 14
 
@@ -366,10 +360,10 @@ Otherwise, exclaiming wildly at the survivors, the woman's presence fills everyo
 [TO] Check
 [td] Innovation in the settlement
 [c] Hovel
-[dt] She snaps her fingers and ages before their eyes! A chill passes over the survivors. Their bodies and armor spontaneously knit themselves back together. Heal all injury levels and lost armor points. Then, she pulls a random survivor aside and whispers secrets of the upcoming hunt. They gain +1 accuracy token.`,
+[dt] She snaps her fingers and ages before their eyes! A chill passes over the survivors. Their bodies and armor spontaneously knit themselves back together. Heal all injury levels and lost armor points. Then, she pulls a random survivor aside and whispers secrets of the upcoming hunt. They gain +1 accuracy token.
+`,
 
-'15':
-`15 | Man-trap
+15: `15 | Man-trap
 
 [img] 15 # no-shadow
 
@@ -386,8 +380,7 @@ The event revealer springs a terrible trap! Roll 1d10.
 [d] The event revealer's foot knocks into the trap, giving everyone a scare! However, it was already sprung, leaving an unfortunate prize in its jaws. Gain 1 random basic resource.
 [T]`,
 
-'16':
-`16 | Night Terrors
+16: `16 | Night Terrors
 Your miserable sleep is plagued with mind-bending nightmares. Each survivor rolls 1d10.
 
 [TA] 1d10
@@ -397,10 +390,10 @@ Your miserable sleep is plagued with mind-bending nightmares. Each survivor roll
 [c] No
 [d] Gain 1 random disorder.
 [c] Is a savior or has <b>Extra Sense</b> fighting art
-[dt] They disappear into the dream, emerging from the darkness hours later. They gain +4 Hunt XP and a random basic resource. `,
+[dt] They disappear into the dream, emerging from the darkness hours later. They gain +4 Hunt XP and a random basic resource.
+`,
 
-'17':
-`17 | Face-to-Face
+17: `17 | Face-to-Face
 Amidst the sea of stone faces, one catches the event revealer's eye. They feel compelled to investigate. Gain +1 courage and roll 1d10.
 [TO] 1d10
 [td] Event revealer
@@ -409,10 +402,10 @@ Amidst the sea of stone faces, one catches the event revealer's eye. They feel c
 [c] 2-7
 [d] The face reminds you of someone dear. Your heart aches with loneliness. If your survival is greater than your insanity, suffer monster level brain event damage.
 [c] 8+
-[dt] The face is your own but older and wiser. Gain +1 survival and +1 understanding.`,
+[dt] The face is your own but older and wiser. Gain +1 survival and +1 understanding.
+`,
 
-'18':
-`18 | Dead Weed
+18: `18 | Dead Weed
 
 [img] 18 # no-shadow # width:35%
 
@@ -424,10 +417,10 @@ You find a strange plant growing from the eyes of a stone face. The event reveal
 [c] 1-7
 [d] Try as you might, you cannot pull out the deeply rooted weed.
 [c] 8+
-[dt] You pull the weed free! It has enormous regenerative power. Each survivor rubs it on their skin and removes 1 permanent severe injury. Then it crumbles into dust in your hands.`,
+[dt] You pull the weed free! It has enormous regenerative power. Each survivor rubs it on their skin and removes 1 permanent severe injury. Then it crumbles into dust in your hands.
+`,
 
-'19':
-`19 | Exhalation of Darkness
+19: `19 | Exhalation of Darkness
 
 [img] 19 # width:25%
 
@@ -454,10 +447,10 @@ Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of 
 [dt] You're not sure how, but you leave the darkness with your hands full. Gain 1 random basic resource.
 
 [>d]
-[T]`,
+[T]
+`,
 
-'20':
-`20 | Dry Lands
+20: `20 | Dry Lands
 As the survivors press forward, the air turns dry and the ground cracks. The survivors suffer heat exhaustion. Each survivor loses 1 survival. If they are wearing fur or heavy gear, they instead lose <b>d5</b> survival.
 
 [TO] Check
@@ -465,10 +458,10 @@ As the survivors press forward, the air turns dry and the ground cracks. The sur
 [c] Yes #Pickaxe
 [d] The survivors break open an interesting-looking vein in the cracked ground. Gain 1 Iron strange resource.
 [c] No #
-[dt] `,
+[dt]
+`,
 
-'21':
-`21 | Drawings
+21: `21 | Drawings
 Cowering in a cave, the survivors find strange drawings decorating the walls. They appear to contain a message.
 
 [TO] Choice
@@ -491,10 +484,10 @@ If the settlement has Pictographs, every survivor may roll (regardless of ther u
 
 [c] Go away
 [d] Agitated survivors move on.
-[T]`,
+[T]
+`,
 
-'22':
-`22 | Acid Rain
+22: `22 | Acid Rain
 The darkness above is suddenly alight with a storm of acid rain. It smells terrible, burns flesh, and forms hissing pools in the upturned mouths of the stone faces. All survivors suffer monster level event damage to every hit location as they scramble to find shelter.
 
 [TO] Check
@@ -526,10 +519,10 @@ The survivors silently watch the storm erode the stone faces, erasing their feat
 [dt] the storm moves homeward. Add the <b>Acid Storm</b> settlement event to the timeline next year.
 
 [>d]
-[T]`,
+[T]
+`,
 
-'23':
-`23 | Clean Water
+23: `23 | Clean Water
 The survivors pass a forlorn fountain in the shape of a lion's face. A stream of crystal-clear water flows from its mouth. Each survivor consumes the water, gaining +1 survival and +1 courage. Any number of survivors may douse their head in the water and roll 1d10.
 
 [TA] 1d10
@@ -542,10 +535,10 @@ The survivors pass a forlorn fountain in the shape of a lion's face. A stream of
 [d] The water is bracing. Gain +1 understanding or remove a disorder of your choice.
 [c] 9+
 [d] The water is shockingly cold! It rushes over you like a tidal wave and leaves you awestruck. Set your insanity to 0 and remove all disorders.
-[T]`,
+[T]
+`,
 
-'24':
-`24 | Food from the Mouths of Others
+24: `24 | Food from the Mouths of Others
 
 [img] 24 # no-shadow
 
@@ -561,10 +554,10 @@ The survivors pass a stone face that appears to be holding something in its mout
 [d] More rocks, what did you expect? Gain 1 Founding Stone starting gear.
 [c] 9+
 [d] You pull out a masticated mass. Gain 1 random basic resource and 2 insanity.
-[T]`,
+[T]
+`,
 
-'25':
-`25 | Titans in the Dark
+25: `25 | Titans in the Dark
 
 [img] 25 # no-shadow # width:50%
 
@@ -601,10 +594,10 @@ You're plucked from the ground and eaten whole.
 [c] 10+
 [dt] You will never stop running from what you saw. Gain +1 permanent movement.
 [>d]
-[T]`,
+[T]
+`,
 
-'26':
-`26 | Pit
+26: `26 | Pit
 The ground beneath the event revealer's feet gives way and they plummet into a pit below. The event revealer rolls 1d10.
 
 [TO] 1d10
@@ -622,10 +615,10 @@ The ground beneath the event revealer's feet gives way and they plummet into a p
 [c] 7-9
 [d] You land at the bottom with a soft thud. Suffer 1 event damage to a random hit location.
 [c] 10+
-[dt] You manage to grab the edge of the pit and escape unharmed.`,
+[dt] You manage to grab the edge of the pit and escape unharmed.
+`,
 
-'27':
-`27 | Man-Stealers
+27: `27 | Man-Stealers
 
 [img] 27 # no-shadow
 
@@ -652,10 +645,10 @@ Roll 1d10.
 [>d]
 [c] No male survivors
 [d] Insect crawls away and nothing happens.
-[T]`,
+[T]
+`,
 
-'28':
-`28 | Trollbird
+28: `28 | Trollbird
 
 A rumpled, unsightly bird stands in the survivors' path. Its beady, wet eyes blink expectantly and it calls out with an eerie human chuckle. The survivors may archive 1 con-sumable item or gear, offering it to the trollbird.
 
@@ -678,10 +671,10 @@ it follows the survivors on their hunt, constantly mocking them with its chuckle
 [c] 6+
 [dt] The trollbird mocks and distracts the monster as the survivors sneak up. All survivors gain +1 insanity. At the start of the showdown, the survivors ambush the monster.
 [>d]
-[T]`,
+[T]
+`,
 
-'29':
-`29 | Dark Blacksmith
+29: `29 | Dark Blacksmith
 
 [img] 29 # no-shadow
 
@@ -698,10 +691,10 @@ The survivors cross paths with a tall, unnaturally thin man in a hooded robe. Wh
 [c] 7-8
 [d] The creature unhinges its jaw and eats the piece of gear. In return, it hands you a shining shield. Gain the <b>Steel Shield</b> rare gear.
 [c] 9+
-[dt] The creature unhinges its jaw and eats the piece of gear. In return, it hands you a shining sword. Gain the <b>Steel Sword</b> rare gear.`,
+[dt] The creature unhinges its jaw and eats the piece of gear. In return, it hands you a shining sword. Gain the <b>Steel Sword</b> rare gear.
+`,
 
-'30':
-`30 | Rotten Faces
+30: `30 | Rotten Faces
 he stone faces start to give under the survivors' feet. They are bloated and smell terrible. Each survivor rolls 1d10.
 
 [TA] 1d10
@@ -713,10 +706,10 @@ he stone faces start to give under the survivors' feet. They are bloated and sme
 [c] 6-9
 [d] You escape without incident.
 [c] 10+
-[dt] You find something gross drudging through the rot! Gain 1 random basic resource.`,
+[dt] You find something gross drudging through the rot! Gain 1 random basic resource.
+`,
 
-'31':
-`31 | Strange Path
+31: `31 | Strange Path
 The survivors stop at the head of a path. Small lanterns twinkle, marking its edges.
 
 The event revealer decides whether or not the survi-vors follow the path. If the event revealer is insane, they must.
@@ -743,10 +736,10 @@ The event revealer gains +1 understanding then rolls 1d10 and adds their underst
 
 [>d]
 [c] No #Do not follow
-[dt] Roll again on the hunt event table before moving on the hunt board.`,
+[dt] Roll again on the hunt event table before moving on the hunt board.
+`,
 
-'32':
-`32 | Sudden Madness
+32: `32 | Sudden Madness
 The event revealer is devastated by a piercing cacophony in their head. Roll 1d10.
 
 [TO] 1d10
@@ -781,10 +774,10 @@ Survivor gets back to his senses.
 [T]
 
 [>d]
-[T]`,
+[T]
+`,
 
-'33':
-`33 | It Whispers Your Name
+33: `33 | It Whispers Your Name
 
 [img] 33
 
@@ -833,10 +826,10 @@ They gain +1 understanding, feeling on the cusp of learning something.
 
 [>d]
 [c] No #
-[dt] The lips stop moving and nothing else happens.`,
+[dt] The lips stop moving and nothing else happens.
+`,
 
-'34':
-`34 | Crippling Misery
+34: `34 | Crippling Misery
 Each survivor rolls 1d10. The lowest-scoring survivor (or survivors, in case of ties) becomes a straggler.
 
 [i] If any survivor (or survivors) has the Anxiety disorder, they are the straggler. Do not roll.
@@ -858,10 +851,10 @@ The straggler is lost in a moment of profound self doubt. They slip, not having 
 [T]
 
 [>d]
-[T]`,
+[T]
+`,
 
-'35':
-`35 | Broken Lantern Oven
+35: `35 | Broken Lantern Oven
 The survivors come across the shattered ruins of a small settlement. Ashen corpses dot the ruins, disintegrating at the slightest touch. An extinguished lantern oven stands intact at the center of the settlement.
 
 The event revealer rolls 1d10 and adds their understanding.
@@ -924,22 +917,22 @@ Survivors move on.
 [T]
 
 [>d]
-[T]`,
+[T]
+`,
 
-'36':
-`36 | On the Trail
-The survivors rush forward, feeling their quarry close at hand. Skip the next hunt space. If this movement begins the showdown, the survivors ambush their quarry. If any survivor has noisy gear, the survivors do not ambush. Start the showdown normally.`,
+36: `36 | On the Trail
+The survivors rush forward, feeling their quarry close at hand. Skip the next hunt space. If this movement begins the showdown, the survivors ambush their quarry. If any survivor has noisy gear, the survivors do not ambush. Start the showdown normally.
+`,
 
-'37':
-`37 | Lost
+37: `37 | Lost
 The survivors are hopelessly lost in the unbroken darkness. Move the survivors 2 spaces back on the hunt board.`,
 
 // '37':
 // `37 | Lost
-// Survivors are hoplessly lost in the unbroken darkness. Move the survivors 2 space back on the hunt board.`,
+// Survivors are hoplessly lost in the unbroken darkness. Move the survivors 2 space back on the hunt board.
+//`,
 
-'38':
-`38 | Gregalope
+38: `38 | Gregalope
 
 [img] 38
 
@@ -956,10 +949,10 @@ A massive Gregalope stands astride the horizon, its ancient body bloated with tu
 [c] 15-16
 [d] The survivors lose sight of the Gregalope but discov-er a hidden path. You may re-roll the next result on the hunt event table.
 [c] 17+
-[dt] Just before it leaps out of view, the Gregalope bows its mighty horns. The experience changes the exhausted event revealer. They gain +1 permanent movement.`,
+[dt] Just before it leaps out of view, the Gregalope bows its mighty horns. The experience changes the exhausted event revealer. They gain +1 permanent movement.
+`,
 
-'39':
-`39 | Heavy Mist
+39: `39 | Heavy Mist
 A heavy mist envelops the survivors, obscuring their lantern light. Roll 1d10.
 
 [TO] 1d10
@@ -967,10 +960,10 @@ A heavy mist envelops the survivors, obscuring their lantern light. Roll 1d10.
 [c] Even result #Even
 [d] The survivors stumble in the right direction. If the showdown begins in the next space on the hunt board, the monster ambushes the survivors.
 [c] Odd result #Odd
-[dt] They get turned around; roll again on the hunt event table before moving on the hunt event board.`,
+[dt] They get turned around; roll again on the hunt event table before moving on the hunt event board.
+`,
 
-'40':
-`40 | Dream
+40: `40 | Dream
 The event revealer dreams of the upcoming hunt. They stand before the great beast, weapons ready, but it strikes them down.
 
 [TO] Check
@@ -1005,20 +998,20 @@ The dream is merely rattling. Suffer 1 brain event damage.
 [T]
 
 [>d]
-[T]`,
+[T]
+`,
 
-'41':
-`41 | Nightmare
+41: `41 | Nightmare
 The event revealer dreams of the upcoming hunt. The great beast vanishes during their battle and secretly fol-lows them back to the settlement. They helplessly watch as it devours all they know and love.
 
 The event revealer gains +1d10 insanity and -1 evasion token.
 
 [i] If the settlement has a savior. they appear in the dream and defend their home. The event revealer gains +1d5 survival.
 
-[i] If no survivor in the settlement or hunting party has a <b>Twilight Sword</b>, the event revealer envisions a maniacal version of themselves wielding the blade and gleefully slaughtering the beast. They awake to find a <b>Twilight Sword</b> at their side, humming gently against their body. Instinctively the survivor recognizes the weight of the weapon's curse and the promise of its power. The event revealer gains the <b>Twilight Sword</b> rare gear. They may also select <b>Twilight Sword</b> as their weapon proficiency type and gain +1 weapon proficiency with this weapon.`,
+[i] If no survivor in the settlement or hunting party has a <b>Twilight Sword</b>, the event revealer envisions a maniacal version of themselves wielding the blade and gleefully slaughtering the beast. They awake to find a <b>Twilight Sword</b> at their side, humming gently against their body. Instinctively the survivor recognizes the weight of the weapon's curse and the promise of its power. The event revealer gains the <b>Twilight Sword</b> rare gear. They may also select <b>Twilight Sword</b> as their weapon proficiency type and gain +1 weapon proficiency with this weapon.
+`,
 
-'42':
-`42 | Surgeon
+42: `42 | Surgeon
 A creaky carriage approaches the survivors. Richly appointed in red and gold. the carriage is carved on every side with lurid faces. A massive, twitching eye adorns the front, while the door of the carriage is a waiting, open mouth. Out of a small window. a gnarled hand beckons.
 One survivor with 3+ courage may choose to enter the wagon.
 
@@ -1031,12 +1024,11 @@ One survivor with 3+ courage may choose to enter the wagon.
 [T]
 `,
 
-'43':
-`43 | Fresh Kill
-A carpet of skittering bugs points the survivors to a freshly killed monster. The scavenging insects try to defend their dinner, but the survivors fight them off to claim the prize. Each survivor rolls 2d10 and adds their Hunt XP. The highest-scoring survivor (roll off in case of ties) slays the most vermin and wins the putrid prize for themselves. They gain 1 random basic resource and 1 random vermin resource.`,
+43: `43 | Fresh Kill
+A carpet of skittering bugs points the survivors to a freshly killed monster. The scavenging insects try to defend their dinner, but the survivors fight them off to claim the prize. Each survivor rolls 2d10 and adds their Hunt XP. The highest-scoring survivor (roll off in case of ties) slays the most vermin and wins the putrid prize for themselves. They gain 1 random basic resource and 1 random vermin resource.
+`,
 
-'44':
-`44 | Opportunists
+44: `44 | Opportunists
 While investigating their quarry's tracks, the survivors realize they are hunting not one, but two monsters. The two sets of tracks soon separate. leaving the event revealer to pick which tracks to follow.
 
 [TO] Choice
@@ -1044,10 +1036,10 @@ While investigating their quarry's tracks, the survivors realize they are huntin
 [c] Larger tracks
 [d] Continue hunting as normal.
 [c] Smaller tracks
-[dt] Start the showdown immediately. At the start of the showdown, the monster suffers 5 wounds. If the survivors are victorious, they gain half the basic resources and half the monster resources (rounded up) from rewards in the aftermath.`,
+[dt] Start the showdown immediately. At the start of the showdown, the monster suffers 5 wounds. If the survivors are victorious, they gain half the basic resources and half the monster resources (rounded up) from rewards in the aftermath.
+`,
 
-'45':
-`45 | Jagged Valley
+45: `45 | Jagged Valley
 A valley of sharp, white stones opens before the survivors, looking just like a toothy maw. As the survivors push and climb through the jagged spires, they find that even the shallowest nick bleeds profusely. Each survivor suffers 1 event damage to the body.
 Unless a survivor has bandages to patch up their wounds, all survivors also gain 2 bleeding tokens!
 If any survivor has a pickaxe, they may try to convince the other survivors to let them investigate a bit more. If they are convinced, roll 1d10.
@@ -1059,10 +1051,10 @@ If any survivor has a pickaxe, they may try to convince the other survivors to l
 [c] 2-5
 [d] The white stone is extremely hard. When the survivors finally break through, a horde of bugs scuttles forth from the holes. Gain 1 Hissing Cockroach vermin resource. The excavation was time consuming: roll again on the hunt event table before moving on the hunt board.
 [c] 6+
-[dt] The survivors find a crack and expand it. Within is a hidden cache! Gain 1 Iron strange resource and 1 Hissing Cockroach vermin resource. The excavation was time consuming; roll again on the hunt event table before moving on the hunt board.`,
+[dt] The survivors find a crack and expand it. Within is a hidden cache! Gain 1 Iron strange resource and 1 Hissing Cockroach vermin resource. The excavation was time consuming; roll again on the hunt event table before moving on the hunt board.
+`,
 
-'46':
-`46 | River
+46: `46 | River
 The survivors come to the edge of a river of blood. Non-insane survivors suffer 1 brain event damage at the sight of it. The survivors must investigate in order to pick up their quarry's trail.
 Each survivor rolls 1d10. If no survivor successfully finds the monster's trail, roll again on the hunt event table before moving on the hunt board.
 
@@ -1075,10 +1067,10 @@ Each survivor rolls 1d10. If no survivor successfully finds the monster's trail,
 [c] 6-8
 [d] You realize that the blood river is filled with the bloated corpses of unrecognizable monsters. You feel compelled to fish some out! Gain 1 random basic resource. If you are wearing heavy gear, you fall in and swallow blood and soft, bloated monster bits. Reduce your survival to 1.
 [c] 9+
-[dt] You successfully find the monster's trail.`,
+[dt] You successfully find the monster's trail.
+`,
 
-'47':
-`47 | Banquet Trees
+47: `47 | Banquet Trees
 A small copse of trees rises over an otherwise lifeless plain. Enticing red fruit hangs from the branches. Each survivor must spend 1 survival to resist the temptation to consume the fruit.
 
 Insane survivors and survivors with <b>Binge Eating</b> disorder must consume.
@@ -1090,10 +1082,10 @@ Insane survivors and survivors with <b>Binge Eating</b> disorder must consume.
 [c] 1-5
 [d] The addictive fruit savages your insides. Lose 1 survival and roll again on this table. If you had no survival, suffer 2 event damage to a random hit location.
 [c] 6+
-[dt] You belch loudly in satisfaction and walk away.`,
+[dt] You belch loudly in satisfaction and walk away.
+`,
 
-'48':
-`48 | Death Wager
+48: `48 | Death Wager
 
 [img] 48
 
@@ -1108,10 +1100,10 @@ In a dreamlike state, the survivors all understand this entity is known as <b>Th
 [c] 2-9
 [d] You do not lose, nor do you win. Play again if you wish. If you do, roll again on this table.
 [c] 10+
-[dt] You win. Gain +1 permanent luck.`,
+[dt] You win. Gain +1 permanent luck.
+`,
 
-'49':
-`49 | Pus Fields
+49: `49 | Pus Fields
 The landscape is dotted with large, swelling mounds oozing pus. The smallest jostle threatens to explode them. The survivors may carefully tread through the mounds or rush through.
 
 [TO] Choice
@@ -1119,10 +1111,10 @@ The landscape is dotted with large, swelling mounds oozing pus. The smallest jos
 [c] Carefully tread
 [d] You make it through without incident, but your progress is slowed. Roll again on the hunt event table before moving on the hunt board.
 [c] Rush through
-[dt] Each survivor rolls 1d10 and adds their evasion to the result. On a 7 or less, they detonate one of the pus mounds! They suffer 2 event damage to a random hit location and become stinky for the rest of this lantern year.`,
+[dt] Each survivor rolls 1d10 and adds their evasion to the result. On a 7 or less, they detonate one of the pus mounds! They suffer 2 event damage to a random hit location and become stinky for the rest of this lantern year.
+`,
 
-'50':
-`50 | Gibbet
+50: `50 | Gibbet
 A crude iron cage swings from the branches of a massive tree. As the survivors approach, a man calls out to them from the cage, pleading to be freed.
 
 [TO] Choice
@@ -1143,10 +1135,10 @@ The event revealer rolls 1d10.
 [c] 8+
 [dt] The prisoner is grateful and follows the survivors home after the showdown. The settlement gains +1 population.
 [>d]
-[T]`,
+[T]
+`,
 
-'51':
-`51 | Refugees
+51: `51 | Refugees
 The survivors encounter a group of fleeing settlers.
 
 [TO] Check
@@ -1165,10 +1157,10 @@ The survivors manage to crudely communicate. The survivors may offer a resource 
 [>d]
 [c] No #
 [d] Survivors fail to understand the refugees and continue the hunt.
-[T]`,
+[T]
+`,
 
-'52':
-`52 | Madflies
+52: `52 | Madflies
 Tiny, persistent insects swarm the survivors, flying into their ears and nostrils. The bugs buzz maddeningly in their heads, growing louder as they nest.
 Each survivor rolls 1d10.
 
@@ -1179,10 +1171,10 @@ Each survivor rolls 1d10.
 [c] 3-7
 [d] The buzzing immediately stops and the flies depart. Their rejection makes you feel strangely despondent. Gain +1 insanity.
 [c] 8+
-[dt] Their eggs gestate incredibly quickly and madflies explode forth from your mouth! The experience is gruesome, but makes you feel so alive! Suffer the frenzy brain trauma. If you have the Rageholic disorder or Berserker fighting art, giving birth to disgusting new life kindles your rage. Suffer the frenzy brain trauma again.`,
+[dt] Their eggs gestate incredibly quickly and madflies explode forth from your mouth! The experience is gruesome, but makes you feel so alive! Suffer the frenzy brain trauma. If you have the Rageholic disorder or Berserker fighting art, giving birth to disgusting new life kindles your rage. Suffer the frenzy brain trauma again.
+`,
 
-'53':
-`53 | Mask Salesman
+53: `53 | Mask Salesman
 The survivors meet a traveling Mask Salesman on the road. He insists that he has special wares to offer.
 Shuffle one copy of each mask gear from the Mask Maker settlement location and draw one at random. The salesman is offering this mask. The event revealer rolls 1d10 to determine the price, then gains the mask.
 
@@ -1193,10 +1185,10 @@ Shuffle one copy of each mask gear from the Mask Maker settlement location and d
 [c] 4-7
 [d] The salesman slowly gestures for an offering. Archive 1 gear of your choice from your gear grid.
 [c] 8+
-[dt] As he imparts the mask to you, the salesman's lips form the sounds of your name. It is gone. Give your survivor a new name (it must be different) and +1 survival for naming your survivor.`,
+[dt] As he imparts the mask to you, the salesman's lips form the sounds of your name. It is gone. Give your survivor a new name (it must be different) and +1 survival for naming your survivor.
+`,
 
-'54':
-`54 | Bone Storm
+54: `54 | Bone Storm
 Mighty winds tear across the landscape, collecting chips of stones and skeletal remains. The survivors huddle together on the outskirts of the storm.
 They may either brave the storm or wait it out.
 
@@ -1205,10 +1197,10 @@ They may either brave the storm or wait it out.
 [c] Brave the storm
 [d] All survivors gain +1 courage and suffer 1 event damage to 3 random hit locations. Archive all fragile gear.
 [c] Wait it out
-[dt] Roll twice on the hunt event table before moving on the hunt board.`,
+[dt] Roll twice on the hunt event table before moving on the hunt board.
+`,
 
-'55':
-`55 | Mudslide
+55: `55 | Mudslide
 A flash mudslide sweeps the survivors away. Each survivor rolls 1d10.
 [i] If any survivor has a whip, they catch it around a pillar-shaped bone and swing to safety; they do not roll.
 
@@ -1221,10 +1213,10 @@ A flash mudslide sweeps the survivors away. Each survivor rolls 1d10.
 [c] 8-9
 [d] You reach higher ground. You're caked in mud but otherwise unscathed.
 [c] 10+
-[dt] You remember being pulled under, the sensation of mud forcing itself down your throat, then nothing else. After the mudslide passes, the other survivors find you unharmed. Gain +1 insanity.`,
+[dt] You remember being pulled under, the sensation of mud forcing itself down your throat, then nothing else. After the mudslide passes, the other survivors find you unharmed. Gain +1 insanity.
+`,
 
-'56':
-`56 | Dead Monster
+56: `56 | Dead Monster
 The survivors find a decomposed monster corpse. It's too rotten to yield any resources.
 
 [TO] Check
@@ -1232,14 +1224,14 @@ The survivors find a decomposed monster corpse. It's too rotten to yield any res
 [c] Yes #3+ understanding
 [d] The survivors cover themselves in the dead monster's spilled blood. The stench will help them sneak up on their quarry. When the showdown starts, the survivors ambush the monster. If any survivor has the <b>Squeamish</b> disorder, they refuse to soil themselves. Do not ambush the monster.
 [c] No #
-[dt] The starving sur-vivors feast on the rotting corpse, immediately losing control of their twisting guts. Each survivor loses 1 survival and cannot consume for the rest of this lantern year. `,
+[dt] The starving sur-vivors feast on the rotting corpse, immediately losing control of their twisting guts. Each survivor loses 1 survival and cannot consume for the rest of this lantern year.
+`,
 
-'57':
-`57 | Gorm's Laughter
-The rhythmic wail of a Gorm's laughter reaches the survivors, filling them with fear. The cackling follows the survivors, tormenting them until they reach their quarry. Place a token on every hunt board space between the survivors and their quarry. When the survivors move into a space with a token, remove it and all non-deaf survivors suffer 1 brain event damage.`,
+57: `57 | Gorm's Laughter
+The rhythmic wail of a Gorm's laughter reaches the survivors, filling them with fear. The cackling follows the survivors, tormenting them until they reach their quarry. Place a token on every hunt board space between the survivors and their quarry. When the survivors move into a space with a token, remove it and all non-deaf survivors suffer 1 brain event damage.
+`,
 
-'58':
-`58 | Scent on the Wind
+58: `58 | Scent on the Wind
 A strong wind blows, bringing with it the scents of distant places and things.
 The event revealer rolls 1d10.
 
@@ -1248,10 +1240,10 @@ The event revealer rolls 1d10.
 [c] 1-5
 [d] The monster catches your scent. It moves one space closer. If this movement starts the showdown, the monster ambushes the survivors.
 [c] 6+
-[dt] The survivors smell their quarry's foul odor and surge forward. The survivors may skip the next hunt space. If this movement starts the showdown, the survivors ambush the monster.`,
+[dt] The survivors smell their quarry's foul odor and surge forward. The survivors may skip the next hunt space. If this movement starts the showdown, the survivors ambush the monster.
+`,
 
-'59':
-`59 | Signs of Battle
+59: `59 | Signs of Battle
 The survivors come upon the remains of a terrible battle between their quarry and some unknown foe. The event revealer may choose to investigate.
 If they do, gain +1 courage and roll 1d10.
 Otherwise, roll again on the hunt event table before moving on the hunt board.
@@ -1263,28 +1255,28 @@ Otherwise, roll again on the hunt event table before moving on the hunt board.
 [c] 3-7
 [d] The remains are human. The distraught and enraged survivors each suffer 1 brain event damage. If the settlement has Graves, they bury the dead and each survivor gains +1 survival. If the settlement has Cannibalize, gain 1 random basic resource.
 [c] 8+
-[dt] The quarry has left the remains of another monster in its wake. Gain 1 random basic resource.`,
+[dt] The quarry has left the remains of another monster in its wake. Gain 1 random basic resource.
+`,
 
-'60':
-`60 | Wildfire
-A massive wall of flame obstructs the survivors, incinerating the ground. It has destroyed whatever awaited the survivors and left chaos in its wake. Archive all hunt event cards in the next 2 hunt spaces. Place two basic hunt event cards in those spaces.`,
+60: `60 | Wildfire
+A massive wall of flame obstructs the survivors, incinerating the ground. It has destroyed whatever awaited the survivors and left chaos in its wake. Archive all hunt event cards in the next 2 hunt spaces. Place two basic hunt event cards in those spaces.
+`,
 
-'61':
-`61 | Frozen Lightning
+61: `61 | Frozen Lightning
 A storm sweeps over the survivors. Deep purple lightning flashes overhead. The bolts freeze in midstrike and rain down on the survivors as jagged, glowing spikes.
 Each survivor rolls 1d10.
-The lowest scoring survivor (or survivors, in case of ties) becomes a straggler. A bolt crashes beside the straggler, catching them in an explosion of razorsharp crystals. They suffer 1 d5 event damage to 2 random hit locations. Archive all fragile gear in their gear grid.`,
+The lowest scoring survivor (or survivors, in case of ties) becomes a straggler. A bolt crashes beside the straggler, catching them in an explosion of razorsharp crystals. They suffer 1 d5 event damage to 2 random hit locations. Archive all fragile gear in their gear grid.
+`,
 
-'62':
-`62 | Space Between the Rocks
+62: `62 | Space Between the Rocks
 The survivors are distracted by a dark crack in the endless sea of stone faces.
 
 If any survivor has a pickaxe, they strike the ground, causing the crack to expand into a gaping hole. Bravely reaching inside the survivor produces a blackened, twisted hunk. Gain 1 iron strange resource.
 
-Otherwise, each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler. The straggler stoops to gaze into the depths and refuses to stop staring. When the other survivors drag them away, they babble incoherently. Whatever they saw changed them forever; they gain 1 random disorder. If all the survivors end up as stragglers, no one ever pulls them away and they are all lost. Dead.`,
+Otherwise, each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler. The straggler stoops to gaze into the depths and refuses to stop staring. When the other survivors drag them away, they babble incoherently. Whatever they saw changed them forever; they gain 1 random disorder. If all the survivors end up as stragglers, no one ever pulls them away and they are all lost. Dead.
+`,
 
-'63':
-`63 | Feet
+63: `63 | Feet
 
 [img] 63
 
@@ -1295,10 +1287,10 @@ The stone faces ahead are replaced by an expanse of stone feet sprouting from th
 [c] Yes #All insane
 [d] they fall off the underside of the world. The survivors are dead unless the settlement chose <b>Survival of the Fittest</b>. If they did, the survivors bite down hard on the feet. Their teeth grind against stone as they refuse to let go. At once, the feet shatter, revealing ordinary stone faces beneath. Set all survivors' insanity to 0. Each survivor suffers the shattered jaw severe head injury. Do not roll any additional hunt events caused by Feet.
 [c] No #Someone sane
-[dt] The survivors walk sole-to-sole with the feet. If any survivor is insane, they are convinced they have reached the underside of the world. They clutch the ground for dear life, terrified of falling off. Their raucous terror slows the survivors and attracts unwanted attention. Roll once on the hunt event table for each insane survivor before moving on the hunt board. If any of these rolls result in Feet, ignore it and re-roll.`,
+[dt] The survivors walk sole-to-sole with the feet. If any survivor is insane, they are convinced they have reached the underside of the world. They clutch the ground for dear life, terrified of falling off. Their raucous terror slows the survivors and attracts unwanted attention. Roll once on the hunt event table for each insane survivor before moving on the hunt board. If any of these rolls result in Feet, ignore it and re-roll.
+`,
 
-'64':
-`64 | Stone Fountain
+64: `64 | Stone Fountain
 Two cupped stone hands rise out of the ground. The hands hold clear, cold water that trickles through the stone fingers in a seemingly endless supply. Any survivor may consume from the fountain. If they do, gain +1 courage and roll 1d10.
 
 If no one consumes, roll again on the hunt event table before moving on the hunt board.
@@ -1310,10 +1302,10 @@ If no one consumes, roll again on the hunt event table before moving on the hunt
 [c] 5-8
 [d] It's water. Refreshing.
 [c] 9+
-[dt] The water is clean and pure, like none the survivor has ever tasted. Gain +1 survival.`,
+[dt] The water is clean and pure, like none the survivor has ever tasted. Gain +1 survival.
+`,
 
-'65':
-`65 | Statue
+65: `65 | Statue
 
 [img] 65
 
@@ -1328,15 +1320,15 @@ Otherwise, each survivor rolls 1d10. The lowest scoring survivor (roll off in ca
 [c] Yes #Memento Mori
 [d] The satue resembles a deceased survivor. Replace the straggler with the record sheet of a fallen survivor. Remove all of their severe injuries. Set their Hunt XP to 2 (they Age again, as this is a new lifetime). They gain +1d10 survival, +1d10 insanity. You may give them 3 ranks of proficiency in a random weapon type.
 [c] No #
-[dt] The man offers his thanks and joins the hunting party without any explanation. He is a new survivor with the straggler's gear, 2 random disorders, and 2 Hunt XP. Shuffle all weapon specialization cards (including expansions, if any) and draw one. The survivor has 3 ranks of proficiency in that weapon type. They gain +1d10 survival, +1d10 insanity. Give him a name and +1 survival for being named.`,
+[dt] The man offers his thanks and joins the hunting party without any explanation. He is a new survivor with the straggler's gear, 2 random disorders, and 2 Hunt XP. Shuffle all weapon specialization cards (including expansions, if any) and draw one. The survivor has 3 ranks of proficiency in that weapon type. They gain +1d10 survival, +1d10 insanity. Give him a name and +1 survival for being named.
+`,
 
-'66':
-`66 | Forbidden Word
+66: `66 | Forbidden Word
 There is a great rush of air. A booming, inhuman voice declares a single word in an unknown language. For one instant, the survivors understand.
-All non-deaf survivors gain +1 understanding and suffer 1 brain event damage. If they are insane they also gain 1 random disorder.`,
+All non-deaf survivors gain +1 understanding and suffer 1 brain event damage. If they are insane they also gain 1 random disorder.
+`,
 
-'67':
-`67 | Saliva Pools
+67: `67 | Saliva Pools
 The ground ahead is pockmarked with pools filled with a gooey liquid. They bubble merrily and stink of digesting meat. As the survivors move between them, they are overcome by waves of nausea.
 
 [i] If any survivor has 3+ understanding, they devise a way to use the pools. Each survivor may place one piece of gear in a pool. Archive the gear and gain the resources used to craft it (if any).
@@ -1350,10 +1342,10 @@ Otherwise, each survivor rolls 1d10.
 [c] Yes #Less than survival
 [d] They continue on
 [c] No #Greater than survival
-[dt] They vomit into a nearby pool, suffering 1 event damage to the body. Before their eyes, the pool greedily dissolves their vomit, they gain +1 understanding.`,
+[dt] They vomit into a nearby pool, suffering 1 event damage to the body. Before their eyes, the pool greedily dissolves their vomit, they gain +1 understanding.
+`,
 
-'68':
-`68 | A Familiar Face
+68: `68 | A Familiar Face
 [i] If no survivors have died yet this campaign, ignore this event and roll again on the hunt event table before moving on the hunt board.
 
 Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
@@ -1361,10 +1353,10 @@ Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of 
 [TA] 1d10
 [td] Determine staggler
 [c] Staggler chosen
-[dt] While examining the stone faces underfoot, the straggler recognizes the face of a fallen friend. Bittersweet memories reduce them to tears. Reduce their insanity to 0 and they gain +1 understanding.`,
+[dt] While examining the stone faces underfoot, the straggler recognizes the face of a fallen friend. Bittersweet memories reduce them to tears. Reduce their insanity to 0 and they gain +1 understanding.
+`,
 
-'69':
-`69 | Time Lapse
+69: `69 | Time Lapse
 The glow of the survivors' lanterns blurs, forming trails of light behind them.
 [i] If the settlement has fought a Phoenix, the group recognizes the phenomenon. All survivors gain +1 understanding.
 The event revealer rolls 1d10 on the table below. If any survivor has an hours ring, they may instead select a die result.
@@ -1375,10 +1367,10 @@ The event revealer rolls 1d10 on the table below. If any survivor has an hours r
 [c] 3-9
 [d] The survivors' minds fill with alien memories. They are no longer just themselves. They walk differently and speak with strange accents. Give each survivor a new name and +1 survival for being named. Each survivor gains +1 Hunt XP and 1 random disorder. <i>If your settlement has Survival of Fittest, and you've already used your once-per-lifetime reroll, you may use it again.</i>
 [c] 10+
-[dt] The survivors are suddenly standing by their quarry! Start the showdown immediately.`,
+[dt] The survivors are suddenly standing by their quarry! Start the showdown immediately.
+`,
 
-'70':
-`70 | Tomb of Excellence
+70: `70 | Tomb of Excellence
 The survivors find a serene, luxurious tomb, immaculate in its construction and condition. Elegant murals decorate the walls, depicting glorious victories over the very monster the survivors are hunting. The survivors are baffled by its presence.
 The event revealer investigates and rolls 1d10.
 
@@ -1391,10 +1383,10 @@ The event revealer investigates and rolls 1d10.
 [c] 6-9
 [d] The survivors can't remember ever feeling so cheerful and inspired. Each survivor gains +1 courage.
 [c] 10+
-[dt] The doorway to the tomb is framed with a wood that has small hands for grain. Inside, murals depict a hero at the center of a labyrinth that is holding a giant, human-filled fruit above his head. Each survivor gains +1 understanding. If the settlement has <b>Pictographs</b>, the survivors find information about their quarry. At the start of the showdown, they may place the monster's trap at the bottom of the hit location deck.`,
+[dt] The doorway to the tomb is framed with a wood that has small hands for grain. Inside, murals depict a hero at the center of a labyrinth that is holding a giant, human-filled fruit above his head. Each survivor gains +1 understanding. If the settlement has <b>Pictographs</b>, the survivors find information about their quarry. At the start of the showdown, they may place the monster's trap at the bottom of the hit location deck.
+`,
 
-'71':
-`71 | Found Relic
+71: `71 | Found Relic
 Amidst the endless stone faces, the event revealer notices an unusual object on the ground.
 The event revealer investigates and rolls 1d10.
 [i] If the settlement has <b>Records</b>, add +6 to the result.
@@ -1407,10 +1399,10 @@ The event revealer investigates and rolls 1d10.
 [c] 5-9
 [d] You find a stone heart that pulses with warmth as you hold it in your hands. Gain +1 insanity.
 [c] 10+
-[dt] You find a mask with living lips. if you return to the settlement with the mask, it quickly learns your language and shares its secrets before crumbling to dust. At the start of the next settlement phase, draw 3 innovations from the innovation deck and add one to your settlement at no cost. If any survivor has a <b>Final Lantern</b>, it begins to flash and vibrate wildly. The mask disintegrates and all survivors suffer 1 brain event damage.`,
+[dt] You find a mask with living lips. if you return to the settlement with the mask, it quickly learns your language and shares its secrets before crumbling to dust. At the start of the next settlement phase, draw 3 innovations from the innovation deck and add one to your settlement at no cost. If any survivor has a <b>Final Lantern</b>, it begins to flash and vibrate wildly. The mask disintegrates and all survivors suffer 1 brain event damage.
+`,
 
-'72':
-`72 | Something to Pass the Time
+72: `72 | Something to Pass the Time
 If the settlement does not have Symposium, ignore this event and roll again on the hunt event table before moving on the hunt board. Otherwise, the event revealer suggests a word game to lighten the mood as the survivors trudge forward. The event revealer rolls 1d10.
 [i] If the settlement has Song of the Brave, add +4 to your roll.
 
@@ -1423,10 +1415,10 @@ If the settlement does not have Symposium, ignore this event and roll again on t
 [c] 8-9
 [d] The survivors play the simple but entertaining game. Each survivor gains +1 courage.
 [c] 10+
-[dt] The game is astonishingly fun and the survivors' spirits soar with their booming laughter. Each survivor rolls 1d10. On a 6+, they gain 1 survival or cure 1 disorder.`,
+[dt] The game is astonishingly fun and the survivors' spirits soar with their booming laughter. Each survivor rolls 1d10. On a 6+, they gain 1 survival or cure 1 disorder.
+`,
 
-'73':
-`73 | Golden Ember
+73: `73 | Golden Ember
 The way forward is blocked by dense, gold-flecked smoke. If the survivors have a <b>Final Lantern</b>, it guides them through the smoke without any trouble; end this event. The survivors may push ahead and brave the smoke.
 
 [TO] Choice
@@ -1491,10 +1483,10 @@ Against all reason, you feel compelled to reach into a skull and take an ember. 
 [T]
 [>d]
 [c] Move around
-[dt] They take the long way around; roll again on the hunt event table before moving on the hunt board.`,
+[dt] They take the long way around; roll again on the hunt event table before moving on the hunt board.
+`,
 
-'74':
-`74 | Antler-Gouged
+74: `74 | Antler-Gouged
 A great battle for dominance between two enormous antelopes has left the stone-faced ground gouged with criss-crossing scars.
 Each survivor rolls 1d10.
 
@@ -1505,20 +1497,20 @@ Each survivor rolls 1d10.
 [c] 3-8
 [d] You carefully tread over the destroyed faces.
 [c] 9+
-[dt] You find a loosened stone. Gain a Founding Stone starting gear.`,
+[dt] You find a loosened stone. Gain a Founding Stone starting gear.
+`,
 
-'75':
-`75 | Oops!
-Stumbling through the darkness, the event revealer crashes into the ground, crushing their lantern beneath them. The living light inside the lantern becomes agitated by the survivor's clumsiness and burns a piece of gear. The event revealer archives 1 gear of their choice from their gear grid.`,
+75: `75 | Oops!
+Stumbling through the darkness, the event revealer crashes into the ground, crushing their lantern beneath them. The living light inside the lantern becomes agitated by the survivor's clumsiness and burns a piece of gear. The event revealer archives 1 gear of their choice from their gear grid.
+`,
 
-'76':
-`76 | Dream the Way
+76: `76 | Dream the Way
 The survivors have vivid, fevered visions of what lies ahead. All at once, they are startled awake and frantically compare the horrors they saw.
 Each survivor rolls 1d10.
-[i] If any survivor is a savior, their powerful dream envelopes the group; each survivor may select whatever die roll result they want. If any survivors' rolls are the same, those survivors discover they had the exact same dream. They gain +1 insanity. If any duplicate rolls are 10s, the event revealer may re-roll any one roll result this hunt phase (any one die roll, not just their roll).`,
+[i] If any survivor is a savior, their powerful dream envelopes the group; each survivor may select whatever die roll result they want. If any survivors' rolls are the same, those survivors discover they had the exact same dream. They gain +1 insanity. If any duplicate rolls are 10s, the event revealer may re-roll any one roll result this hunt phase (any one die roll, not just their roll).
+`,
 
-'77':
-`77 | Sinkhole
+77: `77 | Sinkhole
 A gaping sinkhole suddenly opens under the survivors, revealing a swirling black pool of ichor beneath them. Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
 Each straggler rolls 1d10.
 [i] If any other survivor has a whip, they throw a line to the straggler. Each straggler adds +4 to their roll.
@@ -1532,10 +1524,10 @@ Each straggler rolls 1d10.
 [c] 5-9
 [d] You are dragged to safety, terrified but unharmed.
 [c] 10+
-[dt] After a monumental effort, the other survivors pull you free. Someone is clinging tightly to your feet (+1 population)! As they reatreat to your settlement, each survivor suffers 1 brain event damage.`,
+[dt] After a monumental effort, the other survivors pull you free. Someone is clinging tightly to your feet (+1 population)! As they reatreat to your settlement, each survivor suffers 1 brain event damage.
+`,
 
-'78':
-`78 | Dead Great Game Hunter
+78: `78 | Dead Great Game Hunter
 
 The survivors find a corpse dressed in brightly-colored clothing, clutching something to its chest. The event revealer may investigate.
 
@@ -1558,10 +1550,10 @@ They gain +1 courage and roll 1d10.
 [dt] His hands contain a jeweled bottle filled with a char-treuse liquid. Gain 1 Frenzy Drink gear.
 [>d]
 [c] Move on
-[dt] Roll again on the hunt event table before moving on the hunt board.`,
+[dt] Roll again on the hunt event table before moving on the hunt board.
+`,
 
-'79':
-`79 | Dying Small Prospector
+79: `79 | Dying Small Prospector
 <b>If your settlement already has a Portcullis Key, the prospector is gone. Roll again on the hunt event table before moving on the hunt board.</b>
 The survivors discover a body slumped against a large stone face. Moving closer, they find a small, dying prospector riddled with arrows. As they approach, he growls a warning, threatening them with a huge stone shard. When he sees that they are not evil monsters, he calms down and gives them a key. With his dying breath he says: This is the key to the portcullis. Without it, you will never get through.
 Record the <b>Portcullis Key</b> in the settlement record sheet notes.
@@ -1574,19 +1566,19 @@ If the settlement has Graves, the event revealer builds a small monument of brok
 [c] No #
 [d<]
 [>d]
-[T]`,
+[T]
+`,
 
-'80':
-`80 | Lovelorn Rock
+80: `80 | Lovelorn Rock
 The survivors pass a ring of stones with an unassuming boulder at the center. Each survivor rolls 1d10. The lowest scoring survivor (randomize in case of ties) becomes a straggler.
 
 [TO] 1d10
 [td] Determine staggler
 [c] Staggler chosen
-[dt] The straggler hefts the boulder (it's heavy!) and promises to carry it everywhere, forever in love. They must always leave one space in their gear grid empty, as it contains their beloved rock. Record this on your survivor sheet. The rock can be lost or archived like other gear; if it is lost, the survivor mourns their beloved and reclaims the space in their gear grid.`,
+[dt] The straggler hefts the boulder (it's heavy!) and promises to carry it everywhere, forever in love. They must always leave one space in their gear grid empty, as it contains their beloved rock. Record this on your survivor sheet. The rock can be lost or archived like other gear; if it is lost, the survivor mourns their beloved and reclaims the space in their gear grid.
+`,
 
-'81':
-`81 | Field of Arms
+81: `81 | Field of Arms
 
 [img] 78
 
@@ -1599,10 +1591,10 @@ The survivors carefully tread along the back of a massive, sleeping monster. Ins
 [c] No
 [d<]
 [>d]
-[T]`,
+[T]
+`,
 
-'82':
-`82 | Consuming Grass
+82: `82 | Consuming Grass
 Vibrant green grass grows in patches ahead of the survivors. Closer inspection of the delicate leaves reveals they are as sharp as any blade. Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
 
 [TA] 1d10
@@ -1621,10 +1613,10 @@ As the survivors carefully pick their way past the verdant hazards, the straggle
 [c] 10+
 [d] You stop your fall before it's too late.
 [>d]
-[T]`,
+[T]
+`,
 
-'83':
-`83 | Flesh Monolith
+83: `83 | Flesh Monolith
 
 [img] 83
 
@@ -1659,10 +1651,10 @@ As the survivors draw near, they discover that this flesh monolith is actually a
 [c] No #Cannibalize
 [dt] All you manage to harvest from the pile of emaciated corpses is 2 Organ basic resources. Their skin is too soft and bones too brittle to be of any use.
 [>d]
-[T]`,
+[T]
+`,
 
-'84':
-`84 | Scribe's Book
+84: `84 | Scribe's Book
 
 [img] 84
 
@@ -1692,10 +1684,10 @@ Each survivor who writes their name in the book rolls 1d10 and adds their unders
 
 [>d]
 [c] No #
-[dt] Survivors can't decipher anything and move on.`,
+[dt] Survivors can't decipher anything and move on.
+`,
 
-'85':
-`85 | Test of Courage
+85: `85 | Test of Courage
 Lava flows from the eyes of a huge, grimacing stone face. Its gritted teeth hold a worn sword. If there are any survivors with 6+ courage, choose one to brave the lava.
 
 [TO] Check
@@ -1715,10 +1707,10 @@ They gain the <b>Adventure Sword</b> rare gear.
 
 [>d]
 [c] No #
-[dt] The group moves on with a feeling of inadequacy.`,
+[dt] The group moves on with a feeling of inadequacy.
+`,
 
-'86':
-`86 | Putrid Tunnels
+86: `86 | Putrid Tunnels
 The survivors smell it long before they see it, a series of cave mouths that emit noxious odors.
 Each survivor rolls 1d10.
 
@@ -1727,10 +1719,10 @@ Each survivor rolls 1d10.
 [c] 1-8
 [d] They overcome the desire to investigate.
 [c] 9+
-[dt] They enter one of the tunnels and discover a wretched group of diseased survivors living in filth. All survivors who enter the cave catch their foul rotting disease. They have leprosy; reduce all damage suffered by 1 to a minimum of 1. Suffer -2 to severe injury rolls. Record this impairment.`,
+[dt] They enter one of the tunnels and discover a wretched group of diseased survivors living in filth. All survivors who enter the cave catch their foul rotting disease. They have leprosy; reduce all damage suffered by 1 to a minimum of 1. Suffer -2 to severe injury rolls. Record this impairment.
+`,
 
-'87':
-`87 | Weeping Faces
+87: `87 | Weeping Faces
 Water flows from the eyes of the surrounding stone faces, gathering in a small pool. Any survivor may consume from the pool and roll 1d10.
 [i] If they have 3+ understanding, add +2 to their roll.
 
@@ -1745,10 +1737,10 @@ Insane survivors are inconsolable, they lay on the ground sobbing heavily. If an
 [c] 7-8
 [d] The water is cleaner than most. You may heal up to 2 injury levels at any one hit location.
 [c] 9+
-[dt] The water is invigorating. Gain +1 speed token.`,
+[dt] The water is invigorating. Gain +1 speed token.
+`,
 
-'88':
-`88 | The Sword and the Statue
+88: `88 | The Sword and the Statue
 A one-eyed statue. twice as tall as any man, sits before a great anvil with a hammer in each of its six hands. Transfixed, the survivors watch the statue beat a red-hot sword that lies across the anvil. Each survivor, starting with the event revealer and proceeding clockwise, may make one attempt to grab the sword from the anvil. If they do, they gain +1 courage. roll 1d10. and add their Hunt XP to their roll.
 
 [TA] 1d10
@@ -1760,19 +1752,19 @@ A one-eyed statue. twice as tall as any man, sits before a great anvil with a ha
 [c] 9-13
 [d] You may not be quick enough to grab the sword, but at least you're not foolish enough to die trying.
 [c] 14+
-[dt] Your speed is legendary. Gain the <b>Muramasa</b> rare gear. End this event.`,
+[dt] Your speed is legendary. Gain the <b>Muramasa</b> rare gear. End this event.
+`,
 
-'89':
-`89 | Cleaner Birds
+89: `89 | Cleaner Birds
 Tiny, ragged birds with needle-thin beaks fly overhead. Each survivor rolls 1d10. The lowest-scoring survivor (roll off in case of ties) becomes a straggler.
 
 [TO] 1d10
 [td] Determine staggler
 [c] Staggler chosen
-[dt] The birds swarm the straggler. One forces its way into the straggler's mouth and down their throat. The survivor vomits up the well-fed bird, their insides scrambled and scarred. Gain +1 permanent luck, -1 permanent speed. <i>If any survivor has a whip, they crack it and fell the offensive creature. Gain 1 random basic resource.</i>`,
+[dt] The birds swarm the straggler. One forces its way into the straggler's mouth and down their throat. The survivor vomits up the well-fed bird, their insides scrambled and scarred. Gain +1 permanent luck, -1 permanent speed. <i>If any survivor has a whip, they crack it and fell the offensive creature. Gain 1 random basic resource.</i>
+`,
 
-'90':
-`90 | Light on the Horizon
+90: `90 | Light on the Horizon
 The survivors hear a screeching howl, followed by a crash. They see an explosion of multicolored light on the horizon. The unnatural light illuminates the survivors' way.
 
 [TO] Check
@@ -1787,10 +1779,10 @@ The light reaches the settlement. Add the Lights in the Sky settlement event to 
 Survivors turn away from the light, walking into the darkness. Move the survivors 2 spaces back on the hunt board.
 The light reaches the settlement. Add the Lights in the Sky settlement event to the timeline next year.
 [>d]
-[T]`,
+[T]
+`,
 
-'91':
-`91 | The Beginning
+91: `91 | The Beginning
 The survivors stumble upon the scene of their settlement's first hunt. Whether they've seen it themselves or heard of it through stories, they immediately recognize it. Seeing the spot of their settlement's first triumph is electrifying.
 
 Each survivor gains +1 survival.
@@ -1800,16 +1792,16 @@ Each survivor gains +1 survival.
 [c] Saga
 [d] Each survivor gains +1 courage.
 [c] Storytelling
-[dt] Each survivor gains +1 understanding.`,
+[dt] Each survivor gains +1 understanding.
+`,
 
-'92':
-`92 | Failed Start
+92: `92 | Failed Start
 The survivors find the tattered remains of four humans. Clad in loincloths and clutching stone shards, they bear the distinct marks of White Lion claws. Each survivor suffers 1 brain event damage and gains 1 Founding Stone starting gear.
 
-Survivors with 3+ understanding also gain +1d10 insanity.`,
+Survivors with 3+ understanding also gain +1d10 insanity.
+`,
 
-'93':
-`93 | Lost Survivor
+93: `93 | Lost Survivor
 
 [img] 93 # width:25%
 
@@ -1844,10 +1836,10 @@ The book tells the tragic tale of two survivors who found a love they could neve
 
 [>d]
 [c] No #
-[dt] The survivors move on, deeply confused.`,
+[dt] The survivors move on, deeply confused.
+`,
 
-'94':
-`94 | Sickening Mess
+94: `94 | Sickening Mess
 The survivors come upon a patch of badly damaged ground. The stone faces are cracked and debris is strewn everywhere. Piles of toxic-smelling dung and half-digested viscera litter the area.The survivors approach, but survivors with squeamish disorder refuse to go any closer.
 
 Insane survivors consume what they find and make themselves sick; they gain -1 strength token. Sane survivors stop to investigate the mess. Each gains +1 courage, rolls 1d10, and adds their understanding.
@@ -1859,15 +1851,15 @@ Insane survivors consume what they find and make themselves sick; they gain -1 s
 [c] 3-8
 [d] Heaving, eyes filled with tears, your sickening hunt pays off. Gain 1 random basic resource and suffer 1 event damage to a random hit location.
 [c] 9+
-[dt] Your intuition pays off! Gain 1 random basic resource.`,
+[dt] Your intuition pays off! Gain 1 random basic resource.
+`,
 
-'95':
-`95 | Grim and Frostbitten
+95: `95 | Grim and Frostbitten
 There is a dead stillness in the air. The atmosphere becomes thick with worry and the survivors carry on nervously. A bitter, evil cold sets in and there is no shelter. The survivors huddle together for warmth, shivering loudly.
-Unless a survivor has armor gear at each hit location, they lose quarry monster level survival.`,
+Unless a survivor has armor gear at each hit location, they lose quarry monster level survival.
+`,
 
-'96':
-`96 | Cloaked Stranger
+96: `96 | Cloaked Stranger
 A cloaked form steps out from a patch of darkness ahead of the survivors. Its illfitting garment shifts atop its form and its trudging leaves dark, black puddles in the mouths of the rain-slick stone on the ground.
 The event revealer approaches the stranger and rolls 1d10.
 
@@ -1882,10 +1874,10 @@ The event revealer approaches the stranger and rolls 1d10.
 [c] 7-8
 [d] The stranger raises its arms and moves to meet your approach. From beneath the folds of its cloak, you can just make out a hint of violet, scaly hide. A claw extends from a sleeve and gently strokes your cheek, leaving a layer of viscous liquid behind. Wiping off the sludge, you find the bizarre experience strangely touching. You gain +1 survival, +1 understanding.
 [c] 9+
-[dt] The stranger orders you to organize a test of strength among the survivors. Each survivor must roll 1d10 (roll off in case of ties). The highest scoring survivor wins the melee. The stranger marks their face with its glistening claw, granting them the <b>Iron Will</b> ability: You cannot be knocked down. Reduce all knockback you suffer to knockback 1. Record this ability. All survivors lose 4 survival from the exhausting fight.`,
+[dt] The stranger orders you to organize a test of strength among the survivors. Each survivor must roll 1d10 (roll off in case of ties). The highest scoring survivor wins the melee. The stranger marks their face with its glistening claw, granting them the <b>Iron Will</b> ability: You cannot be knocked down. Reduce all knockback you suffer to knockback 1. Record this ability. All survivors lose 4 survival from the exhausting fight.
+`,
 
-'97':
-`97 | Living Stone
+97: `97 | Living Stone
 The ground suddenly shifts and rises sharply into the air! The survivors find themselves clutching the back of a giant creature that lay sleeping beneath their feet. The survivors hold on for dear life, absolutely terrified.
 Nominate a survivor to climb toward the top of the giant and see what lies ahead. They roll 1d10.
 
@@ -1896,10 +1888,10 @@ Nominate a survivor to climb toward the top of the giant and see what lies ahead
 [c] 2-7
 [d] You reach the top and have a perfect vantage point to see the world, if only there were enough light to see it. Set your insanity to O. The giant carries you exactly where you're going! Start the showdown immediately.
 [c] 8+
-[dt] You discover a bizarre creature with an inverted face diligently carving upon the giant's back. It discards damaged stone faces as it works. Each survivor catches a fragment, gaining 1 Founding Stone starting gear. Eventually, the giant settles down into the ground again. You dismount and discover your quarry! Ambush the monster!`,
+[dt] You discover a bizarre creature with an inverted face diligently carving upon the giant's back. It discards damaged stone faces as it works. Each survivor catches a fragment, gaining 1 Founding Stone starting gear. Eventually, the giant settles down into the ground again. You dismount and discover your quarry! Ambush the monster!
+`,
 
-'98':
-`98 | Bloody Eyes
+98: `98 | Bloody Eyes
 
 [img] 98 # width:35%
 
@@ -1913,10 +1905,10 @@ The event revealer may investigate and roll 1d10, or ignore the trail and end th
 [c] 4-6
 [d] The trail leads to a huge box. Trapped inside is a young, red-haired survivor. Gain +1 population. The carvings adorning the box are haunting. All survivors suffer 3 brain event damage.
 [c] 7+
-[dt] The trail leads to your quarry! The monster is wounded from a previous battle. Start the showdown immediately. At the start of the showdown, the monster suffers 1 wound.`,
+[dt] The trail leads to your quarry! The monster is wounded from a previous battle. Start the showdown immediately. At the start of the showdown, the monster suffers 1 wound.
+`,
 
-'99':
-`99 | Portcullis
+99: `99 | Portcullis
 
 [img] 99
 
@@ -1938,10 +1930,10 @@ Survivors erase it from the settlement record sheet and use it. Each survivor ga
 [dt] At their feet lies an ornate crucible with a void in the shape of a mighty weapon. Gain the <b>Perfect Crucible</b> strange resource. If they have a Blacksmith in their settlement, they may now craft a <b>Perfect Slayer</b>.
 
 [>d]
-[T]`,
+[T]
+`,
 
-'100':
-`100 | The Finale
+100: `100 | The Finale
 
 An enormous, metallic sound rings out from a distance. All survivors are electrified with dread; they suffer 2 brain event damage.
 
@@ -1982,289 +1974,252 @@ The event revealer rolls 1d10.
 }
 
 function get_random_event() {
-  let keys = Object.keys(random_hunt_events)
+	let keys = Object.keys(random_hunt_events)
+	let key = keys[Math.floor(Math.random() * keys.length)];
 
-  let key = keys[Math.floor(Math.random()*keys.length)];
-
-  return random_hunt_events[key]
+	return random_hunt_events[key]
 }
 
-function md_to_html_2(event_id, init=true, current_table=0, current_class=-1, condition='') {
-
-  let html = '';
-
-  let html_end = '';
-
-  let in_table = 0;
-  let parsing_child = 0;
-
-  let event = random_hunt_events[event_id];
-
-  let rows = event.split('\n');
-
-  console.log('Number of rows:')
-  console.log(rows.length)
-
-  let table_idx = 0
-  let class_idx = 0
-  let table_type = ''
-  let text = ''
-  let text2 = ''
-  let width = ''
-  let my_table = ''
-
-  let global_table_ctr = -1;
-  let prev_table = [];
-  let prev_class = [];
-
-  let first_text = true;
-
-  let skip_table = false
-
-  for (let i=0; i< rows.length; i++) {
-
-    let row = rows[i].replace(/1d10/g, '<b>1d10</b>').replace('Dead.','<b>Dead</b>.' )
-
-    console.log('Row: '+row)
-    console.log('class_idx: '+class_idx+' table_idx: '+table_idx+' my_table: '+my_table+' in_tab: '+in_table+' parse: '+parsing_child+' global: '+global_table_ctr+' prev: '+prev_table)
-
-    if (i == 0) {
-
-      if (init) {
-        let parts = row.split(' | ')
-        html += "<div class='"+event_id+"' id='hunt_event_title'><div style='color:#9EB6D0;display:inline;'>"+parts[0]+" | </div>"+parts[1]+"</div>"
-        //9EB6D0
-      }
-
-    } else if (row.includes('[img]')) {
-
-      // if (init) {
-      if ((init || parsing_child>0) && in_table == 0) {
-        if (row.includes('#')) {
-          text = row.replace('[img] ','').split(' # ')[0]
-          if (row.includes('no-shadow')) {
-            text2 = ''
-          } else {
-            text2 = "id='event_img_shadow'"
-          }
-          if (row.includes('width:')) {
-            if (row.split(' # ')[1].includes('width:')) {
-              width = row.split(' # ')[1].replace('width:', '')
-            } else {
-              width = row.split(' # ')[2].replace('width:', '')
-            }
-          } else {
-            width = '50%'
-          }
-
-        } else {
-          text = row.replace('[img] ','')
-          text2 = "id='event_img_shadow'"
-          width = '50%'
-        }
-
-        let addition = "<img style='position:static;width:"+width+";float:center;' "+text2+" src='images/hunt/random_events/event_"+text+".png'>"
-        if (init) {
-          html =  addition + html
-        } else {
-          html +=  addition
-        }
-
-      }
-
-    } else if (row.includes('[TO] ')) {
-
-      if (in_table > 0) {
-        in_table += 1;
-      }
-
-      global_table_ctr += 1;
-      prev_table.push(table_idx);
-      table_idx = global_table_ctr;
-
-      prev_class.push(class_idx)
-      class_idx = 0;
-
-      if ((init || parsing_child>0) && in_table==0) {
-        html += "<table class='once "+table_idx+"' id='hunt_event_table'>"
-        html += "<tr id='hunt_event_header_row'>"
-        html += "<th id='hunt_event_1st_cell' style='width:20%;'>"+row.replace('[TO] ', '')+": </th>"
-
-        table_type = 'once';
-        in_table += 1;
-        // my_table = table_idx
-
-      }
-
-
-    } else if (row.includes('[TA] ')) {
-
-      if (in_table > 0) {
-        in_table += 1;
-      }
-
-      global_table_ctr += 1;
-      prev_table.push(table_idx);
-      table_idx = global_table_ctr;
-
-      prev_class.push(class_idx)
-      class_idx = 0;
-
-      if ((init || parsing_child>0) && in_table==0) {
-        html += "<table class='all "+table_idx+"' id='hunt_event_table'>"
-        html += "<tr id='hunt_event_header_row'>"
-        html += "<th id='hunt_event_1st_cell' style='width:20%;'>"+row.replace('[TA] ', '')+": </th>"
-
-        table_type = 'all'
-        in_table += 1;
-      }
-
-
-
-    } else if (row.includes('[c] ')) {
-
-      if (in_table == 1) {
-        html += "<tr id='hunt_event_row'>"
-        html += "<td id='hunt_event_1st_cell' style='height:2em;'></td>"
-        if (row.includes('#')) {
-          text = row.replace('[c] ', '').split(' #')[0]
-          text2 = row.replace('[c] ', '').split(' #')[1]
-        } else {
-          text = row.replace('[c] ', '')
-          text2 = row.replace('[c] ', '')
-        }
-        html += "<td class='re_key "+class_idx+" "+table_idx+"' id='hunt_event_cell' style='height:2em;' condition='"+text2+"'>"+text+"</td>"
-        html += "</tr>"
-      }
-
-
-    } else if (row.includes('[d] ')) {
-
-      // if ((current_table == table_idx)&& (current_class == -1) || ((current_table > table_idx) || (table_type == 'all'))) {
-      //   html += "</tr>"
-      // }
-
-      if ((current_table == table_idx) && (current_class == class_idx)) {
-        // html += "<td class='re_value "+class_idx+" "+table_idx+"' id='hunt_event_cell' style='padding-bottom: 0.5em;'>"+row.replace('[d] ', '')+"</td>"
-        if (!condition == '') {
-          text = '[<b>'+condition+'</b>] '+row.replace('[d] ', '')
-        } else {
-          text = row.replace('[d] ', '')
-        }
-        html_end += add_text(text, current_class+' '+current_table)
-
-      }
-
-      // if ((in_table == 1) || ((current_table == table_idx) && (in_table == 0))) {
-      class_idx += 1;
-      // }
-      // if (in_table == 1) {
-      //   class_idx += 1;
-      // }
-
-    } else if (row.includes('[d<]')) {
-
-      if ((current_table == table_idx) && (current_class == class_idx)) {
-        // html += "<td class='re_value "+class_idx+" "+table_idx+"'>"
-        // html += ''
-        parsing_child += 1
-      }
-
-      // if ((in_table == 1) || ((current_table == table_idx) && (in_table == 0))) {
-      class_idx += 1;
-      // }
-      // if (in_table == 1) {
-      //   class_idx += 1;
-      // }
-
-
-    } else if (row.includes('[>d]')) {
-
-      // html += "</td>"
-      // html += ''
-      if (parsing_child>0) {
-        parsing_child -= 1
-      }
-
-    } else if (row.includes('[dt] ')) {
-
-      if ((current_table == table_idx) && (current_class == class_idx)) {
-        // html += "<td class='re_value "+class_idx+" "+table_idx+"' id='hunt_event_cell' style='padding-bottom: 0.5em;'>"+row.replace('[dt] ', '')+"</td>"
-        if (!condition == '') {
-          text = '[<b>'+condition+'</b>] '+row.replace('[dt] ', '')
-        } else {
-          text = row.replace('[dt] ', '')
-        }
-        html_end += add_text(text, current_class+' '+current_table)
-      }
-
-      if (in_table>0) {
-        if (in_table == 1)  {
-          html += "</table>"
-        }
-        in_table -= 1
-      }
-
-      table_idx = prev_table.pop();
-      class_idx = prev_class.pop();
-
-    } else if (row.includes('[td] ')) {
-
-      if (in_table == 1)  {
-        html += "<th id='hunt_event_cell' style='background:#47749e;width:80%;height:2em;'>"+row.replace('[td] ', '')+"</th>"
-        // #729AC0
-        html += "</tr>"
-      }
-
-    } else if (row.includes('[T]')) {
-
-      if (in_table>0) {
-        if (in_table == 1)  {
-          html += "</table>"
-        }
-        in_table -= 1
-      }
-
-      table_idx = prev_table.pop();
-      class_idx = prev_class.pop();
-
-    } else if (row.includes('[global_tip]')) {
-      console.log('Something global is happening here!')
-
-    } else if (row.includes('[i] ')) {
-      if ((init || parsing_child>0) && in_table == 0) {
-        if (!init && !condition == '' && first_text) {
-          html += add_text('<i>'+'[<b>'+condition+'</b>] '+row.replace('[i] ', '')+'</i>')
-          first_text = false;
-        } else {
-          html += add_text('<i>'+row.replace('[i] ', '')+'</i>')
-        }
-      }
-
-    } else {
-      if ((init || parsing_child>0) && in_table == 0) {
-        // html += add_text(row)
-        if (row.length < 4) {
-          continue
-        }
-        if (!init && !condition == '' && first_text && row.length>4) {
-          html += add_text('[<b>'+condition+'</b>] '+row)
-          first_text = false;
-        } else {
-          html += add_text(row)
-        }
-      }
-    }
-
-    console.log('class_idx: '+class_idx+' table_idx: '+table_idx+' my_table: '+my_table+' in_tab: '+in_table+' parse: '+parsing_child+' global: '+global_table_ctr+' prev: '+prev_table)
-
-  }
-
-  return html+html_end
-
+function md_to_html_2(event_id, init = true, current_table = 0, current_class = -1, condition = '') {
+	let html = '';
+	let html_end = '';
+	let in_table = 0;
+	let parsing_child = 0;
+	let event = random_hunt_events[event_id];
+	let rows = event.split('\n');
+
+	console.log('Number of rows:')
+	console.log(rows.length)
+
+	let table_idx = 0
+	let class_idx = 0
+	let table_type = ''
+	let text = ''
+	let text2 = ''
+	let width = ''
+	let my_table = ''
+	let global_table_ctr = -1;
+	let prev_table = [];
+	let prev_class = [];
+	let first_text = true;
+	let skip_table = false
+
+	for (let i = 0; i < rows.length; i++) {
+		let row = rows[i].replace(/1d10/g, '<b>1d10</b>').replace('Dead.', '<b>Dead</b>.')
+
+		console.log('Row: ' + row)
+		console.log('class_idx: ' + class_idx + ' table_idx: ' + table_idx + ' my_table: ' + my_table + ' in_tab: ' + in_table + ' parse: ' + parsing_child + ' global: ' + global_table_ctr + ' prev: ' + prev_table)
+
+		if (i == 0) {
+			if (init) {
+				let parts = row.split(' | ')
+				html += "<div class='" + event_id + "' id='hunt_event_title'><div style='color:#9EB6D0;display:inline;'>" + parts[0] + " | </div>" + parts[1] + "</div>"
+				//9EB6D0
+			}
+		} else if (row.includes('[img]')) {
+			// if (init) {
+			if ((init || parsing_child > 0) && in_table == 0) {
+				if (row.includes('#')) {
+					text = row.replace('[img] ', '').split(' # ')[0]
+
+					if (row.includes('no-shadow')) {
+						text2 = ''
+					} else {
+						text2 = "id='event_img_shadow'"
+					}
+
+					if (row.includes('width:')) {
+						if (row.split(' # ')[1].includes('width:')) {
+							width = row.split(' # ')[1].replace('width:', '')
+						} else {
+							width = row.split(' # ')[2].replace('width:', '')
+						}
+					} else {
+						width = '50%'
+					}
+				} else {
+					text = row.replace('[img] ', '')
+					text2 = "id='event_img_shadow'"
+					width = '50%'
+				}
+
+				let addition = "<img style='position:static;width:" + width + ";float:center;' " + text2 + " src='images/hunt/random_events/event_" + text + ".png'>"
+
+				if (init) {
+					html = addition + html
+				} else {
+					html += addition
+				}
+			}
+		} else if (row.includes('[TO] ')) {
+			if (in_table > 0) {
+				in_table += 1;
+			}
+
+			global_table_ctr += 1;
+			prev_table.push(table_idx);
+			table_idx = global_table_ctr;
+			prev_class.push(class_idx)
+			class_idx = 0;
+
+			if ((init || parsing_child > 0) && in_table == 0) {
+				html += "<table class='once " + table_idx + "' id='hunt_event_table'>"
+				html += "<tr id='hunt_event_header_row'>"
+				html += "<th id='hunt_event_1st_cell' style='width:20%;'>" + row.replace('[TO] ', '') + ": </th>"
+
+				table_type = 'once';
+				in_table += 1;
+				// my_table = table_idx
+			}
+
+
+		} else if (row.includes('[TA] ')) {
+			if (in_table > 0) {
+				in_table += 1;
+			}
+
+			global_table_ctr += 1;
+			prev_table.push(table_idx);
+			table_idx = global_table_ctr;
+			prev_class.push(class_idx)
+			class_idx = 0;
+
+			if ((init || parsing_child > 0) && in_table == 0) {
+				html += "<table class='all " + table_idx + "' id='hunt_event_table'>"
+				html += "<tr id='hunt_event_header_row'>"
+				html += "<th id='hunt_event_1st_cell' style='width:20%;'>" + row.replace('[TA] ', '') + ": </th>"
+
+				table_type = 'all'
+				in_table += 1;
+			}
+		} else if (row.includes('[c] ')) {
+			if (in_table == 1) {
+				html += "<tr id='hunt_event_row'>"
+				html += "<td id='hunt_event_1st_cell' style='height:2em;'></td>"
+
+				if (row.includes('#')) {
+					text = row.replace('[c] ', '').split(' #')[0]
+					text2 = row.replace('[c] ', '').split(' #')[1]
+				} else {
+					text = row.replace('[c] ', '')
+					text2 = row.replace('[c] ', '')
+				}
+
+				html += "<td class='re_key " + class_idx + " " + table_idx + "' id='hunt_event_cell' style='height:2em;' condition='" + text2 + "'>" + text + "</td>"
+				html += "</tr>"
+			}
+		} else if (row.includes('[d] ')) {
+			// if ((current_table == table_idx)&& (current_class == -1) || ((current_table > table_idx) || (table_type == 'all'))) {
+			//   html += "</tr>"
+			// }
+
+			if ((current_table == table_idx) && (current_class == class_idx)) {
+				// html += "<td class='re_value "+class_idx+" "+table_idx+"' id='hunt_event_cell' style='padding-bottom: 0.5em;'>"+row.replace('[d] ', '')+"</td>"
+
+				if (!condition == '') {
+					text = '[<b>' + condition + '</b>] ' + row.replace('[d] ', '')
+				} else {
+					text = row.replace('[d] ', '')
+				}
+
+				html_end += add_text(text, current_class + ' ' + current_table)
+			}
+
+			// if ((in_table == 1) || ((current_table == table_idx) && (in_table == 0))) {
+			class_idx += 1;
+			// }
+			// if (in_table == 1) {
+			//   class_idx += 1;
+			// }
+		} else if (row.includes('[d<]')) {
+			if ((current_table == table_idx) && (current_class == class_idx)) {
+				// html += "<td class='re_value "+class_idx+" "+table_idx+"'>"
+				// html += ''
+				parsing_child += 1
+			}
+
+			// if ((in_table == 1) || ((current_table == table_idx) && (in_table == 0))) {
+			class_idx += 1;
+			// }
+			// if (in_table == 1) {
+			//   class_idx += 1;
+			// }
+		} else if (row.includes('[>d]')) {
+			// html += "</td>"
+			// html += ''
+			if (parsing_child > 0) {
+				parsing_child -= 1
+			}
+		} else if (row.includes('[dt] ')) {
+			if ((current_table == table_idx) && (current_class == class_idx)) {
+				// html += "<td class='re_value "+class_idx+" "+table_idx+"' id='hunt_event_cell' style='padding-bottom: 0.5em;'>"+row.replace('[dt] ', '')+"</td>"
+				if (!condition == '') {
+					text = '[<b>' + condition + '</b>] ' + row.replace('[dt] ', '')
+				} else {
+					text = row.replace('[dt] ', '')
+				}
+
+				html_end += add_text(text, current_class + ' ' + current_table)
+			}
+
+			if (in_table > 0) {
+				if (in_table == 1) {
+					html += "</table>"
+				}
+				in_table -= 1
+			}
+
+			table_idx = prev_table.pop();
+			class_idx = prev_class.pop();
+		} else if (row.includes('[td] ')) {
+			if (in_table == 1) {
+				html += "<th id='hunt_event_cell' style='background:#47749e;width:80%;height:2em;'>" + row.replace('[td] ', '') + "</th>"
+				// #729AC0
+				html += "</tr>"
+			}
+		} else if (row.includes('[T]')) {
+			if (in_table > 0) {
+				if (in_table == 1) {
+					html += "</table>"
+				}
+				in_table -= 1
+			}
+
+			table_idx = prev_table.pop();
+			class_idx = prev_class.pop();
+		} else if (row.includes('[global_tip]')) {
+			console.log('Something global is happening here!')
+		} else if (row.includes('[i] ')) {
+			if ((init || parsing_child > 0) && in_table == 0) {
+				if (!init && !condition == '' && first_text) {
+					html += add_text('<i>' + '[<b>' + condition + '</b>] ' + row.replace('[i] ', '') + '</i>')
+					first_text = false;
+				} else {
+					html += add_text('<i>' + row.replace('[i] ', '') + '</i>')
+				}
+			}
+		} else {
+			if ((init || parsing_child > 0) && in_table == 0) {
+				// html += add_text(row)
+				if (row.length < 4) {
+					continue
+				}
+
+				if (!init && !condition == '' && first_text && row.length > 4) {
+					html += add_text('[<b>' + condition + '</b>] ' + row)
+					first_text = false;
+				} else {
+					html += add_text(row)
+				}
+			}
+		}
+
+		console.log('class_idx: ' + class_idx + ' table_idx: ' + table_idx + ' my_table: ' + my_table + ' in_tab: ' + in_table + ' parse: ' + parsing_child + ' global: ' + global_table_ctr + ' prev: ' + prev_table)
+	}
+
+	return html + html_end
 }
 
-function add_text(text, class_id='') {
-  return "<div class='"+class_id+"' id='hunt_event_text'>"+text+"</div>"
-
+function add_text(text, class_id = '') {
+	return "<div class='" + class_id + "' id='hunt_event_text'>" + text + "</div>"
 }
