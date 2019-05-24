@@ -1,4 +1,4 @@
-# <img src="https://dl.dropboxusercontent.com/s/vr69eaqnvvm0kip/git_icon.png" width="48"> KDM 1.5 Story app
+# <img src="https://dl.dropboxusercontent.com/s/vr69eaqnvvm0kip/git_icon.png" width="24"> KDM 1.5 Story app
 
 
 
