@@ -1,4 +1,4 @@
-# ![icon-1][icon] KDM 1.5 Story app
+# ![icon-1][icon | width=100] KDM 1.5 Story app
 
 [icon]: https://dl.dropboxusercontent.com/s/vr69eaqnvvm0kip/git_icon.png
 
