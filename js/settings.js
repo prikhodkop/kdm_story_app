@@ -45,7 +45,7 @@ function addSettings(settings) {
 			$('#settings-window-back0').fadeOut(500);
 			$('#settings-window-background').fadeOut(500);
 		}
-		
+
 		$(this).toggleClass('active');
 	});
 
@@ -90,15 +90,15 @@ function saveSettings() {
 			settings[$(this).attr('group')][$(this).attr('value')] = $(this).val();
 		}
 	});
-	
+
 	console.log('New settings:');
 	console.log(settings);
-	
+
 	saveFile(JSON.stringify(settings), __dirname + '/settings.json')
-	
+
 	const remote = require('electron').remote
 	remote.getCurrentWindow().reload()
-	
+
 	// app.exit(0)
 	return settings;
 }
@@ -106,40 +106,40 @@ function saveSettings() {
 function createTable(schema, defaults = undefined, level = 0, group = '') {
 	console.log('Defaults:')
 	console.log(defaults)
-	
+
 	let table = $('<table>', {
 		class: 'settings',
 		level: level
 	})
-	
+
 	let tbody = $('<tbody>', {
 		class: 'settings',
 		level: level
 	})
-	
+
 	table.append(tbody)
 
 	for (var key in schema) {
 		console.log('Key:')
 		console.log(key)
-		
+
 		let tr = $('<tr>', {
 			class: 'settings',
 			level: level
 		})
-		
+
 		tbody.append(tr)
-		
+
 		if (schema[key].type == 'option') {
 			let td1 = $('<td>', {
 				class: 'settings',
 				id: 'title',
 				level: level
 			})
-			
+
 			td1.text(schema[key].title)
 			tr.append(td1)
-			
+
 			let td2 = $('<td>', {
 				class: 'settings',
 				id: 'select',
@@ -152,7 +152,7 @@ function createTable(schema, defaults = undefined, level = 0, group = '') {
 				value: key,
 				group: group
 			}).appendTo(td2);
-			
+
 			$(schema[key]['enum']).each(function () {
 				sel.append($('<option>', {
 					class: 'settings',
@@ -172,17 +172,17 @@ function createTable(schema, defaults = undefined, level = 0, group = '') {
 			if (schema[key]['enum'].length == 1) {
 				sel.prop('disabled', 'disabled').attr('id', 'disabled');
 			}
-			
+
 			tr.append(td2)
 		}
-		
+
 		if (schema[key].type == 'group') {
 			let td1 = $('<td>', {
 				class: 'settings',
 				id: 'group',
 				level: level
 			})
-			
+
 			td1.text(schema[key].title)
 			tr.append(td1)
 
@@ -190,7 +190,7 @@ function createTable(schema, defaults = undefined, level = 0, group = '') {
 				class: 'settings',
 				level: level
 			})
-			
+
 			tbody.append(tr2)
 
 			let td2 = $('<td>', {
@@ -200,7 +200,7 @@ function createTable(schema, defaults = undefined, level = 0, group = '') {
 				colspan: 2,
 				group: schema[key]
 			})
-			
+
 			td2.append(createTable(schema[key].properties, defaults[key], level + 1, key));
 			tr2.append(td2)
 		}
@@ -243,6 +243,32 @@ var settings_schema = {
 			"On",
 			"Off"
 		]
+	},
+  "card design": {
+		"type": "group",
+		"title": "Cards design",
+		"description": 'Chose which artists card design to use in the app.',
+    "properties": {
+      "fighting arts": {
+				"type": "option",
+				"title": "Fighting Arts",
+				"default": "Poots",
+				"enum": [
+					"Poots",
+					"Fen Small"
+				]
+			},
+      "disorders": {
+				"type": "option",
+				"title": "Disorders",
+				"default": "Poots",
+				"enum": [
+					"Poots",
+					"Fen Small",
+          "Fen Wide"
+				]
+			},
+		}
 	},
 	"expansions": {
 		"type": "group",

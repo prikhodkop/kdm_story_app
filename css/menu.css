@@ -190,8 +190,8 @@
 }
 
 #reference.active {
-	-webkit-box-shadow: 0 0 40px #cccc00;
-	box-shadow: 0 0 40px #cccc00; */
+	/* -webkit-box-shadow: 0 0 40px #cccc00; */
+	/* box-shadow: 0 0 40px #cccc00; */ */
 	filter: drop-shadow(0 0 60px #cccc00);
 }
 

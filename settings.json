@@ -2,6 +2,10 @@
   "subtitles": "On",
   "language": "en",
   "onscreenKeypads": "On",
+  "card design": {
+    "fighting arts": "Fen Small",
+    "disorders": "Fen Small"
+  },
   "expansions": {
     "gorm": "All content",
     "dung beetle knight": "All content",

@@ -403,9 +403,9 @@ var fightning_arts_text = {
 		'expansion': 'echoes of death',
 		'type': 'strain'
 	},
-	'Harvestman': {
-		'expansion': 'spidicules'
-	},
+	// 'Harvestman': {
+	// 	'expansion': 'spidicules'
+	// },
 	'Headliner': {
 		'expansion': 'lion knight'
 	},
@@ -427,9 +427,9 @@ var fightning_arts_text = {
 	'Mighty Strike': {},
 	'Monster Claw Style': {},
 	'Orator of Death': {},
-	'Otherworldly Luck': {
-		'expansion': 'flower knight'
-	},
+	// 'Otherworldly Luck': {
+	// 	'expansion': 'flower knight'
+	// },
 	'Phantom Friend': {
 		'expansion': 'slenderman'
 	},
@@ -474,9 +474,9 @@ var fightning_arts_text = {
 	'Unrelenting': {
 		'expansion': 'lion god'
 	},
-	'Vengeance': {
-		'expansion': 'spidicules'
-	},
+	// 'Vengeance': {
+	// 	'expansion': 'spidicules'
+	// },
 	'Wardrobe Expert': {
 		'expansion': 'lion knight'
 	}
@@ -539,9 +539,9 @@ var disorders_text = {
 		'expansion': 'dragon king'
 	},
 	'Binge Eating': {},
-	'Controlophobia': {
-		'expansion': 'spidicules'
-	},
+	// 'Controlophobia': {
+	// 	'expansion': 'spidicules'
+	// },
 	'Coprolalia': {},
 	'Delicious': {
 		'expansion': 'lion god'
@@ -576,9 +576,9 @@ var disorders_text = {
 	'Motion Sickness': {
 		'expansion': 'dung beetle knight'
 	},
-	'Narcissistic': {
-		'expansion': 'flower knight'
-	},
+	// 'Narcissistic': {
+	// 	'expansion': 'flower knight'
+	// },
 	'Overprotective': {
 		'expansion': 'sunstalker'
 	},
@@ -592,9 +592,9 @@ var disorders_text = {
 	},
 	'Quixotic': {},
 	'Rageholic': {},
-	'Revenge': {
-		'expansion': 'spidicules'
-	},
+	// 'Revenge': {
+	// 	'expansion': 'spidicules'
+	// },
 	'Secretive': {},
 	'Seizures': {},
 	'Shallow Lungs': {
@@ -616,10 +616,10 @@ var disorders_text = {
 	'Superstitious': {
 		'expansion': 'dragon king'
 	},
-	'Sworn Enemy': {},
-	'Tiny Arachnophobia': {
-		'expansion': 'spidicules'
-	},
+	// 'Sworn Enemy': {},
+	// 'Tiny Arachnophobia': {
+	// 	'expansion': 'spidicules'
+	// },
 	'Traumatized': {},
 	'Tunnel Vision': {
 		'expansion': 'lion god'
@@ -635,9 +635,9 @@ var disorders_text = {
 };
 
 var secret_fightning_arts_text = {
-	'Acanthus Doctor': {
-		'expansion': 'flower knight'
-	},
+	// 'Acanthus Doctor': {
+	// 	'expansion': 'flower knight'
+	// },
 	'Ageless Apprentice': {
 		'expansion': 'lion knight'
 	},
@@ -664,9 +664,9 @@ var secret_fightning_arts_text = {
 	'Eternal Will': {
 		'expansion': 'manhunter'
 	},
-	'Fencing': {
-		'expansion': 'flower knight'
-	},
+	// 'Fencing': {
+	// 	'expansion': 'flower knight'
+	// },
 	'Frozen Star': {
 		'expansion': 'dragon king',
 		'type': 'dragon trait'
@@ -684,9 +684,9 @@ var secret_fightning_arts_text = {
 	"Lucernaes Lantern": {},
 	'Red Fist': {},
 	'Scholar of Death': {},
-	'Silk Surgeon': {
-		'expansion': 'spidicules'
-	},
+	// 'Silk Surgeon': {
+	// 	'expansion': 'spidicules'
+	// },
 	'Sun Eater': {
 		'expansion': 'sunstalker'
 	},
@@ -695,9 +695,9 @@ var secret_fightning_arts_text = {
 	},
 	'Swordsmans Promise': {},
 	'Synchronised Strike': {},
-	'True Blade': {
-		'expansion': 'flower knight'
-	},
+	// 'True Blade': {
+	// 	'expansion': 'flower knight'
+	// },
 	'Zero Prescence': {}
 };
 
@@ -848,6 +848,8 @@ function get_all_options() {
 }
 
 function get_representation(word) {
+	let settings = JSON.parse(sessionStorage.getItem("settings"));
+
 	if (word in glossary_terms) {
 		let result = '<b style="font-size:1.3em;">' + word + '</b> <i style="font-size:0.9em;color:#777;">(term)</i> <hr/>' + glossary_terms[word]
 
@@ -867,13 +869,25 @@ function get_representation(word) {
 		return result
 	} else if (word in fightning_arts_text) {
 		// return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
-		return '<img id=reference-image style="width:75%;" src="images/reference/Fighting Arts/' + word + '.png"/>'
+		if (settings['card design']['fighting arts'] == 'Poots') {
+			return '<img id=reference-image style="width:75%;border: 2px solid #555;" src="images/reference/Fighting Arts/' + word + '.jpg"/>'
+		} else if (settings['card design']['fighting arts'] == 'Fen Small') {
+			return '<img id=reference-image style="width:75%;" src="images/reference/Fighting Arts_fen/' + word + '.png"/>'
+		}
 	} else if (word in secret_fightning_arts_text) {
-		// return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
-		return '<img id=reference-image style="width:75%;" src="images/reference/Secret Fighting Arts/' + word + '.png"/>'
+		if (settings['card design']['fighting arts'] == 'Poots') {
+			return '<img id=reference-image style="width:75%;border: 2px solid #555;" src="images/reference/Fighting Arts/' + word + '.jpg"/>'
+		} else if (settings['card design']['fighting arts'] == 'Fen Small') {
+			return '<img id=reference-image style="width:75%" src="images/reference/Fighting Arts_fen/' + word + '.png"/>'
+		}
 	} else if (word in disorders_text) {
-		// return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
-		return '<img id=reference-image style="width:75%;" src="images/reference/Disorders/' + word + '.png"/>'
+		if (settings['card design']['disorders'] == 'Poots') {
+			return '<img id=reference-image style="width:75%;border: 2px solid #555;" src="images/reference/Disorders/' + word + '.jpg"/>'
+		} else if (settings['card design']['disorders'] == 'Fen Small') {
+			return '<img id=reference-image style="width:75%;" src="images/reference/Disorders_fen/' + word + '.png"/>'
+		} else if (settings['card design']['disorders'] == 'Fen Wide') {
+			return '<img id=reference-image style="width:100%;" src="images/reference/Disorders_fen_wide/' + word + '.png"/>'
+		}
 	} else if (word in abilities) {
 		// return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
 		return '<img id=reference-image style="width:75%;" src="images/reference/Abilities/' + word + '.png"/>'
@@ -890,7 +904,7 @@ function get_representation(word) {
 		return result
 	} else if (word in survivor_statuses) {
 		// return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
-		return '<img id=reference-image style="width:75%;" src="images/reference/Survivor Statuses/' + word + '.jpg"/>'
+		return '<img id=reference-image style="width:75%;border: 2px solid #555;" src="images/reference/Survivor Statuses/' + word + '.jpg"/>'
 	}
 }
 
@@ -906,7 +920,7 @@ function get_random_draws(word) {
 	let settings = JSON.parse(sessionStorage.getItem("settings"));
 	let number = word.substring(0, 1);
 	let list = []
-	
+
 	if (word.includes('Fightning')) {
 		list = clone(fightning_arts_text)
 	} else if (word.includes('Disorder')) {
@@ -923,7 +937,7 @@ function get_random_draws(word) {
 	keys.forEach(function (key) {
 		console.log(key);
 		let remove = false;
-		
+
 		if (('expansion' in list[key]) && (settings['expansions'][list[key]['expansion']] == 'Disabled')) {
 			remove = true;
 		} else if ((list[key]['type'] == 'strain') && (settings['strains'][key.toLowerCase()] == 'Locked')) {
@@ -934,7 +948,7 @@ function get_random_draws(word) {
 				remove = true;
 			}
 		}
-		
+
 		if (remove) {
 			console.log('Remove!')
 			delete list[key]
@@ -948,7 +962,7 @@ function getRandom(arr, n) {
 	var result = new Array(n),
 		len = arr.length,
 		taken = new Array(len);
-	
+
 	if (n > len) {
 		throw new RangeError("getRandom: more elements taken than available");
 	}
@@ -958,7 +972,7 @@ function getRandom(arr, n) {
 		result[n] = arr[x in taken ? taken[x] : x];
 		taken[x] = --len in taken ? taken[len] : len;
 	}
-	
+
 	return result;
 }
 
@@ -966,22 +980,22 @@ function removeA(arr) {
 	var what, a = arguments,
 		L = a.length,
 		ax;
-	
+
 	while (L > 1 && arr.length) {
 		what = a[--L];
-		
+
 		while ((ax = arr.indexOf(what)) !== -1) {
 			arr.splice(ax, 1);
 		}
 	}
-	
+
 	return arr;
 }
 
 function getSettlementEventPath() {
 	let list = Object.keys(settlement_events)
 	list = removeA(list, 'First Day');
-	
+
 	return 'images/reference/Settlement Events/' + getRandom(list, 1) + '.jpg'
 }
 
@@ -991,10 +1005,10 @@ function clone(obj) {
 	}
 
 	var copy = obj.constructor();
-	
+
 	for (var attr in obj) {
 		if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
 	}
-	
+
 	return copy;
 }

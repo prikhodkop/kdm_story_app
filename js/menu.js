@@ -343,13 +343,26 @@ function createReference() {
 		// update hidden input buffer for onscreen keyboard
 		if (settings.onscreenKeypads === 'On') {
 			let refPadHiddenValue = document.getElementById("refPadHiddenValue")
-			refPadHiddenValue.value = refPadHiddenValue.value + e.key
+      if (e.keyCode == 8 && selectize.$control_input.val().length < 2) {
+  			selectize.close();
+  		} else {
+        refPadHiddenValue.value = refPadHiddenValue.value + e.key
+      }
+
 		}
 
-		if (e.keyCode == 8 && selectize.$control_input.val().length < 2) {
-			selectize.close();
-		}
+
 	});
+
+  $(document).on('click', 'div.selectize-input div.item', function (e) {
+    let name = $(this).text().slice(0, -1)
+    console.log(name);
+    // $('#reference-window-back').animate({
+    //     scrollTop: $('#reference-data.' + adapt_name(name)).offset().top
+    // }, 1000);
+    $('#reference-window-back').scrollTo($('#reference-data.' + adapt_name(name)), duration=1000);
+
+  });
 
 	function populateRefKeypad() {
 		var refPadArr = ['row-start', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'row-end', 'row-start', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'row-end', 'row-start', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'row-end', 'row-start', 'space', 'clear', 'random', 'row-end']
