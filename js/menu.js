@@ -340,6 +340,12 @@ function createReference() {
 	// });
 
 	selectize.$control_input.on('keydown', function (e) {
+		// update hidden input buffer for onscreen keyboard
+		if (settings.onscreenKeypads === 'On') {
+			let refPadHiddenValue = document.getElementById("refPadHiddenValue")
+			refPadHiddenValue.value = refPadHiddenValue.value + e.key
+		}
+
 		if (e.keyCode == 8 && selectize.$control_input.val().length < 2) {
 			selectize.close();
 		}
