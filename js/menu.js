@@ -363,6 +363,10 @@ function createReference() {
     $('#reference-window-back').scrollTo($('#reference-data.' + adapt_name(name)), duration=1000);
 
   });
+  $(document).on('click', '#reference-data', function () {
+    $('#reference-window-back').scrollTo($(this), duration=1000);
+  });
+
 
 	function populateRefKeypad() {
 		var refPadArr = ['row-start', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'row-end', 'row-start', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'row-end', 'row-start', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'row-end', 'row-start', 'space', 'clear', 'random', 'row-end']
