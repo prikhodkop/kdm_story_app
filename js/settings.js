@@ -264,8 +264,8 @@ var settings_schema = {
 				"default": "Poots",
 				"enum": [
 					"Poots",
-					"Fen Small",
-          "Fen Wide"
+					"Fen Small"
+          // "Fen Wide"
 				]
 			},
 		}
