@@ -1,10 +1,10 @@
 1
-00:00:02,000 --> 00:00:15,000
-Once upon a time, there was a place of carved stone faces. A man with a lantern lay sleeping a dreamless sleep. The man new nothing.
+00:00:01,000 --> 00:00:15,000
+Once upon a time, there was a place of carved stone faces. A man with a lantern lay sleeping a dreamless sleep. The man knew nothing.
 
 2
 00:00:17,000 --> 00:00:36,000
-One day, the man woke up. He rubbed dried ink caked over his eyes and opened them. Around him, he saw other people stirring, and beyond, a horizon of unbroken darkness.
+One day, the man woke up. He rubbed the dried ink caked over his eyes and opened them. Around him, he saw other people stirring, and beyond, a horizon of unbroken darkness.
 
 3
 00:00:39,000 --> 00:00:53,000
