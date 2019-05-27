@@ -1,22 +1,22 @@
 var random_hunt_events = {
 1: `1 | Broken Lanterns
-The survivors feel something crunching beneath their feet. The event revealer may choose to lower their lantern and investigate or ignore the sensation and continue their journey.
+The survivors feel something crunching beneath their feet. The event revealer may choose to lower their lantern and <b>investigate</b> or ignore the sensation and continue their journey.
 
 [TO] Choice
 [td] Event revealer - What do you do?
 [c] Investigate
 [d<]
 
-The event revealer gains +1 courage and rolls 1d10. Otherwise, roll again on the hunt event table before moving on the hunt event board.
+The event revealer gains +1 courage and rolls 1d10.
 
 [TO] 1d10
 [td] Event revealer - Investigate
 [c] 1-5
 [d] You fumble and cut your foot on a jagged shard. Suffer monster level event damage to your legs.
 [c] 6-8
-[d] You salvage something useful. Gain 1 broken lantern basic resource.
+[d] You salvage something useful. Gain 1 <b>broken lantern</b> basic resource.
 [c] 9+
-[d] The survivors uncover a long abandoned lantern hoard. The forlorn sight fills them with dread, each survivor sets their insanity to 0. After composing themselves, each survivor scavenges 1 broken lantern basic resource; add them to settlement storage.
+[d] The survivors uncover a long abandoned lantern hoard. The forlorn sight fills them with dread, each survivor sets their insanity to 0. After composing themselves, each survivor scavenges 1 <b>broken lantern</b> basic resource; add them to settlement storage.
 [T]
 
 [>d]
@@ -31,7 +31,7 @@ The event revealer gains +1 courage and rolls 1d10. Otherwise, roll again on the
 The survivors are overcome by a sudden chill, their breath seizing in their lungs. The survivors' teeth chatter mercilessly. All survivors lose monster level survival. At the center of the sudden frost is a perfectly preserved corpse.
 
 [TA] Check
-[td] What innovations are present in the settlement?
+[td] What innovations does the settlement have ?
 [c] Cannibalize
 [d] The event revealer gains 1 random basic resource.
 [c] Graves
@@ -43,7 +43,7 @@ The survivors are overcome by a sudden chill, their breath seizing in their lung
 3: `3 | Cancer Pigeons
 The survivors are surrounded by the echoing coo of infant babble. Strange babyfaced birds circle overhead. Gripped with instinctual horror, the survivors break into a run! Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
 
-[i] If any survivor has noisy gear, -2 to their roll.
+[i] If any survivor has <b>noisy</b> gear, -2 to their roll.
 
 [TO] 1d10
 [td] Determine staggler
@@ -68,11 +68,11 @@ Each straggler rolls 1d10.
 [T]`,
 
 4: `4 | Famine
-The path ahead is arid and dead. You may press on or try to find the way around.
+The path ahead is arid and dead. You may press on or try to find a way around.
 
 [TO] Choice
-[td] What would you do?
-[c] Press on (+1 courage) #Press on
+[td] What do you do?
+[c] Press on (survivors gain +1 courage) #Press on
 [d<]
 
 Your stomachs grumble in the dark as you stumble forward. The survivors pool their supplies. The event revealer rolls 1d10 and adds +2 to their roll for each consumable gear or resource the group has.
@@ -112,13 +112,13 @@ The event revealer contracts a flesh-eating disease brushing past the giant boil
 
 [>d]
 [c] 2-3
-[d] If any survivor is insane, they imagine the flesh fields are attacking! They become hysterical, flailing and tangling themselves in the thick hair. Each insane survivor suffers monster level event damage to a random location.
+[d] If any survivor is <b>insane</b>, they imagine the flesh fields are attacking! They become hysterical, flailing and tangling themselves in the thick hair. Each <b>insane</b> survivor suffers monster level event damage to a random location.
 [c] 4-7
 [d] It's hot and gross, but the survivors pass through the flesh fields with no complications.
 [c] 8-9
-[d] The event revealer makes the best of a bad situation and cuts a portion of the flesh free. Gain 1 hide basic resource.
+[d] The event revealer makes the best of a bad situation and cuts a portion of the flesh free. Gain 1 <b>hide</b> basic resource.
 [c] 10+
-[d] Each survivor harvests 1 hide basic resource from the flesh fields.
+[d] Each survivor harvests 1 <b>hide</b> basic resource from the flesh fields.
 [T]
 `,
 
@@ -128,7 +128,7 @@ The survivors come upon a faceless statue holding a shining lantern. Basking in 
 Each survivor gains 1 survival.
 
 [TO] Check
-[td] Does settlement has Sculpture innovation?
+[td] Does the settlement have Sculpture?
 [c] Yes #Sculpture
 [d<]
 
@@ -137,8 +137,8 @@ The survivors deeply appreciate the artist's subtle craftsmanship. Each survivor
 The survivors may rest here longer.
 
 [TO] Choice
-[td] Do you want to stay a bit longer?
-[c] [Non insane survivor] - Stay and rest #Rest
+[td] What do you do?
+[c] Stay and rest - [Non-insane survivor] #Rest
 [d] Each survivor heals all injury levels and lost armor points on 1 hit location. However, they lose track of their quarry. Move it 1 space away from the survivors on the hunt board. If a survivor heals more than 5 lost armor points this way, they stare into the shining light for too long and gain 1 random disorder.
 [c] Move on
 [dt] Survivors continue their hunt.
@@ -147,13 +147,11 @@ The survivors may rest here longer.
 [c] No #No Sculpture
 [d<]
 
-The survivors deeply appreciate the artist's subtle craftsmanship. Each survivor rolls 1d10. Gain that many survival and +1 understanding.
-
 The survivors may rest here longer.
 
 [TO] Choice
-[td] Do you want to stay a bit longer?
-[c] [Non insane survivor] - Stay and rest #Stay and rest
+[td] What do you do?
+[c] Stay and rest - [Non-insane survivor] #Rest
 [d] Each survivor heals all injury levels and lost armor points on 1 hit location. However, they lose track of their quarry. Move it 1 space away from the survivors on the hunt board. If a survivor heals more than 5 lost armor points this way, they stare into the shining light for too long and gain 1 random disorder.
 [c] Move on
 [dt] Survivors continue their hunt.
@@ -175,7 +173,7 @@ The ground suddenly splits and a gaping stone mouth attempts to devour the event
 [c] 6-9
 [d] You manage to leap away in time!
 [c] 10+
-[d] Burp! Gurgle! The floor vomits a shiny piece of scrap. Gain 1 broken lantern basic resource.
+[d] Burp! Gurgle! The floor vomits a shiny piece of scrap. Gain 1 <b>broken lantern</b> basic resource.
 [T]
 `,
 
@@ -184,11 +182,11 @@ The ground suddenly splits and a gaping stone mouth attempts to devour the event
 [img] 8
 A constant moan follows the survivors. Eventually, they enter an area shrouded in thick fog and the wailing reaches a fevered pitch.
 
-Every non-deaf survivor rolls 1d10.
+Every <b>non-deaf</b> survivor rolls 1d10.
 
 [TO] 1d10
 [td] Determine staggler
-[c] All survivors are deaf
+[c] All survivors are <b>deaf</b>
 [d] Survivors continue along, heedless to the cacophony: end this event.
 [c] Staggler chosen
 [d<]
@@ -197,10 +195,10 @@ The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
 
 Each straggler rolls 1d10.
 
-[i] If any survivor has noisy gear, the straggler adds +2 to their roll.
+[i] If any survivor has <b>noisy</b> gear, the straggler adds +2 to their roll.
 
 [TO] Check
-[td] If any survivor has noisy gear and the settlement has <b>Drums</b>?
+[td] Does any survivor have <b>noisy</b> gear and does the settlement have <b>Drums</b>?
 [c] Yes #Drums
 [d] Survivors counter the wails with a tune from home. Each survivor gains +2 insanity and +2 survival.
 [c] No #
@@ -225,12 +223,12 @@ Each straggler rolls 1d10.
 `,
 
 9: `9 | Golden Light
-A golden light blinds the survivors, stopping them in their tracks. The light shines from a single source. The event revealer is compelled to investigate.
+A golden light blinds the survivors, stopping them in their tracks. The light shines from a single source. The event revealer is compelled to <b>investigate</b>.
 They gain +1 courage and roll 1d10.
 
 [TO] 1d10
 [td] Event revealer - Investigate
-[c] Survivor is blind
+[c] Event revealer is <b>blind</b>
 [d] They walk in the wrong direction and gain +3 insanity. Roll again on the hunt event table and do not investigate the light.
 [c] 1-3
 [d] The light is overpowering. Your fragile mind cannot understand its soundless words. Gain 1 random disorder.
@@ -249,7 +247,7 @@ The ground quakes and cracks beneath the survivors. A colossal worm bursts from 
 All survivors gain 1 random disorder and must spend 1 survival or be devoured whole.
 
 [TO] Check
-[td] Does anyone has noisy gear?
+[td] Does anyone have noisy gear?
 [c] Yes #Noisy gear
 [d<]
 
@@ -267,7 +265,7 @@ The creature is so horrifying that the survivors' brains erase the experience fr
 `,
 
 11: `11 | Monster Droppings
-The survivors find some monster droppings, like those of their quarry. The event revealer chooses to either investigate or consume the droppings (choose only one).
+The survivors find some monster droppings, like those of their quarry. The event revealer chooses to either <b>investigate</b> or <b>consume</b> the droppings (choose only one).
 
 [TO] Choice
 [td] Event revealer - What do you do?
@@ -283,7 +281,7 @@ Gain +1 understanding and roll 1d10.
 [c] 4-6
 [d] The droppings tell a story. You are on the right track. Gain +1 survival.
 [c] 7+
-[d] You know these droppings well. You may skip the next hunt space. If this move begins the showdown, the survivors ambush their quarry.
+[d] You know these droppings well. You may skip the next hunt space. If this move begins the showdown, the survivors <b>ambush</b> their quarry.
 [T]
 
 [>d]
@@ -312,7 +310,7 @@ Gain +1 courage and roll 1d10.
 
 The survivors collectively feel a heightened level of anticipation. Their goal is close at hand.
 
-The event revealer gains +1 courage! The survivors may skip the next hunt space. If this movement starts the showdown, the survivors ambush their quarry.
+The event revealer gains +1 courage! The survivors may skip the next hunt space. If this movement starts the showdown, the survivors <b>ambush</b> their quarry.
 `,
 
 13: `13 | Overload
