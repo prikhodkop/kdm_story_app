@@ -1,0 +1,29 @@
+os:
+- linux
+- osx
+- windows
+dist: xenial
+osx_image: xcode8
+language: node_js
+node_js:
+- '6'
+- '8'
+- '10'
+cache:
+- apt: true
+- directories:
+  - "node_modules"
+  - "$HOME/.electron"
+install:
+- npm install
+- npm update
+after_success: npm run codecov
+branches:
+  only:
+  - master
+  - /^v\d+\.\d+\.\d+/
+env:
+  global:
+    # prevent wine popup dialogs about installing additional packages
+    - WINEDLLOVERRIDES="mscoree,mshtml="
+    - WINEDEBUG="-all"
