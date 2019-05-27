@@ -13,6 +13,7 @@ cache:
   - "node_modules"
   - "$HOME/.electron"
 before_install:
+  brew upgrade
 - brew install git-lfs
 before_script:
 - echo -e "machine github.com\n  login $GITHUB_TOKEN" > ~/.netrc
