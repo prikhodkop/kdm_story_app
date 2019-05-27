@@ -690,7 +690,17 @@
 
 				function createHuntTable() {
 
-					let names = Object.keys(quaries)
+					let names = Object.keys(clone(quaries))
+
+					let settings = JSON.parse(sessionStorage.getItem("settings"));
+
+					for (let i = names.length-1; i >= 0; i--) {
+						console.log(names[i])
+						if ((names[i] in settings['expansions']) && !(settings['expansions'][names[i]] == 'All content')) {
+							names.splice(i,1);
+							console.log('Removed!')
+						}
+					}
 
 					let container = document.getElementById("container")
 

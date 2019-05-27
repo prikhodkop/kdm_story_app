@@ -993,10 +993,28 @@ function removeA(arr) {
 }
 
 function getSettlementEventPath() {
-	let list = Object.keys(settlement_events)
-	list = removeA(list, 'First Day');
+	let list = clone(settlement_events)
+	delete list['First Day'];
 
-	return 'images/reference/Settlement Events/' + getRandom(list, 1) + '.jpg'
+	let settings = JSON.parse(sessionStorage.getItem("settings"));
+
+	let keys = Object.keys(list);
+
+	keys.forEach(function (key) {
+		console.log(key);
+		let remove = false;
+
+		if (('expansion' in list[key]) && !(settings['expansions'][list[key]['expansion']] == 'All content')) {
+			remove = true;
+		}
+
+		if (remove) {
+			console.log('Remove!')
+			delete list[key]
+		}
+	});
+
+	return 'images/reference/Settlement Events/' + getRandom(Object.keys(list), 1) + '.jpg'
 }
 
 function clone(obj) {
