@@ -28,6 +28,7 @@ function createAbout(version) {
   <p id="about_p">The app is an open non profit project to enchance experience with the game. Every contribution to help is welcome!</p>
   <p id="about_p">App sources are now on github: <a href=https://github.com/prikhodkop/kdm_story_app style="color:#888800;" target="_blank">https://github.com/prikhodkop/kdm_story_app</a>.<br/></p>
   <p id="about_p">If you face any issues, please report it here: <a href=https://kdm-story.site/changelog style="color:#888800;" target="_blank">https://kdm-story.site/changelog</a>.</p>
+  <p id="about_p">You may support us on Patreon: <a href=https://www.patreon.com/kdmstoryapp style="color:#888800;" target="_blank">https://www.patreon.com/kdmstoryapp</a><br/></p>
   <p id="about_p">Hope you enjoy the app and please share your feedback and impressions!<br/></p>
   <p id="about_p" style="color:#ddd"><b>Credits:</b></p>
   <p id="about_p">Almost all the art and text presented in the app are the property of Adam Poots. The guy did a great job creating the game, so please pay respect to him and <b>use the app ONLY if you own a copy of the game</b> (no exceptions)!</p>

@@ -10,7 +10,8 @@ function createWindow() {
 	win = new BrowserWindow({
 		width: 1440,
 		height: 900,
-		resizable: false,
+		// resizable: false,
+		resizable: true,
 		fullscreen: true,
 		webPreferences: {
 			devTools: true,

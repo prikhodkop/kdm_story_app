@@ -195,10 +195,10 @@
 	filter: drop-shadow(0 0 60px #cccc00);
 }
 
-#reference-window-selectized {
+/* #reference-window-selectized {
 	min-width: 106px;
 	width: auto !important;
-}
+} */
 
 #reference-window-back0 {
 	left:5%;

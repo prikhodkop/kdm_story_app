@@ -335,24 +335,26 @@ function createReference() {
 		},
 	})[0].selectize;
 
+  window.selectize = selectize;
+
 	// selectize.on('item_remove', function() {
 	//   selectize.close();
 	// });
 
-	selectize.$control_input.on('keydown', function (e) {
-		// update hidden input buffer for onscreen keyboard
-		if (settings.onscreenKeypads === 'On') {
-			let refPadHiddenValue = document.getElementById("refPadHiddenValue")
-      if (e.keyCode == 8 && selectize.$control_input.val().length < 2) {
-  			selectize.close();
-  		} else {
-        refPadHiddenValue.value = refPadHiddenValue.value + e.key
-      }
-
-		}
-
-
-	});
+	// selectize.$control_input.on('keydown', function (e) {
+	// 	// update hidden input buffer for onscreen keyboard
+	// 	if (settings.onscreenKeypads === 'On') {
+	// 		let refPadHiddenValue = document.getElementById("refPadHiddenValue")
+  //     if (e.keyCode == 8 && selectize.$control_input.val().length < 2) {
+  // 			selectize.close();
+  // 		} else {
+  //       refPadHiddenValue.value = refPadHiddenValue.value + e.key
+  //     }
+  //
+	// 	}
+  //
+  //
+	// });
 
   $(document).on('click', 'div.selectize-input div.item', function (e) {
     let name = $(this).text().slice(0, -1)
@@ -426,21 +428,61 @@ function createReference() {
 }
 
 function refPadEntry(refValue) {
-	var refInput = document.getElementById("reference-window-selectized")
+	var refInput = $('#reference-window-selectized') //$('.selectize-input') // document.getElementById("reference-window-selectized")
 	var refHiddenInput = document.getElementById("refPadHiddenValue")
 
-	if (refValue === "space") {
-		refHiddenInput.value = refHiddenInput.value + " "
-	} else if (refValue === "random") {
-		refHiddenInput.value = "random "
-	} else if (refValue === "clear") {
-		refHiddenInput.value = ""
-	} else {
-		refHiddenInput.value = refHiddenInput.value + refValue
-	}
+  // if (!(refInput.is(':focus'))) {
+  //   refInput.focus();
+  // }
+  window.selectize.focus();
 
-	refInput.value = refHiddenInput.value
-	refInput.focus()
+  // let key_codes = {
+  //   'q': 81,
+  //   'w': 87,
+  //   'e': 69,
+  //   'r': 82,
+  //   't': 84,
+  //   'y': 89,
+  //   'u': 85,
+  //   'i': 73,
+  //   'o': 79,
+  //   'p': 80,
+  //   'a': 65,
+  //   's': 83,
+  //   'd': 68,
+  //   'f': 70,
+  //   'g': 71,
+  //   'h': 72,
+  //   'j': 74,
+  //   'k': 75,
+  //   'l': 76,
+  //   'z': 90,
+  //   'x': 32,
+  //   'c': 67,
+  //   'v': 86,
+  //   'b': 66,
+  //   'n': 78,
+  //   'm':77,
+  //   'space': 32,
+  //   'clear': 8
+  //   // 'random',
+  // };
+
+  if (refValue == 'space') {
+		let text = refInput.val();
+    window.selectize.setTextboxValue(text+' ');
+	} else if (refValue == 'random') {
+		let text = refInput.val();
+    window.selectize.setTextboxValue(text+' random ');
+	} else if (refValue == 'clear') {
+		window.selectize.setTextboxValue('');
+	}else {
+    // console.log('Trigger key press: '+refValue+' '+key_codes[refValue])
+    // window.selectize.trigger(jQuery.Event('keypress', { keyCode: key_codes[refValue]}));
+		let text = refInput.val();
+    window.selectize.setTextboxValue(text+refValue);
+  }
+
 }
 
 function adapt_name(name) {
