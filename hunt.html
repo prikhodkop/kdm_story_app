@@ -150,6 +150,14 @@
 					delay: '600'
 				});
 
+				$('#random_event_icon_big').tooltipster({
+					contentAsHTML: 'true',
+					animation: 'grow',
+					content: 'Roll random <b>Hunt Event</b>',
+					position: 'top',
+					delay: '600'
+				});
+
 				$('#random_event_input').tooltipster({
 					contentAsHTML: 'true',
 					animation: 'grow',
@@ -333,6 +341,11 @@
 				});
 
 				$('body').on('click', '#random_event_icon', function () {
+					showRandomEvent(getRandomInt(1, 100))
+				});
+
+				$('body').on('click', '#random_event_icon_big', function () {
+					$('#input_container').fadeOut(500);
 					showRandomEvent(getRandomInt(1, 100))
 				});
 
