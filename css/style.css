@@ -722,6 +722,7 @@ tr.spaceUnder>td {
 	cursor: pointer;
 	border-radius: 3px;
 	border: 1px solid #ededed;
+  height: 1em;
 	opacity: .7;
 	transition: 200ms ease-in-out background;
 	padding: 0 17px;
