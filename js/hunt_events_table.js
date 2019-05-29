@@ -21,7 +21,7 @@ The event revealer gains +1 courage and rolls 1d10.
 
 [>d]
 [c] Ignore
-[dt] Survivors move on. Roll again on the hunt event table before moving on the hunt event board.
+[dt] Survivors continue their journey. Roll again on the hunt event table before moving on the hunt event board.
 `,
 
 2: `2 | Corpse
@@ -46,8 +46,8 @@ The survivors are surrounded by the echoing coo of infant babble. Strange babyfa
 [i] If any survivor has <b>noisy</b> gear, -2 to their roll.
 
 [TO] 1d10
-[td] Determine staggler
-[c] Staggler chosen
+[td] Determine straggler
+[c] Straggler chosen
 [d<]
 
 Each straggler rolls 1d10.
@@ -55,7 +55,7 @@ Each straggler rolls 1d10.
 [i] If any survivor has a whip, they crack it, scattering many of the birds. Each straggler adds +4 to their roll.
 
 [TA] 1d10
-[td] Staggler
+[td] Straggler
 [c] 1-3
 [d] Running and flailing wildly, you suddenly find yourself panicked and alone. The waiting cancer pigeons descend and mercilessly peck your back, their happy cooing filling your head with horror. An hour later, the other survivors find you balled up and weeping on the ground. You are <b>Dead Inside</b>: You cannot gain survival. Record this impairment.
 [c] 4-6
@@ -162,6 +162,7 @@ The survivors may rest here longer.
 
 7: `7 | Hungry Ground
 The ground suddenly splits and a gaping stone mouth attempts to devour the event revealer whole! The event revealer rolls 1d10.
+
 [i] If another survivor has a whip, they throw a line to the event revealer. Add +4 to your roll.
 
 [TO] 1d10
@@ -185,10 +186,10 @@ A constant moan follows the survivors. Eventually, they enter an area shrouded i
 Every <b>non-deaf</b> survivor rolls 1d10.
 
 [TO] 1d10
-[td] Determine staggler
+[td] Determine straggler
 [c] All survivors are <b>deaf</b>
 [d] Survivors continue along, heedless to the cacophony: end this event.
-[c] Staggler chosen
+[c] Straggler chosen
 [d<]
 
 The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
@@ -205,7 +206,7 @@ Each straggler rolls 1d10.
 [d<]
 
 [TA] 1d10
-[td] Staggler
+[td] Straggler
 [c] 1-3
 [d] The fog around you turns black and fills with shapes of tormented faces. You are driven to madness. Gain 1 random disorder.
 [c] 4-6
@@ -356,9 +357,11 @@ The survivors encounter a bewitching, barefoot waif with soot-covered feet.
 Otherwise, exclaiming wildly at the survivors, the woman's presence fills everyone with the alien feeling of hope. All survivors gain +1 courage, +1 understanding.
 
 [TO] Check
-[td] Innovation in the settlement
-[c] Hovel
-[dt] She snaps her fingers and ages before their eyes! A chill passes over the survivors. Their bodies and armor spontaneously knit themselves back together. Heal all injury levels and lost armor points. Then, she pulls a random survivor aside and whispers secrets of the upcoming hunt. They gain +1 accuracy token.
+[td] Does the settlement have Hovel?
+[c] Yes
+[d] She snaps her fingers and ages before their eyes! A chill passes over the survivors. Their bodies and armor spontaneously knit themselves back together. Heal all injury levels and lost armor points. Then, she pulls a random survivor aside and whispers secrets of the upcoming hunt. They gain +1 accuracy token.
+[c] No
+[dt] End this event.
 `,
 
 15: `15 | Man-trap
@@ -387,7 +390,7 @@ Your miserable sleep is plagued with mind-bending nightmares. Each survivor roll
 [d] Learn something from the waking horror and gain +1 understanding.
 [c] No
 [d] Gain 1 random disorder.
-[c] Survivor is a savior or has <b>Extra Sense</b> fighting art
+[c] Survivor is a savior or has the <b>Extra Sense</b> fighting art
 [dt] They disappear into the dream, emerging from the darkness hours later. They gain +4 Hunt XP and a random basic resource.
 `,
 
@@ -408,6 +411,7 @@ Amidst the sea of stone faces, one catches the event revealer's eye. They feel c
 [img] 18 # no-shadow # width:35%
 
 You find a strange plant growing from the eyes of a stone face. The event revealer tries to harvest it. Roll 1d0.
+
 [i] If any survivor has a sickle, add +4 to their roll.
 
 [TO] 1d10
@@ -455,33 +459,33 @@ As the survivors press forward, the air turns dry and the ground cracks. The sur
 [td] Does any survivor have a pickaxe?
 [c] Yes #Pickaxe
 [d] The survivors break open an interesting-looking vein in the cracked ground. Gain 1 Iron strange resource.
-[c] No #
+[c] No #No pickaxe
 [dt] End this event.
 `,
 
 21: `21 | Drawings
 Cowering in a cave, the survivors find strange drawings decorating the walls. They appear to contain a message.
 
-[TO] Choice
-[td] What do you do?
-[c] [Pictographs innovation or 3+ understanding] Try to decipher #Decipher
+[TO] Check
+[td] Does any survivor have +3 understanding or does the settlement have Pictographs?
+[c] Yes #Decipher
 
 [d<]
 
-If the settlement has Pictographs, every survivor may roll (regardless of ther understanding) and add +4 to their rolls.
+[i] If the settlement has <b>Pictographs</b>, every survivor may roll (regardless of their understanding) and add +4 to their rolls.
 
 [TA] 1d10
 [td] Any survivor with 3+ understanding
 [c] 1-3
 [d] Your nose begins to bleed. Suffer monster level brain event damage.
 [c] 4-7
-[d] The true meaning escapes you. Gain + 1 insanity.
+[d] The true meaning escapes you. Gain +1 insanity.
 [c] 8+
 [dt] The drawings teach you a new way to fight monsters! Gain +2 survival and a random fighting art.
 [>d]
 
-[c] Go away
-[d] Agitated survivors move on.
+[c] No
+[d] End this event.
 [T]
 `,
 
@@ -489,7 +493,7 @@ If the settlement has Pictographs, every survivor may roll (regardless of ther u
 The darkness above is suddenly alight with a storm of acid rain. It smells terrible, burns flesh, and forms hissing pools in the upturned mouths of the stone faces. All survivors suffer monster level event damage to every hit location as they scramble to find shelter.
 
 [TO] Check
-[td] Does settlemnt has Sculpture innovation?
+[td] Does the settlement have Sculpture?
 [c] Yes #Sculpture
 [d<]
 The survivors silently watch the storm erode the stone faces, erasing their features. They wonder exactly who or what repairs the broken faces, if there is such a thing. The survivors share a dark laugh, each gaining monster level survival.
@@ -497,22 +501,18 @@ The survivors silently watch the storm erode the stone faces, erasing their feat
 [TO] 1d10
 [td] Event revealer
 [c] 1-5
-[d<]
-
-[>d]
+[d] End this event.
 [c] 6+
-[dt] the storm moves homeward. Add the <b>Acid Storm</b> settlement event to the timeline next year.
+[dt] The storm moves homeward. Add the <b>Acid Storm</b> settlement event to the timeline next year.
 
 [>d]
-[c] No #
+[c] No #No Sculpture
 [d<]
 
 [TO] 1d10
 [td] Event revealer
 [c] 1-5
-[d<]
-
-[>d]
+[d] End this event.
 [c] 6+
 [dt] the storm moves homeward. Add the <b>Acid Storm</b> settlement event to the timeline next year.
 
@@ -521,7 +521,7 @@ The survivors silently watch the storm erode the stone faces, erasing their feat
 `,
 
 23: `23 | Clean Water
-The survivors pass a forlorn fountain in the shape of a lion's face. A stream of crystal-clear water flows from its mouth. Each survivor consumes the water, gaining +1 survival and +1 courage. Any number of survivors may douse their head in the water and roll 1d10.
+The survivors pass a forlorn fountain in the shape of a lion's face. A stream of crystal-clear water flows from its mouth. Each survivor <b>consumes</b> the water, gaining +1 survival and +1 courage. Any number of survivors may douse their head in the water and roll 1d10.
 
 [TA] 1d10
 [td] Any survivor
@@ -540,16 +540,16 @@ The survivors pass a forlorn fountain in the shape of a lion's face. A stream of
 
 [img] 24 # no-shadow
 
-The survivors pass a stone face that appears to be holding something in its mouth. The event revealer investigates. Gain +1 courage and roll 1d10.
+The survivors pass a stone face that appears to be holding something in its mouth. The event revealer <b>investigates</b>. Gain +1 courage and roll 1d10.
 
 [TO] 1d10
 [td] Event revealer - Investigate
 [c] 1-2
-[d] You yell out in pain and pull your hand back, reveal-ing a bloody gash. Did the stone face just bite? Suffer monster level brain event damage and mon-ster level event arm damage.
+[d] You yell out in pain and pull your hand back, revealing a bloody gash. Did the stone face just bite? Suffer monster level brain event damage and monster level event arm damage.
 [c] 3-5
 [d] There's nothing. It was just a trick of the lantern light.
 [c] 6-8
-[d] More rocks, what did you expect? Gain 1 Founding Stone starting gear.
+[d] More rocks, what did you expect? Gain 1 </b>Founding Stone<b> starting gear.
 [c] 9+
 [d] You pull out a masticated mass. Gain 1 random basic resource and 2 insanity.
 [T]
@@ -559,11 +559,15 @@ The survivors pass a stone face that appears to be holding something in its mout
 
 [img] 25 # no-shadow # width:50%
 
-An earsplitting bellow marks the passing of a truly titanic beast. All non-deaf survivors suffer monster level brain event damage. The survivors cower on the ground, lying as flat as possible and hoping they are simply too small to be worth eating. Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler. If any survivor has noisy gear, -2 to their roll.
+An earsplitting bellow marks the passing of a truly titanic beast. All <b>non-deaf</b> survivors suffer monster level brain event damage. The survivors cower on the ground, lying as flat as possible and hoping they are simply too small to be worth eating.
+
+Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
+
+[i] If any survivor has <b>noisy</b> gear, -2 to their roll.
 
 [TO] 1d10
-[td] Determine the staggler
-[c] Staggler chosen
+[td] Determine the straggler
+[c] Straggler chosen
 [d<]
 
 Each straggler rolls 1d10.
