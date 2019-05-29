@@ -1,6 +1,6 @@
 {
   "name": "kdm_1.5_story",
-  "version": "2.5",
+  "version": "2.5.0",
   "description": "Once, there was a man, who loved Kingdom Death and praised Poots for what he created, but hated the need to browse several books and shuffle decks all the time. One day he built an app to fix that... The app takes care of the story events, hunt phase, glossary and drawing/checking of disorders, fighting arts, secret fighting arts, weapon specialisations and settlement events for you to enjoy this great game :).",
   "main": "main.js",
   "scripts": {
