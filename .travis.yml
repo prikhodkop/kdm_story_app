@@ -13,16 +13,20 @@ cache:
     - $HOME/.cache/electron
     - $HOME/.cache/electron-builder
     - $HOME/.npm/_prebuilds
+    - $HOME/Library/Caches/Homebrew
 
 env:
   global:
     - ELECTRON_CACHE=$HOME/.cache/electron
     - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 
+addons:
+  homebrew:
+    packages:
+    - git-lfs
+
 before_install:
-- brew update && brew install git-lfs
 - git lfs install
-- echo -e "machine github.com\n  login $GITHUB_TOKEN" > ~/.netrc
 
 jobs:
   include:
@@ -32,8 +36,9 @@ jobs:
     - stage: Deploy Windows & Mac
       if: tag IS present
       os: osx
-      osx_image: xcode10.1
+      osx_image: xcode10.2
       before_script:
+        - echo -e "machine github.com\n  login $GITHUB_TOKEN" > ~/.netrc
         - git lfs pull
       script:
         - npm run release -- --mac --win
