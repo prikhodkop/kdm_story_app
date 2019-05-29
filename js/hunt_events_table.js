@@ -837,14 +837,14 @@ Each survivor rolls 1d10. The lowest-scoring survivor (or survivors, in case of 
 [i] If any survivor (or survivors) has the Anxiety disorder, they are the straggler. Do not roll.
 
 [TO] 1d10
-[td] Determine staggler
-[c] Staggler chosen
+[td] Determine straggler
+[c] Straggler chosen
 [d<]
 
 The straggler is lost in a moment of profound self doubt. They slip, not having the will to catch themselves, and tumble off a steep hill of stone faces. They land awkwardly with a crunch, suffering the broken leg severe injury. Sobbing to themselves, they come to grips with just how terrible their life is and gain +1 understanding.
 
 [TO] Check
-[td] Does staggler has <b>Binge Eating</b> disorder?
+[td] Does straggler has <b>Binge Eating</b> disorder?
 [c] Yes #Binge Eating
 [d] They wipe away their tears and reach out to a nearby critter, instinctually cramming it into their mouth for comfort. Draw 1 random vermin resource and consume it.
 [c] No #
@@ -1353,8 +1353,8 @@ Otherwise, each survivor rolls 1d10.
 Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
 
 [TA] 1d10
-[td] Determine staggler
-[c] Staggler chosen
+[td] Determine straggler
+[c] Straggler chosen
 [dt] While examining the stone faces underfoot, the straggler recognizes the face of a fallen friend. Bittersweet memories reduce them to tears. Reduce their insanity to 0 and they gain +1 understanding.
 `,
 
@@ -1575,8 +1575,8 @@ If the settlement has Graves, the event revealer builds a small monument of brok
 The survivors pass a ring of stones with an unassuming boulder at the center. Each survivor rolls 1d10. The lowest scoring survivor (randomize in case of ties) becomes a straggler.
 
 [TO] 1d10
-[td] Determine staggler
-[c] Staggler chosen
+[td] Determine straggler
+[c] Straggler chosen
 [dt] The straggler hefts the boulder (it's heavy!) and promises to carry it everywhere, forever in love. They must always leave one space in their gear grid empty, as it contains their beloved rock. Record this on your survivor sheet. The rock can be lost or archived like other gear; if it is lost, the survivor mourns their beloved and reclaims the space in their gear grid.
 `,
 
@@ -1600,8 +1600,8 @@ The survivors carefully tread along the back of a massive, sleeping monster. Ins
 Vibrant green grass grows in patches ahead of the survivors. Closer inspection of the delicate leaves reveals they are as sharp as any blade. Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
 
 [TA] 1d10
-[td] Determine staggler
-[c] Staggler chosen
+[td] Determine straggler
+[c] Straggler chosen
 [d<]
 As the survivors carefully pick their way past the verdant hazards, the straggler stumbles into the brush. They roll 1d10.
 [i] If any survivor has a whip, a hasty tether is made. Add +4 to your roll.
@@ -1761,8 +1761,8 @@ A one-eyed statue. twice as tall as any man, sits before a great anvil with a ha
 Tiny, ragged birds with needle-thin beaks fly overhead. Each survivor rolls 1d10. The lowest-scoring survivor (roll off in case of ties) becomes a straggler.
 
 [TO] 1d10
-[td] Determine staggler
-[c] Staggler chosen
+[td] Determine straggler
+[c] Straggler chosen
 [dt] The birds swarm the straggler. One forces its way into the straggler's mouth and down their throat. The survivor vomits up the well-fed bird, their insides scrambled and scarred. Gain +1 permanent luck, -1 permanent speed. <i>If any survivor has a whip, they crack it and fell the offensive creature. Gain 1 random basic resource.</i>
 `,
 
