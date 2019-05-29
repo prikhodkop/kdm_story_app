@@ -31,7 +31,7 @@ The event revealer gains +1 courage and rolls 1d10.
 The survivors are overcome by a sudden chill, their breath seizing in their lungs. The survivors' teeth chatter mercilessly. All survivors lose monster level survival. At the center of the sudden frost is a perfectly preserved corpse.
 
 [TA] Check
-[td] What innovations does the settlement have ?
+[td] What innovations does the settlement have?
 [c] Cannibalize
 [d] The event revealer gains 1 random basic resource.
 [c] Graves
@@ -317,7 +317,7 @@ The event revealer gains +1 courage! The survivors may skip the next hunt space.
 The event revealer falls to their knees, sobbing uncontrollably. They've simply had too much. They lose d10 survival and gain 1 random disorder.
 
 [TO] Choice
-[td] What society principle chosen in settlement?
+[td] Which Society Principle does the settlement have?
 [c] Accept Darkness
 [d<]
 The event revealer embraces their despair. Roll 1d10.
@@ -327,7 +327,7 @@ The event revealer embraces their despair. Roll 1d10.
 [c] 1-5
 [d] The depths of your misery are deeper than you could have ever imagined. Gain disorders until you have 3 of them. Lose all survival.
 [c] 6+
-[dt] You sink to the bottom of your misery then scrape its very foundations, hungry for more! You uncover a primal rage surrounding a core of serene calm. Gain +1 understandning and the <b>Rageholic</b> disorder.
+[dt] You sink to the bottom of your misery then scrape its very foundations, hungry for more! You uncover a primal rage surrounding a core of serene calm. Gain +1 understanding and the <b>Rageholic</b> disorder.
 [>d]
 [c] Collective Toil
 [d<]
@@ -341,8 +341,8 @@ They slowly pull themselves to their feet, promising to never give up hope. Roll
 [dt] You briefly touch the bottom of your misery and return to full awareness with new experiences to share. If any survivors return to the settlement this year, gain +2 endeavors.
 
 [>d]
-[c] Principle not chosen
-[dt] Survivors help revealer to stand and pass on.
+[c] No Society Principle
+[dt] End this event.
 `,
 
 14: `14 | Chance Encounter
@@ -369,7 +369,7 @@ The event revealer springs a terrible trap! Roll 1d10.
 [TO] 1d10
 [td] Event revealer
 [c] 1-2
-[d] With a terrible crash, the steel jaws of the man-trap cleanly sever your foot. Suffer the dismembered leg severe injury.
+[d] With a terrible crash, the steel jaws of the man-trap cleanly sever your foot. Suffer the <b>dismembered leg</b> severe injury.
 [c] 3-6
 [d] Mangled leg. Destroy all armor at the legs location, then suffer 1 event damage to the legs.
 [c] 7-9
@@ -387,12 +387,12 @@ Your miserable sleep is plagued with mind-bending nightmares. Each survivor roll
 [d] Learn something from the waking horror and gain +1 understanding.
 [c] No
 [d] Gain 1 random disorder.
-[c] Is a savior or has <b>Extra Sense</b> fighting art
+[c] Survivor is a savior or has <b>Extra Sense</b> fighting art
 [dt] They disappear into the dream, emerging from the darkness hours later. They gain +4 Hunt XP and a random basic resource.
 `,
 
 17: `17 | Face-to-Face
-Amidst the sea of stone faces, one catches the event revealer's eye. They feel compelled to investigate. Gain +1 courage and roll 1d10.
+Amidst the sea of stone faces, one catches the event revealer's eye. They feel compelled to <b>investigate</b>. Gain +1 courage and roll 1d10.
 [TO] 1d10
 [td] Event revealer
 [c] 1
@@ -425,13 +425,13 @@ You find a strange plant growing from the eyes of a stone face. The event reveal
 The survivors are enveloped in a steamy darkness that dims their lantern lights. They become separated from each other and hopelessly lost.
 
 [TO] Check
-[td] If a survivor has Leader fighting art?
+[td] Does any survivor have the <b>Leader</b> fighting art?
 [c] Yes #Leader
 [d] They boldly stride into the clammy darkness and gather everyone. End this event.
 [c] No #
 [d<]
 
-Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler. Each straggler rolls 1 d10.
+Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler. Each straggler rolls 1d10.
 
 [TA] 1d10
 [td] Straggler
@@ -449,14 +449,14 @@ Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of 
 `,
 
 20: `20 | Dry Lands
-As the survivors press forward, the air turns dry and the ground cracks. The survivors suffer heat exhaustion. Each survivor loses 1 survival. If they are wearing fur or heavy gear, they instead lose <b>d5</b> survival.
+As the survivors press forward, the air turns dry and the ground cracks. The survivors suffer heat exhaustion. Each survivor loses 1 survival. If they are wearing fur or heavy gear, they instead lose 1d5 survival.
 
 [TO] Check
-[td] Does any survivor has pickaxe?
+[td] Does any survivor have a pickaxe?
 [c] Yes #Pickaxe
 [d] The survivors break open an interesting-looking vein in the cracked ground. Gain 1 Iron strange resource.
 [c] No #
-[dt]
+[dt] End this event.
 `,
 
 21: `21 | Drawings
