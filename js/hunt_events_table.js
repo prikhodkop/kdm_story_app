@@ -128,33 +128,53 @@ The survivors come upon a faceless statue holding a shining lantern. Basking in 
 Each survivor gains 1 survival.
 
 [TO] Check
-[td] Does the settlement have Sculpture?
+[td] Does settlement have Sculpture?
 [c] Yes #Sculpture
 [d<]
 
 The survivors deeply appreciate the artist's subtle craftsmanship. Each survivor rolls 1d10. Gain that many survival and +1 understanding.
 
-The survivors may rest here longer.
-
-[TO] Choice
-[td] What do you do?
-[c] Stay and rest - [Non-insane survivor] #Rest
-[d] Each survivor heals all injury levels and lost armor points on 1 hit location. However, they lose track of their quarry. Move it 1 space away from the survivors on the hunt board. If a survivor heals more than 5 lost armor points this way, they stare into the shining light for too long and gain 1 random disorder.
-[c] Move on
-[dt] Survivors continue their hunt.
-
-[>d]
-[c] No #No Sculpture
+[TO] Check
+[td] Are all survivors insane?
+[c] Yes #All insane
+[d] Survivors continue their hunt.
+[c] No
 [d<]
 
 The survivors may rest here longer.
 
 [TO] Choice
-[td] What do you do?
-[c] Stay and rest - [Non-insane survivor] #Rest
+[td] Do you want to rest?
+[c] Yes #Rest
 [d] Each survivor heals all injury levels and lost armor points on 1 hit location. However, they lose track of their quarry. Move it 1 space away from the survivors on the hunt board. If a survivor heals more than 5 lost armor points this way, they stare into the shining light for too long and gain 1 random disorder.
-[c] Move on
+[c] No
 [dt] Survivors continue their hunt.
+
+[>d]
+[T]
+
+[>d]
+[c] No #
+[d<]
+
+[TO] Check
+[td] Are all survivors insane?
+[c] Yes #All insane
+[d] Survivors continue their hunt.
+[c] No #
+[d<]
+
+The survivors may rest here longer.
+
+[TO] Choice
+[td] Do you want to rest?
+[c] Yes #Rest
+[d] Each survivor heals all injury levels and lost armor points on 1 hit location. However, they lose track of their quarry. Move it 1 space away from the survivors on the hunt board. If a survivor heals more than 5 lost armor points this way, they stare into the shining light for too long and gain 1 random disorder.
+[c] No #
+[dt] Survivors continue their hunt.
+
+[>d]
+[T]
 
 [>d]
 [T]
@@ -501,7 +521,7 @@ The survivors silently watch the storm erode the stone faces, erasing their feat
 [TO] 1d10
 [td] Event revealer
 [c] 1-5
-[d] End this event.
+[d] Nothing happens.
 [c] 6+
 [dt] The storm moves homeward. Add the <b>Acid Storm</b> settlement event to the timeline next year.
 
@@ -512,7 +532,7 @@ The survivors silently watch the storm erode the stone faces, erasing their feat
 [TO] 1d10
 [td] Event revealer
 [c] 1-5
-[d] End this event.
+[d] Nothing happens.
 [c] 6+
 [dt] the storm moves homeward. Add the <b>Acid Storm</b> settlement event to the timeline next year.
 
@@ -582,7 +602,7 @@ You're plucked from the ground and eaten whole.
 [TO] Check
 [td] Does settlement have <b>Survival of the Fittest</b>?
 [c] Yes #Survival of the Fittest
-[d] You twist out of its mouth and land with a thud. Suffer the broken arm and broken leg severe injuries but do not die.
+[d] You twist out of its mouth and land with a thud. Suffer the <b>broken arm</b> and <b>broken leg</b> severe injuries but do not die.
 [c] No #
 [dt] Dead.
 
@@ -605,9 +625,9 @@ The ground beneath the event revealer's feet gives way and they plummet into a p
 [TO] 1d10
 [td] Event revealer
 [c] Another survivor has a whip #Whip
-[d] They throw you a line in time and help.
-[c] Tumble fightning art #Tumble
-[d] They nimbly catch a ledge and haul themselves up; gain +1 speed token.
+[d] They throw you a line in time; do not roll on the table.
+[c] <b>Tumble</b> fightning art #Tumble
+[d] They nimbly catch a ledge and haul themselves up; gain +1 speed token; do not roll on the table.
 [c] 1
 [d] You land with a sickening crunch, mangling your legs. Suffer the broken leg severe injury twice.
 [c] 2-3
