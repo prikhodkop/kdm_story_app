@@ -20,6 +20,7 @@ env:
     - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 
 before_install:
+- brew install git-lfs
 - echo -e "machine github.com\n  login $GITHUB_TOKEN" > ~/.netrc
 - git lfs pull
 
