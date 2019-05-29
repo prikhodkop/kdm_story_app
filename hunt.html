@@ -86,7 +86,7 @@
 
 			<div id="random_event_pad_wrapper" class="random_event_pad_wrapper">
 				<div class="random_event_pad_wrapper__pad-row">
-					<span class="random_event_pad_wrapper__pad" id="pad0">0</span>
+					<span class="random_event_pad_wrapper__pad" id="pad0"><img style="height:100%;" src='images/lantern.png'/></span>
 					<span class="random_event_pad_wrapper__pad" id="pad1">1</span>
 					<span class="random_event_pad_wrapper__pad" id="pad2">2</span>
 					<span class="random_event_pad_wrapper__pad" id="pad3">3</span>
@@ -143,6 +143,14 @@
 				createToc();
 
 				$('#random_event_icon').tooltipster({
+					contentAsHTML: 'true',
+					animation: 'grow',
+					content: 'Roll random <b>Hunt Event</b>',
+					position: 'top',
+					delay: '600'
+				});
+
+				$('#random_event_icon_big').tooltipster({
 					contentAsHTML: 'true',
 					animation: 'grow',
 					content: 'Roll random <b>Hunt Event</b>',
@@ -333,6 +341,11 @@
 				});
 
 				$('body').on('click', '#random_event_icon', function () {
+					showRandomEvent(getRandomInt(1, 100))
+				});
+
+				$('body').on('click', '#random_event_icon_big', function () {
+					$('#input_container').fadeOut(500);
 					showRandomEvent(getRandomInt(1, 100))
 				});
 
@@ -690,7 +703,17 @@
 
 				function createHuntTable() {
 
-					let names = Object.keys(quaries)
+					let names = Object.keys(clone(quaries))
+
+					let settings = JSON.parse(sessionStorage.getItem("settings"));
+
+					for (let i = names.length-1; i >= 0; i--) {
+						console.log(names[i])
+						if ((names[i] in settings['expansions']) && !(settings['expansions'][names[i]] == 'All content')) {
+							names.splice(i,1);
+							console.log('Removed!')
+						}
+					}
 
 					let container = document.getElementById("container")
 

@@ -291,7 +291,7 @@ var settings_schema = {
 			"dung beetle knight": {
 				"type": "option",
 				"title": "Dung Beetle Knight",
-				"default": "Disabled",
+				"default": "Cards only",
 				"enum": expansion_options
 			},
 			"flower knight": {
@@ -306,7 +306,7 @@ var settings_schema = {
 			"gorm": {
 				"type": "option",
 				"title": "Gorm",
-				"default": "Disabled",
+				"default": "Cards only",
 				"enum": expansion_options
 			},
 			"manhunter": {

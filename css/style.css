@@ -615,6 +615,7 @@ tr.spaceUnder>td {
   position:absolute;
   width:6%;
   top:11%;
+  /* top: 74%; */
   left:3.1%;
   opacity: 0.7;
 }
@@ -634,6 +635,7 @@ tr.spaceUnder>td {
   display:block;
   width:2.5%;
   top:21%;
+  /* top: 84%; */
   left:4.75%;
   opacity: 0.7;
   border: 2px solid #555;
@@ -674,7 +676,12 @@ tr.spaceUnder>td {
   top:20%;
   left:44%;
   display: block;
+}
 
+#random_event_icon_big:hover {
+  animation: shake 1s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.3s;
 }
 
 #random_event_input_big {
@@ -715,6 +722,7 @@ tr.spaceUnder>td {
 	cursor: pointer;
 	border-radius: 3px;
 	border: 1px solid #ededed;
+  height: 1em;
 	opacity: .7;
 	transition: 200ms ease-in-out background;
 	padding: 0 17px;

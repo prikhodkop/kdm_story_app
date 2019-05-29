@@ -204,8 +204,8 @@ function createReference() {
 	}));
 
 	let all_option = get_all_options();
-
-	console.log(all_option)
+	//
+	// console.log(all_option)
 
 	var selectize = $('#reference-window').selectize({
 		options: all_option,

@@ -8,8 +8,8 @@ app.commandLine.appendSwitch('--autoplay-policy', 'no-user-gesture-required')
 function createWindow() {
 	// Create the browser window.
 	win = new BrowserWindow({
-		width: 1440,
-		height: 900,
+		// width: 1440,
+		// height: 900,
 		// resizable: false,
 		resizable: true,
 		fullscreen: true,
