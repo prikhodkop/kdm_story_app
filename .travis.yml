@@ -20,9 +20,9 @@ env:
     - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 
 before_install:
-- brew install git-lfs
+- brew update && brew install git-lfs
+- git lfs install
 - echo -e "machine github.com\n  login $GITHUB_TOKEN" > ~/.netrc
-- git lfs pull
 
 jobs:
   include:
@@ -33,6 +33,8 @@ jobs:
       if: tag IS present
       os: osx
       osx_image: xcode10.1
+      before_script:
+        - git lfs pull
       script:
         - npm run release -- --mac --win
       before_cache:
