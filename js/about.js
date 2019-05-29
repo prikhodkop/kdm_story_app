@@ -31,7 +31,7 @@ function createAbout(version) {
   <p id="about_p">You may support us on Patreon: <a href=https://www.patreon.com/kdmstoryapp style="color:#888800;" target="_blank">https://www.patreon.com/kdmstoryapp</a><br/></p>
   <p id="about_p">Hope you enjoy the app and please share your feedback and impressions!<br/></p>
   <p id="about_p" style="color:#ddd"><b>Credits:</b></p>
-  <p id="about_p">Almost all the art and text presented in the app are the property of Adam Poots. The guy did a great job creating the game, so please pay respect to him and <b>use the app ONLY if you own a copy of the game</b> (no exceptions)!</p>
+  <p id="about_p">Almost all the art and text presented in the app are the property of Adam Poots. The guy did a great job creating the game, so please pay respect to him and <b>use the app ONLY if you own a copy of the game</b> (no exceptions)! Buy it here: <a href=https://shop.kingdomdeath.com style="color:#888800;" target="_blank">https://shop.kingdomdeath.com</a></p>
   <p id="about_p">Coding: @prikhodkop, Justin Parker (jparkerweb)</p>
   <p id="about_p">Voice acting: @prikhodkop, Katya Prikhodko</p>
   <p id="about_p">QA: Alexander Fedorov, Creepo</p>
