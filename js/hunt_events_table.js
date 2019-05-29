@@ -134,29 +134,47 @@ Each survivor gains 1 survival.
 
 The survivors deeply appreciate the artist's subtle craftsmanship. Each survivor rolls 1d10. Gain that many survival and +1 understanding.
 
+[TO] Choice
+[td] Are all survivors insane?
+[c] Yes #All insane
+[d] Survivors continue their hunt.
+[c] No
+[d<]
+
 The survivors may rest here longer.
 
 [TO] Choice
-[td] Do you want to stay a bit longer?
-[c] [Non insane survivor] - Stay and rest #Rest
+[td] Do you want to rest?
+[c] Yes #Rest
 [d] Each survivor heals all injury levels and lost armor points on 1 hit location. However, they lose track of their quarry. Move it 1 space away from the survivors on the hunt board. If a survivor heals more than 5 lost armor points this way, they stare into the shining light for too long and gain 1 random disorder.
-[c] Move on
+[c] No
 [dt] Survivors continue their hunt.
 
 [>d]
-[c] No #No Sculpture
+[T]
+
+[>d]
+[c] No #
 [d<]
 
-The survivors deeply appreciate the artist's subtle craftsmanship. Each survivor rolls 1d10. Gain that many survival and +1 understanding.
+[TO] Choice
+[td] Are all survivors insane?
+[c] Yes #All insane
+[d] Survivors continue their hunt.
+[c] No #
+[d<]
 
 The survivors may rest here longer.
 
 [TO] Choice
-[td] Do you want to stay a bit longer?
-[c] [Non insane survivor] - Stay and rest #Stay and rest
+[td] Do you want to rest?
+[c] Yes #Rest
 [d] Each survivor heals all injury levels and lost armor points on 1 hit location. However, they lose track of their quarry. Move it 1 space away from the survivors on the hunt board. If a survivor heals more than 5 lost armor points this way, they stare into the shining light for too long and gain 1 random disorder.
-[c] Move on
+[c] No #
 [dt] Survivors continue their hunt.
+
+[>d]
+[T]
 
 [>d]
 [T]
