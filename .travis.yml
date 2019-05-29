@@ -25,8 +25,8 @@ addons:
     packages:
     - git-lfs
 
-before_install:
-- git lfs install
+# before_install:
+# - git lfs install
 
 jobs:
   include:
