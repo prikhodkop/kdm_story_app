@@ -11,6 +11,7 @@
   "author": "@prikhodkop",
   "license": "MIT",
   "dependencies": {
-    "electron": "^5.0.1"
+    "electron": "^5.0.1",
+    "mocha": "3.4.2"
   }
 }
