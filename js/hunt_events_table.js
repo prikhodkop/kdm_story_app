@@ -1355,12 +1355,18 @@ The ground ahead is pockmarked with pools filled with a gooey liquid. They bubbl
 [d<]
   They slice a few leaves from a nearby plant and everyone uses them to plug their noses and mask the smell. All survivors gain +1 understanding.
 
-  [i] If any survivor has 3+ understanding, they devise a way to use the pools. Each survivor may place one piece of gear in a pool. Archive the gear and gain the resources used to craft it (if any).
+  [TO] Check
+  [td] Does any survivor has 3+ understanding?
+  [c] Yes #3+ understanding
+  [d] They devise a way to use the pools. Each survivor may place one piece of gear in a pool. Archive the gear and gain the resources used to craft it (if any).
+  [c] No #
+  [d<]
+  [>d]
+  [T]
+
 [>d]
 [c] No #
 [d<]
-
-[i] If any survivor has 3+ understanding, they devise a way to use the pools. Each survivor may place one piece of gear in a pool. Archive the gear and gain the resources used to craft it (if any).
 
 Each survivor rolls 1d10.
 
@@ -1370,6 +1376,16 @@ Each survivor rolls 1d10.
 [d] They continue on
 [c] No #Greater than survival
 [dt] They vomit into a nearby pool, suffering 1 event damage to the body. Before their eyes, the pool greedily dissolves their vomit, they gain +1 understanding.
+
+[TO] After all rolls
+[td] Does any survivor has 3+ understanding after the roll?
+[c] Yes #3+ understanding
+[d] They devise a way to use the pools. Each survivor may place one piece of gear in a pool. Archive the gear and gain the resources used to craft it (if any).
+[c] No #
+[d<]
+[>d]
+[T]
+
 [>d]
 [T]`,
 
