@@ -4,7 +4,7 @@ The survivors feel something crunching beneath their feet. The event revealer ma
 
 [TO] Choice
 [td] Event revealer - What do you do?
-[c] Investigate
+[c] Investigate (+1 courage)
 [d<]
 
 The event revealer gains +1 courage and rolls 1d10.
@@ -21,7 +21,7 @@ The event revealer gains +1 courage and rolls 1d10.
 
 [>d]
 [c] Ignore
-[dt] Survivors continue their journey. Roll again on the hunt event table before moving on the hunt event board.
+[dt] Roll again on the hunt event table before moving on the hunt event board.
 `,
 
 2: `2 | Corpse
@@ -1204,12 +1204,12 @@ Shuffle one copy of each mask gear from the Mask Maker settlement location and d
 
 54: `54 | Bone Storm
 Mighty winds tear across the landscape, collecting chips of stones and skeletal remains. The survivors huddle together on the outskirts of the storm.
-They may either brave the storm or wait it out.
+They may either <b>brave the storm</b> or <b>wait it out</b>.
 
 [TO] Choice
 [td] Everyone votes
 [c] Brave the storm
-[d] All survivors gain +1 courage and suffer 1 event damage to 3 random hit locations. Archive all fragile gear.
+[d] All survivors gain +1 courage and suffer 1 event damage to 3 random hit locations. Archive all <b>fragile</b> gear.
 [c] Wait it out
 [dt] Roll twice on the hunt event table before moving on the hunt board.
 `,
@@ -1221,9 +1221,9 @@ A flash mudslide sweeps the survivors away. Each survivor rolls 1d10.
 [TA] 1d10
 [td] Each survivor
 [c] 1-2
-[d] You're violently swept along, drowning in mud. Suffer 2 event damage to a random hit location and archive all fragile and soluble gear in your gear grid. Roll again on the table.
+[d] You're violently swept along, drowning in mud. Suffer 2 event damage to a random hit location and archive all <b>fragile</b> and <b>soluble</b> gear in your gear grid. Roll again on the table.
 [c] 3-7
-[d] You manage to scramble free, but not before taking a serious beating. Suffer 2 event damage to your body and archive all fragile and soluble gear in your gear grid.
+[d] You manage to scramble free, but not before taking a serious beating. Suffer 2 event damage to your body and archive all <b>fragile</b> and <b>soluble</b> gear in your gear grid.
 [c] 8-9
 [d] You reach higher ground. You're caked in mud but otherwise unscathed.
 [c] 10+
@@ -1234,15 +1234,15 @@ A flash mudslide sweeps the survivors away. Each survivor rolls 1d10.
 The survivors find a decomposed monster corpse. It's too rotten to yield any resources.
 
 [TO] Check
-[td] Does any survivor has 3+ understanding?
+[td] Does any survivor have 3+ understanding?
 [c] Yes #3+ understanding
-[d] The survivors cover themselves in the dead monster's spilled blood. The stench will help them sneak up on their quarry. When the showdown starts, the survivors ambush the monster. If any survivor has the <b>Squeamish</b> disorder, they refuse to soil themselves. Do not ambush the monster.
+[d] The survivors cover themselves in the dead monster's spilled blood. The stench will help them sneak up on their quarry. When the showdown starts, the survivors <b>ambush</b> the monster. If any survivor has the <b>Squeamish</b> disorder, they refuse to soil themselves. Do not <b>ambush</b> the monster.
 [c] No #
-[dt] The starving sur-vivors feast on the rotting corpse, immediately losing control of their twisting guts. Each survivor loses 1 survival and cannot consume for the rest of this lantern year.
+[dt] The starving survivors feast on the rotting corpse, immediately losing control of their twisting guts. Each survivor loses 1 survival and cannot <b>consume</b> for the rest of this lantern year.
 `,
 
 57: `57 | Gorm's Laughter
-The rhythmic wail of a Gorm's laughter reaches the survivors, filling them with fear. The cackling follows the survivors, tormenting them until they reach their quarry. Place a token on every hunt board space between the survivors and their quarry. When the survivors move into a space with a token, remove it and all non-deaf survivors suffer 1 brain event damage.
+The rhythmic wail of a Gorm's laughter reaches the survivors, filling them with fear. The cackling follows the survivors, tormenting them until they reach their quarry. Place a token on every hunt board space between the survivors and their quarry. When the survivors move into a space with a token, remove it and all <b>non-deaf</b> survivors suffer 1 brain event damage.
 `,
 
 58: `58 | Scent on the Wind
@@ -1252,24 +1252,34 @@ The event revealer rolls 1d10.
 [TO] 1d10
 [td] Event revealer
 [c] 1-5
-[d] The monster catches your scent. It moves one space closer. If this movement starts the showdown, the monster ambushes the survivors.
+[d] The monster catches your scent. It moves one space closer. If this movement starts the showdown, the monster <b>ambushes</b> the survivors.
 [c] 6+
-[dt] The survivors smell their quarry's foul odor and surge forward. The survivors may skip the next hunt space. If this movement starts the showdown, the survivors ambush the monster.
+[dt] The survivors smell their quarry's foul odor and surge forward. The survivors may skip the next hunt space. If this movement starts the showdown, the survivors <b>ambush</b> the monster.
 `,
 
 59: `59 | Signs of Battle
-The survivors come upon the remains of a terrible battle between their quarry and some unknown foe. The event revealer may choose to investigate.
-If they do, gain +1 courage and roll 1d10.
-Otherwise, roll again on the hunt event table before moving on the hunt board.
+The survivors come upon the remains of a terrible battle between their quarry and some unknown foe. The event revealer may choose to <b>investigate</b>.
+
+[TO] Choice
+[td] Event revealer - What do you do?
+[c] Investigate (+1 courage)
+[d<]
+
+The event revealer gains +1 courage and rolls 1d10.
 
 [TO] 1d10
 [td] Event revealer - Investigate
 [c] 1-2
-[d] The monster springs out of the dark, taking advantage of the distracted survivors. The monster ambushes the survivors. During showdown setup, place the event revealer directly in front of the monster.
+[d] The monster springs out of the dark, taking advantage of the distracted survivors. The monster <b>ambushes</b> the survivors. During showdown setup, place the event revealer directly in front of the monster.
 [c] 3-7
-[d] The remains are human. The distraught and enraged survivors each suffer 1 brain event damage. If the settlement has Graves, they bury the dead and each survivor gains +1 survival. If the settlement has Cannibalize, gain 1 random basic resource.
+[d] The remains are human. The distraught and enraged survivors each suffer 1 brain event damage. If the settlement has <b>Graves</b>, they bury the dead and each survivor gains +1 survival. If the settlement has <b>Cannibalize</b>, gain 1 random basic resource.
 [c] 8+
-[dt] The quarry has left the remains of another monster in its wake. Gain 1 random basic resource.
+[d] The quarry has left the remains of another monster in its wake. Gain 1 random basic resource.
+[T]
+
+[>d]
+[c] Ignore
+[dt] Roll again on the hunt event table before moving on the hunt event board.
 `,
 
 60: `60 | Wildfire
@@ -1279,33 +1289,34 @@ A massive wall of flame obstructs the survivors, incinerating the ground. It has
 61: `61 | Frozen Lightning
 A storm sweeps over the survivors. Deep purple lightning flashes overhead. The bolts freeze in midstrike and rain down on the survivors as jagged, glowing spikes.
 Each survivor rolls 1d10.
-The lowest scoring survivor (or survivors, in case of ties) becomes a straggler. A bolt crashes beside the straggler, catching them in an explosion of razorsharp crystals. They suffer 1 d5 event damage to 2 random hit locations. Archive all fragile gear in their gear grid.
+The lowest scoring survivor (or survivors, in case of ties) becomes a straggler. A bolt crashes beside the straggler, catching them in an explosion of razorsharp crystals. They suffer 1d5 event damage to 2 random hit locations. Archive all <b>fragile</b> gear in their gear grid.
 `,
 
 62: `62 | Space Between the Rocks
 The survivors are distracted by a dark crack in the endless sea of stone faces.
 
-If any survivor has a pickaxe, they strike the ground, causing the crack to expand into a gaping hole. Bravely reaching inside the survivor produces a blackened, twisted hunk. Gain 1 iron strange resource.
+[i] If any survivor has a pickaxe, they strike the ground, causing the crack to expand into a gaping hole. Bravely reaching inside the survivor produces a blackened, twisted hunk. Gain 1 <b>iron</b> strange resource.
 
-Otherwise, each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler. The straggler stoops to gaze into the depths and refuses to stop staring. When the other survivors drag them away, they babble incoherently. Whatever they saw changed them forever; they gain 1 random disorder. If all the survivors end up as stragglers, no one ever pulls them away and they are all lost. Dead.
+Otherwise, each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
+The straggler stoops to gaze into the depths and refuses to stop staring. When the other survivors drag them away, they babble incoherently. Whatever they saw changed them forever; they gain 1 random disorder. If all the survivors end up as stragglers, no one ever pulls them away and they are all lost. Dead.
 `,
 
 63: `63 | Feet
 
 [img] 63
 
-The stone faces ahead are replaced by an expanse of stone feet sprouting from the ground.
+The stone faces ahead are replaced by an expanse of stone feet sprouting from the ground. The survivors walk sole-to-sole with the feet.
 
 [TO] Check
 [td] Are all survivors insane?
 [c] Yes #All insane
-[d] they fall off the underside of the world. The survivors are dead unless the settlement chose <b>Survival of the Fittest</b>. If they did, the survivors bite down hard on the feet. Their teeth grind against stone as they refuse to let go. At once, the feet shatter, revealing ordinary stone faces beneath. Set all survivors' insanity to 0. Each survivor suffers the shattered jaw severe head injury. Do not roll any additional hunt events caused by Feet.
+[d] They fall off the underside of the world. The survivors are dead unless the settlement chose <b>Survival of the Fittest</b>. If they did, the survivors bite down hard on the feet. Their teeth grind against stone as they refuse to let go. At once, the feet shatter, revealing ordinary stone faces beneath. Set all survivors' insanity to 0. Each survivor suffers the <b>shattered jaw</b> severe head injury. Do not roll any additional hunt events caused by <b>Feet</b>.
 [c] No #Someone sane
-[dt] The survivors walk sole-to-sole with the feet. If any survivor is insane, they are convinced they have reached the underside of the world. They clutch the ground for dear life, terrified of falling off. Their raucous terror slows the survivors and attracts unwanted attention. Roll once on the hunt event table for each insane survivor before moving on the hunt board. If any of these rolls result in Feet, ignore it and re-roll.
+[dt] If any survivor is </b>insane</b>, they are convinced they have reached the underside of the world. They clutch the ground for dear life, terrified of falling off. Their raucous terror slows the survivors and attracts unwanted attention. Roll once on the hunt event table for each <b>insane</b> survivor before moving on the hunt board. If any of these rolls result in <b>Feet</b>, ignore it and re-roll.
 `,
 
 64: `64 | Stone Fountain
-Two cupped stone hands rise out of the ground. The hands hold clear, cold water that trickles through the stone fingers in a seemingly endless supply. Any survivor may consume from the fountain. If they do, gain +1 courage and roll 1d10.
+Two cupped stone hands rise out of the ground. The hands hold clear, cold water that trickles through the stone fingers in a seemingly endless supply. Any survivor may <b>consume</b> from the fountain. If they do, gain +1 courage and roll 1d10.
 
 If no one consumes, roll again on the hunt event table before moving on the hunt board.
 
@@ -1329,9 +1340,10 @@ Cresting a hill, the survivors find a statue of a man sitting on a throne.
 
 Otherwise, each survivor rolls 1d10. The lowest scoring survivor (roll off in case of ties) becomes a straggler. The straggler is drawn to the statue, touching it gently. In an instant, they are gone, replaced by the man from the throne, now flesh and blood. The straggler sits in his place on the throne, stone mouth open in a silent yell. They are gone forever. Consider them dead, but do not apply <b>Cannibalize</b> death principle; there is no body.
 
+
 [TO] Check
-[td] Does the settlement has <b>Memento Mori</b> innovation?
-[c] Yes #Memento Mori
+[td] Does the settlement have <b>Momento Mori</b>?
+[c] Yes #Momento Mori
 [d] The satue resembles a deceased survivor. Replace the straggler with the record sheet of a fallen survivor. Remove all of their severe injuries. Set their Hunt XP to 2 (they Age again, as this is a new lifetime). They gain +1d10 survival, +1d10 insanity. You may give them 3 ranks of proficiency in a random weapon type.
 [c] No #
 [dt] The man offers his thanks and joins the hunting party without any explanation. He is a new survivor with the straggler's gear, 2 random disorders, and 2 Hunt XP. Shuffle all weapon specialization cards (including expansions, if any) and draw one. The survivor has 3 ranks of proficiency in that weapon type. They gain +1d10 survival, +1d10 insanity. Give him a name and +1 survival for being named.
@@ -1339,15 +1351,13 @@ Otherwise, each survivor rolls 1d10. The lowest scoring survivor (roll off in ca
 
 66: `66 | Forbidden Word
 There is a great rush of air. A booming, inhuman voice declares a single word in an unknown language. For one instant, the survivors understand.
-All non-deaf survivors gain +1 understanding and suffer 1 brain event damage. If they are insane they also gain 1 random disorder.
+All <b>non-deaf</b> survivors gain +1 understanding and suffer 1 brain event damage. If they are <b>insane</b> they also gain 1 random disorder.
 `,
 
 67: `67 | Saliva Pools
 The ground ahead is pockmarked with pools filled with a gooey liquid. They bubble merrily and stink of digesting meat. As the survivors move between them, they are overcome by waves of nausea.
 
-[i] If any survivor has 3+ understanding, they devise a way to use the pools. Each survivor may place one piece of gear in a pool. Archive the gear and gain the resources used to craft it (if any).
-
-If any survivor has a sickle, they slice a few leaves from a nearby plant and everyone uses them to plug their noses and mask the smell. All survivors gain +1 understanding.
+[i] If any survivor has a <b>sickle</b>, they slice a few leaves from a nearby plant and everyone uses them to plug their noses and mask the smell. All survivors gain +1 understanding.
 
 Otherwise, each survivor rolls 1d10.
 
@@ -1357,6 +1367,8 @@ Otherwise, each survivor rolls 1d10.
 [d] They continue on
 [c] No #Greater than survival
 [dt] They vomit into a nearby pool, suffering 1 event damage to the body. Before their eyes, the pool greedily dissolves their vomit, they gain +1 understanding.
+
+[i] If any survivor has 3+ understanding, they devise a way to use the pools. Each survivor may place one piece of gear in a pool. Archive the gear and gain the resources used to craft it (if any).
 `,
 
 68: `68 | A Familiar Face
@@ -1373,20 +1385,20 @@ Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of 
 69: `69 | Time Lapse
 The glow of the survivors' lanterns blurs, forming trails of light behind them.
 [i] If the settlement has fought a Phoenix, the group recognizes the phenomenon. All survivors gain +1 understanding.
-The event revealer rolls 1d10 on the table below. If any survivor has an hours ring, they may instead select a die result.
+The event revealer rolls 1d10 on the table below. If any survivor has an <b>Hours Ring</b>, they may instead select a die result.
 [TA] 1d10
 [td] Event revealer
 [c] 1-3
 [d] The survivors' bodies suddenly age. All survivors with less than 10 Hunt XP gain +3 Hunt XP. Do not gain the benefits of Age. Your bodies have physically aged, no practical experience has been learned.
 [c] 3-9
-[d] The survivors' minds fill with alien memories. They are no longer just themselves. They walk differently and speak with strange accents. Give each survivor a new name and +1 survival for being named. Each survivor gains +1 Hunt XP and 1 random disorder. <i>If your settlement has Survival of Fittest, and you've already used your once-per-lifetime reroll, you may use it again.</i>
+[d] The survivors' minds fill with alien memories. They are no longer just themselves. They walk differently and speak with strange accents. Give each survivor a new name and +1 survival for being named. Each survivor gains +1 Hunt XP and 1 random disorder. <i>If your settlement has <b>Survival of Fittest</b>, and you've already used your once-per-lifetime reroll, you may use it again.</i>
 [c] 10+
 [dt] The survivors are suddenly standing by their quarry! Start the showdown immediately.
 `,
 
 70: `70 | Tomb of Excellence
 The survivors find a serene, luxurious tomb, immaculate in its construction and condition. Elegant murals decorate the walls, depicting glorious victories over the very monster the survivors are hunting. The survivors are baffled by its presence.
-The event revealer investigates and rolls 1d10.
+The event revealer <b>investigates</b> and rolls 1d10.
 
 [TO] 1d10
 [td] Event revealer - Investigate
@@ -1397,7 +1409,7 @@ The event revealer investigates and rolls 1d10.
 [c] 6-9
 [d] The survivors can't remember ever feeling so cheerful and inspired. Each survivor gains +1 courage.
 [c] 10+
-[dt] The doorway to the tomb is framed with a wood that has small hands for grain. Inside, murals depict a hero at the center of a labyrinth that is holding a giant, human-filled fruit above his head. Each survivor gains +1 understanding. If the settlement has <b>Pictographs</b>, the survivors find information about their quarry. At the start of the showdown, they may place the monster's trap at the bottom of the hit location deck.
+[dt] The doorway to the tomb is framed with a wood that has small hands for grain. Inside, murals depict a hero at the center of a labyrinth that is holding a giant, human-filled fruit above his head. Each survivor gains +1 understanding. <i>If the settlement has <b>Pictographs</b>, the survivors find information about their quarry. At the start of the showdown, they may place the monster's trap at the bottom of the hit location deck.</i>
 `,
 
 71: `71 | Found Relic
