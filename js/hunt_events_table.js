@@ -4,7 +4,7 @@ The survivors feel something crunching beneath their feet. The event revealer ma
 
 [TO] Choice
 [td] Event revealer - What do you do?
-[c] Investigate (+1 courage)
+[c] Investigate
 [d<]
 
 The event revealer gains +1 courage and rolls 1d10.
@@ -290,7 +290,7 @@ The survivors find some monster droppings, like those of their quarry. The event
 
 [TO] Choice
 [td] Event revealer - What do you do?
-[c] Investigate (+1 understanding) #Investigate
+[c] Investigate #Investigate
 [d<]
 
 Gain +1 understanding and roll 1d10.
@@ -306,7 +306,7 @@ Gain +1 understanding and roll 1d10.
 [T]
 
 [>d]
-[c] Consume (+1 courage) #Consume
+[c] Consume #Consume
 [d<]
 
 Gain +1 courage and roll 1d10.
@@ -739,7 +739,7 @@ The event revealer decides whether or not the survivors follow the path. If the 
 
 [TO] Choice
 [td] Event revealer - Follow the path?
-[c] Yes (+1 understanding) #Follow
+[c] Yes #Follow
 [d<]
 
 The event revealer gains +1 understanding then rolls 1d10 and adds their understanding.
@@ -1262,7 +1262,7 @@ The survivors come upon the remains of a terrible battle between their quarry an
 
 [TO] Choice
 [td] Event revealer - What do you do?
-[c] Investigate (+1 courage)
+[c] Investigate
 [d<]
 
 The event revealer gains +1 courage and rolls 1d10.
@@ -1414,10 +1414,10 @@ The event revealer <b>investigates</b> and rolls 1d10.
 
 71: `71 | Found Relic
 Amidst the endless stone faces, the event revealer notices an unusual object on the ground.
-The event revealer investigates and rolls 1d10.
+The event revealer <b>investigates</b> and rolls 1d10.
 [i] If the settlement has <b>Records</b>, add +6 to the result.
 [TO] 1d10
-[td] Event revealer -Investigate
+[td] Event revealer - Investigate
 [c] 1-2
 [d] You find a weathered, purple stone with a swirling texture. It is shockingly heavy. Mesmerized by the stone, you hide it from the other survivors. Gain the <b>Secretive</b> disorder and -1 movement token from lugging the stone around.
 [c] 3-4
@@ -1425,17 +1425,17 @@ The event revealer investigates and rolls 1d10.
 [c] 5-9
 [d] You find a stone heart that pulses with warmth as you hold it in your hands. Gain +1 insanity.
 [c] 10+
-[dt] You find a mask with living lips. if you return to the settlement with the mask, it quickly learns your language and shares its secrets before crumbling to dust. At the start of the next settlement phase, draw 3 innovations from the innovation deck and add one to your settlement at no cost. If any survivor has a <b>Final Lantern</b>, it begins to flash and vibrate wildly. The mask disintegrates and all survivors suffer 1 brain event damage.
+[dt] You find a mask with living lips. If you return to the settlement with the mask, it quickly learns your language and shares its secrets before crumbling to dust. At the start of the next settlement phase, draw 3 innovations from the innovation deck and add one to your settlement at no cost. If any survivor has a <b>Final Lantern</b>, it begins to flash and vibrate wildly. The mask disintegrates and all survivors suffer 1 brain event damage.
 `,
 
 72: `72 | Something to Pass the Time
-If the settlement does not have Symposium, ignore this event and roll again on the hunt event table before moving on the hunt board. Otherwise, the event revealer suggests a word game to lighten the mood as the survivors trudge forward. The event revealer rolls 1d10.
-[i] If the settlement has Song of the Brave, add +4 to your roll.
+If the settlement does not have <b>Symposium</b>, ignore this event and roll again on the hunt event table before moving on the hunt board. Otherwise, the event revealer suggests a word game to lighten the mood as the survivors trudge forward. The event revealer rolls 1d10.
+[i] If the settlement has <b>Song of the Brave</b>, add +4 to your roll.
 
 [TO] 1d10
 [td] Event revealer
 [c] 1-2
-[d] The survivors' boisterous voices attract their quarry. The monster ambushes them.
+[d] The survivors' boisterous voices attract their quarry. The monster <b>ambushes</b> them.
 [c] 3-7
 [d] No one else is in the mood for a game. The event revealer loses 1 courage.
 [c] 8-9
@@ -1468,8 +1468,9 @@ The survivors grasp each other's hands, form a line, and traverse the smoke. The
 [c] Explore the crater
 [d<]
 
-The survivors carefully descend into the crater, finding the ruins of a settlement surrounded by a ring of skulls. The settlement is absolutely demolished and almost everything has been ground to powder from some tremendous force. The skulls face away from the ruins and in each gaping mouth, a golden ember spews smoke. The sight is haunting; each survivor suffers 1d10 brain event damage and gains 1 random disorder. The survivors gingerly sift through the ruins.
-Nominate a survivor to investigate and roll 1d10.
+The survivors carefully descend into the crater, finding the ruins of a settlement surrounded by a ring of skulls. The settlement is absolutely demolished and almost everything has been ground to powder from some tremendous force. The skulls face away from the ruins and in each gaping mouth, a golden ember spews smoke.
+The sight is haunting; each survivor suffers 1d10 brain event damage and gains 1 random disorder. The survivors gingerly sift through the ruins.
+Nominate a survivor to <b>investigate</b> and roll 1d10.
 
 [TO] 1d10
 [td] Nominated survivor - Investigate
@@ -1479,36 +1480,38 @@ Nominate a survivor to investigate and roll 1d10.
 Against all reason, you feel compelled to reach into a skull and take an ember. Your flesh sizzles, blinding you with pain yet you cannot stop yourself from reaching for your own mouth.
 
 [TO] Check
-[td] Is your jaw broken?
+[td] Do you have a broken jaw?
 [c] Yes #Broken jaw
 [d] You're thwarted. You drop the golden ember from your burning hand. Suffer the <b>dismembered arm</b> severe injury. Shaken, the survivors flee the smoke.
-[c] No #Jaw not broken
+[c] No #No broken jaw
 [d<]
 
+Your jaw clamps shut around the ember, the flesh of your mouth melts shut, muffling your cries of pain. Smoke pours from your eyes, nose, and ears.
+
 [TO] Check
-[td] How does the settlement treat children?
-[c] Survival of the Fittest
-[d] Your jaw clamps shut around the ember, the flesh of your mouth melts shut, muffling your cries of pain. Smoke pours from your eyes, nose, and ears. The urge to live wins out and you savagely break open your own jaw, Suffer the <b>broken jaw</b> severe head injury. The ember tumbles to the ground, its sputtering hiss rining in your ears as all survivors flee in horror.
-[c] Protect the young
-[dt] Your jaw clamps shut around the ember, the flesh of your mouth melts shut, muffling your cries of pain. Smoke pours from your eyes, nose, and ears. Your smoking, melting body marches robotically into the ring of skulls, laying itself in the place of the disturbed skull. The putrid smell of your burning brain suffuses the smoke in the air. The sight is so disturbing that all other survivors flee, never to speak of what happened.
+[td] Does the settlement have <b>Survival of the Fittest</b>?
+[c] Yes
+[d] The urge to live wins out and you savagely break open your own jaw, Suffer the <b>broken jaw</b> severe head injury. The ember tumbles to the ground, its sputtering hiss ringing in your ears as all survivors flee in horror.
+[c] No
+[dt] Your smoking, melting body marches robotically into the ring of skulls, laying itself in the place of the disturbed skull. The putrid smell of your burning brain suffuses the smoke in the air. The sight is so disturbing that all other survivors flee, never to speak of what happened.
 [>d]
 [>d]
 [T]
 [c] 2-4
-[d] You sense the extreme danger from the golden embers and linger just long enough to grab a small trinket. Gain 1 Broken Lantern basic resource.
+[d] You sense the extreme danger from the golden embers and linger just long enough to grab a small trinket. Gain 1 <b>Broken Lantern</b> basic resource.
 [c] 5-8
 [d] You notice that the settlement is strewn with lanterns, all extinguished and smashed nearly beyond recognition. The survivors resolve that this will never happen to them. If any survivor returns to the settlement this year, gain +2 endeavors.
 [c] 9+
-[dt] Amidst the ruins, you find only one unbroken object. A Twilight Sword. It rests, respectfully laid across a mostly undamaged survivor's skeleton. If the settlement does not have a Twilight Sword, and no survivor in the group has the Honorable disorder, you may nominate a survivor to gain the Twilight Sword rare gear. If you do and the Hooded Knight story event is not on the timeline, add it to the timeline 2 years from now.
+[dt] Amidst the ruins, you find only one unbroken object. A Twilight Sword. It rests, respectfully laid across a mostly undamaged survivor's skeleton. If the settlement does not have a <b>Twilight Sword</b>, and no survivor in the group has the <b>Honorable</b> disorder, you may nominate a survivor to gain the <b>Twilight Sword</b> rare gear. If you do and the <b>Hooded Knight</b> story event is not on the timeline, add it to the timeline 2 years from now.
 
 [>d]
 [c] Escape the smoke
-[dt] Survivors escape the smoke and continue the hunt.
+[dt] Survivors escape the smoke and continue their hunt.
 
 [>d]
 [T]
 [>d]
-[c] Move around
+[c] Go around
 [dt] They take the long way around; roll again on the hunt event table before moving on the hunt board.
 `,
 
@@ -1519,11 +1522,11 @@ Each survivor rolls 1d10.
 [TA] 1d10
 [td] Each survivor
 [c] 1-2
-[d] You trip over the jagged ground and shred your flesh! Suffer the torn muscle severe leg injury.
+[d] You trip over the jagged ground and shred your flesh! Suffer the <b>torn muscle</b> severe leg injury.
 [c] 3-8
 [d] You carefully tread over the destroyed faces.
 [c] 9+
-[dt] You find a loosened stone. Gain a Founding Stone starting gear.
+[dt] You find a loosened stone. Gain a <b>Founding Stone</b> starting gear.
 `,
 
 75: `75 | Oops!
@@ -1555,7 +1558,7 @@ Each straggler rolls 1d10.
 
 78: `78 | Dead Great Game Hunter
 
-The survivors find a corpse dressed in brightly-colored clothing, clutching something to its chest. The event revealer may investigate.
+The survivors find a corpse dressed in brightly-colored clothing, clutching something to its chest. The event revealer may <b>investigate</b>.
 
 [TO] Choice
 [td] Event revealer
