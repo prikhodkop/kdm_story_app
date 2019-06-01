@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/tooltipster-follower.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/magnific-popup.css" />
 	<link rel="stylesheet" href="css/selectize.css">
+	<link rel="stylesheet" href="css/settings.css">
 </head>
 
 <body bgcolor="#000000">
@@ -29,7 +30,8 @@
 
 	<!-- <script type="text/javascript" src="js/jquery.magnific-popup.js"></script> -->
 	<!-- <script type="text/javascript" src="js/jquery.initialize.js"></script> -->
-
+	<script type="text/javascript" src="js/settings.js"></script>
+	<script type="text/javascript" src="js/files.js"></script>
 	<script type="text/javascript" src="js/events.js"></script>
 	<script type="text/javascript" src="js/transition.js"></script>
 	<script type="text/javascript" src="js/menu.js"></script>
@@ -67,7 +69,7 @@
 		<img id='random_event_icon' src="images/hunt/random_hunt_event.png"></img>
 		<img id="quary_popup_back" src="images/hunt/random_event_back_new2.jpg"></img>
 
-		<button class="button" id="mute">Mute</button>
+		<!-- <button class="button" id="mute">Mute</button> -->
 
 		<input id="random_event_input" style="text-align:center" type="number"
 			NAME="--" min="0" max="99" size="1" maxlength="2"
@@ -119,8 +121,11 @@
 			jQuery(function () {
 				var start_delay = 1000
 
+				let settings = getSettings();
+				sessionStorage.setItem("settings", JSON.stringify(settings));
+
 				console.log(sessionStorage);
-				let settings = JSON.parse(sessionStorage.getItem("settings"));
+				// let settings = JSON.parse(sessionStorage.getItem("settings"));
 
 				var myself = 'hunt';
 				document.title = myself
@@ -141,6 +146,7 @@
 
 				createMenuButton();
 				createToc();
+				addSettings(settings);
 
 				$('#random_event_icon').tooltipster({
 					contentAsHTML: 'true',
@@ -186,7 +192,7 @@
 
 				$("#container").children().hide();
 				$("#menu-toggle-wrapper").show();
-				$("#mute").show();
+				$("#settings").show();
 				$("#back").show();
 				$("#back_button").show();
 
@@ -206,10 +212,16 @@
 				var anew = true
 				var not_selected = true
 
-				if (sessionStorage.getItem("Mute") == "On") {
+				// if (sessionStorage.getItem("Mute") == "On") {
+				// 	music.mute(true);
+				// 	speech.mute(true);
+				// 	$("#mute.button").toggleClass('active');
+				// }
+				if (settings['music'] == "Off") {
 					music.mute(true);
+				}
+				if (settings['narration'] == "Off") {
 					speech.mute(true);
-					$("#mute.button").toggleClass('active');
 				}
 
 				if ((transition == 'back') && !(state == null)) {
@@ -279,19 +291,19 @@
 					$("#label_text").delay(1000).fadeOut(2000);
 				};
 
-				$("#mute.button").click(function () {
-					if (!$(this).hasClass('active')) {
-						music.mute(true)
-						speech.mute(true)
-						sessionStorage.setItem("Mute", "On");
-					} else {
-						music.mute(false)
-						music.mute(false)
-						sessionStorage.setItem("Mute", "Off");
-					};
-					$(this).toggleClass('active');
-					console.log("Here3!");
-				});
+				// $("#mute.button").click(function () {
+				// 	if (!$(this).hasClass('active')) {
+				// 		music.mute(true)
+				// 		speech.mute(true)
+				// 		sessionStorage.setItem("Mute", "On");
+				// 	} else {
+				// 		music.mute(false)
+				// 		music.mute(false)
+				// 		sessionStorage.setItem("Mute", "Off");
+				// 	};
+				// 	$(this).toggleClass('active');
+				// 	console.log("Here3!");
+				// });
 
 				$('body').on('click', '#menu_item', function () {
 					if ($(this).attr('target') == document.title) {

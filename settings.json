@@ -1,6 +1,8 @@
 {
-  "subtitles": "On",
   "language": "en",
+  "subtitles": "On",
+  "music": "On",
+  "narration": "On",
   "onscreenKeypads": "On",
   "card design": {
     "fighting arts": "Fen Small",

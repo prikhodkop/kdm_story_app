@@ -870,23 +870,23 @@ function get_representation(word) {
 	} else if (word in fightning_arts_text) {
 		// return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
 		if (settings['card design']['fighting arts'] == 'Poots') {
-			return '<img id=reference-image style="width:75%;border: 2px solid #555;" src="images/reference/Fighting Arts/' + word + '.jpg"/>'
+			return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="images/reference/Fighting Arts/' + word + '.jpg"/>'
 		} else if (settings['card design']['fighting arts'] == 'Fen Small') {
-			return '<img id=reference-image style="width:75%;" src="images/reference/Fighting Arts_fen/' + word + '.png"/>'
+			return '<img id=reference-image style="width:75%;border: 1px solid #333;box-shadow: 0 0 10px #000;" src="images/reference/Fighting Arts_fen/' + word + '.png"/>'
 		}
 	} else if (word in secret_fightning_arts_text) {
 		if (settings['card design']['fighting arts'] == 'Poots') {
-			return '<img id=reference-image style="width:75%;border: 2px solid #555;" src="images/reference/Fighting Arts/' + word + '.jpg"/>'
+			return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="images/reference/Fighting Arts/' + word + '.jpg"/>'
 		} else if (settings['card design']['fighting arts'] == 'Fen Small') {
 			return '<img id=reference-image style="width:75%" src="images/reference/Fighting Arts_fen/' + word + '.png"/>'
 		}
 	} else if (word in disorders_text) {
 		if (settings['card design']['disorders'] == 'Poots') {
-			return '<img id=reference-image style="width:75%;border: 2px solid #555;" src="images/reference/Disorders/' + word + '.jpg"/>'
+			return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="images/reference/Disorders/' + word + '.jpg"/>'
 		} else if (settings['card design']['disorders'] == 'Fen Small') {
 			return '<img id=reference-image style="width:75%;" src="images/reference/Disorders_fen/' + word + '.png"/>'
 		} else if (settings['card design']['disorders'] == 'Fen Wide') {
-			return '<img id=reference-image style="width:99%;border: 2px solid #555;box-shadow: 0 0 10px #000;" src="images/reference/Disorders_fen_wide/' + word + '.png"/>'
+			return '<img id=reference-image style="width:99%;border: 1px solid #333;box-shadow: 0 0 10px #000;" src="images/reference/Disorders_fen_wide/' + word + '.png"/>'
 		}
 	} else if (word in abilities) {
 		// return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]

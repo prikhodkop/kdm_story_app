@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="css/magnific-popup.css" />
 	<link rel="stylesheet" href="css/selectize.css">
 	<link rel="stylesheet" href="css/settlement.css">
+	<link rel="stylesheet" href="css/settings.css">
 </head>
 
 <body bgcolor="#000000">
@@ -30,6 +31,8 @@
 	<script type="text/javascript" src="js/tooltipster-follower.min.js"></script>
 	<script src="js/scrollTo.js"></script>
 	<script src="js/howler.core.min.js"></script>
+	<script type="text/javascript" src="js/settings.js"></script>
+	<script type="text/javascript" src="js/files.js"></script>
 	<script type="text/javascript" src="js/events.js"></script>
 	<script type="text/javascript" src="js/transition.js"></script>
 	<script type="text/javascript" src="js/menu.js"></script>
@@ -48,7 +51,7 @@
 			Settlement
 		</div>
 
-		<button class="button" id="mute">Mute</button>
+		<!-- <button class="button" id="mute">Mute</button> -->
 
 		<a id="back_button" href='#'>
 			<svg class="back_button__icon" enable-background="new 0 0 492 492" version="1.1" viewBox="0 0 492 492" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
@@ -85,6 +88,9 @@
 				document.title = myself
 
 				console.log(myself);
+
+				var settings = getSettings();
+				sessionStorage.setItem("settings", JSON.stringify(settings));
 
 				var state = sessionStorage.getItem(myself);
 				var transition = sessionStorage.getItem("transition");
@@ -147,18 +153,19 @@
 				createToc();
 				createSevereTables();
 				createReference();
+				addSettings(settings);
 
 				// MUTE BUTTON SETUP
-				$("#mute.button").click(function () {
-					if (!$(this).hasClass('active')) {
-						music.mute(true);
-						speech.mute(true);
-					} else {
-						speech.mute(false);
-						music.mute(false);
-					};
-					$(this).toggleClass('active');
-				});
+				// $("#mute.button").click(function () {
+				// 	if (!$(this).hasClass('active')) {
+				// 		music.mute(true);
+				// 		speech.mute(true);
+				// 	} else {
+				// 		speech.mute(false);
+				// 		music.mute(false);
+				// 	};
+				// 	$(this).toggleClass('active');
+				// });
 
 				// BACK BUTTON SETUP
 				if ((back_target == null) || (back_target == "null") || (back_target == "undefined")) {
@@ -188,11 +195,18 @@
 
 				noise.play();
 
-				if (sessionStorage.getItem("Mute") == "On") {
+				// if (sessionStorage.getItem("Mute") == "On") {
+				// 	music.mute(true);
+				// 	speech.mute(true);
+				// 	noise.mute(true);
+				// 	$("#mute.button").toggleClass('active');
+				// }
+				if (settings['music'] == "Off") {
 					music.mute(true);
-					speech.mute(true);
 					noise.mute(true);
-					$("#mute.button").toggleClass('active');
+				}
+				if (settings['narration'] == "Off") {
+					speech.mute(true);
 				}
 
 				if (anew) {
@@ -275,21 +289,21 @@
 					delay: '600'
 				});
 
-				$("#mute.button").click(function () {
-					if (!$(this).hasClass('active')) {
-						music.mute(true);
-						speech.mute(true);
-						noise.mute(true);
-						sessionStorage.setItem("Mute", "On");
-					} else {
-						speech.mute(false);
-						music.mute(false);
-						noise.mute(false);
-						sessionStorage.setItem("Mute", "Off");
-					};
-
-					$(this).toggleClass('active');
-				});
+				// $("#mute.button").click(function () {
+				// 	if (!$(this).hasClass('active')) {
+				// 		music.mute(true);
+				// 		speech.mute(true);
+				// 		noise.mute(true);
+				// 		sessionStorage.setItem("Mute", "On");
+				// 	} else {
+				// 		speech.mute(false);
+				// 		music.mute(false);
+				// 		noise.mute(false);
+				// 		sessionStorage.setItem("Mute", "Off");
+				// 	};
+				//
+				// 	$(this).toggleClass('active');
+				// });
 
 				// ### FUNCTION THAT SAVES ALL DATA NEEDED TO RESTORE STATE ######
 				function current_state() {

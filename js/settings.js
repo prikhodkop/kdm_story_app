@@ -224,6 +224,26 @@ var settings_schema = {
 			"en",
 		]
 	},
+	"music": {
+		"type": "option",
+		"title": "Music",
+		"description": '',
+		"default": "On",
+		"enum": [
+			"On",
+			"Off"
+		]
+	},
+	"narration": {
+		"type": "option",
+		"title": "Narration",
+		"description": '',
+		"default": "On",
+		"enum": [
+			"On",
+			"Off"
+		]
+	},
 	"subtitles": {
 		"type": "option",
 		"title": "Subtitles",

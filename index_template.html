@@ -45,7 +45,7 @@
 
 		<!-- <audio id="open_audio" src="audio/theme.mp3" loop="loop"></audio> -->
 
-		<button class="button" id="mute">Mute</button>
+		<!-- <button class="button" id="mute">Mute</button> -->
 		<button class="button_video">Intro</button>
 	</div>
 
@@ -77,7 +77,7 @@
 
 				sessionStorage.setItem("settings", JSON.stringify(settings));
 				sessionStorage.setItem("back_target", null);
-				sessionStorage.setItem("Mute", "Off");
+				// sessionStorage.setItem("Mute", "Off");
 
 				let lang = settings['language'];
 
@@ -109,33 +109,34 @@
 					configureSubtitle(readFile(__dirname + '/video/srt/' + lang + '/intro.srt'))
 				}
 
-				if (sessionStorage.getItem("Mute") == "On") {
-					music.mute(true);
+				if (settings['narration'] == "Off") {
 					$("#video").prop('muted', true)
-					// speech.mute(true);
-					$("#mute.button").toggleClass('active');
 				}
 
-				$("#mute.button").click(function () {
-					console.log("Here1!");
-					if (!$(this).hasClass('active')) {
-						// $("#open_audio").get(0).pause();
-						music.mute(true)
-						$("video").prop('muted', true)
-						sessionStorage.setItem("Mute", "On");
-						// $("#speech").get(0).pause();
-						console.log("Here2!");
-					} else {
-						// $("#open_audio").get(0).play();
-						music.mute(false)
-						$("video").prop('muted', false)
-						sessionStorage.setItem("Mute", "Off");
-						// $("#speech").get(0).play();
-					};
+				if (settings['music'] == "Off") {
+					music.mute(true);
+				}
 
-					$(this).toggleClass('active');
-					console.log("Here3!");
-				});
+				// $("#mute.button").click(function () {
+				// 	console.log("Here1!");
+				// 	if (!$(this).hasClass('active')) {
+				// 		// $("#open_audio").get(0).pause();
+				// 		music.mute(true)
+				// 		$("video").prop('muted', true)
+				// 		sessionStorage.setItem("Mute", "On");
+				// 		// $("#speech").get(0).pause();
+				// 		console.log("Here2!");
+				// 	} else {
+				// 		// $("#open_audio").get(0).play();
+				// 		music.mute(false)
+				// 		$("video").prop('muted', false)
+				// 		sessionStorage.setItem("Mute", "Off");
+				// 		// $("#speech").get(0).play();
+				// 	};
+				//
+				// 	$(this).toggleClass('active');
+				// 	console.log("Here3!");
+				// });
 
 				$(".button_video").click(function () {
 					if (!$(this).hasClass('active')) {
@@ -146,7 +147,7 @@
 						// $("#open_audio").get(0).currentTime = 0
 						$("#video").show();
 						$("#video").get(0).play()
-						$(".button").hide()
+						// $(".button").hide()
 						$(".button_video").hide();
 						$("#settings").hide();
 						$("#label_text").hide();
@@ -160,7 +161,7 @@
 
 						$("#video").get(0).pause()
 						$("#video").hide();
-						$(".button").show();
+						// $(".button").show();
 						$("#settings").show();
 						$("#label_text").fadeIn(8000);
 					};
@@ -178,7 +179,7 @@
 
 					// $("#open_audio").get(0).play();
 					$("#video").hide();
-					$(".button").show()
+					// $(".button").show()
 					$("#settings").show();
 					$(".button_video").delay(1000).fadeIn(6000);
 					$("#label_text").delay(2000).fadeIn(8000);
@@ -194,7 +195,7 @@
 					music.play();
 
 					$("#video").hide();
-					$(".button").show()
+					// $(".button").show()
 					$("#settings").show();
 					$(".button_video").fadeIn(2000);
 					$("#label_text").delay(2000).fadeIn(4000);
