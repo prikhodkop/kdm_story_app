@@ -1385,7 +1385,7 @@ Each survivor rolls 1d10.
 [d] They continue on
 [c] No #Greater than survival
 [dt] They vomit into a nearby pool, suffering 1 event damage to the body. Before their eyes, the pool greedily dissolves their vomit, they gain +1 understanding.
-
+[br]
 [TO] After everyone has rolled
 [td] Does any survivor have 3+ understanding?
 [c] Yes #3+ understanding
@@ -2252,6 +2252,15 @@ function md_to_html_2(event_id, init = true, current_table = 0, current_class = 
 					first_text = false;
 				} else {
 					html += add_text('<i>' + row.replace('[i] ', '') + '</i>')
+				}
+			}
+		}  else if (row.includes('[br]')) {
+      if ((init || parsing_child > 0) && in_table == 0) {
+				if (!init && !condition == '' && first_text) {
+					html += add_text('<br/>' + '[<b>' + condition + '</b>] ' + row.replace('[br]', ''))
+					first_text = false;
+				} else {
+					html += add_text('<br/>' + row.replace('[br]', ''))
 				}
 			}
 		} else {
