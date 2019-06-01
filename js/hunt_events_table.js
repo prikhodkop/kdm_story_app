@@ -72,7 +72,7 @@ The path ahead is arid and dead. You may press on or try to find a way around.
 
 [TO] Choice
 [td] What do you do?
-[c] Press on (survivors gain +1 courage) #Press on
+[c] Press on, survivors gain +1 courage #Press on
 [d<]
 
 Your stomachs grumble in the dark as you stumble forward. The survivors pool their supplies. The event revealer rolls 1d10 and adds +2 to their roll for each consumable gear or resource the group has.
@@ -626,14 +626,14 @@ The ground beneath the event revealer's feet gives way and they plummet into a p
 [td] Event revealer
 [c] Another survivor has a whip #Whip
 [d] They throw you a line in time; do not roll on the table.
-[c] <b>Tumble</b> fightning art #Tumble
-[d] They nimbly catch a ledge and haul themselves up; gain +1 speed token; do not roll on the table.
+[c] Event revealer has the <b>Tumble</b> fightning art #Tumble
+[d] They nimbly catch a ledge and haul themselves up; gain +1 speed token and do not roll on the table.
 [c] 1
-[d] You land with a sickening crunch, mangling your legs. Suffer the broken leg severe injury twice.
+[d] You land with a sickening crunch, mangling your legs. Suffer the <b>broken leg</b> severe injury twice.
 [c] 2-3
-[d] Your leg breaks your fall. Suffer the broken leg severe injury.
+[d] Your leg breaks your fall. Suffer the <b>broken leg</b> severe injury.
 [c] 4-6
-[d] You land at the bottom with a loud thud. Suffer 2 event damage to a random hit location and archive all fragile gear in your gear grid.
+[d] You land at the bottom with a loud thud. Suffer 2 event damage to a random hit location and archive all <b>fragile</b> gear in your gear grid.
 [c] 7-9
 [d] You land at the bottom with a soft thud. Suffer 1 event damage to a random hit location.
 [c] 10+
@@ -657,41 +657,42 @@ Roll 1d10.
 
 [TO] 1d10
 [td] Male survivor
-[c] Has <b>Unconscious Fighter</b> fignting art #Unconscious Fighter
+[c] Has the <b>Unconscious Fighter</b> fighting art #Unconscious Fighter
 [d] They crush the bug while still snoring. They wake, confused, with a random vermin resource in their hands.
 [c] 1-5
-[d] When you wake, your genitals have been stolen. In their place is nothing but smooth skin. Suffer the destroyed genitals severe injury.
+[d] When you wake, your genitals have been stolen. In their place is nothing but smooth skin. Suffer the <b>destroyed genitals</b> severe injury.
 [c] 6+
 [dt] You wake with a start, terrified to find menacing pincers approaching. Your defenses are quick. Without thinking, you wallop the insect crawling on your pants, suffering 1 event damage to the waist.
 
 [>d]
 [c] No male survivors
-[d] Insect crawls away and nothing happens.
+[d] The insect crawls away and nothing happens.
 [T]
 `,
 
 28: `28 | Trollbird
 
-A rumpled, unsightly bird stands in the survivors' path. Its beady, wet eyes blink expectantly and it calls out with an eerie human chuckle. The survivors may archive 1 con-sumable item or gear, offering it to the trollbird.
+A rumpled, unsightly bird stands in the survivors' path. Its beady, wet eyes blink expectantly and it calls out with an eerie human chuckle. The survivors may archive 1 <b>consumable</b> item or gear, offering it to the trollbird.
 
 If any survivor is insane, they must feed the trollbird, if able.
 
 [TO] Choice
 [td] What do you do?
 [c] Feed the bird #Feed
-[d] You feed the bird and it hops off with a terrible cackle.
+[d] You feed the trollbird and it hops off with a terrible cackle.
 [c] Ignore the bird #Ignore
 [d<]
 
-it follows the survivors on their hunt, constantly mocking them with its chuckle. Roll 1d10.
-[i] If any survivor has the Coprolalia disorder, they curse at the bird and make vigorous and vulgar gestures. The bird is impressed. Add +3 to your roll.
+The trollbird follows the survivors on their hunt, constantly mocking them with its chuckle. Roll 1d10.
+
+[i] If any survivor has the <b>Coprolalia</b> disorder, they curse at the bird and make vigorous and vulgar gestures. The bird is impressed. Add +3 to your roll.
 
 [TO] 1d10
 [td] Event revealer
 [c] 1-5
-[d] The trollbird makes a terrible racket, alerting the monster. All survivors gain +1 understanding. At the start of the showdown, the monster ambushes the survivors.
+[d] The trollbird makes a terrible racket, alerting the monster. All survivors gain +1 understanding. At the start of the showdown, the monster <b>ambushes</b> the survivors.
 [c] 6+
-[dt] The trollbird mocks and distracts the monster as the survivors sneak up. All survivors gain +1 insanity. At the start of the showdown, the survivors ambush the monster.
+[dt] The trollbird mocks and distracts the monster as the survivors sneak up. All survivors gain +1 insanity. At the start of the showdown, the survivors <b>ambush</b> the monster.
 [>d]
 [T]
 `,
@@ -717,7 +718,7 @@ The survivors cross paths with a tall, unnaturally thin man in a hooded robe. Wh
 `,
 
 30: `30 | Rotten Faces
-he stone faces start to give under the survivors' feet. They are bloated and smell terrible. Each survivor rolls 1d10.
+The stone faces start to give under the survivors' feet. They are bloated and smell terrible. Each survivor rolls 1d10.
 
 [TA] 1d10
 [td] Each survivor
@@ -734,7 +735,7 @@ he stone faces start to give under the survivors' feet. They are bloated and sme
 31: `31 | Strange Path
 The survivors stop at the head of a path. Small lanterns twinkle, marking its edges.
 
-The event revealer decides whether or not the survi-vors follow the path. If the event revealer is insane, they must.
+The event revealer decides whether or not the survivors follow the path. If the event revealer is <b>insane</b>, they must.
 
 [TO] Choice
 [td] Event revealer - Follow the path?
@@ -750,11 +751,11 @@ The event revealer gains +1 understanding then rolls 1d10 and adds their underst
 [c] 2-4
 [d] A random survivor tears off hysterically along a branch in the path. They return hours later, ghostly pale and with no recollection of what happened. They lose 1d10 survival.
 [c] 5-7
-[d] The path twists and turns dizzyingly into the dark. All sur-vivors suffer 1 brain event damage and the event revealer rolls again on this table, adding +2 to their roll.
+[d] The path twists and turns dizzyingly into the dark. All survivors suffer 1 brain event damage and the event revealer rolls again on this table, adding +2 to their roll.
 [c] 8-9
 [d] The path leads the survivors to a large stone face with lanterns for eyes. Inside its open mouth is a bounty. Each survivor gains 1 random basic resource.
 [c] 10+
-[dt] The path leads to the beast you are hunting! The survivors ambush the monster. <i>If any survivor has the <b>Honorable</b> disorder, they realize the folly of their ways and may remove the disorder. If any survivors remain <b>Honorable</b>, they announce their presence to the monster; the monster ambushes the survivors instead</i>.
+[dt] The path leads to the beast you are hunting! The survivors <b>ambush</b> the monster. <i>If any survivor has the <b>Honorable</b> disorder, they realize the folly of their ways and may remove the disorder. If any survivors remain <b>Honorable</b>, they announce their presence to the monster; the monster <b>ambushes</b> the survivors instead</i>.
 
 [>d]
 [c] No #Do not follow
@@ -766,14 +767,14 @@ The event revealer is devastated by a piercing cacophony in their head. Roll 1d1
 
 [TO] 1d10
 [td] Event revealer
-[c] Result lesser or equal to insanity #
+[c] Result less than or equal to their current insanity #
 [d<]
 
-Survivor goes mad, lashing out at their compatriots! Each other survivor suffers 1 event damage to a random hit location before the event revealer regains control of themselves.
+They go mad, lashing out at their compatriots! Each other survivor suffers 1 event damage to a random hit location before the event revealer regains control of themselves.
 
 [TO] Check
-[td] Does event revealer has <b>Crazed</b> fightning art?
-[c] Yes #>Crazed
+[td] Does the event revealer have the <b>Crazed</b> fightning art?
+[c] Yes #Crazed
 [d] They gain insight from their ordeal. Gain +10 insanity and +2 understanding.
 [c] No #
 [d<]
@@ -781,14 +782,11 @@ Survivor goes mad, lashing out at their compatriots! Each other survivor suffers
 [T]
 
 [>d]
-[c] Result greater than insanity #
+[c] Result greater than their current insanity #
 [d<]
-
-Survivor gets back to his senses.
-
 [TO] Check
-[td] Does event revealer has <b>Crazed</b> fightning art?
-[c] Yes #>Crazed
+[td] Does the event revealer have the <b>Crazed</b> fightning art?
+[c] Yes #Crazed
 [d] They gain insight from their ordeal. Gain +10 insanity and +2 understanding.
 [c] No #
 [d<]
@@ -806,7 +804,7 @@ Survivor gets back to his senses.
 The event revealer trips over a protruding nose in the ground. The lips of a stone face begin to move!
 
 [TO] Check
-[td] Does event revealer has a name?
+[td] Does the event revealer have a name?
 [c] Yes #
 [d<]
 
@@ -820,7 +818,7 @@ The lips seductively whisper the survivor's name.
 They are drawn in, savagely kissing the face. Repulsed and outraged, the other survivors suffer 1 brain event damage before pulling the crazed survivor from the ground and moving on.
 
 [TO] Check
-[td] Does anyone has <b>Marrow Hunger</b> disorder?
+[td] Does anyone have the <b>Marrow Hunger</b> impairment?
 [c] Yes #Marrow Hunger
 [d] The face secretly whispers their life's purpose. They gain +1 permanent strength. Add the <b>Murder</b> settlement event to the timeline next year.
 [c] No #
@@ -835,7 +833,7 @@ They are drawn in, savagely kissing the face. Repulsed and outraged, the other s
 They gain +1 understanding, feeling on the cusp of learning something.
 
 [TO] Check
-[td] Does anyone has <b>Marrow Hunger</b> disorder?
+[td] Does anyone have the <b>Marrow Hunger</b> impairment?
 [c] Yes #Marrow Hunger
 [d] The face secretly whispers their life's purpose. They gain +1 permanent strength. Add the <b>Murder</b> settlement event to the timeline next year.
 [c] No #
@@ -854,22 +852,21 @@ They gain +1 understanding, feeling on the cusp of learning something.
 34: `34 | Crippling Misery
 Each survivor rolls 1d10. The lowest-scoring survivor (or survivors, in case of ties) becomes a straggler.
 
-[i] If any survivor (or survivors) has the Anxiety disorder, they are the straggler. Do not roll.
+[i] If any survivor (or survivors) has the <b>Anxiety</b> disorder, they are the straggler. Do not roll.
 
 [TO] 1d10
 [td] Determine straggler
 [c] Straggler chosen
 [d<]
 
-The straggler is lost in a moment of profound self doubt. They slip, not having the will to catch themselves, and tumble off a steep hill of stone faces. They land awkwardly with a crunch, suffering the broken leg severe injury. Sobbing to themselves, they come to grips with just how terrible their life is and gain +1 understanding.
+The straggler is lost in a moment of profound self doubt. They slip, not having the will to catch themselves, and tumble off a steep hill of stone faces. They land awkwardly with a crunch, suffering the <b>broken leg</b> severe injury. Sobbing to themselves, they come to grips with just how terrible their life is and gain +1 understanding.
 
-[TO] Check
-[td] Does straggler has <b>Binge Eating</b> disorder?
+[TA] Check
+[td] Does the straggler have the <b>Binge Eating</b> disorder?
 [c] Yes #Binge Eating
-[d] They wipe away their tears and reach out to a nearby critter, instinctually cramming it into their mouth for comfort. Draw 1 random vermin resource and consume it.
-[c] No #
-[d<]
-[>d]
+[d] They wipe away their tears and reach out to a nearby critter, instinctually cramming it into their mouth for comfort. Draw 1 random vermin resource and <b>consume</b> it.
+[c] No #No Binge Eating
+[d] Nothing happens.
 [T]
 
 [>d]
@@ -887,11 +884,11 @@ The event revealer rolls 1d10 and adds their understanding.
 [d<]
 
 [TO] Check
-[td] Does settlement has <b>Song of the Brave</b> innovation?
+[td] Does settlement have <b>Song of the Brave</b>?
 [c] Yes #Song of the Brave
 [d<]
 
-The group may nominate a brave survivor to investigate the ruins of the settlement's lantern hoard. They gain +1 courage and roll 1d10.
+The group may nominate a brave survivor to <b>investigate</b> the ruins of the settlement's lantern hoard. They gain +1 courage and roll 1d10.
 
 [TO] 1d10
 [td] Nominated Survivor
@@ -904,7 +901,7 @@ The group may nominate a brave survivor to investigate the ruins of the settleme
 [c] No #
 [d<]
 
-Survivors move on.
+End this event.
 
 [>d]
 [T]
@@ -913,14 +910,14 @@ Survivors move on.
 [c] 5+
 [d<]
 
-Gain the <b>Lantern Oven</b> innovation. If the settlement already has this innovation, the event revealer harvests a broken lantern basic resource from the remains.
+Gain the <b>Lantern Oven</b> innovation. If the settlement already has this innovation, the event revealer harvests a <b>broken lantern</b> basic resource from the remains.
 
 [TO] Check
-[td] Does settlement has <b>Song of the Brave</b> innovation?
+[td] Does settlement have <b>Song of the Brave</b>?
 [c] Yes #Song of the Brave
 [d<]
 
-The group may nominate a brave survivor to investigate the ruins of the settlement's lantern hoard. They gain +1 courage and roll 1d10.
+The group may nominate a brave survivor to <b>investigate</b> the ruins of the settlement's lantern hoard. They gain +1 courage and roll 1d10.
 
 [TO] 1d10
 [td] Nominated Survivor
@@ -933,7 +930,7 @@ The group may nominate a brave survivor to investigate the ruins of the settleme
 [c] No #
 [d<]
 
-Survivors move on.
+End this event.
 
 [>d]
 [T]
@@ -943,33 +940,27 @@ Survivors move on.
 `,
 
 36: `36 | On the Trail
-The survivors rush forward, feeling their quarry close at hand. Skip the next hunt space. If this movement begins the showdown, the survivors ambush their quarry. If any survivor has noisy gear, the survivors do not ambush. Start the showdown normally.
+The survivors rush forward, feeling their quarry close at hand. Skip the next hunt space. If this movement begins the showdown, the survivors <b>ambush</b> their quarry. If any survivor has <b>noisy</b> gear, the survivors do not ambush. Start the showdown normally.
 `,
 
 37: `37 | Lost
-The survivors are hopelessly lost in the unbroken darkness. Move the survivors 2 spaces back on the hunt board.`,
-
-// '37':
-// `37 | Lost
-// Survivors are hoplessly lost in the unbroken darkness. Move the survivors 2 space back on the hunt board.
-//`,
+The survivors are hopelessly lost in the unbroken darkness. Move the survivors 2 spaces back on the hunt board.
+`,
 
 38: `38 | Gregalope
-
-[img] 38
 
 A massive Gregalope stands astride the horizon, its ancient body bloated with tumors and scar tissue. Its milky eyes catch sight of the survivors and it bounds away. Driven by a sudden desire, the survivors give chase. The event revealer rolls 1d10 and adds their movement to their roll.
 
 [TO] 1d10
 [td] Event revealer
-[c] Anyone has Strategist fighting art #Strategist
-[d] Survivors may corner the Gregalope at a giant stone face instead of giving chase. If they do end the hunt immediately. Start a showdown with a level 2 Screaming Antelope. using its setup rules. In addition, place a Giant Stone Face adjacent to the monster and give the monster the Butcher's Berserker trait card. If the survivors prevail, gain the normal showdown rewards and 3 additional Screaming Antelope resources.
+[c] Anyone has <b>Strategist</b> fighting art #Strategist
+[d] Survivors may corner the Gregalope at a giant stone face instead of giving chase. If they do end the hunt immediately. Start a showdown with a level 2 Screaming Antelope, using its setup rules. In addition, place a <b>Giant Stone Face</b> adjacent to the monster and give the monster the Butcher's <b>Berserker</b> trait card. If the survivors prevail, gain the normal showdown rewards and 3 additional Screaming Antelope resources.
 [c] 1-6
 [d] The survivors quickly fall behind the majestic beast. Move 1 space away from the quarry on the hunt board.
 [c] 7-14
 [d] The Gregalope is far too fast. It's gone before you know it.
 [c] 15-16
-[d] The survivors lose sight of the Gregalope but discov-er a hidden path. You may re-roll the next result on the hunt event table.
+[d] The survivors lose sight of the Gregalope but discover a hidden path. You may re-roll the next result on the hunt event table.
 [c] 17+
 [dt] Just before it leaps out of view, the Gregalope bows its mighty horns. The experience changes the exhausted event revealer. They gain +1 permanent movement.
 `,
@@ -980,7 +971,7 @@ A heavy mist envelops the survivors, obscuring their lantern light. Roll 1d10.
 [TO] 1d10
 [td] Event revealer
 [c] Even result #Even
-[d] The survivors stumble in the right direction. If the showdown begins in the next space on the hunt board, the monster ambushes the survivors.
+[d] The survivors stumble in the right direction. If the showdown begins in the next space on the hunt board, the monster <b>ambushes</b> the survivors.
 [c] Odd result #Odd
 [dt] They get turned around; roll again on the hunt event table before moving on the hunt event board.
 `,
@@ -989,16 +980,16 @@ A heavy mist envelops the survivors, obscuring their lantern light. Roll 1d10.
 The event revealer dreams of the upcoming hunt. They stand before the great beast, weapons ready, but it strikes them down.
 
 [TO] Check
-[td] Does event revealer has 3+ courage or any survivor is a savior?
+[td] Does the event revealer have 3+ courage or is survivor a savior?
 [c] Yes #
 [d<]
 
 The event revealer is emboldened by the dream and gains +1 evasion token.
 
 [TO] Check
-[td] Does anyone have <b>Twilight Sword</b>?
+[td] Does anyone have the <b>Twilight Sword</b>?
 [c] Yes #Twilight Sword
-[d] They dream of indiscriminate slaughter. Add the <b>Murder</b> settlement event to the timeline <b>1d5</b> years from now.
+[d] They dream of indiscriminate slaughter. Add the <b>Murder</b> settlement event to the timeline 1d5 years from now.
 [c] No #
 [d<]
 [>d]
@@ -1011,16 +1002,16 @@ The event revealer is emboldened by the dream and gains +1 evasion token.
 The dream is merely rattling. Suffer 1 brain event damage.
 
 [TO] Check
-[td] Does anyone have <b>Twilight Sword</b>?
+[td] Does anyone have the <b>Twilight Sword</b>?
 [c] Yes #Twilight Sword
-[d] They dream of indiscriminate slaughter. Add the <b>Murder</b> settlement event to the timeline <b>1d5</b> years from now.
+[d] They dream of indiscriminate slaughter. Add the <b>Murder</b> settlement event to the timeline 1d5 years from now.
 [c] No #
 [d<]
 [>d]
 [T]
-
 [>d]
 [T]
+
 `,
 
 41: `41 | Nightmare
