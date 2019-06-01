@@ -1349,11 +1349,20 @@ All non-deaf survivors gain +1 understanding and suffer 1 brain event damage. If
 67: `67 | Saliva Pools
 The ground ahead is pockmarked with pools filled with a gooey liquid. They bubble merrily and stink of digesting meat. As the survivors move between them, they are overcome by waves of nausea.
 
+[TO] Check
+[td] Does any survivor has a sickle?
+[c] Yes #Sickle
+[d<]
+  They slice a few leaves from a nearby plant and everyone uses them to plug their noses and mask the smell. All survivors gain +1 understanding.
+
+  [i] If any survivor has 3+ understanding, they devise a way to use the pools. Each survivor may place one piece of gear in a pool. Archive the gear and gain the resources used to craft it (if any).
+[>d]
+[c] No #
+[d<]
+
 [i] If any survivor has 3+ understanding, they devise a way to use the pools. Each survivor may place one piece of gear in a pool. Archive the gear and gain the resources used to craft it (if any).
 
-If any survivor has a sickle, they slice a few leaves from a nearby plant and everyone uses them to plug their noses and mask the smell. All survivors gain +1 understanding.
-
-Otherwise, each survivor rolls 1d10.
+Each survivor rolls 1d10.
 
 [TA] 1d10
 [td] Each survivor - Result is less than survival?
@@ -1361,7 +1370,8 @@ Otherwise, each survivor rolls 1d10.
 [d] They continue on
 [c] No #Greater than survival
 [dt] They vomit into a nearby pool, suffering 1 event damage to the body. Before their eyes, the pool greedily dissolves their vomit, they gain +1 understanding.
-`,
+[>d]
+[T]`,
 
 68: `68 | A Familiar Face
 [i] If no survivors have died yet this campaign, ignore this event and roll again on the hunt event table before moving on the hunt board.
