@@ -363,7 +363,7 @@ They slowly pull themselves to their feet, promising to never give up hope. Roll
 
 [>d]
 [c] No Society Principle
-[dt] End this event.
+[dt] The survivors continue their hunt.
 `,
 
 14: `14 | Chance Encounter
@@ -381,7 +381,7 @@ Otherwise, exclaiming wildly at the survivors, the woman's presence fills everyo
 [c] Yes
 [d] She snaps her fingers and ages before their eyes! A chill passes over the survivors. Their bodies and armor spontaneously knit themselves back together. Heal all injury levels and lost armor points. Then, she pulls a random survivor aside and whispers secrets of the upcoming hunt. They gain +1 accuracy token.
 [c] No
-[dt] End this event.
+[dt] The survivors continue their hunt.
 `,
 
 15: `15 | Man-trap
@@ -480,7 +480,7 @@ As the survivors press forward, the air turns dry and the ground cracks. The sur
 [c] Yes #Pickaxe
 [d] The survivors break open an interesting-looking vein in the cracked ground. Gain 1 Iron strange resource.
 [c] No #No pickaxe
-[dt] End this event.
+[dt] The survivors continue their hunt.
 `,
 
 21: `21 | Drawings
@@ -505,7 +505,7 @@ Cowering in a cave, the survivors find strange drawings decorating the walls. Th
 [>d]
 
 [c] No
-[d] End this event.
+[d] The survivors continue their hunt.
 [T]
 `,
 
@@ -901,7 +901,7 @@ The group may nominate a brave survivor to <b>investigate</b> the ruins of the s
 [c] No #
 [d<]
 
-End this event.
+The survivors continue their hunt.
 
 [>d]
 [T]
@@ -930,7 +930,7 @@ The group may nominate a brave survivor to <b>investigate</b> the ruins of the s
 [c] No #
 [d<]
 
-End this event.
+The survivors continue their hunt.
 
 [>d]
 [T]
@@ -1015,17 +1015,17 @@ The dream is merely rattling. Suffer 1 brain event damage.
 `,
 
 41: `41 | Nightmare
-The event revealer dreams of the upcoming hunt. The great beast vanishes during their battle and secretly fol-lows them back to the settlement. They helplessly watch as it devours all they know and love.
+The event revealer dreams of the upcoming hunt. The great beast vanishes during their battle and secretly follows them back to the settlement. They helplessly watch as it devours all they know and love.
 
 The event revealer gains +1d10 insanity and -1 evasion token.
 
-[i] If the settlement has a savior. they appear in the dream and defend their home. The event revealer gains +1d5 survival.
+[i] If the settlement has a savior, they appear in the dream and defend their home. The event revealer gains +1d5 survival.
 
 [i] If no survivor in the settlement or hunting party has a <b>Twilight Sword</b>, the event revealer envisions a maniacal version of themselves wielding the blade and gleefully slaughtering the beast. They awake to find a <b>Twilight Sword</b> at their side, humming gently against their body. Instinctively the survivor recognizes the weight of the weapon's curse and the promise of its power. The event revealer gains the <b>Twilight Sword</b> rare gear. They may also select <b>Twilight Sword</b> as their weapon proficiency type and gain +1 weapon proficiency with this weapon.
 `,
 
 42: `42 | Surgeon
-A creaky carriage approaches the survivors. Richly appointed in red and gold. the carriage is carved on every side with lurid faces. A massive, twitching eye adorns the front, while the door of the carriage is a waiting, open mouth. Out of a small window. a gnarled hand beckons.
+A creaky carriage approaches the survivors. Richly appointed in red and gold, the carriage is carved on every side with lurid faces. A massive, twitching eye adorns the front, while the door of the carriage is a waiting, open mouth. Out of a small window, a gnarled hand beckons.
 One survivor with 3+ courage may choose to enter the wagon.
 
 [TO] Choice
@@ -1033,7 +1033,7 @@ One survivor with 3+ courage may choose to enter the wagon.
 [c] Enter
 [d] They remove one impairment or severe injury and gain 1 random disorder.
 [c] Do not enter
-[d] Survivors move away from the carriage and it leaves.
+[d] The survivors continue their hunt.
 [T]
 `,
 
@@ -1055,38 +1055,39 @@ While investigating their quarry's tracks, the survivors realize they are huntin
 45: `45 | Jagged Valley
 A valley of sharp, white stones opens before the survivors, looking just like a toothy maw. As the survivors push and climb through the jagged spires, they find that even the shallowest nick bleeds profusely. Each survivor suffers 1 event damage to the body.
 Unless a survivor has bandages to patch up their wounds, all survivors also gain 2 bleeding tokens!
-If any survivor has a pickaxe, they may try to convince the other survivors to let them investigate a bit more. If they are convinced, roll 1d10.
+
+[i] If any survivor has a pickaxe, they may try to convince the other survivors to let them <b>investigate</b> a bit more. If they are convinced, roll 1d10.
 
 [TA] 1d10
 [td] Survivor carrying a pickaxe - Investigate
 [c] 1
 [d] The white stones are teeth and the survivors are in a giant mouth! Everyone must spend 1 survival to scamper out of the mouth. Anyone remaining inside is chewed to a pulp. Dead. Do not gain the benefits of <b>Cannibalize</b>.
 [c] 2-5
-[d] The white stone is extremely hard. When the survivors finally break through, a horde of bugs scuttles forth from the holes. Gain 1 Hissing Cockroach vermin resource. The excavation was time consuming: roll again on the hunt event table before moving on the hunt board.
+[d] The white stone is extremely hard. When the survivors finally break through, a horde of bugs scuttles forth from the holes. Gain 1 <b>Hissing Cockroach</b> vermin resource. The excavation was time consuming: roll again on the hunt event table before moving on the hunt board.
 [c] 6+
-[dt] The survivors find a crack and expand it. Within is a hidden cache! Gain 1 Iron strange resource and 1 Hissing Cockroach vermin resource. The excavation was time consuming; roll again on the hunt event table before moving on the hunt board.
+[dt] The survivors find a crack and expand it. Within is a hidden cache! Gain 1 <b>Iron</b> strange resource and 1 <b>Hissing Cockroach</b> vermin resource. The excavation was time consuming; roll again on the hunt event table before moving on the hunt board.
 `,
 
 46: `46 | River
-The survivors come to the edge of a river of blood. Non-insane survivors suffer 1 brain event damage at the sight of it. The survivors must investigate in order to pick up their quarry's trail.
+The survivors come to the edge of a river of blood. <b>Non-insane</b> survivors suffer 1 brain event damage at the sight of it. The survivors must <b>investigate</b> in order to pick up their quarry's trail.
 Each survivor rolls 1d10. If no survivor successfully finds the monster's trail, roll again on the hunt event table before moving on the hunt board.
 
 [TA] 1d10
 [td] Each survivor - Investigate
 [c] 1-2
-[d] You lose your balance and fall into the river of blood! Instantly, a massive parasite crams its way down your throat, savaging your insides on the way in. Suffer the broken rib severe body injury. You hope that that's all the parasite does to you.
+[d] You lose your balance and fall into the river of blood! Instantly, a massive parasite crams its way down your throat, savaging your insides on the way in. Suffer the <b>broken rib</b> severe body injury. You hope that that's all the parasite does to you.
 [c] 3-5
 [d] Your quarry has defecated in the blood. Suffer 1 event damage to a random hit location from sifting through the fecal blood water too long.
 [c] 6-8
-[d] You realize that the blood river is filled with the bloated corpses of unrecognizable monsters. You feel compelled to fish some out! Gain 1 random basic resource. If you are wearing heavy gear, you fall in and swallow blood and soft, bloated monster bits. Reduce your survival to 1.
+[d] You realize that the blood river is filled with the bloated corpses of unrecognizable monsters. You feel compelled to fish some out! Gain 1 random basic resource. If you are wearing <b>heavy</b> gear, you fall in and swallow blood and soft, bloated monster bits. Reduce your survival to 1.
 [c] 9+
 [dt] You successfully find the monster's trail.
 `,
 
 47: `47 | Banquet Trees
-A small copse of trees rises over an otherwise lifeless plain. Enticing red fruit hangs from the branches. Each survivor must spend 1 survival to resist the temptation to consume the fruit.
+A small copse of trees rises over an otherwise lifeless plain. Enticing red fruit hangs from the branches. Each survivor must spend 1 survival to resist the temptation to <b>consume</b> the fruit.
 
-Insane survivors and survivors with <b>Binge Eating</b> disorder must consume.
+<b>Insane</b> survivors and survivors with the <b>Binge Eating</b> disorder must consume.
 
 [i] If any survivor has a sickle, they carve a line across the tree, drawing blood! The fruit instantly sours. End this event.
 
@@ -1104,7 +1105,7 @@ Insane survivors and survivors with <b>Binge Eating</b> disorder must consume.
 
 The survivors are awoken by a traveler hidden in a deep cloak. The traveler pulls back its hood and reveals a deformed face with two chins curving away from each other, each with its own grinning mouth.
 
-In a dreamlike state, the survivors all understand this entity is known as <b>The Gambler</b> and if they speak they will die. Until this event is completed, only the event revealer may speak. If any other player speaks, their survivor turns cold. Dead. The survivors must play <b>The Gambler</b>'s game or be trapped with him forever. Each survivor rolls 1d10.
+In a dreamlike state, the survivors all understand this entity is known as The Gambler and if they speak they will die. Until this event is completed, only the event revealer may speak. If any other player speaks, their survivor turns cold. Dead. The survivors must play The Gambler's game or be trapped with him forever. Each survivor rolls 1d10.
 
 [TA] 1d10
 [td] Each survivor
@@ -1117,14 +1118,14 @@ In a dreamlike state, the survivors all understand this entity is known as <b>Th
 `,
 
 49: `49 | Pus Fields
-The landscape is dotted with large, swelling mounds oozing pus. The smallest jostle threatens to explode them. The survivors may carefully tread through the mounds or rush through.
+The landscape is dotted with large, swelling mounds oozing pus. The smallest jostle threatens to explode them. The survivors may <b>carefully tread</b> through the mounds or <b>rush through</b>.
 
 [TO] Choice
 [td] Everyone votes
 [c] Carefully tread
 [d] You make it through without incident, but your progress is slowed. Roll again on the hunt event table before moving on the hunt board.
 [c] Rush through
-[dt] Each survivor rolls 1d10 and adds their evasion to the result. On a 7 or less, they detonate one of the pus mounds! They suffer 2 event damage to a random hit location and become stinky for the rest of this lantern year.
+[dt] Each survivor rolls 1d10 and adds their evasion to the result. On a 7 or less, they detonate one of the pus mounds! They suffer 2 event damage to a random hit location and become <b>stinky</b> for the rest of this lantern year.
 `,
 
 50: `50 | Gibbet
@@ -1140,7 +1141,7 @@ A crude iron cage swings from the branches of a massive tree. As the survivors a
 The event revealer rolls 1d10.
 
 [TO] 1d10
-[td] Event reveale
+[td] Event revealer
 [c] 1
 [d] The survivors open the cage but all they find inside is a skeleton. All survivors suffer 2 brain event damage.
 [c] 2-7
@@ -1155,21 +1156,21 @@ The event revealer rolls 1d10.
 The survivors encounter a group of fleeing settlers.
 
 [TO] Check
-[td] Does the settlement has <b>Symposium</b> and <b>Language</b> innovations?
+[td] Does the settlement have <b>Symposium</b> and <b>Language</b>?
 [c] Yes #Symposium and Language
 [d<]
 
 The survivors manage to crudely communicate. The survivors may offer a resource or gear to help the distressed refugees.
 
 [TO] Choice
-[td] Everyone votes - Share resource or gear with refugees?
+[td] Everyone votes - Share resource or gear?
 [c] Yes #Share
 [d] Archive the offering. The refugees frantically share their mournful tale. While much is lost in translation, they relate the savage invasion of a monster that destroyed their home. The tale prepares the survivors for what lies ahead. At the start of the showdown, reveal the top 5 Al cards of the Al deck and put them back in any order. If any survivor has the <b>Leader</b> fighting art, one of the settlers is drawn to their charisma. Gain +1 population.
-[c] No #Does not share
-[dt] Survivors move on.
+[c] No #Do not share
+[dt] Survivors continue their hunt.
 [>d]
 [c] No #
-[d] Survivors fail to understand the refugees and continue the hunt.
+[d] Survivors continue their hunt.
 [T]
 `,
 
@@ -1184,7 +1185,7 @@ Each survivor rolls 1d10.
 [c] 3-7
 [d] The buzzing immediately stops and the flies depart. Their rejection makes you feel strangely despondent. Gain +1 insanity.
 [c] 8+
-[dt] Their eggs gestate incredibly quickly and madflies explode forth from your mouth! The experience is gruesome, but makes you feel so alive! Suffer the frenzy brain trauma. If you have the Rageholic disorder or Berserker fighting art, giving birth to disgusting new life kindles your rage. Suffer the frenzy brain trauma again.
+[dt] Their eggs gestate incredibly quickly and madflies explode forth from your mouth! The experience is gruesome, but makes you feel so alive! Suffer the <b>frenzy</b> brain trauma. <i>If you have the <b>Rageholic</b> disorder or <b>Berserker</b> fighting art, giving birth to disgusting new life kindles your rage. Suffer the <b>frenzy</b> brain trauma again.</i>
 `,
 
 53: `53 | Mask Salesman
