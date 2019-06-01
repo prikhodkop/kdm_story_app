@@ -1354,22 +1354,49 @@ There is a great rush of air. A booming, inhuman voice declares a single word in
 All <b>non-deaf</b> survivors gain +1 understanding and suffer 1 brain event damage. If they are <b>insane</b> they also gain 1 random disorder.
 `,
 
+
 67: `67 | Saliva Pools
 The ground ahead is pockmarked with pools filled with a gooey liquid. They bubble merrily and stink of digesting meat. As the survivors move between them, they are overcome by waves of nausea.
 
-[i] If any survivor has a <b>sickle</b>, they slice a few leaves from a nearby plant and everyone uses them to plug their noses and mask the smell. All survivors gain +1 understanding.
+[TO] Check
+[td] Does any survivor have a sickle?
+[c] Yes #Sickle
+[d<]
+They slice a few leaves from a nearby plant and everyone uses them to plug their noses and mask the smell. All survivors gain +1 understanding.
 
-Otherwise, each survivor rolls 1d10.
+[TO] Check
+[td] Does any survivor have 3+ understanding?
+[c] Yes #3+ understanding
+[d] They devise a way to use the pools. Each survivor may place one piece of gear in a pool. Archive the gear and gain the resources used to craft it (if any).
+[c] No #
+[d<]
+[>d]
+[T]
+
+[>d]
+[c] No #
+[d<]
+
+Each survivor rolls 1d10.
 
 [TA] 1d10
-[td] Each survivor - Result is less than survival?
+[td] Each survivor - Is result less than survival?
 [c] Yes #Less than survival
 [d] They continue on
 [c] No #Greater than survival
 [dt] They vomit into a nearby pool, suffering 1 event damage to the body. Before their eyes, the pool greedily dissolves their vomit, they gain +1 understanding.
 
-[i] If any survivor has 3+ understanding, they devise a way to use the pools. Each survivor may place one piece of gear in a pool. Archive the gear and gain the resources used to craft it (if any).
-`,
+[TO] After everyone has rolled
+[td] Does any survivor have 3+ understanding?
+[c] Yes #3+ understanding
+[d] They devise a way to use the pools. Each survivor may place one piece of gear in a pool. Archive the gear and gain the resources used to craft it (if any).
+[c] No #
+[d<]
+[>d]
+[T]
+
+[>d]
+[T]`,
 
 68: `68 | A Familiar Face
 [i] If no survivors have died yet this campaign, ignore this event and roll again on the hunt event table before moving on the hunt board.
@@ -1570,13 +1597,13 @@ They gain +1 courage and roll 1d10.
 [TO] 1d10
 [td] Event revealer -Investigate
 [c] 1
-[d] He was holding an explosive! Moving it causes it to detonate, blowing off your hand. Suffer the dismembered arm severe arm injury.
+[d] He was holding an explosive! Moving it causes it to detonate, blowing off your hand. Suffer the <b>dismembered arm</b> severe arm injury.
 [c] 2-4
 [d] He was holding an explosive! It explodes, but you pull away before disaster strikes. Gain -1 accuracy token.
 [c] 5-9
-[d] His hands are empty. If the settlement has Cannibalize, gain 1 random basic resource. <i>If the settlement has Graves, gain +1 understanding</i>.
+[d] His hands are empty. <i>If the settlement has <b>Cannibalize</b>, gain 1 random basic resource. If the settlement has <b>Graves</b>, gain +1 understanding</i>.
 [c] 10+
-[dt] His hands contain a jeweled bottle filled with a char-treuse liquid. Gain 1 Frenzy Drink gear.
+[dt] His hands contain a jeweled bottle filled with a chartreuse liquid. Gain 1 <b>Frenzy Drink</b> gear.
 [>d]
 [c] Move on
 [dt] Roll again on the hunt event table before moving on the hunt board.
