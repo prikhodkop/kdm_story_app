@@ -185,6 +185,13 @@
 					$("#label_text").delay(2000).fadeIn(8000);
 
 					clearSubtitles();
+					// $("#video").attr('currentTime', 0);
+					document.getElementById('video').currentTime = 0;
+					// setTimeout(function(){
+					// 	if (settings['subtitles'] == 'On') {
+					// 		configureSubtitle(readFile(__dirname + '/video/srt/' + lang + '/intro.srt'))
+					// 	}
+					// }, 100);
 
 					$(this).removeClass('fadeOut')
 				});
@@ -201,6 +208,14 @@
 					$("#label_text").delay(2000).fadeIn(4000);
 
 					clearSubtitles();
+					// $("#video").attr('currentTime', 0);
+					document.getElementById('video').currentTime = 0;
+					// currentSubtitle = -1;
+					// setTimeout(function(){
+					// 	if (settings['subtitles'] == 'On') {
+					// 		configureSubtitle(readFile(__dirname + '/video/srt/' + lang + '/intro.srt'))
+					// 	}
+					// }, 100);
 
 					$(this).removeClass('fadeOut')
 				})

@@ -212,9 +212,10 @@
 					music.play();
 
 					$("#img").fadeIn(2000);
-					$("#video").fadeOut(2000)
+					$("#video").hide();
 
 					clearSubtitles();
+					document.getElementById('video').currentTime = 0;
 					createSevereTables();
 					createReference();
 				})

@@ -9,16 +9,16 @@
     "disorders": "Fen Small"
   },
   "expansions": {
-    "gorm": "Cards only",
-    "dung beetle knight": "Cards only",
-    "sunstalker": "Cards only",
-    "lion god": "Cards only",
-    "dragon king": "Cards only",
+    "gorm": "Disabled",
+    "dung beetle knight": "Disabled",
+    "sunstalker": "Disabled",
+    "lion god": "Disabled",
+    "dragon king": "Disabled",
     "flower knight": "Disabled",
     "spidicules": "Disabled",
-    "manhunter": "Cards only",
-    "slenderman": "Cards only",
-    "lion knight": "Cards only",
+    "manhunter": "Disabled",
+    "slenderman": "Disabled",
+    "lion knight": "Disabled",
     "lonely tree": "Disabled"
   },
   "strains": {
