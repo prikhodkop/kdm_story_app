@@ -91,6 +91,8 @@
 				var myself = 'settlement';
 				document.title = myself
 
+				window.reload = false;
+
 				console.log(myself);
 
 				var settings = getSettings();
@@ -341,6 +343,13 @@
 				//
 				// 	$(this).toggleClass('active');
 				// });
+				setInterval(function() {
+					if (window.reload) {
+						setTransition(document.title, 'back', getBackTarget(), current_state());
+					}
+				}, 100);
+
+
 				function addMilestones() {
 					$('#milestones').append($('<div id="milestone-title">Milestones</div>'));
 					$('#milestones').append($('<div id="milestone">&bull; First child is born - <a id="milestone-trigger" target="principle new life">Principle: New Life</a></div>'));

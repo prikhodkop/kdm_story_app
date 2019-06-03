@@ -68,6 +68,8 @@
 				document.title = myself
 				// #############
 
+				window.reload = false;
+
 				var settings = getSettings();
 				sessionStorage.setItem("settings", JSON.stringify(settings));
 
@@ -260,6 +262,12 @@
 						setTransition($(this).attr('target'), 'menu', document.title, current_state())
 					}
 				});
+
+				setInterval(function() {
+					if (window.reload) {
+						setTransition(document.title, 'back', getBackTarget(), current_state());
+					}
+				}, 100);
 
 				function isHidden(el) {
 					var style = window.getComputedStyle(el);

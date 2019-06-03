@@ -96,8 +96,13 @@ function saveSettings() {
 
 	saveFile(JSON.stringify(settings), __dirname + '/settings.json')
 
-	const remote = require('electron').remote
-	remote.getCurrentWindow().reload()
+	// window.reload()
+	if (document.title == 'kingdom death') {
+		const remote = require('electron').remote
+		remote.getCurrentWindow().reload()
+	} else {
+		window.reload = true;
+	}
 
 	// app.exit(0)
 	return settings;

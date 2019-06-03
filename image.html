@@ -64,6 +64,8 @@
 				document.title = myself
 				// #############
 
+				window.reload = false;
+
 				console.log(myself);
 
 				// let settings = JSON.parse(sessionStorage.getItem("settings"));
@@ -345,6 +347,12 @@
 						setTransition($(this).attr('target'), 'menu', document.title, current_state())
 					}
 				});
+
+				setInterval(function() {
+					if (window.reload) {
+						setTransition(document.title, 'back', getBackTarget(), current_state());
+					}
+				}, 100);
 
 				function current_state() {
 					let current_state = new Object();
