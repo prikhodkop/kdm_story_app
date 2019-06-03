@@ -21,6 +21,8 @@ function createMenuButton() {
 		}
 	};
 
+	
+
 	$('#container').append($('<a>', {
 		href: 'javascript:void(0)',
 		id: 'menu-toggle-wrapper'

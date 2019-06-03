@@ -42,6 +42,7 @@
 		<img id="img" />
 		<div class="" id="label_text">
 		</div>
+		<div class="srt"></div>
 
 		<!-- <button class="button" id="mute">Mute</button> -->
 		<a id="back_button" href='#'>
@@ -131,6 +132,12 @@
 					volume: 1.0
 				});
 
+				if ((events_table[myself].speech == "") || (settings['narration'] == "Off")) {
+					var mute_narration = true;
+				} else {
+					var mute_narration = false;
+				};
+
 				var music = new Howl({
 					src: [events_table[myself].music],
 					loop: true,
@@ -158,12 +165,16 @@
 
 				var anew = true
 
-				$("#img_back").fadeIn(4000);
+				if (myself == 'first story') {
+					$("#img_back").delay(2000).fadeIn(4000);
+				} else {
+					$("#img_back").fadeIn(4000);
+				}
 
 				if (settings['music'] == "Off") {
 					music.mute(true);
 				}
-				if (settings['narration'] == "Off") {
+				if (mute_narration) {
 					speech.mute(true);
 				}
 
@@ -221,7 +232,7 @@
 				// SET UP EVENT START IF IT HAS NO INITIALIZED STATE
 				// #############
 				if (anew) {
-					$("#label_text").delay(4000).fadeIn(2000);
+					$("#label_text").delay(3000).fadeIn(2000);
 
 					speech.on('load', function () {
 						var duration = speech.duration() * 1000
@@ -243,14 +254,23 @@
 
 						console.log("Music delay computed " + delay);
 
-						if (settings['narration'] == "Off") {
+						if (mute_narration) {
 							duration = 2000;
 							delay = 1000;
 						}
+						if (myself == 'first story') {
+							duration = 4000;
+							delay = 1000;
+							$('.srt').text('Open rule book on page 22 and follow the instructions.')
+							$('.srt').fadeIn(2000);
+							setTimeout(function() {$('.srt').fadeOut(1000);}, 3000);
+						}
 
-						setTimeout(function () {
-							speech.play();
-						}, start_delay);
+						if (!mute_narration) {
+							setTimeout(function () {
+								speech.play();
+							}, start_delay);
+						}
 
 						setTimeout(function () {
 							if (action == "false") {

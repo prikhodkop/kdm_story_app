@@ -149,6 +149,9 @@ var events = {
 		'ltop': '20%',
 		'lleft': '65%'
 	},
+	'first story': {
+		// 'music_delay': 'speech-1000',
+	},
 	'regal visit': {
 		'music': 'music/regal visit.mp3',
 		'music_delay': 'speech-1000',
