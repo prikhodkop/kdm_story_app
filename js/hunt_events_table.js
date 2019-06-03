@@ -269,7 +269,7 @@ All survivors gain 1 random disorder and must spend 1 survival or be devoured wh
 
 [TO] Check
 [td] Does anyone have noisy gear?
-[c] Yes #Noisy gear
+[c] Yes #Survivor with noisy gear
 [d<]
 
 The Harvester is drawn to the sound and they are instantly devoured. Nothing can save them.
@@ -314,7 +314,10 @@ Gain +1 courage and roll 1d10.
 [TO] 1d10
 [td] Event revealer - Consume
 [c] 1-3
-[d] It seems you weren't the only one with this idea! You attempt to cough out the refuse, but your mouth is full of wriggling parasites! They borrow upwards through your nasal cavity into your brain. From now on, you always feel slightly dizzy. Suffer -1 permanent evasion. <i> In addition, if you have the <b>Quixotic</b> disorder, the parasites savor the unique neural activity of your brain, feeding relentlessly and excreting waste which further fuels your madness. Gain +10 insanity and the <b>Immortal</b> disorder. Your <b>Quixotic</b> disorder can never be removed for any reason.</i>
+[d<]
+It seems you weren't the only one with this idea! You attempt to cough out the refuse, but your mouth is full of wriggling parasites! They borrow upwards through your nasal cavity into your brain. From now on, you always feel slightly dizzy. Suffer -1 permanent evasion.
+<i>In addition, if you have the <b>Quixotic</b> disorder, the parasites savor the unique neural activity of your brain, feeding relentlessly and excreting waste which further fuels your madness. Gain +10 insanity and the <b>Immortal</b> disorder. Your <b>Quixotic</b> disorder can never be removed for any reason.</i>
+[>d]
 [c] 4-6
 [d] It's repulsive. Your title becomes "Scat Man." Everyone in the settlement must call you by that name from now on.
 [c] 7+
@@ -372,16 +375,23 @@ They slowly pull themselves to their feet, promising to never give up hope. Roll
 
 The survivors encounter a bewitching, barefoot waif with soot-covered feet.
 
-<b>If you already rolled this event on this hunt, or if all survivors are insane, she turns her back and disappears into the darkness. Roll again on the hunt event table before moving on the hunt board.</b>
+[TO] Check
+[td] Did you already roll this event or are all survivors insane?
+[c] Yes #
+[d] She turns her back and disappears into the darkness. Roll again on the hunt event table before moving on the hunt board.
+[c] No #
+[d<]
 
-Otherwise, exclaiming wildly at the survivors, the woman's presence fills everyone with the alien feeling of hope. All survivors gain +1 courage, +1 understanding.
+Exclaiming wildly at the survivors, the woman's presence fills everyone with the alien feeling of hope. All survivors gain +1 courage, +1 understanding.
 
 [TO] Check
 [td] Does the settlement have Hovel?
-[c] Yes
+[c] Yes #Hovel
 [d] She snaps her fingers and ages before their eyes! A chill passes over the survivors. Their bodies and armor spontaneously knit themselves back together. Heal all injury levels and lost armor points. Then, she pulls a random survivor aside and whispers secrets of the upcoming hunt. They gain +1 accuracy token.
-[c] No
-[dt] The survivors continue their hunt.
+[c] No #
+[dt] She turns her back and disappears into the darkness.
+[>d]
+[T]
 `,
 
 15: `15 | Man-trap
@@ -399,7 +409,8 @@ The event revealer springs a terrible trap! Roll 1d10.
 [d] The trap is quite old and weak. Suffer 1 event damage to the legs.
 [c] 10+
 [d] The event revealer's foot knocks into the trap, giving everyone a scare! However, it was already sprung, leaving an unfortunate prize in its jaws. Gain 1 random basic resource.
-[T]`,
+[T]
+`,
 
 16: `16 | Night Terrors
 Your miserable sleep is plagued with mind-bending nightmares. Each survivor rolls 1d10.
@@ -478,7 +489,7 @@ As the survivors press forward, the air turns dry and the ground cracks. The sur
 [TO] Check
 [td] Does any survivor have a pickaxe?
 [c] Yes #Pickaxe
-[d] The survivors break open an interesting-looking vein in the cracked ground. Gain 1 Iron strange resource.
+[d] The survivors break open an interesting-looking vein in the cracked ground. Gain 1 <b>Iron</b> strange resource.
 [c] No #No pickaxe
 [dt] The survivors continue their hunt.
 `,
@@ -521,7 +532,7 @@ The survivors silently watch the storm erode the stone faces, erasing their feat
 [TO] 1d10
 [td] Event revealer
 [c] 1-5
-[d] Nothing happens.
+[d] The storm passes by.
 [c] 6+
 [dt] The storm moves homeward. Add the <b>Acid Storm</b> settlement event to the timeline next year.
 
@@ -532,7 +543,7 @@ The survivors silently watch the storm erode the stone faces, erasing their feat
 [TO] 1d10
 [td] Event revealer
 [c] 1-5
-[d] Nothing happens.
+[d] The storm passes by.
 [c] 6+
 [dt] the storm moves homeward. Add the <b>Acid Storm</b> settlement event to the timeline next year.
 
@@ -666,7 +677,7 @@ Roll 1d10.
 
 [>d]
 [c] No male survivors
-[d] The insect crawls away and nothing happens.
+[d] Nothing happens.
 [T]
 `,
 
@@ -674,7 +685,7 @@ Roll 1d10.
 
 A rumpled, unsightly bird stands in the survivors' path. Its beady, wet eyes blink expectantly and it calls out with an eerie human chuckle. The survivors may archive 1 <b>consumable</b> item or gear, offering it to the trollbird.
 
-If any survivor is insane, they must feed the trollbird, if able.
+[i] If any survivor is insane, they must feed the trollbird, if able.
 
 [TO] Choice
 [td] What do you do?
@@ -735,7 +746,8 @@ The stone faces start to give under the survivors' feet. They are bloated and sm
 31: `31 | Strange Path
 The survivors stop at the head of a path. Small lanterns twinkle, marking its edges.
 
-The event revealer decides whether or not the survivors follow the path. If the event revealer is <b>insane</b>, they must.
+The event revealer decides whether or not the survivors follow the path.
+[i] If the event revealer is <b>insane</b>, they must.
 
 [TO] Choice
 [td] Event revealer - Follow the path?
@@ -755,7 +767,13 @@ The event revealer gains +1 understanding then rolls 1d10 and adds their underst
 [c] 8-9
 [d] The path leads the survivors to a large stone face with lanterns for eyes. Inside its open mouth is a bounty. Each survivor gains 1 random basic resource.
 [c] 10+
-[dt] The path leads to the beast you are hunting! The survivors <b>ambush</b> the monster. <i>If any survivor has the <b>Honorable</b> disorder, they realize the folly of their ways and may remove the disorder. If any survivors remain <b>Honorable</b>, they announce their presence to the monster; the monster <b>ambushes</b> the survivors instead</i>.
+[d<]
+
+The path leads to the beast you are hunting! The survivors <b>ambush</b> the monster.
+<i>If any survivor has the <b>Honorable</b> disorder, they realize the folly of their ways and may remove the disorder. If any survivors remain <b>Honorable</b>, they announce their presence to the monster; the monster <b>ambushes</b> the survivors instead</i>.
+
+[>d]
+[T]
 
 [>d]
 [c] No #Do not follow
@@ -777,20 +795,21 @@ They go mad, lashing out at their compatriots! Each other survivor suffers 1 eve
 [c] Yes #Crazed
 [d] They gain insight from their ordeal. Gain +10 insanity and +2 understanding.
 [c] No #
-[d<]
-[>d]
+[d] They learn nothing from the experience.
 [T]
 
 [>d]
 [c] Result greater than their current insanity #
 [d<]
+
+They regain control of themselves.
+
 [TO] Check
 [td] Does the event revealer have the <b>Crazed</b> fightning art?
 [c] Yes #Crazed
 [d] They gain insight from their ordeal. Gain +10 insanity and +2 understanding.
 [c] No #
-[d<]
-[>d]
+[d] They learn nothing from the experience.
 [T]
 
 [>d]
@@ -910,7 +929,8 @@ The survivors continue their hunt.
 [c] 5+
 [d<]
 
-Gain the <b>Lantern Oven</b> innovation. If the settlement already has this innovation, the event revealer harvests a <b>broken lantern</b> basic resource from the remains.
+Gain the <b>Lantern Oven</b> innovation.
+[i] If the settlement already has this innovation, the event revealer harvests a <b>broken lantern</b> basic resource from the remains.
 
 [TO] Check
 [td] Does settlement have <b>Song of the Brave</b>?
@@ -940,7 +960,8 @@ The survivors continue their hunt.
 `,
 
 36: `36 | On the Trail
-The survivors rush forward, feeling their quarry close at hand. Skip the next hunt space. If this movement begins the showdown, the survivors <b>ambush</b> their quarry. If any survivor has <b>noisy</b> gear, the survivors do not ambush. Start the showdown normally.
+The survivors rush forward, feeling their quarry close at hand. Skip the next hunt space. If this movement begins the showdown, the survivors <b>ambush</b> their quarry. 
+[i] If any survivor has <b>noisy</b> gear, the survivors do not ambush. Start the showdown normally.
 `,
 
 37: `37 | Lost
@@ -1019,9 +1040,33 @@ The event revealer dreams of the upcoming hunt. The great beast vanishes during 
 
 The event revealer gains +1d10 insanity and -1 evasion token.
 
-[i] If the settlement has a savior, they appear in the dream and defend their home. The event revealer gains +1d5 survival.
+[TO] Check
+[td] Does the settlement have a savior? 
+[c] Yes #
+[d<]
 
-[i] If no survivor in the settlement or hunting party has a <b>Twilight Sword</b>, the event revealer envisions a maniacal version of themselves wielding the blade and gleefully slaughtering the beast. They awake to find a <b>Twilight Sword</b> at their side, humming gently against their body. Instinctively the survivor recognizes the weight of the weapon's curse and the promise of its power. The event revealer gains the <b>Twilight Sword</b> rare gear. They may also select <b>Twilight Sword</b> as their weapon proficiency type and gain +1 weapon proficiency with this weapon.
+The savior appears in the dream and defends their home. The event revealer gains +1d5 survival.
+[br]
+[TO] Check
+[td] Does anyone in the settlement or hunting party have the <b>Twilight Sword</b>?
+[c] Yes #
+[d<]
+[>d]
+[c] No #No Twilight Sword
+[dt] The event revealer envisions a maniacal version of themselves wielding the blade and gleefully slaughtering the beast. They awake to find a <b>Twilight Sword</b> at their side, humming gently against their body. Instinctively the survivor recognizes the weight of the weapon's curse and the promise of its power. The event revealer gains the <b>Twilight Sword</b> rare gear. They may also select <b>Twilight Sword</b> as their weapon proficiency type and gain +1 weapon proficiency with this weapon.
+[>d]
+[c] No #
+[d<]
+
+[TO] Check
+[td] Does anyone in the settlement or hunting party have the <b>Twilight Sword</b>?
+[c] Yes #
+[d<]
+[>d]
+[c] No #No Twilight Sword
+[dt] The event revealer envisions a maniacal version of themselves wielding the blade and gleefully slaughtering the beast. They awake to find a <b>Twilight Sword</b> at their side, humming gently against their body. Instinctively the survivor recognizes the weight of the weapon's curse and the promise of its power. The event revealer gains the <b>Twilight Sword</b> rare gear. They may also select <b>Twilight Sword</b> as their weapon proficiency type and gain +1 weapon proficiency with this weapon.
+[>d]
+[T]
 `,
 
 42: `42 | Surgeon
@@ -1079,7 +1124,12 @@ Each survivor rolls 1d10. If no survivor successfully finds the monster's trail,
 [c] 3-5
 [d] Your quarry has defecated in the blood. Suffer 1 event damage to a random hit location from sifting through the fecal blood water too long.
 [c] 6-8
-[d] You realize that the blood river is filled with the bloated corpses of unrecognizable monsters. You feel compelled to fish some out! Gain 1 random basic resource. If you are wearing <b>heavy</b> gear, you fall in and swallow blood and soft, bloated monster bits. Reduce your survival to 1.
+[d<]
+
+You realize that the blood river is filled with the bloated corpses of unrecognizable monsters. You feel compelled to fish some out! Gain 1 random basic resource.
+<i>If you are wearing <b>heavy</b> gear, you fall in and swallow blood and soft, bloated monster bits. Reduce your survival to 1.</i>
+
+[>d]
 [c] 9+
 [dt] You successfully find the monster's trail.
 `,
@@ -1165,7 +1215,12 @@ The survivors manage to crudely communicate. The survivors may offer a resource 
 [TO] Choice
 [td] Everyone votes - Share resource or gear?
 [c] Yes #Share
-[d] Archive the offering. The refugees frantically share their mournful tale. While much is lost in translation, they relate the savage invasion of a monster that destroyed their home. The tale prepares the survivors for what lies ahead. At the start of the showdown, reveal the top 5 Al cards of the Al deck and put them back in any order. If any survivor has the <b>Leader</b> fighting art, one of the settlers is drawn to their charisma. Gain +1 population.
+[d<]
+
+Archive the offering. The refugees frantically share their mournful tale. While much is lost in translation, they relate the savage invasion of a monster that destroyed their home. The tale prepares the survivors for what lies ahead. At the start of the showdown, reveal the top 5 Al cards of the Al deck and put them back in any order.
+<i>If any survivor has the <b>Leader</b> fighting art, one of the settlers is drawn to their charisma. Gain +1 population.</i>
+
+[>d]
 [c] No #Do not share
 [dt] Survivors continue their hunt.
 [>d]
@@ -1185,7 +1240,13 @@ Each survivor rolls 1d10.
 [c] 3-7
 [d] The buzzing immediately stops and the flies depart. Their rejection makes you feel strangely despondent. Gain +1 insanity.
 [c] 8+
-[dt] Their eggs gestate incredibly quickly and madflies explode forth from your mouth! The experience is gruesome, but makes you feel so alive! Suffer the <b>frenzy</b> brain trauma. <i>If you have the <b>Rageholic</b> disorder or <b>Berserker</b> fighting art, giving birth to disgusting new life kindles your rage. Suffer the <b>frenzy</b> brain trauma again.</i>
+[d<]
+
+Their eggs gestate incredibly quickly and madflies explode forth from your mouth! The experience is gruesome, but makes you feel so alive! Suffer the <b>frenzy</b> brain trauma. 
+<i>If you have the <b>Rageholic</b> disorder or <b>Berserker</b> fighting art, giving birth to disgusting new life kindles your rage. Suffer the <b>frenzy</b> brain trauma again.</i>
+
+[>d]
+[T]
 `,
 
 53: `53 | Mask Salesman
@@ -1610,15 +1671,14 @@ They gain +1 courage and roll 1d10.
 `,
 
 79: `79 | Dying Small Prospector
-<b>If your settlement already has a Portcullis Key, the prospector is gone. Roll again on the hunt event table before moving on the hunt board.</b>
+[i] If your settlement already has a <b>Portcullis Key</b>, the prospector is gone. Roll again on the hunt event table before moving on the hunt board.
 The survivors discover a body slumped against a large stone face. Moving closer, they find a small, dying prospector riddled with arrows. As they approach, he growls a warning, threatening them with a huge stone shard. When he sees that they are not evil monsters, he calms down and gives them a key. With his dying breath he says: This is the key to the portcullis. Without it, you will never get through.
 Record the <b>Portcullis Key</b> in the settlement record sheet notes.
-If the settlement has Graves, the event revealer builds a small monument of broken stone noses and gains +1 understanding.
 
 [TO] Check
-[td] Does the settlment have Graves?
+[td] Does the settlement have Graves?
 [c] Yes #Graves
-[dt] The event revealer builds a small monument of broken stone noses and gains +1 understanding.
+[d] The event revealer builds a small monument of broken stone noses and gains +1 understanding.
 [c] No #
 [d<]
 [>d]
