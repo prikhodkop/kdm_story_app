@@ -319,8 +319,7 @@ var settings_schema = {
 				"title": "Flower Knight",
 				"default": "Disabled",
 				"enum": [
-					"Disabled",
-					"Cards only"
+					"Disabled"
 				]
 			},
 			"gorm": {
@@ -379,8 +378,7 @@ var settings_schema = {
 				"title": "Spidicules",
 				"default": "Disabled",
 				"enum": [
-					"Disabled",
-					"Cards only"
+					"Disabled"
 				]
 			},
 			"sunstalker": {

@@ -261,6 +261,7 @@ div#reference-window-back0 .selectize-control {
 	background: #222;
 	border: 3px solid #666;
 	border-radius: 15px;
+	opacity: 0.8;
 }
 
 .refpad--row:nth-of-type(2) { margin-left: 30px; }
@@ -282,6 +283,7 @@ div#reference-window-back0 .selectize-control {
 	font-size: 0.9em;
 	line-height: 1.38;
 	box-sizing: border-box;
+	opacity: 1.0;
 }
 .refpad__pad:hover {
 	background: #ffffff42;
