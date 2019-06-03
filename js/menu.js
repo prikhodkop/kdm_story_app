@@ -7,6 +7,8 @@ function createMenuButton() {
 	//   <img id="menu_img" src="images/back.jpg"/>
 	// </div>
 
+
+
 	document.onkeydown = function (evt) {
 		evt = evt || window.event;
 		var isEscape = false;
@@ -16,12 +18,61 @@ function createMenuButton() {
 			isEscape = (evt.keyCode === 27);
 		}
 		if (isEscape) {
-			const remote = require('electron').remote
-			remote.getCurrentWindow().close()
+			if (!$('#esc-menu').hasClass('active')) {
+				$('#reference-window-background').fadeIn(500);
+				$('#esc-menu').fadeIn(500);
+			} else {
+				$('#esc-menu').fadeOut(100);
+				$('#reference-window-background').fadeOut(100);
+			}
+			$('#esc-menu').toggleClass('active')
 		}
 	};
 
-	
+	$('#container').append($('<div>', {
+		// style: 'opacity:.9;',
+		id: 'esc-menu'
+	}));
+
+	$('#esc-menu').append($('<img>', {
+		// style: 'opacity:.9;',
+		id: 'esc-back',
+		src: 'images/reference/reference_back.png'
+	}));
+
+	$('#esc-menu').append($('<div>', {
+		// style: 'opacity:.9;',
+		id: 'esc-text'
+	}));
+
+	$('#esc-menu').append($('<button>', {
+		// style: 'opacity:.9;',
+		id: 'esc-yes'
+	}));
+
+	$('#esc-menu').append($('<button>', {
+		// style: 'opacity:.9;',
+		id: 'esc-no'
+	}));
+
+	$('#esc-text').text('Do you really want to quit?')
+	$('#esc-yes').text('Yes')
+	$('#esc-no').text('No')
+
+	$('#esc-yes').click(function(){
+		const remote = require('electron').remote
+		remote.getCurrentWindow().close()
+	});
+
+	$('#esc-no').click(function(){
+		$('#esc-menu').fadeOut(100);
+		$('#reference-window-background').fadeOut(100);
+		$('#esc-menu').removeClass('active')
+	});
+
+	$('#esc-menu').hide();
+
+	////
 
 	$('#container').append($('<a>', {
 		href: 'javascript:void(0)',
