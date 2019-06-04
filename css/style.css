@@ -516,11 +516,11 @@ tr.spaceUnder>td {
     /* animation-direction: reverse;
 } */
 
-#quary_popup.hidden {
+/* #quary_popup.hidden {
   transition: .3s ease-in;
   animation: blink 2s;
   animation-direction: normal;
-}
+} */
 
 #quary_popup_back {
   width: 100%;

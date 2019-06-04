@@ -148,6 +148,8 @@
 					volume: 1.0
 				});
 
+				$("#container").children().hide();
+
 				var q_event_sequence = null
 				var q_event_idx = 0
 
@@ -195,13 +197,13 @@
 					],
 				}
 
-				createHuntTable()
+				createHuntTable();
+				$("#quaries_table").hide();
 
-				$("#container").children().hide();
-				$("#menu-toggle-wrapper").show();
-				$("#settings").show();
+				// $("#menu-toggle-wrapper").show();
+				// $("#settings").show();
 				$("#back").show();
-				$("#back_button").show();
+				// $("#back_button").show();
 
 				var state = sessionStorage.getItem("hunt");
 				var transition = sessionStorage.getItem("transition");
@@ -250,11 +252,6 @@
 						console.log("Falsely!");
 					};
 
-					// if (state.muted) {
-					//   music.mute(true);
-					//   $("#mute.button").toggleClass('active');
-					// };
-
 					music.seek(state.music_position);
 
 					if (state.music_playing) {
@@ -297,20 +294,6 @@
 					$("#hunt_icon").delay(1000).fadeOut(2000);
 					$("#label_text").delay(1000).fadeOut(2000);
 				};
-
-				// $("#mute.button").click(function () {
-				// 	if (!$(this).hasClass('active')) {
-				// 		music.mute(true)
-				// 		speech.mute(true)
-				// 		sessionStorage.setItem("Mute", "On");
-				// 	} else {
-				// 		music.mute(false)
-				// 		music.mute(false)
-				// 		sessionStorage.setItem("Mute", "Off");
-				// 	};
-				// 	$(this).toggleClass('active');
-				// 	console.log("Here3!");
-				// });
 
 				$('body').on('click', '#menu_item', function () {
 					if ($(this).attr('target') == document.title) {
