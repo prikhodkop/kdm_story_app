@@ -1082,7 +1082,8 @@ One survivor with 3+ courage may choose to enter the wagon.
 `,
 
 43: `43 | Fresh Kill
-A carpet of skittering bugs points the survivors to a freshly killed monster. The scavenging insects try to defend their dinner, but the survivors fight them off to claim the prize. Each survivor rolls 2d10 and adds their Hunt XP. The highest-scoring survivor (roll off in case of ties) slays the most vermin and wins the putrid prize for themselves. They gain 1 random basic resource and 1 random vermin resource.
+A carpet of skittering bugs points the survivors to a freshly killed monster. The scavenging insects try to defend their dinner, but the survivors fight them off to claim the prize.
+Each survivor rolls 2d10 and adds their Hunt XP. The highest-scoring survivor (roll off in case of ties) slays the most vermin and wins the putrid prize for themselves. They gain 1 random basic resource and 1 random vermin resource.
 `,
 
 44: `44 | Opportunists
@@ -1113,8 +1114,8 @@ Unless a survivor has bandages to patch up their wounds, all survivors also gain
 `,
 
 46: `46 | River
-The survivors come to the edge of a river of blood. <b>Non-insane</b> survivors suffer 1 brain event damage at the sight of it. The survivors must <b>investigate</b> in order to pick up their quarry's trail.
-Each survivor rolls 1d10. If no survivor successfully finds the monster's trail, roll again on the hunt event table before moving on the hunt board.
+The survivors come to the edge of a river of blood. <b>Non-insane</b> survivors suffer 1 brain event damage at the sight of it. The survivors must <b>investigate</b> in order to pick up their quarry's trail. Each survivor rolls 1d10.
+If no survivor successfully finds the monster's trail, roll again on the hunt event table before moving on the hunt board.
 
 [TA] 1d10
 [td] Each survivor - Investigate
@@ -1170,7 +1171,7 @@ In a dreamlike state, the survivors all understand this entity is known as The G
 The landscape is dotted with large, swelling mounds oozing pus. The smallest jostle threatens to explode them. The survivors may <b>carefully tread</b> through the mounds or <b>rush through</b>.
 
 [TO] Choice
-[td] Everyone votes
+[td] What do you do?
 [c] Carefully tread
 [d] You make it through without incident, but your progress is slowed. Roll again on the hunt event table before moving on the hunt board.
 [c] Rush through
@@ -1181,7 +1182,7 @@ The landscape is dotted with large, swelling mounds oozing pus. The smallest jos
 A crude iron cage swings from the branches of a massive tree. As the survivors approach, a man calls out to them from the cage, pleading to be freed.
 
 [TO] Choice
-[td] Everyone votes
+[td] What do you do?
 [c] Pass him by
 [d] The survivors pass him by and suffer 1 brain event damage as the prisoner weeps and pleads.
 [c] Free him
@@ -1212,7 +1213,7 @@ The survivors encounter a group of fleeing settlers.
 The survivors manage to crudely communicate. The survivors may offer a resource or gear to help the distressed refugees.
 
 [TO] Choice
-[td] Everyone votes - Share resource or gear?
+[td] Share resource or gear?
 [c] Yes #Share
 [d<]
 
@@ -1267,7 +1268,7 @@ Mighty winds tear across the landscape, collecting chips of stones and skeletal 
 They may either <b>brave the storm</b> or <b>wait it out</b>.
 
 [TO] Choice
-[td] Everyone votes
+[td] What do you do?
 [c] Brave the storm
 [d] All survivors gain +1 courage and suffer 1 event damage to 3 random hit locations. Archive all <b>fragile</b> gear.
 [c] Wait it out
@@ -1359,17 +1360,33 @@ A massive wall of flame obstructs the survivors, incinerating the ground. It has
 
 61: `61 | Frozen Lightning
 A storm sweeps over the survivors. Deep purple lightning flashes overhead. The bolts freeze in midstrike and rain down on the survivors as jagged, glowing spikes.
-Each survivor rolls 1d10.
-The lowest scoring survivor (or survivors, in case of ties) becomes a straggler. A bolt crashes beside the straggler, catching them in an explosion of razorsharp crystals. They suffer 1d5 event damage to 2 random hit locations. Archive all <b>fragile</b> gear in their gear grid.
+Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
+
+[TO] 1d10
+[td] Determine straggler
+[c] Straggler chosen
+[dt] A bolt crashes beside the straggler, catching them in an explosion of razorsharp crystals. They suffer 1d5 event damage to 2 random hit locations. Archive all <b>fragile</b> gear in their gear grid.
 `,
 
 62: `62 | Space Between the Rocks
 The survivors are distracted by a dark crack in the endless sea of stone faces.
 
-[i] If any survivor has a pickaxe, they strike the ground, causing the crack to expand into a gaping hole. Bravely reaching inside the survivor produces a blackened, twisted hunk. Gain 1 <b>iron</b> strange resource.
+[TO] Check
+[td] Does any survivor have a pickaxe?
+[c] Yes #Pickaxe
+[d] They strike the ground, causing the crack to expand into a gaping hole. Bravely reaching inside the survivor produces a blackened, twisted hunk. Gain 1 <b>iron</b> strange resource.
+[c] No #
+[d<]
 
-Otherwise, each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
-The straggler stoops to gaze into the depths and refuses to stop staring. When the other survivors drag them away, they babble incoherently. Whatever they saw changed them forever; they gain 1 random disorder. If all the survivors end up as stragglers, no one ever pulls them away and they are all lost. Dead.
+Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
+
+[TO] 1d10
+[td] Determine straggler
+[c] Straggler chosen
+[dt] The straggler stoops to gaze into the depths and refuses to stop staring. When the other survivors drag them away, they babble incoherently. Whatever they saw changed them forever; they gain 1 random disorder. If all the survivors end up as stragglers, no one ever pulls them away and they are all lost. Dead.
+
+[>d]
+[T]
 `,
 
 63: `63 | Feet
@@ -1381,9 +1398,18 @@ The stone faces ahead are replaced by an expanse of stone feet sprouting from th
 [TO] Check
 [td] Are all survivors insane?
 [c] Yes #All insane
-[d] They fall off the underside of the world. The survivors are dead unless the settlement chose <b>Survival of the Fittest</b>. If they did, the survivors bite down hard on the feet. Their teeth grind against stone as they refuse to let go. At once, the feet shatter, revealing ordinary stone faces beneath. Set all survivors' insanity to 0. Each survivor suffers the <b>shattered jaw</b> severe head injury. Do not roll any additional hunt events caused by <b>Feet</b>.
+[d<]
+
+[TO] Check
+[td] Does the settlement have Survival of the Fittest?
+[c] Yes #Survival of the Fittest
+[d] They fall off the underside of the world. The survivors bite down hard on the feet. Their teeth grind against stone as they refuse to let go. At once, the feet shatter, revealing ordinary stone faces beneath. Set all survivors' insanity to 0. Each survivor suffers the <b>shattered jaw</b> severe head injury. Do not roll any additional hunt events caused by <b>Feet</b>.
+[c] No #
+[dt] They fall off the underside of the world. The survivors are dead.
+
+[>d]
 [c] No #Someone sane
-[dt] If any survivor is </b>insane</b>, they are convinced they have reached the underside of the world. They clutch the ground for dear life, terrified of falling off. Their raucous terror slows the survivors and attracts unwanted attention. Roll once on the hunt event table for each <b>insane</b> survivor before moving on the hunt board. If any of these rolls result in <b>Feet</b>, ignore it and re-roll.
+[dt] If any survivor is <b>insane</b>, they are convinced they have reached the underside of the world. They clutch the ground for dear life, terrified of falling off. Their raucous terror slows the survivors and attracts unwanted attention. Roll once on the hunt event table for each <b>insane</b> survivor before moving on the hunt board. If any of these rolls result in <b>Feet</b>, ignore it and re-roll.
 `,
 
 64: `64 | Stone Fountain
@@ -1414,15 +1440,22 @@ Cresting a hill, the survivors find a statue of a man sitting on a throne.
 
 [i] If any survivor has 5+ understanding, the survivors may ignore the statue and end this event.
 
-Otherwise, each survivor rolls 1d10. The lowest scoring survivor (roll off in case of ties) becomes a straggler. The straggler is drawn to the statue, touching it gently. In an instant, they are gone, replaced by the man from the throne, now flesh and blood. The straggler sits in his place on the throne, stone mouth open in a silent yell. They are gone forever. Consider them dead, but do not apply <b>Cannibalize</b> death principle; there is no body.
+Otherwise, each survivor rolls 1d10. The lowest scoring survivor (roll off in case of ties) becomes a straggler.
+[TO] 1d10
+[td] Determine straggler
+[c] Straggler chosen
+[d<]
 
-
+The straggler is drawn to the statue, touching it gently. In an instant, they are gone, replaced by the man from the throne, now flesh and blood. The straggler sits in his place on the throne, stone mouth open in a silent yell. They are gone forever. Consider them dead, but do not apply <b>Cannibalize</b> death principle; there is no body.
 [TO] Check
 [td] Does the settlement have <b>Momento Mori</b>?
 [c] Yes #Momento Mori
 [d] The satue resembles a deceased survivor. Replace the straggler with the record sheet of a fallen survivor. Remove all of their severe injuries. Set their Hunt XP to 2 (they Age again, as this is a new lifetime). They gain +1d10 survival, +1d10 insanity. You may give them 3 ranks of proficiency in a random weapon type.
 [c] No #
 [dt] The man offers his thanks and joins the hunting party without any explanation. He is a new survivor with the straggler's gear, 2 random disorders, and 2 Hunt XP. Shuffle all weapon specialization cards (including expansions, if any) and draw one. The survivor has 3 ranks of proficiency in that weapon type. They gain +1d10 survival, +1d10 insanity. Give him a name and +1 survival for being named.
+
+[>d]
+[T]
 `,
 
 66: `66 | Forbidden Word
@@ -1479,7 +1512,7 @@ Each survivor rolls 1d10.
 
 Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
 
-[TA] 1d10
+[TO] 1d10
 [td] Determine straggler
 [c] Straggler chosen
 [dt] While examining the stone faces underfoot, the straggler recognizes the face of a fallen friend. Bittersweet memories reduce them to tears. Reduce their insanity to 0 and they gain +1 understanding.
@@ -1658,7 +1691,8 @@ Stumbling through the darkness, the event revealer crashes into the ground, crus
 76: `76 | Dream the Way
 The survivors have vivid, fevered visions of what lies ahead. All at once, they are startled awake and frantically compare the horrors they saw.
 Each survivor rolls 1d10.
-[i] If any survivor is a savior, their powerful dream envelopes the group; each survivor may select whatever die roll result they want. If any survivors' rolls are the same, those survivors discover they had the exact same dream. They gain +1 insanity. If any duplicate rolls are 10s, the event revealer may re-roll any one roll result this hunt phase (any one die roll, not just their roll).
+[i] If any survivor is a savior, their powerful dream envelopes the group; each survivor may select whatever die roll result they want.
+If any survivors' rolls are the same, those survivors discover they had the exact same dream. They gain +1 insanity. If any duplicate rolls are 10s, the event revealer may re-roll any one roll result this hunt phase (any one die roll, not just their roll).
 `,
 
 77: `77 | Sinkhole
@@ -1804,7 +1838,7 @@ As the survivors draw near, they discover that this flesh monolith is actually a
 [td] Does the settlement have Graves?
 [c] Yes #Graves
 [d] You ascend the heap and find 3 barely living survivors, their bodies devoid of nourishment and their eyes too sensitive for lantern light. If you return to the settlement, +3 population. These new survivors cannot depart for 2 lantern years as they need time to recover (note this on the timeline).
-[c] No #Cannibalize
+[c] No #
 [dt] All you manage to harvest from the pile of emaciated corpses is 2 <b>Organ</b> basic resources. Their skin is too soft and bones too brittle to be of any use.
 [>d]
 [T]
@@ -1946,7 +1980,7 @@ The light reaches the settlement. Add the <b>Lights in the Sky</b> settlement ev
 [d<]
 
 Survivors turn away from the light, walking into the darkness. Move the survivors 2 spaces back on the hunt board.
-The light reaches the settlement. Add the </b>Lights in the Sky</b> settlement event to the timeline next year.
+The light reaches the settlement. Add the <b>Lights in the Sky</b> settlement event to the timeline next year.
 
 [>d]
 [T]
@@ -2043,7 +2077,16 @@ The event revealer approaches the stranger and rolls 1d10.
 [c] 7-8
 [d] The stranger raises its arms and moves to meet your approach. From beneath the folds of its cloak, you can just make out a hint of violet, scaly hide. A claw extends from a sleeve and gently strokes your cheek, leaving a layer of viscous liquid behind. Wiping off the sludge, you find the bizarre experience strangely touching. You gain +1 survival, +1 understanding.
 [c] 9+
-[dt] The stranger orders you to organize a test of strength among the survivors. Each survivor must roll 1d10 (roll off in case of ties). The highest scoring survivor wins the melee. The stranger marks their face with its glistening claw, granting them the <b>Iron Will</b> ability: You cannot be knocked down. Reduce all knockback you suffer to knockback 1. Record this ability. All survivors lose 4 survival from the exhausting fight.
+[d<]
+
+The stranger orders you to organize a test of strength among the survivors. Each survivor must roll 1d10 (roll off in case of ties). The highest scoring survivor wins the melee.
+[TO] 1d10
+[td] Determine winner
+[c] Winner chosen
+[dt] The stranger marks their face with its glistening claw, granting them the <b>Iron Will</b> ability: You cannot be knocked down. Reduce all knockback you suffer to knockback 1. Record this ability. All survivors lose 4 survival from the exhausting fight.
+
+[>d]
+[T]
 `,
 
 97: `97 | Living Stone
@@ -2051,13 +2094,13 @@ The ground suddenly shifts and rises sharply into the air! The survivors find th
 Nominate a survivor to climb toward the top of the giant and see what lies ahead. They roll 1d10.
 
 [TO] 1d10
-[td] Elected survivor
+[td] Nominated survivor
 [c] 1
 [d] Your motion irritates the giant, sending the survivors flying off! All survivors suffer 1d5 event damage to a random hit location. Archive all <b>fragile</b> gear.
 [c] 2-7
 [d] You reach the top and have a perfect vantage point to see the world, if only there were enough light to see it. Set your insanity to O. The giant carries you exactly where you're going! Start the showdown immediately.
 [c] 8+
-[dt] You discover a bizarre creature with an inverted face diligently carving upon the giant's back. It discards damaged stone faces as it works. Each survivor catches a fragment, gaining 1 </>Founding Stone</b> starting gear. Eventually, the giant settles down into the ground again. You dismount and discover your quarry! <b>Ambush</b> the monster!
+[dt] You discover a bizarre creature with an inverted face diligently carving upon the giant's back. It discards damaged stone faces as it works. Each survivor catches a fragment, gaining 1 <b>Founding Stone</b> starting gear. Eventually, the giant settles down into the ground again. You dismount and discover your quarry! <b>Ambush</b> the monster!
 `,
 
 98: `98 | Bloody Eyes
