@@ -875,7 +875,7 @@
 									if ($('#monster').attr('position') == 13) {
 										$('#quary_popup_back').fadeIn(500)
 										var temp_text = document.getElementById(
-											'label_text').innerHTML
+											'label_text').innerHTML;
 										document.getElementById('label_text')
 											.innerHTML =
 											'Starvation<br/>Survivors must spend <b>1d5</b> basic resources!'
@@ -887,19 +887,19 @@
 										$('#label_text').css('color', '#fff');
 										$('#label_text').delay(500).fadeIn(1000)
 										$('#hunt_icon').delay(500).fadeIn(1000)
-										$('#label_text').delay(3900).fadeOut(1000)
-										$('#hunt_icon').delay(3900).fadeOut(1000)
+										$('#label_text').delay(2700).fadeOut(1000)
+										$('#hunt_icon').delay(2700).fadeOut(1000);
+										setTimeout(function () {$('#label_text').hide();}, 3750);
 										setTimeout(function () {
 											document.getElementById(
 													'label_text').innerHTML =
 												temp_text;
-											$('#label_text').css('color',
-												'#999');
-											setTransition($('#monster').attr(
-													'target'), 'menu',
-												document.title,
-												current_state())
-										}, 5000);
+											// $('#label_text').css('color','#999');
+											// let state = current_state();
+											// state.monster_type = temp_text;
+											setTransition($('#monster').attr('target'), 'menu', document.title, current_state());
+
+										}, 4000);
 									} else {
 										setTransition($('#monster').attr('target'),
 											'menu', document.title,
