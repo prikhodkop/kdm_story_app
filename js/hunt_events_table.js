@@ -1645,9 +1645,9 @@ Your jaw clamps shut around the ember, the flesh of your mouth melts shut, muffl
 
 [TO] Check
 [td] Does the settlement have <b>Survival of the Fittest</b>?
-[c] Yes
+[c] Yes #Survival of the Fittest
 [d] The urge to live wins out and you savagely break open your own jaw, Suffer the <b>broken jaw</b> severe head injury. The ember tumbles to the ground, its sputtering hiss ringing in your ears as all survivors flee in horror.
-[c] No
+[c] No #
 [dt] Your smoking, melting body marches robotically into the ring of skulls, laying itself in the place of the disturbed skull. The putrid smell of your burning brain suffuses the smoke in the air. The sight is so disturbing that all other survivors flee, never to speak of what happened.
 [>d]
 [>d]
