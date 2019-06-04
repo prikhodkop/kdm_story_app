@@ -128,7 +128,7 @@ The survivors come upon a faceless statue holding a shining lantern. Basking in 
 Each survivor gains 1 survival.
 
 [TO] Check
-[td] Does settlement have Sculpture?
+[td] Does the settlement have Sculpture?
 [c] Yes #Sculpture
 [d<]
 
@@ -906,7 +906,7 @@ The event revealer rolls 1d10 and adds their understanding.
 [d<]
 
 [TO] Check
-[td] Does settlement have <b>Song of the Brave</b>?
+[td] Does the settlement have <b>Song of the Brave</b>?
 [c] Yes #Song of the Brave
 [d<]
 
@@ -936,7 +936,7 @@ Gain the <b>Lantern Oven</b> innovation.
 [i] If the settlement already has this innovation, the event revealer harvests a <b>broken lantern</b> basic resource from the remains.
 
 [TO] Check
-[td] Does settlement have <b>Song of the Brave</b>?
+[td] Does the settlement have <b>Song of the Brave</b>?
 [c] Yes #Song of the Brave
 [d<]
 
