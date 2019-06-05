@@ -17,6 +17,8 @@
   if no data-srt is provided, the contents of the div is parsed as srt.
 */
 
+var currentSubtitle = -1;
+
 function configureSubtitle(srt_text) {
   $('.srt').each(function() {
     var subtitleElement = $(this);
@@ -71,10 +73,14 @@ function playSubtitles(subtitleElement) {
   console.log(srt)
   console.log(srt_)
   console.log(subtitles)
-  var currentSubtitle = -1;
+  currentSubtitle = -1;
   // subtitleElement.hide()
   var ival = setInterval(function() {
+
     var currentTime = document.getElementById(videoId).currentTime;
+
+    // console.log('Current time: '+currentTime)
+    // console.log('Current subtitle: '+currentSubtitle)
     var subtitle = -1;
     for(s in subtitles) {
       if(parseFloat(s) > currentTime)
@@ -97,10 +103,12 @@ function playSubtitles(subtitleElement) {
 }
 
 function clearSubtitles(delay) {
+  setTimeout(function() {currentSubtitle = -1;}, 1000);
   $('.srt').each(function() {
     var subtitleElement = $(this);
-    subtitleElement.hide();
+    // subtitleElement.hide();
     subtitleElement.html('');
+    // $(this).text('');
   });
 }
 

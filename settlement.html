@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="css/magnific-popup.css" />
 	<link rel="stylesheet" href="css/selectize.css">
 	<link rel="stylesheet" href="css/settlement.css">
+	<link rel="stylesheet" href="css/settings.css">
 </head>
 
 <body bgcolor="#000000">
@@ -30,6 +31,8 @@
 	<script type="text/javascript" src="js/tooltipster-follower.min.js"></script>
 	<script src="js/scrollTo.js"></script>
 	<script src="js/howler.core.min.js"></script>
+	<script type="text/javascript" src="js/settings.js"></script>
+	<script type="text/javascript" src="js/files.js"></script>
 	<script type="text/javascript" src="js/events.js"></script>
 	<script type="text/javascript" src="js/transition.js"></script>
 	<script type="text/javascript" src="js/menu.js"></script>
@@ -48,7 +51,7 @@
 			Settlement
 		</div>
 
-		<button class="button" id="mute">Mute</button>
+		<!-- <button class="button" id="mute">Mute</button> -->
 
 		<a id="back_button" href='#'>
 			<svg class="back_button__icon" enable-background="new 0 0 492 492" version="1.1" viewBox="0 0 492 492" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
@@ -61,8 +64,12 @@
 			<img id="settlement_event_back" src='#' />
 		</div>
 		<img id="settlement_event_button" src="images/settlement/draw_event.png" />
+		<img id="milestones_button" src="images/settlement/milestones.png" />
 
 		<div id="locations_screen">
+			<!-- <img id="locations_back" src='images/reference/reference_back_wide.png'/> -->
+		</div>
+		<div id="milestones">
 			<!-- <img id="locations_back" src='images/reference/reference_back_wide.png'/> -->
 		</div>
 		<img id="locations_button" src="images/settlement/locations.png" />
@@ -84,7 +91,12 @@
 				var myself = 'settlement';
 				document.title = myself
 
+				window.reload = false;
+
 				console.log(myself);
+
+				var settings = getSettings();
+				sessionStorage.setItem("settings", JSON.stringify(settings));
 
 				var state = sessionStorage.getItem(myself);
 				var transition = sessionStorage.getItem("transition");
@@ -147,18 +159,20 @@
 				createToc();
 				createSevereTables();
 				createReference();
+				addSettings(settings);
+				addMilestones();
 
 				// MUTE BUTTON SETUP
-				$("#mute.button").click(function () {
-					if (!$(this).hasClass('active')) {
-						music.mute(true);
-						speech.mute(true);
-					} else {
-						speech.mute(false);
-						music.mute(false);
-					};
-					$(this).toggleClass('active');
-				});
+				// $("#mute.button").click(function () {
+				// 	if (!$(this).hasClass('active')) {
+				// 		music.mute(true);
+				// 		speech.mute(true);
+				// 	} else {
+				// 		speech.mute(false);
+				// 		music.mute(false);
+				// 	};
+				// 	$(this).toggleClass('active');
+				// });
 
 				// BACK BUTTON SETUP
 				if ((back_target == null) || (back_target == "null") || (back_target == "undefined")) {
@@ -188,11 +202,18 @@
 
 				noise.play();
 
-				if (sessionStorage.getItem("Mute") == "On") {
+				// if (sessionStorage.getItem("Mute") == "On") {
+				// 	music.mute(true);
+				// 	speech.mute(true);
+				// 	noise.mute(true);
+				// 	$("#mute.button").toggleClass('active');
+				// }
+				if (settings['music'] == "Off") {
 					music.mute(true);
-					speech.mute(true);
 					noise.mute(true);
-					$("#mute.button").toggleClass('active');
+				}
+				if (settings['narration'] == "Off") {
+					speech.mute(true);
 				}
 
 				if (anew) {
@@ -201,8 +222,10 @@
 					$("#hunt_icon").delay(1000).fadeOut(2000);
 					$("#label_text").delay(1000).fadeOut(2000);
 					$("#settlement_background").delay(3500).fadeIn(2000);
+					// $('#milestones').delay(3500).fadeIn(2000);
 					$("#turn_cheatsheet").delay(3500).fadeIn(2000);
 					$('#settlement_event_button').delay(4000).fadeIn(1000);
+					$('#milestones_button').delay(4000).fadeIn(1000);
 					$('#mute.button').show();
 					// $('#back_button').show();
 
@@ -214,8 +237,10 @@
 					// $("#hunt_icon").fadeIn(2000);
 					// $("#label_text").fadeIn(2000);
 					$("#settlement_background").fadeIn(2000);
+					// $('#milestones').fadeIn(2000);
 					$("#turn_cheatsheet").fadeIn(2000);
 					$('#settlement_event_button').fadeIn(2000);
+					$('#milestones_button').fadeIn(2000);
 					$('#mute.button').show();
 					// $('#back_button').show();
 
@@ -236,6 +261,11 @@
 					}
 
 					$('#settlement_event_back').attr('src', state.settlement_event);
+
+					if (state.milestones_open) {
+						$('#milestones').delay(150).fadeIn(500);
+						$('#milestones_button').addClass('active');
+					}
 
 					// if (state.muted) {
 					//   music.mute(true);
@@ -261,10 +291,25 @@
 					};
 				});
 
+				$('#milestones_button').click(function () {
+					if (!$(this).hasClass('active')) {
+						$('#milestones').delay(150).fadeIn(500);
+						$(this).addClass('active');
+					} else {
+						$('#milestones').delay(50).fadeOut(500);
+						$(this).removeClass('active');
+					};
+				});
+
+				$('#milestone-title').on('click', function () {
+					$('#milestones').delay(50).fadeOut(500);
+					$('#milestones_button').removeClass('active');
+				});
+
 				$('#settlement_event_back').click(function () {
 					$('#settlement_event_screen').delay(150).fadeOut(500);
 					$('#settlement_event_back').dealy(50).fadeOut(500);
-					$(this).removeClass('active');
+					$('#settlement_event_button').removeClass('active');
 				});
 
 				$('#settlement_event_button').tooltipster({
@@ -275,21 +320,54 @@
 					delay: '600'
 				});
 
-				$("#mute.button").click(function () {
-					if (!$(this).hasClass('active')) {
-						music.mute(true);
-						speech.mute(true);
-						noise.mute(true);
-						sessionStorage.setItem("Mute", "On");
-					} else {
-						speech.mute(false);
-						music.mute(false);
-						noise.mute(false);
-						sessionStorage.setItem("Mute", "Off");
-					};
-
-					$(this).toggleClass('active');
+				$('#milestones_button').tooltipster({
+					contentAsHTML: 'true',
+					animation: 'grow',
+					content: 'Show <b>Milestones</b>.',
+					position: 'right',
+					delay: '600'
 				});
+
+				// $("#mute.button").click(function () {
+				// 	if (!$(this).hasClass('active')) {
+				// 		music.mute(true);
+				// 		speech.mute(true);
+				// 		noise.mute(true);
+				// 		sessionStorage.setItem("Mute", "On");
+				// 	} else {
+				// 		speech.mute(false);
+				// 		music.mute(false);
+				// 		noise.mute(false);
+				// 		sessionStorage.setItem("Mute", "Off");
+				// 	};
+				//
+				// 	$(this).toggleClass('active');
+				// });
+				setInterval(function() {
+					if (window.reload) {
+						setTransition(document.title, 'back', getBackTarget(), current_state());
+					}
+				}, 100);
+
+
+				function addMilestones() {
+					$('#milestones').append($('<div id="milestone-title">Milestones</div>'));
+					$('#milestones').append($('<div id="milestone">&bull; First child is born - <a id="milestone-trigger" target="principle new life">Principle: New Life</a></div>'));
+					$('#milestones').append($('<div id="milestone">&bull; First time death cound is updated - <a id="milestone-trigger" target="principle death">Principle: Death</a></div>'));
+					$('#milestones').append($('<div id="milestone">&bull; Population reaches 15 - <a id="milestone-trigger" target="principle society">Principle: Society</a></div>'));
+					$('#milestones').append($('<div id="milestone">&bull; Settlement has 5 innovations - <a id="milestone-trigger" target="hooded knight">Hooded Knight</a></div>'));
+					$('#milestones').append($('<div id="milestone">&bull; Lantern Year 12 - <a id="milestone-trigger" target="principle conviction">Principle: Conviction</a></div>'));
+
+					$('body').on('click', '#milestone-trigger', function () {
+						setTransition($(this).attr('target'), 'menu', document.title, current_state())
+					});
+
+					// $('#milestone-trigger').each(function() {
+					//     $(this).on('click', function(e) {
+					//         setTransition($(this).attr('target'), 'menu', document.title, current_state())
+					//     });
+					// });
+				}
 
 				// ### FUNCTION THAT SAVES ALL DATA NEEDED TO RESTORE STATE ######
 				function current_state() {
@@ -318,6 +396,7 @@
 					current_state.innovations = null;
 
 					current_state.settlement_event = $('#settlement_event_back').attr('src');
+					current_state.milestones_open = $('#milestones_button').hasClass('active');
 
 					console.log(current_state);
 					console.log(JSON.stringify(current_state));

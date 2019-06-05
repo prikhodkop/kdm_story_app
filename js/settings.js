@@ -96,8 +96,13 @@ function saveSettings() {
 
 	saveFile(JSON.stringify(settings), __dirname + '/settings.json')
 
-	const remote = require('electron').remote
-	remote.getCurrentWindow().reload()
+	// window.reload()
+	if (document.title == 'kingdom death') {
+		const remote = require('electron').remote
+		remote.getCurrentWindow().reload()
+	} else {
+		window.reload = true;
+	}
 
 	// app.exit(0)
 	return settings;
@@ -224,6 +229,26 @@ var settings_schema = {
 			"en",
 		]
 	},
+	"music": {
+		"type": "option",
+		"title": "Music",
+		"description": '',
+		"default": "On",
+		"enum": [
+			"On",
+			"Off"
+		]
+	},
+	"narration": {
+		"type": "option",
+		"title": "Narration",
+		"description": '',
+		"default": "On",
+		"enum": [
+			"On",
+			"Off"
+		]
+	},
 	"subtitles": {
 		"type": "option",
 		"title": "Subtitles",
@@ -299,8 +324,7 @@ var settings_schema = {
 				"title": "Flower Knight",
 				"default": "Disabled",
 				"enum": [
-					"Disabled",
-					"Cards only"
+					"Disabled"
 				]
 			},
 			"gorm": {
@@ -359,8 +383,7 @@ var settings_schema = {
 				"title": "Spidicules",
 				"default": "Disabled",
 				"enum": [
-					"Disabled",
-					"Cards only"
+					"Disabled"
 				]
 			},
 			"sunstalker": {

@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/menu.css">
 	<link rel="stylesheet" href="css/selectize.css">
+	<link rel="stylesheet" href="css/settings.css">
 </head>
 
 <body bgcolor="#000000">
@@ -22,6 +23,8 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/howler.core.min.js"></script>
 	<script src="js/scrollTo.js"></script>
+	<script type="text/javascript" src="js/settings.js"></script>
+	<script type="text/javascript" src="js/files.js"></script>
 	<script type="text/javascript" src="js/events.js"></script>
 	<script type="text/javascript" src="js/transition.js"></script>
 	<script type="text/javascript" src="js/menu.js"></script>
@@ -39,8 +42,9 @@
 		<img id="img" />
 		<div class="" id="label_text">
 		</div>
+		<div class="srt"></div>
 
-		<button class="button" id="mute">Mute</button>
+		<!-- <button class="button" id="mute">Mute</button> -->
 		<a id="back_button" href='#'>
 			<svg class="back_button__icon" enable-background="new 0 0 492 492" version="1.1" viewBox="0 0 492 492" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
 					<path d="m464.34 207.42l0.768 0.168h-329.22l103.5-103.72c5.068-5.064 7.848-11.924 7.848-19.124s-2.78-14.012-7.848-19.088l-16.104-16.112c-5.064-5.064-11.812-7.864-19.008-7.864-7.2 0-13.952 2.78-19.016 7.844l-177.41 177.4c-5.084 5.084-7.864 11.856-7.844 19.06-0.02 7.244 2.76 14.02 7.844 19.096l177.41 177.41c5.064 5.06 11.812 7.844 19.016 7.844 7.196 0 13.944-2.788 19.008-7.844l16.104-16.112c5.068-5.056 7.848-11.808 7.848-19.008 0-7.196-2.78-13.592-7.848-18.652l-104.66-104.3h329.99c14.828 0 27.288-12.78 27.288-27.6v-22.788c0-14.82-12.828-26.6-27.656-26.6z"></path>
@@ -60,9 +64,13 @@
 				document.title = myself
 				// #############
 
+				window.reload = false;
+
 				console.log(myself);
 
-				let settings = JSON.parse(sessionStorage.getItem("settings"));
+				// let settings = JSON.parse(sessionStorage.getItem("settings"));
+				var settings = getSettings();
+				sessionStorage.setItem("settings", JSON.stringify(settings));
 
 				$("#img_back").attr('src', "images/" + myself + "/back.jpg");
 
@@ -126,6 +134,12 @@
 					volume: 1.0
 				});
 
+				if ((events_table[myself].speech == "") || (settings['narration'] == "Off")) {
+					var mute_narration = true;
+				} else {
+					var mute_narration = false;
+				};
+
 				var music = new Howl({
 					src: [events_table[myself].music],
 					loop: true,
@@ -136,6 +150,7 @@
 
 				createMenuButton();
 				createToc();
+				addSettings(settings);
 
 				var state = sessionStorage.getItem(myself);
 				var transition = sessionStorage.getItem("transition");
@@ -152,12 +167,17 @@
 
 				var anew = true
 
-				$("#img_back").fadeIn(4000);
+				if (myself == 'first story') {
+					$("#img_back").delay(2000).fadeIn(4000);
+				} else {
+					$("#img_back").fadeIn(4000);
+				}
 
-				if (sessionStorage.getItem("Mute") == "On") {
+				if (settings['music'] == "Off") {
 					music.mute(true);
+				}
+				if (mute_narration) {
 					speech.mute(true);
-					$("#mute.button").toggleClass('active');
 				}
 
 				if ((transition == 'back') && !(state == null)) {
@@ -214,7 +234,7 @@
 				// SET UP EVENT START IF IT HAS NO INITIALIZED STATE
 				// #############
 				if (anew) {
-					$("#label_text").delay(4000).fadeIn(2000);
+					$("#label_text").delay(3000).fadeIn(2000);
 
 					speech.on('load', function () {
 						var duration = speech.duration() * 1000
@@ -236,14 +256,23 @@
 
 						console.log("Music delay computed " + delay);
 
-						if (sessionStorage.getItem("Mute") == "On") {
+						if (mute_narration) {
 							duration = 2000;
 							delay = 1000;
 						}
+						if (myself == 'first story') {
+							duration = 4000;
+							delay = 1000;
+							$('.srt').text('Open rule book on page 22 and follow the instructions.')
+							$('.srt').fadeIn(2000);
+							setTimeout(function() {$('.srt').fadeOut(1000);}, 3000);
+						}
 
-						setTimeout(function () {
-							speech.play();
-						}, start_delay);
+						if (!mute_narration) {
+							setTimeout(function () {
+								speech.play();
+							}, start_delay);
+						}
 
 						setTimeout(function () {
 							if (action == "false") {
@@ -290,19 +319,19 @@
 				});
 
 
-				$("#mute.button").click(function () {
-					if (!$(this).hasClass('active')) {
-						music.mute(true);
-						speech.mute(true);
-						sessionStorage.setItem("Mute", "On");
-					} else {
-						speech.mute(false);
-						music.mute(false);
-						sessionStorage.setItem("Mute", "Off");
-					};
-
-					$(this).toggleClass('active');
-				});
+				// $("#mute.button").click(function () {
+				// 	if (!$(this).hasClass('active')) {
+				// 		music.mute(true);
+				// 		speech.mute(true);
+				// 		sessionStorage.setItem("Mute", "On");
+				// 	} else {
+				// 		speech.mute(false);
+				// 		music.mute(false);
+				// 		sessionStorage.setItem("Mute", "Off");
+				// 	};
+				//
+				// 	$(this).toggleClass('active');
+				// });
 
 				$('body').on('click', '#back_button', function () {
 					let back_target = getBackBackTarget()
@@ -318,6 +347,12 @@
 						setTransition($(this).attr('target'), 'menu', document.title, current_state())
 					}
 				});
+
+				setInterval(function() {
+					if (window.reload) {
+						setTransition(document.title, 'back', getBackTarget(), current_state());
+					}
+				}, 100);
 
 				function current_state() {
 					let current_state = new Object();

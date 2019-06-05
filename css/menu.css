@@ -43,6 +43,7 @@
 	height: 50px;
 	font-family: 'Silverado';
 	cursor: pointer;
+	transition: color 0.3s, text-shadow 0.3s;
 }
 
 
@@ -260,6 +261,7 @@ div#reference-window-back0 .selectize-control {
 	background: #222;
 	border: 3px solid #666;
 	border-radius: 15px;
+	opacity: 0.8;
 }
 
 .refpad--row:nth-of-type(2) { margin-left: 30px; }
@@ -281,6 +283,7 @@ div#reference-window-back0 .selectize-control {
 	font-size: 0.9em;
 	line-height: 1.38;
 	box-sizing: border-box;
+	opacity: 1.0;
 }
 .refpad__pad:hover {
 	background: #ffffff42;
@@ -390,4 +393,112 @@ div#reference-window-back0 .selectize-control {
 	text-align: center;
 	font-size: 2em;
 	font-weight:500;
+}
+
+#esc-menu {
+  /* width:30%; */
+  left:33%;
+  top: 40%;
+  height: 20%;
+  width: 34%;
+  position:absolute;
+  z-index: 96;
+  display:block;
+  -webkit-box-shadow: 0 0 80px #000;
+        box-shadow: 0 0 80px #000;
+  overflow:hidden;
+  --borderWidth: 1em;
+  border-radius: var(--borderWidth);
+  border: 0.2rem solid #555;
+}
+
+#esc-menu {
+	display:block;
+	position: absolute;
+	overflow: visible;
+}
+
+#esc-text {
+	font-family: 'Silverado';
+	display:block;
+	overflow: visible;
+  visibility: show;
+	position: absolute;
+	background-color: Transparent;
+	color: #555;
+	text-align: center;
+	text-shadow: 0 0 10px #000;
+	font-size: 2em;
+	font-weight:500;
+	width: 100%;
+	left: 0;
+	/* height: 20% */
+	top: 15%;
+	z-index: 97;
+	cursor: default;
+}
+
+#esc-yes {
+	font-family: 'Silverado';
+	display:block;
+	position: absolute;
+	background-color: Transparent;
+	color: #555;
+	text-align: center;
+	box-shadow: 0 0 10px #000;
+	font-size: 2em;
+	font-weight:500;
+	width: 30%;
+	left: 13%;
+	height: 20%;
+	top: 65%;
+	--borderWidth: 1em;
+  border-radius: var(--borderWidth);
+  border: 0.2rem solid #555;
+	z-index: 97;
+	cursor: pointer;
+	transition: color 1s, box-shadow 1s;
+}
+
+#esc-yes:hover {
+	color: #cc0;
+	box-shadow: 0 0 20px #cccc00;
+}
+
+#esc-no {
+	font-family: 'Silverado';
+	display:block;
+	position: absolute;
+	background-color: Transparent;
+	color: #555;
+	text-align: center;
+	box-shadow: 0 0 10px #000;
+	font-size: 2em;
+	font-weight:500;
+	width: 30%;
+	left: 57%;
+	height: 20%;
+	top: 65%;
+	--borderWidth: 1em;
+  border-radius: var(--borderWidth);
+  border: 0.2rem solid #555;
+	z-index: 97;
+	cursor: pointer;
+	transition: color 1s, box-shadow 1s;
+}
+
+#esc-no:hover {
+	color: #cc0;
+	box-shadow: 0 0 20px #cccc00;
+}
+
+#esc-back {
+	display:block;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 95;
+	--borderWidth: 1em;
+	border-radius: var(--borderWidth);
 }

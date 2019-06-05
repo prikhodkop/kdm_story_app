@@ -6,11 +6,7 @@ The repository contains source code for the Kingdom Death: Monster companion sto
 
 More info on the app: https://kdm-story.site
 
-Current release version is **2.3**:
-
-**Windows**: [link](http://bit.ly/2JCReqg)
-
-**Mac**: [link](http://bit.ly/2VnfsqD)
+Current release version is **2.4**:
 
 See changelog at: https://kdm-story.site/changelog
 
@@ -30,11 +26,11 @@ To build the app one needs to:
 
 On Windows:
 
-> \>\> electron-packager ./ "Kingdom Death 1.5 Story" --platform win32 --icon ./icon.icns --overwrite --arch=x64 --verbose --prune=true --out=<path to build>
+> \>\> electron-packager ./ "Kingdom Death 1.5 Story" --platform win32 --icon ./icon.icns --overwrite --arch=x64 --verbose --prune=true --out=\<path to build\>
 
 On Mac:
 
-> \>\> electron-packager ./ "Kingdom Death 1.5 Story" --platform darwin --icon ./icon.icns --overwrite --arch=x64 --verbose --prune=true --out=<path to build>
+> \>\> electron-packager ./ "Kingdom Death 1.5 Story" --platform darwin --icon ./icon.icns --overwrite --arch=x64 --verbose --prune=true --out=\<path to build\>
   
 ## Contributions
 
