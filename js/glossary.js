@@ -873,6 +873,8 @@ function get_representation(word) {
 			return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="images/reference/Fighting Arts/' + word + '.jpg"/>'
 		} else if (settings['card design']['fighting arts'] == 'Fen Small') {
 			return '<img id=reference-image style="width:75%;border: 1px solid #333;box-shadow: 0 0 10px #000;" src="images/reference/Fighting Arts_fen/' + word + '.png"/>'
+		} else if (settings['card design']['fighting arts'] == 'Lvova Wide') {
+			return '<img id=reference-image style="width:98%;border: 1px solid #333;box-shadow: 0 0 10px #000;" src="images/reference/Fighting Arts_lvova_wide/' + word + '.png"/>'
 		}
 	} else if (word in secret_fightning_arts_text) {
 		if (settings['card design']['fighting arts'] == 'Poots') {
