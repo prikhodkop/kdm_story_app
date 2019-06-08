@@ -5,3 +5,4 @@ images/.DS_Store
 images/reference/.DS_Store
 images/reference/Disorders/.DS_Store
 package-lock.json
+dist/

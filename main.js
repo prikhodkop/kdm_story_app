@@ -5,6 +5,7 @@ const {
 	protocol,
 	ipcMain
 } = require('electron');
+const log = require('electron-log');
 
 const {autoUpdater} = require("electron-updater");
 
@@ -21,6 +22,11 @@ if (process.platform === 'darwin') {
         label: 'About ' + name,
         role: 'about'
       },
+			{
+        label: 'Dev Tools',
+				accelerator: 'Command+I',
+        click() { win.webContents.openDevTools(); }
+      },
       {
         label: 'Quit',
         accelerator: 'Command+Q',
@@ -31,7 +37,6 @@ if (process.platform === 'darwin') {
 }
 
 function createWindow() {
-	autoUpdater.checkForUpdatesAndNotify();
 	// Create the browser window.
 	win = new BrowserWindow({
 		// width: 1440,
@@ -61,6 +66,7 @@ let win;
 function sendStatusToWindow(text) {
   log.info(text);
   win.webContents.send('message', text);
+	// console.log(text)
 }
 // function createDefaultWindow() {
 //   win = new BrowserWindow();
@@ -101,6 +107,10 @@ app.on('ready', function() {
 });
 app.on('window-all-closed', () => {
   app.quit();
+});
+
+app.on('ready', function() {
+	autoUpdater.checkForUpdatesAndNotify();
 });
 
 // app.on('ready', createWindow)
