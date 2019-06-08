@@ -8,7 +8,7 @@
     "test": "mocha",
     "start": "electron .",
     "app": "npx electron .",
-    "publish": "build --mac --win -p always"
+    "publish": "build -p always"
   },
   "author": "@prikhodkop",
   "license": "MIT",
@@ -25,7 +25,15 @@
         "owner": "prikhodkop",
         "repo": "kdm_story_app"
       }
-    ]
+    ],
+    "appId": "com.github.prikhodkop.kdmstoryapp",
+    "mac": {
+      "category": "public.app-category.games",
+      "target": [
+        "zip",
+        "dmg"
+      ]
+    }
   },
   "devDependencies": {
     "electron-notarize": "^0.1.1"
