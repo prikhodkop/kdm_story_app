@@ -1,7 +1,15 @@
 function getSettings() {
-	console.log(__dirname)
+	const {app} = require('electron').remote;
+	let dirname = app.getPath('userData');
+	console.log('Dirname: '+dirname)
 	const fs = require('fs')
-	return JSON.parse(fs.readFileSync(__dirname + '/settings.json'))
+
+	if (fs.existsSync(dirname + '/settings.json')) {
+		return JSON.parse(fs.readFileSync(dirname + '/settings.json'))
+	} else {
+		return JSON.parse(fs.readFileSync(__dirname + '/settings.json'))
+	}
+
 }
 
 function addSettings(settings) {
@@ -94,7 +102,9 @@ function saveSettings() {
 	console.log('New settings:');
 	console.log(settings);
 
-	saveFile(JSON.stringify(settings), __dirname + '/settings.json')
+	const {app} = require('electron').remote;
+	// saveFile(JSON.stringify(settings), __dirname + '/settings.json')
+	saveFile(JSON.stringify(settings), app.getPath('userData') + '/settings.json')
 
 	// window.reload()
 	if (document.title == 'kingdom death') {
@@ -168,7 +178,7 @@ function createTable(schema, defaults = undefined, level = 0, group = '') {
 			});
 
 			// $('option.settings#'+level+'[value="'+schema[key]['default']+'"][parent="'+key+'"]').attr('selected','selected');
-			if (key in defaults) {
+			if ((!(defaults == null)) && (key in defaults)) {
 				sel.val(defaults[key]);
 			} else {
 				sel.val(schema[key]['default']);

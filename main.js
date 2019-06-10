@@ -55,9 +55,13 @@ function createWindow() {
 		// frame: false,
 	})
 
+	// global.sharedObj = {path: app.getPath('userData')};
+
 	// and load the index.html of the app.
 	win.loadFile('index.html')
 	// win.webContents.openDevTools();
+
+
 
 }
 
@@ -111,6 +115,10 @@ app.on('window-all-closed', () => {
 
 app.on('ready', function() {
 	autoUpdater.checkForUpdatesAndNotify();
+});
+
+process.on('uncaughtException', function (error) {
+    log.warn(error);
 });
 
 // app.on('ready', createWindow)
