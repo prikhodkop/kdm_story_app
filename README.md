@@ -21,8 +21,12 @@ To build the app one needs to:
 > \>\> git lfs install
 3. Clone the repository: 
 > \>\> git clone git@github.com:prikhodkop/kdm_story_app.git
+4. Install required node_modules:
+> \>\> npm install
 
 ## Building
+
+### For dev builds:
 
 On Windows:
 
@@ -31,6 +35,14 @@ On Windows:
 On Mac:
 
 > \>\> electron-packager ./ "Kingdom Death 1.5 Story" --platform darwin --icon ./icon.icns --overwrite --arch=x64 --verbose --prune=true --out=\<path to build\>
+
+### For release build:
+
+On windows and mac:
+
+> \>\> yarn dist
+
+Build artefacts would be put into ./dist folder.
   
 ## Contributions
 
