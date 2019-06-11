@@ -23,7 +23,7 @@ function createAbout(version) {
 		id: 'reference-window-back'
 	}));
 
-	$(`<div><h id="about_header">KDM Story app v.` + version + `</h>
+	$(`<div><h id="about_header">KDM Story app</h>
   <p id="about_p">Created by <a href=https://t.me/prikhodkop style="color:#888800;" target="_blank">@prikhodkop</a></p>
   <p id="about_p">The app is an open non profit project to enchance experience with the game. Every contribution to help is welcome!</p>
   <p id="about_p">App sources are now on github: <a href=https://github.com/prikhodkop/kdm_story_app style="color:#888800;" target="_blank">https://github.com/prikhodkop/kdm_story_app</a>.<br/></p>

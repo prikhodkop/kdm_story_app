@@ -3,11 +3,18 @@ const {
 	BrowserWindow,
 	Menu,
 	protocol,
-	ipcMain
+	ipcMain,
+	dialog,
+	Notification
 } = require('electron');
 const log = require('electron-log');
+const ProgressBar = require('electron-progressbar');
 
 const {autoUpdater} = require("electron-updater");
+
+// let updater
+var progressbar
+autoUpdater.autoDownload = false
 
 app.commandLine.appendSwitch('--autoplay-policy', 'no-user-gesture-required')
 
@@ -30,7 +37,12 @@ if (process.platform === 'darwin') {
       {
         label: 'Quit',
         accelerator: 'Command+Q',
-        click() { app.quit(); }
+        click() {
+					if (!(progressbar == null)) {
+						progressbar.close();
+					};
+					app.quit();
+				}
       },
     ]
   })
@@ -69,7 +81,7 @@ let win;
 
 function sendStatusToWindow(text) {
   log.info(text);
-  win.webContents.send('message', text);
+  // win.webContents.send('message', text);
 	// console.log(text)
 }
 // function createDefaultWindow() {
@@ -84,24 +96,111 @@ function sendStatusToWindow(text) {
 autoUpdater.on('checking-for-update', () => {
   sendStatusToWindow('Checking for update...');
 })
-autoUpdater.on('update-available', (info) => {
-  sendStatusToWindow('Update available.');
+// autoUpdater.on('update-available', (info) => {
+//   sendStatusToWindow('Update available.');
+// })
+
+autoUpdater.on('update-available', () => {
+  dialog.showMessageBox({
+    type: 'info',
+    title: 'Found Updates',
+    message: 'Found updates, do you want update now?',
+    buttons: ['Yes', 'No']
+  }, (buttonIndex) => {
+    if (buttonIndex === 0) {
+      autoUpdater.downloadUpdate()
+			progressbar = new ProgressBar({
+				indeterminate: false,
+				value: 0,
+				maxValue: 100,
+				browserWindow: {
+					text: 'Downloading update',
+			    detail: 'Wait...',
+					parent: win,
+					webPreferences: {
+            nodeIntegration: true
+	        },
+					minimizable: true,
+					closable: true,
+					resizable: true
+				}
+		  });
+
+
+	    progressbar.on('completed', function() {
+	      log.info(`completed...`);
+	      progressbar.detail = 'Finished download!';
+	    });
+	    progressbar.on('aborted', function(value) {
+	      log.info(`aborted! ${value}%`);
+	    });
+	    progressbar.on('progress', function(value) {
+				sendStatusToWindow(`Downloaded ${value}%...`);
+	      progressbar.detail = `Downloaded: ${value}%`;
+	    });
+    }
+    else {
+      // updater.enabled = true
+      // updater = null
+    }
+  })
 })
-autoUpdater.on('update-not-available', (info) => {
-  sendStatusToWindow('Update not available.');
-})
+
+// autoUpdater.on('update-not-available', (info) => {
+//   sendStatusToWindow('Update not available.');
+// })
 autoUpdater.on('error', (err) => {
   sendStatusToWindow('Error in auto-updater. ' + err);
+	dialog.showMessageBox({
+    title: 'Error:',
+    message: 'Error in auto update: ' + err
+  })
+  // updater.enabled = true
+  // updater = null
 })
+let prevPercent = 0;
+
 autoUpdater.on('download-progress', (progressObj) => {
   let log_message = "Download speed: " + progressObj.bytesPerSecond;
   log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
   log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
   sendStatusToWindow(log_message);
+	// dialog.showMessageBox({
+  //   title: 'Download progress',
+  //   message: log_message
+  // })
+	// let myNotification = new Notification('Update:', {
+	//   body: log_message
+	// });
+	if (Math.floor(progressObj.percent) - prevPercent > 0) {
+		progressbar.value += Math.floor(progressObj.percent) - prevPercent;
+		prevPercent = Math.floor(progressObj.percent);
+	};
 })
-autoUpdater.on('update-downloaded', (info) => {
-  sendStatusToWindow('Update downloaded');
-});
+// autoUpdater.on('update-downloaded', (info) => {
+//   sendStatusToWindow('Update downloaded');
+// });
+
+autoUpdater.on('update-not-available', () => {
+  // dialog.showMessageBox({
+  //   title: 'No Updates',
+  //   message: 'Current version is up-to-date.'
+  // })
+	sendStatusToWindow('Current version is up-to-date.');
+  // updater.enabled = true
+  // updater = null
+})
+
+autoUpdater.on('update-downloaded', () => {
+	progressbar.setCompleted();
+  dialog.showMessageBox({
+    title: 'Install Updates',
+    message: 'Updates downloaded, application will restart to update...'
+  }, () => {
+    setImmediate(() => autoUpdater.quitAndInstall())
+  })
+})
+
 app.on('ready', function() {
   // Create the Menu
   const menu = Menu.buildFromTemplate(template);
@@ -110,11 +209,17 @@ app.on('ready', function() {
   createWindow();
 });
 app.on('window-all-closed', () => {
+	if (!(progressbar == null)) {
+		progressbar.close();
+	};
   app.quit();
 });
 
 app.on('ready', function() {
-	autoUpdater.checkForUpdatesAndNotify();
+	// autoUpdater.checkForUpdatesAndNotify();
+	log.info('Checking for update...');
+	autoUpdater.checkForUpdates();
+	log.info('Done checking!');
 });
 
 process.on('uncaughtException', function (error) {
