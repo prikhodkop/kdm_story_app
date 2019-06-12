@@ -19,34 +19,34 @@ autoUpdater.autoDownload = false
 app.commandLine.appendSwitch('--autoplay-policy', 'no-user-gesture-required')
 
 let template = []
-if (process.platform === 'darwin') {
+// if (process.platform === 'darwin') {
   // OS X
-  const name = app.getName();
-  template.unshift({
-    label: name,
-    submenu: [
-      {
-        label: 'About ' + name,
-        role: 'about'
-      },
-			{
-        label: 'Dev Tools',
-				accelerator: 'Command+I',
-        click() { win.webContents.openDevTools(); }
-      },
-      {
-        label: 'Quit',
-        accelerator: 'Command+Q',
-        click() {
-					if (!(progressbar == null)) {
-						progressbar.close();
-					};
-					app.quit();
-				}
-      },
-    ]
-  })
-}
+const name = app.getName();
+template.unshift({
+  label: name,
+  submenu: [
+    {
+      label: 'About ' + name,
+      role: 'about'
+    },
+		{
+      label: 'Dev Tools',
+			accelerator: 'Command+I',
+      click() { win.webContents.openDevTools(); }
+    },
+    {
+      label: 'Quit',
+      accelerator: 'Command+Q',
+      click() {
+				if (!(progressbar == null)) {
+					progressbar.close();
+				};
+				app.quit();
+			}
+    },
+  ]
+})
+// }
 
 function createWindow() {
 	// Create the browser window.
@@ -101,49 +101,59 @@ autoUpdater.on('checking-for-update', () => {
 // })
 
 autoUpdater.on('update-available', () => {
-  dialog.showMessageBox({
-    type: 'info',
-    title: 'Found Updates',
-    message: 'Found updates, do you want update now?',
-    buttons: ['Yes', 'No']
-  }, (buttonIndex) => {
-    if (buttonIndex === 0) {
-      autoUpdater.downloadUpdate()
-			progressbar = new ProgressBar({
-				indeterminate: false,
-				value: 0,
-				maxValue: 100,
-				browserWindow: {
-					text: 'Downloading update',
-			    detail: 'Wait...',
-					parent: win,
-					webPreferences: {
-            nodeIntegration: true
-	        },
-					minimizable: true,
-					closable: true,
-					resizable: true
-				}
-		  });
+
+	// if (process.platform in ["win32", "osx"]) {
+	if (true) {
+		dialog.showMessageBox({
+	    title: 'Update ready',
+	    message: 'New app version was released!\nPlease download it from:\nhttps://kdm-story.site.'
+	  })
+	} else {
+		dialog.showMessageBox({
+	    type: 'info',
+	    title: 'Found Updates',
+	    message: 'Found updates, do you want update now?',
+	    buttons: ['Yes', 'No']
+	  }, (buttonIndex) => {
+	    if (buttonIndex === 0) {
+	      autoUpdater.downloadUpdate()
+				progressbar = new ProgressBar({
+					indeterminate: false,
+					value: 0,
+					maxValue: 100,
+					browserWindow: {
+						text: 'Downloading update',
+				    detail: 'Wait...',
+						parent: win,
+						webPreferences: {
+	            nodeIntegration: true
+		        },
+						minimizable: true,
+						closable: true,
+						resizable: true
+					}
+			  });
 
 
-	    progressbar.on('completed', function() {
-	      log.info(`completed...`);
-	      progressbar.detail = 'Finished download!';
-	    });
-	    progressbar.on('aborted', function(value) {
-	      log.info(`aborted! ${value}%`);
-	    });
-	    progressbar.on('progress', function(value) {
-				sendStatusToWindow(`Downloaded ${value}%...`);
-	      progressbar.detail = `Downloaded: ${value}%`;
-	    });
-    }
-    else {
-      // updater.enabled = true
-      // updater = null
-    }
-  })
+		    progressbar.on('completed', function() {
+		      log.info(`completed...`);
+		      progressbar.detail = 'Finished download!';
+		    });
+		    progressbar.on('aborted', function(value) {
+		      log.info(`aborted! ${value}%`);
+		    });
+		    progressbar.on('progress', function(value) {
+					sendStatusToWindow(`Downloaded ${value}%...`);
+		      progressbar.detail = `Downloaded: ${value}%`;
+		    });
+	    }
+	    else {
+	      // updater.enabled = true
+	      // updater = null
+	    }
+	  })
+	}
+
 })
 
 // autoUpdater.on('update-not-available', (info) => {

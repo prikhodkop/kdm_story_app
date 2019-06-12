@@ -70,6 +70,8 @@ function createAbout(version) {
 		$('#reference-window-background').fadeOut(500);
 		$('#about_text').removeClass('active');
 		$('#about_text').attr('src', 'images/icons/about.png');
+		$('#esc-menu').fadeOut(100);
+		$('#esc-menu').removeClass('active')
 	});
 
 	$('#reference-window-back').on('click', function () {

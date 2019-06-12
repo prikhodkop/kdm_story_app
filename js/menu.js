@@ -477,6 +477,8 @@ function createReference() {
 		$('#reference-window-background').fadeOut(500);
 		$('#reference').attr('src', 'images/icons/reference.png');
 		$('#reference').removeClass('active');
+		$('#esc-menu').fadeOut(100);
+		$('#esc-menu').removeClass('active')
 	});
 }
 

@@ -2,7 +2,7 @@
   "name": "kdm_1.5_story",
   "productName": "KDM Story app",
   "version": "2.5.0",
-  "description": "Once, there was a man, who loved Kingdom Death and praised Poots for what he created, but hated the need to browse several books and shuffle decks all the time. One day he built an app to fix that... The app takes care of the story events, hunt phase, glossary and drawing/checking of disorders, fighting arts, secret fighting arts, weapon specialisations and settlement events for you to enjoy this great game :).",
+  "description": "Once, there was a man, who loved Kingdom Death and praised Poots for what he created, but hated the need to browse several books and shuffle decks all the time. One day he built an app to fix that.",
   "main": "main.js",
   "scripts": {
     "test": "mocha",
@@ -10,7 +10,7 @@
     "app": "npx electron .",
     "publish": "build -p always",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder --mac"
+    "dist": "electron-builder --mac --win"
   },
   "author": "@prikhodkop",
   "license": "MIT",
@@ -32,8 +32,8 @@
     "appId": "com.github.prikhodkop.kdmstoryapp",
     "mac": {
       "category": "public.app-category.games",
+      "icon": "app/icon.icns",
       "target": [
-        "zip",
         "dmg"
       ]
     },
@@ -41,10 +41,16 @@
       "publisherName": [
         "Pavel Prikhodko"
       ],
+      "icon": "app/icon.ico",
       "target": [
-        "nsis",
-        "zip"
+        "nsis"
       ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "runAfterFinish": false,
+      "allowToChangeInstallationDirectory":true,
+      "installerIcon":"icon.ico"
     }
   },
   "devDependencies": {
