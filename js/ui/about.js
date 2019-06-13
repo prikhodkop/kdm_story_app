@@ -1,3 +1,9 @@
+const shell = require('electron').shell
+
+module.exports = {
+  createAbout,
+}
+
 function createAbout (version) {
   $('#container').append($('<div>', {
     id: 'reference-window-background',
@@ -95,7 +101,6 @@ function createAbout (version) {
     $('#about_text').attr('src', 'images/icons/about.png')
   })
 
-  var shell = require('electron').shell
   // open links externally by default
   $(document).on('click', 'a[href^="http"]', function (event) {
     event.preventDefault()

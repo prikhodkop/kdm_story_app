@@ -1,3 +1,4 @@
+const { createAbout } = require('./../ui/about')
 const { setTransition } = require('./../ui/transition')
 
 module.exports = class IndexScene {
