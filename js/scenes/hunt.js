@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  jQuery(function () {
+module.exports = class HuntScene {
+  constructor () {
     var start_delay = 1000
 
     let settings = getSettings()
@@ -237,7 +237,7 @@ $(document).ready(function () {
 
       let value = $(this).val()
 
-      clean = false
+      let clean = false
 
       console.log('I sense change!')
 
@@ -307,7 +307,7 @@ $(document).ready(function () {
 
       let value = eventnumber.val()
 
-      clean = false
+      let clean = false
 
       console.log('I sense change!')
 
@@ -687,6 +687,8 @@ $(document).ready(function () {
     function loadHuntImage (path, position, width, top, type, ref = '') {
       var coord = 2.65 + 7.298 * (position - 1 / 2) - width / 2.0
 
+      let title
+
       if (type === 'common') {
         if (path.includes('random')) {
           title = 'Random Hunt Event'
@@ -936,11 +938,11 @@ $(document).ready(function () {
     function current_state () {
       var current_state = new Object()
 
+      let quarry_selected = true
+
       if ($('#hunt_back').css('display') == 'none') {
         quarry_selected = false
-      } else {
-        quarry_selected = true
-      };
+      }
 
       current_state.quarry_selected = quarry_selected
 
@@ -1003,16 +1005,16 @@ $(document).ready(function () {
 
       return JSON.stringify(current_state)
     }
-  })
 
-  function isHidden (el) {
-    var style = window.getComputedStyle(el)
-    return (style.display === 'none')
-  }
+    function isHidden (el) {
+      var style = window.getComputedStyle(el)
+      return (style.display === 'none')
+    }
 
-  function getRandomInt (min, max) {
-    min = Math.ceil(min)
-    max = Math.floor(max)
-    return Math.floor(Math.random() * (max - min + 1)) + min
+    function getRandomInt (min, max) {
+      min = Math.ceil(min)
+      max = Math.floor(max)
+      return Math.floor(Math.random() * (max - min + 1)) + min
+    }
   }
-})
+}

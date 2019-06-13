@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  jQuery(function () {
+module.exports = class IndexScene {
+  constructor () {
     const version = typeof window.globals !== 'undefined' ? window.globals.version : 'dev'
 
     $('#label_text').hide()
@@ -54,7 +54,7 @@ $(document).ready(function () {
 
     // console.log(subtitles['intro'][lang])
     if (settings['subtitles'] == 'On') {
-      configureSubtitle(readFile(__dirname + '/video/srt/' + lang + '/intro.srt'))
+      configureSubtitle(readFile('./video/srt/' + lang + '/intro.srt'))
     }
 
     if (settings['narration'] == 'Off') {
@@ -137,7 +137,7 @@ $(document).ready(function () {
       document.getElementById('video').currentTime = 0
       // setTimeout(function(){
       //   if (settings['subtitles'] == 'On') {
-      //     configureSubtitle(readFile(__dirname + '/video/srt/' + lang + '/intro.srt'))
+      //     configureSubtitle(readFile('./video/srt/' + lang + '/intro.srt'))
       //   }
       // }, 100);
 
@@ -171,5 +171,5 @@ $(document).ready(function () {
     $('body').on('click', '#menu_item', function () {
       setTransition($(this).attr('target'), 'menu')
     })
-  })
-})
+  }
+}

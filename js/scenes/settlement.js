@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  jQuery(function () {
+module.exports = class SettlementScene {
+  constructor () {
     console.log(sessionStorage)
 
     // GET STATE INFORMATION
@@ -318,11 +318,11 @@ $(document).ready(function () {
       console.log(JSON.stringify(current_state))
 
       return JSON.stringify(current_state)
-    };
-  })
+    }
 
-  function isHidden (el) {
-    let style = window.getComputedStyle(el)
-    return (style.display === 'none')
-  };
-})
+    function isHidden (el) {
+      let style = window.getComputedStyle(el)
+      return (style.display === 'none')
+    }
+  }
+}

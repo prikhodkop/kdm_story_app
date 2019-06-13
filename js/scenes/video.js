@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  jQuery(function () {
+module.exports = class VideoScene {
+  constructor () {
     console.log(sessionStorage)
 
     // UNDERSTAND WHAT EVENT TO SHOW
@@ -163,7 +163,7 @@ $(document).ready(function () {
     createMenuButton()
     createToc()
     if (settings['subtitles'] == 'On') {
-      configureSubtitle(readFile(__dirname + '/video/srt/' + lang + '/' + myself + '.srt'))
+      configureSubtitle(readFile('./video/srt/' + lang + '/' + myself + '.srt'))
     };
     addSettings(settings)
 
@@ -230,5 +230,5 @@ $(document).ready(function () {
 
       return JSON.stringify(current_state)
     }
-  })
-})
+  }
+}
