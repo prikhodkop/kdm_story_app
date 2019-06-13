@@ -4,7 +4,7 @@
 
 The repository contains source code for the Kingdom Death: Monster companion story app.
 
-More info on the app: https://kdm-story.site
+More info and release downloads: https://kdm-story.site
 
 Current release version is **2.5**:
 
