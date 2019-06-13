@@ -1,3 +1,4 @@
+const { readFile } = require('./../ui/files')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 module.exports = class VideoScene {

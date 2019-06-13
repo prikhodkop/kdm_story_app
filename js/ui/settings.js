@@ -1,13 +1,14 @@
+const { readFile, saveFile, exists } = require('./js/ui/files')
+
 function getSettings () {
   const { app } = require('electron').remote
   let dirname = app.getPath('userData')
   console.log('Dirname: ' + dirname)
-  const fs = require('fs')
 
-  if (fs.existsSync(dirname + '/settings.json')) {
-    return JSON.parse(fs.readFileSync(dirname + '/settings.json'))
+  if (exists(dirname + '/settings.json')) {
+    return JSON.parse(readFile(dirname + '/settings.json'))
   } else {
-    return JSON.parse(fs.readFileSync(__dirname + '/settings.json'))
+    return JSON.parse(readFile(__dirname + '/settings.json'))
   }
 }
 
