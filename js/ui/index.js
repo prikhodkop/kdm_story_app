@@ -1,3 +1,3 @@
 $('#menu-toggle-wrapper').click(function () {
-	$(this).toggleClass('active');
+  $(this).toggleClass('active')
 })

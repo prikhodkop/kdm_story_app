@@ -1,6 +1,6 @@
 var subtitles = {
-'intro': {
-'en':
+  'intro': {
+    'en':
 `1
 00:00:01,569 --> 00:00:15,500
 Once upon a time, there was a place of carved stone faces. A man with a lantern lay sleeping a dreamless sleep. The man new nothing.
@@ -35,6 +35,6 @@ The man with the lantern scrambled to his feet, his weapon clenched in his fist.
 
 9
 00:02:14,000 --> 00:02:27,500
-Somewhere in the place of stone faces, nameless men and women stand together. They have nothing but a need to survive and a lantern to light their struggle.`,
-}
+Somewhere in the place of stone faces, nameless men and women stand together. They have nothing but a need to survive and a lantern to light their struggle.`
+  }
 }
