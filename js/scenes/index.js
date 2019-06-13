@@ -1,175 +1,175 @@
 $(document).ready(function () {
-    jQuery(function () {
-        const version = typeof window.globals !== 'undefined' ? window.globals.version : 'dev'
+  jQuery(function () {
+    const version = typeof window.globals !== 'undefined' ? window.globals.version : 'dev'
 
-        $("#label_text").hide();
-        $("#menu").hide();
-        $("#video").hide();
-        $(".button_video").hide();
+    $('#label_text').hide()
+    $('#menu').hide()
+    $('#video').hide()
+    $('.button_video').hide()
 
-        var settings = getSettings();
+    var settings = getSettings()
 
-        console.log('Settings:');
-        console.log(settings);
-        console.log('!!!');
+    console.log('Settings:')
+    console.log(settings)
+    console.log('!!!')
 
-        const electron = require('electron');
-        var screenElectron = electron.screen;
-        var mainScreen = screenElectron.getPrimaryDisplay();
-        var dimensions = mainScreen.size;
+    const electron = require('electron')
+    var screenElectron = electron.screen
+    var mainScreen = screenElectron.getPrimaryDisplay()
+    var dimensions = mainScreen.size
 
-        console.log(dimensions.width + "x" + dimensions.height);
+    console.log(dimensions.width + 'x' + dimensions.height)
 
-        $("#video").attr('width', '100%');
-        $("#video").attr('height', '100%');
+    $('#video').attr('width', '100%')
+    $('#video').attr('height', '100%')
 
-        sessionStorage.setItem("settings", JSON.stringify(settings));
-        sessionStorage.setItem("back_target", null);
-        // sessionStorage.setItem("Mute", "Off");
+    sessionStorage.setItem('settings', JSON.stringify(settings))
+    sessionStorage.setItem('back_target', null)
+    // sessionStorage.setItem("Mute", "Off");
 
-        let lang = settings['language'];
+    let lang = settings['language']
 
-        var music = new Howl({
-            src: ["audio/theme.mp3"],
-            // autoplay: true,
-            loop: true,
-            volume: 0.8
-        });
+    var music = new Howl({
+      src: ['audio/theme.mp3'],
+      // autoplay: true,
+      loop: true,
+      volume: 0.8
+    })
 
-        var action = "false"
+    var action = 'false'
 
-        // $("#open_audio").get(0).volume = 1.0
-        // $("#open_audio").get(0).play();
-        music.on('load', function () {
-            music.play();
-        });
+    // $("#open_audio").get(0).volume = 1.0
+    // $("#open_audio").get(0).play();
+    music.on('load', function () {
+      music.play()
+    })
 
-        $("#label_text").delay(2000).fadeIn(8000);
-        $(".button_video").delay(3000).fadeIn(3000);
+    $('#label_text').delay(2000).fadeIn(8000)
+    $('.button_video').delay(3000).fadeIn(3000)
 
-        createMenuButton();
-        createToc();
-        createAbout(version);
-        addSettings(settings);
+    createMenuButton()
+    createToc()
+    createAbout(version)
+    addSettings(settings)
 
-        // console.log(subtitles['intro'][lang])
-        if (settings['subtitles'] == 'On') {
-            configureSubtitle(readFile(__dirname + '/video/srt/' + lang + '/intro.srt'))
-        }
+    // console.log(subtitles['intro'][lang])
+    if (settings['subtitles'] == 'On') {
+      configureSubtitle(readFile(__dirname + '/video/srt/' + lang + '/intro.srt'))
+    }
 
-        if (settings['narration'] == "Off") {
-            $("#video").prop('muted', true)
-        }
+    if (settings['narration'] == 'Off') {
+      $('#video').prop('muted', true)
+    }
 
-        if (settings['music'] == "Off") {
-            music.mute(true);
-        }
+    if (settings['music'] == 'Off') {
+      music.mute(true)
+    }
 
-        // $("#mute.button").click(function () {
-        // 	console.log("Here1!");
-        // 	if (!$(this).hasClass('active')) {
-        // 		// $("#open_audio").get(0).pause();
-        // 		music.mute(true)
-        // 		$("video").prop('muted', true)
-        // 		sessionStorage.setItem("Mute", "On");
-        // 		// $("#speech").get(0).pause();
-        // 		console.log("Here2!");
-        // 	} else {
-        // 		// $("#open_audio").get(0).play();
-        // 		music.mute(false)
-        // 		$("video").prop('muted', false)
-        // 		sessionStorage.setItem("Mute", "Off");
-        // 		// $("#speech").get(0).play();
-        // 	};
-        //
-        // 	$(this).toggleClass('active');
-        // 	console.log("Here3!");
-        // });
+    // $("#mute.button").click(function () {
+    //   console.log("Here1!");
+    //   if (!$(this).hasClass('active')) {
+    //     // $("#open_audio").get(0).pause();
+    //     music.mute(true)
+    //     $("video").prop('muted', true)
+    //     sessionStorage.setItem("Mute", "On");
+    //     // $("#speech").get(0).pause();
+    //     console.log("Here2!");
+    //   } else {
+    //     // $("#open_audio").get(0).play();
+    //     music.mute(false)
+    //     $("video").prop('muted', false)
+    //     sessionStorage.setItem("Mute", "Off");
+    //     // $("#speech").get(0).play();
+    //   };
+    //
+    //   $(this).toggleClass('active');
+    //   console.log("Here3!");
+    // });
 
-        $(".button_video").click(function () {
-            if (!$(this).hasClass('active')) {
-                // $("#open_audio").get(0).pause();
-                music.stop()
+    $('.button_video').click(function () {
+      if (!$(this).hasClass('active')) {
+        // $("#open_audio").get(0).pause();
+        music.stop()
 
-                $("#video").get(0).currentTime = 0
-                // $("#open_audio").get(0).currentTime = 0
-                $("#video").show();
-                $("#video").get(0).play()
-                // $(".button").hide()
-                $(".button_video").hide();
-                $("#settings").hide();
-                $("#label_text").hide();
+        $('#video').get(0).currentTime = 0
+        // $("#open_audio").get(0).currentTime = 0
+        $('#video').show()
+        $('#video').get(0).play()
+        // $(".button").hide()
+        $('.button_video').hide()
+        $('#settings').hide()
+        $('#label_text').hide()
 
-                console.log("Here2!");
-            } else {
-                // $("#open_audio").currentTime = 0
-                setTimeout(function () {
-                    music.play();
-                }, 500);
+        console.log('Here2!')
+      } else {
+        // $("#open_audio").currentTime = 0
+        setTimeout(function () {
+          music.play()
+        }, 500)
 
-                $("#video").get(0).pause()
-                $("#video").hide();
-                // $(".button").show();
-                $("#settings").show();
-                $("#label_text").fadeIn(8000);
-            };
+        $('#video').get(0).pause()
+        $('#video').hide()
+        // $(".button").show();
+        $('#settings').show()
+        $('#label_text').fadeIn(8000)
+      };
 
-            $(this).toggleClass('active');
-            $(this).toggleClass('fadeOut')
+      $(this).toggleClass('active')
+      $(this).toggleClass('fadeOut')
 
-            console.log("Here3!");
-        });
+      console.log('Here3!')
+    })
 
-        $('video').on('ended', function () {
-            // $("#open_audio").currentTime = 0
+    $('video').on('ended', function () {
+      // $("#open_audio").currentTime = 0
 
-            music.play();
+      music.play()
 
-            // $("#open_audio").get(0).play();
-            $("#video").hide();
-            // $(".button").show()
-            $("#settings").show();
-            $(".button_video").delay(1000).fadeIn(6000);
-            $("#label_text").delay(2000).fadeIn(8000);
+      // $("#open_audio").get(0).play();
+      $('#video').hide()
+      // $(".button").show()
+      $('#settings').show()
+      $('.button_video').delay(1000).fadeIn(6000)
+      $('#label_text').delay(2000).fadeIn(8000)
 
-            clearSubtitles();
-            // $("#video").attr('currentTime', 0);
-            document.getElementById('video').currentTime = 0;
-            // setTimeout(function(){
-            // 	if (settings['subtitles'] == 'On') {
-            // 		configureSubtitle(readFile(__dirname + '/video/srt/' + lang + '/intro.srt'))
-            // 	}
-            // }, 100);
+      clearSubtitles()
+      // $("#video").attr('currentTime', 0);
+      document.getElementById('video').currentTime = 0
+      // setTimeout(function(){
+      //   if (settings['subtitles'] == 'On') {
+      //     configureSubtitle(readFile(__dirname + '/video/srt/' + lang + '/intro.srt'))
+      //   }
+      // }, 100);
 
-            $(this).removeClass('fadeOut')
-            setTransition('first story', 'menu');
-        });
+      $(this).removeClass('fadeOut')
+      setTransition('first story', 'menu')
+    })
 
-        $('#video').on('click', function () {
-            // this.currentTime = this.duration;
-            this.pause();
-            music.play();
+    $('#video').on('click', function () {
+      // this.currentTime = this.duration;
+      this.pause()
+      music.play()
 
-            $("#video").hide();
-            // $(".button").show()
-            $("#settings").show();
-            $(".button_video").fadeIn(2000);
-            $("#label_text").delay(2000).fadeIn(4000);
+      $('#video').hide()
+      // $(".button").show()
+      $('#settings').show()
+      $('.button_video').fadeIn(2000)
+      $('#label_text').delay(2000).fadeIn(4000)
 
-            clearSubtitles();
-            // $("#video").attr('currentTime', 0);
-            document.getElementById('video').currentTime = 0;
+      clearSubtitles()
+      // $("#video").attr('currentTime', 0);
+      document.getElementById('video').currentTime = 0
 
-            $(this).removeClass('fadeOut')
+      $(this).removeClass('fadeOut')
 
-            setTransition('first story', 'menu');
-        })
+      setTransition('first story', 'menu')
+    })
 
-        // let options = localStorage.getItem('KDM_Story_options')
-        // console.log(options)
+    // let options = localStorage.getItem('KDM_Story_options')
+    // console.log(options)
 
-        $('body').on('click', '#menu_item', function () {
-            setTransition($(this).attr('target'), 'menu')
-        })
-    });
-});
+    $('body').on('click', '#menu_item', function () {
+      setTransition($(this).attr('target'), 'menu')
+    })
+  })
+})

@@ -308,7 +308,7 @@ var settings_schema = {
     'type': 'group',
     'title': 'Expansions',
     'description':
-FilesManagerFilesManager`Allows to set which expansion content to show in the app.
+    `Allows to set which expansion content to show in the app.
 "All content" - show events and allow random card draw.
 "Cards only" - allow random card draw, but hide events.
 "None" - no events or draw, however expansion cards are still searchable in reference screen.`,
@@ -411,7 +411,7 @@ FilesManagerFilesManager`Allows to set which expansion content to show in the ap
     'type': 'group',
     'title': 'Strains',
     'description':
-FilesManagerFilesManager`Strain fightning arts.`,
+    `Strain fightning arts.`,
     'properties': {
       'backstabber': {
         'type': 'option',
@@ -455,7 +455,7 @@ FilesManagerFilesManager`Strain fightning arts.`,
     'type': 'group',
     'title': 'Whiteboxes',
     'description':
-FilesManagerFilesManager`Content added with whitebox expansions.`,
+    `Content added with whitebox expansions.`,
     'properties': {
       'allison the twilight knight': {
         'type': 'option',

@@ -404,7 +404,7 @@ var fightning_arts_text = {
     'type': 'strain'
   },
   // 'Harvestman': {
-  // FilesManager'expansion': 'spidicules'
+  //   'expansion': 'spidicules'
   // },
   'Headliner': {
     'expansion': 'lion knight'
@@ -428,7 +428,7 @@ var fightning_arts_text = {
   'Monster Claw Style': {},
   'Orator of Death': {},
   // 'Otherworldly Luck': {
-  // FilesManager'expansion': 'flower knight'
+  //   'expansion': 'flower knight'
   // },
   'Phantom Friend': {
     'expansion': 'slenderman'
@@ -475,7 +475,7 @@ var fightning_arts_text = {
     'expansion': 'lion god'
   },
   // 'Vengeance': {
-  // FilesManager'expansion': 'spidicules'
+  //   'expansion': 'spidicules'
   // },
   'Wardrobe Expert': {
     'expansion': 'lion knight'
@@ -540,7 +540,7 @@ var disorders_text = {
   },
   'Binge Eating': {},
   // 'Controlophobia': {
-  // FilesManager'expansion': 'spidicules'
+  //   'expansion': 'spidicules'
   // },
   'Coprolalia': {},
   'Delicious': {
@@ -577,7 +577,7 @@ var disorders_text = {
     'expansion': 'dung beetle knight'
   },
   // 'Narcissistic': {
-  // FilesManager'expansion': 'flower knight'
+  //   'expansion': 'flower knight'
   // },
   'Overprotective': {
     'expansion': 'sunstalker'
@@ -593,7 +593,7 @@ var disorders_text = {
   'Quixotic': {},
   'Rageholic': {},
   // 'Revenge': {
-  // FilesManager'expansion': 'spidicules'
+  //   'expansion': 'spidicules'
   // },
   'Secretive': {},
   'Seizures': {},
@@ -618,7 +618,7 @@ var disorders_text = {
   },
   // 'Sworn Enemy': {},
   // 'Tiny Arachnophobia': {
-  // FilesManager'expansion': 'spidicules'
+  //   'expansion': 'spidicules'
   // },
   'Traumatized': {},
   'Tunnel Vision': {
@@ -636,7 +636,7 @@ var disorders_text = {
 
 var secret_fightning_arts_text = {
   // 'Acanthus Doctor': {
-  // FilesManager'expansion': 'flower knight'
+  //   'expansion': 'flower knight'
   // },
   'Ageless Apprentice': {
     'expansion': 'lion knight'
@@ -665,7 +665,7 @@ var secret_fightning_arts_text = {
     'expansion': 'manhunter'
   },
   // 'Fencing': {
-  // FilesManager'expansion': 'flower knight'
+  //   'expansion': 'flower knight'
   // },
   'Frozen Star': {
     'expansion': 'dragon king',
@@ -685,7 +685,7 @@ var secret_fightning_arts_text = {
   'Red Fist': {},
   'Scholar of Death': {},
   // 'Silk Surgeon': {
-  // FilesManager'expansion': 'spidicules'
+  //   'expansion': 'spidicules'
   // },
   'Sun Eater': {
     'expansion': 'sunstalker'
@@ -696,7 +696,7 @@ var secret_fightning_arts_text = {
   'Swordsmans Promise': {},
   'Synchronised Strike': {},
   // 'True Blade': {
-  // FilesManager'expansion': 'flower knight'
+  //   'expansion': 'flower knight'
   // },
   'Zero Prescence': {}
 }
