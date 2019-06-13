@@ -10,7 +10,8 @@
     "app": "npx electron .",
     "publish": "build -p always",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder --mac --win"
+    "dist": "electron-builder --mac --win",
+    "lint": "eslint --fix main.js js/"
   },
   "author": "@prikhodkop",
   "license": "MIT",
@@ -49,13 +50,19 @@
     "nsis": {
       "oneClick": false,
       "runAfterFinish": false,
-      "allowToChangeInstallationDirectory":true,
-      "installerIcon":"icon.ico"
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "icon.ico"
     }
   },
   "devDependencies": {
-    "electron-notarize": "^0.1.1",
     "electron": "^5.0.1",
-    "electron-builder": "^20.43.0"
+    "electron-builder": "^20.43.0",
+    "electron-notarize": "^0.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0"
   }
 }
