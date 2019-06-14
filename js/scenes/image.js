@@ -1,3 +1,4 @@
+const electron = require('electron')
 const { createToc, events_table } = require('./../ui/events')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
@@ -38,7 +39,6 @@ module.exports = class ImageScene {
       $('#label_text').css('left', events_table[myself].lleft)
     }
 
-    const electron = require('electron')
     let screenElectron = electron.screen
     let mainScreen = screenElectron.getPrimaryDisplay()
     let dimensions = mainScreen.size

@@ -1,3 +1,4 @@
+const electron = require('electron')
 const { createAbout } = require('./../ui/about')
 const { createToc } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
@@ -20,7 +21,6 @@ module.exports = class IndexScene {
     console.log(settings)
     console.log('!!!')
 
-    const electron = require('electron')
     var screenElectron = electron.screen
     var mainScreen = screenElectron.getPrimaryDisplay()
     var dimensions = mainScreen.size

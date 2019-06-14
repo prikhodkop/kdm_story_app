@@ -1,3 +1,4 @@
+const electron = require('electron')
 const { createToc, events_table } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
@@ -27,7 +28,6 @@ module.exports = class VideoScene {
     $('#img').attr('src', 'images/' + myself + '/img.jpg')
 
     $(window).load(function () {
-      const electron = require('electron')
       let screenElectron = electron.screen
       let mainScreen = screenElectron.getPrimaryDisplay()
       let dimensions = mainScreen.size
@@ -46,7 +46,6 @@ module.exports = class VideoScene {
       })
     })
 
-    const electron = require('electron')
     var screenElectron = electron.screen
     var mainScreen = screenElectron.getPrimaryDisplay()
     var dimensions = mainScreen.size
