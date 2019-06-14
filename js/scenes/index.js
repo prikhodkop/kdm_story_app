@@ -1,3 +1,5 @@
+const { setTransition } = require('./../ui/transition')
+
 module.exports = class IndexScene {
   constructor () {
     const version = typeof window.globals !== 'undefined' ? window.globals.version : 'dev'

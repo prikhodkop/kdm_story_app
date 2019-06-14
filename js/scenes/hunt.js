@@ -1,3 +1,5 @@
+const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
+
 module.exports = class HuntScene {
   constructor () {
     var start_delay = 1000

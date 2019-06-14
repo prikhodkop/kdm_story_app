@@ -1,3 +1,9 @@
+module.exports = {
+  setTransition,
+  getBackTarget,
+  getBackBackTarget,
+}
+
 function setTransition (name, transition, back_target = null, state = null, transit = true) {
   console.log('Doing the transition...')
   console.log(transition)

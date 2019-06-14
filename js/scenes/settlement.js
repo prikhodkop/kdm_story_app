@@ -1,3 +1,5 @@
+const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
+
 module.exports = class SettlementScene {
   constructor () {
     console.log(sessionStorage)

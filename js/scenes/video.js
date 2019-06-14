@@ -1,3 +1,5 @@
+const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
+
 module.exports = class VideoScene {
   constructor () {
     console.log(sessionStorage)

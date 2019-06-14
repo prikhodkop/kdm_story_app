@@ -1,3 +1,5 @@
+const { setTransition } = require('./js/ui/transition')
+
 var events = {
   'index': {
     'table': 1,
