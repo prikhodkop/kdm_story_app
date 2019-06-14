@@ -1,4 +1,4 @@
-var random_hunt_events = {
+const random_hunt_events = {
   1: `1 | Broken Lanterns
 The survivors feel something crunching beneath their feet. The event revealer may choose to lower their lantern and <b>investigate</b> or ignore the sensation and continue their journey.
 
@@ -2192,6 +2192,10 @@ The event revealer rolls 1d10.
 [>d]
 [c] No #Retreat
 [dt] Survivors panic and retreat in the opposite direction; end this event and move the survivors 2 spaces back on the hunt board.`,
+}
+
+module.exports = {
+  md_to_html_2,
 }
 
 function get_random_event () {
