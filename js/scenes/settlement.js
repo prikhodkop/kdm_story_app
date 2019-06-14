@@ -45,19 +45,19 @@ $(document).ready(function () {
 
     var speech = new Howl({
       src: [events_table[myself].speech],
-      volume: 1.0
+      volume: 1.0,
     })
 
     var music = new Howl({
       src: [events_table[myself].music],
       loop: true,
-      volume: music_volume
+      volume: music_volume,
     })
 
     var noise = new Howl({
       src: ['audio/music/campfire.mp3'],
       loop: true,
-      volume: 0.6
+      volume: 0.6,
     })
 
     console.log('Music to play ' + events_table[myself].music)
@@ -234,7 +234,7 @@ $(document).ready(function () {
       animation: 'grow',
       content: 'Draw <b>Settlement Event</b> card.',
       position: 'right',
-      delay: '600'
+      delay: '600',
     })
 
     $('#milestones_button').tooltipster({
@@ -242,7 +242,7 @@ $(document).ready(function () {
       animation: 'grow',
       content: 'Show <b>Milestones</b>.',
       position: 'right',
-      delay: '600'
+      delay: '600',
     })
 
     // $("#mute.button").click(function () {

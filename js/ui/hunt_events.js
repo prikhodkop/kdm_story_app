@@ -55,7 +55,7 @@ var quary_events = [
   'white lion 4.jpg',
   'white lion 5.jpg',
   'white lion 6.jpg',
-  'white lion 7.jpg'
+  'white lion 7.jpg',
 ]
 
 function get_sequence (name) {

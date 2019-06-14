@@ -5,7 +5,7 @@ const {
   protocol,
   ipcMain,
   dialog,
-  Notification
+  Notification,
 } = require('electron')
 const log = require('electron-log')
 const ProgressBar = require('electron-progressbar')
@@ -27,12 +27,12 @@ template.unshift({
   submenu: [
     {
       label: 'About ' + name,
-      role: 'about'
+      role: 'about',
     },
     {
       label: 'Dev Tools',
       accelerator: 'Command+I',
-      click () { win.webContents.openDevTools() }
+      click () { win.webContents.openDevTools() },
     },
     {
       label: 'Quit',
@@ -42,9 +42,9 @@ template.unshift({
           progressbar.close()
         };
         app.quit()
-      }
-    }
-  ]
+      },
+    },
+  ],
 })
 // }
 
@@ -59,11 +59,11 @@ function createWindow () {
     webPreferences: {
       devTools: true,
       preload: 'js/jquery.min.js',
-      nodeIntegration: true
+      nodeIntegration: true,
       // preload: 'js/jquery-ui.js'
     },
     backgroundColor: '#000000',
-    title: 'KDM 1.5 Story'
+    title: 'KDM 1.5 Story',
     // frame: false,
   })
 
@@ -102,14 +102,14 @@ autoUpdater.on('update-available', () => {
   if (true) {
     dialog.showMessageBox({
       title: 'Update ready',
-      message: 'New app version was released!\nPlease download it from:\nhttps://kdm-story.site.'
+      message: 'New app version was released!\nPlease download it from:\nhttps://kdm-story.site.',
     })
   } else {
     dialog.showMessageBox({
       type: 'info',
       title: 'Found Updates',
       message: 'Found updates, do you want update now?',
-      buttons: ['Yes', 'No']
+      buttons: ['Yes', 'No'],
     }, (buttonIndex) => {
       if (buttonIndex === 0) {
         autoUpdater.downloadUpdate()
@@ -122,12 +122,12 @@ autoUpdater.on('update-available', () => {
             detail: 'Wait...',
             parent: win,
             webPreferences: {
-              nodeIntegration: true
+              nodeIntegration: true,
             },
             minimizable: true,
             closable: true,
-            resizable: true
-          }
+            resizable: true,
+          },
         })
 
         progressbar.on('completed', function () {
@@ -156,7 +156,7 @@ autoUpdater.on('error', (err) => {
   sendStatusToWindow('Error in auto-updater. ' + err)
   dialog.showMessageBox({
     title: 'Error:',
-    message: 'Error in auto update: ' + err
+    message: 'Error in auto update: ' + err,
   })
   // updater.enabled = true
   // updater = null
@@ -198,7 +198,7 @@ autoUpdater.on('update-downloaded', () => {
   progressbar.setCompleted()
   dialog.showMessageBox({
     title: 'Install Updates',
-    message: 'Updates downloaded, application will restart to update...'
+    message: 'Updates downloaded, application will restart to update...',
   }, () => {
     setImmediate(() => autoUpdater.quitAndInstall())
   })

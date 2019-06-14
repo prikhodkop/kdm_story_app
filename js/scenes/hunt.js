@@ -21,12 +21,12 @@ $(document).ready(function () {
     var music = new Howl({
       src: [events_table[myself].music],
       loop: true,
-      volume: 0.8
+      volume: 0.8,
     })
 
     var speech = new Howl({
       src: [events_table[myself].speech],
-      volume: 1.0
+      volume: 1.0,
     })
 
     $('#container').children().hide()
@@ -43,7 +43,7 @@ $(document).ready(function () {
       animation: 'grow',
       content: 'Roll random <b>Hunt Event</b>',
       position: 'top',
-      delay: '600'
+      delay: '600',
     })
 
     $('#random_event_icon_big').tooltipster({
@@ -51,7 +51,7 @@ $(document).ready(function () {
       animation: 'grow',
       content: 'Roll random <b>Hunt Event</b>',
       position: 'top',
-      delay: '600'
+      delay: '600',
     })
 
     $('#random_event_input').tooltipster({
@@ -59,7 +59,7 @@ $(document).ready(function () {
       animation: 'grow',
       content: 'Type <b>Hunt Event</b> number here',
       position: 'bottom',
-      delay: '600'
+      delay: '600',
     })
 
     var timeout = null
@@ -70,12 +70,12 @@ $(document).ready(function () {
       'gorm': ['xmmrrmxrrmmr', [5, 8, 12], './images/hunt/gorm.png', 8, 40],
       'white lion': ['xmmrrmxrmmrr', [5, 8, 12], './images/hunt/white_lion.png', 8, 41],
       'screaming antelope': ['xmrmrrxmrmrr', [5, 8, 11],
-        './images/hunt/screaming_antelope.png', 7, 38
+        './images/hunt/screaming_antelope.png', 7, 38,
       ],
       'phoenix': ['xrmrmrxmrmrr', [6, 9, 12], './images/hunt/phoenix.png', 8, 42],
       'dung beetle knight': ['xrmmrrxmrrmr', [6, 9, 12],
-        './images/hunt/dung_beetle_knight.png', 8, 40
-      ]
+        './images/hunt/dung_beetle_knight.png', 8, 40,
+      ],
     }
 
     createHuntTable()
@@ -364,7 +364,7 @@ $(document).ready(function () {
       event_html.show('slow')
 
       $('#random_popup').delay(500).animate({
-        scrollTop: $('#random_popup').prop('scrollHeight')
+        scrollTop: $('#random_popup').prop('scrollHeight'),
       }, 1000)
 
       console.log('Table idx:')
@@ -376,7 +376,7 @@ $(document).ready(function () {
         $('table.' + table_idx).fadeOut(500, function () {
           $(this).css({
             'visibility': 'hidden',
-            display: 'block'
+            display: 'block',
           }).slideUp()
         })
       }
@@ -468,7 +468,7 @@ $(document).ready(function () {
             animation: 'grow',
             content: '<b>Herb Gathering</b><br />Survivors eat berries on the way<br />All survivors get <b>+1 survival</b>',
             position: 'top',
-            delay: '600'
+            delay: '600',
           })
           $(this).tooltipster({
             contentAsHTML: 'true',
@@ -476,7 +476,7 @@ $(document).ready(function () {
             content: '<i>Sickle required!</i>',
             position: 'bottom',
             delay: '600',
-            multiple: 'true'
+            multiple: 'true',
           })
         })
 
@@ -490,7 +490,7 @@ $(document).ready(function () {
             animation: 'grow',
             content: '<b>Mineral Gathering</b>',
             position: 'top',
-            delay: '600'
+            delay: '600',
           })
           $(this).tooltipster({
             contentAsHTML: 'true',
@@ -498,7 +498,7 @@ $(document).ready(function () {
             content: '<i>Pickaxe required!</i>',
             position: 'bottom',
             delay: '600',
-            multiple: 'true'
+            multiple: 'true',
           })
         })
 
@@ -738,13 +738,13 @@ $(document).ready(function () {
             },
             axis: 'x',
             cursor: 'move',
-            stop: scaling_board_function
+            stop: scaling_board_function,
           })
           $(this).tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
             delay: '600',
-            plugins: ['follower']
+            plugins: ['follower'],
           })
           $(this).droppable({
             drop: function (event, ui) {
@@ -781,7 +781,7 @@ $(document).ready(function () {
                   'menu', document.title,
                   current_state())
               }
-            }
+            },
           })
         };
 
@@ -793,7 +793,7 @@ $(document).ready(function () {
             },
             axis: 'x',
             cursor: 'move',
-            stop: scaling_board_function
+            stop: scaling_board_function,
           })
         };
 
@@ -801,7 +801,7 @@ $(document).ready(function () {
           $(this).tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
-            delay: '600'
+            delay: '600',
           })
           $(this).droppable({
             drop: function (event, ui) {
@@ -821,7 +821,7 @@ $(document).ready(function () {
                     current_state())
                 }
               };
-            }
+            },
           })
         };
 
@@ -861,7 +861,7 @@ $(document).ready(function () {
                 $(this).fadeOut(1500)
                 $('#lantern.' + pos).delay(1000).fadeIn(1500)
               }
-            }
+            },
           })
         };
       })
@@ -881,7 +881,7 @@ $(document).ready(function () {
             $(this).droppable({
               drop: function (event, ui) {
                 snapToMiddle(ui.draggable, $(this))
-              }
+              },
             })
           }
         )
@@ -910,10 +910,10 @@ $(document).ready(function () {
       console.log(leftMove)
 
       dragger.animate({
-        left: leftMove + '%'
+        left: leftMove + '%',
       }, {
         duration: 600,
-        easing: 'easeOutBack'
+        easing: 'easeOutBack',
       })
     };
 

@@ -13,7 +13,7 @@ function getSettings () {
 
 function addSettings (settings) {
   $('#container').append($('<div>', {
-    id: 'settings-window-background'
+    id: 'settings-window-background',
   }))
 
   $('#settings-window-background').hide()
@@ -24,16 +24,16 @@ function addSettings (settings) {
   // $('#settings').delay(1000).fadeIn(2000);
 
   $('#container').append($('<div>', {
-    id: 'settings-window-back0'
+    id: 'settings-window-back0',
   }))
 
   $('#settings-window-back0').append($('<img>', {
     id: 'settings-window-back-img',
-    src: 'images/reference/reference_back.png'
+    src: 'images/reference/reference_back.png',
   }))
 
   $('#settings-window-back0').append($('<div>', {
-    id: 'settings-window-back'
+    id: 'settings-window-back',
   }))
 
   $('#settings-window-back0').append('<h id="settings-title">Settings</h>')
@@ -123,12 +123,12 @@ function createTable (schema, defaults = undefined, level = 0, group = '') {
 
   let table = $('<table>', {
     class: 'settings',
-    level: level
+    level: level,
   })
 
   let tbody = $('<tbody>', {
     class: 'settings',
-    level: level
+    level: level,
   })
 
   table.append(tbody)
@@ -139,7 +139,7 @@ function createTable (schema, defaults = undefined, level = 0, group = '') {
 
     let tr = $('<tr>', {
       class: 'settings',
-      level: level
+      level: level,
     })
 
     tbody.append(tr)
@@ -148,7 +148,7 @@ function createTable (schema, defaults = undefined, level = 0, group = '') {
       let td1 = $('<td>', {
         class: 'settings',
         id: 'title',
-        level: level
+        level: level,
       })
 
       td1.text(schema[key].title)
@@ -157,14 +157,14 @@ function createTable (schema, defaults = undefined, level = 0, group = '') {
       let td2 = $('<td>', {
         class: 'settings',
         id: 'select',
-        level: level
+        level: level,
       })
 
       let sel = $('<select>', {
         class: 'settings',
         level: level,
         value: key,
-        group: group
+        group: group,
       }).appendTo(td2)
 
       $(schema[key]['enum']).each(function () {
@@ -172,7 +172,7 @@ function createTable (schema, defaults = undefined, level = 0, group = '') {
           class: 'settings',
           id: level,
           parent: key,
-          group: group
+          group: group,
         }).attr('value', this).text(this))
       })
 
@@ -194,7 +194,7 @@ function createTable (schema, defaults = undefined, level = 0, group = '') {
       let td1 = $('<td>', {
         class: 'settings',
         id: 'group',
-        level: level
+        level: level,
       })
 
       td1.text(schema[key].title)
@@ -202,7 +202,7 @@ function createTable (schema, defaults = undefined, level = 0, group = '') {
 
       let tr2 = $('<tr>', {
         class: 'settings',
-        level: level
+        level: level,
       })
 
       tbody.append(tr2)
@@ -212,7 +212,7 @@ function createTable (schema, defaults = undefined, level = 0, group = '') {
         id: 'table',
         level: level,
         colspan: 2,
-        group: schema[key]
+        group: schema[key],
       })
 
       td2.append(createTable(schema[key].properties, defaults[key], level + 1, key))
@@ -225,7 +225,7 @@ function createTable (schema, defaults = undefined, level = 0, group = '') {
 var expansion_options = [
   'Disabled',
   'Cards only',
-  'All content'
+  'All content',
 ]
 
 var settings_schema = {
@@ -235,8 +235,8 @@ var settings_schema = {
     'description': 'Sets the app language.',
     'default': 'en',
     'enum': [
-      'en'
-    ]
+      'en',
+    ],
   },
   'music': {
     'type': 'option',
@@ -245,8 +245,8 @@ var settings_schema = {
     'default': 'On',
     'enum': [
       'On',
-      'Off'
-    ]
+      'Off',
+    ],
   },
   'narration': {
     'type': 'option',
@@ -255,8 +255,8 @@ var settings_schema = {
     'default': 'On',
     'enum': [
       'On',
-      'Off'
-    ]
+      'Off',
+    ],
   },
   'subtitles': {
     'type': 'option',
@@ -265,8 +265,8 @@ var settings_schema = {
     'default': 'On',
     'enum': [
       'On',
-      'Off'
-    ]
+      'Off',
+    ],
   },
   'onscreenKeypads': {
     'type': 'option',
@@ -275,8 +275,8 @@ var settings_schema = {
     'default': 'On',
     'enum': [
       'On',
-      'Off'
-    ]
+      'Off',
+    ],
   },
   'card design': {
     'type': 'group',
@@ -289,8 +289,8 @@ var settings_schema = {
         'default': 'Poots',
         'enum': [
           'Poots',
-          'Fen Small'
-        ]
+          'Fen Small',
+        ],
       },
       'disorders': {
         'type': 'option',
@@ -299,10 +299,10 @@ var settings_schema = {
         'enum': [
           'Poots',
           'Fen Small',
-          'Fen Wide'
-        ]
-      }
-    }
+          'Fen Wide',
+        ],
+      },
+    },
   },
   'expansions': {
     'type': 'group',
@@ -319,28 +319,28 @@ var settings_schema = {
         'default': 'Disabled',
         'enum': [
           'Disabled',
-          'Cards only'
-        ]
+          'Cards only',
+        ],
       },
       'dung beetle knight': {
         'type': 'option',
         'title': 'Dung Beetle Knight',
         'default': 'Cards only',
-        'enum': expansion_options
+        'enum': expansion_options,
       },
       'flower knight': {
         'type': 'option',
         'title': 'Flower Knight',
         'default': 'Disabled',
         'enum': [
-          'Disabled'
-        ]
+          'Disabled',
+        ],
       },
       'gorm': {
         'type': 'option',
         'title': 'Gorm',
         'default': 'Cards only',
-        'enum': expansion_options
+        'enum': expansion_options,
       },
       'manhunter': {
         'type': 'option',
@@ -348,8 +348,8 @@ var settings_schema = {
         'default': 'Disabled',
         'enum': [
           'Disabled',
-          'Cards only'
-        ]
+          'Cards only',
+        ],
       },
       'lion god': {
         'type': 'option',
@@ -357,8 +357,8 @@ var settings_schema = {
         'default': 'Disabled',
         'enum': [
           'Disabled',
-          'Cards only'
-        ]
+          'Cards only',
+        ],
       },
       'lion knight': {
         'type': 'option',
@@ -366,8 +366,8 @@ var settings_schema = {
         'default': 'Disabled',
         'enum': [
           'Disabled',
-          'Cards only'
-        ]
+          'Cards only',
+        ],
       },
       'lonely tree': {
         'type': 'option',
@@ -375,8 +375,8 @@ var settings_schema = {
         'default': 'Disabled',
         'enum': [
           'Disabled',
-          'Cards only'
-        ]
+          'Cards only',
+        ],
       },
       'slenderman': {
         'type': 'option',
@@ -384,16 +384,16 @@ var settings_schema = {
         'default': 'Disabled',
         'enum': [
           'Disabled',
-          'Cards only'
-        ]
+          'Cards only',
+        ],
       },
       'spidicules': {
         'type': 'option',
         'title': 'Spidicules',
         'default': 'Disabled',
         'enum': [
-          'Disabled'
-        ]
+          'Disabled',
+        ],
       },
       'sunstalker': {
         'type': 'option',
@@ -401,11 +401,11 @@ var settings_schema = {
         'default': 'Disabled',
         'enum': [
           'Disabled',
-          'Cards only'
-        ]
-      }
+          'Cards only',
+        ],
+      },
 
-    }
+    },
   },
   'strains': {
     'type': 'group',
@@ -419,8 +419,8 @@ var settings_schema = {
         'default': 'Locked',
         'enum': [
           'Locked',
-          'Unlocked'
-        ]
+          'Unlocked',
+        ],
       },
       'etheral pact': {
         'type': 'option',
@@ -428,8 +428,8 @@ var settings_schema = {
         'default': 'Locked',
         'enum': [
           'Locked',
-          'Unlocked'
-        ]
+          'Unlocked',
+        ],
       },
       'giants blood': {
         'type': 'option',
@@ -437,8 +437,8 @@ var settings_schema = {
         'default': 'Locked',
         'enum': [
           'Locked',
-          'Unlocked'
-        ]
+          'Unlocked',
+        ],
       },
       'infinite lives': {
         'type': 'option',
@@ -446,10 +446,10 @@ var settings_schema = {
         'default': 'Locked',
         'enum': [
           'Locked',
-          'Unlocked'
-        ]
-      }
-    }
+          'Unlocked',
+        ],
+      },
+    },
   },
   'whiteboxes': {
     'type': 'group',
@@ -463,8 +463,8 @@ var settings_schema = {
         'default': 'Disabled',
         'enum': [
           'Disabled',
-          'Enabled'
-        ]
+          'Enabled',
+        ],
       },
       'white speaker': {
         'type': 'option',
@@ -472,9 +472,9 @@ var settings_schema = {
         'default': 'Disabled',
         'enum': [
           'Disabled',
-          'Enabled'
-        ]
-      }
-    }
-  }
+          'Enabled',
+        ],
+      },
+    },
+  },
 }

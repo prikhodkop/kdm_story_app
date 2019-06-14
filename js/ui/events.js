@@ -4,7 +4,7 @@ var events = {
     'type': 'index',
     'label': 'Intro',
     'ltop': '50%',
-    'lleft': '50%'
+    'lleft': '50%',
   },
   'hunt': {
     'table': 1,
@@ -13,7 +13,7 @@ var events = {
     'ltop': '70%',
     'lleft': '50%',
     'music': 'music/white secret.mp3',
-    'speech': 'audio/speech/en/hunt.mp3'
+    'speech': 'audio/speech/en/hunt.mp3',
   },
   'settlement': {
     'table': 1,
@@ -21,133 +21,133 @@ var events = {
     'label': 'Settlement',
     'music': 'music/white secret.mp3',
     'music_delay': '2000',
-    'speech': 'audio/speech/en/settlement.mp3'
+    'speech': 'audio/speech/en/settlement.mp3',
   },
   'age': {
     'ltop': '27%',
-    'lleft': '49%'
+    'lleft': '49%',
   },
   'armored strangers': {
     'music': 'music/armored strangers.mp3',
-    'music_delay': '4000'
+    'music_delay': '4000',
   },
   'birth of a savior': {
     'music': 'music/birth of a savior.mp3',
     'music_delay': 'speech-1000',
     'ltop': '15%',
-    'lleft': '50%'
+    'lleft': '50%',
   },
   'blackout': {
     'music': 'music/overwhelming darkness.mp3',
     'music_delay': '3000',
     'ltop': '37%',
-    'lleft': '50%'
+    'lleft': '50%',
   },
   'bold': {
     'ltop': '50%',
-    'lleft': '75%'
+    'lleft': '75%',
   },
   'bone witch': {
     'music': 'music/see the truth.mp3',
     'ltop': '50%',
-    'lleft': '65%'
+    'lleft': '65%',
   },
   'cooking': {
     'music': 'music/cooking.mp3',
     'music_delay': '500',
     'ltop': '73%',
-    'lleft': '50%'
+    'lleft': '50%',
   },
   'crush and devour': {
-    'music': 'music/crush and devour.mp3'
+    'music': 'music/crush and devour.mp3',
   },
   'endless screams': {
     'music': 'music/crush and devour.mp3',
     'ltop': '19%',
-    'lleft': '48%'
+    'lleft': '48%',
   },
   'game over': {
     'music': 'music/game over.mp3',
     'ltop': '32%',
-    'lleft': '47%'
+    'lleft': '47%',
   },
   'hammer and nail': {
-    'music': 'music/hammer and nail.mp3'
+    'music': 'music/hammer and nail.mp3',
   },
   'hands of heat': {
     'music': 'music/hands of heat.mp3',
     'ltop': '75%',
-    'lleft': '37%'
+    'lleft': '37%',
   },
   'herb gathering': {
     'music': 'music/herb gathering.mp3',
-    'hide_label': true
+    'hide_label': true,
   },
   'hooded knight': {
     'music': 'music/hooded knight.mp3',
-    'music_delay': 'speech-1000'
+    'music_delay': 'speech-1000',
   },
   'insight': {},
   'intimacy': {
     'music': 'music/intimacy.mp3',
     'music_delay': 'speech-1000',
     'ltop': '22%',
-    'lleft': '75%'
+    'lleft': '75%',
   },
   'kings curse': {
     'music': 'music/kings curse.mp3',
     'ltop': '88%',
-    'lleft': '50%'
+    'lleft': '50%',
   },
   'kings step': {
     'music': 'music/kings step.mp3',
     'music_delay': 'speech+500',
     'ltop': '67%',
-    'lleft': '53%'
+    'lleft': '53%',
   },
   'lantern research': {},
   'legendary lungs': {
     'music': 'music/legendary lungs.mp3',
-    'music_delay': '500'
+    'music_delay': '500',
   },
   'legendary monsters': {
     'music': 'music/legendary monsters.mp3',
-    'hide_label': true
+    'hide_label': true,
   },
   'mineral gathering': {
     'music': 'music/mineral gathering.mp3',
-    'hide_label': true
+    'hide_label': true,
   },
   'overwhelming darkness': {
     'music': 'music/overwhelming darkness.mp3',
-    'music_delay': '3000'
+    'music_delay': '3000',
   },
   'oxidation': {
     'ltop': '75%',
-    'lleft': '35%'
+    'lleft': '35%',
   },
   'phoenix feather': {
-    'music': 'music/legendary monsters.mp3'
+    'music': 'music/legendary monsters.mp3',
   },
   'principle conviction': {
     'music': 'music/principle.mp3',
-    'music_delay': 'speech-1000'
+    'music_delay': 'speech-1000',
   },
   'principle death': {
     'music': 'music/principle.mp3',
-    'music_delay': 'speech-1000'
+    'music_delay': 'speech-1000',
   },
   'principle new life': {
     'music': 'music/principle.mp3',
     'music_delay': 'speech-1000',
     'ltop': '85%',
-    'lleft': '50%'
+    'lleft': '50%',
   },
   'principle society': {
     'music': 'music/principle.mp3',
     'music_delay': 'speech-1000',
     'ltop': '20%',
-    'lleft': '65%'
+    'lleft': '65%',
   },
   'first story': {
     // 'music_delay': 'speech-1000',
@@ -156,128 +156,128 @@ var events = {
     'music': 'music/regal visit.mp3',
     'music_delay': 'speech-1000',
     'ltop': '65%',
-    'lleft': '50%'
+    'lleft': '50%',
   },
   'returning survivors': {},
   'run away': {
-    'music': 'music/run away.mp3'
+    'music': 'music/run away.mp3',
   },
   'see the truth': {
-    'music': 'music/see the truth.mp3'
+    'music': 'music/see the truth.mp3',
   },
   'showdown butcher': {
-    'music': 'music/showdown butcher.mp3'
+    'music': 'music/showdown butcher.mp3',
   },
   'showdown gold smoke knight': {
     'music': 'music/showdown gold smoke knight.mp3',
     'ltop': '87%',
-    'lleft': '80%'
+    'lleft': '80%',
   },
   'showdown kings man': {
     'music': 'music/showdown kings man.mp3',
     'ltop': '68%',
-    'lleft': '63%'
+    'lleft': '63%',
   },
   'showdown phoenix': {
-    'music': 'music/showdown phoenix.mp3'
+    'music': 'music/showdown phoenix.mp3',
   },
   'showdown screaming antelope': {
     'music': 'music/showdown query.mp3',
     'ltop': '15%',
-    'lleft': '57%'
+    'lleft': '57%',
   },
   'showdown the hand': {
-    'music': 'music/showdown the hand.mp3'
+    'music': 'music/showdown the hand.mp3',
   },
   'showdown watcher': {
     'music': 'music/showdown watcher.mp3',
     'ltop': '15%',
-    'lleft': '50%'
+    'lleft': '50%',
   },
   'showdown white lion': {
     'music': 'music/showdown query.mp3',
     'ltop': '65%',
-    'lleft': '75%'
+    'lleft': '75%',
   },
   'watched': {
     'music': 'music/watched.mp3',
     'ltop': '15%',
-    'lleft': '50%'
+    'lleft': '50%',
   },
   'white secret': {
-    'music': 'music/white secret.mp3'
+    'music': 'music/white secret.mp3',
   },
   'white speaker': {
     'music': 'music/white speaker.mp3',
     'music_delay': 'speech-1000',
     'ltop': '8%',
-    'lleft': '66%'
+    'lleft': '66%',
   },
   'zero presence': {
-    'music': 'music/overwhelming darkness.mp3'
+    'music': 'music/overwhelming darkness.mp3',
   },
   'fetid grotto': {
     'expansion': 'gorm',
     'music': 'music/overwhelming darkness.mp3',
     'ltop': '20%',
-    'lleft': '30%'
+    'lleft': '30%',
   },
   'final march': {
     'expansion': 'gorm',
     'music': 'music/final march.mp3',
     'music_delay': '500',
     'ltop': '20%',
-    'lleft': '50%'
+    'lleft': '50%',
   },
   'the approaching storm': {
     'expansion': 'gorm',
     'music': 'music/the approaching storm.mp3',
     'music_delay': '500',
     'ltop': '20%',
-    'lleft': '72%'
+    'lleft': '72%',
   },
   'melting horror': {
     'expansion': 'gorm',
-    'music': 'music/crush and devour.mp3'
+    'music': 'music/crush and devour.mp3',
   },
   'showdown gorm': {
     'expansion': 'gorm',
-    'music': 'music/showdown gorm.mp3'
+    'music': 'music/showdown gorm.mp3',
   },
   'black harvest': {
     'expansion': 'dung beetle knight',
-    'music': 'music/rumbling in the dark.mp3'
+    'music': 'music/rumbling in the dark.mp3',
   },
   'rumbling in the dark': {
     'expansion': 'dung beetle knight',
     'type': 'video',
-    'music': 'music/rumbling in the dark.mp3'
+    'music': 'music/rumbling in the dark.mp3',
   },
   'secret meeting': {
     'expansion': 'dung beetle knight',
     'music': 'music/secret meeting.mp3',
     'music_delay': '500',
     'ltop': '35%',
-    'lleft': '40%'
+    'lleft': '40%',
   },
   'spelunking of death': {
     'expansion': 'dung beetle knight',
     'music': 'music/spelunking of death.mp3',
     'ltop': '18%',
-    'lleft': '63%'
+    'lleft': '63%',
   },
   'underground sow': {
     'expansion': 'dung beetle knight',
     'music': 'music/rumbling in the dark.mp3',
     'ltop': '20%',
-    'lleft': '40%'
+    'lleft': '40%',
   },
   'showdown dung beetle knight': {
     'expansion': 'dung beetle knight',
     'music': 'music/showdown butcher.mp3',
     'ltop': '5%',
-    'lleft': '55%'
-  }
+    'lleft': '55%',
+  },
 }
 
 var lang = 'en'

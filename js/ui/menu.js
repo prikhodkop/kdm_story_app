@@ -29,28 +29,28 @@ function createMenuButton () {
 
   $('#container').append($('<div>', {
     // style: 'opacity:.9;',
-    id: 'esc-menu'
+    id: 'esc-menu',
   }))
 
   $('#esc-menu').append($('<img>', {
     // style: 'opacity:.9;',
     id: 'esc-back',
-    src: 'images/reference/reference_back.png'
+    src: 'images/reference/reference_back.png',
   }))
 
   $('#esc-menu').append($('<div>', {
     // style: 'opacity:.9;',
-    id: 'esc-text'
+    id: 'esc-text',
   }))
 
   $('#esc-menu').append($('<button>', {
     // style: 'opacity:.9;',
-    id: 'esc-yes'
+    id: 'esc-yes',
   }))
 
   $('#esc-menu').append($('<button>', {
     // style: 'opacity:.9;',
-    id: 'esc-no'
+    id: 'esc-no',
   }))
 
   $('#esc-text').text('Do you really want to quit?')
@@ -74,25 +74,25 @@ function createMenuButton () {
 
   $('#container').append($('<a>', {
     href: 'javascript:void(0)',
-    id: 'menu-toggle-wrapper'
+    id: 'menu-toggle-wrapper',
   }))
 
   $('#container').append($('<div>', {
     style: 'opacity:.9;',
-    id: 'menu'
+    id: 'menu',
   }))
 
   $('#menu-toggle-wrapper').append($('<div>', {
-    id: 'menu-toggle'
+    id: 'menu-toggle',
   }))
 
   $('#menu').append($('<img>', {
     id: 'menu_img',
-    src: 'images/back.jpg'
+    src: 'images/back.jpg',
   }))
 
   $('#menu').append($('<div>', {
-    id: 'menu-back'
+    id: 'menu-back',
   }))
 
   $('#menu').hide()
@@ -121,7 +121,7 @@ function createMenuButton () {
 function createSevereTables () {
   $('#container').append($('<img>', {
     id: 'severe-table',
-    src: ''
+    src: '',
   }))
 
   addLocationTable('brain', '11%')
@@ -148,13 +148,13 @@ function addLocationTable (location, top) {
     class: location,
     id: 'severe',
     src: 'images/icons/' + location + '.png',
-    style: 'top:' + top + ';'
+    style: 'top:' + top + ';',
   }))
 
   $('#container').append($('<img>', {
     class: location,
     id: 'severe-table',
-    src: 'images/severe injuries/' + location + '.png'
+    src: 'images/severe injuries/' + location + '.png',
   }))
 
   $('#severe.' + location).hide()
@@ -189,7 +189,7 @@ function addLocationTable (location, top) {
     mouseleave: function () {
       $(this).removeClass('active')
       hideLocationTable($(this).attr('class'))
-    }
+    },
   }, '#severe')
 }
 
@@ -211,38 +211,38 @@ function createReference () {
   let settings = JSON.parse(sessionStorage.getItem('settings'))
 
   $('#container').append($('<div>', {
-    id: 'reference-window-background'
+    id: 'reference-window-background',
   }))
 
   $('#reference-window-background').hide()
 
   $('#container').append($('<img>', {
     id: 'reference',
-    src: 'images/icons/reference.png'
+    src: 'images/icons/reference.png',
   }))
 
   $('#reference').hide()
   $('#reference').delay(1000).fadeIn(2000)
 
   $('#container').append($('<div>', {
-    id: 'reference-window-back0'
+    id: 'reference-window-back0',
   }))
 
   $('#reference-window-back0').append($('<img>', {
     id: 'reference-window-back-img',
-    src: 'images/reference/reference_back.png'
+    src: 'images/reference/reference_back.png',
   }))
 
   // $('#reference-window-back').append('<label for="reference-window">Terms:</label>')
   $('#reference-window-back0').append('<select id="reference-window" class="reference-window" placeholder="Type term..."></select>')
 
   $('#reference-window-back0').append($('<div>', {
-    id: 'reference-window-back'
+    id: 'reference-window-back',
   }))
 
   if (settings.onscreenKeypads === 'On') {
     $('#reference-window-back0').append($('<div>', {
-      id: 'reference-window-keypad'
+      id: 'reference-window-keypad',
     }))
     populateRefKeypad()
   }
@@ -251,7 +251,7 @@ function createReference () {
 
   $('#reference-window-back').append($('<img>', {
     id: 'glossary-symbols',
-    src: 'images/reference/symbols.png'
+    src: 'images/reference/symbols.png',
   }))
 
   let all_option = get_all_options()
@@ -262,44 +262,44 @@ function createReference () {
     options: all_option,
     optgroups: [{
       value: 'random draws',
-      label: 'Random Draws'
+      label: 'Random Draws',
     },
     {
       value: 'settlement events',
-      label: 'Settlement Events'
+      label: 'Settlement Events',
     },
     {
       value: 'settlement locations',
-      label: 'Settlement Locations'
+      label: 'Settlement Locations',
     },
     {
       value: 'glossary',
-      label: 'Glossary'
+      label: 'Glossary',
     },
     {
       value: 'abilities',
-      label: 'Abilities'
+      label: 'Abilities',
     },
     {
       value: 'fightning arts',
-      label: 'Fightning Arts'
+      label: 'Fightning Arts',
     },
     {
       value: 'disorders',
-      label: 'Disorders'
+      label: 'Disorders',
     },
     {
       value: 'secret fightning arts',
-      label: 'Secret Fightning Arts'
+      label: 'Secret Fightning Arts',
     },
     {
       value: 'survivor statuses',
-      label: 'Survivor Statuses'
+      label: 'Survivor Statuses',
     },
     {
       value: 'armor sets',
-      label: 'Armor Sets'
-    }
+      label: 'Armor Sets',
+    },
     ],
     optgroupField: 'class',
     labelField: 'name',
@@ -315,11 +315,11 @@ function createReference () {
     closeAfterSelect: true,
     sortField: [{
       field: 'name',
-      direction: 'asc'
+      direction: 'asc',
     },
     {
-      field: '$score'
-    }
+      field: '$score',
+    },
     ],
     // ignoreFocusOpen: true,
     onItemRemove: function (values) {
@@ -328,7 +328,7 @@ function createReference () {
       $('#reference-data.' + adapt_name(values)).fadeOut(500, function () {
         $(this).css({
           'visibility': 'hidden',
-          display: 'block'
+          display: 'block',
         }).slideUp()
       })
       // $('.selectize-dropdown').css("display", "none");
@@ -383,7 +383,7 @@ function createReference () {
       if (!$('.selectize-input').hasClass('has-items')) {
         $('#glossary-symbols').fadeIn(500)
       }
-    }
+    },
   })[0].selectize
 
   window.selectize = selectize

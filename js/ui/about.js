@@ -1,6 +1,6 @@
 function createAbout (version) {
   $('#container').append($('<div>', {
-    id: 'reference-window-background'
+    id: 'reference-window-background',
   }))
 
   $('#reference-window-background').hide()
@@ -11,16 +11,16 @@ function createAbout (version) {
 
   $('#container').append($('<div>', {
     id: 'reference-window-back0',
-    style: 'left:36%;'
+    style: 'left:36%;',
   }))
 
   $('#reference-window-back0').append($('<img>', {
     id: 'reference-window-back-img',
-    src: 'images/reference/reference_back.png'
+    src: 'images/reference/reference_back.png',
   }))
 
   $('#reference-window-back0').append($('<div>', {
-    id: 'reference-window-back'
+    id: 'reference-window-back',
   }))
 
   $(`<div><h id="about_header">KDM Story app</h>

@@ -2191,7 +2191,7 @@ The event revealer rolls 1d10.
 
 [>d]
 [c] No #Retreat
-[dt] Survivors panic and retreat in the opposite direction; end this event and move the survivors 2 spaces back on the hunt board.`
+[dt] Survivors panic and retreat in the opposite direction; end this event and move the survivors 2 spaces back on the hunt board.`,
 }
 
 function get_random_event () {

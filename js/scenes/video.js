@@ -35,7 +35,7 @@ $(document).ready(function () {
       console.log(hWide2)
 
       $('#img').css({
-        'margin-left': hWide2
+        'margin-left': hWide2,
         // "margin-top" : hTall
       })
     })
@@ -57,7 +57,7 @@ $(document).ready(function () {
       src: [events_table[myself].music],
       // autoplay: true,
       loop: true,
-      volume: music_volume
+      volume: music_volume,
     })
 
     var state = sessionStorage.getItem(myself)

@@ -350,79 +350,79 @@ var glossary_terms = {
   'Wound (Reaction)': 'Listed on some monster hit location cards. An action that a monster performs in response to a successful wound attempt at certain hit locations.',
   'Wound Attempt': 'The total power of a survivor\'s hit. Add the wound roll result (1d10) to the attacking weapon\'s strength, along with any other strength modifiers. If a wound attempt total meets or exceeds the monster\'s toughness, then the hit location is wounded.',
   'Wound Roll': 'Represents the variable ferocity of a survivor\'s hit. Roll 1d10 and add the result to the wound attempt. The result of this d10 (adding luck modifiers) determines whether or not a critical wound is caused on locations with critical wound effects.',
-  'Zone of (X) / (X) Zone': 'The indicated area for actions and reactions onon cards.'
+  'Zone of (X) / (X) Zone': 'The indicated area for actions and reactions onon cards.',
 }
 
 var fightning_arts_text = {
   'Abyssal Sadist': {
-    'expansion': 'manhunter'
+    'expansion': 'manhunter',
   },
   'Acrobatics': {
-    'expansion': 'dragon king'
+    'expansion': 'dragon king',
   },
   'Ambidextrous': {},
   'Backstabber': {
     'expansion': 'echoes of death',
-    'type': 'strain'
+    'type': 'strain',
   },
   'Berserker': {},
   'Blotted Out': {
-    'expansion': 'slenderman'
+    'expansion': 'slenderman',
   },
   'Burning Ambition': {
-    'expansion': 'sunstalker'
+    'expansion': 'sunstalker',
   },
   'Burning Focus': {
-    'expansion': 'lion god'
+    'expansion': 'lion god',
   },
   'Carapace of Will': {
-    'expansion': 'dung beetle knight'
+    'expansion': 'dung beetle knight',
   },
   'Champions Rite': {
     'expansion': 'dragon king',
-    'type': 'dragon trait'
+    'type': 'dragon trait',
   },
   'Clutch Fighter': {},
   'Combo Master': {},
   'Crazed': {},
   'Crossarm Block': {},
   'Defender': {
-    'expansion': 'sunstalker'
+    'expansion': 'sunstalker',
   },
   'Double Dash': {},
   'Etheral Pact': {
     'expansion': 'echoes of death',
-    'type': 'strain'
+    'type': 'strain',
   },
   'Extra Sense': {},
   'Fated Blow': {
     'expansion': 'dragon king',
-    'type': 'dragon trait'
+    'type': 'dragon trait',
   },
   'Giants Blood': {
     'expansion': 'echoes of death',
-    'type': 'strain'
+    'type': 'strain',
   },
   // 'Harvestman': {
   //   'expansion': 'spidicules'
   // },
   'Headliner': {
-    'expansion': 'lion knight'
+    'expansion': 'lion knight',
   },
   'Heroic': {
-    'expansion': 'lion god'
+    'expansion': 'lion god',
   },
   'Infinite Lives': {
     'expansion': 'echoes of death',
-    'type': 'strain'
+    'type': 'strain',
   },
   'Last Man Standing': {},
   'Leader': {},
   'Lure Epilepsy': {
-    'expansion': 'gorm'
+    'expansion': 'gorm',
   },
   'Mammoth Hunting': {
-    'expansion': 'gorm'
+    'expansion': 'gorm',
   },
   'Mighty Strike': {},
   'Monster Claw Style': {},
@@ -431,55 +431,55 @@ var fightning_arts_text = {
   //   'expansion': 'flower knight'
   // },
   'Phantom Friend': {
-    'expansion': 'slenderman'
+    'expansion': 'slenderman',
   },
   'Propulsion Drive': {
-    'expansion': 'dung beetle knight'
+    'expansion': 'dung beetle knight',
   },
   'Purpose': {
-    'expansion': 'sunstalker'
+    'expansion': 'sunstalker',
   },
   'Rhythm Chaser': {},
   'Ruthless': {
-    'expansion': 'lion god'
+    'expansion': 'lion god',
   },
   'Seasoned Hunter': {
-    'expansion': 'manhunter'
+    'expansion': 'manhunter',
   },
   'Sneak Attack': {
-    'expansion': 'sunstalker'
+    'expansion': 'sunstalker',
   },
   'Strategist': {},
   'Tenacious': {
-    'expansion': 'lion knight'
+    'expansion': 'lion knight',
   },
   'Thrill Seeker': {},
   'Timeless Eye': {},
   'Tough': {},
   'Trailblazer': {
-    'expansion': 'manhunter'
+    'expansion': 'manhunter',
   },
   'Transcended Masochist': {
-    'expansion': 'manhunter'
+    'expansion': 'manhunter',
   },
   'Trick Attack': {
-    'expansion': 'sunstalker'
+    'expansion': 'sunstalker',
   },
   'Tumble': {},
   'Unbreakable': {
     'expansion': 'dragon king',
-    'type': 'dragon trait'
+    'type': 'dragon trait',
   },
   'Unconscious Fighter': {},
   'Unrelenting': {
-    'expansion': 'lion god'
+    'expansion': 'lion god',
   },
   // 'Vengeance': {
   //   'expansion': 'spidicules'
   // },
   'Wardrobe Expert': {
-    'expansion': 'lion knight'
-  }
+    'expansion': 'lion knight',
+  },
 }
 
 var abilities = {
@@ -523,20 +523,20 @@ var abilities = {
   'Super Hair': {},
   'Sweet Battle': {},
   'Thundercaller': {},
-  'Tinker': {}
+  'Tinker': {},
 }
 
 var disorders_text = {
   'Absent Seizures': {
-    'expansion': 'gorm'
+    'expansion': 'gorm',
   },
   'Aichmophobia': {
-    'expansion': 'dragon king'
+    'expansion': 'dragon king',
   },
   'Anxiety': {},
   'Apathetic': {},
   'Arithmophilia': {
-    'expansion': 'dragon king'
+    'expansion': 'dragon king',
   },
   'Binge Eating': {},
   // 'Controlophobia': {
@@ -544,24 +544,24 @@ var disorders_text = {
   // },
   'Coprolalia': {},
   'Delicious': {
-    'expansion': 'lion god'
+    'expansion': 'lion god',
   },
   'Destined': {
     'expansion': 'dragon king',
-    'type': 'dragon trait'
+    'type': 'dragon trait',
   },
   'Emotionless': {
-    'expansion': 'sunstalker'
+    'expansion': 'sunstalker',
   },
   'Enfeebled': {
-    'expansion': 'lion god'
+    'expansion': 'lion god',
   },
   'Fear of the Dark': {},
   'Flower Addiction': {
-    'expansion': 'flower knight'
+    'expansion': 'flower knight',
   },
   'Ghostly Beauty': {
-    'expansion': 'flower knight'
+    'expansion': 'flower knight',
   },
   'Hemophobia': {},
   'Hoarder': {},
@@ -570,25 +570,25 @@ var disorders_text = {
   'Immortal': {},
   'Indecision': {},
   'Megalophobia': {
-    'expansion': 'gorm'
+    'expansion': 'gorm',
   },
   'Monster Panic': {},
   'Motion Sickness': {
-    'expansion': 'dung beetle knight'
+    'expansion': 'dung beetle knight',
   },
   // 'Narcissistic': {
   //   'expansion': 'flower knight'
   // },
   'Overprotective': {
-    'expansion': 'sunstalker'
+    'expansion': 'sunstalker',
   },
   'Performance Anxiety': {
-    'expansion': 'lion knight'
+    'expansion': 'lion knight',
   },
   'Post-Traumatic Stress': {},
   'Prey': {},
   'Prima Donna': {
-    'expansion': 'lion knight'
+    'expansion': 'lion knight',
   },
   'Quixotic': {},
   'Rageholic': {},
@@ -598,23 +598,23 @@ var disorders_text = {
   'Secretive': {},
   'Seizures': {},
   'Shallow Lungs': {
-    'expansion': 'lion knight'
+    'expansion': 'lion knight',
   },
   'Spiral Ganglia': {
-    'expansion': 'slenderman'
+    'expansion': 'slenderman',
   },
   'Squeamish': {},
   'Stage Fright': {
-    'expansion': 'lion knight'
+    'expansion': 'lion knight',
   },
   'Stark Raving': {
-    'expansion': 'lion god'
+    'expansion': 'lion god',
   },
   'Sun-Drunk': {
-    'expansion': 'sunstalker'
+    'expansion': 'sunstalker',
   },
   'Superstitious': {
-    'expansion': 'dragon king'
+    'expansion': 'dragon king',
   },
   // 'Sworn Enemy': {},
   // 'Tiny Arachnophobia': {
@@ -622,16 +622,16 @@ var disorders_text = {
   // },
   'Traumatized': {},
   'Tunnel Vision': {
-    'expansion': 'lion god'
+    'expansion': 'lion god',
   },
   'Unlucky': {
-    'expansion': 'lion knight'
+    'expansion': 'lion knight',
   },
   'Vermin Obsession': {
-    'expansion': 'dung beetle knight'
+    'expansion': 'dung beetle knight',
   },
   'Vestiphobia': {},
-  'Weak Spot': {}
+  'Weak Spot': {},
 }
 
 var secret_fightning_arts_text = {
@@ -639,44 +639,44 @@ var secret_fightning_arts_text = {
   //   'expansion': 'flower knight'
   // },
   'Ageless Apprentice': {
-    'expansion': 'lion knight'
+    'expansion': 'lion knight',
   },
   'Altered Destiny': {
-    'expansion': 'dragon king'
+    'expansion': 'dragon king',
   },
   'Beast of Caratosis': {},
   'Beetle Strength': {
-    'expansion': 'dung beetle knight'
+    'expansion': 'dung beetle knight',
   },
   'Black Guard Style': {
-    'whitebox': 'percival'
+    'whitebox': 'percival',
   },
   'Bone Whisperer': {},
   'Clarity of Darkness': {
-    'expansion': 'slenderman'
+    'expansion': 'slenderman',
   },
   'Courtly Screenwriter': {
-    'expansion': 'lion knight'
+    'expansion': 'lion knight',
   },
   'Death Touch': {
-    'expansion': 'spidicules'
+    'expansion': 'spidicules',
   },
   'Eternal Will': {
-    'expansion': 'manhunter'
+    'expansion': 'manhunter',
   },
   // 'Fencing': {
   //   'expansion': 'flower knight'
   // },
   'Frozen Star': {
     'expansion': 'dragon king',
-    'type': 'dragon trait'
+    'type': 'dragon trait',
   },
   'Grace of Dormentaus': {},
   'Hellfire': {
-    'expansion': 'sunstalker'
+    'expansion': 'sunstalker',
   },
   'Immovable Object': {
-    'expansion': 'gorm'
+    'expansion': 'gorm',
   },
   'King of a Thousand Battles': {},
   'Kings Step': {},
@@ -688,17 +688,17 @@ var secret_fightning_arts_text = {
   //   'expansion': 'spidicules'
   // },
   'Sun Eater': {
-    'expansion': 'sunstalker'
+    'expansion': 'sunstalker',
   },
   'Suppressed Shadow': {
-    'expansion': 'sunstalker'
+    'expansion': 'sunstalker',
   },
   'Swordsmans Promise': {},
   'Synchronised Strike': {},
   // 'True Blade': {
   //   'expansion': 'flower knight'
   // },
-  'Zero Prescence': {}
+  'Zero Prescence': {},
 }
 
 var survivor_statuses = {
@@ -721,7 +721,7 @@ var survivor_statuses = {
   'Smell World': {},
   'Starward': {},
   'Steadfast': {},
-  'Stolen Dreams': {}
+  'Stolen Dreams': {},
 }
 
 var settlement_events = {
@@ -734,7 +734,7 @@ var settlement_events = {
   'First Day': {},
   'Glossolalia': {},
   'Gorm Climate': {
-    'expansion': 'gorm'
+    'expansion': 'gorm',
   },
   'Haunted': {},
   'Heat Wave': {},
@@ -744,17 +744,17 @@ var settlement_events = {
   'Nickname': {},
   'Open Maw': {},
   'Phantom': {
-    'expansion': 'slenderman'
+    'expansion': 'slenderman',
   },
   'Plague': {},
   'Rivalry': {},
   'Skull Eater': {},
   'Slender Blight': {
-    'expansion': 'slenderman'
+    'expansion': 'slenderman',
   },
   'Stranger in the Dark': {},
   'Triathlon of Death': {},
-  'Weird Dream': {}
+  'Weird Dream': {},
 }
 
 var settlement_locations = {
@@ -778,7 +778,7 @@ var settlement_locations = {
   'The Sun': {},
   'Throne': {},
   'Weapon Crafter': {},
-  'Wet Resin Crafter': {}
+  'Wet Resin Crafter': {},
 }
 
 var armor_sets = {
@@ -795,7 +795,7 @@ var armor_sets = {
   'Screamin Armor': {},
   'Vagabond Armor': {},
   'Warlord Armor': {},
-  'White Lion Armor': {}
+  'White Lion Armor': {},
 }
 
 var random_draws = {
@@ -806,7 +806,7 @@ var random_draws = {
   '1 random Disorder': {},
   '2 random Disorders': {},
   '3 random Disorders': {},
-  '1 random Settlement Event': {}
+  '1 random Settlement Event': {},
 }
 
 function get_options (data, type) {
@@ -816,7 +816,7 @@ function get_options (data, type) {
     result.push({
       class: type,
       name: key,
-      value: key
+      value: key,
     })
   }
 

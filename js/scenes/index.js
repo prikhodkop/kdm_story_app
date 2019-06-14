@@ -33,7 +33,7 @@ $(document).ready(function () {
       src: ['audio/theme.mp3'],
       // autoplay: true,
       loop: true,
-      volume: 0.8
+      volume: 0.8,
     })
 
     var action = 'false'

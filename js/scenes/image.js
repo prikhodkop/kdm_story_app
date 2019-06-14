@@ -47,7 +47,7 @@ $(document).ready(function () {
       console.log(hWide1)
 
       $('#img_back').css({
-        'margin-left': hWide1
+        'margin-left': hWide1,
         // "margin-top" : hTall
       })
 
@@ -59,7 +59,7 @@ $(document).ready(function () {
       console.log(hWide2)
 
       $('#img').css({
-        'margin-left': hWide2
+        'margin-left': hWide2,
         // "top": Math.floor(0.25*(dimensions.height-hTall2)).toString()+'px',
         // "margin-top" : hTall
       })
@@ -75,7 +75,7 @@ $(document).ready(function () {
 
     var speech = new Howl({
       src: [events_table[myself].speech],
-      volume: 1.0
+      volume: 1.0,
     })
 
     if ((events_table[myself].speech == '') || (settings['narration'] == 'Off')) {
@@ -87,7 +87,7 @@ $(document).ready(function () {
     var music = new Howl({
       src: [events_table[myself].music],
       loop: true,
-      volume: music_volume
+      volume: music_volume,
     })
 
     console.log('Music to play ' + events_table[myself].music)
