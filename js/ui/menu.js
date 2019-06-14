@@ -1,4 +1,11 @@
-const { get_all_options, is_random_draw, get_random_draws, get_representation } = require('./js/ui/glossary')
+const remote = require('electron').remote
+const { get_all_options, is_random_draw, get_random_draws, get_representation } = require('./glossary')
+
+module.exports = {
+  createMenuButton,
+  createReference,
+  createSevereTables,
+}
 
 function createMenuButton () {
   // <a href="javascript:void(0)" id="menu-toggle-wrapper">
@@ -60,7 +67,6 @@ function createMenuButton () {
   $('#esc-no').text('No')
 
   $('#esc-yes').click(function () {
-    const remote = require('electron').remote
     remote.getCurrentWindow().close()
   })
 
