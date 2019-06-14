@@ -1,6 +1,4 @@
-const { setTransition } = require('./js/ui/transition')
-
-var events = {
+const events = {
   'index': {
     'table': 1,
     'type': 'index',
@@ -282,7 +280,18 @@ var events = {
   },
 }
 
-var lang = 'en'
+const lang = 'en'
+
+// GLOBAL TABLE OF ALL EVENTS TO BE DISPLAYED AT MENU
+// ##################
+const events_table = create_events_table(events)
+// ##################
+
+module.exports = {
+  createToc,
+  titleCase,
+  events_table: events_table,
+}
 
 function Event (
   id,
@@ -348,11 +357,6 @@ function create_events_table (events) {
 
   return events_table
 }
-
-// GLOBAL TABLE OF ALL EVENTS TO BE DISPLAYED AT MENU
-// ##################
-var events_table = create_events_table(events)
-// ##################
 
 function titleCase (str) {
   let splitStr = str.toLowerCase().split(' ')
@@ -421,7 +425,7 @@ function createToc (col_len = 5) {
     a1.setAttribute('id', 'menu_item')
     a1.className = 'hunt_menu'
     // a.setAttribute("href", events_table[rows[i][j]].type+'.html');
-    // a.setAttribute("onclick", "setTransition('"+rows[i][j]+"')");
+
     a1.setAttribute('target', table_1_ids[j])
     a1.style.cssText += 'font-size: 2.5em;width:100%;position:static; margin:auto;'
     a1.innerHTML += events_table[table_1_ids[j]].label

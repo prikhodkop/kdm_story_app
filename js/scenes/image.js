@@ -1,3 +1,4 @@
+const { createToc, events_table } = require('./../ui/events')
 const { getSettings, addSettings } = require('./../ui/settings')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 

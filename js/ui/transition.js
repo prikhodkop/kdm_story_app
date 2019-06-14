@@ -1,3 +1,5 @@
+const { events_table } = require('./events')
+
 module.exports = {
   setTransition,
   getBackTarget,

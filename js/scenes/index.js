@@ -1,4 +1,5 @@
 const { createAbout } = require('./../ui/about')
+const { createToc } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { getSettings, addSettings } = require('./../ui/settings')
 const { setTransition } = require('./../ui/transition')
