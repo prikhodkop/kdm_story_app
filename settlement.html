@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/settings.css">
 </head>
 
-<body bgcolor="#000000">
+<body bgcolor="#000000" scene-name="settlement">
 	<script>
 		if (typeof module === 'object') {
 			window.module = module;
@@ -74,9 +74,7 @@
 		<img id="turn_cheatsheet" src="images/settlement/turn.jpg" />
 	</div>
 
-	<script type="text/javascript">
-		const SettlementScene = require('./js/scenes/settlement')
-		new SettlementScene()
-	</script>
+	<!-- render the scene using body[scene-name] -->
+	<script type="text/javascript" src="js/interop/electron.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="css/settings.css">
 </head>
 
-<body bgcolor="#000000">
+<body bgcolor="#000000" scene-name="index">
 	<script>
 		if (typeof module === 'object') {
 			window.module = module;
@@ -46,10 +46,8 @@
 		<button class="button_video">Intro</button>
 	</div>
 
-	<script type="text/javascript">
-		const IndexScene = require('./js/scenes/index')
-		new IndexScene()
-	</script>
+	<!-- render the scene using body[scene-name] -->
+	<script type="text/javascript" src="js/interop/electron.js"></script>
 </body>
 
 </html>

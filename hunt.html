@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="css/settings.css">
 </head>
 
-<body bgcolor="#000000">
+<body bgcolor="#000000" scene-name="hunt">
 	<script>
 		if (typeof module === 'object') {
 			window.module = module;
@@ -108,9 +108,7 @@
 		</a>
 	</div>
 
-	<script type="text/javascript">
-		const HuntScene = require('./js/scenes/hunt')
-		new HuntScene()
-	</script>
+	<!-- render the scene using body[scene-name] -->
+	<script type="text/javascript" src="js/interop/electron.js"></script>
 </body>
 </html>
