@@ -1,3 +1,4 @@
+const { getSettings, addSettings } = require('./../ui/settings')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 module.exports = class ImageScene {

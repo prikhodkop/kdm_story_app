@@ -1,7 +1,12 @@
-const { readFile, saveFile, exists } = require('./js/ui/files')
+const { app, getCurrentWindow } = require('electron').remote
+const { readFile, saveFile, exists } = require('./files')
+
+module.exports = {
+  getSettings,
+  addSettings,
+}
 
 function getSettings () {
-  const { app } = require('electron').remote
   let dirname = app.getPath('userData')
   console.log('Dirname: ' + dirname)
 
@@ -102,14 +107,12 @@ function saveSettings () {
   console.log('New settings:')
   console.log(settings)
 
-  const { app } = require('electron').remote
   // saveFile(JSON.stringify(settings), __dirname + '/settings.json')
   saveFile(JSON.stringify(settings), app.getPath('userData') + '/settings.json')
 
   // window.reload()
   if (document.title == 'kingdom death') {
-    const remote = require('electron').remote
-    remote.getCurrentWindow().reload()
+    getCurrentWindow().reload()
   } else {
     window.reload = true
   }
