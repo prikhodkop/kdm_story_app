@@ -225,7 +225,7 @@ module.exports = class SettlementScene {
 
     $('#settlement_event_back').click(function () {
       $('#settlement_event_screen').delay(150).fadeOut(500)
-      $('#settlement_event_back').dealy(50).fadeOut(500)
+      $('#settlement_event_back').delay(50).fadeOut(500)
       $('#settlement_event_button').removeClass('active')
     })
 
