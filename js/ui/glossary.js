@@ -1,4 +1,4 @@
-var glossary_terms = {
+const glossary_terms = {
   'Abilities': 'Skills and techniques learned by survivors, usually through story events, and recorded on the Survivor Record Sheet.',
   'Absorb': 'The Watcher\'s Instinct. Described on the Watcher\'s showdown story event.',
   'Accessory': 'A gear special rule. Accessory gear may be worn in addition to armor on a hit location. Each accessory specifies the hit location it covers.',
@@ -353,7 +353,7 @@ var glossary_terms = {
   'Zone of (X) / (X) Zone': 'The indicated area for actions and reactions onon cards.',
 }
 
-var fightning_arts_text = {
+const fightning_arts_text = {
   'Abyssal Sadist': {
     'expansion': 'manhunter',
   },
@@ -482,7 +482,7 @@ var fightning_arts_text = {
   },
 }
 
-var abilities = {
+const abilities = {
   'Acid Palms': {},
   'Ageless': {},
   'Analyse': {},
@@ -526,7 +526,7 @@ var abilities = {
   'Tinker': {},
 }
 
-var disorders_text = {
+const disorders_text = {
   'Absent Seizures': {
     'expansion': 'gorm',
   },
@@ -634,7 +634,7 @@ var disorders_text = {
   'Weak Spot': {},
 }
 
-var secret_fightning_arts_text = {
+const secret_fightning_arts_text = {
   // 'Acanthus Doctor': {
   //   'expansion': 'flower knight'
   // },
@@ -701,7 +701,7 @@ var secret_fightning_arts_text = {
   'Zero Prescence': {},
 }
 
-var survivor_statuses = {
+const survivor_statuses = {
   'Battle Tempo': {},
   'Black Pond': {},
   'Darkness Awareness': {},
@@ -724,7 +724,7 @@ var survivor_statuses = {
   'Stolen Dreams': {},
 }
 
-var settlement_events = {
+const settlement_events = {
   'Acid Storm': {},
   'Clinging Mist': {},
   'Cracks in the Ground': {},
@@ -757,7 +757,7 @@ var settlement_events = {
   'Weird Dream': {},
 }
 
-var settlement_locations = {
+const settlement_locations = {
   'Barber Surgeon': {},
   'Blacksmith': {},
   'Bone Smith': {},
@@ -781,7 +781,7 @@ var settlement_locations = {
   'Wet Resin Crafter': {},
 }
 
-var armor_sets = {
+const armor_sets = {
   'Brawler Armor': {},
   'Cycloid Scale Armor': {},
   'Dancer Armor': {},
@@ -798,7 +798,7 @@ var armor_sets = {
   'White Lion Armor': {},
 }
 
-var random_draws = {
+const random_draws = {
   '1 random Fightning Art': {},
   '2 random Fightning Arts': {},
   '3 random Fightning Arts': {},
@@ -807,6 +807,15 @@ var random_draws = {
   '2 random Disorders': {},
   '3 random Disorders': {},
   '1 random Settlement Event': {},
+}
+
+module.exports = {
+  get_all_options,
+  get_representation,
+  is_random_draw,
+  get_random_draws,
+  getSettlementEventPath,
+  clone,
 }
 
 function get_options (data, type) {

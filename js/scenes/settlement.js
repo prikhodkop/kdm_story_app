@@ -1,4 +1,5 @@
 const { createToc, events_table } = require('./../ui/events')
+const { getSettlementEventPath } = require('./../ui/glossary')
 const { getSettings, addSettings } = require('./../ui/settings')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 

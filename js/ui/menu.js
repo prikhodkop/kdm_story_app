@@ -1,3 +1,5 @@
+const { get_all_options, is_random_draw, get_random_draws, get_representation } = require('./js/ui/glossary')
+
 function createMenuButton () {
   // <a href="javascript:void(0)" id="menu-toggle-wrapper">
   //   <div id="menu-toggle"></div>
