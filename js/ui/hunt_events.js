@@ -1,6 +1,6 @@
-var path_to_quary_events = 'images/hunt/quary_events/'
+const path_to_quary_events = 'images/hunt/quary_events/'
 
-var quary_events = [
+const quary_events = [
   'dung beetle knight 1.jpg',
   'dung beetle knight 2.jpg',
   'dung beetle knight 3.jpg',
@@ -57,6 +57,10 @@ var quary_events = [
   'white lion 6.jpg',
   'white lion 7.jpg',
 ]
+
+module.exports = {
+  get_sequence,
+}
 
 function get_sequence (name) {
   let sequence = []

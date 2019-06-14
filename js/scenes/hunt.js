@@ -1,5 +1,6 @@
 const { createToc, titleCase, events_table } = require('./../ui/events')
 const { clone } = require('./../ui/glossary')
+const { get_sequence } = require('./../ui/hunt_events')
 const { getSettings, addSettings } = require('./../ui/settings')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
