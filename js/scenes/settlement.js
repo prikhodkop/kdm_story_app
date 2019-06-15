@@ -1,15 +1,13 @@
 const { createToc, events_table } = require('./../ui/events')
-const { readFile } = require('./../ui/files')
 const { getSettlementEventPath } = require('./../ui/glossary')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
+const { render } = require('./../ui/template-renderer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
-
-const htmlTemplate = readFile('./partials/settlement.html')
 
 module.exports = class SettlementScene {
   render () {
-    document.getElementById('container').innerHTML = htmlTemplate
+    document.getElementById('container').innerHTML = render('./partials/settlement.html')
 
     console.log(sessionStorage)
 

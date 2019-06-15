@@ -35,6 +35,15 @@
 		}
 
 		window.globals = {}
+		window.globals.template = {
+		    // set cdn url to load images externally, to load from the github
+			// master branch use the below:
+			//
+			// cdnHost: 'https://media.githubusercontent.com/media/prikhodkop/kdm_story_app/master/'
+            //
+			// the default is an empty string which means use local files
+			cdnHost: '',
+		}
 		window.globals.version = 'dev'
 	</script>
 </head>

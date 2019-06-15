@@ -5,13 +5,12 @@ const { createToc } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
+const { render } = require('./../ui/template-renderer')
 const { setTransition } = require('./../ui/transition')
-
-const htmlTemplate = readFile('./partials/index.html')
 
 module.exports = class IndexScene {
   render () {
-    document.getElementById('container').innerHTML = htmlTemplate
+    document.getElementById('container').innerHTML = render('./partials/index.html')
 
     const version = typeof window.globals !== 'undefined' ? window.globals.version : 'dev'
 

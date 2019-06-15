@@ -1,17 +1,15 @@
 const { createToc, titleCase, events_table } = require('./../ui/events')
-const { readFile } = require('./../ui/files')
 const { clone } = require('./../ui/glossary')
 const { get_sequence } = require('./../ui/hunt_events')
 const { md_to_html_2 } = require('./../ui/hunt_events_table')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
+const { render } = require('./../ui/template-renderer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
-
-const htmlTemplate = readFile('./partials/hunt.html')
 
 module.exports = class HuntScene {
   render () {
-    document.getElementById('container').innerHTML = htmlTemplate
+    document.getElementById('container').innerHTML = render('./partials/hunt.html')
 
     var start_delay = 1000
 

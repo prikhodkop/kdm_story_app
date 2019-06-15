@@ -1,16 +1,14 @@
 const electron = require('electron')
 
 const { createToc, events_table } = require('./../ui/events')
-const { readFile } = require('./../ui/files')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
+const { render } = require('./../ui/template-renderer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
-
-const htmlTemplate = readFile('./partials/image.html')
 
 module.exports = class ImageScene {
   render () {
-    document.getElementById('container').innerHTML = htmlTemplate
+    document.getElementById('container').innerHTML = render('./partials/image.html')
 
     console.log(sessionStorage)
 
