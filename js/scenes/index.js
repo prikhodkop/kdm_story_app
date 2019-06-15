@@ -7,8 +7,12 @@ const { createMenuButton } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
 const { setTransition } = require('./../ui/transition')
 
+const htmlTemplate = readFile('./partials/index.html')
+
 module.exports = class IndexScene {
-  constructor () {
+  render () {
+    document.getElementById('container').innerHTML = htmlTemplate
+
     const version = typeof window.globals !== 'undefined' ? window.globals.version : 'dev'
 
     $('#label_text').hide()

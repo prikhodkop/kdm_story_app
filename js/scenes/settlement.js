@@ -1,11 +1,16 @@
 const { createToc, events_table } = require('./../ui/events')
+const { readFile } = require('./../ui/files')
 const { getSettlementEventPath } = require('./../ui/glossary')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
+const htmlTemplate = readFile('./partials/settlement.html')
+
 module.exports = class SettlementScene {
-  constructor () {
+  render () {
+    document.getElementById('container').innerHTML = htmlTemplate
+
     console.log(sessionStorage)
 
     // GET STATE INFORMATION

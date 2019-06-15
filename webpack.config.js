@@ -14,6 +14,15 @@ module.exports = {
     module: {
         rules: [
             {
+              test: /\.html$/,
+              use: {
+                  loader: 'html-loader',
+                options: {
+                    attrs: [],
+                },
+              },
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
@@ -37,7 +46,13 @@ module.exports = {
             path.join(__dirname, '/node_modules'),
         ],
     },
-    plugins: []
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: path.join(__dirname, '/index.html'),
+        filename: 'index.html',
+        minify: !isDev,
+      })
+    ]
         .concat((() => {
             // only copy assets on production builds
             let plugins = []
@@ -50,30 +65,13 @@ module.exports = {
                 {from: 'images', to: 'images'},
                 {from: 'js/interop/electron.js', to: 'js/interop/electron.js'},
                 {from: 'js/vendor', to: 'js/vendor'},
-                {from: 'tooltipster', to: 'tooltipster'},
+                {from: 'partials', to: 'partials'},
+                {from: 'tooltipster/dist', to: 'tooltipster/dist'},
                 {from: 'video', to: 'video'},
                 {from: 'settings.json', to: 'settings.json'},
               ]))
             }
 
             return plugins
-        })())
-        .concat((() => {
-            // create an instance of HtmlWebpackPlugin for each template
-            let templates = [
-                'index',
-                'image',
-                'video',
-                'hunt',
-                'settlement',
-            ];
-
-            return templates.map(function(template) {
-                return new HtmlWebpackPlugin({
-                    template: path.join(__dirname + `/${template}.html`),
-                    filename: template + '.html',
-                    minify: !isDev,
-                })
-            })
         })()),
 }

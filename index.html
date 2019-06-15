@@ -1,53 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" bgcolor="#000000">
+<html lang="en">
 
 <head>
 	<meta name="viewport" charset="UTF-8" content="height=device-height, initial-scale=1">
-	<title>
-		kingdom death
-	</title>
+	<title>kingdom death</title>
+	<link rel="stylesheet" href="tooltipster/dist/css/tooltipster.bundle.min.css" />
+	<link rel="stylesheet" href="css/tooltipster-follower.min.css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" />
+	<link rel="stylesheet" href="css/selectize.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/menu.css">
 	<link rel="stylesheet" href="css/settings.css">
-</head>
-
-<body bgcolor="#000000" scene-name="index">
 	<script>
+		<!-- electron global module start -->
 		if (typeof module === 'object') {
-			window.module = module;
-			module = undefined;
+			window.module = module
+			module = undefined
+		}
+	</script>
+	<script src="js/vendor/jquery.min.js"></script>
+	<script src="js/vendor/jquery-ui.js"></script>
+	<script src="js/vendor/jquery.srt.js"></script>
+	<script src="tooltipster/dist/js/tooltipster.bundle.min.js"></script>
+	<script src="js/vendor/tooltipster-follower.min.js"></script>
+	<script src="js/vendor/howler.core.min.js"></script>
+	<script src="js/vendor/selectize.js"></script>
+	<script src="js/vendor/scrollTo.js"></script>
+	<script>
+		<!-- electron global module end -->
+		if (window.module) {
+			module = window.module
 		}
 
 		window.globals = {}
 		window.globals.version = 'dev'
 	</script>
-
-	<script src="js/vendor/jquery.min.js"></script>
-	<script src="js/vendor/howler.core.min.js"></script>
-	<script type="text/javascript" src="js/vendor/jquery.srt.js"></script>
-
-	<script>
-		if (window.module) module = window.module;
-	</script>
-
-	<div id="container">
-		<img id="back" src="images/back.jpg" />
-
-		<video id="video" src="video/intro.mp4" width="1440" height="990"></video>
-		<div class="srt" data-video="video"></div>
-
-		<div class="index" id="label_text">
-			KINGDOM DEATH: MONSTER 1.5
-		</div>
-
-		<!-- <audio id="open_audio" src="audio/theme.mp3" loop="loop"></audio> -->
-
-		<!-- <button class="button" id="mute">Mute</button> -->
-		<button class="button_video">Intro</button>
-	</div>
-
-	<!-- render the scene using body[scene-name] -->
+</head>
+<body bgcolor="#000000">
+	<div id="container"></div>
+	<!-- electron bootstrap -->
 	<script type="text/javascript" src="js/interop/electron.js"></script>
 </body>
-
 </html>

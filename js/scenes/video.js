@@ -6,8 +6,12 @@ const { createMenuButton, createReference, createSevereTables } = require('./../
 const { getSettings, addSettings } = require('./../ui/settings')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
+const htmlTemplate = readFile('./partials/video.html')
+
 module.exports = class VideoScene {
-  constructor () {
+  render () {
+    document.getElementById('container').innerHTML = htmlTemplate
+
     console.log(sessionStorage)
 
     // UNDERSTAND WHAT EVENT TO SHOW
