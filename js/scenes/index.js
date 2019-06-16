@@ -5,7 +5,7 @@ const { createToc } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
-const { render } = require('./../ui/template-renderer')
+const { render, cdnUrl } = require('./../ui/template-renderer')
 const { setTransition } = require('./../ui/transition')
 
 module.exports = class IndexScene {
@@ -35,7 +35,7 @@ module.exports = class IndexScene {
     let lang = settings['language']
 
     var music = new Howl({
-      src: ['audio/theme.mp3'],
+      src: [cdnUrl('audio/theme.mp3')],
       // autoplay: true,
       loop: true,
       volume: 0.8,

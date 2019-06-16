@@ -1,5 +1,7 @@
 const { app, getCurrentWindow } = require('electron').remote
+
 const { readFile, saveFile, exists } = require('./files')
+const { cdnUrl } = require('./template-renderer')
 
 module.exports = {
   getSettings,
@@ -35,7 +37,7 @@ function addSettings (settings) {
 
   $('#settings-window-back0').append($('<img>', {
     id: 'settings-window-back-img',
-    src: 'images/reference/reference_back.png',
+    src: cdnUrl('images/reference/reference_back.png'),
   }))
 
   $('#settings-window-back0').append($('<div>', {

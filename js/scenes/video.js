@@ -4,7 +4,7 @@ const { createToc, events_table } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
-const { render } = require('./../ui/template-renderer')
+const { render, cdnUrl } = require('./../ui/template-renderer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 module.exports = class VideoScene {
@@ -38,7 +38,7 @@ module.exports = class VideoScene {
     var music_volume = 0.8 // music volume
 
     var music = new Howl({
-      src: [events_table[myself].music],
+      src: [cdnUrl(events_table[myself].music)],
       // autoplay: true,
       loop: true,
       volume: music_volume,

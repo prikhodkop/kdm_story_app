@@ -1,5 +1,7 @@
 const shell = require('electron').shell
 
+const { cdnUrl } = require('./template-renderer')
+
 module.exports = {
   createAbout,
 }
@@ -22,7 +24,7 @@ function createAbout (version) {
 
   $('#reference-window-back0').append($('<img>', {
     id: 'reference-window-back-img',
-    src: 'images/reference/reference_back.png',
+    src: cdnUrl('images/reference/reference_back.png'),
   }))
 
   $('#reference-window-back0').append($('<div>', {

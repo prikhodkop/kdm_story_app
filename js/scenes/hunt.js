@@ -4,7 +4,7 @@ const { get_sequence } = require('./../ui/hunt_events')
 const { md_to_html_2 } = require('./../ui/hunt_events_table')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
-const { render } = require('./../ui/template-renderer')
+const { render, cdnUrl } = require('./../ui/template-renderer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 module.exports = class HuntScene {
@@ -30,13 +30,13 @@ module.exports = class HuntScene {
     }, 100)
 
     var music = new Howl({
-      src: [events_table[myself].music],
+      src: [cdnUrl(events_table[myself].music)],
       loop: true,
       volume: 0.8,
     })
 
     var speech = new Howl({
-      src: [events_table[myself].speech],
+      src: [cdnUrl(events_table[myself].speech)],
       volume: 1.0,
     })
 

@@ -1,5 +1,7 @@
 const remote = require('electron').remote
+
 const { get_all_options, is_random_draw, get_random_draws, get_representation } = require('./glossary')
+const { cdnUrl } = require('./template-renderer')
 
 module.exports = {
   createMenuButton,
@@ -44,7 +46,7 @@ function createMenuButton () {
   $('#esc-menu').append($('<img>', {
     // style: 'opacity:.9;',
     id: 'esc-back',
-    src: 'images/reference/reference_back.png',
+    src: cdnUrl('images/reference/reference_back.png'),
   }))
 
   $('#esc-menu').append($('<div>', {
@@ -96,7 +98,7 @@ function createMenuButton () {
 
   $('#menu').append($('<img>', {
     id: 'menu_img',
-    src: 'images/back.jpg',
+    src: cdnUrl('images/back.jpg'),
   }))
 
   $('#menu').append($('<div>', {
@@ -155,14 +157,14 @@ function addLocationTable (location, top) {
   $('#container').append($('<img>', {
     class: location,
     id: 'severe',
-    src: 'images/icons/' + location + '.png',
+    src: cdnUrl('images/icons/' + location + '.png'),
     style: 'top:' + top + ';',
   }))
 
   $('#container').append($('<img>', {
     class: location,
     id: 'severe-table',
-    src: 'images/severe injuries/' + location + '.jpg',
+    src: cdnUrl('images/severe injuries/' + location + '.jpg'),
   }))
 
   $('#severe.' + location).hide()
@@ -226,7 +228,7 @@ function createReference () {
 
   $('#container').append($('<img>', {
     id: 'reference',
-    src: 'images/icons/reference.png',
+    src: cdnUrl('images/icons/reference.png'),
   }))
 
   $('#reference').hide()
@@ -238,7 +240,7 @@ function createReference () {
 
   $('#reference-window-back0').append($('<img>', {
     id: 'reference-window-back-img',
-    src: 'images/reference/reference_back.png',
+    src: cdnUrl('images/reference/reference_back.png'),
   }))
 
   // $('#reference-window-back').append('<label for="reference-window">Terms:</label>')
@@ -259,7 +261,7 @@ function createReference () {
 
   $('#reference-window-back').append($('<img>', {
     id: 'glossary-symbols',
-    src: 'images/reference/symbols.png',
+    src: cdnUrl('images/reference/symbols.png'),
   }))
 
   let all_option = get_all_options()
