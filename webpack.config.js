@@ -62,6 +62,7 @@ module.exports = {
                 {from: 'audio', to: 'audio'},
                 {from: 'css', to: 'css'},
                 {from: 'font', to: 'font'},
+                {from: 'icon.ico', to: 'icon.ico'},
                 {from: 'images', to: 'images'},
                 {from: 'js/interop/electron.js', to: 'js/interop/electron.js'},
                 {from: 'js/vendor', to: 'js/vendor'},
