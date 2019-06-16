@@ -26,14 +26,14 @@ module.exports = class ImageScene {
     var settings = getSettings()
     sessionStorage.setItem('settings', JSON.stringify(settings))
 
-    $('#img_back').attr('src', 'images/' + myself + '/back.jpg')
+    $('#img_back').attr('src', cdnUrl('images/' + myself + '/back.jpg'))
 
     if ((myself == 'white speaker') && (settings['whiteboxes']['white speaker'] == 'Enabled')) {
-      $('#img').attr('src', 'images/' + myself + '/img_wb.jpg')
+      $('#img').attr('src', cdnUrl('images/' + myself + '/img_wb.jpg'))
     } else if ((myself == 'hooded knight') && (settings['whiteboxes']['allison the twilight knight'] == 'Enabled')) {
-      $('#img').attr('src', 'images/' + myself + '/img_wb.jpg')
+      $('#img').attr('src', cdnUrl('images/' + myself + '/img_wb.jpg'))
     } else {
-      $('#img').attr('src', 'images/' + myself + '/img.jpg')
+      $('#img').attr('src', cdnUrl('images/' + myself + '/img.jpg'))
     }
 
     if (!events_table[myself].hide_label) {

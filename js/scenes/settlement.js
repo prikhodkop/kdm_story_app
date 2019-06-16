@@ -186,7 +186,7 @@ module.exports = class SettlementScene {
         music.fade(0.0, music_volume, 500)
       }
 
-      $('#settlement_event_back').attr('src', state.settlement_event)
+      $('#settlement_event_back').attr('src', cdnUrl(state.settlement_event))
 
       if (state.milestones_open) {
         $('#milestones').delay(150).fadeIn(500)
@@ -206,7 +206,7 @@ module.exports = class SettlementScene {
       if (!$(this).hasClass('active')) {
         $('#settlement_event_screen').delay(50).fadeIn(500)
         if ($('#settlement_event_back').attr('src') == '#') {
-          $('#settlement_event_back').attr('src', getSettlementEventPath())
+          $('#settlement_event_back').attr('src', cdnUrl(getSettlementEventPath()))
         };
         $('#settlement_event_back').delay(150).fadeIn(500)
         $(this).addClass('active')

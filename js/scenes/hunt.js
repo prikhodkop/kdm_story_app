@@ -406,7 +406,7 @@ module.exports = class HuntScene {
       // let title = $(this).attr('title');
       //
       // if (title == 'Monster Hunt Event') {
-      //   $('#quary_popup').attr('src',$(this).attr('href'))
+      //   $('#quary_popup').attr('src', cdnUrl($(this).attr('href')))
       //   $('#quary_popup').fadeIn(3000)
       //   $('#quary_popup_back').fadeIn(3000)
       //
@@ -770,8 +770,7 @@ module.exports = class HuntScene {
                   .innerHTML =
                                     'Starvation<br/>Survivors must spend <b>1d5</b> basic resources!'
                 // $('#label_text').innerHTML = 'Starvation<br/>Survivors must spend <b>1d5</b> basic resources!'
-                $('#hunt_icon').attr('src',
-                  'images/hunt/starvation_icon.png')
+                $('#hunt_icon').attr('src', cdnUrl('images/hunt/starvation_icon.png'))
                 $('#label_text').css('z-index', '9')
                 $('#hunt_icon').css('z-index', '9')
                 $('#label_text').css('color', '#fff')
@@ -846,8 +845,7 @@ module.exports = class HuntScene {
 
               if (ui.draggable[0]['id'] == 'survivors') {
                 if (title == 'Monster Hunt Event') {
-                  $('#quary_popup').attr('src', $(this)
-                    .attr('href'))
+                  $('#quary_popup').attr('src', cdnUrl($(this).attr('href')))
                   $('#quary_popup').delay(500).fadeIn(1000)
                   $('#quary_popup').toggleClass('hidden')
                   $('#quary_popup_back').fadeIn(1500)

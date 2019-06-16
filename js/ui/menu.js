@@ -204,7 +204,7 @@ function addLocationTable (location, top) {
 function showLocationTable (location) {
   // $('#severe-background').fadeIn(500);
   // $('#severe-table').hide();
-  // $('#severe-table').attr('src', 'images/severe injuries/'+location+'.png');
+  // $('#severe-table').attr('src', cdnUrl('images/severe injuries/'+location+'.png'));
   $('#severe-table.' + location).delay(100).fadeIn(200)
   // $('#severe-table').slideLeft(1000);
 }
@@ -464,7 +464,7 @@ function createReference () {
       if (!$(this).hasClass('hoverd')) {
         $('#reference-window-back0').fadeIn(500)
         $('#reference-window-background').fadeIn(500)
-        $('#reference').attr('src', 'images/icons/reference_active.png')
+        $('#reference').attr('src', cdnUrl('images/icons/reference_active.png'))
         selectize.focus()
         $(this).toggleClass('active')
       }
@@ -477,12 +477,12 @@ function createReference () {
     if (!$(this).hasClass('active')) {
       $('#reference-window-back0').fadeIn(500)
       $('#reference-window-background').fadeIn(500)
-      $('#reference').attr('src', 'images/icons/reference_active.png')
+      $('#reference').attr('src', cdnUrl('images/icons/reference_active.png'))
       selectize.focus()
     } else {
       $('#reference-window-back0').fadeOut(500)
       $('#reference-window-background').fadeOut(500)
-      $('#reference').attr('src', 'images/icons/reference.png')
+      $('#reference').attr('src', cdnUrl('images/icons/reference.png'))
     }
     $(this).toggleClass('active')
   })
@@ -490,7 +490,7 @@ function createReference () {
   $('#reference-window-background').on('click', function () {
     $('#reference-window-back0').fadeOut(500)
     $('#reference-window-background').fadeOut(500)
-    $('#reference').attr('src', 'images/icons/reference.png')
+    $('#reference').attr('src', cdnUrl('images/icons/reference.png'))
     $('#reference').removeClass('active')
     $('#esc-menu').fadeOut(100)
     $('#esc-menu').removeClass('active')
