@@ -30,10 +30,12 @@ function route (name, reload = true) {
       state[k] = sessionStorage[k]
     }
 
-    let url = `/#!/${name}`
+    let url = `#!/${name}`
 
     if (isElectron) {
-      url = './index.html' + url.substring(1)
+      url = './index.html' + url
+    } else {
+      url = window.location.pathname + url
     }
 
     window.history.pushState({ name: name, state: state }, name, url)

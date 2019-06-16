@@ -22,11 +22,11 @@ function cdnUrl (file) {
     return file
   }
 
-  let cdnHost = (window.globals.template.cdnHost || '').replace(/^[.\/]/g, '')
+  let cdnHost = (window.globals.template.cdnHost || '').replace(/^[.\/]+/, '')
 
   if (cdnHost.length) {
     cdnHost = `${cdnHost}/`
   }
 
-  return cdnHost + file.replace(/^[.\/]/g, '')
+  return cdnHost + file.replace(/^[.\/]+/, '')
 }
