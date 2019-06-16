@@ -4,7 +4,7 @@ VERSION=${1?test}
 
 mkdir -p ../release
 
-perl -pe"s/##VERSION##/${VERSION}/g" index_template.html > index.html
+perl -i -pe "s/(window\.globals\.version =).*/\1 '${VERSION}'/" index.html
 
 rm -r "../release/Kingdom Death 1.5 Story v.${VERSION}"
 
