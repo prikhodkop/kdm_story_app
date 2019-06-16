@@ -1,5 +1,6 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const InjectPlugin = require('webpack-inject-plugin').default
 const path = require('path')
 
 const isDev = (process.env.npm_lifecycle_script || '').indexOf('development') !== -1
@@ -10,6 +11,8 @@ module.exports = {
     devtool: isDev ? 'source-map' : 'none',
     output: {
         path: path.join(__dirname, '/dist'),
+        filename: 'js/[name]' + (!isDev ? '.[chunkhash:7]' : '') + '.js',
+        chunkFilename: 'js/[name]' + (!isDev ? '.[chunkhash:7]' : '') + '.js',
     },
     module: {
         rules: [
@@ -50,29 +53,48 @@ module.exports = {
       new HtmlWebpackPlugin({
         template: path.join(__dirname, '/index.html'),
         filename: 'index.html',
-        minify: !isDev,
+        minify: (() => {
+          return isDev ? false : {
+            collapseBooleanAttributes: true,
+            collapseWhitespace: true,
+            minifyJS: true,
+            removeComments: true,
+          }
+        })(),
       })
     ]
         .concat((() => {
-            // only copy assets on production builds
+            // only set cdnHost on production build
+            let plugins = []
+
+            if (!isDev) {
+              plugins.push(new InjectPlugin(() => {
+                return `
+                  window.globals.template.cdnHost = 'https://media.githubusercontent.com/media/prikhodkop/kdm_story_app/master'
+                `
+              }))
+            }
+
+            return plugins
+          })())
+        .concat((() => {
+            // only copy assets on production build
             let plugins = []
 
             if (!isDev) {
               plugins.push(new CopyWebpackPlugin([
-                {from: 'audio', to: 'audio'},
                 {from: 'css', to: 'css'},
                 {from: 'font', to: 'font'},
                 {from: 'icon.ico', to: 'icon.ico'},
-                {from: 'images', to: 'images'},
                 {from: 'js/interop/electron.js', to: 'js/interop/electron.js'},
                 {from: 'js/vendor', to: 'js/vendor'},
                 {from: 'partials', to: 'partials'},
                 {from: 'tooltipster/dist', to: 'tooltipster/dist'},
-                {from: 'video', to: 'video'},
                 {from: 'settings.json', to: 'settings.json'},
+                {from: 'video/srt', to: 'video/srt'},
               ]))
             }
 
             return plugins
-        })()),
+          })()),
 }
