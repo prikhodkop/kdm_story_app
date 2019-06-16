@@ -1,3 +1,5 @@
+const { cdnUrl } = require('./template-renderer')
+
 const random_hunt_events = {
   1: `1 | Broken Lanterns
 The survivors feel something crunching beneath their feet. The event revealer may choose to lower their lantern and <b>investigate</b> or ignore the sensation and continue their journey.
@@ -2268,7 +2270,7 @@ function md_to_html_2 (event_id, init = true, current_table = 0, current_class =
           width = '50%'
         }
 
-        let addition = "<img style='position:static;width:" + width + ";float:center;' " + text2 + " src='images/hunt/random_events/event_" + text + ".png'>"
+        let addition = "<img style='position:static;width:" + width + ";float:center;' " + text2 + " src='" + cdnUrl(`images/hunt/random_events/event_${text}.png`) + "'>"
 
         if (init) {
           html = addition + html

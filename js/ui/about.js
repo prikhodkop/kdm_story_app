@@ -13,7 +13,7 @@ function createAbout (version) {
 
   $('#reference-window-background').hide()
   // $('#container').append($('<img id="about_text">About</div>'));
-  $('#container').append($('<img id="about_text" src="images/icons/about.png"/>'))
+  $('#container').append($('<img id="about_text" src="' + cdnUrl('images/icons/about.png') + '"/>'))
   $('#about_text').hide()
   $('#about_text').delay(1000).fadeIn(2000)
 

@@ -10,14 +10,6 @@ module.exports = {
 }
 
 function createMenuButton () {
-  // <a href="javascript:void(0)" id="menu-toggle-wrapper">
-  //   <div id="menu-toggle"></div>
-  // </a>
-  //
-  // <div id="menu" style="opacity:.9;">
-  //   <img id="menu_img" src="images/back.jpg"/>
-  // </div>
-
   document.onkeydown = function (evt) {
     evt = evt || window.event
     var isEscape = false

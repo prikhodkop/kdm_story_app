@@ -469,7 +469,7 @@ module.exports = class HuntScene {
 
       console.log(name)
 
-      $('<img class="token" id="herb_gathering" title="" src="./images/hunt/herbs_gathering.png" width="8%" style="left:25%; top:74%;">')
+      $('<img class="token" id="herb_gathering" title="" src="' + cdnUrl('images/hunt/herbs_gathering.png') + '" width="8%" style="left:25%; top:74%;">')
         .load(function () {
           $(this).appendTo('body')
           $(this).hide()
@@ -491,7 +491,7 @@ module.exports = class HuntScene {
           })
         })
 
-      $('<img class="token" id="mineral_gathering" title="" src="./images/hunt/mineral_gathering.png" width="8%" style="left:67%; top:74%;">')
+      $('<img class="token" id="mineral_gathering" title="" src="' + cdnUrl('images/hunt/mineral_gathering.png') + '" width="8%" style="left:67%; top:74%;">')
         .load(function () {
           $(this).appendTo('body')
           $(this).hide()
@@ -730,7 +730,7 @@ module.exports = class HuntScene {
 
       $('<img class="token ' + position + '" position="' + position + '" id="' + type +
                 '" title="' +
-                title + '" src="' + path + '" width="' + width + '%" style="left: ' + coord +
+                title + '" src="' + cdnUrl(path) + '" width="' + width + '%" style="left: ' + coord +
                 '%; top:' + top +
                 '%;"' + ref + ')>').load(function () {
         $(this).appendTo('body')
@@ -882,7 +882,7 @@ module.exports = class HuntScene {
         // var coord = 9.842 + 7.31*(position-2) + 7.35/2 - lantern_width/2.;
         var coord = 2.65 + 7.298 * (position - 1 / 2) - lantern_width / 2.0
         $('<img class="token ' + position + '" position="' + position +
-                    '" id="lantern" title="Event Cleared" src="images/hunt/lantern.png" width="' +
+                    '" id="lantern" title="Event Cleared" src="' + cdnUrl('images/hunt/lantern.png') + '" width="' +
                     lantern_width +
                     '%" style="left: ' + coord + '%; top:' + (top) + '%;">').load(
           function () {
