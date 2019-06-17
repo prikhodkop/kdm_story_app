@@ -143,11 +143,13 @@ module.exports = class ImageScene {
         $('#label_text').fadeIn(4000)
         $('#img').delay(4000).fadeIn(2000)
 
-        setTimeout(function () {
+        if (!menus_appeared) {
           menus_appeared = true
-          createSevereTables()
-          createReference()
-        }, 4000)
+          setTimeout(function () {
+            createSevereTables()
+            createReference()
+          }, 4000)
+        };
 
         speech.seek(state.speech_position)
 
@@ -229,8 +231,10 @@ module.exports = class ImageScene {
             action = 'true'
             if (!menus_appeared) {
               menus_appeared = true
-              createSevereTables()
-              createReference()
+              setTimeout(function () {
+                createSevereTables()
+                createReference()
+              }, 5000);
             };
           }
         }, start_delay + duration + 3000)
@@ -248,11 +252,13 @@ module.exports = class ImageScene {
 
       // $("#label_text").fadeOut(2000);
       $('#img').fadeIn(4000)
-      if (!menus_appeared) {
-        menus_appeared = true
-        createSevereTables()
-        createReference()
-      };
+      // if (!menus_appeared) {
+      //   menus_appeared = true
+      //   setTimeout(function () {
+      //     createSevereTables()
+      //     createReference()
+      //   }, 2000);
+      // };
 
       if (speech.playing()) {
         speech.fade(1.0, 0.0, 2000)
