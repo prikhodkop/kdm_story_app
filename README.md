@@ -28,19 +28,13 @@ To build the app one needs to:
 
 ### For dev builds:
 
-On Windows:
+> \>\> npm run webpack
 
-> \>\> electron-packager ./ "Kingdom Death 1.5 Story" --platform win32 --icon ./icon.icns --overwrite --arch=x64 --verbose --prune=true --out=\<path to build\>
-
-On Mac:
-
-> \>\> electron-packager ./ "Kingdom Death 1.5 Story" --platform darwin --icon ./icon.icns --overwrite --arch=x64 --verbose --prune=true --out=\<path to build\>
+The app will run in browser at http://0.0.0.0:8080
 
 ### For release build:
 
-On windows and mac:
-
-> \>\> yarn dist
+> \>\> npm run dist
 
 Build artefacts would be put into ./dist folder.
   
