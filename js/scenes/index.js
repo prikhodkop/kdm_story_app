@@ -1,4 +1,6 @@
 const electron = require('electron')
+const { app } = require('electron').remote
+
 const { createAbout } = require('./../ui/about')
 const { createToc } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
@@ -61,7 +63,7 @@ module.exports = class IndexScene {
 
     // console.log(subtitles['intro'][lang])
     if (settings['subtitles'] == 'On') {
-      configureSubtitle(readFile('./video/srt/' + lang + '/intro.srt'))
+      configureSubtitle(readFile(app.getAppPath() + '/video/srt/' + lang + '/intro.srt'))
     }
 
     if (settings['narration'] == 'Off') {

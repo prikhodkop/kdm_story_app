@@ -13,7 +13,7 @@ function getSettings () {
   if (exists(dirname + '/settings.json')) {
     return JSON.parse(readFile(dirname + '/settings.json'))
   } else {
-    return JSON.parse(readFile(__dirname + '/settings.json'))
+    return JSON.parse(readFile(app.getAppPath() + '/settings.json'))
   }
 }
 

@@ -1,4 +1,6 @@
 const electron = require('electron')
+const { app } = require('electron').remote
+
 const { createToc, events_table } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
@@ -168,7 +170,7 @@ module.exports = class VideoScene {
     createMenuButton()
     createToc()
     if (settings['subtitles'] == 'On') {
-      configureSubtitle(readFile('./video/srt/' + settings['language'] + '/' + myself + '.srt'))
+      configureSubtitle(readFile(app.getAppPath() + '/video/srt/' + settings['language'] + '/' + myself + '.srt'))
     };
     addSettings(settings)
 
