@@ -10,7 +10,7 @@
     "app": "npx electron .",
     "publish": "build -p always",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder --mac --win",
+    "dist": "electron-builder -- --mac --win",
     "lint": "eslint --fix main.js js/",
     "webpack": "webpack-dev-server --hot --mode development",
     "webpack:dist": "webpack --mode production"
