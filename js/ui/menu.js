@@ -428,24 +428,35 @@ function createReference () {
   })
 
   function populateRefKeypad () {
-    var refPadArr = ['row-start', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'row-end', 'row-start', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'row-end', 'row-start', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'row-end', 'row-start', 'space', 'clear', 'random', 'row-end']
-    var txtPad = "<input type='hidden' id='refPadHiddenValue' />"
-    var i
-    for (i = 0; i < refPadArr.length; i++) {
-      if (refPadArr[i] === 'row-start') {
-        txtPad = txtPad + "<div class='refpad--row'>"
-      } else if (refPadArr[i] === 'row-end') {
-        txtPad = txtPad + '</div>'
-      } else {
-        if (refPadArr[i].length > 0) {
-          txtPad = txtPad + "<div class='refpad__pad -" + refPadArr[i] + "' onClick='refPadEntry(\"" + refPadArr[i] + "\")'>" + refPadArr[i] + '</div>'
-        } else {
-          txtPad = txtPad + "<div class='refpad__pad' onClick='refPadEntry(\"" + refPadArr[i] + "\")'>" + refPadArr[i] + '</div>'
-        }
+    const refPadArr = [
+      ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+      ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+      ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
+      ['space', 'clear', 'random'],
+    ]
+
+    const keypadEl = $('#reference-window-keypad').empty()
+    const txtPadEl = $("<input type='hidden' id='refPadHiddenValue'>")
+
+    keypadEl.append(txtPadEl)
+
+    for (let row of refPadArr) {
+      let rowEl = $("<div class='refpad--row'></div>")
+
+      for (let label of row) {
+        let labelEl = $('<div></div>')
+          .addClass('refpad__pad')
+          .addClass(`-${label}`)
+          .text(label)
+          .on('click', function () {
+            refPadEntry(label)
+          })
+
+        rowEl.append(labelEl)
       }
+
+      keypadEl.append(rowEl)
     }
-    let refKeypad = document.getElementById('reference-window-keypad')
-    refKeypad.innerHTML = txtPad
   }
 
   $('#reference').hover(function () {
