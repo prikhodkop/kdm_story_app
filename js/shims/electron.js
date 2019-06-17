@@ -1,6 +1,9 @@
 module.exports = {
   remote: {
     app: {
+      getAppPath () {
+        return '.'
+      },
       getPath (name) {
         return name
       },
