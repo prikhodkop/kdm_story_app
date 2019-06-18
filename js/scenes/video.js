@@ -5,6 +5,7 @@ const { readFile } = require('./../ui/files')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
+const { addLoop } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 module.exports = class VideoScene {
@@ -185,7 +186,7 @@ module.exports = class VideoScene {
       }
     })
 
-    setInterval(function () {
+    addLoop(function () {
       if (window.reload) {
         setTransition(document.title, 'back', getBackTarget(), current_state())
       }

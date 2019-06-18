@@ -2,6 +2,7 @@ const { app, getCurrentWindow } = require('electron').remote
 
 const { readFile, saveFile, exists } = require('./files')
 const { cdnUrl } = require('./template-renderer')
+const { addTimer } = require('./timer')
 
 module.exports = {
   getSettings,
@@ -75,7 +76,7 @@ function addSettings (settings) {
     $('#settings-window-back0').fadeOut(500)
     $('#settings-window-background').fadeOut(500)
     $('#settings').removeClass('active')
-    setTimeout(function () {
+    addTimer(function () {
       setSettings(settings)
     }, 600)
   })

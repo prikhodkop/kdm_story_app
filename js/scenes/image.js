@@ -4,6 +4,7 @@ const { createToc, events_table } = require('./../ui/events')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
+const { addLoop, addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 module.exports = class ImageScene {
@@ -102,6 +103,8 @@ module.exports = class ImageScene {
       speech.mute(true)
     }
 
+    let menus_appeared = false
+
     if ((transition == 'back') && !(state == null)) {
       console.log('State loaded successfully!')
       state = JSON.parse(state)
@@ -118,7 +121,7 @@ module.exports = class ImageScene {
 
         if (!menus_appeared) {
           menus_appeared = true
-          setTimeout(function () {
+          addTimer(function () {
             createSevereTables()
             createReference()
           }, 4000)
@@ -152,8 +155,6 @@ module.exports = class ImageScene {
       $('#back_button').html('<svg class="back_button__icon" enable-background="new 0 0 492 492" version="1.1" viewBox="0 0 492 492" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m464.34 207.42l0.768 0.168h-329.22l103.5-103.72c5.068-5.064 7.848-11.924 7.848-19.124s-2.78-14.012-7.848-19.088l-16.104-16.112c-5.064-5.064-11.812-7.864-19.008-7.864-7.2 0-13.952 2.78-19.016 7.844l-177.41 177.4c-5.084 5.084-7.864 11.856-7.844 19.06-0.02 7.244 2.76 14.02 7.844 19.096l177.41 177.41c5.064 5.06 11.812 7.844 19.016 7.844 7.196 0 13.944-2.788 19.008-7.844l16.104-16.112c5.068-5.056 7.848-11.808 7.848-19.008 0-7.196-2.78-13.592-7.848-18.652l-104.66-104.3h329.99c14.828 0 27.288-12.78 27.288-27.6v-22.788c0-14.82-12.828-26.6-27.656-26.6z"></path></svg><span class="back_button__text">' + events_table[back_target].label + '</span>')
       $('#back_button').delay(500).fadeIn(1000)
     }
-
-    var menus_appeared = false
 
     // SET UP EVENT START IF IT HAS NO INITIALIZED STATE
     // #############
@@ -189,22 +190,22 @@ module.exports = class ImageScene {
           delay = 1000
           $('.srt').text('Open rule book on page 22 and follow the instructions.')
           $('.srt').fadeIn(2000)
-          setTimeout(function () { $('.srt').fadeOut(1000) }, 3000)
+          addTimer(function () { $('.srt').fadeOut(1000) }, 3000)
         }
 
         if (!mute_narration) {
-          setTimeout(function () {
+          addTimer(function () {
             speech.play()
           }, start_delay)
         }
 
-        setTimeout(function () {
+        addTimer(function () {
           if (action == 'false') {
             $('#img').fadeIn(4000)
             action = 'true'
             if (!menus_appeared) {
               menus_appeared = true
-              setTimeout(function () {
+              addTimer(function () {
                 createSevereTables()
                 createReference()
               }, 5000);
@@ -212,7 +213,7 @@ module.exports = class ImageScene {
           }
         }, start_delay + duration + 3000)
 
-        setTimeout(function () {
+        addTimer(function () {
           console.log('I play the music')
           music.play()
         }, start_delay + delay)
@@ -225,13 +226,13 @@ module.exports = class ImageScene {
 
       // $("#label_text").fadeOut(2000);
       $('#img').fadeIn(4000)
-      // if (!menus_appeared) {
-      //   menus_appeared = true
-      //   setTimeout(function () {
-      //     createSevereTables()
-      //     createReference()
-      //   }, 2000);
-      // };
+      if (!menus_appeared) {
+        menus_appeared = true
+        addTimer(function () {
+          createSevereTables()
+          createReference()
+        }, 2000)
+      };
 
       if (speech.playing()) {
         speech.fade(1.0, 0.0, 2000)
@@ -275,7 +276,7 @@ module.exports = class ImageScene {
       }
     })
 
-    setInterval(function () {
+    addLoop(function () {
       if (window.reload) {
         setTransition(document.title, 'back', getBackTarget(), current_state())
       }

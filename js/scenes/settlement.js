@@ -3,6 +3,7 @@ const { getSettlementEventPath } = require('./../ui/glossary')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
+const { addLoop, addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 module.exports = class SettlementScene {
@@ -155,7 +156,7 @@ module.exports = class SettlementScene {
       $('#mute.button').show()
       // $('#back_button').show();
 
-      setTimeout(function () {
+      addTimer(function () {
         speech.play()
       }, start_delay)
       music.play()
@@ -269,7 +270,7 @@ module.exports = class SettlementScene {
     //
     //   $(this).toggleClass('active');
     // });
-    setInterval(function () {
+    addLoop(function () {
       if (window.reload) {
         setTransition(document.title, 'back', getBackTarget(), current_state())
       }

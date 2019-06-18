@@ -6,6 +6,7 @@ const { readFile } = require('./../ui/files')
 const { createMenuButton } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
+const { addTimer } = require('./../ui/timer')
 const { setTransition } = require('./../ui/transition')
 
 module.exports = class IndexScene {
@@ -108,7 +109,7 @@ module.exports = class IndexScene {
         console.log('Here2!')
       } else {
         // $("#open_audio").currentTime = 0
-        setTimeout(function () {
+        addTimer(function () {
           music.play()
         }, 500)
 
@@ -140,7 +141,7 @@ module.exports = class IndexScene {
       clearSubtitles()
       // $("#video").attr('currentTime', 0);
       document.getElementById('video').currentTime = 0
-      // setTimeout(function(){
+      // addTimer(function(){
       //   if (settings['subtitles'] == 'On') {
       //     configureSubtitle(readFile('./video/srt/' + lang + '/intro.srt'))
       //   }

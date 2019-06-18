@@ -5,6 +5,7 @@ const { md_to_html_2 } = require('./../ui/hunt_events_table')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
+const { addLoop, addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 module.exports = class HuntScene {
@@ -23,7 +24,7 @@ module.exports = class HuntScene {
     document.title = myself
 
     window.reload = false
-    setInterval(function () {
+    addLoop(function () {
       if (window.reload) {
         setTransition(document.title, 'back', getBackTarget(), current_state())
       }
@@ -171,7 +172,7 @@ module.exports = class HuntScene {
     };
 
     if (anew) {
-      setTimeout(function () {
+      addTimer(function () {
         speech.play()
       }, start_delay)
 
@@ -265,7 +266,7 @@ module.exports = class HuntScene {
       }
 
       if (!clean && !$(this).val() == '') {
-        timeout = setTimeout(function () {
+        timeout = addTimer(function () {
           if (value == '00') {
             value = 100
           } else {
@@ -335,7 +336,7 @@ module.exports = class HuntScene {
       }
 
       if (!clean && !eventnumber.val() == '') {
-        timeout = setTimeout(function () {
+        timeout = addTimer(function () {
           $('#input_container').fadeOut(500)
           if (value == '00') {
             value = 100
@@ -539,7 +540,7 @@ module.exports = class HuntScene {
       loadHuntImage(monster[2], monster_pos, monster[3], monster[4], 'monster', 'target="' +
                 ref + '"')
 
-      setTimeout(function () {
+      addTimer(function () {
         var i
         for (i = 1; i < 13; i++) {
           if (board_state.charAt(i - 1) == 'o') {
@@ -552,7 +553,7 @@ module.exports = class HuntScene {
       },
       500)
 
-      setTimeout(function () {
+      addTimer(function () {
         loadHuntImage('images/hunt/darkness.png', 7, 7.322, 32.2, 'darkness',
           'overwhelming darkness')
       }, 4300)
@@ -778,8 +779,8 @@ module.exports = class HuntScene {
                 $('#hunt_icon').delay(500).fadeIn(1000)
                 $('#label_text').delay(2700).fadeOut(1000)
                 $('#hunt_icon').delay(2700).fadeOut(1000)
-                setTimeout(function () { $('#label_text').hide() }, 3750)
-                setTimeout(function () {
+                addTimer(function () { $('#label_text').hide() }, 3750)
+                addTimer(function () {
                   document.getElementById(
                     'label_text').innerHTML =
                                         temp_text
@@ -861,7 +862,7 @@ module.exports = class HuntScene {
                   $('#random_event_input_big').val('')
                   $('#random_event_icon').fadeOut(500)
                   $('#random_event_input').fadeOut(500)
-                  setTimeout(function () {
+                  addTimer(function () {
                     $('#random_event_input_big')
                       .focus()
                   }, 1600)

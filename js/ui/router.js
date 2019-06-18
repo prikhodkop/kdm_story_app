@@ -1,3 +1,5 @@
+const { clearLoops, clearTimers } = require('./timer')
+
 const isElectron = typeof process !== 'undefined' && process.versions.hasOwnProperty('electron')
 
 module.exports = {
@@ -45,6 +47,10 @@ function route (name, reload = true) {
   // playing and there's no way to cancel them before changing page,
   // therefore we need to reload the page
   if (reload) {
+    // WIP need to stop audio and video playback but timers are clearable
+    clearLoops()
+    clearTimers()
+
     window.location.reload()
 
     return

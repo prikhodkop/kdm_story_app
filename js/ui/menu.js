@@ -2,6 +2,7 @@ const remote = require('electron').remote
 
 const { get_all_options, is_random_draw, get_random_draws, get_representation } = require('./glossary')
 const { cdnUrl } = require('./template-renderer')
+const { addTimer } = require('./timer')
 
 module.exports = {
   createMenuButton,
@@ -335,12 +336,12 @@ function createReference () {
       })
       // $('.selectize-dropdown').css("display", "none");
 
-      setTimeout(function () {
+      addTimer(function () {
         $('#reference-data.' + adapt_name(values)).remove()
       }, 1500)
       // $('#reference-window').selectize.close();
       // $('#reference-window').setValue('Type here...');
-      setTimeout(function () {
+      addTimer(function () {
         if (!$('.selectize-input').hasClass('has-items')) {
           $('#glossary-symbols').fadeIn(500)
         }
@@ -360,7 +361,7 @@ function createReference () {
         $('#glossary-symbols').hide()
         for (let i = 0; i < draws.length; i++) {
           console.log(draws[i])
-          setTimeout(function () {
+          addTimer(function () {
             selectize.addItem(draws[i], false)
             $('#glossary-symbols').hide()
           }, 500 * i)
