@@ -1,4 +1,3 @@
-const electron = require('electron')
 const { app } = require('electron').remote
 
 const { createToc, events_table } = require('./../ui/events')
@@ -28,31 +27,6 @@ module.exports = class VideoScene {
     $('#video').hide()
     $('#video').attr('src', 'video/' + myself + '.mp4')
     $('#img').attr('src', 'images/' + myself + '/img.jpg')
-
-    $(window).load(function () {
-      let screenElectron = electron.screen
-      let mainScreen = screenElectron.getPrimaryDisplay()
-      let dimensions = mainScreen.size
-      let hWide2 = ($('#img').width() / 2) // half the image's width
-
-      console.log(hWide2)
-
-      let hTall2 = ($('#img').height()) // half the image's height, etc.
-      hWide2 = '-' + Math.floor(0.98 * (dimensions.height / hTall2) * hWide2 / dimensions.width * 100).toString() + '%'
-
-      console.log(hWide2)
-
-      $('#img').css({
-        'margin-left': hWide2,
-        // "margin-top" : hTall
-      })
-    })
-
-    var screenElectron = electron.screen
-    var mainScreen = screenElectron.getPrimaryDisplay()
-    var dimensions = mainScreen.size
-
-    console.log(dimensions.width + 'x' + dimensions.height)
 
     $('#video').attr('width', '100%')
     $('#video').attr('height', '100%')

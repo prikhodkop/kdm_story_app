@@ -43,8 +43,10 @@ input[type=number]::-webkit-inner-spin-button {
 
 #img_back {
     position: absolute;
-    top: 0%;
-    left: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     height: 100%;
     display: block;
     z-index: 0;
@@ -107,10 +109,12 @@ input[type=number]::-webkit-inner-spin-button {
 
 #img {
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     height: 98%;
     display: block;
-    top: 0%;
-    left: 50%;
     --borderWidth: 2em;
     border-bottom-left-radius: var(--borderWidth);
     border-bottom-right-radius: var(--borderWidth);
