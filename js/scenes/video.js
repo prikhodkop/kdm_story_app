@@ -9,7 +9,7 @@ const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/tra
 
 module.exports = class VideoScene {
   render () {
-    document.getElementById('container').innerHTML = render('./partials/video.html')
+    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/video.html')
 
     onSettingsSaved(() => {
       setTransition(document.title, 'back', getBackTarget(), current_state())

@@ -1,3 +1,5 @@
+const { app } = require('electron').remote
+
 const { createToc, events_table } = require('./../ui/events')
 const { getSettlementEventPath } = require('./../ui/glossary')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
@@ -8,7 +10,7 @@ const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/tra
 
 module.exports = class SettlementScene {
   render () {
-    document.getElementById('container').innerHTML = render('./partials/settlement.html')
+    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/settlement.html')
 
     onSettingsSaved(() => {
       setTransition(document.title, 'back', getBackTarget(), current_state())

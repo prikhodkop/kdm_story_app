@@ -1,4 +1,4 @@
-const electron = require('electron')
+const { app } = require('electron').remote
 
 const { createToc, events_table } = require('./../ui/events')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
@@ -9,7 +9,7 @@ const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/tra
 
 module.exports = class ImageScene {
   render () {
-    document.getElementById('container').innerHTML = render('./partials/image.html')
+    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/image.html')
 
     onSettingsSaved(() => {
       setTransition(document.title, 'back', getBackTarget(), current_state())

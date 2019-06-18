@@ -11,7 +11,7 @@ const { setTransition } = require('./../ui/transition')
 
 module.exports = class IndexScene {
   render () {
-    document.getElementById('container').innerHTML = render('./partials/index.html')
+    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/index.html')
     document.title = 'kingdom death'
 
     onSettingsSaved(() => {

@@ -1,3 +1,5 @@
+const { app } = require('electron').remote
+
 const { createToc, titleCase, events_table } = require('./../ui/events')
 const { clone } = require('./../ui/glossary')
 const { get_sequence } = require('./../ui/hunt_events')
@@ -10,7 +12,7 @@ const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/tra
 
 module.exports = class HuntScene {
   render () {
-    document.getElementById('container').innerHTML = render('./partials/hunt.html')
+    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/hunt.html')
 
     onSettingsSaved(() => {
       setTransition(document.title, 'back', getBackTarget(), current_state())
