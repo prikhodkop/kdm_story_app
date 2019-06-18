@@ -4,6 +4,30 @@ const { get_all_options, is_random_draw, get_random_draws, get_representation } 
 const { cdnUrl } = require('./template-renderer')
 const { addTimer } = require('./timer')
 
+document.onkeydown = function (evt) {
+  evt = evt || window.event
+  var isEscape = false
+  if ('key' in evt) {
+    isEscape = (evt.key === 'Escape' || evt.key === 'Esc')
+  } else {
+    isEscape = (evt.keyCode === 27)
+  }
+  if (isEscape) {
+    const escMenuEl = $('#esc-menu')
+    if (!escMenuEl.length) {
+      return
+    }
+    if (!escMenuEl.hasClass('active')) {
+      $('#reference-window-background').fadeIn(500)
+      escMenuEl.fadeIn(500)
+    } else {
+      escMenuEl.fadeOut(100)
+      $('#reference-window-background').fadeOut(100)
+    }
+    escMenuEl.toggleClass('active')
+  }
+}
+
 module.exports = {
   createMenuButton,
   createReference,
@@ -11,26 +35,6 @@ module.exports = {
 }
 
 function createMenuButton () {
-  document.onkeydown = function (evt) {
-    evt = evt || window.event
-    var isEscape = false
-    if ('key' in evt) {
-      isEscape = (evt.key === 'Escape' || evt.key === 'Esc')
-    } else {
-      isEscape = (evt.keyCode === 27)
-    }
-    if (isEscape) {
-      if (!$('#esc-menu').hasClass('active')) {
-        $('#reference-window-background').fadeIn(500)
-        $('#esc-menu').fadeIn(500)
-      } else {
-        $('#esc-menu').fadeOut(100)
-        $('#reference-window-background').fadeOut(100)
-      }
-      $('#esc-menu').toggleClass('active')
-    }
-  }
-
   $('#container').append($('<div>', {
     // style: 'opacity:.9;',
     id: 'esc-menu',

@@ -472,7 +472,7 @@ module.exports = class HuntScene {
 
       $('<img class="token" id="herb_gathering" title="" src="' + cdnUrl('images/hunt/herbs_gathering.png') + '" width="8%" style="left:25%; top:74%;">')
         .load(function () {
-          $(this).appendTo('body')
+          $(this).appendTo('#container')
           $(this).hide()
           $(this).delay(2000).fadeIn(4000)
           $(this).tooltipster({
@@ -494,7 +494,7 @@ module.exports = class HuntScene {
 
       $('<img class="token" id="mineral_gathering" title="" src="' + cdnUrl('images/hunt/mineral_gathering.png') + '" width="8%" style="left:67%; top:74%;">')
         .load(function () {
-          $(this).appendTo('body')
+          $(this).appendTo('#container')
           $(this).hide()
           $(this).delay(2000).fadeIn(4000)
           $(this).tooltipster({
@@ -734,7 +734,7 @@ module.exports = class HuntScene {
                 title + '" src="' + cdnUrl(path) + '" width="' + width + '%" style="left: ' + coord +
                 '%; top:' + top +
                 '%;"' + ref + ')>').load(function () {
-        $(this).appendTo('body')
+        $(this).appendTo('#container')
         $(this).hide()
         if (type == 'darkness') {
           $(this).show()
@@ -887,7 +887,7 @@ module.exports = class HuntScene {
                     lantern_width +
                     '%" style="left: ' + coord + '%; top:' + (top) + '%;">').load(
           function () {
-            $(this).appendTo('body')
+            $(this).appendTo('#container')
             $(this).hide()
             $(this).attr('position', position)
             $(this).droppable({

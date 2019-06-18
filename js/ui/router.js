@@ -17,7 +17,8 @@ window.onpopstate = function (event) {
     sessionStorage[k] = event.state.state[k]
   }
 
-  window.location.reload()
+  reset()
+  load(event.state.name)
 }
 
 function route (name, reload = true) {
@@ -43,21 +44,31 @@ function route (name, reload = true) {
     window.history.pushState({ name: name, state: state }, name, url)
   }
 
-  // the application works in a global state, e.g. timers and music may be
-  // playing and there's no way to cancel them before changing page,
-  // therefore we need to reload the page
   if (reload) {
-    // WIP need to stop audio and video playback but timers are clearable
-    clearLoops()
-    clearTimers()
-
-    window.location.reload()
-
-    return
+    reset()
   }
 
   // otherwise load the scene if initial page load or history triggered
   load(name)
+}
+
+function reset () {
+  // clear timers
+  clearLoops()
+  clearTimers()
+
+  // unload audio streams
+  Howler.unload()
+
+  // unload subtitles
+  clearSubtitles(0)
+
+  // unbind events
+  $('body').unbind()
+  $('#container').unbind()
+
+  // clear the console
+  console.clear();
 }
 
 function load (name) {
