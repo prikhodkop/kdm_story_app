@@ -1,14 +1,18 @@
 const { createToc, events_table } = require('./../ui/events')
 const { getSettlementEventPath } = require('./../ui/glossary')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
-const { getSettings, addSettings } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
-const { addLoop, addTimer } = require('./../ui/timer')
+const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 module.exports = class SettlementScene {
   render () {
     document.getElementById('container').innerHTML = render('./partials/settlement.html')
+
+    onSettingsSaved(() => {
+      setTransition(document.title, 'back', getBackTarget(), current_state())
+    })
 
     console.log(sessionStorage)
 
@@ -17,8 +21,6 @@ module.exports = class SettlementScene {
     // var myself = sessionStorage.getItem("target");
     var myself = 'settlement'
     document.title = myself
-
-    window.reload = false
 
     console.log(myself)
 
@@ -270,11 +272,6 @@ module.exports = class SettlementScene {
     //
     //   $(this).toggleClass('active');
     // });
-    addLoop(function () {
-      if (window.reload) {
-        setTransition(document.title, 'back', getBackTarget(), current_state())
-      }
-    }, 100)
 
     function addMilestones () {
       $('#milestones').append($('<div id="milestone-title">Milestones</div>'))

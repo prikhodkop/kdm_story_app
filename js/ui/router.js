@@ -1,4 +1,5 @@
 const { clearLoops, clearTimers } = require('./timer')
+const { onSettingsSaved } = require('./settings')
 
 const isElectron = typeof process !== 'undefined' && process.versions.hasOwnProperty('electron')
 
@@ -69,6 +70,9 @@ function reset () {
 
   // clear the console
   console.clear();
+
+  // clear settings saved callback
+  onSettingsSaved(null)
 }
 
 function load (name) {

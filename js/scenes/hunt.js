@@ -3,14 +3,18 @@ const { clone } = require('./../ui/glossary')
 const { get_sequence } = require('./../ui/hunt_events')
 const { md_to_html_2 } = require('./../ui/hunt_events_table')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
-const { getSettings, addSettings } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
-const { addLoop, addTimer } = require('./../ui/timer')
+const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 module.exports = class HuntScene {
   render () {
     document.getElementById('container').innerHTML = render('./partials/hunt.html')
+
+    onSettingsSaved(() => {
+      setTransition(document.title, 'back', getBackTarget(), current_state())
+    })
 
     var start_delay = 1000
 
@@ -22,13 +26,6 @@ module.exports = class HuntScene {
 
     var myself = 'hunt'
     document.title = myself
-
-    window.reload = false
-    addLoop(function () {
-      if (window.reload) {
-        setTransition(document.title, 'back', getBackTarget(), current_state())
-      }
-    }, 100)
 
     var music = new Howl({
       src: [cdnUrl(events_table[myself].music)],

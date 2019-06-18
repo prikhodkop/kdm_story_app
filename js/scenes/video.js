@@ -3,14 +3,17 @@ const { app } = require('electron').remote
 const { createToc, events_table } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
-const { getSettings, addSettings } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
-const { addLoop } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 module.exports = class VideoScene {
   render () {
     document.getElementById('container').innerHTML = render('./partials/video.html')
+
+    onSettingsSaved(() => {
+      setTransition(document.title, 'back', getBackTarget(), current_state())
+    })
 
     console.log(sessionStorage)
 
@@ -19,8 +22,6 @@ module.exports = class VideoScene {
     var myself = sessionStorage.getItem('target')
     document.title = myself
     // #############
-
-    window.reload = false
 
     var settings = getSettings()
     sessionStorage.setItem('settings', JSON.stringify(settings))
@@ -185,12 +186,6 @@ module.exports = class VideoScene {
         setTransition($(this).attr('target'), 'menu', document.title, current_state())
       }
     })
-
-    addLoop(function () {
-      if (window.reload) {
-        setTransition(document.title, 'back', getBackTarget(), current_state())
-      }
-    }, 100)
 
     function isHidden (el) {
       var style = window.getComputedStyle(el)

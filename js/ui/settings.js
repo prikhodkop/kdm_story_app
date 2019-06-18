@@ -1,12 +1,15 @@
-const { app, getCurrentWindow } = require('electron').remote
+const { app } = require('electron').remote
 
 const { readFile, saveFile, exists } = require('./files')
 const { cdnUrl } = require('./template-renderer')
 const { addTimer } = require('./timer')
 
+let settingsSavedCallback
+
 module.exports = {
   getSettings,
   addSettings,
+  onSettingsSaved,
 }
 
 function getSettings () {
@@ -113,15 +116,15 @@ function saveSettings () {
   // saveFile(JSON.stringify(settings), __dirname + '/settings.json')
   saveFile(JSON.stringify(settings), app.getPath('userData') + '/settings.json')
 
-  // window.reload()
-  if (document.title == 'kingdom death') {
-    getCurrentWindow().reload()
-  } else {
-    window.reload = true
+  if (settingsSavedCallback) {
+    settingsSavedCallback()
   }
 
-  // app.exit(0)
   return settings
+}
+
+function onSettingsSaved(callback = null) {
+  settingsSavedCallback = callback
 }
 
 function createTable (schema, defaults = undefined, level = 0, group = '') {

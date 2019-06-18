@@ -2,14 +2,18 @@ const electron = require('electron')
 
 const { createToc, events_table } = require('./../ui/events')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
-const { getSettings, addSettings } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
-const { addLoop, addTimer } = require('./../ui/timer')
+const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 module.exports = class ImageScene {
   render () {
     document.getElementById('container').innerHTML = render('./partials/image.html')
+
+    onSettingsSaved(() => {
+      setTransition(document.title, 'back', getBackTarget(), current_state())
+    })
 
     console.log(sessionStorage)
 
@@ -18,8 +22,6 @@ module.exports = class ImageScene {
     var myself = sessionStorage.getItem('target')
     document.title = myself
     // #############
-
-    window.reload = false
 
     console.log(myself)
 
@@ -275,12 +277,6 @@ module.exports = class ImageScene {
         setTransition($(this).attr('target'), 'menu', document.title, current_state())
       }
     })
-
-    addLoop(function () {
-      if (window.reload) {
-        setTransition(document.title, 'back', getBackTarget(), current_state())
-      }
-    }, 100)
 
     function current_state () {
       let current_state = new Object()

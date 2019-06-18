@@ -4,7 +4,7 @@ const { createAbout } = require('./../ui/about')
 const { createToc } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton } = require('./../ui/menu')
-const { getSettings, addSettings } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition } = require('./../ui/transition')
@@ -12,6 +12,11 @@ const { setTransition } = require('./../ui/transition')
 module.exports = class IndexScene {
   render () {
     document.getElementById('container').innerHTML = render('./partials/index.html')
+    document.title = 'kingdom death'
+
+    onSettingsSaved(() => {
+      window.location.reload()
+    })
 
     const version = typeof window.globals !== 'undefined' ? window.globals.version : 'dev'
 
