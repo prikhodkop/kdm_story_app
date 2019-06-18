@@ -7,7 +7,7 @@ const isDev = (process.env.npm_lifecycle_script || '').indexOf('development') !=
 module.exports = {
     entry: path.join(__dirname, '/js/interop/main.js'),
     mode: isDev ? 'development' : 'production',
-    devtool: isDev ? 'eval-source-map' : 'none',
+    devtool: isDev ? 'source-map' : 'none',
     output: {
         path: path.join(__dirname, '/dist'),
     },
