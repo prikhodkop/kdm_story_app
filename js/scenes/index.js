@@ -1,4 +1,3 @@
-const electron = require('electron')
 const { app } = require('electron').remote
 
 const { createAbout } = require('./../ui/about')
@@ -22,12 +21,6 @@ module.exports = class IndexScene {
     console.log('Settings:')
     console.log(settings)
     console.log('!!!')
-
-    var screenElectron = electron.screen
-    var mainScreen = screenElectron.getPrimaryDisplay()
-    var dimensions = mainScreen.size
-
-    console.log(dimensions.width + 'x' + dimensions.height)
 
     $('#video').attr('width', '100%')
     $('#video').attr('height', '100%')

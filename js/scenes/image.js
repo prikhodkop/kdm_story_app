@@ -39,37 +39,6 @@ module.exports = class ImageScene {
       $('#label_text').css('left', events_table[myself].lleft)
     }
 
-    let screenElectron = electron.screen
-    let mainScreen = screenElectron.getPrimaryDisplay()
-    let dimensions = mainScreen.size
-
-    $(window).load(function () {
-      let hWide1 = ($('#img_back').outerWidth() / 2) // half the image's width
-      console.log(hWide1)
-      let hTall1 = ($('#img_back').outerHeight()) // half the image's height, etc.
-
-      hWide1 = '-' + Math.floor((dimensions.height / hTall1) * hWide1 / dimensions.width * 100).toString() + '%'
-      console.log(hWide1)
-
-      $('#img_back').css({
-        'margin-left': hWide1,
-        // "margin-top" : hTall
-      })
-
-      let hWide2 = ($('#img').outerWidth() / 2) // half the image's width
-      console.log(hWide2)
-
-      let hTall2 = ($('#img').outerHeight()) // half the image's height, etc.
-      hWide2 = '-' + Math.floor(0.98 * (dimensions.height / hTall2) * hWide2 / dimensions.width * 100).toString() + '%'
-      console.log(hWide2)
-
-      $('#img').css({
-        'margin-left': hWide2,
-        // "top": Math.floor(0.25*(dimensions.height-hTall2)).toString()+'px',
-        // "margin-top" : hTall
-      })
-    })
-
     $('#img_back').hide()
     $('#label_text').hide()
     $('#img').hide()
