@@ -308,6 +308,14 @@ function createReference () {
       value: 'armor sets',
       label: 'Armor Sets',
     },
+    {
+      value: 'innovations',
+      label: 'Innovations',
+    },
+    {
+      value: 'principles',
+      label: 'Principles',
+    },
     ],
     optgroupField: 'class',
     labelField: 'name',

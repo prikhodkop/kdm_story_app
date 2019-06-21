@@ -221,13 +221,13 @@ module.exports = class ImageScene {
 
       // $("#label_text").fadeOut(2000);
       $('#img').fadeIn(4000)
-      // if (!menus_appeared) {
-      //   menus_appeared = true
-      //   setTimeout(function () {
-      //     createSevereTables()
-      //     createReference()
-      //   }, 2000);
-      // };
+      if ((!menus_appeared) && anew) {
+        menus_appeared = true
+        setTimeout(function () {
+          createSevereTables()
+          createReference()
+        }, 2000);
+      };
 
       if (speech.playing()) {
         speech.fade(1.0, 0.0, 2000)
