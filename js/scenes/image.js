@@ -228,12 +228,12 @@ module.exports = class ImageScene {
 
       // $("#label_text").fadeOut(2000);
       $('#img').fadeIn(4000)
-      if (!menus_appeared) {
+      if ((!menus_appeared) && anew) {
         menus_appeared = true
         addTimer(function () {
           createSevereTables()
           createReference()
-        }, 2000)
+        }, 2000);
       };
 
       if (speech.playing()) {

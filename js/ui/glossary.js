@@ -783,6 +783,201 @@ const settlement_locations = {
   'Wet Resin Crafter': {},
 }
 
+const innovations = {
+ 'Albedo': {
+   'expansion': 'gorm',
+   'parent': 'Nigredo',
+ },
+ 'Ammonia': {
+   'parent': 'Language',
+ },
+ 'Aquarobotics': {
+   'expansion': 'sunstalker',
+   'parent': 'Hands of the Sun',
+ },
+ 'Arena': {
+   'expansion': 'dragon king',
+   'parent': 'Nightmare Training',
+   'campaign': 'pots',
+ },
+ 'Bed': {
+   'parent': 'Hovel',
+ },
+ 'Bloodletting': {
+   'parent': 'Ammonia',
+ },
+ 'Bloodline': {
+   'expansion': 'dragon king',
+   'parent': 'Hovel',
+   'campaign': 'pots',
+ },
+ 'Citrinitas': {
+   'expansion': 'gorm',
+   'parent': 'Albedo',
+ },
+ 'Clan of Death': {
+   'parent': 'Family',
+ },
+ 'Cooking': {
+   'parent': 'Lantern Oven',
+ },
+ 'Crimson Candy': {
+   'expansion': 'manhunter',
+ },
+ 'Dark Water Research': {
+   'expansion': 'slenderman',
+ },
+ 'Destiny': {},
+ 'Dragon Speech': {
+   'expansion': 'dragon king',
+   'campaign': 'pots',
+ },
+ 'Drums': {
+   'parent': 'Language',
+ },
+ 'Empire': {
+   'expansion': 'dragon king',
+   'parent': 'Bloodline',
+   'campaign': 'pots',
+ },
+ 'Face Painting': {
+   'parent': 'Paint',
+ },
+ 'Family': {
+   'parent': 'Hovel',
+ },
+ 'Filleting Table': {
+   'expansion': 'science',
+ },
+ 'Final Fightning Art': {},
+ 'Forbidden Dance': {
+   'parent': 'Drums',
+ },
+ 'Guidepost': {},
+ 'Hands of the Sun': {
+   'expansion': 'sunstalker',
+ },
+ 'Heart Flute': {
+   'parent': 'Forbidden Dance',
+ },
+ 'Hovel': {
+   'parent': 'Language',
+ },
+ 'Inner Lantern': {
+   'parent': 'Language',
+ },
+ 'Language': {},
+ 'Lantern Oven': {
+   'parent': 'Lantern Oven',
+ },
+ 'Momento Mori': {
+   'parent': 'Pictograph',
+ },
+ 'Nightmare Training': {
+   'parent': 'Nightmare Training',
+ },
+ 'Nigredo': {
+   'expansion': 'gorm',
+ },
+ 'Paint': {
+   'parent': 'Language',
+ },
+ 'Partnership': {
+   'parent': 'Hovel',
+ },
+ 'Pictograph': {
+   'parent': 'Paint',
+ },
+ 'Pottery': {
+   'parent': 'Sculpture',
+ },
+ 'Radiating Orb': {
+   'expansion': 'dragon king',
+   'campaign': 'pots',
+ },
+ 'Records': {
+   'parent': 'Storytelling',
+ },
+ 'Round Stone Training': {
+   'expansion': 'dung beetle knight',
+   'parent': 'Nightmare Training',
+ },
+ 'Rubedo': {
+   'expansion': 'gorm',
+   'parent': 'Citrinitas',
+ },
+ 'Sacrifice': {
+   'parent': 'Shrine',
+ },
+ 'Saga': {
+   'parent': 'Song of the Brave',
+ },
+ 'Sauna Shrine': {
+   'expansion': 'sunstalker',
+   'parent': 'Hands of the Sun',
+ },
+ 'Scarification': {
+   'parent': 'Inner Lantern',
+ },
+ 'Scrap Smelting': {
+   'parent': 'Lantern Oven',
+ },
+ 'Scupture': {
+   'parent': 'Paint',
+ },
+ 'Settlement Watch': {
+   'expansion': 'manhunter',
+   'parent': 'Hovel',
+ },
+ 'Shadow Dancing': {
+   'expansion': 'shadow dancing',
+   'parent': 'Hovel',
+ },
+ 'Shrine': {
+   'parent': 'Inner Lantern',
+ },
+ 'Song of the Brave': {
+   'parent': 'Drums',
+ },
+ 'Stoic Statue': {
+   'expansion': 'lion knight',
+ },
+ 'Storytelling': {
+   'parent': 'Symposium',
+ },
+ 'Subterranean Agriculture': {
+   'expansion': 'dung beetle knight',
+ },
+ 'Sun Language': {
+   'expansion': 'sunstalker',
+ },
+ 'Symposium': {
+   'parent': 'Language',
+ },
+ 'The Knowedge Worm': {
+   'expansion': 'lion god',
+ },
+ 'Ultimate Weapon': {},
+ 'Umbilical Bank': {
+   'expansion': 'sunstalker',
+ },
+ 'War Room': {
+   'expansion': 'manhunter',
+   'parent': 'Storytelling',
+ }
+}
+
+const principles = {
+  'Principle Accept Darkness': {},
+  'Principle Barbaric': {},
+  'Principle Cannibalize': {},
+  'Principle Collective Toil': {},
+  'Principle Graves': {},
+  'Principle Protect the Young': {},
+  'Principle Romantic': {},
+  'Principle Survival of the Fittest': {}
+}
+
 const armor_sets = {
   'Brawler Armor': {},
   'Cycloid Scale Armor': {},
@@ -846,6 +1041,8 @@ function get_all_options () {
   options = options.concat(get_options(settlement_locations, 'settlement locations'))
   options = options.concat(get_options(armor_sets, 'armor sets'))
   options = options.concat(get_options(survivor_statuses, 'survivor statuses'))
+  options = options.concat(get_options(innovations, 'innovations'))
+  options = options.concat(get_options(principles, 'principles'))
   // $.get( "files.php", function( data ) {
   //   console.log('Here...')
   //   console.log(data)
@@ -918,6 +1115,12 @@ function get_representation (word) {
   } else if (word in survivor_statuses) {
     // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
     return '<img id=reference-image style="width:75%;border: 2px solid #555;" src="' + cdnUrl('images/reference/Survivor Statuses/' + word + '.jpg') + '"/>'
+  } else if (word in innovations) {
+    // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
+    return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="' + cdnUrl('images/reference/Innovations/' + word + '.jpg') + '"/>'
+  }  else if (word in principles) {
+    // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
+    return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="' + cdnUrl('images/reference/Innovations/' + word + '.jpg') + '"/>'
   }
 }
 
