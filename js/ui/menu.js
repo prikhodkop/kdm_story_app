@@ -423,6 +423,7 @@ function createReference () {
   //
   // });
 
+
   $(document).on('click', 'div.selectize-input div.item', function (e) {
     let name = $(this).text().slice(0, -1)
     console.log(name)

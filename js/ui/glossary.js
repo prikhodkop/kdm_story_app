@@ -390,7 +390,7 @@ const fightning_arts_text = {
     'expansion': 'sunstalker',
   },
   'Double Dash': {},
-  'Etheral Pact': {
+  'Ethereal Pact': {
     'expansion': 'echoes of death',
     'type': 'strain',
   },
@@ -682,6 +682,9 @@ const secret_fightning_arts_text = {
   'Kings Step': {},
   'Legendary Lungs': {},
   'Lucernaes Lantern': {},
+  'Necromancer': {
+    'expansion': 'lion god',
+  },
   'Red Fist': {},
   'Scholar of Death': {},
   // 'Silk Surgeon': {
@@ -1084,7 +1087,11 @@ function get_representation (word) {
     }
   } else if (word in secret_fightning_arts_text) {
     if (settings['card design']['fighting arts'] == 'Poots') {
-      return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="images/reference/Fighting Arts/' + word + '.jpg"/>'
+      let result = '<img id=reference-image style="width:75%;border: 1px solid #333;" src="images/reference/Fighting Arts/' + word + '.jpg"/>'
+      if (word == 'Necromancer') {
+        result = result + '<img id=reference-image style="width:75%;border: 1px solid #333;" src="images/reference/Fighting Arts/' + word + '_back.jpg"/>'
+      }
+      return result
     } else if (settings['card design']['fighting arts'] == 'Fen Small') {
       return '<img id=reference-image style="width:75%" src="images/reference/Fighting Arts_fen/' + word + '.png"/>'
     }
