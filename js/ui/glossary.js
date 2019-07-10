@@ -427,7 +427,7 @@ const fightning_arts_text = {
   'Mighty Strike': {},
   'Monster Claw Style': {},
   'Orator of Death': {},
-  'Otherworldly Luck': {
+  'Otherworldly Luck': {  
     'expansion': 'flower knight'
   },
   'Phantom Friend': {
