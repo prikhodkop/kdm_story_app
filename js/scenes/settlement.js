@@ -3,6 +3,7 @@ const { getSettlementEventPath } = require('./../ui/glossary')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings } = require('./../ui/settings')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
+const { addDevelopment } = require('./../ui/development')
 
 module.exports = class SettlementScene {
   constructor () {
@@ -84,6 +85,7 @@ module.exports = class SettlementScene {
     createReference()
     addSettings(settings)
     addMilestones()
+    // addDevelopment()
 
     // MUTE BUTTON SETUP
     // $("#mute.button").click(function () {
