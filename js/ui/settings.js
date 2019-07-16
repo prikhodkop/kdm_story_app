@@ -344,6 +344,7 @@ var settings_schema = {
         'default': 'Disabled',
         'enum': [
           'Disabled',
+          'Cards only',
         ],
       },
       'gorm': {
@@ -403,6 +404,7 @@ var settings_schema = {
         'default': 'Disabled',
         'enum': [
           'Disabled',
+          'Cards only',
         ],
       },
       'sunstalker': {

@@ -7,6 +7,7 @@ const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings'
 const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
+const { addDevelopment } = require('./../ui/development')
 
 module.exports = class SettlementScene {
   render () {
@@ -92,6 +93,7 @@ module.exports = class SettlementScene {
     createReference()
     addSettings(settings)
     addMilestones()
+    // addDevelopment()
 
     // MUTE BUTTON SETUP
     // $("#mute.button").click(function () {

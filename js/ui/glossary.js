@@ -405,9 +405,9 @@ const fightning_arts_text = {
     'expansion': 'echoes of death',
     'type': 'strain',
   },
-  // 'Harvestman': {
-  //   'expansion': 'spidicules'
-  // },
+  'Harvestman': {
+    'expansion': 'spidicules'
+  },
   'Headliner': {
     'expansion': 'lion knight',
   },
@@ -429,9 +429,9 @@ const fightning_arts_text = {
   'Mighty Strike': {},
   'Monster Claw Style': {},
   'Orator of Death': {},
-  // 'Otherworldly Luck': {
-  //   'expansion': 'flower knight'
-  // },
+  'Otherworldly Luck': {  
+    'expansion': 'flower knight'
+  },
   'Phantom Friend': {
     'expansion': 'slenderman',
   },
@@ -476,9 +476,9 @@ const fightning_arts_text = {
   'Unrelenting': {
     'expansion': 'lion god',
   },
-  // 'Vengeance': {
-  //   'expansion': 'spidicules'
-  // },
+  'Vengeance': {
+    'expansion': 'spidicules'
+  },
   'Wardrobe Expert': {
     'expansion': 'lion knight',
   },
@@ -541,9 +541,9 @@ const disorders_text = {
     'expansion': 'dragon king',
   },
   'Binge Eating': {},
-  // 'Controlophobia': {
-  //   'expansion': 'spidicules'
-  // },
+  'Controlophobia': {
+    'expansion': 'spidicules'
+  },
   'Coprolalia': {},
   'Delicious': {
     'expansion': 'lion god',
@@ -578,9 +578,9 @@ const disorders_text = {
   'Motion Sickness': {
     'expansion': 'dung beetle knight',
   },
-  // 'Narcissistic': {
-  //   'expansion': 'flower knight'
-  // },
+  'Narcissistic': {
+    'expansion': 'flower knight'
+  },
   'Overprotective': {
     'expansion': 'sunstalker',
   },
@@ -594,9 +594,9 @@ const disorders_text = {
   },
   'Quixotic': {},
   'Rageholic': {},
-  // 'Revenge': {
-  //   'expansion': 'spidicules'
-  // },
+  'Revenge': {
+    'expansion': 'spidicules'
+  },
   'Secretive': {},
   'Seizures': {},
   'Shallow Lungs': {
@@ -618,10 +618,10 @@ const disorders_text = {
   'Superstitious': {
     'expansion': 'dragon king',
   },
-  // 'Sworn Enemy': {},
-  // 'Tiny Arachnophobia': {
-  //   'expansion': 'spidicules'
-  // },
+  'Sworn Enemy': {},
+  'Tiny Arachnophobia': {
+    'expansion': 'spidicules'
+  },
   'Traumatized': {},
   'Tunnel Vision': {
     'expansion': 'lion god',
@@ -637,9 +637,9 @@ const disorders_text = {
 }
 
 const secret_fightning_arts_text = {
-  // 'Acanthus Doctor': {
-  //   'expansion': 'flower knight'
-  // },
+  'Acanthus Doctor': {
+    'expansion': 'flower knight'
+  },
   'Ageless Apprentice': {
     'expansion': 'lion knight',
   },
@@ -666,9 +666,9 @@ const secret_fightning_arts_text = {
   'Eternal Will': {
     'expansion': 'manhunter',
   },
-  // 'Fencing': {
-  //   'expansion': 'flower knight'
-  // },
+  'Fencing': {
+    'expansion': 'flower knight'
+  },
   'Frozen Star': {
     'expansion': 'dragon king',
     'type': 'dragon trait',
@@ -689,9 +689,9 @@ const secret_fightning_arts_text = {
   },
   'Red Fist': {},
   'Scholar of Death': {},
-  // 'Silk Surgeon': {
-  //   'expansion': 'spidicules'
-  // },
+  'Silk Surgeon': {
+    'expansion': 'spidicules'
+  },
   'Sun Eater': {
     'expansion': 'sunstalker',
   },
@@ -700,9 +700,9 @@ const secret_fightning_arts_text = {
   },
   'Swordsmans Promise': {},
   'Synchronised Strike': {},
-  // 'True Blade': {
-  //   'expansion': 'flower knight'
-  // },
+  'True Blade': {
+    'expansion': 'flower knight'
+  },
   'Zero Prescence': {},
 }
 
@@ -753,6 +753,12 @@ const settlement_events = {
   },
   'Plague': {},
   'Rivalry': {},
+  'Season of the Spiderling': {
+    'expansion': 'spidicules',
+  },
+  'Silk Storm': {
+    'expansion': 'spidicules',
+  },
   'Skull Eater': {},
   'Slender Blight': {
     'expansion': 'slenderman',
@@ -771,12 +777,14 @@ const settlement_locations = {
   'Exhausted Lantern Hoard': {},
   'Gormchymist': {},
   'Gormery': {},
+  'Inspired Crafting': {},
   'Lantern Hoard': {},
   'Leather Worker': {},
   'Mask Maker': {},
   'Organ Grinder': {},
   'Plumery': {},
   'Sacreed Pool': {},
+  'Silk Mill': {},
   'Skinnery': {},
   'Skyreef Sanctuary': {},
   'Stone Circle': {},
@@ -817,6 +825,16 @@ const innovations = {
  'Citrinitas': {
    'expansion': 'gorm',
    'parent': 'Albedo',
+ },
+ 'Choreia': {
+   'expansion': 'spidicules',
+   'parent': 'Forbidden Dance',
+ },
+ 'Legless Ball': {
+   'expansion': 'spidicules',
+ },
+ 'Silk-Refining': {
+   'expansion': 'spidicules',
  },
  'Clan of Death': {
    'parent': 'Family',
@@ -887,6 +905,10 @@ const innovations = {
  },
  'Partnership': {
    'parent': 'Hovel',
+ },
+ 'Petal Spiral': {
+   'expansion': 'flower knight',
+   'parent': 'Forbidden Dance',
  },
  'Pictograph': {
    'parent': 'Paint',
@@ -987,12 +1009,14 @@ const armor_sets = {
   'Dancer Armor': {},
   'Dragon Armor': {},
   'Gorment Armor': {},
+  'Green Armor': {},
   'Lantern Armor': {},
   'Leather Armor': {},
   'Phoenix Armor': {},
   'Rawhide Armor': {},
   'Rolling Armor': {},
   'Screamin Armor': {},
+  'Silk Armor': {},
   'Vagabond Armor': {},
   'Warlord Armor': {},
   'White Lion Armor': {},
