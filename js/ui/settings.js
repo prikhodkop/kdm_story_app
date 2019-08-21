@@ -369,10 +369,7 @@ var settings_schema = {
         'type': 'option',
         'title': 'Lion Knight',
         'default': 'Disabled',
-        'enum': [
-          'Disabled',
-          'Cards only',
-        ],
+        'enum': expansion_options,
       },
       'lonely tree': {
         'type': 'option',

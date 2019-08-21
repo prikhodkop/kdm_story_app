@@ -19,7 +19,7 @@ const events = {
     'table': 1,
     'type': 'settlement',
     'label': 'Settlement',
-    'music': 'music/white secret.mp3',
+    'music': 'music/settlement.mp3',
     'music_delay': '2000',
     'speech': 'audio/speech/en/settlement.mp3',
   },
@@ -128,6 +128,8 @@ const events = {
   },
   'phoenix feather': {
     'music': 'music/legendary monsters.mp3',
+    'ltop': '85%',
+    'lleft': '75%',
   },
   'principle conviction': {
     'music': 'music/principle.mp3',
@@ -151,6 +153,8 @@ const events = {
   },
   'first story': {
     // 'music_delay': 'speech-1000',
+    'music': 'music/first story.mp3',
+    'music_delay': 'speech+1000',
   },
   'regal visit': {
     'music': 'music/regal visit.mp3',
@@ -277,6 +281,44 @@ const events = {
     'music': 'music/showdown butcher.mp3',
     'ltop': '5%',
     'lleft': '55%',
+  },
+  'an uninvited guest': {
+    'expansion': 'lion knight',
+    'music': 'music/lion knight enter.mp3',
+    'music_delay': 'speech-2000',
+    'ltop': '10%',
+    'lleft': '66%',
+  },
+  // 'finale': {
+  //   'expansion': 'lion knight',
+  //   // 'music': 'music/showdown butcher.mp3',
+  //   // 'ltop': '5%',
+  //   // 'lleft': '55%',
+  // },
+  // 'intermission': {
+  //   'expansion': 'lion knight',
+  //   // 'music': 'music/showdown butcher.mp3',
+  //   // 'ltop': '5%',
+  //   // 'lleft': '55%',
+  // },
+  'places, everyone!': {
+    'expansion': 'lion knight',
+    'music': 'music/lion knight main.mp3',
+    'ltop': '33%',
+    'lleft': '37%',
+  },
+  'showdown lion knight': {
+    'expansion': 'lion knight',
+    'music': 'music/lion knight showdown.mp3',
+    'ltop': '10%',
+    'lleft': '66%',
+  },
+  'strange caravan': {
+    'expansion': 'lion knight',
+    'music': 'music/lion knight main.mp3',
+    'music_delay': 'speech-1000',
+    'ltop': '15%',
+    'lleft': '40%',
   },
 }
 

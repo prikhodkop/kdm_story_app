@@ -1,5 +1,6 @@
 const HuntScene = require('../scenes/hunt')
 const ImageScene = require('../scenes/image')
+const FinaleScene = require('../scenes/finale')
 const IndexScene = require('../scenes')
 const SettlementScene = require('../scenes/settlement')
 const VideoScene = require('../scenes/video')
@@ -11,6 +12,7 @@ let scene
 switch (name.toLowerCase()) {
   case 'hunt': scene = HuntScene; break
   case 'image': scene = ImageScene; break
+  case 'finale': scene = FinaleScene; break
   case 'index': scene = IndexScene; break
   case 'settlement': scene = SettlementScene; break
   case 'video': scene = VideoScene; break

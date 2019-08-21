@@ -427,7 +427,7 @@ const fightning_arts_text = {
   'Mighty Strike': {},
   'Monster Claw Style': {},
   'Orator of Death': {},
-  'Otherworldly Luck': {  
+  'Otherworldly Luck': {
     'expansion': 'flower knight'
   },
   'Phantom Friend': {
@@ -1089,7 +1089,7 @@ function get_representation (word) {
     let terms_with_pics = ['Attack', 'Collision', 'Hunt Phase', 'Settlement Phase', 'Survival', 'Knocked Down (Monster)', 'Knocked Down (Survivor)']
 
     if (terms_with_pics.includes(word)) {
-      result = result + '<br/><img id=reference-image src="images/reference/Terms/' + word + '.jpg"/>'
+      result = result + '<br/><img id=reference-image src="images/reference/terms/' + word + '.jpg"/>'
     }
 
     let weapons = ['Axe', 'Bow', 'Club', 'Dagger', 'Fist & Tooth', 'Grand Weapon', 'Katana', 'Katar', 'Scythe', 'Shield', 'Spear', 'Sword', 'Twilight Sword', 'Whip', 'Thrown']

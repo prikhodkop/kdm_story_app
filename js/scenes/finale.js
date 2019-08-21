@@ -4,7 +4,7 @@ const { createMenuButton, createReference, createSevereTables } = require('./../
 const { getSettings, addSettings } = require('./../ui/settings')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
-module.exports = class ImageScene {
+module.exports = class FinaleScene {
   constructor () {
     console.log(sessionStorage)
 
@@ -178,11 +178,11 @@ module.exports = class ImageScene {
 
         if (mute_narration) {
           duration = 2000
-          // delay = 1000
+          delay = 1000
         }
         if (myself == 'first story') {
           duration = 4000
-          // delay = parseInt(events_table[myself].music_delay, 10)
+          delay = 1000
           $('.srt').text('Open rule book on page 22 and follow the instructions.')
           $('.srt').fadeIn(2000)
           setTimeout(function () { $('.srt').fadeOut(1000) }, 3000)
