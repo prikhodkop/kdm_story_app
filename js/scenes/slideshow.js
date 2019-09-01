@@ -14,62 +14,35 @@ module.exports = class FinaleScene {
     document.title = myself
     // #############
 
-    window.reload = false
+    window.reload = false // global variable needed to detected when settings are changed and window needs to be reloaded
 
     console.log(myself)
+
+    // Hide all elements at start!!
+    $('#container').children().hide()
+
+    createMenuButton()
+    createToc()
+    addSettings(settings)
 
     // let settings = JSON.parse(sessionStorage.getItem("settings"));
     var settings = getSettings()
     sessionStorage.setItem('settings', JSON.stringify(settings))
 
-    $('#img_back').attr('src', 'images/' + myself + '/back.jpg')
-
-    if ((myself == 'white speaker') && (settings['whiteboxes']['white speaker'] == 'Enabled')) {
-      $('#img').attr('src', 'images/' + myself + '/img_wb.jpg')
-    } else if ((myself == 'hooded knight') && (settings['whiteboxes']['allison the twilight knight'] == 'Enabled')) {
-      $('#img').attr('src', 'images/' + myself + '/img_wb.jpg')
-    } else {
-      $('#img').attr('src', 'images/' + myself + '/img.jpg')
-    }
-
-    if (!events_table[myself].hide_label) {
-      $('#label_text').addClass(myself.replace(' ', '_'))
-      $('#label_text').text(events_table[myself].label)
-      $('#label_text').css('top', events_table[myself].ltop)
-      $('#label_text').css('left', events_table[myself].lleft)
-    }
-
-    $('#img_back').hide()
-    $('#label_text').hide()
-    $('#img').hide()
-    $('#menu').hide()
-
-    var start_delay = 1000 // delay before speech playing starts
-    var music_volume = 0.8 // music volume
-
-    var speech = new Howl({
-      src: [events_table[myself].speech],
-      volume: 1.0,
-    })
-
+    // Set constants!!
     if ((events_table[myself].speech == '') || (settings['narration'] == 'Off')) {
       var mute_narration = true
     } else {
       var mute_narration = false
     };
 
-    var music = new Howl({
-      src: [events_table[myself].music],
-      loop: true,
-      volume: music_volume,
-    })
+    if (settings['music'] == 'Off') {
+      var mute_music = true
+    } else {
+      var mute_music = false
+    };
 
-    console.log('Music to play ' + events_table[myself].music)
-
-    createMenuButton()
-    createToc()
-    addSettings(settings)
-
+    // Load window state
     var state = sessionStorage.getItem(myself)
     var transition = sessionStorage.getItem('transition')
     var back_target = sessionStorage.getItem('back_target')
@@ -83,20 +56,92 @@ module.exports = class FinaleScene {
     console.log('State:')
     console.log(state)
 
-    var anew = true
+    var music = new Howl({
+      src: [events_table[myself].music],
+      loop: true,
+      volume: music_volume,
+    });
 
-    if (myself == 'first story') {
-      $('#img_back').delay(2000).fadeIn(4000)
-    } else {
-      $('#img_back').fadeIn(4000)
-    }
-
-    if (settings['music'] == 'Off') {
+    if (mute_music) {
       music.mute(true)
     }
+
+    console.log('Music to play ' + events_table[myself].music)
+
+    var slide_shown_event = new Event('slides_shown');
+
+    elem.addEventListener('slides_shown', function (e) { end_state(e) }, false);
+
+    if ((transition == 'back') && !(state == null)) {
+      var anew = false;
+
+      console.log('State loaded successfully!')
+      state = JSON.parse(state)
+      console.log(state)
+
+      back_target = state.back_target;
+
+      elem.dispatchEvent(slide_shown_event);
+
+    } else {
+        var anew = true;
+
+        init_state();
+
+    };
+
+
+
+    function init_state() {
+      // start the slide show (on image_back - element) + play speech
+      // if mouse click on the image_back - sends 'slides_shown' event to show end state
+      // music plays from the start - initialized globally ???
+
+      // All slides are expexted to be named _i where i starts from 1 to number_of_slides
+      var number_of_slides = events_table[myself].number_of_slides
+
+      let current_slide = 1;
+
+      while (current_slide <= number_of_slides) {
+        var speech = new Howl({
+          src: [events_table[myself].speech+'_'+current_slide+'.mp3'],
+          volume: 1.0,
+        })
+
+        speech.on('load', function () {
+
+        })
+      }
+
+
+
+
+    };
+
+    function end_state(e=null) {
+      // initiates after 'slides_shown' event
+      // the event is shown if action happened during init or windows is opened from back action
+      // shows final picture and injuries/reference
+    };
+
     if (mute_narration) {
       speech.mute(true)
     }
+
+    // var start_delay = 1000 // delay before speech playing starts
+    // var music_volume = 0.8 // music volume
+    //
+    // var speech = new Howl({
+    //   src: [events_table[myself].speech],
+    //   volume: 1.0,
+    // })
+
+
+
+
+
+
+
 
     if ((transition == 'back') && !(state == null)) {
       console.log('State loaded successfully!')
@@ -106,55 +151,36 @@ module.exports = class FinaleScene {
       back_target = state.back_target
       var action = state.action
 
-      if (!state.img_hidden) {
+      // when returning through back transition we always skip the slides!
+      if (true) {
         anew = false
 
-        $('#label_text').fadeIn(4000)
-        $('#img').delay(4000).fadeIn(2000)
+        show_slides(number_of_slides, number_of_slides, play=false)
 
         if (!menus_appeared) {
           menus_appeared = true
           setTimeout(function () {
             createSevereTables()
             createReference()
-          }, 4000)
+          }, 2000)
         };
 
-        speech.seek(state.speech_position)
-
-        if (state.speech_playing) {
-          speech.volume(0.0)
-          speech.play()
-          speech.fade(0.0, 1.0, 500)
-        }
-
-        music.seek(state.music_position)
-
-        if (state.music_playing) {
-          music.volume(0.0)
-          music.play()
-          music.fade(0.0, music_volume, 500)
-        }
+        // music.seek(state.music_position)
+        music.volume(0.0)
+        music.play()
+        music.fade(0.0, music_volume, 500)
       }
     } else {
       console.log('No initialized state!')
       var action = 'false' // flag to show if user clicked on #img_back
     };
 
-    if ((back_target == null) || (back_target == 'null') || (back_target == 'undefined')) {
-      $('#back_button').hide()
-    } else {
-      $('#back_button').hide()
-      $('#back_button').html('<svg class="back_button__icon" enable-background="new 0 0 492 492" version="1.1" viewBox="0 0 492 492" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m464.34 207.42l0.768 0.168h-329.22l103.5-103.72c5.068-5.064 7.848-11.924 7.848-19.124s-2.78-14.012-7.848-19.088l-16.104-16.112c-5.064-5.064-11.812-7.864-19.008-7.864-7.2 0-13.952 2.78-19.016 7.844l-177.41 177.4c-5.084 5.084-7.864 11.856-7.844 19.06-0.02 7.244 2.76 14.02 7.844 19.096l177.41 177.41c5.064 5.06 11.812 7.844 19.016 7.844 7.196 0 13.944-2.788 19.008-7.844l16.104-16.112c5.068-5.056 7.848-11.808 7.848-19.008 0-7.196-2.78-13.592-7.848-18.652l-104.66-104.3h329.99c14.828 0 27.288-12.78 27.288-27.6v-22.788c0-14.82-12.828-26.6-27.656-26.6z"></path></svg><span class="back_button__text">' + events_table[back_target].label + '</span>')
-      $('#back_button').delay(500).fadeIn(1000)
-    }
-
     var menus_appeared = false
 
     // SET UP EVENT START IF IT HAS NO INITIALIZED STATE
     // #############
     if (anew) {
-      $('#label_text').delay(3000).fadeIn(2000)
+      show_slides(number_of_slides, number_of_slides)
 
       speech.on('load', function () {
         var duration = speech.duration() * 1000
@@ -196,14 +222,14 @@ module.exports = class FinaleScene {
 
         setTimeout(function () {
           if (action == 'false') {
-            $('#img').fadeIn(4000)
+            $('#img').fadeIn(2000)
             action = 'true'
             if (!menus_appeared) {
               menus_appeared = true
               setTimeout(function () {
                 createSevereTables()
                 createReference()
-              }, 5000);
+              }, 3000);
             };
           }
         }, start_delay + duration + 3000)
@@ -220,7 +246,7 @@ module.exports = class FinaleScene {
       action = 'true'
 
       // $("#label_text").fadeOut(2000);
-      $('#img').fadeIn(4000)
+      $('#img').fadeIn(2000)
       if ((!menus_appeared) && anew) {
         menus_appeared = true
         setTimeout(function () {
@@ -238,23 +264,17 @@ module.exports = class FinaleScene {
     })
 
     $('#img').click(function () {
-      $('#label_text').delay(3000).fadeIn(2000)
-      $('#img').fadeOut(4000)
+      $('#label_text').delay(1500).fadeIn(2000)
+      $('#img').fadeOut(2000)
     })
 
-    // $("#mute.button").click(function () {
-    //   if (!$(this).hasClass('active')) {
-    //     music.mute(true);
-    //     speech.mute(true);
-    //     sessionStorage.setItem("Mute", "On");
-    //   } else {
-    //     speech.mute(false);
-    //     music.mute(false);
-    //     sessionStorage.setItem("Mute", "Off");
-    //   };
-    //
-    //   $(this).toggleClass('active');
-    // });
+    if ((back_target == null) || (back_target == 'null') || (back_target == 'undefined')) {
+      $('#back_button').hide()
+    } else {
+      $('#back_button').hide()
+      $('#back_button').html('<svg class="back_button__icon" enable-background="new 0 0 492 492" version="1.1" viewBox="0 0 492 492" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m464.34 207.42l0.768 0.168h-329.22l103.5-103.72c5.068-5.064 7.848-11.924 7.848-19.124s-2.78-14.012-7.848-19.088l-16.104-16.112c-5.064-5.064-11.812-7.864-19.008-7.864-7.2 0-13.952 2.78-19.016 7.844l-177.41 177.4c-5.084 5.084-7.864 11.856-7.844 19.06-0.02 7.244 2.76 14.02 7.844 19.096l177.41 177.41c5.064 5.06 11.812 7.844 19.016 7.844 7.196 0 13.944-2.788 19.008-7.844l16.104-16.112c5.068-5.056 7.848-11.808 7.848-19.008 0-7.196-2.78-13.592-7.848-18.652l-104.66-104.3h329.99c14.828 0 27.288-12.78 27.288-27.6v-22.788c0-14.82-12.828-26.6-27.656-26.6z"></path></svg><span class="back_button__text">' + events_table[back_target].label + '</span>')
+      $('#back_button').delay(500).fadeIn(1000)
+    }
 
     $('body').on('click', '#back_button', function () {
       let back_target = getBackBackTarget()
@@ -276,6 +296,16 @@ module.exports = class FinaleScene {
         setTransition(document.title, 'back', getBackTarget(), current_state())
       }
     }, 100)
+
+    function show_slides (start, finish, play=true) {
+      $("#link").click(function() {
+
+        $("#image").fadeTo(1000,0.30, function() {
+            $("#image").attr("src",$("#link").attr("href"));
+        }).fadeTo(500,1);
+        return false;
+      });
+    }
 
     function current_state () {
       let current_state = new Object()

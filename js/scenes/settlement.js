@@ -279,8 +279,10 @@ module.exports = class SettlementScene {
       $('#milestones').append($('<div id="milestone">&bull; First child is born - <a id="milestone-trigger" target="principle new life">Principle: New Life</a></div>'))
       $('#milestones').append($('<div id="milestone">&bull; First time death cound is updated - <a id="milestone-trigger" target="principle death">Principle: Death</a></div>'))
       $('#milestones').append($('<div id="milestone">&bull; Population reaches 15 - <a id="milestone-trigger" target="principle society">Principle: Society</a></div>'))
-      $('#milestones').append($('<div id="milestone">&bull; Settlement has 5 innovations - <a id="milestone-trigger" target="hooded knight">Hooded Knight</a></div>'))
       $('#milestones').append($('<div id="milestone">&bull; Lantern Year 12 - <a id="milestone-trigger" target="principle conviction">Principle: Conviction</a></div>'))
+      if (settings['campaign'] == 'Lantern') {
+        $('#milestones').append($('<div id="milestone">&bull; Settlement has 5 innovations - <a id="milestone-trigger" target="hooded knight">Hooded Knight</a></div>'))
+      }
 
       $('body').on('click', '#milestone-trigger', function () {
         setTransition($(this).attr('target'), 'menu', document.title, current_state())
