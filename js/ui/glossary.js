@@ -776,29 +776,156 @@ const settlement_events = {
 }
 
 const settlement_locations = {
-  'Barber Surgeon': {},
-  'Blacksmith': {},
-  'Bone Smith': {},
-  'Catarium': {},
-  'Dragon Armory': {},
-  'Exhausted Lantern Hoard': {},
-  'Gormchymist': {},
-  'Gormery': {},
-  'Inspired Crafting': {},
-  'Lantern Hoard': {},
-  'Leather Worker': {},
-  'Mask Maker': {},
-  'Organ Grinder': {},
-  'Plumery': {},
-  'Sacreed Pool': {},
-  'Silk Mill': {},
-  'Skinnery': {},
-  'Skyreef Sanctuary': {},
-  'Stone Circle': {},
-  'The Sun': {},
-  'Throne': {},
-  'Weapon Crafter': {},
-  'Wet Resin Crafter': {},
+  'Barber Surgeon': {
+    'gear': {
+      '1': ['First Aid Kit', 'Brain Mint', 'Elder Earrings', 'Musk Bomb'],
+      '2': ['Scavenger Kit', 'Bug Trap', 'Speed Powder', 'Almanac'],
+      '3': []},
+  },
+  'Blacksmith': {
+    'gear': {
+      '1': ['Lantern Sword', 'Lantern Dagger', 'Lantern Glaive', 'Dragon Slayer', 'Perfect Slayer'],
+      '2': ['Lantern Helm', 'Lantern Gauntlets', 'Lantern Cuirass', 'Lantern Mail', 'Lantern Greaves'],
+      '3': ['Scrap Shield', 'Beacon Shield', 'Ring Whip']},
+  },
+  'Bone Smith': {
+    'gear': {
+      '1': ['Bone Dagger', 'Bone Blade', 'Bone Axe'],
+      '2': ['Bone Darts', 'Bone Club', 'Skull Helm'],
+      '3': ['Bone Pickaxe', 'Bone Sickle']},
+  },
+  'Catarium': {
+    'gear': {
+      '1': ['Lion Beast Katar', 'Claw Head Arrow', 'King Spear', 'Cat Gut Bow', 'Cat Fang Knife'],
+      '2': ['White Lion Helm', 'White Lion Gauntlet', 'White Lion Coat', 'White Lion Skirt', 'White Lion Boots'],
+      '3': ['Cat Eye Circlet', 'Whisker Harp', 'Lion Headdress', 'Lion Skin Cloak', 'Frenzy Drink']},
+  },
+  'Dragon Armory': {
+    'expansion': 'dragon king',
+    'gear': {
+      '1': ['Dragon Chakram', 'Dragon Bite Bolt', 'Talon Knife', 'Nuclear Knife', 'Red Power Core'],
+      '2': ['Dragonskull Helm', 'Dragon Gloves', 'Dragon Mantle', 'Dragon Belt', 'Dragon Boots'],
+      '3': ['Blast Shield', 'Shielded Quiver', 'Blast Sword', 'Nuclear Scythe', 'Blue Power Core']},
+  },
+  'Exhausted Lantern Hoard': {
+    'campaign': 'Lantern',
+    'gear': {
+      '1': [],
+      '2': ['Survivors Lantern'],
+      '3': []},
+  },
+  'Gormchymist': {
+    'expansion': 'gorm',
+    'gear': {
+      '1': [],
+      '2': ['Healing Potion', 'Wisdom Potion', 'Steadfast Potion','Power Potion', 'Life Elixir'],
+      '3': []},
+  },
+  'Gormery': {
+    'expansion': 'gorm',
+    'gear': {
+      '1': ['Rib Blade', 'Knuckle Shield', 'Gaxe', 'Greater Gaxe', 'Riot Mace'],
+      '2': ['Gorment Mask', 'Gorment Sleeves', 'Gorment Suit', 'Gorment Boots', 'Regeneration Suit'],
+      '3': ['Pulse Lantern', 'Gorn', 'Armor Spikes', 'Acid Tooth Dagger', 'Black Sword']},
+  },
+  'Inspired Crafting': {
+    'expansion': 'flower knight',
+    'gear': {
+      '1': ['Vespertine Satchel', 'Vespertine Foil', 'Vespertine Cello'],
+      '2': ['Vespertine Arrow', 'Vespertine Bow'],
+      '3': []},
+  },
+  'Lantern Hoard': {
+    'campaign': 'Lantern',
+    'gear': {
+      '1': [],
+      '2': [],
+      '3': []},
+  },
+  'Leather Worker': {
+    'gear': {
+      '1': ['Round Leather Shield', 'Hunter Whip'],
+      '2': ['Leather Mask', 'Leather Bracers', 'Leather Cuirass', 'Leather Skirt', 'Leather Boots'],
+      '3': []},
+  },
+  'Mask Maker': {
+    'gear': {
+      '1': ['White Lion Mask', 'Antelope Mask', 'Phoenix Mask'],
+      '2': ['Death Mask', 'Man Mask', 'God Mask'],
+      '3': []},
+  },
+  'Organ Grinder': {
+    'gear': {
+      '1': ['Stone Noses', 'Fecal Salve', 'Monster Grease'],
+      '2': ['Dried Acantus', 'Lucky Charm', 'Monster Tooth Necklace'],
+      '3': []},
+  },
+  'Plumery': {
+    'gear': {
+      '1': ['Feather Shield', 'Bloom Sphere', 'Sonic Tomahawk', 'Hollow Sword', 'Arc Bow'],
+      '2': ['Phoenix Helm', 'Phoenix Gauntlet', 'Phoenix Plackart', 'Phoenix Faulds', 'Phoenix Greaves'],
+      '3': ['Feather Mantle', 'Bird Bread', 'Hours Ring', 'Crest Crown', 'Hollowpoint Arrow']},
+  },
+  'Sacreed Pool': {
+    'campaign': 'Sun',
+    'gear': {
+      '1': [],
+      '2': ['Sun Vestments', 'Sunring Bow'],
+      '3': ['Apostle Crown', 'Prism Mace']},
+  },
+  'Silk Mill': {
+    'expansion': 'spidicules',
+    'gear': {
+      '1': ['Amber Poleaxe', 'Throwing Knife', 'Silk Whip', 'Hooded Scrap Katar', 'Amber Edge'],
+      '2': ['Silk Turban', 'Silk Wraps', 'Silk Robes', 'Silk Sash', 'Silk Boots'],
+      '3': ['Body Suit', 'Silk Bomb', 'Red Ring', 'Blue Ring', 'Green Ring']},
+  },
+  'Skinnery': {
+    'gear': {
+      '1': ['Bandages', 'Rawhide Drum', 'Rawhide Whip'],
+      '2': ['Rawhide Headband', 'Rawhide Gloves', 'Rawhide Vest', 'Rawhide Pants', 'Rawhide Boots'],
+      '3': []},
+  },
+  'Skyreef Sanctuary': {
+    'expansion': 'sunstalker',
+    'gear': {
+      '1': ['Sunspot Dart', 'Sunshark Bow', 'Sunshark Arrows', 'Denticle Axe', 'Skleaver', 'Ink Sword'],
+      '2': ['Cycloid Scale Hood', 'Cycloid Scale Sleeves', 'Cycloid Scale Jacket', 'Cycloid Scale Skirt', 'Cycloid Scale Shoes'],
+      '3': ['Sunspot Lantern', 'Quiver and Sunstring', 'Shadow Salvia Shawl', 'Sun Lure and Hook', 'Sky Harpoon', 'Ink Blood Bow']},
+  },
+  'Stone Circle': {
+    'gear': {
+      '1': ['Boss Mehndi', 'Beast Knuckle', 'Red Charm', 'Blood Paint'],
+      '2': ['Screaming Horns', 'Screaming Bracers', 'Screaming Coat', 'Screaming Skirt', 'Screaming Leg Warmers'],
+      '3': ['Bone Earrings', 'Green Charm', 'Blue Charm', 'Lance of Longinus']},
+  },
+  'The Sun': {
+    'campaign': 'Sun',
+    'gear': {
+      '1': [],
+      '2': [],
+      '3': []},
+  },
+  'Throne': {
+    'campaign': 'Stars',
+    'gear': {
+      '1': [],
+      '2': [],
+      '3': []},
+  },
+  'Weapon Crafter': {
+    'gear': {
+      '1': ['Counterweighted Axe', 'Whistling Mace', 'Zanbato', 'Blood Sheath', 'Rainbow Katana'],
+      '2': ['Skullcap Hammer', 'Scrap Sword', 'Scrap Dagger', 'Finger of God'],
+      '3': []},
+  },
+  'Wet Resin Crafter': {
+    'expansion': 'dung beetle knight',
+    'gear': {
+      '1': ['DBK Errant Badge', 'Rainbow Wing Belt', 'Digging Claw'],
+      '2': ['Seasoned Monster Meat', 'Century Shoulder Pads', 'Scarab Circlet'],
+      '3': ['Century Greaves', 'Rubber Bone Harness', 'The Beetle Bomb']},
+  },
 }
 
 const innovations = {
@@ -1022,7 +1149,7 @@ const armor_sets = {
   'Phoenix Armor': {},
   'Rawhide Armor': {},
   'Rolling Armor': {},
-  'Screamin Armor': {},
+  'Screaming Armor': {},
   'Silk Armor': {},
   'Vagabond Armor': {},
   'Warlord Armor': {},
@@ -1045,8 +1172,10 @@ module.exports = {
   get_representation,
   is_random_draw,
   get_random_draws,
+  get_locations_list,
   getSettlementEventPath,
   clone,
+  settlement_locations
 }
 
 function get_options (data, type) {
@@ -1087,6 +1216,12 @@ function get_all_options () {
   // options = options.concat(get_options(fightning_arts_text, 'abilities'));
   // options = options.concat(get_options(secret_fightning_arts_text, 'secret figtning arts'));
   return options.concat(get_options(glossary_terms, 'glossary'))
+}
+
+function get_locations_list() {
+  let settings = JSON.parse(sessionStorage.getItem('settings'))
+
+  let list = []
 }
 
 function get_representation (word) {
@@ -1170,7 +1305,7 @@ function is_random_draw (word) {
   }
 }
 
-function get_random_draws (word) {
+function get_random_draws (word, randomize=true) {
   let settings = JSON.parse(sessionStorage.getItem('settings'))
   let number = word.substring(0, 1)
   let list = []
@@ -1182,7 +1317,9 @@ function get_random_draws (word) {
   } else if (word.includes('Settlement Event')) {
     list = clone(settlement_events)
     delete list['First Day']
-  } else {
+  } else if (word.includes('Location')) {
+    list = clone(settlement_locations)
+  }else {
     return []
   }
 
@@ -1201,6 +1338,14 @@ function get_random_draws (word) {
       if (('expansion' in list[key]) && !(settings['expansions'][list[key]['expansion']] == 'All content')) {
         remove = true
       }
+    } else if (word.includes('Location')) {
+      // Settlement events are shown only if "All Content" is set for expansion
+      if (('expansion' in list[key]) && !(settings['expansions'][list[key]['expansion']] == 'All content')) {
+        remove = true
+      }
+      if (('campaign' in list[key]) && !(settings['campaign'] == list[key]['campaign'])) {
+        remove = true
+      }
     }
 
     if (remove) {
@@ -1209,7 +1354,11 @@ function get_random_draws (word) {
     }
   })
 
-  return getRandom(Object.keys(list), number)
+  if (randomize == true) {
+    return getRandom(Object.keys(list), number)
+  } else {
+    return Object.keys(list)
+  }
 }
 
 function getRandom (arr, n) {
