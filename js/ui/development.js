@@ -40,15 +40,24 @@ function addDevelopment() {
   $('.gear_card').hover(function () {
     console.log($(this).parent())
     let card = $(this)
+    $(this).addClass('hoverd')
     // card.animate({"height": "24%"}, 100);
-    window.gear_card_timer = setTimeout(function(){
-          console.log('!!!')
+    // window.gear_card_timer = setTimeout(function(){
+    //       console.log('!!!')
+    //       if(!card.next().is('.gear_card')) {
+    //           console.log('Last!')
+    //           card.parent().scrollTo(card, duration = 500);
+    //       }
+    //   }, 500);
+      if((!card.next().is('.gear_card'))||(!card.prev().is('.gear_card'))) {
+          console.log('Last!')
           card.parent().scrollTo(card, duration = 500);
-      }, 500);
+      }
     }, function(){
       console.log('22!!!')
       // $(this).animate({"height": "19%"}, 100);
-      clearTimeout(window.gear_card_timer);
+      // clearTimeout(window.gear_card_timer);
+      $(this).removeClass('hoverd')
   });
   // $(document).on('mouseover', '.gear_card', function () {
   //   console.log($(this).parent())
