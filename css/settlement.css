@@ -261,7 +261,7 @@ html, body {height:100%; overflow:hidden;}
   left: 4.5%;
   top: 0.5%;
   width: 90%;
-  height: 99%;
+  height: 98%;
   position: absolute;
   display: block;
   z-index: 76;
@@ -448,7 +448,7 @@ button.tablinks.active {
   filter: drop-shadow(0 0 5px #444);
   padding-bottom: 5pt;
   margin: 0 auto;
-  transition: height 1s;
+  transition: height 0.5s;
 }
 
 .gear_card:hover {

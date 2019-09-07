@@ -37,14 +37,46 @@ function addDevelopment() {
 
   window.openLocation = openLocation;
 
-  $(document).on('hover', '.gear_card', function (e) {
-    let name = $(this).text().slice(0, -1)
-    console.log(name)
-    // $('#reference-window-back').animate({
-    //     scrollTop: $('#reference-data.' + adapt_name(name)).offset().top
-    // }, 1000);
-    $(this).parent.scrollTo($(this), duration = 1000);
-  })
+  $('.gear_card').hover(function () {
+    console.log($(this).parent())
+    let card = $(this)
+    // card.animate({"height": "24%"}, 100);
+    window.gear_card_timer = setTimeout(function(){
+          console.log('!!!')
+          card.parent().scrollTo(card, duration = 500);
+      }, 500);
+    }, function(){
+      console.log('22!!!')
+      // $(this).animate({"height": "19%"}, 100);
+      clearTimeout(window.gear_card_timer);
+  });
+  // $(document).on('mouseover', '.gear_card', function () {
+  //   console.log($(this).parent())
+  //   window.gear_card_timer = setTimeout(function(){
+  //         // $("h3.better").animate({"left": "125px"}, 1200);
+  //         console.log('!!!')
+  //         $(this).parent().scrollTo($(this), duration = 100);
+  //     }, 500);
+  //   }, function(){
+  //     console.log('22!!!')
+  //     clearTimeout(window.gear_card_timer);
+  // });
+
+  // $(document).on('mouseover', '.gear_card', function (e) {
+  //   // let name = $(this).text().slice(0, -1);
+  //   console.log($(this).parent())
+  //   // console.log($(this).parent)
+  //   // $('#reference-window-back').animate({
+  //   //     scrollTop: $('#reference-data.' + adapt_name(name)).offset().top
+  //   // }, 1000);
+  //
+  //   $(this).parent().scrollTo($(this), duration = 100);
+  //   // $('html,body').animate({
+  //   //     scrollBot: $(this).offset().top},
+  //   //     'slow');
+  // });
+
+
 
 }
 
