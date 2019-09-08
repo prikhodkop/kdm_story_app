@@ -1,4 +1,5 @@
 const { get_random_draws, settlement_locations } = require('./../ui/glossary')
+const { cdnUrl } = require('./../ui/template-renderer')
 
 module.exports = {
   addDevelopment,
@@ -23,7 +24,7 @@ function addDevelopment() {
   $('#settlement_locations_window').append($('<img>', {
     // style: 'opacity:.9;',
     id: 'settlement_locations_window_background',
-    src: 'images/reference/reference_back.png',
+    src: cdnUrl('images/reference/reference_back.png'),
   }));
 
   let locations_list = get_random_draws('Location', false);
@@ -112,7 +113,7 @@ function createLocation(location, default_open=false) {
 
   column_1.append($('<img>', {
     class: "location_screen",
-    src: "images/reference/Settlement Locations/"+titleCase(location)+".jpg",
+    src: cdnUrl("images/reference/Settlement Locations/"+titleCase(location)+".jpg"),
   }));
 
   let column_2 = $('<div>', {
@@ -124,7 +125,7 @@ function createLocation(location, default_open=false) {
       console.log('Adding 1: '+i)
       column_2.append($('<img>', {
         class: "gear_card",
-        src: "images/reference/Gear/"+settlement_locations[location]['gear']['1'][i]+".jpg",
+        src: cdnUrl("images/reference/Gear/"+settlement_locations[location]['gear']['1'][i]+".jpg"),
       }));
     }
   }
@@ -139,7 +140,7 @@ function createLocation(location, default_open=false) {
       console.log('Adding 2: '+i)
       column_3.append($('<img>', {
         class: "gear_card",
-        src: "images/reference/Gear/"+settlement_locations[location]['gear']['2'][i]+".jpg",
+        src: cdnUrl("images/reference/Gear/"+settlement_locations[location]['gear']['2'][i]+".jpg"),
       }));
     }
   }
@@ -154,7 +155,7 @@ function createLocation(location, default_open=false) {
       console.log('Adding 3: '+i)
       column_4.append($('<img>', {
         class: "gear_card",
-        src: "images/reference/Gear/"+settlement_locations[location]['gear']['3'][i]+".jpg",
+        src: cdnUrl("images/reference/Gear/"+settlement_locations[location]['gear']['3'][i]+".jpg"),
       }));
     }
   }
