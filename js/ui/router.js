@@ -83,6 +83,7 @@ function load (name) {
     case 'image': scene = require('../scenes/image'); break
     case 'index': scene = require('../scenes/index'); break
     case 'settlement': scene = require('../scenes/settlement'); break
+    case 'slideshow': scene = require('../scenes/slideshow'); break
     case 'video': scene = require('../scenes/video'); break
   }
 

@@ -209,3 +209,251 @@ html, body {height:100%; overflow:hidden;}
   color: #cc0;
   text-shadow: 0 0 10px #cc0;
 }
+
+#development_button {
+  display: block;
+  position: absolute;
+  background: Transparent;
+  top: 56.80%;
+  left: 25.7%;
+  width: 2%;
+  z-index: 72;
+  -webkit-filter: drop-shadow(0 0 10px #000);
+  filter: drop-shadow(0 0 10px #000);
+  opacity: 0.5;
+}
+
+#development_button:hover {
+  background: Transparent;
+  /* -webkit-filter: drop-shadow(0 0 10px #cccc00);
+  filter: drop-shadow(0 0 10px #cccc00); */
+  animation: glowing 5000ms infinite;
+}
+
+#development_button.active {
+  background: Transparent;
+  -webkit-filter: drop-shadow(0 0 10px #c4a300);
+  filter: drop-shadow(0 0 10px #c4a300);
+  /* animation: glowing 5000ms infinite; */
+  opacity: 1.0;
+}
+
+#development_screen {
+	left:0%;
+	top: 0%;
+	height: 100%;
+	width: 100%;
+	position:absolute;
+	z-index: 75;
+	display:block;
+	background: #030303;
+	opacity: 0.6;
+  box-sizing: border-box;
+  font-weight:500;
+  font-family: 'Silverado';
+};
+
+#container {
+  position: absolute;
+}
+
+#settlement_locations_window {
+  left: 4.5%;
+  top: 0.5%;
+  width: 90%;
+  height: 98%;
+  position: absolute;
+  display: block;
+  z-index: 76;
+  -webkit-box-shadow: 0 0 80px #000;
+	box-shadow: 0 0 80px #000;
+	--borderWidth: 1em;
+	border-radius: var(--borderWidth);
+	border: 0.2rem solid #555;
+  overflow: visible;
+}
+/*  */
+#settlement_locations_window_background {
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display:block;
+  z-index: 75;
+  overflow:auto;
+  --borderWidth: 1em;
+	border-radius: var(--borderWidth);
+	-webkit-box-shadow: 0 0 80px #000;
+	box-shadow: 0 0 80px #000;
+}
+
+/* Style the tab */
+#development_tabs {
+  float: left;
+  /* border: 1px solid #ccc; */
+  /* background-color: #f1f1f1; */
+  width: 15%;
+  height: 100%;
+  z-index: 77;
+  left: 0%;
+  top: 0%;
+  position: absolute;
+  overflow:auto;
+  display:block;
+  /* opacity: 1.0; */
+}
+
+/* Style the buttons inside the tab */
+button.tablinks {
+  display: block;
+  /* background-color: #333; */
+  left: 0%;
+  color: #ccc;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  /* font-family: 'Silverado'; */
+	cursor: pointer;
+	transition: color 0.5s, text-shadow 0.5s;
+  z-index: 77;
+  /* transition: 0.3s; */
+  font-size: 15pt;
+  display:block;
+  background-color: Transparent;
+}
+
+/* Change background color of buttons on hover */
+button.tablinks:hover {
+  /* background-color: #330; */
+  color: #555500;
+	text-shadow: 0 0 20px #555500;
+}
+
+/* Create an active/current "tab button" class */
+button.tablinks.active {
+  /* background-color: #cc0; */
+  color: #cccc00;
+	text-shadow: 0 0 20px #cccc00;
+}
+
+/* Style the tab content */
+.tabcontent {
+  /* float: left; */
+  /* padding: 0px 12px; */
+  /* border: 1px solid #ccc; */
+  width: 85%;
+  left: 15%;
+  top: 0%;
+  height: 100%;
+  border-left: none;
+  /* height: 300px; */
+  position: absolute;
+  z-index: 78;
+  display:block;
+}
+
+.column {
+  /* float: left; */
+  /* padding: 0px 12px; */
+  /* border: 1px solid #ccc; */
+
+}
+
+.column_1 {
+    left: 0%;
+    width: 38%;
+    top: 1%;
+    height: 100%;
+    border-left: none;
+    /* height: 300px; */
+    position: absolute;
+    z-index: 78;
+    display:block;
+    overflow: visible;
+}
+.column_2 {
+    left: 38%;
+    width: 20.6%;
+    top: 1%;
+    height: 100%;
+    border-left: none;
+    /* height: 300px; */
+    position: absolute;
+    z-index: 78;
+    display:block;
+    overflow: auto;
+}
+.column_3 {
+    left: 58.6%;
+    width: 20.6%;
+    top: 1%;
+    height: 100%;
+    border-left: none;
+    /* height: 300px; */
+    position: absolute;
+    z-index: 78;
+    display:block;
+    overflow: auto;
+}
+.column_4 {
+    left: 79.2%;
+    width: 20.6%;
+    top: 1%;
+    height: 100%;
+    border-left: none;
+    /* height: 300px; */
+    position: absolute;
+    z-index: 78;
+    display:block;
+    overflow: auto;
+}
+
+.location_screen {
+  /* height: 100%; */
+  /* left: 0%; */
+  /* vertical-align: auto; */
+  position: absolute;
+  display:block;
+  /* left: 0%; */
+  /* height: 96%; */
+  top: 0%;
+  width: 99%;
+  margin: 0 auto;
+  --borderWidth: 2em;
+	border-radius: var(--borderWidth);
+	/* -webkit-box-shadow: 0 0 80px #333; */
+	box-shadow: 0 0 10px #333;
+  /* border: 0.1em solid #444; */
+  transition: width 1s;
+}
+
+.gear_card {
+  /* height: 100%; */
+  /* left: 0%; */
+  /* vertical-align: auto; */
+  position: relative;
+  display:block;
+  /* left: 0%; */
+  /* height: 96%; */
+  /* top: 1%; */
+  /* width: 98%; */
+  height: 19%;
+  --borderWidth: 1em;
+	border-radius: var(--borderWidth);
+	/* -webkit-box-shadow: 0 0 80px #000; */
+	/* drop-shadow: 0 0 40px #444; */
+  filter: drop-shadow(0 0 5px #444);
+  padding-bottom: 5pt;
+  margin: 0 auto;
+  transition: height 0.5s;
+}
+
+.gear_card:hover {
+    height: 24%;
+    /* drop-shadow: 0 0 15px #cc0; */
+    filter: drop-shadow(0 0 5px #cc0);
+    /* bottom: 0%; */
+}

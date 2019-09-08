@@ -1,6 +1,14 @@
 const path_to_quary_events = 'images/hunt/quary_events/'
 
 const quary_events = [
+  'dragon king 1.jpg',
+  'dragon king 2.jpg',
+  'dragon king 3.jpg',
+  'dragon king 4.jpg',
+  'dragon king 5.jpg',
+  'dragon king 6.jpg',
+  'dragon king 7.jpg',
+  'dragon king 8.jpg',
   'dung beetle knight 1.jpg',
   'dung beetle knight 2.jpg',
   'dung beetle knight 3.jpg',

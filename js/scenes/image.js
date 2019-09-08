@@ -39,6 +39,11 @@ module.exports = class ImageScene {
       $('#img').attr('src', cdnUrl('images/' + myself + '/img.jpg'))
     }
 
+    if ((myself == 'intimacy') && (settings['campaign'] == 'Stars')) {
+      $('#img_back').attr('src', cdnUrl('images/' + myself + ' stars/back.jpg'))
+      $('#img').attr('src', cdnUrl('images/' + myself + ' stars/img.jpg'))
+    }
+
     if (!events_table[myself].hide_label) {
       $('#label_text').addClass(myself.replace(' ', '_'))
       $('#label_text').text(events_table[myself].label)
@@ -93,9 +98,9 @@ module.exports = class ImageScene {
     var anew = true
 
     if (myself == 'first story') {
-      $('#img_back').delay(2000).fadeIn(4000)
+      $('#img_back').delay(2000).fadeIn(2000)
     } else {
-      $('#img_back').fadeIn(4000)
+      $('#img_back').fadeIn(2000)
     }
 
     if (settings['music'] == 'Off') {
@@ -115,35 +120,36 @@ module.exports = class ImageScene {
       back_target = state.back_target
       var action = state.action
 
-      if (!state.img_hidden) {
-        anew = false
-
-        $('#label_text').fadeIn(4000)
-        $('#img').delay(4000).fadeIn(2000)
+      if (true) {
+        $('#label_text').fadeIn(2000)
+        $('#img').delay(2000).fadeIn(2000)
 
         if (!menus_appeared) {
           menus_appeared = true
           addTimer(function () {
             createSevereTables()
             createReference()
-          }, 4000)
+          }, 2000)
         };
 
-        speech.seek(state.speech_position)
+        // speech.seek(state.speech_position)
 
-        if (state.speech_playing) {
-          speech.volume(0.0)
-          speech.play()
-          speech.fade(0.0, 1.0, 500)
-        }
+        // if (state.speech_playing) {
+        //   speech.volume(0.0)
+        //   speech.play()
+        //   speech.fade(0.0, 1.0, 500)
+        // }
 
-        music.seek(state.music_position)
+        // music.seek(state.music_position)
 
-        if (state.music_playing) {
-          music.volume(0.0)
-          music.play()
-          music.fade(0.0, music_volume, 500)
-        }
+        // if (state.music_playing) {
+        //   music.volume(0.0)
+        //   music.play()
+        //   music.fade(0.0, music_volume, 500)
+        // }
+        music.volume(0.0)
+        music.play()
+        music.fade(0.0, music_volume, 500)
       }
     } else {
       console.log('No initialized state!')
@@ -163,54 +169,73 @@ module.exports = class ImageScene {
     if (anew) {
       $('#label_text').delay(3000).fadeIn(2000)
 
-      speech.on('load', function () {
-        var duration = speech.duration() * 1000
+      console.log('Muted naration: '+ mute_narration)
 
-        console.log('Speech ' + events_table[myself].speech)
-        console.log('Speech duration ' + duration)
-        console.log('Music ' + events_table[myself].music)
-        console.log('Music delay ' + events_table[myself].music_delay)
+      if (mute_narration) {
+        start_anew();
+      } else {
+        speech.on('load', function () {
+          start_anew();
+        })
+      };
+
+    };
+
+
+
+    function start_anew() {
+      console.log('I started anew!!')
+      console.log(action)
+      if (mute_narration) {
+        duration = 2000
+        // delay = 1000
+        delay = 2000
+      } else {
+        var duration = speech.duration() * 1000
 
         if (events_table[myself].music_delay.includes('speech')) {
           var delay = duration + parseInt(events_table[myself].music_delay.replace('speech', '').replace(/ /g, ''), 10)
         } else {
           var delay = parseInt(events_table[myself].music_delay, 10)
         }
+      }
 
-        if (delay < 0) {
-          throw 'Music delay at event ' + myself + " can't be negative!"
-        }
+      if (myself == 'first story') {
+        duration = 4000
+        // delay = parseInt(events_table[myself].music_delay, 10)
+        $('.srt').text('Open rule book on page 22 and follow the instructions.')
+        $('.srt').fadeIn(2000)
+        addTimer(function () { $('.srt').fadeOut(1000) }, 3000)
+      }
 
-        console.log('Music delay computed ' + delay)
+      console.log('Speech ' + events_table[myself].speech)
+      console.log('Speech duration ' + duration)
+      console.log('Music ' + events_table[myself].music)
+      console.log('Music delay ' + events_table[myself].music_delay)
 
-        if (mute_narration) {
-          duration = 2000
-          delay = 1000
-        }
-        if (myself == 'first story') {
-          duration = 4000
-          delay = 1000
-          $('.srt').text('Open rule book on page 22 and follow the instructions.')
-          $('.srt').fadeIn(2000)
-          addTimer(function () { $('.srt').fadeOut(1000) }, 3000)
-        }
+      if (delay < 0) {
+        throw 'Music delay at event ' + myself + " can't be negative!"
+      }
 
-        if (!mute_narration) {
-          addTimer(function () {
-            speech.play()
-          }, start_delay)
-        }
+      console.log('Music delay computed ' + delay)
+
+
+      if (!mute_narration) {
+        addTimer(function () {
+          speech.play()
+        }, start_delay)
+      }
 
         addTimer(function () {
           if (action == 'false') {
-            $('#img').fadeIn(4000)
+            $('#img').fadeIn(2000)
             action = 'true'
             if (!menus_appeared) {
               menus_appeared = true
               addTimer(function () {
                 createSevereTables()
                 createReference()
-              }, 5000);
+              }, 2000);
             };
           }
         }, start_delay + duration + 3000)
@@ -219,15 +244,14 @@ module.exports = class ImageScene {
           console.log('I play the music')
           music.play()
         }, start_delay + delay)
-      })
-    };
+    }
     // #############
 
     $('#img_back').click(function () {
       action = 'true'
 
       // $("#label_text").fadeOut(2000);
-      $('#img').fadeIn(4000)
+      $('#img').fadeIn(2000)
       if ((!menus_appeared) && anew) {
         menus_appeared = true
         addTimer(function () {
@@ -241,27 +265,14 @@ module.exports = class ImageScene {
         speech.pause()
       }
 
-      music.play()
+      music.play();
     })
 
     $('#img').click(function () {
-      $('#label_text').delay(3000).fadeIn(2000)
-      $('#img').fadeOut(4000)
+      $('#label_text').delay(1500).fadeIn(2000)
+      $('#img').fadeOut(2000)
     })
 
-    // $("#mute.button").click(function () {
-    //   if (!$(this).hasClass('active')) {
-    //     music.mute(true);
-    //     speech.mute(true);
-    //     sessionStorage.setItem("Mute", "On");
-    //   } else {
-    //     speech.mute(false);
-    //     music.mute(false);
-    //     sessionStorage.setItem("Mute", "Off");
-    //   };
-    //
-    //   $(this).toggleClass('active');
-    // });
 
     $('body').on('click', '#back_button', function () {
       let back_target = getBackBackTarget()

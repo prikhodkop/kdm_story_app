@@ -20,7 +20,7 @@ const glossary_terms = {
   'AI Card': 'Al cards are made up of actions, flows and alerts, some cards also have persistent injury and/or definition boxes. There are four kinds of Al cards: Basic, Advanced, Legendary and Special.',
   'AI Deck': 'Made up of Al cards used for a specific showdown. See the monster\'s story event for details of its Al deck. The Al Deck is reduced as the monster is wounded.',
   'Alerts': 'Actions following an alert contain important conditional information that must be considered to determine if the action is performed. Continue to perform any further actions on the Al card unless stated otherwise. Survival may not be spent during an alert.',
-  'All Survivors': 'An effect during the showdown that refers to all survivors applies to all survivors currently on the showdown board.',
+  'All Survivors': 'An effect during the showdown that refers to all survivors applies to all survivors currently on the showdown board. Unless explicitly stated otherwise survivors removed from the showdown board are unaffected.',
   'Ambush (Monster)': 'If the monster moves into the survivors\' hunt board space, it ambushes the survivors. End any current hunt events and start the showdown immediately. Survivors skip their first turn. In most cases, this means that the monster will take two turns in a row.',
   'Ambush (Survivors)': 'Some hunt events allow the survivors to ambush the monster. If they do, survivors may go first in the showdown. Do not follow the setup rules on the monster\'s story event. Instead, place the listed showdown terrain, the monster, and survivors on the showdown board as the players decide (setup rules on terrain cards must still be followed).',
   'Ammo - Bow': 'A gear special rule. You must have a bow in your gear grid to activate this card. Ammo has the range of a bow in your gear grid. Ammo do not inherit the qualities of bows they are fired from (cumbersome, cursed, etc). Wounding with an ammo does not make a survivor eligible to earn bow proficiency.',
@@ -65,6 +65,7 @@ const glossary_terms = {
   'Brain Trauma Table': 'Contains possible outcomes of excess damage to the Brain location.',
   'Build (Location)': 'when a new location is built, place that settlement location in the play area and add the new location to your settlement record sheet. This is a permanent addition to your settlement.',
   // 'Burnt Nerves':'An ability. You are immune to bash.',
+  'Calcification': 'Once gear is calcified, flip it to the calcified side. After calcification the normal side of that gear cannot be used.',
   'Canceled Attack': 'A canceled attack Immediately ends. Discard all unresolved hit locations. Do not perform any actions, special rules, critical effects, or reactions on these cards.',
   // 'Caratosis':'An ability. For each red affinity you have, 1 of your attack rolls hits automatically each attack.',
   'Charge': 'A gear special rule. Survivors spend movement and activation to move the maximum available spaces in a straight line in one direction. At the end of movement, if in range, perform an attack using a melee weapon, adding the number of spaces moved in this way to your strength for the attack. Charge does not impact any further attacks this turn.',
@@ -91,6 +92,7 @@ const glossary_terms = {
   'Dash': 'A survival action. When opportunity permits, a survivor may spend 1 survival to dash. They gain +1 Movement Action, which must be spent immediately. Each survivor may only Dash once per round. and only after the settlement has innovated the Paint innovation.',
   'Deadly': 'A gear special rule. Gain +1 Luck while attacking with this weapon. This increases the odds of inflicting critical wounds.',
   'Deaf': 'The survivor cannot hear or be impacted by encourage and other audible effects.',
+  'Deathblow': 'If you kill the monster while dealing damage to that location you get the bonus listed on the card.',
   'Death (Monster)': 'A monster is defeated when it is wounded and there are no Al cards in the Al deck or Al discard pile to move to the wound stack.',
   'Death (Survivor)': 'A survivor can die in a variety of ways. Remove their miniature from the board. They can no longer participate in the hunt or showdown. Return their gear to the settlement storage and move their resources to another survivor. If all the survivors die during the showdown, all of their gear returns to the settlement, and all resources not in the settlement storage are lost.',
   'Death Count': 'Part of the settlement record sheet. During the Settlement Phase, if any survivors perished during the previous Hunt or Showdown Phase, update the death count. If survivors perish during the Settlement Phase, update the death count immediately. The first time a settlement\'s death count is updated. trigger the Principle: Death story event.',
@@ -122,7 +124,7 @@ const glossary_terms = {
   'Field of View': 'A survivor is in a monster\'s field of view unless they are in the monster\'s blind spot or the monster\'s line of sight is blocked by terrain with the Obstacle rule.',
   'Fighting Arts': 'Powerful battle techniques found on fighting art cards. When a fighting art is gained, record its rules on the survivor record sheet and return the card to the box. Survivors can have up to 3 fighting arts. Additional fighting arts gained replace a fighting art of your choice. If a survivor would gain a fighting art they already have, nothing happens.',
   'Finesse': 'A gear keyword. This gear requires finesse to use. This keyword does not interact with the core game in any way and is one of those annoying keywords for expansions.',
-  'First Strike': 'A type of monster hit location. This hit location must be resolved before any others. except Traps. If multiple First Strike locations are drawn, the player decides the order in which to resolve them. Traps still precede and cancel all other hits.',
+  'First Strike': 'A type of monster hit location. This hit location must be resolved before any others. except Traps and Light Speed hit locations. If multiple First Strike locations are drawn, the player decides the order in which to resolve them. Traps still precede and cancel all other hits.',
   'Fist & Tooth': 'Fist & Tooth is a weapon always available to a survivor. The attack attributes for First & Tooth are listed on the gear grid. Survivors may gain levels of Fist & Tooth weapon proficiency with this weapon.',
   'Flammable': 'A gear keyword. Fire can destroy this gear.',
   'Flow': 'Flows are hesitations between monster actions. They give the survivors an opportunity to use survival actions. They are represented by a bar with an arrow.',
@@ -167,7 +169,8 @@ const glossary_terms = {
   'Impervious': 'A type of monster hit location. Impervious hit locations cannot be wounded. even with a Lantern 10 wound roll. Wound attempts will never remove Al cards. However. critical effects may still occur.',
   'In Play': 'All cards are considered in play after they have been drawn and until they resolve. Most cards are discarded after resolving. Others, such as Moods, remain in play indefinitely or until a condition is satisfied.',
   'In Range (Monster)': 'A survivor is in a monster\'s range if the number of spaces between them is less than or equal to its current movement (including modifiers). If \"in range\" is followed by a number, such as “Range (8)”, that number replaces the monster\'s movement when calculating to see if a survivor is in range.',
-  'lnjury Level': 'Indicates damage to a hit location. Recorded on the survivor record sheet. Most hit locations feature two levels, light and heavy, except for the Head (which only has a heavy injury level).',
+  'Indestructible': 'A terrain special rule. A terrain that is undestructible cannot be destroyed or removed from the showdown board for any reason until the end of the showdown.',
+  'Injury Level': 'Indicates damage to a hit location. Recorded on the survivor record sheet. Most hit locations feature two levels, light and heavy, except for the Head (which only has a heavy injury level).',
   'Innovation': 'A type of advancement for a settlement, gained at the Lantern Hoard. Innovations alter the settlement and the survivors\' capabilities. Record new innovations on your settlement record sheet.',
   'Innovation Deck': 'A settlement\'s innovation deck is a persistent deck that grows as the settlement innovates.',
   'Insane': 'A survivor with 3+ insanity.',
@@ -191,6 +194,7 @@ const glossary_terms = {
   // 'Legendcaller':'An ability. Once a lifetime, on a hunt board space after Overwhelming Darkness, in place of rolling a random hunt event, use \"53\" as your result.',
   'Legs': 'A survivor hit location. \nDamage to the legs beyond the heavy injury box will prompt a roll on the Legs section of the Severe Injury table.',
   // 'Leyline Walker':'An ability. While there is no armor or accessory gear in your gear grid, gain +3 evasion.',
+  'Light Speed': 'A type of monster hit location. This hit location must be resolved before any others. except Traps and Light Speed hit locations. If multiple First Strike locations are drawn, the player decides the order in which to resolve them. Traps still precede and cancel all other hits.',
   'Life Trait': 'A core game variant.  Instead of wounding by removing Al cards to the wound stack, wound the monster by reducing the number on its Life trait. When the number is reduced to 0, the monster is dead.',
   // 'Lucernae':'An ability. For every blue affinity you have. your ranged weapons gain this amount of range and your me lee weapons gain this amount of reach.',
   'Luck (Player Attribute)': 'Luck modifies a survivor\'s chance to cause a critical wound from a wound roll. +1 luck causes a critical wound on a wound roll result of 9 or 10, +2 luck on 8, 9, or 10, and so on. A luck modifier can be negative, making it impossible to critically wound.',
@@ -208,6 +212,7 @@ const glossary_terms = {
   'Monster Controller': 'The player who draws the monster\'s Al card. They make any decisions and rolls to resolve a monster\'s actions for that round. Designated by the Monster controller tile. Monster controller changes at the start of each round.',
   'Monster Controller Bonus': 'When a monster controller\'s survivor is the target of an attack, this foolhardy action earns that player\'s survivor +1 insanity.',
   'Monster Controller Tile': 'Designates the monster controller. Moves clockwise to the next player or survivor at the start of each round.',
+  'Monster-Impassable': 'A terrain special rule. Nor survivors, nor monsters can move through spaces occupied by monster-impassable terrain.',
   'Monster Hit Location Card': 'Represents a location on the monster\'s body. These are hit by a survivor\'s successful attack roll. Many hit location cards feature special effects or actions.',
   'Monster Hit Location Deck': 'The cards that collectively make up the locations a survivor may hit a given monster. Unique to each monster.',
   'Monster Level': 'Monster level determines the difficulty of the showdown and the monster\'s placement on the hunt board. Higher-level monsters have longer hunts and more difficult showdowns.',
@@ -217,6 +222,7 @@ const glossary_terms = {
   'Most/Least X': 'The survivor with the most/least of the listed condition. Zero can count as most or least unless otherwise stated.',
   'Move and Attack Target Action': 'A component of most Al cards. A Move and Attack Target Action follows a Pick Target Action. Full move the monster towards the target and perform the following attack profile.',
   'Movement (Attribute)': 'The maximum amount of spaces a monster or survivor may move with in single move action. A monster or survivor with less than 1 movement may still move 1 space each move action.',
+  'Move Through Target': 'When a monster instructed to move through a target, it moves towards the target but instead of stopping when adjacent, its movement continues. This will normally cause collision with the target.',
   'Mood': 'A type of monster Al card. Once mood cards are drawn, leave them in the play area instead of discarding them at the end of the monster turn. Moods can be removed by some items or through conditions listed on the card. If a monster suffers a wound when it has an empty Al deck and discard pile, but one or more active moods, it is defeated.',
   'Nemesis Monster': 'Nemesis monsters show up at the outskirts of the settlement. They cannot be hunted and will arrive during story events.',
   'Next Monster Turn': 'Some effects persist until the next monster turn. If it is the survivors’ turn, the effect will end on the monster turn immediately following this turn. If it is the monster\'s turn when this effect begins. it will end on the following monster turn.',
@@ -228,6 +234,7 @@ const glossary_terms = {
   'Organ (Resource)': 'A common resource keyword.',
   'Other': 'A gear keyword. The effects of this gear are otherworldly.',
   'Overwhelming Darkness': 'A space on the Hunt Board. The first time each hunt the survivors move into the Overwhelming Darkness space, they trigger the overwhelming Darkness story event. The survivors cannot skip Overwhelming Darkness. If they move through the space, instead stop all movement and resolve Overwhelming Darkness before any other events or effects. Then, resolve other events or effects on this space. If, for some reason, the survivors move into or through Overwhelming Darkness more than once in a single Hunt Phase, treat it as a blank space. If the monster is on the Overwhelming Darkness Space when the survivors move into it, skip its event and start the showdown immediately.',
+  'Parry': 'When attempting to wound a Parry hit locations all attempts fall unless the wound roll result is critical. This Failure triggers any Failure reactions as normal.',
   'Paired': 'A gear special rule. Paired weapons are two identical weapons that can be used as one. Add the speed of the second weapon when attacking with the first. These weapons must have the same name, and both must be in your gear grid.',
   // 'Peerless':'An ability. When you gain insanity, you may gain an equal amount of survival.',
   'Perfect Hit': 'An attack dice roll result of a Lantern 10. This always results in a hit. When there are multiple Perfect Hits in a single attack, trigger any rules applying to Perfect Hits that many times.',
@@ -250,6 +257,7 @@ const glossary_terms = {
   'Random Survivor': 'The monster controller or event revealer typically determines a survivor by chance, using an equal probability of all possible outcomes.',
   'Range (Gear)': 'A gear special rule. Survivors this many or fewer spaces away from a monster may attack with this weapon. Ranged weapons cannot be used if field of view to the monster is blocked (by terrain with the Obstacle rule).',
   'Ranged': 'A gear keyword. A ranged weapon, like a bow or dart, allows survivors to attack from a distance.',
+  'Ranged Attack Target': 'When monster is instructed to Ranged Attack Target it attacks with unlimited range. It does not need to be adjacent in order to hit.',
   'Rawhide': 'A gear keyword. This gear is crafted of uncured hides.',
   'Reach': 'A gear special rule. Reach weapons are long enough to attack monsters when the survivor is not adjacent. Reach specifies the maximum number of spaces away that a survivor can attack with this weapon.',
   'Reaction': 'A hit location rule. The 3 types of reactions are Wound, Failure, and Reflex: each specifies the conditions for a reaction to occur. Reactions occur after rolling to wound the hit location they are found on and before resolving the next hit location.',
@@ -293,7 +301,7 @@ const glossary_terms = {
   'Soluble': 'A gear keyword. Able to be dissolved in liquid.',
   // 'Sour Death':'An ability. When you are knocked down. you may encourage yourself. If you do. gain + 1 strength token.',
   'Spear': 'Gear with this keyword is a spear weapon. Survivors may gain levels of spear weapon proficiency with this weapon.',
-  'Special Showdown': 'Special Showdowns interrupt the Settlement Phase. After they conclude (regardless of victory or defeat), the Settlement Phase continues where it left off. Do not generate endeavors or trigger new story events. Each Special Showdown\'s details are listed on the story event or innovation that triggered it.',
+  'Special Showdown': 'Special Showdowns interrupt the Settlement Phase. After they conclude (regardless of victory or defeat), the Settlement Phase continues where it left off. Do not generate endeavors or trigger new story events. Each Special Showdown\'s details are listed on the story event or innovation that triggered it. After showdown heal all light and heavy injuries from the remaining survivors and remove all tokens.',
   'Speed (Attack Profile/Weapon)': 'The number of attack rolls (number of dice rolled). Usually determined by a monster Al card\'s attack profile or speed on a survivor\'s weapon.',
   'Speed (Attribute/Modifier/Bonus)': 'Speed is added to a survivor\'s weapon speed or a monster\'s attack profile speed to determine the number of attack rolls. If speed is negative, subtract it from the number of dice rolled for an attack. A monster or survivor attack with less than one speed still has one attack roll. weapons with the Slow keyword cannot benefit from positive speed bonuses.',
   // 'Stalwart':'An ability. Ignore knocked down effects of brain trauma, disorders. and intimidation actions.',
@@ -316,6 +324,7 @@ const glossary_terms = {
   'Survivor Status Card': 'Special (S) Al cards that track conditions for an individual survivor rather than the monster. When a survivor gains a survivor status card, place it next to their gear grid. The card\'s effects apply only to them. Some status cards change and need to be tracked. Some grant survivors unique actions. If a monster\'s story event has a Survivor Status card in its setup, all survivors gain the card at the starwdown.',
   // 'Sweet Battle':'An ability. You may surge without spending survival. If you do, the Activation must be used to activate a weapon.',
   'Sword': 'Gear with this keyword is a sword weapon. Survivors may gain levels of sword weapon proficiency with this weapon.',
+  'Tactics Cards': 'Tactics provide survivors with new ways to fight, using what they\'ve learned from fightning knights. Tactics Cards are drawn at the start of showdown and places in survivors play area. At the end of showdown, archive all drawn Tactics Cards.',
   'Target': 'The recipient of an attack or effect. Some attacks or effects may impact survivors other than the target.',
   'Terrain Cards': 'Represent terrain that can be encountered during the Showdown Phase and contain rules for how monsters and survivors interact with them. Terrain cards place one or more terrain tiles on the showdown board.',
   'Terrain Tile': 'Terrain tiles are placed on the Showdown Board to represent physical features. The type and amount of terrain added to the Showdown Board is determined by the terrain cards specified in the setup section of each monster\'s showdown story event.',
@@ -429,7 +438,7 @@ const fightning_arts_text = {
   'Mighty Strike': {},
   'Monster Claw Style': {},
   'Orator of Death': {},
-  'Otherworldly Luck': {  
+  'Otherworldly Luck': {
     'expansion': 'flower knight'
   },
   'Phantom Friend': {
@@ -769,29 +778,156 @@ const settlement_events = {
 }
 
 const settlement_locations = {
-  'Barber Surgeon': {},
-  'Blacksmith': {},
-  'Bone Smith': {},
-  'Catarium': {},
-  'Dragon Armory': {},
-  'Exhausted Lantern Hoard': {},
-  'Gormchymist': {},
-  'Gormery': {},
-  'Inspired Crafting': {},
-  'Lantern Hoard': {},
-  'Leather Worker': {},
-  'Mask Maker': {},
-  'Organ Grinder': {},
-  'Plumery': {},
-  'Sacreed Pool': {},
-  'Silk Mill': {},
-  'Skinnery': {},
-  'Skyreef Sanctuary': {},
-  'Stone Circle': {},
-  'The Sun': {},
-  'Throne': {},
-  'Weapon Crafter': {},
-  'Wet Resin Crafter': {},
+  'Barber Surgeon': {
+    'gear': {
+      '1': ['First Aid Kit', 'Brain Mint', 'Elder Earrings', 'Musk Bomb'],
+      '2': ['Scavenger Kit', 'Bug Trap', 'Speed Powder', 'Almanac'],
+      '3': []},
+  },
+  'Blacksmith': {
+    'gear': {
+      '1': ['Lantern Sword', 'Lantern Dagger', 'Lantern Glaive', 'Dragon Slayer', 'Perfect Slayer'],
+      '2': ['Lantern Helm', 'Lantern Gauntlets', 'Lantern Cuirass', 'Lantern Mail', 'Lantern Greaves'],
+      '3': ['Scrap Shield', 'Beacon Shield', 'Ring Whip']},
+  },
+  'Bone Smith': {
+    'gear': {
+      '1': ['Bone Dagger', 'Bone Blade', 'Bone Axe'],
+      '2': ['Bone Darts', 'Bone Club', 'Skull Helm'],
+      '3': ['Bone Pickaxe', 'Bone Sickle']},
+  },
+  'Catarium': {
+    'gear': {
+      '1': ['Lion Beast Katar', 'Claw Head Arrow', 'King Spear', 'Cat Gut Bow', 'Cat Fang Knife'],
+      '2': ['White Lion Helm', 'White Lion Gauntlet', 'White Lion Coat', 'White Lion Skirt', 'White Lion Boots'],
+      '3': ['Cat Eye Circlet', 'Whisker Harp', 'Lion Headdress', 'Lion Skin Cloak', 'Frenzy Drink']},
+  },
+  'Dragon Armory': {
+    'expansion': 'dragon king',
+    'gear': {
+      '1': ['Dragon Chakram', 'Dragon Bite Bolt', 'Talon Knife', 'Nuclear Knife', 'Red Power Core'],
+      '2': ['Dragonskull Helm', 'Dragon Gloves', 'Dragon Mantle', 'Dragon Belt', 'Dragon Boots'],
+      '3': ['Blast Shield', 'Shielded Quiver', 'Blast Sword', 'Nuclear Scythe', 'Blue Power Core']},
+  },
+  'Exhausted Lantern Hoard': {
+    'campaign': 'Lantern',
+    'gear': {
+      '1': [],
+      '2': ['Survivors Lantern'],
+      '3': []},
+  },
+  'Gormchymist': {
+    'expansion': 'gorm',
+    'gear': {
+      '1': [],
+      '2': ['Healing Potion', 'Wisdom Potion', 'Steadfast Potion','Power Potion', 'Life Elixir'],
+      '3': []},
+  },
+  'Gormery': {
+    'expansion': 'gorm',
+    'gear': {
+      '1': ['Rib Blade', 'Knuckle Shield', 'Gaxe', 'Greater Gaxe', 'Riot Mace'],
+      '2': ['Gorment Mask', 'Gorment Sleeves', 'Gorment Suit', 'Gorment Boots', 'Regeneration Suit'],
+      '3': ['Pulse Lantern', 'Gorn', 'Armor Spikes', 'Acid Tooth Dagger', 'Black Sword']},
+  },
+  'Inspired Crafting': {
+    'expansion': 'flower knight',
+    'gear': {
+      '1': ['Vespertine Satchel', 'Vespertine Foil', 'Vespertine Cello'],
+      '2': ['Vespertine Arrow', 'Vespertine Bow'],
+      '3': []},
+  },
+  'Lantern Hoard': {
+    'campaign': 'Lantern',
+    'gear': {
+      '1': [],
+      '2': [],
+      '3': []},
+  },
+  'Leather Worker': {
+    'gear': {
+      '1': ['Round Leather Shield', 'Hunter Whip'],
+      '2': ['Leather Mask', 'Leather Bracers', 'Leather Cuirass', 'Leather Skirt', 'Leather Boots'],
+      '3': []},
+  },
+  'Mask Maker': {
+    'gear': {
+      '1': ['White Lion Mask', 'Antelope Mask', 'Phoenix Mask'],
+      '2': ['Death Mask', 'Man Mask', 'God Mask'],
+      '3': []},
+  },
+  'Organ Grinder': {
+    'gear': {
+      '1': ['Stone Noses', 'Fecal Salve', 'Monster Grease'],
+      '2': ['Dried Acantus', 'Lucky Charm', 'Monster Tooth Necklace'],
+      '3': []},
+  },
+  'Plumery': {
+    'gear': {
+      '1': ['Feather Shield', 'Bloom Sphere', 'Sonic Tomahawk', 'Hollow Sword', 'Arc Bow'],
+      '2': ['Phoenix Helm', 'Phoenix Gauntlet', 'Phoenix Plackart', 'Phoenix Faulds', 'Phoenix Greaves'],
+      '3': ['Feather Mantle', 'Bird Bread', 'Hours Ring', 'Crest Crown', 'Hollowpoint Arrow']},
+  },
+  'Sacreed Pool': {
+    'campaign': 'Sun',
+    'gear': {
+      '1': [],
+      '2': ['Sun Vestments', 'Sunring Bow'],
+      '3': ['Apostle Crown', 'Prism Mace']},
+  },
+  'Silk Mill': {
+    'expansion': 'spidicules',
+    'gear': {
+      '1': ['Amber Poleaxe', 'Throwing Knife', 'Silk Whip', 'Hooded Scrap Katar', 'Amber Edge'],
+      '2': ['Silk Turban', 'Silk Wraps', 'Silk Robes', 'Silk Sash', 'Silk Boots'],
+      '3': ['Body Suit', 'Silk Bomb', 'Red Ring', 'Blue Ring', 'Green Ring']},
+  },
+  'Skinnery': {
+    'gear': {
+      '1': ['Bandages', 'Rawhide Drum', 'Rawhide Whip'],
+      '2': ['Rawhide Headband', 'Rawhide Gloves', 'Rawhide Vest', 'Rawhide Pants', 'Rawhide Boots'],
+      '3': []},
+  },
+  'Skyreef Sanctuary': {
+    'expansion': 'sunstalker',
+    'gear': {
+      '1': ['Sunspot Dart', 'Sunshark Bow', 'Sunshark Arrows', 'Denticle Axe', 'Skleaver', 'Ink Sword'],
+      '2': ['Cycloid Scale Hood', 'Cycloid Scale Sleeves', 'Cycloid Scale Jacket', 'Cycloid Scale Skirt', 'Cycloid Scale Shoes'],
+      '3': ['Sunspot Lantern', 'Quiver and Sunstring', 'Shadow Salvia Shawl', 'Sun Lure and Hook', 'Sky Harpoon', 'Ink Blood Bow']},
+  },
+  'Stone Circle': {
+    'gear': {
+      '1': ['Boss Mehndi', 'Beast Knuckle', 'Red Charm', 'Blood Paint'],
+      '2': ['Screaming Horns', 'Screaming Bracers', 'Screaming Coat', 'Screaming Skirt', 'Screaming Leg Warmers'],
+      '3': ['Bone Earrings', 'Green Charm', 'Blue Charm', 'Lance of Longinus']},
+  },
+  'The Sun': {
+    'campaign': 'Sun',
+    'gear': {
+      '1': [],
+      '2': [],
+      '3': []},
+  },
+  'Throne': {
+    'campaign': 'Stars',
+    'gear': {
+      '1': [],
+      '2': [],
+      '3': []},
+  },
+  'Weapon Crafter': {
+    'gear': {
+      '1': ['Counterweighted Axe', 'Whistling Mace', 'Zanbato', 'Blood Sheath', 'Rainbow Katana'],
+      '2': ['Skullcap Hammer', 'Scrap Sword', 'Scrap Dagger', 'Finger of God'],
+      '3': []},
+  },
+  'Wet Resin Crafter': {
+    'expansion': 'dung beetle knight',
+    'gear': {
+      '1': ['DBK Errant Badge', 'Rainbow Wing Belt', 'Digging Claw'],
+      '2': ['Seasoned Monster Meat', 'Century Shoulder Pads', 'Scarab Circlet'],
+      '3': ['Century Greaves', 'Rubber Bone Harness', 'The Beetle Bomb']},
+  },
 }
 
 const innovations = {
@@ -1015,7 +1151,7 @@ const armor_sets = {
   'Phoenix Armor': {},
   'Rawhide Armor': {},
   'Rolling Armor': {},
-  'Screamin Armor': {},
+  'Screaming Armor': {},
   'Silk Armor': {},
   'Vagabond Armor': {},
   'Warlord Armor': {},
@@ -1038,8 +1174,10 @@ module.exports = {
   get_representation,
   is_random_draw,
   get_random_draws,
+  get_locations_list,
   getSettlementEventPath,
   clone,
+  settlement_locations
 }
 
 function get_options (data, type) {
@@ -1082,6 +1220,12 @@ function get_all_options () {
   return options.concat(get_options(glossary_terms, 'glossary'))
 }
 
+function get_locations_list() {
+  let settings = JSON.parse(sessionStorage.getItem('settings'))
+
+  let list = []
+}
+
 function get_representation (word) {
   let settings = JSON.parse(sessionStorage.getItem('settings'))
 
@@ -1091,7 +1235,7 @@ function get_representation (word) {
     let terms_with_pics = ['Attack', 'Collision', 'Hunt Phase', 'Settlement Phase', 'Survival', 'Knocked Down (Monster)', 'Knocked Down (Survivor)']
 
     if (terms_with_pics.includes(word)) {
-      result = result + '<br/><img id=reference-image src="' + cdnUrl('images/reference/Terms/' + word + '.jpg') + '"/>'
+      result = result + '<br/><img id=reference-image src="' + cdnUrl('images/reference/terms/' + word + '.jpg') + '"/>'
     }
 
     let weapons = ['Axe', 'Bow', 'Club', 'Dagger', 'Fist & Tooth', 'Grand Weapon', 'Katana', 'Katar', 'Scythe', 'Shield', 'Spear', 'Sword', 'Twilight Sword', 'Whip', 'Thrown']
@@ -1163,7 +1307,7 @@ function is_random_draw (word) {
   }
 }
 
-function get_random_draws (word) {
+function get_random_draws (word, randomize=true) {
   let settings = JSON.parse(sessionStorage.getItem('settings'))
   let number = word.substring(0, 1)
   let list = []
@@ -1175,7 +1319,9 @@ function get_random_draws (word) {
   } else if (word.includes('Settlement Event')) {
     list = clone(settlement_events)
     delete list['First Day']
-  } else {
+  } else if (word.includes('Location')) {
+    list = clone(settlement_locations)
+  }else {
     return []
   }
 
@@ -1194,6 +1340,14 @@ function get_random_draws (word) {
       if (('expansion' in list[key]) && !(settings['expansions'][list[key]['expansion']] == 'All content')) {
         remove = true
       }
+    } else if (word.includes('Location')) {
+      // Settlement events are shown only if "All Content" is set for expansion
+      if (('expansion' in list[key]) && !(settings['expansions'][list[key]['expansion']] == 'All content')) {
+        remove = true
+      }
+      if (('campaign' in list[key]) && !(settings['campaign'] == list[key]['campaign'])) {
+        remove = true
+      }
     }
 
     if (remove) {
@@ -1202,7 +1356,11 @@ function get_random_draws (word) {
     }
   })
 
-  return getRandom(Object.keys(list), number)
+  if (randomize == true) {
+    return getRandom(Object.keys(list), number)
+  } else {
+    return Object.keys(list)
+  }
 }
 
 function getRandom (arr, n) {

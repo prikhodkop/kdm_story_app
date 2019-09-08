@@ -288,6 +288,16 @@ var settings_schema = {
       'Off',
     ],
   },
+  'campaign': {
+    'type': 'option',
+    'title': 'Campaign',
+    'description': 'Choose which campaign you currently play.',
+    'default': 'On',
+    'enum': [
+      'Lantern',
+      'Stars',
+    ],
+  },
   'card design': {
     'type': 'group',
     'title': 'Cards design',
@@ -327,10 +337,7 @@ var settings_schema = {
         'type': 'option',
         'title': 'Dragon King',
         'default': 'Disabled',
-        'enum': [
-          'Disabled',
-          'Cards only',
-        ],
+        'enum': expansion_options,
       },
       'dung beetle knight': {
         'type': 'option',
@@ -375,10 +382,7 @@ var settings_schema = {
         'type': 'option',
         'title': 'Lion Knight',
         'default': 'Disabled',
-        'enum': [
-          'Disabled',
-          'Cards only',
-        ],
+        'enum': expansion_options,
       },
       'lonely tree': {
         'type': 'option',

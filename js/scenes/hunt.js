@@ -87,6 +87,9 @@ module.exports = class HuntScene {
       'dung beetle knight': ['xrmmrrxmrrmr', [6, 9, 12],
         './images/hunt/dung_beetle_knight.png', 8, 40,
       ],
+      'dragon king': ['xmrmmrxmrrmrr', [6, 9, 12],
+        './images/hunt/dragon_king.png', 8, 42,
+      ],
     }
 
     createHuntTable()

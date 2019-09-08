@@ -7,7 +7,7 @@ const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings'
 const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
-const { addDevelopment } = require('./../ui/development')
+const { addDevelopment, openLocation } = require('./../ui/development')
 
 module.exports = class SettlementScene {
   render () {
@@ -93,7 +93,7 @@ module.exports = class SettlementScene {
     createReference()
     addSettings(settings)
     addMilestones()
-    // addDevelopment()
+    addDevelopment()
 
     // MUTE BUTTON SETUP
     // $("#mute.button").click(function () {
@@ -150,15 +150,16 @@ module.exports = class SettlementScene {
     }
 
     if (anew) {
-      $('#hunt_icon').fadeIn(2000)
-      $('#label_text').fadeIn(2000)
-      $('#hunt_icon').delay(1000).fadeOut(2000)
-      $('#label_text').delay(1000).fadeOut(2000)
-      $('#settlement_background').delay(3500).fadeIn(2000)
+      $('#hunt_icon').fadeIn(1000)
+      $('#label_text').fadeIn(1000)
+      $('#hunt_icon').delay(1000).fadeOut(1000)
+      $('#label_text').delay(1000).fadeOut(1000)
+      $('#settlement_background').delay(2000).fadeIn(1000)
       // $('#milestones').delay(3500).fadeIn(2000);
-      $('#turn_cheatsheet').delay(3500).fadeIn(2000)
-      $('#settlement_event_button').delay(4000).fadeIn(1000)
-      $('#milestones_button').delay(4000).fadeIn(1000)
+      $('#turn_cheatsheet').delay(2000).fadeIn(1000)
+      $('#settlement_event_button').delay(2000).fadeIn(1000)
+      $('#milestones_button').delay(2000).fadeIn(1000)
+      $('#development_button').delay(2000).fadeIn(1000)
       $('#mute.button').show()
       // $('#back_button').show();
 
@@ -169,11 +170,12 @@ module.exports = class SettlementScene {
     } else {
       // $("#hunt_icon").fadeIn(2000);
       // $("#label_text").fadeIn(2000);
-      $('#settlement_background').fadeIn(2000)
+      $('#settlement_background').fadeIn(1000)
       // $('#milestones').fadeIn(2000);
-      $('#turn_cheatsheet').fadeIn(2000)
-      $('#settlement_event_button').fadeIn(2000)
-      $('#milestones_button').fadeIn(2000)
+      $('#turn_cheatsheet').fadeIn(1500)
+      $('#settlement_event_button').fadeIn(1500)
+      $('#milestones_button').fadeIn(1500)
+      $('#development_button').fadeIn(1500)
       $('#mute.button').show()
       // $('#back_button').show();
 
@@ -217,6 +219,7 @@ module.exports = class SettlementScene {
         };
         $('#settlement_event_back').delay(150).fadeIn(500)
         $(this).addClass('active')
+        $('#milestones_button').removeClass('active')
       } else {
         $('#settlement_event_screen').delay(150).fadeOut(500)
         $('#settlement_event_back').delay(50).fadeOut(500)
@@ -245,6 +248,25 @@ module.exports = class SettlementScene {
       $('#settlement_event_button').removeClass('active')
     })
 
+    $('#development_button').click(function () {
+      if (!$(this).hasClass('active')) {
+        $('#development_screen').delay(150).fadeIn(500)
+        $('#settlement_locations_window').delay(150).fadeIn(500)
+        $(this).addClass('active')
+        document.getElementById("defaultOpen").click();
+      } else {
+        $('#development_screen').delay(50).fadeOut(500)
+        $('#settlement_locations_window').delay(50).fadeOut(500)
+        $(this).removeClass('active')
+      };
+    })
+
+    $('#development_screen').click(function () {
+      $('#development_screen').delay(150).fadeOut(500)
+      $('#settlement_locations_window').delay(50).fadeOut(500)
+      $('#development_button').removeClass('active')
+    })
+
     $('#settlement_event_button').tooltipster({
       contentAsHTML: 'true',
       animation: 'grow',
@@ -257,6 +279,14 @@ module.exports = class SettlementScene {
       contentAsHTML: 'true',
       animation: 'grow',
       content: 'Show <b>Milestones</b>.',
+      position: 'right',
+      delay: '600',
+    })
+
+    $('#development_button').tooltipster({
+      contentAsHTML: 'true',
+      animation: 'grow',
+      content: 'Show settlement locations.',
       position: 'right',
       delay: '600',
     })
@@ -282,8 +312,10 @@ module.exports = class SettlementScene {
       $('#milestones').append($('<div id="milestone">&bull; First child is born - <a id="milestone-trigger" target="principle new life">Principle: New Life</a></div>'))
       $('#milestones').append($('<div id="milestone">&bull; First time death cound is updated - <a id="milestone-trigger" target="principle death">Principle: Death</a></div>'))
       $('#milestones').append($('<div id="milestone">&bull; Population reaches 15 - <a id="milestone-trigger" target="principle society">Principle: Society</a></div>'))
-      $('#milestones').append($('<div id="milestone">&bull; Settlement has 5 innovations - <a id="milestone-trigger" target="hooded knight">Hooded Knight</a></div>'))
       $('#milestones').append($('<div id="milestone">&bull; Lantern Year 12 - <a id="milestone-trigger" target="principle conviction">Principle: Conviction</a></div>'))
+      if (settings['campaign'] == 'Lantern') {
+        $('#milestones').append($('<div id="milestone">&bull; Settlement has 5 innovations - <a id="milestone-trigger" target="hooded knight">Hooded Knight</a></div>'))
+      }
 
       $('body').on('click', '#milestone-trigger', function () {
         setTransition($(this).attr('target'), 'menu', document.title, current_state())
