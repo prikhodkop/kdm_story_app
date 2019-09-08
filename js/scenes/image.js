@@ -226,25 +226,26 @@ module.exports = class ImageScene {
         }, start_delay)
       }
 
-        addTimer(function () {
-          if (action == 'false') {
-            $('#img').fadeIn(2000)
-            action = 'true'
-            if (!menus_appeared) {
-              menus_appeared = true
-              addTimer(function () {
-                createSevereTables()
-                createReference()
-              }, 2000);
-            };
+      addTimer(function () {
+        if (action == 'false') {
+          $('#img').fadeIn(2000)
+          action = 'true'
+          if (!menus_appeared) {
+            menus_appeared = true
+            addTimer(function () {
+              createSevereTables()
+              createReference()
+            }, 2000);
           }
-        }, start_delay + duration + 3000)
+          ;
+        }
+      }, start_delay + duration + 3000)
 
-        addTimer(function () {
-          console.log('I play the music')
-          music.play()
-        }, start_delay + delay)
-    }
+      addTimer(function () {
+        console.log('I play the music')
+        music.play()
+      }, start_delay + delay)
+    };
     // #############
 
     $('#img_back').click(function () {
