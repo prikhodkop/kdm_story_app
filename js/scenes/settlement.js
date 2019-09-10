@@ -4,6 +4,7 @@ const { createMenuButton, createReference, createSevereTables } = require('./../
 const { getSettings, addSettings } = require('./../ui/settings')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { addDevelopment, openLocation } = require('./../ui/development')
+// const { imageMapResize } = require('./../vendor/imageMapResizer.min.js')
 
 module.exports = class SettlementScene {
   constructor () {
@@ -78,6 +79,7 @@ module.exports = class SettlementScene {
 
     // ### COMMON PART (exec always) #################
     $('#container').children().hide()
+    // $('#turn_cheatsheet').imageMapResize();
 
     createMenuButton()
     createToc()
@@ -146,12 +148,12 @@ module.exports = class SettlementScene {
       $('#label_text').fadeIn(1000)
       $('#hunt_icon').delay(1000).fadeOut(1000)
       $('#label_text').delay(1000).fadeOut(1000)
-      $('#settlement_background').delay(2000).fadeIn(1000)
+      $('#settlement_background').delay(2000).fadeIn(500)
       // $('#milestones').delay(3500).fadeIn(2000);
-      $('#turn_cheatsheet').delay(2000).fadeIn(1000)
-      $('#settlement_event_button').delay(2000).fadeIn(1000)
-      $('#milestones_button').delay(2000).fadeIn(1000)
-      $('#development_button').delay(2000).fadeIn(1000)
+      $('#turn_cheatsheet').delay(2000).fadeIn(500)
+      $('#settlement_event_button').delay(2500).fadeIn(1000)
+      $('#milestones_button').delay(2500).fadeIn(1000)
+      $('#development_button').delay(2500).fadeIn(1000)
       $('#mute.button').show()
       // $('#back_button').show();
 
@@ -164,10 +166,10 @@ module.exports = class SettlementScene {
       // $("#label_text").fadeIn(2000);
       $('#settlement_background').fadeIn(1000)
       // $('#milestones').fadeIn(2000);
-      $('#turn_cheatsheet').fadeIn(1500)
-      $('#settlement_event_button').fadeIn(1500)
-      $('#milestones_button').fadeIn(1500)
-      $('#development_button').fadeIn(1500)
+      $('#turn_cheatsheet').fadeIn(1000)
+      $('#settlement_event_button').delay(1000).fadeIn(500)
+      $('#milestones_button').delay(1000).fadeIn(500)
+      $('#development_button').delay(1000).fadeIn(500)
       $('#mute.button').show()
       // $('#back_button').show();
 
@@ -302,7 +304,7 @@ module.exports = class SettlementScene {
       if (window.reload) {
         setTransition(document.title, 'back', getBackTarget(), current_state())
       }
-    }, 100)    
+    }, 100)
 
     function addMilestones () {
       $('#milestones').append($('<div id="milestone-title">Milestones</div>'))

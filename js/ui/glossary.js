@@ -15,8 +15,7 @@ const glossary_terms = {
   'After Hit': 'An attack trigger found on some monster Al attack profiles. If there are any successful hits in the attack before rolling hit location dice, apply this trigger\'s attack effects.',
   'Aftermath': 'The end of a showdown Phase. Contains different outcomes based on the survivors\' success or failure.',
   // 'Ageless':'An ability. You may hunt if you are retired. When you gain Hunt XP, you may decide not to gain it.',
-  'AI Card': 'Al cards are made up of actions, flows and alerts, some cards also have persistent injury and/or definition boxes. There are four kinds of Al cards: Basic, Advanced, Legendary and Special.',
-  'AI Deck': 'Made up of Al cards used for a specific showdown. See the monster\'s story event for details of its Al deck. The Al Deck is reduced as the monster is wounded.',
+  'AI Card': 'Al cards are made up of actions, flows and alerts, some cards also have persistent injury and/or definition boxes. There are four kinds of Al cards: Basic (B), Advanced (A), Legendary (L) and Special (S).',
   'Alerts': 'Actions following an alert contain important conditional information that must be considered to determine if the action is performed. Continue to perform any further actions on the Al card unless stated otherwise. Survival may not be spent during an alert.',
   'All Survivors': 'An effect during the showdown that refers to all survivors applies to all survivors currently on the showdown board. Unless explicitly stated otherwise survivors removed from the showdown board are unaffected.',
   'Ambush (Monster)': 'If the monster moves into the survivors\' hunt board space, it ambushes the survivors. End any current hunt events and start the showdown immediately. Survivors skip their first turn. In most cases, this means that the monster will take two turns in a row.',
@@ -27,7 +26,7 @@ const glossary_terms = {
   'Archive': 'Remove this card from play and return it to the game box.  Unless it is recorded into settlement storage or the survivor\'s record sheet, any archived card is permanently lost.',
   'Armor': 'Gear with this keyword is armor. Protects the survivor from injury. Each piece of armor will have the hit location symbol for the hit location it can be worn on. Each hit location may only wear one piece of armor.',
   'Armor Points': 'Recorded on the survivor record sheet. Determined by armor gear in the survivor\'s gear grid, as well as other effects and events. Each point negates one point of damage to the hit location. Armor points decrease by 1 for each damage they negate.',
-  'Armor Set': 'Each armor set is comprised of all armor from a single settlement location with the keyword \"set\". For example. while a survivor is wearing the White Lion Helm, White Lion Gauntlets, White Lion Coat. White Lion Skirt, and White Lion Boots, they have completed the White Lion armor set.',
+  'Armor Set': 'Each armor set is comprised of all armor from a single settlement location with the keyword <b style="color:#990 !important;">\"set\"</b>. For example. while a survivor is wearing the White Lion Helm, White Lion Gauntlets, White Lion Coat. White Lion Skirt, and White Lion Boots, they have completed the White Lion armor set.',
   'Armor Set Bonus': 'A survivor wearing a completed armor set gains the benefits of the armor set bonus listed on its corresponding armor set card.',
   'Arms': 'A survivor hit location. \nDamage to the arms beyond the heavy injury level results in a roll on the Arms section of the Severe Injury table.',
   'Arrow': 'A gear keyword. This gear card is an arrow. Although arrows require a bow to be in your gear grid to be activated, arrows and bows are distinct weapons. Arrows do not inherit the qualities of bows they are fired from (cumbersome, cursed, etc). Wounding with an arrow does not make a survivor eligible to earn bow proficiency.',
@@ -70,6 +69,7 @@ const glossary_terms = {
   'Closest Survivor': 'The survivor the least number of cardinal spaces away from the monster.',
   'Closest Threat': 'The threat the least number of cardinal spaces away from the monster.',
   'Club': 'Gear with this keyword is a club weapon. Survivors may gain levels of club weapon proficiency with this weapon.',
+  'Conflict (Rule of Death)': 'As in any game with many moving parts and rules, conflict may occasionally arise regarding rules interpretations, group decisions, or exceptions.<br\>&emsp;First and foremost, this game is designed to provide time well spent with friends. Use this as the guiding principle for solving any problems that arise. In addition, here are some technical guidelines, for resolving conflict.<br/>&emsp;When conflict arises over contradictions in rules, apply specific rules found on cards (AI, gear etc) and story events, before any rules found in the rulebook core rules sections.<br/>&emsp;If conflicts arise that slow or halt a play session completely, use the <b style="color:#990 !important;">Rule of Death: always rule against the survivors</b>. Kingdom Death is a dangerous place, and the survivors\' future is bleak. Make sure that any ambiguities resolve against the survivors\' favor.<br/>&emsp;At its core, <i>Monster</i> is a cooperative experience. Be respectful of others as you navigate the game\'s decisions together.',
   'Collides': 'If a monster moves through a space occupied by a survivor, they collide and the survivor suffers collision. If a monster ends its movement on a survivor, they collide.  The survivor suffers collision and knockback 5. If a survivor is knocked back into impassable terrain, they collide with it and the survivor suffers collision. If a survivor suffers knockback into another survivor, complete the knockback movement normally. Both survivors suffer collision at the end of knockback. If the survivors would occupy the same space, instead place the knocked back survivor in the closest unoccupied space.',
   'Collision': 'When a survivor suffers collision. they are knocked down.',
   'Consumable': 'A keyword. This may be consumed by survivors.',
@@ -107,7 +107,8 @@ const glossary_terms = {
   'Doomed': 'The indicated survivor(s) may not spend survival until this card is resolved.',
   // 'Dormenatus':'An ability. When you depart, gain 1 armor point to every hit location for each green affinity you have.',
   'Draw AI': 'The monster controller draws the top Al card of the monster\'s Al deck and plays it. If the Al deck is empty, shuffle the discard pile into it and draw the top card. If the Al deck and discard pile are empty, the monster performs its Basic Action.',
-  'Duration': 'Duration cards are drawn twice. The first time a duration card is drawn, perform any \"when drawn face down\" actions. Then, instead of discarding it, place the duration card face up on top of the Al deck. The next time a monster draws an Al card, it draws the duration card for a second time. Perform any \"when drawn face up\" actions, then discard the card after resolving. Some duration cards have persistent effects while they are face up on top of the Al deck.',
+  'Duplicate Gear': 'Except for weapons, a survivor may not have multiple copies of the same gear in their gear grid. A survivor gains the benefits of a weapon\'s special rules only once, no matter how many copies they have. Additional copies of weapons still contribute affinities.',
+  'Duration': 'Duration cards are drawn twice.<br/>&emsp;The first time a duration card is drawn, perform any \"when drawn face down\" actions. Then, instead of discarding it, place the duration card face up on top of the Al deck.<br/>&emsp;The next time a monster draws an Al card, it draws the duration card for a second time. Perform any \"when drawn face up\" actions, then discard the card after resolving.<br/>&emsp;Some duration cards have persistent effects while they are face up on top of the Al deck.',
   'Early Iron': 'A gear special rule. When any of your attack roll results are a 1, cancel your attack.',
   'Encourage': 'A survival action. A standing survivor may spend 1 survival at any time to encourage a knocked down survivor, letting them stand. Deaf survivors may not be encouraged. Each survivor may only Encourage once per round, and only if the settlement has the Language innovation.',
   'Endeavors': 'Each returning survivor contributes +1 endeavor to the settlement. Survivors can spend endeavors to innovate, build new settlement locations, or perform unique actions. To spend an endeavor, nominate a survivor. Reduce the settlement\'s total endeavors by 1, and follow the rules for the action the endeavor was spent on. Unless stated otherwise, the action\'s effects apply only to the nominated survivor.',
@@ -123,7 +124,7 @@ const glossary_terms = {
   'Fighting Arts': 'Powerful battle techniques found on fighting art cards. When a fighting art is gained, record its rules on the survivor record sheet and return the card to the box. Survivors can have up to 3 fighting arts. Additional fighting arts gained replace a fighting art of your choice. If a survivor would gain a fighting art they already have, nothing happens.',
   'Finesse': 'A gear keyword. This gear requires finesse to use. This keyword does not interact with the core game in any way and is one of those annoying keywords for expansions.',
   'First Strike': 'A type of monster hit location. This hit location must be resolved before any others. except Traps and Light Speed hit locations. If multiple First Strike locations are drawn, the player decides the order in which to resolve them. Traps still precede and cancel all other hits.',
-  'Fist & Tooth': 'Fist & Tooth is a weapon always available to a survivor. The attack attributes for First & Tooth are listed on the gear grid. Survivors may gain levels of Fist & Tooth weapon proficiency with this weapon.',
+  'Fist & Tooth': 'Fist & Tooth is a weapon always available to a survivor. The attack attributes for First & Tooth are listed on the gear grid. Survivors may gain levels of Fist & Tooth weapon proficiency with this weapon.<br/>&emsp;For gameplay purposes <i>(like Blood Paint)</i> Fist & Tooth weapon is considered a separate gear card placed to the left of lower left corner of gear grid.',
   'Flammable': 'A gear keyword. Fire can destroy this gear.',
   'Flow': 'Flows are hesitations between monster actions. They give the survivors an opportunity to use survival actions. They are represented by a bar with an arrow.',
   'Forward': 'The direction the miniature is facing.',
@@ -166,7 +167,7 @@ const glossary_terms = {
   'Impassable': 'A terrain special rule. A survivor cannot voluntarily move into or through any spaces this terrain occupies. Impassable terrain stops all movement, including knockback. If a survivor ls knocked back into a space occupied by impassable terrain. they collide with the terrain and their movement ends just before the terrain.',
   'Impervious': 'A type of monster hit location. Impervious hit locations cannot be wounded. even with a Lantern 10 wound roll. Wound attempts will never remove Al cards. However. critical effects may still occur.',
   'In Play': 'All cards are considered in play after they have been drawn and until they resolve. Most cards are discarded after resolving. Others, such as Moods, remain in play indefinitely or until a condition is satisfied.',
-  'In Range (Monster)': 'A survivor is in a monster\'s range if the number of spaces between them is less than or equal to its current movement (including modifiers). If \"in range\" is followed by a number, such as “Range (8)”, that number replaces the monster\'s movement when calculating to see if a survivor is in range.',
+  'In Range (Monster)': 'A survivor is in a monster\'s range if the number of spaces between them is less than or equal to its current movement (including modifiers). If \"in range\" is followed by a number, such as “Range (6)”, that number replaces the monster\'s movement when calculating to see if a survivor is in range.',
   'Indestructible': 'A terrain special rule. A terrain that is undestructible cannot be destroyed or removed from the showdown board for any reason until the end of the showdown.',
   'Injury Level': 'Indicates damage to a hit location. Recorded on the survivor record sheet. Most hit locations feature two levels, light and heavy, except for the Head (which only has a heavy injury level).',
   'Innovation': 'A type of advancement for a settlement, gained at the Lantern Hoard. Innovations alter the settlement and the survivors\' capabilities. Record new innovations on your settlement record sheet.',
@@ -182,10 +183,10 @@ const glossary_terms = {
   'Jewelry': 'A gear keyword. Decorative and functional!',
   'Katana': 'Gear with this keyword is a katana weapon. survivors may not gain levels of katana weapon proficiency.',
   'Katar': 'Gear with this keyword is a katar weapon. Survivors may gain levels of katar weapon proficiency with this weapon.',
-  'Knockback X': 'Move the target of knockback X spaces directly away from the cause of this effect.',
+  'Knockback X': 'Move the target of knockback X spaces directly away from the cause of this effect. If the survivor passes over or ends up in a space with another survivor, they are both knocked down. Survivors may not share spaces, move the knocked back survivor to an adjacent free space. If the survivor encounters a board edge, stop and end knockback. If the survivor suffers knockback on the board edge - they move along the edge.',
   'Knocked Down (Monster)': 'While a monster is knocked down, attack rolls hit on 3+ (in place of normal accuracy). Cancel all reactions, including reactions that might be beneficial to survivors. This does not cancel critical wounds effects (since they are not reactions). If the monster is knocked down during a flow, cancel any remaining actions on its card. A knocked down monster stands when it draws an Al card, a trap is played, or at the start of the next turn (monster or survivors\').',
   'Knocked Down (Survivor)': 'When a survivor is knocked down, turn the miniature on its side. Knocked down survivors always stand at the end of the next monster turn. If a survivor is knocked down in the middle of their attack, the remainder of that attack is canceled. Knocked down survivors may only spend survival to dodge (remaining knocked down), and cannot spend activation or movement.',
-  'Lantern 10': 'A die roll result with the lantern face up. Equivalent to a 10 for other 10-sided dice.',
+  'Lantern 10': 'A die roll result with the lantern face up. Equivalent to a 10 for other 10-sided dice. Means guaranteed success for hit and wound rolls.',
   'Lantern Year': 'Survivors\' basic unit of time. The settlement typically advances by one lantern year as part of each Settlement Phase.',
   'Last to Wound': 'The survivor who last wounded the monster.',
   'Leather': 'A gear keyword. Cured hides are a crucial component of this gear.',
@@ -206,14 +207,15 @@ const glossary_terms = {
   'Metal': 'A gear keyword. This gear is substantively crafted of metal.',
   // 'Metal Maw':'An ability. Your Fist & Tooth attacks gain Sharp (add 1d10 strength to each wound attempt).',
   'Miniature': 'The physical representation of a monster or survivor, used in the Hunt and Showdown phases.',
-  'Monster AI Deck': 'Each monster has a unique Al deck. Its showdown story event describes how to construct a Monster Al Deck at the appropriate level.',
+  // 'Monster AI Deck': 'Each monster has a unique Al deck. Its showdown story event describes how to construct a Monster Al Deck at the appropriate level.',
+  'Monster AI Deck': 'Made up of Al cards used for a specific showdown. See the monster\'s story event for details of its Al deck. The Al Deck is reduced as the monster is wounded.',
   'Monster Controller': 'The player who draws the monster\'s Al card. They make any decisions and rolls to resolve a monster\'s actions for that round. Designated by the Monster controller tile. Monster controller changes at the start of each round.',
   'Monster Controller Bonus': 'When a monster controller\'s survivor is the target of an attack, this foolhardy action earns that player\'s survivor +1 insanity.',
   'Monster Controller Tile': 'Designates the monster controller. Moves clockwise to the next player or survivor at the start of each round.',
   'Monster-Impassable': 'A terrain special rule. Nor survivors, nor monsters can move through spaces occupied by monster-impassable terrain.',
   'Monster Hit Location Card': 'Represents a location on the monster\'s body. These are hit by a survivor\'s successful attack roll. Many hit location cards feature special effects or actions.',
   'Monster Hit Location Deck': 'The cards that collectively make up the locations a survivor may hit a given monster. Unique to each monster.',
-  'Monster Level': 'Monster level determines the difficulty of the showdown and the monster\'s placement on the hunt board. Higher-level monsters have longer hunts and more difficult showdowns.',
+  'Monster Level': 'Monster level determines the difficulty of the showdown and the monster\'s placement on the hunt board. Higher-level monsters have longer hunts and more difficult showdowns. ',
   'Monster Reference Card/ Basic Action': 'Contains a small overview of each monster\'s characteristics. They serve as a compact reminder of frequently-used monster information.',
   'Monster Resources': 'Monster resource cards are gained only from fighting that monster. Each huntable monster has a unique deck. Monster resources can be used and spent as their resource type or as their specific resource name. Some monster resources have additional rules.',
   'Monster Showdown Story Event': 'contains relevant information for a particular monster\'s showdown and hunt, including instructions on constructing a monster Al deck, hunt and showdown board setup, the monster\'s instinct and basic attack, and information on the aftermath of the showdown.',
@@ -284,7 +286,7 @@ const glossary_terms = {
   'Settlement Event': 'An event occurring during the Settlement Phase.',
   'Settlement Phase': 'During the Settlement Phase. survivors experience settlement and story events, spend endeavors, craft gear, and determine which survivors depart on the next hunt. This is the only phase where survivors may change or rearrange their gear grids.',
   'Settlement Record Sheet': 'Helps the players keep track of the development of their settlement.',
-  'Severe Injury': 'When survivors\' armor points and injury levels are exhausted, they may accumulate temporary or permanent severe injuries from the severe injury table. When a survivor suffers permanent injuries, note the name and rules on your record sheet and adjust their attributes as necessary. Some injuries fill the Skip Next Huntrvivor record sheet. Otherwise, severe injuries last until the end of the showdown and are marked by attribute tokens. Some permanent injuries have limits to how many times they can be recorded. If a survivor suffers a severe injury they have already recorded the maximum number of times, they instead gain 1 bleeding token.',
+  'Severe Injury': 'When survivors\' armor points and injury levels are exhausted, they may accumulate temporary or permanent severe injuries from the severe injury table.<br\>&emsp;When a survivor suffers permanent injuries, note the name and rules on your record sheet and adjust their attributes as necessary.<br\>&emsp;Some injuries fill the Skip Next Hunt on survivor record sheet. Otherwise, severe injuries last until the end of the showdown and are marked by attribute tokens.<br\>&emsp;Some permanent injuries have limits to how many times they can be recorded. If a survivor suffers a severe injury they have already recorded the maximum number of times, they instead gain 1 bleeding token.',
   'Severe Injury Tables': 'Contains sections of possible severe Injuries to hit locations. Each hit that causes a severe injury prompts a roll on that location\'s severe injury table.',
   'Sharp': 'A gear special rule. Add 1d10 strength to each wound attempt using this gear. This 1d10 is not a wound roll and cannot cause critical wounds.',
   'Shield': 'Gear with this keyword is a shield weapon. Survivors may gain levels of shield weapon proficiency with this weapon.',
@@ -301,7 +303,7 @@ const glossary_terms = {
   'Spear': 'Gear with this keyword is a spear weapon. Survivors may gain levels of spear weapon proficiency with this weapon.',
   'Special Showdown': 'Special Showdowns interrupt the Settlement Phase. After they conclude (regardless of victory or defeat), the Settlement Phase continues where it left off. Do not generate endeavors or trigger new story events. Each Special Showdown\'s details are listed on the story event or innovation that triggered it. After showdown heal all light and heavy injuries from the remaining survivors and remove all tokens.',
   'Speed (Attack Profile/Weapon)': 'The number of attack rolls (number of dice rolled). Usually determined by a monster Al card\'s attack profile or speed on a survivor\'s weapon.',
-  'Speed (Attribute/Modifier/Bonus)': 'Speed is added to a survivor\'s weapon speed or a monster\'s attack profile speed to determine the number of attack rolls. If speed is negative, subtract it from the number of dice rolled for an attack. A monster or survivor attack with less than one speed still has one attack roll. weapons with the Slow keyword cannot benefit from positive speed bonuses.',
+  'Speed (Attribute)': 'Speed is added to a survivor\'s weapon speed or a monster\'s attack profile speed to determine the number of attack rolls. If speed is negative, subtract it from the number of dice rolled for an attack. A monster or survivor attack with less than one speed still has one attack roll. weapons with the Slow keyword cannot benefit from positive speed bonuses.',
   // 'Stalwart':'An ability. Ignore knocked down effects of brain trauma, disorders. and intimidation actions.',
   'Starvation Space': 'The last space of the hunt board. If the survivors perish on the hunt, reach the end of the hunt board without a showdown, or the monster moves off of the hunt board, the Hunt Phase ends and the quarry is lost. Aules on the Starvation space. The Lantern Year is over, and a new Settlement Phase begins.',
   'Stinky': 'A gear keyword. This item has a strong odor.',
@@ -310,7 +312,7 @@ const glossary_terms = {
   // 'Story Of The Young Hero':'An ability. At the start of each of your acts, you may choose to gain 1 survival and 2 bleeding tokens.',
   'Story Event': 'An event which impacts the settlement/survivors. Common triggers include: the settlement timeline, survivor milestones in Hunt XP/courage/understanding, monster cards, settlement events. When a Story Event appears, trigger the story event by turning to the appropriate page in the rulebook and following its instructions.',
   'Strange Resources': 'Resource cards only gained in specific circumstances. Strange monster resources are not shuffled into monster resource decks.',
-  'Strength (Attribute/Modifier/Bonus)': 'Strength is added to the result of a wound attempt. If strength is a negative number, subtract it from the wound attempt result',
+  'Strength (Attribute)': 'Strength is added to the result of a wound attempt. If strength is a negative number, subtract it from the wound attempt result',
   'Strength (Weapon)': 'The number a weapon adds to wound attempt.',
   'Super-Dense': 'A type of hit location. This hit location is unusually hard. If a survivor attempts to wound one of these locations with a frail weapon, it is destroyed and archived at the end of the attack.',
   'Surge': 'A type of survival action. When opportunity permits, a survivor may spend 1 survival to surge. Gain +1 Activation, which must be spent immediately. This allows them to activate a weapon, interact with terrain, use gear, and anything else spending an activation allows them to do. Resolve the results of the surge (including any monster reactions) before resuming the tum. Each survivor may only surge once per round, and only if the settlement has the Inner Lantern Innovation.',
@@ -319,7 +321,7 @@ const glossary_terms = {
   'Survival Limit': 'Survival limit is the maximum amount of survival a survivor may have. Survival limit is recorded on the settlement record sheet. Innovations and events raise the settlement\'s survival limit. At the start of the campaign. the survival limit is 1. Survival gained over the survival limit is lost.',
   'Survival Opportunity': 'The only times that survivors may dash or surge. Survival opportunities exist at the following times: during flows on monster Al cards, between actions on the survivors\' turn, before performing reactions, after critical wound effects, or when a monster is knocked down.',
   'Survivor Record Sheet': 'Represents the permanent status of a survivor. Some sections include: attributes, Hunt XP, weapon proficiency, and permanent changes.',
-  'Survivor Status Card': 'Special (S) Al cards that track conditions for an individual survivor rather than the monster. When a survivor gains a survivor status card, place it next to their gear grid. The card\'s effects apply only to them. Some status cards change and need to be tracked. Some grant survivors unique actions. If a monster\'s story event has a Survivor Status card in its setup, all survivors gain the card at the starwdown.',
+  'Survivor Status Card': 'Special (S) Al cards that track conditions for an individual survivor rather than the monster. When a survivor gains a survivor status card, place it next to their gear grid. The card\'s effects apply only to them. Some status cards change and need to be tracked. Some grant survivors unique actions. If a monster\'s story event has a Survivor Status card in its setup, all survivors gain the card at the start of the showdown.',
   // 'Sweet Battle':'An ability. You may surge without spending survival. If you do, the Activation must be used to activate a weapon.',
   'Sword': 'Gear with this keyword is a sword weapon. Survivors may gain levels of sword weapon proficiency with this weapon.',
   'Tactics Cards': 'Tactics provide survivors with new ways to fight, using what they\'ve learned from fightning knights. Tactics Cards are drawn at the start of showdown and places in survivors play area. At the end of showdown, archive all drawn Tactics Cards.',
@@ -817,8 +819,8 @@ const settlement_locations = {
   'Gormchymist': {
     'expansion': 'gorm',
     'gear': {
-      '1': [],
-      '2': ['Healing Potion', 'Wisdom Potion', 'Steadfast Potion','Power Potion', 'Life Elixir'],
+      '1': ['Healing Potion', 'Wisdom Potion', 'Steadfast Potion'],
+      '2': ['Power Potion', 'Life Elixir'],
       '3': []},
   },
   'Gormery': {
@@ -1233,7 +1235,69 @@ function get_representation (word) {
     let terms_with_pics = ['Attack', 'Collision', 'Hunt Phase', 'Settlement Phase', 'Survival', 'Knocked Down (Monster)', 'Knocked Down (Survivor)']
 
     if (terms_with_pics.includes(word)) {
-      result = result + '<br/><img id=reference-image src="images/reference/terms/' + word + '.jpg"/>'
+      result = result + '<br/><br/><img id=reference-image src="images/reference/terms/' + word + '.jpg"/>'
+    }
+
+    // post text 1 width 98%
+
+    if (['Settlement Board', 'Gear Grid', 'Hit Location (Monster)'].includes(word)) {
+      result = result + '<br/><br/><img id=reference-image style="width:99%;" src="images/reference/terms/'+word+'.png"/>'
+    }
+
+    // post text 2 width 98%
+
+    if (['Endeavors'].includes(word)) {
+      result = result + '<br/><br/><img id=reference-image style="width:99%;" src="images/reference/terms/'+word+'.png"/>'
+      result = result + '<br/><img id=reference-image style="width:99%;" src="images/reference/terms/'+word+' 2.png"/>'
+    }
+
+    // post text 1 width 50%
+
+    if (['Hunt Event', 'Persistent Injury', 'Mood', 'Survivor Status Card'].includes(word)) {
+      result = result + '<br/><br/><img id=reference-image style="width:50%;" src="images/reference/terms/'+word+'.png"/>'
+    }
+
+    // post text 1 width 75%
+
+    if (['Wound', 'Vermin Resources', 'Monster Resources', 'Basic Resources', 'Strange Resources', 'Persistent Injury Actions', 'Flow', 'Settlement Event', 'In Range (Monster)', 'Facing', 'Alerts', 'AI Card', 'Hit Location (Survivors)', 'Terrain Cards', 'Weapon', 'Armor', 'Item', 'Damage (Condition)', 'Armor Set', 'Puzzle Affinity', 'Affinity (Completed)', 'Injury Level', 'Attribute Modifier Token'].includes(word)) {
+      result = result + '<br/><br/><img id=reference-image style="width:75%;" src="images/reference/terms/'+word+'.png"/>'
+    }
+
+    // post text 2 width 75%
+
+    if (['Movement (Attribute)', 'Knockback X', 'Collision', 'Affinity Bonus', 'Field of View'].includes(word)) {
+      result = result + '<br/><br/><img id=reference-image style="width:75%;" src="images/reference/terms/'+word+'.png"/>'
+      result = result + '<br/><img id=reference-image style="width:75%;" src="images/reference/terms/'+word+' 2.png"/>'
+    }
+
+    // pre-text 15%
+
+    if (['Bleeding Token'].includes(word)) {
+      result =  '<img id=reference-image style="width:15%;" src="images/reference/terms/'+word+' 0.png"/>' + result
+    }
+
+    // pre-text 25%
+
+    if (['Conflict (Rule of Death)', 'Hit Location Dice', 'Lantern 10', 'Overwhelming Darkness', 'Reaction', 'Intimidate Actions','Accuracy (Attribute)', 'Evasion (Attribute)', 'Speed (Attribute)', 'Strength (Attribute)', 'Movement (Attribute)', 'Luck (Player Attribute)'].includes(word)) {
+      result =  '<img id=reference-image style="width:25%;" src="images/reference/terms/'+word+' 0.png"/>' + result
+    }
+
+    // pre-text 50% no br
+
+    if (['Story Event', 'Settlement Phase', 'Showdown Phase', 'Hunt Phase', 'Collision', 'Duplicate Gear', 'Survival', 'Injury Level'].includes(word)) {
+      result =  '<img id=reference-image style="width:50%;" src="images/reference/terms/'+word+' 0.png"/>' + result
+    }
+
+    // pre-text 50% with br
+
+    if (['Severe Injury', 'Knockback X', 'Innovation Deck', 'Fist & Tooth', 'Critical Wound'].includes(word)) {
+      result =  '<img id=reference-image style="width:50%;" src="images/reference/terms/'+word+' 0.png"/><br/>' + result
+    }
+
+    // pre-text 75% with br
+
+    if (['Knocked Down (Survivor)', 'Duration', 'Trap'].includes(word)) {
+      result =  '<img id=reference-image style="width:75%;" src="images/reference/terms/'+word+' 0.png"/><br/>' + result
     }
 
     let weapons = ['Axe', 'Bow', 'Club', 'Dagger', 'Fist & Tooth', 'Grand Weapon', 'Katana', 'Katar', 'Scythe', 'Shield', 'Spear', 'Sword', 'Twilight Sword', 'Whip', 'Thrown']

@@ -435,6 +435,30 @@ function createReference () {
   $(document).on('click', '#reference-data', function () {
     $('#reference-window-back').scrollTo($(this), duration = 1000)
   })
+  $(document).on('dblclick', '#reference-data', function () {
+    let adapted_name = $(this).attr('class');
+
+    // console.log($(this))
+
+    let values = $('#reference-window').val()
+
+    console.log(values)
+    console.log(adapted_name)
+
+    let the_value = ''
+
+    for (let i=0; i<values.length; i++) {
+      console.log('Adapted: '+adapt_name(values[i]))
+      if (adapt_name(values[i]) == adapted_name) {
+        the_value = values[i];
+        break
+      }
+    }
+
+    console.log('The value:'+the_value)
+
+    selectize.removeItem(the_value)
+  })
 
   function populateRefKeypad () {
     const refPadArr = [
@@ -468,18 +492,25 @@ function createReference () {
     }
   }
 
-  $('#reference').hover(function () {
-    if (!$(this).hasClass('active')) {
-      if (!$(this).hasClass('hoverd')) {
-        $('#reference-window-back0').fadeIn(500)
-        $('#reference-window-background').fadeIn(500)
-        $('#reference').attr('src', 'images/icons/reference_active.png')
-        selectize.focus()
-        $(this).toggleClass('active')
-      }
-    }
-  }, function () {
-    $(this).delay(500).removeClass('hoverd')
+  // $('#reference').hover(function () {
+  //   // if (!$(this).hasClass('active')) {
+  //     if (!$(this).hasClass('hoverd')) {
+  //       $('#reference-window-back0').fadeIn(500)
+  //       $('#reference-window-background').fadeIn(500)
+  //       $('#reference').attr('src', 'images/icons/reference_active.png')
+  //       selectize.focus()
+  //       $(this).toggleClass('active')
+  //     }
+  //   // }
+  // }, function () {
+  //   $(this).delay(500).removeClass('hoverd')
+  // })
+  $('#reference').tooltipster({
+    contentAsHTML: 'true',
+    animation: 'grow',
+    content: 'Show <b>Reference</b> window.',
+    position: 'right',
+    delay: '600',
   })
 
   $('#reference').click(function () {

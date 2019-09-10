@@ -188,12 +188,15 @@
 	z-index: 89;
 	filter: drop-shadow(0 0 20px #333);
 	opacity: 0.4;
+	transition: opacity 0.5s, filter 0.5s, ;
 }
 
-#reference.active {
+#reference:hover {
 	/* -webkit-box-shadow: 0 0 40px #cccc00; */
 	/* box-shadow: 0 0 40px #cccc00; */ */
-	filter: drop-shadow(0 0 60px #cccc00);
+	filter: drop-shadow(0 0 5px #cccc00);
+	opacity: 0.8;
+	/* color: #cc0; */
 }
 
 /* #reference-window-selectized {
@@ -219,7 +222,7 @@
 
 #reference-window-back {
 	left:0%;
-	top: 5%;
+	top: 6%;
 	height: 92.5%;
 	width: 100%;
 	position:absolute;
@@ -321,6 +324,11 @@ div#reference-window-back0 .selectize-control {
 	width: 95%;
 	overflow:auto;
 	font-family: 'Silverado';
+	/* --borderWidth: 0.8em;
+	border-radius: var(--borderWidth);
+	border: 0.1rem solid #333; */
+	/* background-color: #333; */
+	/* opacity:0.5; */
 }
 
 #reference-image {
