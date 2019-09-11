@@ -132,21 +132,6 @@ module.exports = class ImageScene {
           }, 2000)
         };
 
-        // speech.seek(state.speech_position)
-
-        // if (state.speech_playing) {
-        //   speech.volume(0.0)
-        //   speech.play()
-        //   speech.fade(0.0, 1.0, 500)
-        // }
-
-        // music.seek(state.music_position)
-
-        // if (state.music_playing) {
-        //   music.volume(0.0)
-        //   music.play()
-        //   music.fade(0.0, music_volume, 500)
-        // }
         music.volume(0.0)
         music.play()
         music.fade(0.0, music_volume, 500)
@@ -265,8 +250,9 @@ module.exports = class ImageScene {
         speech.fade(1.0, 0.0, 2000)
         speech.pause()
       }
-
-      music.play();
+      if (!music.playing()) {
+        music.play();
+      }
     })
 
     $('#img').click(function () {
