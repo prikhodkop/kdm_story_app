@@ -1,13 +1,23 @@
+const { app } = require('electron').remote
+
 const { createToc, titleCase, events_table } = require('./../ui/events')
 const { clone } = require('./../ui/glossary')
 const { get_sequence } = require('./../ui/hunt_events')
 const { md_to_html_2 } = require('./../ui/hunt_events_table')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
-const { getSettings, addSettings } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
+const { render, cdnUrl } = require('./../ui/template-renderer')
+const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 module.exports = class HuntScene {
-  constructor () {
+  render () {
+    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/hunt.html')
+
+    onSettingsSaved(() => {
+      setTransition(document.title, 'back', getBackTarget(), current_state())
+    })
+
     var start_delay = 1000
 
     let settings = getSettings()
@@ -19,21 +29,14 @@ module.exports = class HuntScene {
     var myself = 'hunt'
     document.title = myself
 
-    window.reload = false
-    setInterval(function () {
-      if (window.reload) {
-        setTransition(document.title, 'back', getBackTarget(), current_state())
-      }
-    }, 100)
-
     var music = new Howl({
-      src: [events_table[myself].music],
+      src: [cdnUrl(events_table[myself].music)],
       loop: true,
       volume: 0.8,
     })
 
     var speech = new Howl({
-      src: [events_table[myself].speech],
+      src: [cdnUrl(events_table[myself].speech)],
       volume: 1.0,
     })
 
@@ -171,7 +174,7 @@ module.exports = class HuntScene {
     };
 
     if (anew) {
-      setTimeout(function () {
+      addTimer(function () {
         speech.play()
       }, start_delay)
 
@@ -265,7 +268,7 @@ module.exports = class HuntScene {
       }
 
       if (!clean && !$(this).val() == '') {
-        timeout = setTimeout(function () {
+        timeout = addTimer(function () {
           if (value == '00') {
             value = 100
           } else {
@@ -335,7 +338,7 @@ module.exports = class HuntScene {
       }
 
       if (!clean && !eventnumber.val() == '') {
-        timeout = setTimeout(function () {
+        timeout = addTimer(function () {
           $('#input_container').fadeOut(500)
           if (value == '00') {
             value = 100
@@ -406,7 +409,7 @@ module.exports = class HuntScene {
       // let title = $(this).attr('title');
       //
       // if (title == 'Monster Hunt Event') {
-      //   $('#quary_popup').attr('src',$(this).attr('href'))
+      //   $('#quary_popup').attr('src', cdnUrl($(this).attr('href')))
       //   $('#quary_popup').fadeIn(3000)
       //   $('#quary_popup_back').fadeIn(3000)
       //
@@ -469,9 +472,9 @@ module.exports = class HuntScene {
 
       console.log(name)
 
-      $('<img class="token" id="herb_gathering" title="" src="./images/hunt/herbs_gathering.png" width="8%" style="left:25%; top:74%;">')
+      $('<img class="token" id="herb_gathering" title="" src="' + cdnUrl('images/hunt/herbs_gathering.png') + '" width="8%" style="left:25%; top:74%;">')
         .load(function () {
-          $(this).appendTo('body')
+          $(this).appendTo('#container')
           $(this).hide()
           $(this).delay(2000).fadeIn(4000)
           $(this).tooltipster({
@@ -491,9 +494,9 @@ module.exports = class HuntScene {
           })
         })
 
-      $('<img class="token" id="mineral_gathering" title="" src="./images/hunt/mineral_gathering.png" width="8%" style="left:67%; top:74%;">')
+      $('<img class="token" id="mineral_gathering" title="" src="' + cdnUrl('images/hunt/mineral_gathering.png') + '" width="8%" style="left:67%; top:74%;">')
         .load(function () {
-          $(this).appendTo('body')
+          $(this).appendTo('#container')
           $(this).hide()
           $(this).delay(2000).fadeIn(4000)
           $(this).tooltipster({
@@ -539,7 +542,7 @@ module.exports = class HuntScene {
       loadHuntImage(monster[2], monster_pos, monster[3], monster[4], 'monster', 'target="' +
                 ref + '"')
 
-      setTimeout(function () {
+      addTimer(function () {
         var i
         for (i = 1; i < 13; i++) {
           if (board_state.charAt(i - 1) == 'o') {
@@ -552,7 +555,7 @@ module.exports = class HuntScene {
       },
       500)
 
-      setTimeout(function () {
+      addTimer(function () {
         loadHuntImage('images/hunt/darkness.png', 7, 7.322, 32.2, 'darkness',
           'overwhelming darkness')
       }, 4300)
@@ -730,10 +733,10 @@ module.exports = class HuntScene {
 
       $('<img class="token ' + position + '" position="' + position + '" id="' + type +
                 '" title="' +
-                title + '" src="' + path + '" width="' + width + '%" style="left: ' + coord +
+                title + '" src="' + cdnUrl(path) + '" width="' + width + '%" style="left: ' + coord +
                 '%; top:' + top +
                 '%;"' + ref + ')>').load(function () {
-        $(this).appendTo('body')
+        $(this).appendTo('#container')
         $(this).hide()
         if (type == 'darkness') {
           $(this).show()
@@ -770,8 +773,7 @@ module.exports = class HuntScene {
                   .innerHTML =
                                     'Starvation<br/>Survivors must spend <b>1d5</b> basic resources!'
                 // $('#label_text').innerHTML = 'Starvation<br/>Survivors must spend <b>1d5</b> basic resources!'
-                $('#hunt_icon').attr('src',
-                  'images/hunt/starvation_icon.png')
+                $('#hunt_icon').attr('src', cdnUrl('images/hunt/starvation_icon.png'))
                 $('#label_text').css('z-index', '9')
                 $('#hunt_icon').css('z-index', '9')
                 $('#label_text').css('color', '#fff')
@@ -779,8 +781,8 @@ module.exports = class HuntScene {
                 $('#hunt_icon').delay(500).fadeIn(1000)
                 $('#label_text').delay(2700).fadeOut(1000)
                 $('#hunt_icon').delay(2700).fadeOut(1000)
-                setTimeout(function () { $('#label_text').hide() }, 3750)
-                setTimeout(function () {
+                addTimer(function () { $('#label_text').hide() }, 3750)
+                addTimer(function () {
                   document.getElementById(
                     'label_text').innerHTML =
                                         temp_text
@@ -846,8 +848,7 @@ module.exports = class HuntScene {
 
               if (ui.draggable[0]['id'] == 'survivors') {
                 if (title == 'Monster Hunt Event') {
-                  $('#quary_popup').attr('src', $(this)
-                    .attr('href'))
+                  $('#quary_popup').attr('src', cdnUrl($(this).attr('href')))
                   $('#quary_popup').delay(500).fadeIn(1000)
                   $('#quary_popup').toggleClass('hidden')
                   $('#quary_popup_back').fadeIn(1500)
@@ -863,7 +864,7 @@ module.exports = class HuntScene {
                   $('#random_event_input_big').val('')
                   $('#random_event_icon').fadeOut(500)
                   $('#random_event_input').fadeOut(500)
-                  setTimeout(function () {
+                  addTimer(function () {
                     $('#random_event_input_big')
                       .focus()
                   }, 1600)
@@ -884,11 +885,11 @@ module.exports = class HuntScene {
         // var coord = 9.842 + 7.31*(position-2) + 7.35/2 - lantern_width/2.;
         var coord = 2.65 + 7.298 * (position - 1 / 2) - lantern_width / 2.0
         $('<img class="token ' + position + '" position="' + position +
-                    '" id="lantern" title="Event Cleared" src="images/hunt/lantern.png" width="' +
+                    '" id="lantern" title="Event Cleared" src="' + cdnUrl('images/hunt/lantern.png') + '" width="' +
                     lantern_width +
                     '%" style="left: ' + coord + '%; top:' + (top) + '%;">').load(
           function () {
-            $(this).appendTo('body')
+            $(this).appendTo('#container')
             $(this).hide()
             $(this).attr('position', position)
             $(this).droppable({

@@ -1,25 +1,12 @@
-const HuntScene = require('../scenes/hunt')
-const ImageScene = require('../scenes/image')
-const Slideshow = require('../scenes/slideshow')
-const IndexScene = require('../scenes')
-const SettlementScene = require('../scenes/settlement')
-const VideoScene = require('../scenes/video')
+const router = require('../ui/router')
 
-const name = document.body.getAttribute('scene-name')
+let hashbang = window.location.hash.match(/^#!\/([^\/?]+)/)
 
-let scene
-
-switch (name.toLowerCase()) {
-  case 'hunt': scene = HuntScene; break
-  case 'image': scene = ImageScene; break
-  case 'slideshow': scene = SlideshowScene; break
-  case 'index': scene = IndexScene; break
-  case 'settlement': scene = SettlementScene; break
-  case 'video': scene = VideoScene; break
+if (hashbang) {
+  hashbang = hashbang[1]
+} else {
+  window.location.hash = '#!/index'
+  hashbang = 'index'
 }
 
-if (!scene) {
-  throw `invalid scene ${scene}`
-}
-
-new scene()
+router.route(hashbang, false)

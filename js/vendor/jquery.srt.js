@@ -17,10 +17,15 @@
   if no data-srt is provided, the contents of the div is parsed as srt.
 */
 
+/**
+ * TODO this file has been modified from the source, move it out of vendor/
+ */
+
 var currentSubtitle = -1;
+var subtitleHandlers = [];
 
 function configureSubtitle(srt_text) {
-  $('.srt').each(function() {
+  $('.srt[data-video]').each(function() {
     var subtitleElement = $(this);
     subtitleElement.text(srt_text);
     var videoId = subtitleElement.attr('data-video');
@@ -100,16 +105,20 @@ function playSubtitles(subtitleElement) {
       }
     }
   }, 100);
+
+  subtitleHandlers.push(ival);
 }
 
-function clearSubtitles(delay) {
-  setTimeout(function() {currentSubtitle = -1;}, 1000);
-  $('.srt').each(function() {
-    var subtitleElement = $(this);
-    // subtitleElement.hide();
-    subtitleElement.html('');
-    // $(this).text('');
-  });
+function clearSubtitles() {
+  currentSubtitle = -1;
+
+  for (var i in subtitleHandlers) {
+    clearInterval(subtitleHandlers[i])
+  }
+
+  subtitleHandlers = []
+
+  $('.srt').html('');
 }
 
 function strip(s) {

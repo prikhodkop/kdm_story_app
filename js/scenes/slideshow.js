@@ -1,11 +1,17 @@
-const electron = require('electron')
 const { createToc, events_table } = require('./../ui/events')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
-const { getSettings, addSettings } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
+const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 module.exports = class FinaleScene {
-  constructor () {
+  render () {
+    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/slideshow.html')
+
+    onSettingsSaved(() => {
+      setTransition(document.title, 'back', getBackTarget(), current_state())
+    })
+
     console.log(sessionStorage)
 
     // UNDERSTAND WHAT EVENT TO SHOW
@@ -13,8 +19,6 @@ module.exports = class FinaleScene {
     var myself = sessionStorage.getItem('target')
     document.title = myself
     // #############
-
-    window.reload = false // global variable needed to detected when settings are changed and window needs to be reloaded
 
     console.log(myself)
 
@@ -72,9 +76,9 @@ module.exports = class FinaleScene {
 
     elem.addEventListener('slides_shown', function (e) { end_state(e) }, false);
 
-    if ((transition == 'back') && !(state == null)) {
-      var anew = false;
+    let anew = false
 
+    if ((transition == 'back') && !(state == null)) {
       console.log('State loaded successfully!')
       state = JSON.parse(state)
       console.log(state)
@@ -84,7 +88,7 @@ module.exports = class FinaleScene {
       elem.dispatchEvent(slide_shown_event);
 
     } else {
-        var anew = true;
+        anew = true;
 
         init_state();
 
@@ -140,9 +144,6 @@ module.exports = class FinaleScene {
 
 
 
-
-
-
     if ((transition == 'back') && !(state == null)) {
       console.log('State loaded successfully!')
       state = JSON.parse(state)
@@ -153,13 +154,11 @@ module.exports = class FinaleScene {
 
       // when returning through back transition we always skip the slides!
       if (true) {
-        anew = false
-
         show_slides(number_of_slides, number_of_slides, play=false)
 
         if (!menus_appeared) {
           menus_appeared = true
-          setTimeout(function () {
+          addTimer(function () {
             createSevereTables()
             createReference()
           }, 2000)
@@ -211,22 +210,22 @@ module.exports = class FinaleScene {
           delay = 1000
           $('.srt').text('Open rule book on page 22 and follow the instructions.')
           $('.srt').fadeIn(2000)
-          setTimeout(function () { $('.srt').fadeOut(1000) }, 3000)
+          addTimer(function () { $('.srt').fadeOut(1000) }, 3000)
         }
 
         if (!mute_narration) {
-          setTimeout(function () {
+          addTimer(function () {
             speech.play()
           }, start_delay)
         }
 
-        setTimeout(function () {
+        addTimer(function () {
           if (action == 'false') {
             $('#img').fadeIn(2000)
             action = 'true'
             if (!menus_appeared) {
               menus_appeared = true
-              setTimeout(function () {
+              addTimer(function () {
                 createSevereTables()
                 createReference()
               }, 3000);
@@ -234,7 +233,7 @@ module.exports = class FinaleScene {
           }
         }, start_delay + duration + 3000)
 
-        setTimeout(function () {
+        addTimer(function () {
           console.log('I play the music')
           music.play()
         }, start_delay + delay)
@@ -249,7 +248,7 @@ module.exports = class FinaleScene {
       $('#img').fadeIn(2000)
       if ((!menus_appeared) && anew) {
         menus_appeared = true
-        setTimeout(function () {
+        addTimer(function () {
           createSevereTables()
           createReference()
         }, 2000);
@@ -290,12 +289,6 @@ module.exports = class FinaleScene {
         setTransition($(this).attr('target'), 'menu', document.title, current_state())
       }
     })
-
-    setInterval(function () {
-      if (window.reload) {
-        setTransition(document.title, 'back', getBackTarget(), current_state())
-      }
-    }, 100)
 
     function show_slides (start, finish, play=true) {
       $("#link").click(function() {

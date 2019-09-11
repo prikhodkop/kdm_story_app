@@ -1,3 +1,5 @@
+const { cdnUrl } = require('./template-renderer')
+
 const glossary_terms = {
   'Abilities': 'Skills and techniques learned by survivors, usually through story events, and recorded on the Survivor Record Sheet.',
   'Absorb': 'The Watcher\'s Instinct. Described on the Watcher\'s showdown story event.',
@@ -1326,61 +1328,61 @@ function get_representation (word) {
     let weapons = ['Axe', 'Bow', 'Club', 'Dagger', 'Fist & Tooth', 'Grand Weapon', 'Katana', 'Katar', 'Scythe', 'Shield', 'Spear', 'Sword', 'Twilight Sword', 'Whip', 'Thrown']
 
     if (weapons.includes(word)) {
-      result = result + '<br/><img id=reference-image style="width:100%;" src="images/reference/Weapon Masteries/' + word + '.png"/>'
-      // result = result + '<br/><img id=reference-image style="width:75%;" src="images/reference/Weapon Masteries/'+word+' (M).png"/>'
+      result = result + '<br/><img id=reference-image style="width:100%;" src="' + cdnUrl('images/reference/Weapon Masteries/' + word + '.png') + '"/>'
+      // result = result + '<br/><img id=reference-image style="width:75%;" src="' + cdnUrl('images/reference/Weapon Masteries/'+ word +' (M).png') + '"/>'
     }
 
     return result
   } else if (word in fightning_arts_text) {
     // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
     if (settings['card design']['fighting arts'] == 'Poots') {
-      return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="images/reference/Fighting Arts/' + word + '.jpg"/>'
+      return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="' + cdnUrl('images/reference/Fighting Arts/' + word + '.jpg') + '"/>'
     } else if (settings['card design']['fighting arts'] == 'Fen Small') {
-      return '<img id=reference-image style="width:75%;border: 1px solid #333;box-shadow: 0 0 10px #000;" src="images/reference/Fighting Arts_fen/' + word + '.png"/>'
+      return '<img id=reference-image style="width:75%;border: 1px solid #333;box-shadow: 0 0 10px #000;" src="' + cdnUrl('images/reference/Fighting Arts_fen/' + word + '.png') + '"/>'
     } else if (settings['card design']['fighting arts'] == 'Lvova Wide') {
-      return '<img id=reference-image style="width:98%;border: 1px solid #333;box-shadow: 0 0 10px #000;" src="images/reference/Fighting Arts_lvova_wide/' + word + '.png"/>'
+      return '<img id=reference-image style="width:98%;border: 1px solid #333;box-shadow: 0 0 10px #000;" src="' + cdnUrl('images/reference/Fighting Arts_lvova_wide/' + word + '.png') + '"/>'
     }
   } else if (word in secret_fightning_arts_text) {
     if (settings['card design']['fighting arts'] == 'Poots') {
-      let result = '<img id=reference-image style="width:75%;border: 1px solid #333;" src="images/reference/Fighting Arts/' + word + '.jpg"/>'
+      let result = '<img id=reference-image style="width:75%;border: 1px solid #333;" src="' + cdnUrl('images/reference/Fighting Arts/' + word + '.jpg') + '"/>'
       if (word == 'Necromancer') {
-        result = result + '<img id=reference-image style="width:75%;border: 1px solid #333;" src="images/reference/Fighting Arts/' + word + '_back.jpg"/>'
+        result = result + '<img id=reference-image style="width:75%;border: 1px solid #333;" src="' + cdnUrl('images/reference/Fighting Arts/' + word + '_back.jpg') + '"/>'
       }
       return result
     } else if (settings['card design']['fighting arts'] == 'Fen Small') {
-      return '<img id=reference-image style="width:75%" src="images/reference/Fighting Arts_fen/' + word + '.png"/>'
+      return '<img id=reference-image style="width:75%" src="' + cdnUrl('images/reference/Fighting Arts_fen/' + word + '.png') + '"/>'
     }
   } else if (word in disorders_text) {
     if (settings['card design']['disorders'] == 'Poots') {
-      return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="images/reference/Disorders/' + word + '.jpg"/>'
+      return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="' + cdnUrl('images/reference/Disorders/' + word + '.jpg') + '"/>'
     } else if (settings['card design']['disorders'] == 'Fen Small') {
-      return '<img id=reference-image style="width:75%;" src="images/reference/Disorders_fen/' + word + '.png"/>'
+      return '<img id=reference-image style="width:75%;" src="' + cdnUrl('images/reference/Disorders_fen/' + word + '.png') + '"/>'
     } else if (settings['card design']['disorders'] == 'Fen Wide') {
-      return '<img id=reference-image style="width:99%;border: 1px solid #333;box-shadow: 0 0 10px #000;" src="images/reference/Disorders_fen_wide/' + word + '.png"/>'
+      return '<img id=reference-image style="width:99%;border: 1px solid #333;box-shadow: 0 0 10px #000;" src="' + cdnUrl('images/reference/Disorders_fen_wide/' + word + '.png') + '"/>'
     }
   } else if (word in abilities) {
     // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
-    return '<img id=reference-image style="width:75%;" src="images/reference/Abilities/' + word + '.png"/>'
+    return '<img id=reference-image style="width:75%;" src="' + cdnUrl('images/reference/Abilities/' + word + '.png') + '"/>'
   } else if (word in settlement_events) {
     // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
-    return '<img id=reference-image style="width:100%;" src="images/reference/Settlement Events/' + word + '.jpg"/>'
+    return '<img id=reference-image style="width:100%;" src="' + cdnUrl('images/reference/Settlement Events/' + word + '.jpg') + '"/>'
   } else if (word in settlement_locations) {
     // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
-    return '<img id=reference-image style="width:90%;" src="images/reference/Settlement Locations/' + word + '.jpg"/>'
+    return '<img id=reference-image style="width:90%;" src="' + cdnUrl('images/reference/Settlement Locations/' + word + '.jpg') + '"/>'
   } else if (word in armor_sets) {
     // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
-    let result = '<img id=reference-image style="width:75%;" src="images/reference/Armor Sets/' + word + '.jpg"/>'
-    result = result + '<br/><img id=reference-image style="width:75%;" src="images/reference/Armor Sets/' + word + ' 2.jpg"/>'
+    let result = '<img id=reference-image style="width:75%;" src="' + cdnUrl('images/reference/Armor Sets/' + word + '.jpg') + '"/>'
+    result = result + '<br/><img id=reference-image style="width:75%;" src="' + cdnUrl('images/reference/Armor Sets/' + word + ' 2.jpg') + '"/>'
     return result
   } else if (word in survivor_statuses) {
     // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
-    return '<img id=reference-image style="width:75%;border: 2px solid #555;" src="images/reference/Survivor Statuses/' + word + '.jpg"/>'
+    return '<img id=reference-image style="width:75%;border: 2px solid #555;" src="' + cdnUrl('images/reference/Survivor Statuses/' + word + '.jpg') + '"/>'
   } else if (word in innovations) {
     // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
-    return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="images/reference/Innovations/' + word + '.jpg"/>'
+    return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="' + cdnUrl('images/reference/Innovations/' + word + '.jpg') + '"/>'
   }  else if (word in principles) {
     // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
-    return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="images/reference/Innovations/' + word + '.jpg"/>'
+    return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="' + cdnUrl('images/reference/Innovations/' + word + '.jpg') + '"/>'
   }
 }
 

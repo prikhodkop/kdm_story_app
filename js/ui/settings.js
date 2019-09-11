@@ -1,9 +1,15 @@
-const { app, getCurrentWindow } = require('electron').remote
+const { app } = require('electron').remote
+
 const { readFile, saveFile, exists } = require('./files')
+const { cdnUrl } = require('./template-renderer')
+const { addTimer } = require('./timer')
+
+let settingsSavedCallback
 
 module.exports = {
   getSettings,
   addSettings,
+  onSettingsSaved,
 }
 
 function getSettings () {
@@ -35,7 +41,7 @@ function addSettings (settings) {
 
   $('#settings-window-back0').append($('<img>', {
     id: 'settings-window-back-img',
-    src: 'images/reference/reference_back.png',
+    src: cdnUrl('images/reference/reference_back.png'),
   }))
 
   $('#settings-window-back0').append($('<div>', {
@@ -73,7 +79,7 @@ function addSettings (settings) {
     $('#settings-window-back0').fadeOut(500)
     $('#settings-window-background').fadeOut(500)
     $('#settings').removeClass('active')
-    setTimeout(function () {
+    addTimer(function () {
       setSettings(settings)
     }, 600)
   })
@@ -110,15 +116,15 @@ function saveSettings () {
   // saveFile(JSON.stringify(settings), __dirname + '/settings.json')
   saveFile(JSON.stringify(settings), app.getPath('userData') + '/settings.json')
 
-  // window.reload()
-  if (document.title == 'kingdom death') {
-    getCurrentWindow().reload()
-  } else {
-    window.reload = true
+  if (settingsSavedCallback) {
+    settingsSavedCallback()
   }
 
-  // app.exit(0)
   return settings
+}
+
+function onSettingsSaved(callback = null) {
+  settingsSavedCallback = callback
 }
 
 function createTable (schema, defaults = undefined, level = 0, group = '') {
