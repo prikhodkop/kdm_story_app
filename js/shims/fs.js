@@ -2,7 +2,7 @@ module.exports = {
   readFileSync (path) {
     console.debug('fs.readFileSync', path)
 
-    if (path[0].match(/^[./]/)) {
+    if (path[0].match(/^[.\/]/)) {
       // if path begins with a slash or period it's part of the app filesystem,
       // use a synchronous http request to fetch it's content
       console.debug('ajax')
@@ -10,7 +10,7 @@ module.exports = {
       let result
 
       $.ajax({
-        url: path.replace(/^[./]/g, ''),
+        url: path.replace(/^[.\/]+/, ''),
         dataType: 'text',
         type: 'get',
         async: false,
@@ -49,7 +49,7 @@ module.exports = {
   existsSync (path) {
     console.debug('fs.existsSync', path)
 
-    if (path[0].match(/^[./]/)) {
+    if (path[0].match(/^[.\/]/)) {
       console.debug('ajax')
 
       // or period if path begins with a slash it's part of the app filesystem,
@@ -57,7 +57,7 @@ module.exports = {
       let result
 
       $.ajax({
-        url: path.replace(/^[./]/g, ''),
+        url: path.replace(/^[.\/]+/, ''),
         type: 'head',
         async: false,
         success () {

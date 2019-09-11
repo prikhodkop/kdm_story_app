@@ -4,11 +4,20 @@ const { createAbout } = require('./../ui/about')
 const { createToc } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton } = require('./../ui/menu')
-const { getSettings, addSettings } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
+const { render, cdnUrl } = require('./../ui/template-renderer')
+const { addTimer } = require('./../ui/timer')
 const { setTransition } = require('./../ui/transition')
 
 module.exports = class IndexScene {
-  constructor () {
+  render () {
+    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/index.html')
+    document.title = 'kingdom death'
+
+    onSettingsSaved(() => {
+      window.location.reload()
+    })
+
     const version = typeof window.globals !== 'undefined' ? window.globals.version : 'dev'
 
     $('#label_text').hide()
@@ -32,7 +41,7 @@ module.exports = class IndexScene {
     let lang = settings['language']
 
     var music = new Howl({
-      src: ['audio/theme.mp3'],
+      src: [cdnUrl('audio/theme.mp3')],
       // autoplay: true,
       loop: true,
       volume: 0.8,
@@ -105,7 +114,7 @@ module.exports = class IndexScene {
         console.log('Here2!')
       } else {
         // $("#open_audio").currentTime = 0
-        setTimeout(function () {
+        addTimer(function () {
           music.play()
         }, 500)
 
@@ -137,7 +146,7 @@ module.exports = class IndexScene {
       clearSubtitles()
       // $("#video").attr('currentTime', 0);
       document.getElementById('video').currentTime = 0
-      // setTimeout(function(){
+      // addTimer(function(){
       //   if (settings['subtitles'] == 'On') {
       //     configureSubtitle(readFile('./video/srt/' + lang + '/intro.srt'))
       //   }

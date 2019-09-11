@@ -1,12 +1,20 @@
-const electron = require('electron')
+const { app } = require('electron').remote
+
 const { createToc, events_table } = require('./../ui/events')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
-const { getSettings, addSettings } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
+const { render, cdnUrl } = require('./../ui/template-renderer')
+const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
-const fs = require("fs")
 
 module.exports = class ImageScene {
-  constructor () {
+  render () {
+    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/image.html')
+
+    onSettingsSaved(() => {
+      setTransition(document.title, 'back', getBackTarget(), current_state())
+    })
+
     console.log(sessionStorage)
 
     // UNDERSTAND WHAT EVENT TO SHOW
@@ -15,27 +23,25 @@ module.exports = class ImageScene {
     document.title = myself
     // #############
 
-    window.reload = false
-
     console.log(myself)
 
     // let settings = JSON.parse(sessionStorage.getItem("settings"));
     var settings = getSettings()
     sessionStorage.setItem('settings', JSON.stringify(settings))
 
-    $('#img_back').attr('src', 'images/' + myself + '/back.jpg')
+    $('#img_back').attr('src', cdnUrl('images/' + myself + '/back.jpg'))
 
     if ((myself == 'white speaker') && (settings['whiteboxes']['white speaker'] == 'Enabled')) {
-      $('#img').attr('src', 'images/' + myself + '/img_wb.jpg')
+      $('#img').attr('src', cdnUrl('images/' + myself + '/img_wb.jpg'))
     } else if ((myself == 'hooded knight') && (settings['whiteboxes']['allison the twilight knight'] == 'Enabled')) {
-      $('#img').attr('src', 'images/' + myself + '/img_wb.jpg')
+      $('#img').attr('src', cdnUrl('images/' + myself + '/img_wb.jpg'))
     } else {
-      $('#img').attr('src', 'images/' + myself + '/img.jpg')
+      $('#img').attr('src', cdnUrl('images/' + myself + '/img.jpg'))
     }
 
     if ((myself == 'intimacy') && (settings['campaign'] == 'Stars')) {
-      $('#img_back').attr('src', 'images/' + myself + ' stars/back.jpg')
-      $('#img').attr('src', 'images/' + myself + ' stars/img.jpg')
+      $('#img_back').attr('src', cdnUrl('images/' + myself + ' stars/back.jpg'))
+      $('#img').attr('src', cdnUrl('images/' + myself + ' stars/img.jpg'))
     }
 
     if (!events_table[myself].hide_label) {
@@ -54,11 +60,9 @@ module.exports = class ImageScene {
     var music_volume = 0.8 // music volume
 
     var speech = new Howl({
-      src: [events_table[myself].speech],
+      src: [cdnUrl(events_table[myself].speech)],
       volume: 1.0,
     })
-
-    // console.log('Speech exists: '+fs.existsSync('./../../'+events_table[myself].speech));
 
     if ((events_table[myself].speech == '') || (settings['narration'] == 'Off')) {
       var mute_narration = true
@@ -67,7 +71,7 @@ module.exports = class ImageScene {
     };
 
     var music = new Howl({
-      src: [events_table[myself].music],
+      src: [cdnUrl(events_table[myself].music)],
       loop: true,
       volume: music_volume,
     })
@@ -106,6 +110,8 @@ module.exports = class ImageScene {
       speech.mute(true)
     }
 
+    let menus_appeared = false
+
     if ((transition == 'back') && !(state == null)) {
       console.log('State loaded successfully!')
       state = JSON.parse(state)
@@ -115,14 +121,12 @@ module.exports = class ImageScene {
       var action = state.action
 
       if (true) {
-        anew = false
-
         $('#label_text').fadeIn(2000)
         $('#img').delay(2000).fadeIn(2000)
 
         if (!menus_appeared) {
           menus_appeared = true
-          setTimeout(function () {
+          addTimer(function () {
             createSevereTables()
             createReference()
           }, 2000)
@@ -160,11 +164,6 @@ module.exports = class ImageScene {
       $('#back_button').delay(500).fadeIn(1000)
     }
 
-    var menus_appeared = false
-
-    var start_anew_event = new Event('start_anew');
-    window.addEventListener('start_anew', function (e) { console.log('Recieved event!'); start_anew() }, false);
-
     // SET UP EVENT START IF IT HAS NO INITIALIZED STATE
     // #############
     if (anew) {
@@ -173,12 +172,10 @@ module.exports = class ImageScene {
       console.log('Muted naration: '+ mute_narration)
 
       if (mute_narration) {
-        window.dispatchEvent(start_anew_event);
-        console.log('Sended the event!')
+        start_anew();
       } else {
         speech.on('load', function () {
-          window.dispatchEvent(start_anew_event);
-          console.log('Sended the event!')
+          start_anew();
         })
       };
 
@@ -208,7 +205,7 @@ module.exports = class ImageScene {
         // delay = parseInt(events_table[myself].music_delay, 10)
         $('.srt').text('Open rule book on page 22 and follow the instructions.')
         $('.srt').fadeIn(2000)
-        setTimeout(function () { $('.srt').fadeOut(1000) }, 3000)
+        addTimer(function () { $('.srt').fadeOut(1000) }, 3000)
       }
 
       console.log('Speech ' + events_table[myself].speech)
@@ -224,26 +221,27 @@ module.exports = class ImageScene {
 
 
       if (!mute_narration) {
-        setTimeout(function () {
+        addTimer(function () {
           speech.play()
         }, start_delay)
       }
 
-      setTimeout(function () {
+      addTimer(function () {
         if (action == 'false') {
           $('#img').fadeIn(2000)
           action = 'true'
           if (!menus_appeared) {
             menus_appeared = true
-            setTimeout(function () {
+            addTimer(function () {
               createSevereTables()
               createReference()
             }, 2000);
-          };
+          }
+          ;
         }
       }, start_delay + duration + 3000)
 
-      setTimeout(function () {
+      addTimer(function () {
         console.log('I play the music')
         music.play()
       }, start_delay + delay)
@@ -257,7 +255,7 @@ module.exports = class ImageScene {
       $('#img').fadeIn(2000)
       if ((!menus_appeared) && anew) {
         menus_appeared = true
-        setTimeout(function () {
+        addTimer(function () {
           createSevereTables()
           createReference()
         }, 2000);
@@ -291,12 +289,6 @@ module.exports = class ImageScene {
         setTransition($(this).attr('target'), 'menu', document.title, current_state())
       }
     })
-
-    setInterval(function () {
-      if (window.reload) {
-        setTransition(document.title, 'back', getBackTarget(), current_state())
-      }
-    }, 100)
 
     function current_state () {
       let current_state = new Object()

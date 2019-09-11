@@ -1,5 +1,6 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const InjectPlugin = require('webpack-inject-plugin').default
 const path = require('path')
 
 const isDev = (process.env.npm_lifecycle_script || '').indexOf('development') !== -1
@@ -7,12 +8,23 @@ const isDev = (process.env.npm_lifecycle_script || '').indexOf('development') !=
 module.exports = {
     entry: path.join(__dirname, '/js/interop/main.js'),
     mode: isDev ? 'development' : 'production',
-    devtool: isDev ? 'eval-source-map' : 'none',
+    devtool: isDev ? 'source-map' : 'none',
     output: {
         path: path.join(__dirname, '/dist'),
+        filename: 'js/[name]' + (!isDev ? '.[chunkhash:7]' : '') + '.js',
+        chunkFilename: 'js/[name]' + (!isDev ? '.[chunkhash:7]' : '') + '.js',
     },
     module: {
         rules: [
+            {
+              test: /\.html$/,
+              use: {
+                  loader: 'html-loader',
+                options: {
+                    attrs: [],
+                },
+              },
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -37,43 +49,52 @@ module.exports = {
             path.join(__dirname, '/node_modules'),
         ],
     },
-    plugins: []
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: path.join(__dirname, '/index.html'),
+        filename: 'index.html',
+        minify: (() => {
+          return isDev ? false : {
+            collapseBooleanAttributes: true,
+            collapseWhitespace: true,
+            minifyJS: true,
+            removeComments: true,
+          }
+        })(),
+      })
+    ]
         .concat((() => {
-            // only copy assets on production builds
+            // only set cdnHost on production build
+            let plugins = []
+
+            if (!isDev) {
+              plugins.push(new InjectPlugin(() => {
+                return `
+                  window.globals.template.cdnHost = 'https://media.githubusercontent.com/media/prikhodkop/kdm_story_app/master'
+                `
+              }))
+            }
+
+            return plugins
+          })())
+        .concat((() => {
+            // only copy assets on production build
             let plugins = []
 
             if (!isDev) {
               plugins.push(new CopyWebpackPlugin([
-                {from: 'audio', to: 'audio'},
                 {from: 'css', to: 'css'},
                 {from: 'font', to: 'font'},
-                {from: 'images', to: 'images'},
+                {from: 'icon.ico', to: 'icon.ico'},
                 {from: 'js/interop/electron.js', to: 'js/interop/electron.js'},
                 {from: 'js/vendor', to: 'js/vendor'},
-                {from: 'tooltipster', to: 'tooltipster'},
-                {from: 'video', to: 'video'},
+                {from: 'partials', to: 'partials'},
+                {from: 'tooltipster/dist', to: 'tooltipster/dist'},
                 {from: 'settings.json', to: 'settings.json'},
+                {from: 'video/srt', to: 'video/srt'},
               ]))
             }
 
             return plugins
-        })())
-        .concat((() => {
-            // create an instance of HtmlWebpackPlugin for each template
-            let templates = [
-                'index',
-                'image',
-                'video',
-                'hunt',
-                'settlement',
-            ];
-
-            return templates.map(function(template) {
-                return new HtmlWebpackPlugin({
-                    template: path.join(__dirname + `/${template}.html`),
-                    filename: template + '.html',
-                    minify: !isDev,
-                })
-            })
-        })()),
+          })()),
 }

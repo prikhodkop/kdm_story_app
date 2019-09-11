@@ -3,11 +3,18 @@ const { app } = require('electron').remote
 const { createToc, events_table } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
-const { getSettings, addSettings } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
+const { render, cdnUrl } = require('./../ui/template-renderer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 module.exports = class VideoScene {
-  constructor () {
+  render () {
+    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/video.html')
+
+    onSettingsSaved(() => {
+      setTransition(document.title, 'back', getBackTarget(), current_state())
+    })
+
     console.log(sessionStorage)
 
     // UNDERSTAND WHAT EVENT TO SHOW
@@ -16,8 +23,6 @@ module.exports = class VideoScene {
     document.title = myself
     // #############
 
-    window.reload = false
-
     var settings = getSettings()
     sessionStorage.setItem('settings', JSON.stringify(settings))
 
@@ -25,8 +30,8 @@ module.exports = class VideoScene {
     $('#menu').hide()
     $('#img').hide()
     $('#video').hide()
-    $('#video').attr('src', 'video/' + myself + '.mp4')
-    $('#img').attr('src', 'images/' + myself + '/img.jpg')
+    $('#video').attr('src', cdnUrl('video/' + myself + '.mp4'))
+    $('#img').attr('src', cdnUrl('images/' + myself + '/img.jpg'))
 
     $('#video').attr('width', '100%')
     $('#video').attr('height', '100%')
@@ -35,7 +40,7 @@ module.exports = class VideoScene {
     var music_volume = 0.8 // music volume
 
     var music = new Howl({
-      src: [events_table[myself].music],
+      src: [cdnUrl(events_table[myself].music)],
       // autoplay: true,
       loop: true,
       volume: music_volume,
@@ -181,12 +186,6 @@ module.exports = class VideoScene {
         setTransition($(this).attr('target'), 'menu', document.title, current_state())
       }
     })
-
-    setInterval(function () {
-      if (window.reload) {
-        setTransition(document.title, 'back', getBackTarget(), current_state())
-      }
-    }, 100)
 
     function isHidden (el) {
       var style = window.getComputedStyle(el)

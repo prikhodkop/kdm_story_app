@@ -1,5 +1,32 @@
 const remote = require('electron').remote
+
 const { get_all_options, is_random_draw, get_random_draws, get_representation } = require('./glossary')
+const { cdnUrl } = require('./template-renderer')
+const { addTimer } = require('./timer')
+
+document.onkeydown = function (evt) {
+  evt = evt || window.event
+  var isEscape = false
+  if ('key' in evt) {
+    isEscape = (evt.key === 'Escape' || evt.key === 'Esc')
+  } else {
+    isEscape = (evt.keyCode === 27)
+  }
+  if (isEscape) {
+    const escMenuEl = $('#esc-menu')
+    if (!escMenuEl.length) {
+      return
+    }
+    if (!escMenuEl.hasClass('active')) {
+      $('#reference-window-background').fadeIn(500)
+      escMenuEl.fadeIn(500)
+    } else {
+      escMenuEl.fadeOut(100)
+      $('#reference-window-background').fadeOut(100)
+    }
+    escMenuEl.toggleClass('active')
+  }
+}
 
 module.exports = {
   createMenuButton,
@@ -8,34 +35,6 @@ module.exports = {
 }
 
 function createMenuButton () {
-  // <a href="javascript:void(0)" id="menu-toggle-wrapper">
-  //   <div id="menu-toggle"></div>
-  // </a>
-  //
-  // <div id="menu" style="opacity:.9;">
-  //   <img id="menu_img" src="images/back.jpg"/>
-  // </div>
-
-  document.onkeydown = function (evt) {
-    evt = evt || window.event
-    var isEscape = false
-    if ('key' in evt) {
-      isEscape = (evt.key === 'Escape' || evt.key === 'Esc')
-    } else {
-      isEscape = (evt.keyCode === 27)
-    }
-    if (isEscape) {
-      if (!$('#esc-menu').hasClass('active')) {
-        $('#reference-window-background').fadeIn(500)
-        $('#esc-menu').fadeIn(500)
-      } else {
-        $('#esc-menu').fadeOut(100)
-        $('#reference-window-background').fadeOut(100)
-      }
-      $('#esc-menu').toggleClass('active')
-    }
-  }
-
   $('#container').append($('<div>', {
     // style: 'opacity:.9;',
     id: 'esc-menu',
@@ -44,7 +43,7 @@ function createMenuButton () {
   $('#esc-menu').append($('<img>', {
     // style: 'opacity:.9;',
     id: 'esc-back',
-    src: 'images/reference/reference_back.png',
+    src: cdnUrl('images/reference/reference_back.png'),
   }))
 
   $('#esc-menu').append($('<div>', {
@@ -96,7 +95,7 @@ function createMenuButton () {
 
   $('#menu').append($('<img>', {
     id: 'menu_img',
-    src: 'images/back.jpg',
+    src: cdnUrl('images/back.jpg'),
   }))
 
   $('#menu').append($('<div>', {
@@ -155,14 +154,14 @@ function addLocationTable (location, top) {
   $('#container').append($('<img>', {
     class: location,
     id: 'severe',
-    src: 'images/icons/' + location + '.png',
+    src: cdnUrl('images/icons/' + location + '.png'),
     style: 'top:' + top + ';',
   }))
 
   $('#container').append($('<img>', {
     class: location,
     id: 'severe-table',
-    src: 'images/severe injuries/' + location + '.jpg',
+    src: cdnUrl('images/severe injuries/' + location + '.jpg'),
   }))
 
   $('#severe.' + location).hide()
@@ -204,7 +203,7 @@ function addLocationTable (location, top) {
 function showLocationTable (location) {
   // $('#severe-background').fadeIn(500);
   // $('#severe-table').hide();
-  // $('#severe-table').attr('src', 'images/severe injuries/'+location+'.png');
+  // $('#severe-table').attr('src', cdnUrl('images/severe injuries/'+location+'.png'));
   $('#severe-table.' + location).delay(100).fadeIn(200)
   // $('#severe-table').slideLeft(1000);
 }
@@ -226,7 +225,7 @@ function createReference () {
 
   $('#container').append($('<img>', {
     id: 'reference',
-    src: 'images/icons/reference.png',
+    src: cdnUrl('images/icons/reference.png'),
   }))
 
   $('#reference').hide()
@@ -238,7 +237,7 @@ function createReference () {
 
   $('#reference-window-back0').append($('<img>', {
     id: 'reference-window-back-img',
-    src: 'images/reference/reference_back.png',
+    src: cdnUrl('images/reference/reference_back.png'),
   }))
 
   // $('#reference-window-back').append('<label for="reference-window">Terms:</label>')
@@ -259,7 +258,7 @@ function createReference () {
 
   $('#reference-window-back').append($('<img>', {
     id: 'glossary-symbols',
-    src: 'images/reference/symbols.png',
+    src: cdnUrl('images/reference/symbols.png'),
   }))
 
   let all_option = get_all_options()
@@ -349,12 +348,12 @@ function createReference () {
       })
       // $('.selectize-dropdown').css("display", "none");
 
-      setTimeout(function () {
+      addTimer(function () {
         $('#reference-data.' + adapt_name(values)).remove()
       }, 1500)
       // $('#reference-window').selectize.close();
       // $('#reference-window').setValue('Type here...');
-      setTimeout(function () {
+      addTimer(function () {
         if (!$('.selectize-input').hasClass('has-items')) {
           $('#glossary-symbols').fadeIn(500)
         }
@@ -374,7 +373,7 @@ function createReference () {
         $('#glossary-symbols').hide()
         for (let i = 0; i < draws.length; i++) {
           console.log(draws[i])
-          setTimeout(function () {
+          addTimer(function () {
             selectize.addItem(draws[i], false)
             $('#glossary-symbols').hide()
           }, 500 * i)
@@ -517,12 +516,12 @@ function createReference () {
     if (!$(this).hasClass('active')) {
       $('#reference-window-back0').fadeIn(500)
       $('#reference-window-background').fadeIn(500)
-      $('#reference').attr('src', 'images/icons/reference_active.png')
+      $('#reference').attr('src', cdnUrl('images/icons/reference_active.png'))
       selectize.focus()
     } else {
       $('#reference-window-back0').fadeOut(500)
       $('#reference-window-background').fadeOut(500)
-      $('#reference').attr('src', 'images/icons/reference.png')
+      $('#reference').attr('src', cdnUrl('images/icons/reference.png'))
     }
     $(this).toggleClass('active')
   })
@@ -530,7 +529,7 @@ function createReference () {
   $('#reference-window-background').on('click', function () {
     $('#reference-window-back0').fadeOut(500)
     $('#reference-window-background').fadeOut(500)
-    $('#reference').attr('src', 'images/icons/reference.png')
+    $('#reference').attr('src', cdnUrl('images/icons/reference.png'))
     $('#reference').removeClass('active')
     $('#esc-menu').fadeOut(100)
     $('#esc-menu').removeClass('active')

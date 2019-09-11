@@ -1,4 +1,5 @@
 const { events_table } = require('./events')
+const router = require('./router')
 
 module.exports = {
   setTransition,
@@ -28,7 +29,7 @@ function setTransition (name, transition, back_target = null, state = null, tran
   console.log('Done!')
 
   if (transit) {
-    window.location = './' + events_table[name].type + '.html'
+    router.route(events_table[name].type)
   }
 
   return true

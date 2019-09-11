@@ -1,13 +1,23 @@
+const { app } = require('electron').remote
+
 const { createToc, events_table } = require('./../ui/events')
 const { getSettlementEventPath } = require('./../ui/glossary')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
-const { getSettings, addSettings } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
+const { render, cdnUrl } = require('./../ui/template-renderer')
+const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { addDevelopment, openLocation } = require('./../ui/development')
 // const { imageMapResize } = require('./../vendor/imageMapResizer.min.js')
 
 module.exports = class SettlementScene {
-  constructor () {
+  render () {
+    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/settlement.html')
+
+    onSettingsSaved(() => {
+      setTransition(document.title, 'back', getBackTarget(), current_state())
+    })
+
     console.log(sessionStorage)
 
     // GET STATE INFORMATION
@@ -15,8 +25,6 @@ module.exports = class SettlementScene {
     // var myself = sessionStorage.getItem("target");
     var myself = 'settlement'
     document.title = myself
-
-    window.reload = false
 
     console.log(myself)
 
@@ -52,18 +60,18 @@ module.exports = class SettlementScene {
     var music_volume = 0.8 // music volume
 
     var speech = new Howl({
-      src: [events_table[myself].speech],
+      src: [cdnUrl(events_table[myself].speech)],
       volume: 1.0,
     })
 
     var music = new Howl({
-      src: [events_table[myself].music],
+      src: [cdnUrl(events_table[myself].music)],
       loop: true,
       volume: music_volume,
     })
 
     var noise = new Howl({
-      src: ['audio/music/campfire.mp3'],
+      src: [cdnUrl('audio/music/campfire.mp3')],
       loop: true,
       volume: 0.6,
     })
@@ -157,7 +165,7 @@ module.exports = class SettlementScene {
       $('#mute.button').show()
       // $('#back_button').show();
 
-      setTimeout(function () {
+      addTimer(function () {
         speech.play()
       }, start_delay)
       music.play()
@@ -189,7 +197,7 @@ module.exports = class SettlementScene {
         music.fade(0.0, music_volume, 500)
       }
 
-      $('#settlement_event_back').attr('src', state.settlement_event)
+      $('#settlement_event_back').attr('src', cdnUrl(state.settlement_event))
 
       if (state.milestones_open) {
         $('#milestones').delay(150).fadeIn(500)
@@ -209,7 +217,7 @@ module.exports = class SettlementScene {
       if (!$(this).hasClass('active')) {
         $('#settlement_event_screen').delay(50).fadeIn(500)
         if ($('#settlement_event_back').attr('src') == '#') {
-          $('#settlement_event_back').attr('src', getSettlementEventPath())
+          $('#settlement_event_back').attr('src', cdnUrl(getSettlementEventPath()))
         };
         $('#settlement_event_back').delay(150).fadeIn(500)
         $(this).addClass('active')
@@ -300,11 +308,6 @@ module.exports = class SettlementScene {
     //
     //   $(this).toggleClass('active');
     // });
-    setInterval(function () {
-      if (window.reload) {
-        setTransition(document.title, 'back', getBackTarget(), current_state())
-      }
-    }, 100)
 
     function addMilestones () {
       $('#milestones').append($('<div id="milestone-title">Milestones</div>'))

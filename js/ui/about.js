@@ -1,5 +1,7 @@
 const shell = require('electron').shell
 
+const { cdnUrl } = require('./template-renderer')
+
 module.exports = {
   createAbout,
 }
@@ -11,7 +13,7 @@ function createAbout (version) {
 
   $('#reference-window-background').hide()
   // $('#container').append($('<img id="about_text">About</div>'));
-  $('#container').append($('<img id="about_text" src="images/icons/about.png"/>'))
+  $('#container').append($('<img id="about_text" src="' + cdnUrl('images/icons/about.png') + '"/>'))
   $('#about_text').hide()
   $('#about_text').delay(1000).fadeIn(2000)
 
@@ -22,7 +24,7 @@ function createAbout (version) {
 
   $('#reference-window-back0').append($('<img>', {
     id: 'reference-window-back-img',
-    src: 'images/reference/reference_back.png',
+    src: cdnUrl('images/reference/reference_back.png'),
   }))
 
   $('#reference-window-back0').append($('<div>', {
@@ -51,7 +53,7 @@ function createAbout (version) {
         $('#reference-window-back0').fadeIn(500)
         $('#reference-window-background').fadeIn(500)
         $(this).toggleClass('active')
-        $('#about_text').attr('src', 'images/icons/about_active.png')
+        $('#about_text').attr('src', cdnUrl('images/icons/about_active.png'))
       }
     }
   }, function () {
@@ -62,11 +64,11 @@ function createAbout (version) {
     if (!$(this).hasClass('active')) {
       $('#reference-window-back0').fadeIn(500)
       $('#reference-window-background').fadeIn(500)
-      $('#about_text').attr('src', 'images/icons/about_active.png')
+      $('#about_text').attr('src', cdnUrl('images/icons/about_active.png'))
     } else {
       $('#reference-window-back0').fadeOut(500)
       $('#reference-window-background').fadeOut(500)
-      $('#about_text').attr('src', 'images/icons/about.png')
+      $('#about_text').attr('src', cdnUrl('images/icons/about.png'))
     }
 
     $(this).toggleClass('active')
@@ -76,7 +78,7 @@ function createAbout (version) {
     $('#reference-window-back0').fadeOut(500)
     $('#reference-window-background').fadeOut(500)
     $('#about_text').removeClass('active')
-    $('#about_text').attr('src', 'images/icons/about.png')
+    $('#about_text').attr('src', cdnUrl('images/icons/about.png'))
     $('#esc-menu').fadeOut(100)
     $('#esc-menu').removeClass('active')
   })
@@ -85,21 +87,21 @@ function createAbout (version) {
     $('#reference-window-back0').fadeOut(500)
     $('#reference-window-background').fadeOut(500)
     $('#about_text').removeClass('active')
-    $('#about_text').attr('src', 'images/icons/about.png')
+    $('#about_text').attr('src', cdnUrl('images/icons/about.png'))
   })
 
   $('#about_header').on('click', function () {
     $('#reference-window-back0').fadeOut(500)
     $('#reference-window-background').fadeOut(500)
     $('#about_text').removeClass('active')
-    $('#about_text').attr('src', 'images/icons/about.png')
+    $('#about_text').attr('src', cdnUrl('images/icons/about.png'))
   })
 
   $('#about_p').on('click', function () {
     $('#reference-window-back0').fadeOut(500)
     $('#reference-window-background').fadeOut(500)
     $('#about_text').removeClass('active')
-    $('#about_text').attr('src', 'images/icons/about.png')
+    $('#about_text').attr('src', cdnUrl('images/icons/about.png'))
   })
 
   // open links externally by default
