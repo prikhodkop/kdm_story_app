@@ -131,10 +131,12 @@ module.exports = class ImageScene {
             createReference()
           }, 2000)
         };
-
-        music.volume(0.0)
-        music.play()
-        music.fade(0.0, music_volume, 500)
+    
+        if (!music.playing()) {
+          music.volume(0.0)
+          music.play();
+          music.fade(0.0, music_volume, 500)
+        }
       }
     } else {
       console.log('No initialized state!')
@@ -228,7 +230,9 @@ module.exports = class ImageScene {
 
       addTimer(function () {
         console.log('I play the music')
-        music.play()
+        if (!music.playing()) {
+          music.play();
+        }
       }, start_delay + delay)
     };
     // #############
@@ -243,7 +247,7 @@ module.exports = class ImageScene {
         addTimer(function () {
           createSevereTables()
           createReference()
-        }, 2000);
+        }, 500);
       };
 
       if (speech.playing()) {
