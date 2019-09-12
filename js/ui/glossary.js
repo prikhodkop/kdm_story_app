@@ -652,7 +652,7 @@ const disorders_text = {
   'Superstitious': {
     'expansion': 'dragon king',
   },
-  'Sworn Enemy': {},
+  // 'Sworn Enemy': {},
   'Tiny Arachnophobia': {
     'expansion': 'spidicules'
   },
