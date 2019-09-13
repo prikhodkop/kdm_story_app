@@ -6,6 +6,8 @@ module.exports = {
   openLocation
 }
 
+const always_on_locations = ['Throne', 'Lantern Hoard'];
+
 function addDevelopment() {
   $('#container').append($('<div>', {
     // style: 'opacity:.9;',
@@ -21,11 +23,11 @@ function addDevelopment() {
     class: 'tab',
   }));
 
-  $('#settlement_locations_window').append($('<img>', {
-    // style: 'opacity:.9;',
-    id: 'locations_add_button',
-    src: 'images/reference/plus_icon.png',
-  }));
+  // $('#settlement_locations_window').append($('<img>', {
+  //   // style: 'opacity:.9;',
+  //   id: 'locations_add_button',
+  //   src: 'images/reference/plus_icon.png',
+  // }));
 
   $('#settlement_locations_window').append($('<img>', {
     // style: 'opacity:.9;',
@@ -41,6 +43,8 @@ function addDevelopment() {
   for (let i = 0; i < locations_list.length; i++) {
     createLocation(locations_list[i], (i==0) ? true : false);
   }
+
+  allignLocations();
 
   window.openLocation = openLocation;
 
@@ -68,24 +72,139 @@ function addDevelopment() {
   });
 
   $(document).on("dblclick", '.tablinks', function(e) {
-    $(this).fadeOut(300, function () {
-      $(this).css({
-        'visibility': 'hidden',
-        'display': 'block',
-      }).slideUp()
-    })
+    // $(this).fadeOut(300, function () {
+    //   $(this).css({
+    //     'visibility': 'hidden',
+    //     'display': 'block',
+    //   }).slideUp()
+    // })
+    if (!$(this).hasClass('selected')) {
+      $(this).addClass('selected')
+    } else {
+      if (!(always_on_locations.includes($(this).attr('value')))) {
+        $(this).removeClass('selected')
+      }
+    }
+    moveLocation($(this).attr('value'));
  });
+}
+
+function allignLocations() {
+  let development_status = JSON.parse(localStorage.getItem('development'));
+  let settings = JSON.parse(sessionStorage.getItem('settings'));
+
+  console.log('Dev status'+development_status)
+
+  let updated = false
+  // check if selected locations list is stored in local storage, and if not initialize it
+  if ((development_status == null) || (development_status == 'undefined')) {
+    development_status = {}
+    development_status['locations'] = always_on_locations
+    updated = true
+  } else {
+    if (!('locations' in development_status)) {
+      development_status['locations'] = always_on_locations
+      updated = true
+    }
+  }
+
+  if (updated) {
+    localStorage.setItem('development', JSON.stringify(development_status))
+  }
+
+  let selected_locations = development_status['locations'];
+  let locations_list = getCurrentLocations()
+
+  for (let i = locations_list.length - 1; i >= 0 ; i--) {
+    if (selected_locations.includes(locations_list[i])) {
+      $('button.tablinks[value="'+locations_list[i]+'"]').addClass('selected')
+      $('button.tablinks[value="'+locations_list[i]+'"]').detach().insertBefore("button.tablinks:first");
+    }
+
+  }
+
+  $('button.tablinks.selected:first').attr('id', "defaultOpen")
+  // openLocation($('button#defaultOpen'))
+
+
+}
+
+function moveLocation(location) {
+
+  if (always_on_locations.includes(location)) {
+    return
+  }
+
+  let development_status = JSON.parse(localStorage.getItem('development'));
+  let this_element = $('button.tablinks[value="'+location+'"]')
+  let needed_value = null
+  this_element.addClass('moving')
+  if (this_element.hasClass('selected')) {
+    development_status['locations'].push(location)
+    $('button.tablinks.selected:not(.moving)').each(function () {
+      if ($(this).attr('value') < location) {
+        needed_value = $(this).attr('value')
+      }
+    })
+
+  } else {
+    let index = development_status['locations'].indexOf(location);
+    if (index !== -1) {
+      development_status['locations'].splice(index, 1);
+    }
+    $('button.tablinks:not(.selected):not(.moving)').each(function () {
+      if ($(this).attr('value') < location) {
+        needed_value = $(this).attr('value')
+      }
+    })
+    // if (needed_value == null) {
+    //   needed_value = $('button.tablinks:not(.selected)')
+    // }
+  }
+
+  if (needed_value == null) {
+    if (this_element.hasClass('selected')) {
+      this_element.detach().insertBefore('button.tablinks.selected:not(.moving):first');
+    } else {
+      this_element.detach().insertBefore('button.tablinks:not(.selected):not(.moving):first');
+    }
+
+  } else {
+    this_element.detach().insertAfter('button.tablinks[value="'+needed_value+'"]');
+  }
+
+  if (this_element.hasClass('selected')) {
+    this_element.parent().scrollTo($('button.tablinks:first'), duration = 500);
+  }
+
+  this_element.removeClass('moving')
+
+  localStorage.setItem('development', JSON.stringify(development_status))
+
+}
+
+function getCurrentLocations() {
+  let locations = [];
+
+  $('button.tablinks').each(function () {
+    locations.push($(this).attr('value'))
+  })
+
+  return locations
+
 }
 
 function createLocation(location, default_open=false) {
   let button = $('<button>', {
     class: "tablinks",
     onclick: "openLocation(event, '"+location+"')",
-    id: default_open ? "defaultOpen" : "",
+    // id: default_open ? "defaultOpen" : "",
     val: location,
   })
   button.html(titleCase(location));
   $('#development_tabs').append(button);
+
+  // button.hide();
 
   console.log('Location gear:'+settlement_locations[location]['gear']);
 
@@ -169,6 +288,9 @@ function openLocation(evt, locationName) {
   }
   document.getElementById(locationName).style.display = "block";
   evt.currentTarget.className += " active";
+
+  $('button.tablinks#defaultOpen').attr('id', '')
+  $('button.tablinks.active').attr('id', 'defaultOpen')
 }
 
 function titleCase (str) {

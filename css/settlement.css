@@ -315,7 +315,7 @@ button.tablinks {
   display: block;
   /* background-color: #333; */
   left: 0%;
-  color: #ccc;
+  color: #666;
   padding: 22px 16px;
   width: 100%;
   border: none;
@@ -323,12 +323,17 @@ button.tablinks {
   text-align: left;
   /* font-family: 'Silverado'; */
 	cursor: pointer;
-	transition: color 0.5s, text-shadow 0.5s;
+	transition: color 0.5s, text-shadow 0.5s font-size 0.5s;
   z-index: 77;
   /* transition: 0.3s; */
-  font-size: 15pt;
+  font-size: 14pt;
   display:block;
   background-color: Transparent;
+}
+
+button.tablinks.selected {
+  color: #ccc;
+  font-size: 16pt;
 }
 
 /* Change background color of buttons on hover */
