@@ -1265,7 +1265,7 @@ function get_representation (word) {
 
     // post text 1 width 98%
 
-    if (['Settlement Board', 'Gear Grid', 'Hit Location (Monster)'].includes(word)) {
+    if (['Settlement Board', 'Gear Grid', 'Hit Location (Monster)', 'Terrain Cards'].includes(word)) {
       result = result + '<br/><br/><img id=reference-image style="width:99%;" src="images/reference/terms/'+word+'.png"/>'
     }
 
@@ -1284,7 +1284,7 @@ function get_representation (word) {
 
     // post text 1 width 75%
 
-    if (['Wound', 'Vermin Resources', 'Monster Resources', 'Basic Resources', 'Strange Resources', 'Persistent Injury Actions', 'Flow', 'Settlement Event', 'In Range (Monster)', 'Facing', 'Alerts', 'AI Card', 'Hit Location (Survivors)', 'Terrain Cards', 'Weapon', 'Armor', 'Item', 'Damage (Condition)', 'Armor Set', 'Puzzle Affinity', 'Affinity (Completed)', 'Injury Level', 'Attribute Modifier Token'].includes(word)) {
+    if (['Wound', 'Vermin Resources', 'Monster Resources', 'Basic Resources', 'Strange Resources', 'Persistent Injury Actions', 'Flow', 'Settlement Event', 'In Range (Monster)', 'Facing', 'Alerts', 'AI Card', 'Hit Location (Survivors)', 'Weapon', 'Armor', 'Item', 'Damage (Condition)', 'Armor Set', 'Puzzle Affinity', 'Affinity (Completed)', 'Injury Level', 'Attribute Modifier Token'].includes(word)) {
       result = result + '<br/><br/><img id=reference-image style="width:75%;" src="images/reference/terms/'+word+'.png"/>'
     }
 
