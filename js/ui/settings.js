@@ -364,10 +364,7 @@ var settings_schema = {
         'type': 'option',
         'title': 'Manhunter',
         'default': 'Disabled',
-        'enum': [
-          'Disabled',
-          'Cards only',
-        ],
+        'enum': expansion_options,
       },
       'lion god': {
         'type': 'option',
