@@ -1,4 +1,4 @@
-const { get_random_draws, settlement_locations } = require('./../ui/glossary')
+const { get_random_draws, settlement_locations, gear_list } = require('./../ui/glossary')
 const { cdnUrl } = require('./../ui/template-renderer')
 
 module.exports = {
@@ -25,8 +25,20 @@ function addDevelopment() {
 
   // $('#settlement_locations_window').append($('<img>', {
   //   // style: 'opacity:.9;',
-  //   id: 'locations_add_button',
-  //   src: 'images/reference/plus_icon.png',
+  //   id: 'locations_button',
+  //   src: 'images/reference/location_icon.png',
+  // }));
+  //
+  // $('#settlement_locations_window').append($('<img>', {
+  //   // style: 'opacity:.9;',
+  //   id: 'innovations_button',
+  //   src: 'images/reference/innovation_icon.png',
+  // }));
+  //
+  // $('#settlement_locations_window').append($('<img>', {
+  //   // style: 'opacity:.9;',
+  //   id: 'endeavor_button',
+  //   src: 'images/reference/endeavor_icon.png',
   // }));
 
   $('#settlement_locations_window').append($('<img>', {
@@ -206,6 +218,42 @@ function createLocation(location, default_open=false) {
 
   // button.hide();
 
+  // before 'Tabard',
+  // beyond 'Hard Breastplate', 'Cloth Leggings'
+  if (['Throne', 'Sacreed Pool', 'Lantern Hoard', 'Exhausted Lantern Hoard'].includes(location)) {
+    let settings = JSON.parse(sessionStorage.getItem('settings'));
+
+    if ((settings['whiteboxes']['before the wall'] == 'Enabled') && !(settlement_locations[location]['gear']['1'].includes('Tabard'))) {
+      settlement_locations[location]['gear']['1'].push('Tabard')
+    }
+    if (settings['whiteboxes']['before the wall'] == 'Disabled') {
+        var index = settlement_locations[location]['gear']['1'].indexOf('Tabard');
+        if (index !== -1) settlement_locations[location]['gear']['1'].splice(index, 1);
+    }
+    //  else {
+    //   var index = settlement_locations[location]['gear']['1'].indexOf('Tabard');
+    //   if (index !== -1) settlement_locations[location]['gear']['1'].splice(index, 1);
+    // }
+
+    if ((settings['whiteboxes']['beyond the wall'] == 'Enabled') && !(settlement_locations[location]['gear']['1'].includes('Hard Breastplate'))) {
+      settlement_locations[location]['gear']['1'].push('Hard Breastplate')
+      settlement_locations[location]['gear']['1'].push('Cloth Leggings')
+    }
+    if (settings['whiteboxes']['beyond the wall'] == 'Disabled') {
+        var index = settlement_locations[location]['gear']['1'].indexOf('Hard Breastplate');
+        if (index !== -1) settlement_locations[location]['gear']['1'].splice(index, 1);
+        index = settlement_locations[location]['gear']['1'].indexOf('Cloth Leggings');
+        if (index !== -1) settlement_locations[location]['gear']['1'].splice(index, 1);
+    }
+    //  else {
+    //   var index = settlement_locations[location]['gear']['1'].indexOf('Hard Breastplate');
+    //   if (index !== -1) settlement_locations[location]['gear']['1'].splice(index, 1);
+    //   index = settlement_locations[location]['gear']['1'].indexOf('Cloth Leggings');
+    //   if (index !== -1) settlement_locations[location]['gear']['1'].splice(index, 1);
+    // }
+  }
+
+
   console.log('Location gear:'+settlement_locations[location]['gear']);
 
   let content = $('<div>', {
@@ -213,64 +261,63 @@ function createLocation(location, default_open=false) {
     id: location,
   });
 
-  let column_1 = $('<div>', {
-    class: "column_1",
-    id: "1",
-  })
+  let columns = []
+  let gear_name = ''
+  // let element = ''
 
-  column_1.append($('<img>', {
-    class: "location_screen",
-    src: cdnUrl("images/reference/Settlement Locations/"+titleCase(location)+".jpg"),
-  }));
+  for (let j = 0; j<4; j++) {
+    columns.push($('<div>', {
+      class: "column_"+(j+1),
+      id: (j+1),
+    }));
 
-  let column_2 = $('<div>', {
-    class: "column_2",
-    id: "2",
-  })
-  if (settlement_locations[location]['gear']['1'].length > 0) {
-    for (let i = 0; i < settlement_locations[location]['gear']['1'].length; i++) {
-      console.log('Adding 1: '+i)
-      column_2.append($('<img>', {
-        class: "gear_card",
-        src: cdnUrl("images/reference/Gear/"+settlement_locations[location]['gear']['1'][i]+".jpg"),
+    if (j == 0) {
+      columns[j].append($('<img>', {
+        class: "location_screen",
+        src: cdnUrl("images/reference/Settlement Locations/"+titleCase(location)+".jpg"),
       }));
+    } else {
+      if (settlement_locations[location]['gear'][j].length > 0) {
+        for (let i = 0; i < settlement_locations[location]['gear'][j].length; i++) {
+          gear_name = settlement_locations[location]['gear'][j][i]
+          console.log('Adding 1: '+i)
+          let element = $('<img>', {
+            class: "gear_card",
+            src: cdnUrl("images/reference/Gear/"+gear_name+".jpg"),
+          })
+          columns[j].append(element);
+          if (gear_name in gear_list) {
+            let tooltip = ''
+            if ('innovation' in gear_list[gear_name]) {
+              tooltip = tooltip + '<b style="color:#cc0;">Required: '+gear_list[gear_name]['innovation']+'</b><br/><br/>'
+            }
+            if ('resources' in gear_list[gear_name]) {
+              tooltip = tooltip + gear_list[gear_name]['resources'].join('<br/>')
+            }
+            element.tooltipster({
+              contentAsHTML: 'true',
+              animation: 'grow',
+              content: tooltip,
+              position: 'left',
+              delay: 500,
+              trigger: 'custom',
+              triggerOpen: {
+                mouseenter: true,
+                click: true
+              },
+              triggerClose: {
+                click: true,
+                mouseleave: true
+              }
+            })
+          }
+
+        }
+      }
     }
+
+    content.append(columns[j]);
   }
-
-
-  let column_3 = $('<div>', {
-    class: "column_3",
-    id: "3",
-  })
-  if (settlement_locations[location]['gear']['2'].length > 0) {
-    for (let i = 0; i < settlement_locations[location]['gear']['2'].length; i++) {
-      console.log('Adding 2: '+i)
-      column_3.append($('<img>', {
-        class: "gear_card",
-        src: cdnUrl("images/reference/Gear/"+settlement_locations[location]['gear']['2'][i]+".jpg"),
-      }));
-    }
-  }
-
-  let column_4 = $('<div>', {
-    class: "column_4",
-    id: "4",
-  })
-
-  if (settlement_locations[location]['gear']['2'].length > 0) {
-    for (let i = 0; i < settlement_locations[location]['gear']['3'].length; i++) {
-      console.log('Adding 3: '+i)
-      column_4.append($('<img>', {
-        class: "gear_card",
-        src: cdnUrl("images/reference/Gear/"+settlement_locations[location]['gear']['3'][i]+".jpg"),
-      }));
-    }
-  }
-
-  content.append(column_1);
-  content.append(column_2);
-  content.append(column_3);
-  content.append(column_4);
 
   $('#settlement_locations_window').append(content);
 

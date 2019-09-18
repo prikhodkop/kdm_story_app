@@ -26,6 +26,17 @@ document.onkeydown = function (evt) {
     }
     escMenuEl.toggleClass('active')
   }
+
+  // // down arrow
+  // if (evt.keyKode == 40) {
+  //   if
+  // }
+  //
+  // // up arrow
+  // if (evt.keyKode == 38) {
+  //
+  // }
+
 }
 
 module.exports = {

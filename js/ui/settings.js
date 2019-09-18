@@ -292,7 +292,7 @@ var settings_schema = {
     'type': 'option',
     'title': 'Campaign',
     'description': 'Choose which campaign you currently play.',
-    'default': 'On',
+    'default': 'Lantern',
     'enum': [
       'Lantern',
       'Stars',
@@ -482,6 +482,24 @@ var settings_schema = {
       'white speaker': {
         'type': 'option',
         'title': 'White Speaker',
+        'default': 'Disabled',
+        'enum': [
+          'Disabled',
+          'Enabled',
+        ],
+      },
+      'beyond the wall': {
+        'type': 'option',
+        'title': 'Beyond the Wall',
+        'default': 'Disabled',
+        'enum': [
+          'Disabled',
+          'Enabled',
+        ],
+      },
+      'before the wall': {
+        'type': 'option',
+        'title': 'Before the Wall',
         'default': 'Disabled',
         'enum': [
           'Disabled',

@@ -482,16 +482,49 @@ button.tablinks.active {
     user-select: none;
 }
 
-#locations_add_button {
+#locations_button {
   position: absolute;
   display:block;
-  width: 2%;
-  top: 2%;
-  left: 1%;
+  width: 1%;
+  top: 1%;
+  left: 2%;
   /* width: 100%; */
   /* margin: 0 auto; */
   z-index: 78;
   opacity: 0.7;
+  --borderWidth: 1em;
+	border-radius: var(--borderWidth);
+	border: 0.2rem solid #555;
+}
+
+#innovations_button {
+  position: absolute;
+  display:block;
+  width: 1%;
+  top: 1%;
+  left: 7%;
+  /* width: 100%; */
+  /* margin: 0 auto; */
+  z-index: 78;
+  opacity: 0.7;
+  --borderWidth: 1em;
+	border-radius: var(--borderWidth);
+	border: 0.2rem solid #555;
+}
+
+#endeavor_button {
+  position: absolute;
+  display:block;
+  width: 1%;
+  top: 1%;
+  left: 12%;
+  /* width: 100%; */
+  /* margin: 0 auto; */
+  z-index: 78;
+  opacity: 0.7;
+  --borderWidth: 1em;
+	border-radius: var(--borderWidth);
+	border: 0.2rem solid #555;
 }
 
 .turn_phase:hover {
