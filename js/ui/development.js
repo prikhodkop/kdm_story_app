@@ -289,10 +289,10 @@ function createLocation(location, default_open=false) {
           if (gear_name in gear_list) {
             let tooltip = ''
             if ('innovation' in gear_list[gear_name]) {
-              tooltip = tooltip + '<b style="color:#cc0;">Required: '+gear_list[gear_name]['innovation']+'</b><br/><br/>'
+              tooltip = tooltip + '<b style="color:#cc0;font-size:1em;">Required: '+gear_list[gear_name]['innovation']+'</b><br/><br/>'
             }
             if ('resources' in gear_list[gear_name]) {
-              tooltip = tooltip + gear_list[gear_name]['resources'].join('<br/>')
+              tooltip = tooltip + '<div style="font-size:1.0em;">'+gear_list[gear_name]['resources'].join('<br/>')+'</div'
             }
             element.tooltipster({
               contentAsHTML: 'true',
