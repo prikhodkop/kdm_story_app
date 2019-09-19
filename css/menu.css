@@ -19,8 +19,14 @@
 	background-color: Transparent;
 	z-index: 98;
 	display: block;
-	overflow:auto;
+	overflow-y:scroll;
+	overflow-x:none;
+	scrollbar-width: none;
 }
+
+#menu-back::-webkit-scrollbar {
+        display: none;
+    }
 
 #menu_img {
 	position: absolute;
@@ -232,8 +238,13 @@
 	position:absolute;
 	z-index: 85;
 	display:block;
-	overflow:auto;
+	overflow-y:scroll;
+	overflow-x:none;
+	scrollbar-width: none;
 }
+#reference-window-back::-webkit-scrollbar {
+        display: none;
+    }
 
 #reference-window-back-img {
 	left:0%;

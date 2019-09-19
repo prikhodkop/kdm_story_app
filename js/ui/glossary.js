@@ -1462,7 +1462,7 @@ function get_representation (word) {
 
     // post text 2 width 98%
 
-    if (['Endeavors'].includes(word)) {
+    if (['Movement (Attribute)', 'Endeavors'].includes(word)) {
       result = result + '<br/><br/><img id=reference-image style="width:99%;" src="images/reference/terms/'+word+'.png"/>'
       result = result + '<br/><img id=reference-image style="width:99%;" src="images/reference/terms/'+word+' 2.png"/>'
     }
@@ -1481,7 +1481,7 @@ function get_representation (word) {
 
     // post text 2 width 75%
 
-    if (['Movement (Attribute)', 'Knockback X', 'Collision', 'Affinity Bonus', 'Field of View'].includes(word)) {
+    if (['Knockback X', 'Collision', 'Affinity Bonus', 'Field of View'].includes(word)) {
       result = result + '<br/><br/><img id=reference-image style="width:75%;" src="images/reference/terms/'+word+'.png"/>'
       result = result + '<br/><img id=reference-image style="width:75%;" src="images/reference/terms/'+word+' 2.png"/>'
     }

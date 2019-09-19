@@ -306,10 +306,16 @@ html, body {height:100%; overflow:hidden;}
   left: 0%;
   top: 5%;
   position: absolute;
-  overflow:auto;
+  overflow-y: scroll;
+  overflow-x: none;
   display:block;
+  scrollbar-width: none;
   /* opacity: 1.0; */
 }
+
+#development_tabs::-webkit-scrollbar {
+        display: none;
+    }
 
 /* Style the buttons inside the tab */
 button.tablinks {
@@ -331,6 +337,7 @@ button.tablinks {
   display:block;
   background-color: Transparent;
 }
+
 
 button.tablinks.selected {
   color: #ccc;
@@ -396,8 +403,13 @@ button.tablinks.active {
     position: absolute;
     z-index: 78;
     display:block;
-    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
 }
+.column_2::-webkit-scrollbar {
+        display: none;
+    }
 .column_3 {
     left: 58.6%;
     width: 20.6%;
@@ -408,8 +420,13 @@ button.tablinks.active {
     position: absolute;
     z-index: 78;
     display:block;
-    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
 }
+.column_3::-webkit-scrollbar {
+        display: none;
+    }
 .column_4 {
     left: 79.2%;
     width: 20.6%;
@@ -420,8 +437,13 @@ button.tablinks.active {
     position: absolute;
     z-index: 78;
     display:block;
-    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
 }
+.column_4::-webkit-scrollbar {
+        display: none;
+    }
 
 .location_screen {
   /* height: 100%; */

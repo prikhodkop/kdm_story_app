@@ -299,6 +299,7 @@
   -moz-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
   z-index: 86;
+  opacity: 0.9;
 }
 .selectize-dropdown [data-selectable] {
   cursor: pointer;
@@ -346,14 +347,17 @@
   -webkit-box-shadow: 0 0 40px #cccc00;
         box-shadow: 0 0 40px #cccc00;
   z-index: 86;
+  opacity: 0.9;
 }
 .selectize-dropdown .active.create {
   color: #495c68;
   z-index: 86;
+  opacity: 0.9;
 }
 .selectize-dropdown .create {
   color: rgba(48, 48, 48, 0.5);
   z-index: 86;
+  opacity: 0.9;
 }
 .selectize-dropdown-content {
   overflow-y: auto;
@@ -362,16 +366,19 @@
   -webkit-overflow-scrolling: touch;
   /* border-bottom: #666600; */
   z-index: 86;
+  opacity: 0.8;
 }
 .selectize-control.single .selectize-input,
 .selectize-control.single .selectize-input input {
   cursor: pointer;
   z-index: 86;
+  opacity: 0.8;
 }
 .selectize-control.single .selectize-input.input-active,
 .selectize-control.single .selectize-input.input-active input {
   cursor: text;
   z-index: 86;
+  opacity: 0.8;
 }
 .selectize-control.single .selectize-input:after {
   content: ' ';
@@ -386,31 +393,37 @@
   border-width: 5px 5px 0 5px;
   border-color: #808080 transparent transparent transparent;
   z-index: 86;
+  opacity: 0.8;
 }
 .selectize-control.single .selectize-input.dropdown-active:after {
   margin-top: -4px;
   border-width: 0 5px 5px 5px;
   border-color: transparent transparent #808080 transparent;
   z-index: 86;
+  opacity: 0.8;
 }
 .selectize-control.rtl.single .selectize-input:after {
   left: 15px;
   right: auto;
   z-index: 86;
+  opacity: 0.8;
 }
 .selectize-control.rtl .selectize-input > input {
   margin: 0 4px 0 -2px !important;
   z-index: 86;
+  opacity: 0.8;
 }
 .selectize-control .selectize-input.disabled {
   opacity: 0.5;
   background-color: #fafafa;
   z-index: 86;
+  opacity: 0.8;
 }
 .selectize-control.multi .selectize-input.has-items {
   padding-left: 5px;
   padding-right: 5px;
   z-index: 86;
+  opacity: 0.8;
 }
 .selectize-control.multi .selectize-input.disabled [data-value] {
   color: #999;

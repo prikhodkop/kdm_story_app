@@ -1,4 +1,6 @@
-html, body {height:100%; overflow:hidden;}
+html, body {height:100%; overflow:hidden;scrollbar-width: 0;}
+
+
 
 
 @font-face {
@@ -468,7 +470,8 @@ tr.spaceUnder>td {
   position:absolute;
   z-index: 9;
 
-  overflow:auto;
+  overflow-y:scroll;
+  overflow-x:none;
 
   font-size: 1.5em;
   /* font-weight: 100; */
@@ -489,7 +492,12 @@ tr.spaceUnder>td {
   --borderWidth: 1em;
   border-radius: var(--borderWidth); */
   padding-right:0.5em;
+  scrollbar-width: none;
 }
+
+#random_popup::-webkit-scrollbar {
+        display: none;
+    }
 
 @keyframes blink {
        0% {
@@ -537,7 +545,7 @@ tr.spaceUnder>td {
   z-index: 8;
   display: none;
   opacity: 0.9;
-  filter : alpha(opacity=90);
+  /* filter : alpha(opacity=90); */
 
 }
 
