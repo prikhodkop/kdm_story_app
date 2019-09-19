@@ -1,0 +1,35 @@
+{
+  "language": "en",
+  "subtitles": "On",
+  "music": "On",
+  "narration": "On",
+  "onscreenKeypads": "On",
+  "campaign": "Lantern",
+  "card design": {
+    "fighting arts": "Fen Small",
+    "disorders": "Fen Small"
+  },
+  "expansions": {
+    "gorm": "Disabled",
+    "dung beetle knight": "Disabled",
+    "sunstalker": "Disabled",
+    "lion god": "Disabled",
+    "dragon king": "Disabled",
+    "flower knight": "Disabled",
+    "spidicules": "Disabled",
+    "manhunter": "Disabled",
+    "slenderman": "Disabled",
+    "lion knight": "Disabled",
+    "lonely tree": "Disabled"
+  },
+  "strains": {
+    "backstabber": "Locked",
+    "etheral pact": "Locked",
+    "giants blood": "Locked",
+    "infinite lives": "Locked"
+  },
+  "whiteboxes": {
+    "allison the twilight knight": "Disabled",
+    "white speaker": "Disabled"
+  }
+}
