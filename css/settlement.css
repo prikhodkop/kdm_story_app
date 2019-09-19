@@ -35,6 +35,7 @@ html, body {height:100%; overflow:hidden;}
   /* box-shadow: 0px 0px 1px 5000px rgba(0,0,0,0.8); */
   -webkit-box-shadow: 0 0 80px #000;
         box-shadow: 0 0 80px #000;
+  overflow: auto;
 }
 
 #settlement_event_button {
@@ -527,9 +528,14 @@ button.tablinks.active {
 	border: 0.2rem solid #555;
 }
 
-.turn_phase:hover {
+.cheat_sheet_block {
+  height: 9.091%;
+  display: block;
   background-color: #000;
-  color: #000;
   opacity: 0.4;
-  box-shadow: 0 0 10px #333;
+}
+
+.cheat_sheet_block:hover {
+  background-color: #cc0;
+  opacity: 0.2;
 }
