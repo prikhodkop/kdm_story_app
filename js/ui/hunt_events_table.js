@@ -965,7 +965,7 @@ The survivors continue their hunt.
 `,
 
   36: `36 | On the Trail
-The survivors rush forward, feeling their quarry close at hand. Skip the next hunt space. If this movement begins the showdown, the survivors <b>ambush</b> their quarry. 
+The survivors rush forward, feeling their quarry close at hand. Skip the next hunt space. If this movement begins the showdown, the survivors <b>ambush</b> their quarry.
 [i] If any survivor has <b>noisy</b> gear, the survivors do not ambush. Start the showdown normally.
 `,
 
@@ -1043,7 +1043,7 @@ The event revealer dreams of the upcoming hunt. The great beast vanishes during 
 The event revealer gains +1d10 insanity and -1 evasion token.
 
 [TO] Check
-[td] Does the settlement have a savior? 
+[td] Does the settlement have a savior?
 [c] Yes #
 [d<]
 
@@ -1153,7 +1153,7 @@ A small copse of trees rises over an otherwise lifeless plain. Enticing red frui
 
   48: `48 | Death Wager
 
-[img] 48
+[img] 48 # width:25%
 
 The survivors are awoken by a traveler hidden in a deep cloak. The traveler pulls back its hood and reveals a deformed face with two chins curving away from each other, each with its own grinning mouth.
 
@@ -1244,7 +1244,7 @@ Each survivor rolls 1d10.
 [c] 8+
 [d<]
 
-Their eggs gestate incredibly quickly and madflies explode forth from your mouth! The experience is gruesome, but makes you feel so alive! Suffer the <b>frenzy</b> brain trauma. 
+Their eggs gestate incredibly quickly and madflies explode forth from your mouth! The experience is gruesome, but makes you feel so alive! Suffer the <b>frenzy</b> brain trauma.
 [i] If you have the <b>Rageholic</b> disorder or <b>Berserker</b> fighting art, giving birth to disgusting new life kindles your rage. Suffer the <b>frenzy</b> brain trauma again.
 
 [>d]
@@ -1601,7 +1601,7 @@ Otherwise, the event revealer suggests a word game to lighten the mood as the su
 
   73: `73 | Golden Ember
 The way forward is blocked by dense, gold-flecked smoke. The survivors may push ahead and brave the smoke.
-[i] If the survivors have a <b>Final Lantern</b>, it guides them through the smoke without any trouble; end this event. 
+[i] If the survivors have a <b>Final Lantern</b>, it guides them through the smoke without any trouble; end this event.
 
 [TO] Choice
 [td] What do you do?
