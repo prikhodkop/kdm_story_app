@@ -206,10 +206,11 @@ module.exports = class SettlementScene {
 
       $('#settlement_event_back').attr('src', cdnUrl(state.settlement_event))
 
-      if (state.milestones_open) {
-        $('#milestones').delay(150).fadeIn(500)
-        $('#milestones_button').addClass('active')
-      }
+      // if (state.milestones_open) {
+      //   $('#milestones').delay(150).fadeIn(500)
+      //   $('#milestones_button').addClass('active')
+      //   $('#cheatsheet_buttons').addClass('active')
+      // }
 
       // if (state.muted) {
       //   music.mute(true);
@@ -227,46 +228,57 @@ module.exports = class SettlementScene {
           $('#settlement_event_back').attr('src', cdnUrl(getSettlementEventPath()))
         };
         $('#settlement_event_back').delay(150).fadeIn(500)
+        $('.cheatsheet_button').each(function() {$(this).removeClass('active'); $('#milestones').hide(); $('#settlement_event_back').hide();})
         $(this).addClass('active')
-        $('#milestones_button').removeClass('active')
+        $('#cheatsheet_buttons').addClass('active')
       } else {
         $('#settlement_event_screen').delay(150).fadeOut(500)
         $('#settlement_event_back').delay(50).fadeOut(500)
         $(this).removeClass('active')
+        $('#cheatsheet_buttons').removeClass('active')
       };
     })
 
     $('#milestones_button').click(function () {
       if (!$(this).hasClass('active')) {
         $('#milestones').delay(150).fadeIn(500)
+        $('.cheatsheet_button').each(function() {$(this).removeClass('active'); $('#milestones').hide(); $('#settlement_event_back').hide();})
         $(this).addClass('active')
+        $('#cheatsheet_buttons').addClass('active')
       } else {
         $('#milestones').delay(50).fadeOut(500)
         $(this).removeClass('active')
+        $('#cheatsheet_buttons').removeClass('active')
       };
     })
 
     $('#milestone-title').on('click', function () {
       $('#milestones').delay(50).fadeOut(500)
       $('#milestones_button').removeClass('active')
+      $('#cheatsheet_buttons').removeClass('active')
     })
 
     $('#settlement_event_back').click(function () {
       $('#settlement_event_screen').delay(150).fadeOut(500)
       $('#settlement_event_back').delay(50).fadeOut(500)
       $('#settlement_event_button').removeClass('active')
+      $('#cheatsheet_buttons').removeClass('active')
     })
 
     $('#development_button').click(function () {
       if (!$(this).hasClass('active')) {
         $('#development_screen').delay(150).fadeIn(500)
         $('#settlement_locations_window').delay(150).fadeIn(500)
+        $('.cheatsheet_button').each(function() {$(this).removeClass('active'); $('#milestones').hide(); $('#settlement_event_back').hide();})
         $(this).addClass('active')
+        $('#cheatsheet_buttons').addClass('active')
         document.getElementById("defaultOpen").click();
+
       } else {
         $('#development_screen').delay(50).fadeOut(500)
         $('#settlement_locations_window').delay(50).fadeOut(500)
         $(this).removeClass('active')
+        $('#cheatsheet_buttons').removeClass('active')
       };
     })
 
@@ -274,30 +286,200 @@ module.exports = class SettlementScene {
       $('#development_screen').delay(150).fadeOut(500)
       $('#settlement_locations_window').delay(50).fadeOut(500)
       $('#development_button').removeClass('active')
+      $('#cheatsheet_buttons').removeClass('active')
+    })
+
+    $('#end_phase_button').click(function () {
+      setTransition('hunt', 'menu', document.title, current_state())
+    })
+
+
+    // $('#setup_button').tooltipster({
+    //   contentAsHTML: 'true',
+    //   animation: 'grow',
+    //   content: 'Praise, another day survived!',
+    //   position: 'right',
+    //   delay: '600',
+    // })
+
+    $('#survivors_return_button').tooltipster({
+      contentAsHTML: 'true',
+      animation: 'grow',
+      content: 'All survivors that endured the previous showdown are <b>returning survivors</b>.<br/><br/>Their injuries are healed and all tokens are removed.<br/><br/>Apply any effects for the <b>returning survivors</b>.',
+      position: 'right',
+      // delay: 600,
+      maxWidth: 300,
+      trigger: 'custom',
+      triggerOpen: {
+        mouseenter: true,
+        click: true
+      },
+      triggerClose: {
+        click: true,
+        mouseleave: true
+      }
+    })
+
+    $('#gain_endeavors_button').tooltipster({
+      contentAsHTML: 'true',
+      animation: 'grow',
+      content: 'Gain 1 endeavor for each <b>returning survivor</b>.<br/><br/>Additional endeavors may be gained from principles, innovations and abilities.',
+      position: 'right',
+      // delay: 600,
+      maxWidth: 300,
+      trigger: 'custom',
+      triggerOpen: {
+        mouseenter: true,
+        click: true
+      },
+      triggerClose: {
+        click: true,
+        mouseleave: true
+      }
     })
 
     $('#settlement_event_button').tooltipster({
       contentAsHTML: 'true',
       animation: 'grow',
-      content: 'Draw <b>Settlement Event</b> card.',
+      content: '<b style="color:#cc0;">Click</b> to draw <b>Settlement Event</b> card.',
       position: 'right',
-      delay: '600',
+      // delay: 600,
+      maxWidth: 300,
+      trigger: 'custom',
+      triggerOpen: {
+        mouseenter: true,
+        click: true
+      },
+      triggerClose: {
+        click: true,
+        mouseleave: true
+      }
+    })
+
+    $('#update_deathcount_button').tooltipster({
+      contentAsHTML: 'true',
+      animation: 'grow',
+      content: 'If any survivors perished during the hunt, showdown or during the preceeding steps of the settlement phase, update the death count.<br/><br/>If a survivor dies later during the Settlement Phase, upadte the death count immediately.',
+      position: 'right',
+      // delay: 600,
+      maxWidth: 300,
+      trigger: 'custom',
+      triggerOpen: {
+        mouseenter: true,
+        click: true
+      },
+      triggerClose: {
+        click: true,
+        mouseleave: true
+      }
     })
 
     $('#milestones_button').tooltipster({
       contentAsHTML: 'true',
       animation: 'grow',
-      content: 'Show <b>Milestones</b>.',
+      content: 'For each reached milestone trigger the corresponding story event.<br/><br/><b style="color:#cc0;">Click</b> to show <b>Milestones</b>.',
       position: 'right',
-      delay: '600',
+      // delay: 600,
+      maxWidth: 300,
+      trigger: 'custom',
+      triggerOpen: {
+        mouseenter: true,
+        click: true
+      },
+      triggerClose: {
+        click: true,
+        mouseleave: true
+      }
     })
 
     $('#development_button').tooltipster({
       contentAsHTML: 'true',
       animation: 'grow',
-      content: 'Show settlement locations.',
+      content: '<b style="color:#cc0;">Click</b> to show <b>Development</b> window.',
       position: 'right',
-      delay: '600',
+      // delay: 600,
+      maxWidth: 300,
+      trigger: 'custom',
+      triggerOpen: {
+        mouseenter: true,
+        click: true
+      },
+      triggerClose: {
+        click: true,
+        mouseleave: true
+      }
+    })
+
+    $('#departing_button').tooltipster({
+      contentAsHTML: 'true',
+      animation: 'grow',
+      content: 'Chose <b>4</b> departing survivors.<br/><br/>Remove the returning survivors gear and add gear to the departing survivors gear grids.<br/><br/>Record armor points, modifiers from gear and bonuses from innovations, endeavors and events that affect departing survivors.',
+      position: 'right',
+      // delay: 600,
+      maxWidth: 300,
+      trigger: 'custom',
+      triggerOpen: {
+        mouseenter: true,
+        click: true
+      },
+      triggerClose: {
+        click: true,
+        mouseleave: true
+      }
+    })
+
+    $('#special_showdown_button').tooltipster({
+      contentAsHTML: 'true',
+      animation: 'grow',
+      content: 'Departing survivors immediately begin showdown.<br/><br/>After showdown heal all wounds and remove all tokens.',
+      position: 'right',
+      // delay: 600,
+      maxWidth: 300,
+      trigger: 'custom',
+      triggerOpen: {
+        mouseenter: true,
+        click: true
+      },
+      triggerClose: {
+        click: true,
+        mouseleave: true
+      }
+    })
+
+    $('#record_button').tooltipster({
+      contentAsHTML: 'true',
+      animation: 'grow',
+      content: 'Record unspent resources in the settlement storage and archive all resource cards.',
+      position: 'right',
+      // delay: 600,
+      maxWidth: 300,
+      trigger: 'custom',
+      triggerOpen: {
+        mouseenter: true,
+        click: true
+      },
+      triggerClose: {
+        click: true,
+        mouseleave: true
+      }
+    })
+
+    $('#end_phase_button').tooltipster({
+      contentAsHTML: 'true',
+      animation: 'grow',
+      content: 'Lose unspent endeavors.<br/><br/><b style="color:#cc0;">Click</b> to start a new <b>Hunt</b>!',
+      position: 'right',
+      // delay: 600,
+      maxWidth: 300,
+      trigger: 'custom',
+      triggerOpen: {
+        mouseenter: true,
+        click: true
+      },
+      triggerClose: {
+        click: true,
+        mouseleave: true
+      }
     })
 
     // $("#mute.button").click(function () {

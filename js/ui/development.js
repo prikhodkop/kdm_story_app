@@ -307,7 +307,7 @@ function createLocation(location, default_open=false) {
               animation: 'grow',
               content: tooltip,
               position: 'left',
-              delay: 500,
+              delay: [500, 300],
               trigger: 'custom',
               triggerOpen: {
                 mouseenter: true,

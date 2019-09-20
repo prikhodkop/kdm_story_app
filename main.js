@@ -70,6 +70,7 @@ function createWindow () {
   // global.sharedObj = {path: app.getPath('userData')};
 
   // and load the index.html of the app.
+  win.removeMenu();
   win.loadFile('index.html')
   // win.webContents.openDevTools();
 }
@@ -206,8 +207,8 @@ autoUpdater.on('update-downloaded', () => {
 
 app.on('ready', function () {
   // Create the Menu
-  const menu = Menu.buildFromTemplate(template)
-  Menu.setApplicationMenu(menu)
+  // const menu = Menu.buildFromTemplate(template)
+  // Menu.setApplicationMenu(menu)
 
   createWindow()
 })

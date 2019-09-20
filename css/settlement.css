@@ -38,40 +38,152 @@
   /* box-shadow: 0px 0px 1px 5000px rgba(0,0,0,0.8); */
   -webkit-box-shadow: 0 0 80px #000;
         box-shadow: 0 0 80px #000;
-  overflow: auto;
+  overflow: hidden;
+}
+
+#turn_cheatsheet_pic {
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+}
+
+
+#cheatsheet_buttons {
+  pointer-events: none;
+}
+
+#cheatsheet_buttons > * {
+  pointer-events: auto;
+  display: block;
+  position: absolute;
+  background: #333;
+  right: 0;
+  height: 9.45%;
+  width: 100%;
+  z-index: 72;
+  -webkit-filter: drop-shadow(0 0 10px #000);
+  filter: drop-shadow(0 0 10px #000);
+  opacity: 0.1;
+  transition: opacity 0.5s, background 0.3s;
+}
+
+#cheatsheet_buttons:hover > * {
+  opacity: 0.6;
+}
+
+#cheatsheet_buttons:hover > *:hover {
+  /* transform: scale(1.1); */
+  background: Transparent;
+  animation: glowing 3000ms infinite;
+  border-top: 0.2rem solid #c4a300;
+  border-bottom: 0.2rem solid #c4a300;
+  opacity: 1.0;
+  z-index: 73
+}
+
+#cheatsheet_buttons.active > * {
+  opacity: 0.7;
+}
+
+#cheatsheet_buttons.active > *.active {
+  /* transform: scale(1.1); */
+  background: #cc0;
+  animation: glowing 5000ms infinite;
+  border-top: 0.3rem solid #c4a300;
+  border-bottom: 0.3rem solid #c4a300;
+  opacity: 0.5;
+  z-index: 73
+}
+
+#setup_button {
+  top: 0%;
+}
+
+#survivors_return_button {
+  top: 9.091%;
+}
+
+#gain_endeavors_button {
+  top: 18.182%;
 }
 
 #settlement_event_button {
+  top: 27.273%;
+}
+
+#update_deathcount_button {
+  top: 36.364%;
+}
+
+#milestones_button {
+  top: 45.455%;
+}
+
+#development_button {
+  top: 54.545%;
+}
+
+#departing_button {
+  top: 63.636%;
+}
+
+#special_showdown_button {
+  top: 72.727%;
+}
+
+#record_button {
+  top: 81.818%;
+}
+
+#end_phase_button {
+  top: 90.909%;
+}
+
+
+
+/* #settlement_event_button {
   display: block;
   position: absolute;
   background: Transparent;
-  top: 33.6%;
-  left: 25.5%;
-  width: 2%;
+  top: 29.318%;
+  right: 0%;
+  height: 5%;
   z-index: 72;
   -webkit-filter: drop-shadow(0 0 10px #000);
   filter: drop-shadow(0 0 10px #000);
   opacity: 0.5;
   transition: opacity 0.5s;
+} */
+/* #settlement_event_button {
+  display: block;
+  position: absolute;
+  background: #444;
+  top: 27.273%;
+  right: 0;
+  height: 9.5%;
+  width: 100%;
+  z-index: 72;
+  -webkit-filter: drop-shadow(0 0 10px #000);
+  filter: drop-shadow(0 0 10px #000);
+  opacity: 0.2;
+  transition: opacity 0.5s, background 0.5s;
 }
 
 #settlement_event_button:hover {
-  /* background: Transparent; */
-  opacity: 0.8;
-  /* -webkit-filter: drop-shadow(0 0 10px #cccc00);
-  filter: drop-shadow(0 0 10px #cccc00); */
+  background: #880;
+  opacity: 0.0;
   animation: glowing 5000ms infinite;
-}
+} */
 
-#settlement_event_button.active {
+/* #settlement_event_button.active {
   background: Transparent;
   -webkit-filter: drop-shadow(0 0 10px #c4a300);
   filter: drop-shadow(0 0 10px #c4a300);
-  /* animation: glowing 5000ms infinite; */
   opacity: 1.0;
-}
+} */
 
-#milestones_button {
+/* #milestones_button {
   display: block;
   position: absolute;
   background: Transparent;
@@ -86,27 +198,23 @@
 }
 
 #milestones_button:hover {
-  /* background: Transparent; */
-  /* -webkit-filter: drop-shadow(0 0 10px #cccc00);
-  filter: drop-shadow(0 0 10px #cccc00); */
   opacity: 0.8;
   animation: glowing 5000ms infinite;
-}
+} */
 
-#milestones_button.active {
+/* #milestones_button.active {
   background: Transparent;
   -webkit-filter: drop-shadow(0 0 10px #c4a300);
   filter: drop-shadow(0 0 10px #c4a300);
-  /* animation: glowing 5000ms infinite; */
   opacity: 1.0;
-}
+} */
 
 @keyframes glowing {
-  0% { filter: drop-shadow(0 0 -10px #c4a300); }
-  30% { filter: drop-shadow(0 0 10px #c4a300); }
-  50% { filter: drop-shadow(0 0 20px #c4a300); }
+  0% { box-shadow: 0 0 -10px #c4a300; }
+  30% { box-shadow: 0 0 10px #c4a300; }
+  50% { box-shadow: 0 0 20px #c4a300; }
   /* 70% { filter: drop-shadow(0 0 10px #c4a300); } */
-  100% { filter: drop-shadow(0 0 -10px #c4a300); }
+  100% { box-shadow: 0 0 -10px #c4a300; }
 }
 
 #settlement_event_screen {
@@ -140,11 +248,11 @@
   display: block;
   position: absolute;
   overflow: visible;
-  top: 58%;
+  top: 45.455%;
   /* width: 40%; */
   /* background-color: #222; */
   /* opacity: 0.3; */
-  right: 1%;
+  left: 30%;
   visibility: show;
   z-index: 51;
   --borderWidth: 1em;
@@ -218,7 +326,7 @@
   text-shadow: 0 0 10px #cc0;
 }
 
-#development_button {
+/* #development_button {
   display: block;
   position: absolute;
   background: Transparent;
@@ -233,20 +341,16 @@
 }
 
 #development_button:hover {
-  /* background: Transparent; */
-  /* -webkit-filter: drop-shadow(0 0 10px #cccc00);
-  filter: drop-shadow(0 0 10px #cccc00); */
   opacity: 0.8;
   animation: glowing 5000ms infinite;
-}
+} */
 
-#development_button.active {
+/* #development_button.active {
   background: Transparent;
   -webkit-filter: drop-shadow(0 0 10px #c4a300);
   filter: drop-shadow(0 0 10px #c4a300);
-  /* animation: glowing 5000ms infinite; */
   opacity: 1.0;
-}
+} */
 
 #development_screen {
 	left:0%;
