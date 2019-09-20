@@ -1,4 +1,4 @@
-html, body {height:100%; overflow:hidden;}
+/* html, body {height:100%; overflow:hidden;} */
 
 
 @font-face {
@@ -24,7 +24,10 @@ html, body {height:100%; overflow:hidden;}
 #turn_cheatsheet {
   display: block;
   position: absolute;
-  height:80%;
+  /* height:80%;
+  width: 40.803%; */
+  height: 80%;
+  width: auto;
   top: 10%;
   left: 1%;
   /* opacity: 0.; */
@@ -445,6 +448,27 @@ button.tablinks.active {
         display: none;
     }
 
+.gear_column {
+  pointer-events: none;
+}
+
+.gear_column > * {
+  opacity: 0.9;
+  pointer-events: auto;
+  transition: opacity 0.5s, height 0.5s, filter 0.5s;
+}
+
+.gear_column:hover > * {
+  opacity: 0.8;
+}
+
+.gear_column:hover > *:hover {
+  /* transform: scale(1.1); */
+  height: 24%;
+  filter: drop-shadow(0 0 5px #cc0);
+  opacity: 1.0;
+}
+
 .location_screen {
   /* height: 100%; */
   /* left: 0%; */
@@ -482,15 +506,14 @@ button.tablinks.active {
   filter: drop-shadow(0 0 5px #444);
   padding-bottom: 5pt;
   margin: 0 auto;
-  transition: height 0.5s;
+  /* transition: height 0.5s; */
+
 }
 
-.gear_card:hover {
-    height: 24%;
-    /* drop-shadow: 0 0 15px #cc0; */
+
+/* .gear_card:hover {
     filter: drop-shadow(0 0 5px #cc0);
-    /* bottom: 0%; */
-}
+} */
 
 .is-draggable {
     transition: transform 250ms ease-in;
@@ -561,3 +584,7 @@ button.tablinks.active {
   background-color: #cc0;
   opacity: 0.2;
 }
+
+/* .mapify-imgHolder .mapify {
+width: 9999px;
+} */

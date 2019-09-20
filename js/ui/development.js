@@ -266,10 +266,18 @@ function createLocation(location, default_open=false) {
   // let element = ''
 
   for (let j = 0; j<4; j++) {
-    columns.push($('<div>', {
-      class: "column_"+(j+1),
-      id: (j+1),
-    }));
+    if (j > 0) {
+      columns.push($('<div>', {
+        class: "column_"+(j+1)+" gear_column",
+        id: (j+1),
+      }));
+    } else {
+      columns.push($('<div>', {
+        class: "column_"+(j+1),
+        id: (j+1),
+      }));
+    }
+
 
     if (j == 0) {
       columns[j].append($('<img>', {

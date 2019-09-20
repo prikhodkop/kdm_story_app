@@ -1,4 +1,4 @@
-html, body {height:100%; overflow:hidden;scrollbar-width: 0;}
+html, body {height:100%; width: 100%; top:0; left:0; border-width:0; overflow:hidden;scrollbar-width: 0;scroll-behavior: smooth;}
 
 
 

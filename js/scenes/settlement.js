@@ -14,6 +14,10 @@ module.exports = class SettlementScene {
   render () {
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/settlement.html')
 
+    // $("img[usemap]").mapify();
+    // $("#turn_cheatsheet").mapify();
+
+
     onSettingsSaved(() => {
       setTransition(document.title, 'back', getBackTarget(), current_state())
     })
@@ -159,6 +163,7 @@ module.exports = class SettlementScene {
       $('#settlement_background').delay(2000).fadeIn(500)
       // $('#milestones').delay(3500).fadeIn(2000);
       $('#turn_cheatsheet').delay(2000).fadeIn(500)
+      // $('.mapify-holder').delay(2000).fadeIn(500)
       $('#settlement_event_button').delay(2500).fadeIn(1000)
       $('#milestones_button').delay(2500).fadeIn(1000)
       $('#development_button').delay(2500).fadeIn(1000)
@@ -175,6 +180,8 @@ module.exports = class SettlementScene {
       $('#settlement_background').fadeIn(1000)
       // $('#milestones').fadeIn(2000);
       $('#turn_cheatsheet').fadeIn(1000)
+      // $('.mapify-holder').fadeIn(1000)
+
       $('#settlement_event_button').delay(1000).fadeIn(500)
       $('#milestones_button').delay(1000).fadeIn(500)
       $('#development_button').delay(1000).fadeIn(500)
@@ -308,6 +315,8 @@ module.exports = class SettlementScene {
     //
     //   $(this).toggleClass('active');
     // });
+
+    // $("#turn_cheatsheet").mapify();
 
     function addMilestones () {
       $('#milestones').append($('<div id="milestone-title">Milestones</div>'))
