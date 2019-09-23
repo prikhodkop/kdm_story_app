@@ -272,7 +272,9 @@ module.exports = class SettlementScene {
         $('.cheatsheet_button').each(function() {$(this).removeClass('active'); $('#milestones').hide(); $('#settlement_event_back').hide();})
         $(this).addClass('active')
         $('#cheatsheet_buttons').addClass('active')
-        document.getElementById("defaultOpen").click();
+        if ($('#locations_button').hasClass('active')) {
+          document.getElementById("defaultOpen").click();
+        }
 
       } else {
         $('#development_screen').delay(50).fadeOut(500)

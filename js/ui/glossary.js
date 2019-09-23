@@ -1160,7 +1160,7 @@ const innovations = {
  'Arena': {
    'expansion': 'dragon king',
    'parent': 'Nightmare Training',
-   'campaign': 'pots',
+   'campaign': 'Stars',
  },
  'Bed': {
    'parent': 'Hovel',
@@ -1171,7 +1171,7 @@ const innovations = {
  'Bloodline': {
    'expansion': 'dragon king',
    'parent': 'Hovel',
-   'campaign': 'pots',
+   'campaign': ['Stars'],
  },
  'Citrinitas': {
    'expansion': 'gorm',
@@ -1189,6 +1189,7 @@ const innovations = {
  },
  'Clan of Death': {
    'parent': 'Family',
+   'campaign': ['Lantern', 'Sun'],
  },
  'Cooking': {
    'parent': 'Lantern Oven',
@@ -1202,7 +1203,7 @@ const innovations = {
  'Destiny': {},
  'Dragon Speech': {
    'expansion': 'dragon king',
-   'campaign': 'pots',
+   'campaign': ['Stars'],
  },
  'Drums': {
    'parent': 'Language',
@@ -1210,16 +1211,17 @@ const innovations = {
  'Empire': {
    'expansion': 'dragon king',
    'parent': 'Bloodline',
-   'campaign': 'pots',
+   'campaign': ['Stars'],
  },
  'Face Painting': {
    'parent': 'Paint',
  },
  'Family': {
    'parent': 'Hovel',
+   'campaign': ['Lantern', 'Sun'],
  },
  'Filleting Table': {
-   'expansion': 'science',
+   'expansion': 'sunstalker',
  },
  'Final Fightning Art': {},
  'Forbidden Dance': {
@@ -1238,9 +1240,12 @@ const innovations = {
  'Inner Lantern': {
    'parent': 'Language',
  },
- 'Language': {},
+ 'Language': {
+   'campaign': ['Lantern'],
+ },
  'Lantern Oven': {
    'parent': 'Lantern Oven',
+   'campaign': ['Lantern'],
  },
  'Momento Mori': {
    'parent': 'Pictograph',
@@ -1269,7 +1274,7 @@ const innovations = {
  },
  'Radiating Orb': {
    'expansion': 'dragon king',
-   'campaign': 'pots',
+   'campaign': ['Stars'],
  },
  'Records': {
    'parent': 'Storytelling',
@@ -1340,7 +1345,15 @@ const innovations = {
  'War Room': {
    'expansion': 'manhunter',
    'parent': 'Storytelling',
- }
+ },
+ 'Principle Accept Darkness': {},
+ 'Principle Barbaric': {},
+ 'Principle Cannibalize': {},
+ 'Principle Collective Toil': {},
+ 'Principle Graves': {},
+ 'Principle Protect the Young': {},
+ 'Principle Romantic': {},
+ 'Principle Survival of the Fittest': {}
 }
 
 const principles = {
@@ -1599,7 +1612,9 @@ function get_random_draws (word, randomize=true, ) {
     delete list['First Day']
   } else if (word.includes('Location')) {
     list = clone(settlement_locations)
-  }else {
+  } else if (word.includes('Innovation')) {
+    list = clone(innovations)
+  } else {
     return []
   }
 
@@ -1619,13 +1634,19 @@ function get_random_draws (word, randomize=true, ) {
         remove = true
       }
     } else if (word.includes('Location')) {
-      // Settlement events are shown only if "All Content" is set for expansion
+      // Locations are shown only if "All Content" is set for expansion
       if (('expansion' in list[key]) && !(settings['expansions'][list[key]['expansion']] == 'All content')) {
         remove = true
       }
       if (('campaign' in list[key]) && !(settings['campaign'] == list[key]['campaign'])) {
         remove = true
       }
+    } else if (word.includes('Innovation')) {
+
+      if (('campaign' in list[key]) && !(list[key]['campaign'].includes(settings['campaign']))) {
+        remove = true
+      }
+
     }
 
     if (remove) {

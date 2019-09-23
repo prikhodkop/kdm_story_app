@@ -15,31 +15,33 @@ function addDevelopment() {
     // class: 'window',
   }));
 
+  // Subwindow selection
   $('#settlement_locations_window').hide();
 
+  $('#settlement_locations_window').append($('<div class="development_tab_wrapper"></div>'))
+  $('.development_tab_wrapper').append($('<div class="development_tab_buttons"></div>'))
+  $('.development_tab_buttons').append($('<div class="development_tab_button" id="locations_button">Locations</div>'));
+  $('.development_tab_buttons').append($('<div class="development_tab_button" id="innovations_button">Innovations</div>'));
+  $('.development_tab_buttons').append($('<div class="development_tab_button" id="endeavor_button">Actions</div>'));
+
+  $('#locations_button').addClass('active')
+
+  $('.development_tab_button').click(function() {
+    if (!$(this).hasClass('active')) {
+      $('.development_tab_button').each(function() {$(this).removeClass('active');})
+      $(this).addClass('active');
+      openWindow($(this).attr('id'));
+    } else {
+      // $(this).removeClass('active');
+    }
+  });
+
+  // Locations window
   $('#settlement_locations_window').append($('<div>', {
     // style: 'opacity:.9;',
     id: 'development_tabs',
     class: 'tab',
   }));
-
-  // $('#settlement_locations_window').append($('<img>', {
-  //   // style: 'opacity:.9;',
-  //   id: 'locations_button',
-  //   src: 'images/reference/location_icon.png',
-  // }));
-  //
-  // $('#settlement_locations_window').append($('<img>', {
-  //   // style: 'opacity:.9;',
-  //   id: 'innovations_button',
-  //   src: 'images/reference/innovation_icon.png',
-  // }));
-  //
-  // $('#settlement_locations_window').append($('<img>', {
-  //   // style: 'opacity:.9;',
-  //   id: 'endeavor_button',
-  //   src: 'images/reference/endeavor_icon.png',
-  // }));
 
   $('#settlement_locations_window').append($('<img>', {
     // style: 'opacity:.9;',
@@ -56,52 +58,140 @@ function addDevelopment() {
     createLocation(locations_list[i], (i==0) ? true : false);
   }
 
-  allignLocations();
+  allignItems('location');
 
   window.openLocation = openLocation;
+  window.showInnovation = showInnovation;
+  window.filterInnovations = filterInnovations;
 
   $('.gear_card').hover(function () {
     console.log($(this).parent())
     let card = $(this)
     $(this).addClass('hoverd')
-    // card.animate({"height": "24%"}, 100);
-    // window.gear_card_timer = setTimeout(function(){
-    //       console.log('!!!')
-    //       if(!card.next().is('.gear_card')) {
-    //           console.log('Last!')
-    //           card.parent().scrollTo(card, duration = 500);
-    //       }
-    //   }, 500);
       if((!card.next().is('.gear_card'))||(!card.prev().is('.gear_card'))) {
           console.log('Last!')
           card.parent().scrollTo(card, duration = 500);
       }
     }, function(){
       console.log('22!!!')
-      // $(this).animate({"height": "19%"}, 100);
-      // clearTimeout(window.gear_card_timer);
       $(this).removeClass('hoverd')
   });
 
   $(document).on("dblclick", '.tablinks', function(e) {
-    // $(this).fadeOut(300, function () {
-    //   $(this).css({
-    //     'visibility': 'hidden',
-    //     'display': 'block',
-    //   }).slideUp()
-    // })
     if (!$(this).hasClass('selected')) {
       $(this).addClass('selected')
+      if ($(this).attr('type') == 'innovation') {
+        showInnovation($(this).attr('value'));
+        $(this).hide();
+      }
     } else {
       if (!(always_on_locations.includes($(this).attr('value')))) {
         $(this).removeClass('selected')
+        $('.innovation_card[value="'+$(this).attr('value')+'"]').fadeOut(300, function() {
+          $('.innovation_card[value="'+$(this).attr('value')+'"]').remove();
+        });
+        $(this).show();
       }
     }
-    moveLocation($(this).attr('value'));
+    moveItem($(this).attr('type'), $(this).attr('value'));
  });
+
+ $(document).on("dblclick", '.innovation_card', function(e) {
+   $('.tablinks[value="'+$(this).attr('value')+'"]').removeClass('selected')
+   $('.tablinks[value="'+$(this).attr('value')+'"]').show();
+   $('.innovation_card[value="'+$(this).attr('value')+'"]').fadeOut(300, function() {
+     $('.innovation_card[value="'+$(this).attr('value')+'"]').remove();
+   });
+
+   moveItem('innovation', $(this).attr('value'));
+});
+
+ // Innovations window
+ $('#settlement_locations_window').append($('<div>', {
+   // style: 'opacity:.9;',
+   id: 'innovations_tab',
+   class: 'tab',
+ }));
+
+ $('#settlement_locations_window').append($('<input>', {
+   // style: 'opacity:.9;',
+   id: "innovations_filter",
+   type: 'search',
+   onkeyup: "filterInnovations()",
+   onsearch: "filterInnovations()",
+   placeholder: "Search..."
+ }));
+
+ $('#innovations_filter').hide();
+
+ $('#settlement_locations_window').append($('<div>', {
+   // style: 'opacity:.9;',
+   class: 'innovations_grid_wrapper',
+ }));
+
+ $('innovations_grid_wrapper').hide();
+
+ $('.innovations_grid_wrapper').append($('<div>', {
+   // style: 'opacity:.9;',
+   class: 'innovations_grid',
+ }));
+
+ let innovations_list = get_random_draws('Innovation', false).sort();
+
+ for (let i = 0; i < innovations_list.length; i++) {
+   createInnovation(innovations_list[i]);
+ }
+
+ allignItems('innovation');
+
+let selected_innovations = getCurrentItems('innovation', true)
+
+for (let i = 0; i < selected_innovations.length; i++) {
+  showInnovation(selected_innovations[i]);
+  $('.tablinks[value="'+selected_innovations[i]+'"]').hide();
 }
 
-function allignLocations() {
+ openWindow("locations_button")
+
+} // end of addDevelopment
+
+function filterInnovations() {
+
+  let input, filter;
+  input = document.getElementById("innovations_filter");
+  filter = input.value.toUpperCase();
+
+  $('#innovations_tab > button:not(.selected)').each(function() {
+    let txtValue = $(this).text();
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      $(this).css("display", "block");
+    } else {
+      $(this).css("display", "none");
+    }
+  })
+}
+
+function openWindow(type) {
+  // Hide all old elements
+  $('#development_tabs').hide();
+  $('#innovations_tab').hide();
+  $('.innovations_grid_wrapper').hide();
+  $('#innovations_filter').hide();
+  $(".tabcontent.visible").hide();
+
+  if (type == "locations_button") {
+    $('#development_tabs').show();
+    $(".tabcontent.visible").show();
+  }
+  if (type == "innovations_button") {
+    $('#innovations_tab').show();
+    $('.innovations_grid_wrapper').show();
+    $('#innovations_filter').show();
+    $('#innovations_filter').focus()
+  }
+}
+
+function allignItems(type) {
   let development_status = JSON.parse(localStorage.getItem('development'));
   let settings = JSON.parse(sessionStorage.getItem('settings'));
 
@@ -112,10 +202,15 @@ function allignLocations() {
   if ((development_status == null) || (development_status == 'undefined')) {
     development_status = {}
     development_status['locations'] = always_on_locations
+    development_status['innovations'] = [];
     updated = true
   } else {
     if (!('locations' in development_status)) {
       development_status['locations'] = always_on_locations
+      updated = true
+    }
+    if (!('innovations' in development_status)) {
+      development_status['innovations'] = []
       updated = true
     }
   }
@@ -124,48 +219,53 @@ function allignLocations() {
     localStorage.setItem('development', JSON.stringify(development_status))
   }
 
-  let selected_locations = development_status['locations'];
-  let locations_list = getCurrentLocations()
+  let selected_items = development_status[type+'s'];
+  let items_list = getCurrentItems(type)
 
-  for (let i = locations_list.length - 1; i >= 0 ; i--) {
-    if (selected_locations.includes(locations_list[i])) {
-      $('button.tablinks[value="'+locations_list[i]+'"]').addClass('selected')
-      $('button.tablinks[value="'+locations_list[i]+'"]').detach().insertBefore("button.tablinks:first");
+  for (let i = items_list.length - 1; i >= 0 ; i--) {
+    if (selected_items.includes(items_list[i])) {
+      $('button.tablinks[value="'+items_list[i]+'"]').addClass('selected')
+      $('button.tablinks[value="'+items_list[i]+'"]').detach().insertBefore('button.tablinks[type="'+type+'"]:first');
     }
 
   }
+  if (type == 'location') {
+    $('button.tablinks.selected:first').attr('id', "defaultOpen")
+  }
 
-  $('button.tablinks.selected:first').attr('id', "defaultOpen")
   // openLocation($('button#defaultOpen'))
 
+} // end of alignItems
 
-}
+function moveItem(type, name) {
 
-function moveLocation(location) {
-
-  if (always_on_locations.includes(location)) {
-    return
+  if ((type == 'location')) {
+    if (always_on_locations.includes(name)) {
+      return
+    }
   }
 
   let development_status = JSON.parse(localStorage.getItem('development'));
-  let this_element = $('button.tablinks[value="'+location+'"]')
+  let this_element = $('button.tablinks[type="'+type+'"][value="'+name+'"]')
   let needed_value = null
+  var cnt = 0;
   this_element.addClass('moving')
   if (this_element.hasClass('selected')) {
-    development_status['locations'].push(location)
-    $('button.tablinks.selected:not(.moving)').each(function () {
-      if ($(this).attr('value') < location) {
+    development_status[type+'s'].push(name)
+    $('button.tablinks[type="'+type+'"].selected:not(.moving)').each(function () {
+      if ($(this).attr('value') < name) {
         needed_value = $(this).attr('value')
       }
+      cnt = cnt + 1;
     })
 
   } else {
-    let index = development_status['locations'].indexOf(location);
+    let index = development_status[type+'s'].indexOf(name);
     if (index !== -1) {
-      development_status['locations'].splice(index, 1);
+      development_status[type+'s'].splice(index, 1);
     }
-    $('button.tablinks:not(.selected):not(.moving)').each(function () {
-      if ($(this).attr('value') < location) {
+    $('button.tablinks[type="'+type+'"]:not(.selected):not(.moving)').each(function () {
+      if ($(this).attr('value') < name) {
         needed_value = $(this).attr('value')
       }
     })
@@ -176,33 +276,57 @@ function moveLocation(location) {
 
   if (needed_value == null) {
     if (this_element.hasClass('selected')) {
-      this_element.detach().insertBefore('button.tablinks.selected:not(.moving):first');
+      if (cnt > 0) {
+        this_element.detach().insertBefore('button.tablinks[type="'+type+'"].selected:not(.moving):first');
+      } else {
+        this_element.detach().insertBefore('button.tablinks[type="'+type+'"]:not(.selected):first');
+      }
     } else {
-      this_element.detach().insertBefore('button.tablinks:not(.selected):not(.moving):first');
+      this_element.detach().insertBefore('button.tablinks[type="'+type+'"]:not(.selected):not(.moving):first');
     }
 
   } else {
-    this_element.detach().insertAfter('button.tablinks[value="'+needed_value+'"]');
+    this_element.detach().insertAfter('button.tablinks[type="'+type+'"][value="'+needed_value+'"]');
   }
 
   if (this_element.hasClass('selected')) {
-    this_element.parent().scrollTo($('button.tablinks:first'), duration = 500);
+    this_element.parent().scrollTo($('button.tablinks[type="'+type+'"]:first'), duration = 500);
   }
 
   this_element.removeClass('moving')
 
   localStorage.setItem('development', JSON.stringify(development_status))
 
+} // end of moveLocation
+
+function getCurrentItems(type, selected=false) {
+  let items = [];
+
+  if (selected) {
+    $('button.tablinks[type="'+type+'"].selected').each(function () {
+      items.push($(this).attr('value'))
+    })
+  } else {
+    $('button.tablinks[type="'+type+'"]').each(function () {
+      items.push($(this).attr('value'))
+    })
+  }
+
+
+  return items
+
 }
 
-function getCurrentLocations() {
-  let locations = [];
-
-  $('button.tablinks').each(function () {
-    locations.push($(this).attr('value'))
+function createInnovation(innovation) {
+  let button = $('<button>', {
+    class: "tablinks",
+    // onclick: "showInnovation(event, '"+innovation+"')",
+    // id: default_open ? "defaultOpen" : "",
+    val: innovation,
+    type: 'innovation'
   })
-
-  return locations
+  button.html(titleCase(innovation));
+  $('#innovations_tab').append(button);
 
 }
 
@@ -212,6 +336,7 @@ function createLocation(location, default_open=false) {
     onclick: "openLocation(event, '"+location+"')",
     // id: default_open ? "defaultOpen" : "",
     val: location,
+    type: 'location'
   })
   button.html(titleCase(location));
   $('#development_tabs').append(button);
@@ -331,17 +456,31 @@ function createLocation(location, default_open=false) {
 
 }
 
+function showInnovation(innovationName) {
+  let img = $('<img>', {
+    // style: 'opacity:.9;',
+    class: 'innovation_card',
+    value: innovationName,
+    src: cdnUrl('images/reference/Innovations/'+innovationName+'.jpg'),
+  });
+  img.hide();
+  $('.innovations_grid').append(img);
+  img.delay(50).fadeIn(300);
+}
+
 function openLocation(evt, locationName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
+    tabcontent[i].className = tabcontent[i].className.replace(" visible", "");
   }
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
   document.getElementById(locationName).style.display = "block";
+  document.getElementById(locationName).className += " visible";
   evt.currentTarget.className += " active";
 
   $('button.tablinks#defaultOpen').attr('id', '')
