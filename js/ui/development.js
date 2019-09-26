@@ -1,4 +1,4 @@
-const { get_random_draws, settlement_locations, gear_list } = require('./../ui/glossary')
+const { get_random_draws, settlement_locations, gear_list, innovations } = require('./../ui/glossary')
 const { cdnUrl } = require('./../ui/template-renderer')
 
 module.exports = {
@@ -87,9 +87,9 @@ function addDevelopment() {
     } else {
       if (!(always_on_locations.includes($(this).attr('value')))) {
         $(this).removeClass('selected')
-        $('.innovation_card[value="'+$(this).attr('value')+'"]').fadeOut(300, function() {
-          $('.innovation_card[value="'+$(this).attr('value')+'"]').remove();
-        });
+        // $('.innovation_card[value="'+$(this).attr('value')+'"]').fadeOut(300, function() {
+        //   $('.innovation_card[value="'+$(this).attr('value')+'"]').remove();
+        // });
         $(this).show();
       }
     }
@@ -104,7 +104,23 @@ function addDevelopment() {
    });
 
    moveItem('innovation', $(this).attr('value'));
-});
+  });
+
+  $(document).on("click", '.innovation_card', function(e) {
+    if (!$('.innovation_card[value="'+$(this).attr('value')+'"]').hasClass('active')) {
+      $('.innovation_card[value="'+$(this).attr('value')+'"]').addClass('active')
+    } else {
+      $('.innovation_card[value="'+$(this).attr('value')+'"]').removeClass('active')
+    }
+   });
+
+   $(document).on("click", '.gear_card', function(e) {
+     if (!$('.gear_card[value="'+$(this).attr('value')+'"]').hasClass('active')) {
+       $('.gear_card[value="'+$(this).attr('value')+'"]').addClass('active')
+     } else {
+       $('.gear_card[value="'+$(this).attr('value')+'"]').removeClass('active')
+     }
+    });
 
  // Innovations window
  $('#settlement_locations_window').append($('<div>', {
@@ -118,8 +134,8 @@ function addDevelopment() {
    id: "innovations_filter",
    type: 'search',
    onkeyup: "filterInnovations()",
-   onsearch: "filterInnovations()",
-   placeholder: "Search..."
+   onsearch: "filterInnovations(true)",
+   placeholder: "Search... (# for tags)"
  }));
 
  $('#innovations_filter').hide();
@@ -144,6 +160,8 @@ function addDevelopment() {
 
  allignItems('innovation');
 
+ $('innovations_grid').sortable();
+
 let selected_innovations = getCurrentItems('innovation', true)
 
 for (let i = 0; i < selected_innovations.length; i++) {
@@ -155,18 +173,50 @@ for (let i = 0; i < selected_innovations.length; i++) {
 
 } // end of addDevelopment
 
-function filterInnovations() {
+function filterInnovations(clear=false) {
 
   let input, filter;
   input = document.getElementById("innovations_filter");
   filter = input.value.toUpperCase();
+  let show = false
+
+  if (clear) {
+    input.value = ''
+  } else {
+    if (filter.charAt( 0 ) == '#') {
+      if (!$('#innovations_filter').hasClass('tags')) {
+        $('#innovations_filter').addClass('tags')
+      }
+      input.value = '#'+input.value.substr(1).replace(/ +(?= )/g,'');
+      input.value = '#'+input.value.substr(1).replace(/[^A-Za-z ]/gi, '')
+    } else {
+      if ($('#innovations_filter').hasClass('tags')) {
+        $('#innovations_filter').removeClass('tags')
+      }
+      input.value = input.value.replace(/ +(?= )/g,'');
+      input.value = input.value.replace(/[^A-Za-z \-]/gi, '')
+    }
+  }
+
+  if (filter.replace((/ /g, '')) == '#') {
+    return
+  }
 
   $('#innovations_tab > button:not(.selected)').each(function() {
     let txtValue = $(this).text();
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      $(this).css("display", "block");
+    console.log('Innovation:'+txtValue)
+    if (filter.charAt( 0 ) == '#') {
+      if (innovations[txtValue]['tags'].join(', ').toUpperCase().indexOf(filter.substr(1)) > -1) {
+        $(this).css("display", "block");
+      } else {
+        $(this).css("display", "none");
+      }
     } else {
-      $(this).css("display", "none");
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        $(this).css("display", "block");
+      } else {
+        $(this).css("display", "none");
+      }
     }
   })
 }
@@ -325,8 +375,35 @@ function createInnovation(innovation) {
     val: innovation,
     type: 'innovation'
   })
-  button.html(titleCase(innovation));
+  button.html(titleCase(innovation).replace(' Of ', ' of ').replace(' The ', ' the '));
   $('#innovations_tab').append(button);
+
+  let img_element = $('<img>', {
+    src: "images/reference/Innovations/"+innovation+".jpg",
+    class: "tooltip_image_innovation"
+  })
+
+  button.tooltipster({
+    contentAsHTML: true,
+    animation: 'grow',
+    // content: '<img class="tooltip_image_innovation" src="images/reference/Innovations/'+innovation+'.jpg"/>',
+    content: img_element,
+    position: 'right',
+    delay: [1500, 100],
+    maxWidth: 200,
+    trigger: 'custom',
+    triggerOpen: {
+      mouseenter: true,
+      click: true
+    },
+    triggerClose: {
+      click: true,
+      mouseleave: true
+    }
+  });
+
+
+
 
 }
 
@@ -417,6 +494,7 @@ function createLocation(location, default_open=false) {
           let element = $('<img>', {
             class: "gear_card",
             src: cdnUrl("images/reference/Gear/"+gear_name+".jpg"),
+            value: gear_name
           })
           columns[j].append(element);
           if (gear_name in gear_list) {
@@ -457,6 +535,9 @@ function createLocation(location, default_open=false) {
 }
 
 function showInnovation(innovationName) {
+  if ($('.innovation_card[value="'+innovationName+'"]').length > 0) {
+    $('.innovation_card[value="'+innovationName+'"]').remove()
+  }
   let img = $('<img>', {
     // style: 'opacity:.9;',
     class: 'innovation_card',
@@ -464,7 +545,15 @@ function showInnovation(innovationName) {
     src: cdnUrl('images/reference/Innovations/'+innovationName+'.jpg'),
   });
   img.hide();
-  $('.innovations_grid').append(img);
+
+  if($('.innovation_card').length){
+		img.insertBefore('.innovation_card:first');
+	}else{
+		$('.innovations_grid').append(img);
+	}
+  // $('.innovations_grid').append(img);
+
+
   img.delay(50).fadeIn(300);
 }
 

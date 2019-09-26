@@ -340,6 +340,7 @@
   box-sizing: border-box;
   font-weight:500;
   font-family: 'Silverado';
+  /* overflow: visible; */
 };
 
 #container {
@@ -412,12 +413,17 @@
   display:block;
   background-color: #111;
   opacity: 0.9;
-  color: #666;
+  color: #ccc;
   border: none;
-  font-size: 12pt;
+  font-size: 9pt;
   /* --borderWidth: 2em;
 	border-radius: var(--borderWidth); */
 }
+
+#innovations_filter.tags {
+  color: #cc0
+}
+
 
 .tab::-webkit-scrollbar {
         display: none;
@@ -558,7 +564,7 @@ button.tablinks.active {
 .gear_column > * {
   opacity: 0.9;
   pointer-events: auto;
-  transition: opacity 0.5s, height 0.5s, filter 0.5s;
+  transition: opacity 0.5s, height 0.5s, filter 0.5s, border 0.5s, box-shadow 0.5s;
 }
 
 .gear_column:hover > * {
@@ -570,6 +576,11 @@ button.tablinks.active {
   height: 24%;
   filter: drop-shadow(0 0 5px #cc0);
   opacity: 1.0;
+}
+
+.gear_column > .active {
+  border: 0.3rem solid #dd0;
+  box-shadow: 0 0 10px #cc0;
 }
 
 .location_screen {
@@ -689,17 +700,18 @@ button.tablinks.active {
 
 .innovations_grid_wrapper {
   width: 84%;
-  left: 15%;
-  top: 1%;
-  height: 100%;
+  left: 14%;
+  top: 0%;
+  height: 97%;
   border-left: none;
   /* height: 300px; */
   position: absolute;
   z-index: 78;
   display:block;
-  overflow-y: visible;
+  overflow-y: scroll;
   overflow-x: visible;
   scrollbar-width: none;
+  padding: 1.1%;
 }
 
 .innovations_grid {
@@ -725,8 +737,13 @@ button.tablinks.active {
 	border-radius: var(--borderWidth);
 	border: 0.1rem solid #555;
   margin: 0 auto;
-  transition: opacity 0.5s, transform 0.5s, width 0.5s;
+  transition: opacity 0.5s, transform 0.5s, width 0.5s, border 0.5s, box-shadow 0.5s;
   /* overflow: visible; */
+}
+
+.innovations_grid > .active {
+	border: 0.3rem solid #dd0;
+  box-shadow: 0 0 10px #cc0;
 }
 
 .innovations_grid:hover > * {
@@ -736,7 +753,20 @@ button.tablinks.active {
 .innovations_grid:hover > *:hover {
   opacity: 1.0;
   transform: scale(1.1);
-  /* width: 120%; */
+  /* width: 110%; */
+  /* height: 110%; */
   z-index: 80;
   /* width: 120%; */
 }
+
+.tooltip_image_innovation {
+  width:180pt;
+  display:block;
+  position:inline;
+  overflow:visible;
+  --borderWidth: 1em;
+	border-radius: var(--borderWidth);
+  border: 0.2rem solid #555;
+}
+
+.tooltipster-base { box-sizing: content-box; }

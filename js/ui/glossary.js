@@ -1149,211 +1149,301 @@ const innovations = {
  'Albedo': {
    'expansion': 'gorm',
    'parent': 'Nigredo',
+   'tags': ['science', 'gormchymy', 'nigredo']
  },
  'Ammonia': {
    'parent': 'Language',
+   'tags': ['science', 'language']
  },
  'Aquarobotics': {
    'expansion': 'sunstalker',
    'parent': 'Hands of the Sun',
+   'tags': ['faith', 'hands of the sun']
  },
  'Arena': {
    'expansion': 'dragon king',
    'parent': 'Nightmare Training',
    'campaign': 'Stars',
+   'tags': ['education', 'nightmare training']
  },
  'Bed': {
    'parent': 'Hovel',
+   'tags': ['home', 'hovel']
  },
  'Bloodletting': {
    'parent': 'Ammonia',
+   'tags': ['science', 'ammonia']
  },
  'Bloodline': {
    'expansion': 'dragon king',
    'parent': 'Hovel',
    'campaign': ['Stars'],
+   'tags': ['home', 'hovel']
  },
  'Citrinitas': {
    'expansion': 'gorm',
    'parent': 'Albedo',
+   'tags': ['science', 'gormchymy', 'albedo']
  },
  'Choreia': {
    'expansion': 'spidicules',
    'parent': 'Forbidden Dance',
+   'tags': ['music', 'forbidden dance']
  },
  'Legless Ball': {
    'expansion': 'spidicules',
+   'tags': ['other']
  },
- 'Silk-Refining': {
+ 'Silk-refining': {
    'expansion': 'spidicules',
+   'tags': ['other']
  },
  'Clan of Death': {
    'parent': 'Family',
    'campaign': ['Lantern', 'Sun'],
+   'tags': ['home', 'family']
  },
  'Cooking': {
    'parent': 'Lantern Oven',
+   'tags': ['science', 'lantern oven']
  },
  'Crimson Candy': {
    'expansion': 'manhunter',
+   'tags': ['science']
  },
  'Dark Water Research': {
    'expansion': 'slenderman',
+   'tags': ['science']
  },
- 'Destiny': {},
+ 'Destiny': {
+   'tags': ['faith']
+ },
  'Dragon Speech': {
    'expansion': 'dragon king',
    'campaign': ['Stars'],
+   'tags': ['starting']
  },
  'Drums': {
    'parent': 'Language',
+   'tags': ['music', 'language']
  },
  'Empire': {
    'expansion': 'dragon king',
    'parent': 'Bloodline',
    'campaign': ['Stars'],
+   'tags': ['home', 'bloodline']
  },
  'Face Painting': {
    'parent': 'Paint',
+   'tags': ['art', 'paint']
  },
  'Family': {
    'parent': 'Hovel',
    'campaign': ['Lantern', 'Sun'],
+   'tags': ['home', 'hovel']
  },
  'Filleting Table': {
    'expansion': 'sunstalker',
+   'tags': ['science']
  },
- 'Final Fightning Art': {},
+ 'Final Fightning Art': {
+   'tags': ['education']
+ },
  'Forbidden Dance': {
    'parent': 'Drums',
+   'tags': ['music', 'drums']
  },
- 'Guidepost': {},
+ 'Guidepost': {
+   'tags': ['other']
+ },
  'Hands of the Sun': {
    'expansion': 'sunstalker',
+   'tags': ['faith']
  },
  'Heart Flute': {
    'parent': 'Forbidden Dance',
+   'tags': ['music', 'forbidden dance']
  },
  'Hovel': {
    'parent': 'Language',
+   'tags': ['home', 'language']
  },
  'Inner Lantern': {
    'parent': 'Language',
+   'tags': ['faith', 'language']
  },
  'Language': {
    'campaign': ['Lantern'],
+   'tags': ['starting']
  },
  'Lantern Oven': {
    'parent': 'Lantern Oven',
    'campaign': ['Lantern'],
+   'tags': ['science', 'ammonia']
  },
  'Momento Mori': {
    'parent': 'Pictograph',
+   'tags': ['art', 'pictograph']
  },
  'Nightmare Training': {
    'parent': 'Nightmare Training',
+   'tags': ['education', 'symposium']
  },
  'Nigredo': {
    'expansion': 'gorm',
+   'tags': ['science', 'gormchymy']
  },
  'Paint': {
    'parent': 'Language',
+   'tags': ['art', 'language']
  },
  'Partnership': {
    'parent': 'Hovel',
+   'tags': ['home', 'hovel']
  },
  'Petal Spiral': {
    'expansion': 'flower knight',
    'parent': 'Forbidden Dance',
+   'tags': ['music', 'forbidden dance']
  },
  'Pictograph': {
    'parent': 'Paint',
+   'tags': ['art', 'paint']
  },
  'Pottery': {
    'parent': 'Sculpture',
+   'tags': ['art', 'sculpture']
  },
  'Radiating Orb': {
    'expansion': 'dragon king',
    'campaign': ['Stars'],
+   'tags': ['science']
  },
  'Records': {
    'parent': 'Storytelling',
+   'tags': ['education', 'storytelling']
  },
  'Round Stone Training': {
    'expansion': 'dung beetle knight',
    'parent': 'Nightmare Training',
+   'tags': ['education', 'nightmare training']
  },
  'Rubedo': {
    'expansion': 'gorm',
    'parent': 'Citrinitas',
+   'tags': ['science', 'gormchymy', 'citrinas']
  },
  'Sacrifice': {
    'parent': 'Shrine',
+   'tags': ['faith', 'shrine']
  },
  'Saga': {
    'parent': 'Song of the Brave',
+   'tags': ['music', 'song of the brave']
  },
  'Sauna Shrine': {
    'expansion': 'sunstalker',
    'parent': 'Hands of the Sun',
+   'tags': ['faith', 'hands of the sun']
  },
  'Scarification': {
    'parent': 'Inner Lantern',
+   'tags': ['faith', 'inner lantern']
  },
  'Scrap Smelting': {
    'parent': 'Lantern Oven',
+   'tags': ['science', 'lantern oven']
  },
  'Scupture': {
    'parent': 'Paint',
+   'tags': ['art', 'paint']
  },
  'Settlement Watch': {
    'expansion': 'manhunter',
    'parent': 'Hovel',
+   'tags': ['home', 'hovel']
  },
  'Shadow Dancing': {
    'expansion': 'shadow dancing',
    'parent': 'Hovel',
+   'tags': ['home', 'hovel']
  },
  'Shrine': {
    'parent': 'Inner Lantern',
+   'tags': ['faith', 'inner lantern']
  },
  'Song of the Brave': {
    'parent': 'Drums',
+   'tags': ['music', 'drums']
  },
  'Stoic Statue': {
    'expansion': 'lion knight',
+   'tags': ['other']
+ },
+ 'Black Mask': {
+   'expansion': 'lion knight',
+   'tags': ['other']
+ },
+ 'White Mask': {
+   'expansion': 'lion knight',
+   'tags': ['other']
  },
  'Storytelling': {
    'parent': 'Symposium',
+   'tags': ['education', 'symposium']
  },
  'Subterranean Agriculture': {
    'expansion': 'dung beetle knight',
+   'tags': ['science']
  },
  'Sun Language': {
    'expansion': 'sunstalker',
+   'tags': ['starting']
  },
  'Symposium': {
    'parent': 'Language',
+   'tags': ['education', 'language']
  },
  'The Knowedge Worm': {
    'expansion': 'lion god',
+   'tags': ['other']
  },
- 'Ultimate Weapon': {},
+ 'Ultimate Weapon': {
+   'tags': ['science']
+ },
  'Umbilical Bank': {
    'expansion': 'sunstalker',
+   'tags': ['science']
  },
  'War Room': {
    'expansion': 'manhunter',
    'parent': 'Storytelling',
+   'tags': ['education', 'storytelling']
  },
- 'Principle Accept Darkness': {},
- 'Principle Barbaric': {},
- 'Principle Cannibalize': {},
- 'Principle Collective Toil': {},
- 'Principle Graves': {},
- 'Principle Protect the Young': {},
- 'Principle Romantic': {},
- 'Principle Survival of the Fittest': {}
+ 'Accept Darkness': {
+   'tags': ['society principle']
+ },
+ 'Barbaric': {
+   'tags': ['society principle']
+ },
+ 'Cannibalize': {
+   'tags': ['society principle']
+ },
+ 'Collective Toil': {
+   'tags': ['society principle']
+ },
+ 'Graves': {
+   'tags': ['society principle']
+ },
+ 'Protect the Young': {
+   'tags': ['society principle']
+ },
+ 'Romantic': {
+   'tags': ['society principle']
+ },
+ 'Survival of the Fittest': {
+   'tags': ['society principle']
+ }
 }
 
 const principles = {
@@ -1407,6 +1497,7 @@ module.exports = {
   clone,
   settlement_locations,
   gear_list,
+  innovations,
 }
 
 function get_options (data, type) {
