@@ -1,4 +1,4 @@
-html, body {height:100%; width: 100%; top:0; left:0; border-width:0; overflow:hidden;scrollbar-width: 0;scroll-behavior: smooth;}
+html, body {height:100%; width: 100%; top:0; left:0;scroll-behavior: smooth;}
 
 
 
@@ -21,7 +21,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 #container {
-  position: relative;
+  position: absolute;
   display:block;
   top: 0;
   left: 0;
