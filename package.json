@@ -24,7 +24,8 @@
     "electron-osx-sign": "^0.4.11",
     "electron-progressbar": "^1.2.0",
     "electron-updater": "^4.0.6",
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    "web-animations-js": "^2.3.2"
   },
   "build": {
     "publish": [

@@ -141,74 +141,6 @@
 }
 
 
-
-/* #settlement_event_button {
-  display: block;
-  position: absolute;
-  background: Transparent;
-  top: 29.318%;
-  right: 0%;
-  height: 5%;
-  z-index: 72;
-  -webkit-filter: drop-shadow(0 0 10px #000);
-  filter: drop-shadow(0 0 10px #000);
-  opacity: 0.5;
-  transition: opacity 0.5s;
-} */
-/* #settlement_event_button {
-  display: block;
-  position: absolute;
-  background: #444;
-  top: 27.273%;
-  right: 0;
-  height: 9.5%;
-  width: 100%;
-  z-index: 72;
-  -webkit-filter: drop-shadow(0 0 10px #000);
-  filter: drop-shadow(0 0 10px #000);
-  opacity: 0.2;
-  transition: opacity 0.5s, background 0.5s;
-}
-
-#settlement_event_button:hover {
-  background: #880;
-  opacity: 0.0;
-  animation: glowing 5000ms infinite;
-} */
-
-/* #settlement_event_button.active {
-  background: Transparent;
-  -webkit-filter: drop-shadow(0 0 10px #c4a300);
-  filter: drop-shadow(0 0 10px #c4a300);
-  opacity: 1.0;
-} */
-
-/* #milestones_button {
-  display: block;
-  position: absolute;
-  background: Transparent;
-  top: 49.25%;
-  left: 25.9%;
-  width: 1.6%;
-  z-index: 72;
-  -webkit-filter: drop-shadow(0 0 10px #000);
-  filter: drop-shadow(0 0 10px #000);
-  opacity: 0.5;
-  transition: opacity 0.5s;
-}
-
-#milestones_button:hover {
-  opacity: 0.8;
-  animation: glowing 5000ms infinite;
-} */
-
-/* #milestones_button.active {
-  background: Transparent;
-  -webkit-filter: drop-shadow(0 0 10px #c4a300);
-  filter: drop-shadow(0 0 10px #c4a300);
-  opacity: 1.0;
-} */
-
 @keyframes glowing {
   0% { box-shadow: 0 0 -10px #c4a300; }
   30% { box-shadow: 0 0 10px #c4a300; }
@@ -564,7 +496,7 @@ button.tablinks.active {
 .gear_column > * {
   opacity: 0.9;
   pointer-events: auto;
-  transition: opacity 0.5s, height 0.5s, filter 0.5s, border 0.5s, box-shadow 0.5s;
+  transition: opacity 0.5s, height 0.5s, filter 0.5s, border 0.5s;
 }
 
 .gear_column:hover > * {
@@ -580,7 +512,7 @@ button.tablinks.active {
 
 .gear_column > .active {
   border: 0.3rem solid #dd0;
-  box-shadow: 0 0 10px #cc0;
+  filter: drop-shadow(0 0 10px #cc0);
 }
 
 .location_screen {
@@ -737,7 +669,7 @@ button.tablinks.active {
 	border-radius: var(--borderWidth);
 	border: 0.1rem solid #555;
   margin: 0 auto;
-  transition: opacity 0.5s, transform 0.5s, width 0.5s, border 0.5s, box-shadow 0.5s;
+  transition: opacity 0.5s, transform 0.5s, border 0.5s, box-shadow 0.5s;
   /* overflow: visible; */
 }
 
@@ -746,11 +678,11 @@ button.tablinks.active {
   box-shadow: 0 0 10px #cc0;
 }
 
-.innovations_grid:hover > * {
+.innovations_grid.use-hover:hover > *.use-hover  {
   opacity: 0.6;
 }
 
-.innovations_grid:hover > *:hover {
+.innovations_grid.use-hover:hover > *.use-hover:hover {
   opacity: 1.0;
   transform: scale(1.1);
   /* width: 110%; */

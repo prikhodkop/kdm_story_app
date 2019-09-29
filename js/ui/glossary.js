@@ -1712,7 +1712,7 @@ function get_random_draws (word, randomize=true, ) {
   let keys = Object.keys(list)
 
   keys.forEach(function (key) {
-    console.log(key)
+    // console.log(key)
     let remove = false
 
     if (('expansion' in list[key]) && (settings['expansions'][list[key]['expansion']] == 'Disabled')) {
@@ -1741,7 +1741,7 @@ function get_random_draws (word, randomize=true, ) {
     }
 
     if (remove) {
-      console.log('Remove!')
+      // console.log('Remove!')
       delete list[key]
     }
   })
@@ -1796,7 +1796,7 @@ function getSettlementEventPath () {
   let keys = Object.keys(list)
 
   keys.forEach(function (key) {
-    console.log(key)
+    // console.log(key)
     let remove = false
 
     if (('expansion' in list[key]) && !(settings['expansions'][list[key]['expansion']] == 'All content')) {
@@ -1804,7 +1804,7 @@ function getSettlementEventPath () {
     }
 
     if (remove) {
-      console.log('Remove!')
+      // console.log('Remove!')
       delete list[key]
     }
   })
