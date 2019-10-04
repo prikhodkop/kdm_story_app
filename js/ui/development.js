@@ -2,6 +2,8 @@ const { get_random_draws, settlement_locations, gear_list, innovations } = requi
 const { cdnUrl } = require('./../ui/template-renderer')
 const { titleCase } = require('./../ui/events')
 
+const { addTimer } = require('./../ui/timer')
+
 const DEBUG_MODE = true
 
 module.exports = {
@@ -71,7 +73,7 @@ function openWindow(type) {
     $('#innovations_filter').show();
     $('#innovations_filter').focus()
   }
-  if (type == "actions_button") {
+  if (type == "endeavor_button") {
     // $('#innovations_tab').show();
     $('.actions_grid_wrapper').show();
     // $('#innovations_filter').show();
@@ -357,11 +359,11 @@ function setupInnovations() {
  if (DEBUG_MODE) {console.log('Selected innovations:'+selected_innovations)}
 
  for (let i = 0; i < selected_innovations.length; i++) {
-   if (('campaign' in innovations[selected_innovations[i]]) && !(innovations[selected_innovations[i]]['campaign'].includes(settings['campaign']))) {
-
-   } else {
+   if (toShow(selected_innovations[i])) {
      showInnovation(selected_innovations[i], initialization=true);
      $('.tablinks[value="'+selected_innovations[i]+'"]').hide();
+   } else {
+     updateInnovationsState();
    }
  }
 
@@ -533,12 +535,95 @@ function setupActions() {
   $('.actions_grid_wrapper').append($('<div>', {
     class: 'actions_grid use-hover',
   }));
+
+  $(document).on("click", '.action_card', function(e) {
+    $(this).toggleClass('active')
+  });
 }
 
 function updateActions() {
   let development = getDevelopmentState();
+  let settings = JSON.parse(sessionStorage.getItem('settings'));
+
+  $('.actions_grid').empty();
+
+  for (let i = 0; i < development['locations'].length; i++) {
+    if (('action' in settlement_locations[development['locations'][i]]) && settlement_locations[development['locations'][i]]['action']) {
+      if (toShow(development['locations'][i])) {
+        console.log('Adding location: '+development['locations'][i])
+        addAction(development['locations'][i], 'location')
+      }
+    }
+  }
+
+  for (let i = 0; i < development['innovations'].length; i++) {
+    if (('action' in innovations[development['innovations'][i]]) && innovations[development['innovations'][i]]['action']) {
+      if (toShow(development['innovations'][i])) {
+        console.log('Adding innovation: '+development['innovations'][i])
+        addAction(development['innovations'][i], 'innovation')
+      }
+    }
+  }
 
 
+  addTimer(function() {var grid = new Muuri('.actions_grid', {
+    dragEnabled: false,
+    layoutOnInit: true,
+    layout: {
+      round: false,
+      // horizontal: true,
+      fillGaps: true,
+    },
+  });}, 100)
+ // addTimer(function() {window.dispatchEvent(new Event('resize'))}, 300)
+
+}
+
+function addAction(name, type) {
+
+let item = $('<div>', {
+  class: 'item '+type,
+  id: 'action-card'
+})
+
+let item_content = $('<div>', {
+  class: 'item-content',
+  id: 'action-card'
+})
+
+let img = $('<img>', {
+  class: 'action_card use-hover',
+  value: name,
+  src: cdnUrl('images/settlement/actions/'+name+'.jpg'),
+});
+
+img.tooltipster({
+  contentAsHTML: 'true',
+  animation: 'grow',
+  content: name,
+  position: 'left',
+  delay: [500, 300],
+  trigger: 'custom',
+  triggerOpen: {
+    // mouseenter: true,
+    click: true
+  },
+  triggerClose: {
+    click: true,
+    mouseleave: true
+  }
+})
+
+item_content.append(img)
+item.append(item_content)
+
+// img.hide();
+
+ $('.actions_grid').append(item)
+
+ img.load(function() {
+   $(this).delay(50).fadeIn(300);
+ })
 }
 
 // #### General purpose functions
@@ -649,7 +734,7 @@ function moveItem(type, name) {
         this_element.detach().insertBefore('button.tablinks[type="'+type+'"]:not(.selected):first');
       }
     } else {
-      this_element.detach().insertBefore('button.tablinks[type="'+type+'"]:not(.selected):not(.moving):first');
+      this_element.detach().insertAfter('button.tablinks.selected[type="'+type+'"]:not(.moving):last');
     }
 
   } else {
@@ -686,5 +771,40 @@ function getCurrentItems(type, selected=false, element='default') {
   }
 
   return items
+
+}
+
+function toShow(name) {
+  let list = []
+  let visibility = []
+
+  console.log('To consider: '+name)
+  if (!($.inArray(name, Object.keys(settlement_locations)) == -1)) {
+    list = settlement_locations
+    visibility = ['All content']
+    console.log('It is location.')
+  }
+  else if (!($.inArray(name, Object.keys(innovations)) == -1)) {
+    list = innovations
+    visibility = ['Cards only', 'All content']
+    console.log('It is innovation.')
+  } else {
+    console.log('Can not say what it is...')
+    return false
+  }
+
+  let settings = JSON.parse(sessionStorage.getItem('settings'));
+
+  if (('campaign' in list[name]) && !(list[name]['campaign'].includes(settings['campaign']))) {
+    console.log('Different campaign.')
+    return false
+  } else if (('expansion' in list[name]) && !(visibility.includes(settings['expansions'][list[name]['expansion']]))) {
+    console.log('Expansion '+list[name]['expansion']+' is '+ settings['expansions'][list[name]['expansion']])
+    console.log('Expansion disabled.')
+    return false
+  } else {
+    console.log('Good to show!.')
+    return true
+  }
 
 }
