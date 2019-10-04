@@ -656,6 +656,12 @@ function getDevelopmentState() {
 }
 
 function setDevelopmentState(development_state) {
+  development_state['locations'] = development_state['locations'].filter(function(item, pos) {
+    return development_state['locations'].indexOf(item) == pos;
+  })
+  development_state['innovations'] = development_state['innovations'].filter(function(item, pos) {
+    return development_state['innovations'].indexOf(item) == pos;
+  })
   localStorage.setItem('development', JSON.stringify(development_state))
 }
 
@@ -674,18 +680,6 @@ function allignItems(type) {
       $('button.tablinks[value="'+items_list[i]+'"]').addClass('selected')
       $('button.tablinks[value="'+items_list[i]+'"]').detach().insertBefore('button.tablinks[type="'+type+'"]:first');
     }
-    // if (type == 'innovations') {
-    //   if (!$.inArray(items_list[i], selected_items) == -1) {
-    //     $('button.tablinks[value="'+items_list[i]+'"]').addClass('selected')
-    //     $('button.tablinks[value="'+items_list[i]+'"]').detach().insertBefore('button.tablinks[type="'+type+'"]:first');
-    //   }
-    // } else {
-    //   if (selected_items.includes(items_list[i])) {
-    //     $('button.tablinks[value="'+items_list[i]+'"]').addClass('selected')
-    //     $('button.tablinks[value="'+items_list[i]+'"]').detach().insertBefore('button.tablinks[type="'+type+'"]:first');
-    //   }
-    // }
-
   }
 } // end of alignItems
 
