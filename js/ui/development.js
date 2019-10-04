@@ -46,6 +46,7 @@ function addDevelopment() {
   getDevelopmentState(); // initializes proper development state if not present
   setupLocations();
   setupInnovations();
+  setupActions();
 
  openWindow("locations_button")
 
@@ -58,6 +59,7 @@ function openWindow(type) {
   $('.innovations_grid_wrapper').hide();
   $('#innovations_filter').hide();
   $(".tabcontent.visible").hide();
+  $('.actions_grid_wrapper').hide();
 
   if (type == "locations_button") {
     $('#development_tabs').show();
@@ -68,6 +70,14 @@ function openWindow(type) {
     $('.innovations_grid_wrapper').show();
     $('#innovations_filter').show();
     $('#innovations_filter').focus()
+  }
+  if (type == "actions_button") {
+    // $('#innovations_tab').show();
+    $('.actions_grid_wrapper').show();
+    // $('#innovations_filter').show();
+    // $('#innovations_filter').focus()
+    updateActions();
+
   }
 }
 
@@ -118,13 +128,28 @@ function setupLocations() {
   $(document).on("dblclick", '.tablinks[type = "location"]', function(e) {
     if (!$(this).hasClass('selected')) {
       $(this).addClass('selected')
+      if ($(this).attr('value') == 'Lantern Hoard') {
+        $('.tablinks[value = "Exhausted Lantern Hoard"]').removeClass('selected');
+        moveItem('location', "Exhausted Lantern Hoard");
+      }
+      if ($(this).attr('value') == 'Exhausted Lantern Hoard') {
+        $('.tablinks[value = "Lantern Hoard"]').removeClass('selected');
+        moveItem('location', "Lantern Hoard");
+      }
+      if ($(this).attr('value') == 'Catarium') {
+        $('.tablinks[value = "Lantern Hoard"]').removeClass('selected');
+        moveItem('location', "Lantern Hoard");
+        $('.tablinks[value = "Exhausted Lantern Hoard"]').removeClass('selected');
+        moveItem('location', "Exhausted Lantern Hoard");
+      }
+      moveItem($(this).attr('type'), $(this).attr('value'));
     } else {
-      if (!(always_on_locations.includes($(this).attr('value')))) {
-        $(this).removeClass('selected')
+      if (!(always_on_locations.includes($(this).attr('value'))) && !($(this).attr('value') == 'Exhausted Lantern Hoard')) {
+        $(this).removeClass('selected');
         $(this).show();
+        moveItem($(this).attr('type'), $(this).attr('value'));
       }
     }
-    moveItem($(this).attr('type'), $(this).attr('value'));
  });
 
 }
@@ -194,7 +219,7 @@ function createLocation(location, default_open=false) {
       if (settlement_locations[location]['gear'][j].length > 0) {
         for (let i = 0; i < settlement_locations[location]['gear'][j].length; i++) {
           gear_name = settlement_locations[location]['gear'][j][i]
-          if (DEBUG_MODE) {console.log('Adding 1: '+i)}
+          // if (DEBUG_MODE) {console.log('Adding 1: '+i)}
           let element = $('<img>', {
             class: "gear_card",
             src: cdnUrl("images/reference/Gear/"+gear_name+".jpg"),
@@ -279,7 +304,7 @@ function setupInnovations() {
     class: 'innovations_grid_wrapper',
   }));
 
-  $('innovations_grid_wrapper').hide();
+  $('.innovations_grid_wrapper').hide();
 
   $('.innovations_grid_wrapper').append($('<div>', {
     class: 'innovations_grid use-hover',
@@ -316,15 +341,6 @@ function setupInnovations() {
   });
   // })
 
-  // $('.innovation_card').on('mouseenter', function(event) {
-  //   console.log('Hover:'+dragging)
-  //   if (dragging) {
-  //     event.preventDefault();
-  //   } else {
-  //     return true;
-  //   }
-  // });
-
   let innovations_list = get_random_draws('Innovation', false).sort();
 
   for (let i = 0; i < innovations_list.length; i++) {
@@ -336,12 +352,17 @@ function setupInnovations() {
   // var grid = new Muuri('.innovations_grid');
 
  let selected_innovations = getDevelopmentState()['innovations']
+ let settings = JSON.parse(sessionStorage.getItem('settings'));
 
  if (DEBUG_MODE) {console.log('Selected innovations:'+selected_innovations)}
 
  for (let i = 0; i < selected_innovations.length; i++) {
-   showInnovation(selected_innovations[i], initialization=true);
-   $('.tablinks[value="'+selected_innovations[i]+'"]').hide();
+   if (('campaign' in innovations[selected_innovations[i]]) && !(innovations[selected_innovations[i]]['campaign'].includes(settings['campaign']))) {
+
+   } else {
+     showInnovation(selected_innovations[i], initialization=true);
+     $('.tablinks[value="'+selected_innovations[i]+'"]').hide();
+   }
  }
 
  $(document).on("dblclick", '.tablinks[type = "innovation"]', function(e) {
@@ -493,6 +514,31 @@ function showInnovation(innovationName, initialization=false) {
     $(this).delay(50).fadeIn(300);
   })
 
+};
+
+// #### Actions specific functions
+
+function setupActions() {
+  // $('#settlement_locations_window').append($('<div>', {
+  //   id: 'innovations_tab',
+  //   class: 'tab',
+  // }));
+
+  $('#settlement_locations_window').append($('<div>', {
+    class: 'actions_grid_wrapper',
+  }));
+
+  $('.actions_grid_wrapper').hide();
+
+  $('.actions_grid_wrapper').append($('<div>', {
+    class: 'actions_grid use-hover',
+  }));
+}
+
+function updateActions() {
+  let development = getDevelopmentState();
+
+
 }
 
 // #### General purpose functions
@@ -538,20 +584,33 @@ function allignItems(type) {
   let items_list = getCurrentItems(type);
 
   for (let i = items_list.length - 1; i >= 0 ; i--) {
-    if (selected_items.includes(items_list[i])) {
+    // if (selected_items.includes(items_list[i])
+    if (!($.inArray(items_list[i], selected_items) == -1)) {
       $('button.tablinks[value="'+items_list[i]+'"]').addClass('selected')
       $('button.tablinks[value="'+items_list[i]+'"]').detach().insertBefore('button.tablinks[type="'+type+'"]:first');
     }
+    // if (type == 'innovations') {
+    //   if (!$.inArray(items_list[i], selected_items) == -1) {
+    //     $('button.tablinks[value="'+items_list[i]+'"]').addClass('selected')
+    //     $('button.tablinks[value="'+items_list[i]+'"]').detach().insertBefore('button.tablinks[type="'+type+'"]:first');
+    //   }
+    // } else {
+    //   if (selected_items.includes(items_list[i])) {
+    //     $('button.tablinks[value="'+items_list[i]+'"]').addClass('selected')
+    //     $('button.tablinks[value="'+items_list[i]+'"]').detach().insertBefore('button.tablinks[type="'+type+'"]:first');
+    //   }
+    // }
+
   }
 } // end of alignItems
 
 function moveItem(type, name) {
 
-  if ((type == 'location')) {
-    if (always_on_locations.includes(name)) {
-      return
-    }
-  }
+  // if ((type == 'location')) {
+  //   if (always_on_locations.includes(name)) {
+  //     return
+  //   }
+  // }
 
   let development_state = getDevelopmentState();
   let this_element = $('button.tablinks[type="'+type+'"][value="'+name+'"]')

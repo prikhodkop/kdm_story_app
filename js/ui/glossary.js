@@ -808,6 +808,7 @@ const settlement_locations = {
       '1': ['First Aid Kit', 'Brain Mint', 'Elder Earrings', 'Musk Bomb'],
       '2': ['Scavenger Kit', 'Bug Trap', 'Speed Powder', 'Almanac'],
       '3': []},
+    'action': true,
   },
   'Blacksmith': {
     'gear': {
@@ -820,6 +821,7 @@ const settlement_locations = {
       '1': ['Bone Dagger', 'Bone Blade', 'Bone Axe'],
       '2': ['Bone Darts', 'Bone Club', 'Skull Helm'],
       '3': ['Bone Pickaxe', 'Bone Sickle']},
+    'action': true,
   },
   'Catarium': {
     'gear': {
@@ -840,6 +842,7 @@ const settlement_locations = {
       '1': [],
       '2': ['Survivors Lantern'],
       '3': []},
+    'action': true,
   },
   'Gormchymist': {
     'expansion': 'gorm',
@@ -847,6 +850,7 @@ const settlement_locations = {
       '1': ['Healing Potion', 'Wisdom Potion', 'Steadfast Potion'],
       '2': ['Power Potion', 'Life Elixir'],
       '3': []},
+    'action': true,
   },
   'Gormery': {
     'expansion': 'gorm',
@@ -868,24 +872,28 @@ const settlement_locations = {
       '1': [],
       '2': [],
       '3': []},
+    'action': true,
   },
   'Leather Worker': {
     'gear': {
       '1': ['Round Leather Shield', 'Hunter Whip'],
       '2': ['Leather Mask', 'Leather Bracers', 'Leather Cuirass', 'Leather Skirt', 'Leather Boots'],
       '3': []},
+    'action': true,
   },
   'Mask Maker': {
     'gear': {
       '1': ['White Lion Mask', 'Antelope Mask', 'Phoenix Mask'],
       '2': ['Death Mask', 'Man Mask', 'God Mask'],
       '3': []},
+    'action': true,
   },
   'Organ Grinder': {
     'gear': {
       '1': ['Stone Noses', 'Fecal Salve', 'Monster Grease'],
       '2': ['Dried Acantus', 'Lucky Charm', 'Monster Tooth Necklace'],
       '3': []},
+    'action': true,
   },
   'Plumery': {
     'gear': {
@@ -899,6 +907,7 @@ const settlement_locations = {
       '1': [],
       '2': ['Sun Vestments', 'Sunring Bow'],
       '3': ['Apostle Crown', 'Prism Mace']},
+    'action': true,
   },
   'Silk Mill': {
     'expansion': 'spidicules',
@@ -912,6 +921,7 @@ const settlement_locations = {
       '1': ['Bandages', 'Rawhide Drum', 'Rawhide Whip'],
       '2': ['Rawhide Headband', 'Rawhide Gloves', 'Rawhide Vest', 'Rawhide Pants', 'Rawhide Boots'],
       '3': []},
+    'action': true,
   },
   'Skyreef Sanctuary': {
     'expansion': 'sunstalker',
@@ -925,6 +935,7 @@ const settlement_locations = {
       '1': ['Boss Mehndi', 'Beast Knuckle', 'Red Charm', 'Blood Paint'],
       '2': ['Screaming Horns', 'Screaming Bracers', 'Screaming Coat', 'Screaming Skirt', 'Screaming Leg Warmers'],
       '3': ['Bone Earrings', 'Green Charm', 'Blue Charm', 'Lance of Longinus']},
+    'action': true,
   },
   'The Sun': {
     'campaign': 'Sun',
@@ -932,6 +943,7 @@ const settlement_locations = {
       '1': [],
       '2': [],
       '3': []},
+    'action': true,
   },
   'Throne': {
     'campaign': 'Stars',
@@ -939,12 +951,14 @@ const settlement_locations = {
       '1': [],
       '2': [],
       '3': []},
+    'action': true,
   },
   'Weapon Crafter': {
     'gear': {
       '1': ['Counterweighted Axe', 'Whistling Mace', 'Zanbato', 'Blood Sheath', 'Rainbow Katana'],
       '2': ['Skullcap Hammer', 'Scrap Sword', 'Scrap Dagger', 'Finger of God'],
       '3': []},
+    'action': true,
   },
   'Wet Resin Crafter': {
     'expansion': 'dung beetle knight',
@@ -1149,7 +1163,8 @@ const innovations = {
  'Albedo': {
    'expansion': 'gorm',
    'parent': 'Nigredo',
-   'tags': ['science', 'gormchymy', 'nigredo']
+   'tags': ['science', 'gormchymy', 'nigredo'],
+   'action': true,
  },
  'Ammonia': {
    'parent': 'Language',
@@ -1158,21 +1173,26 @@ const innovations = {
  'Aquarobotics': {
    'expansion': 'sunstalker',
    'parent': 'Hands of the Sun',
-   'tags': ['faith', 'hands of the sun']
+   'tags': ['faith', 'hands of the sun'],
+   'campaign': ['Sun'],
+   'action': true,
  },
  'Arena': {
    'expansion': 'dragon king',
    'parent': 'Nightmare Training',
    'campaign': 'Stars',
-   'tags': ['education', 'nightmare training']
+   'tags': ['education', 'nightmare training'],
+   'action': true,
  },
  'Bed': {
    'parent': 'Hovel',
-   'tags': ['home', 'hovel']
+   'tags': ['home', 'hovel'],
+   'action': true,
  },
  'Bloodletting': {
    'parent': 'Ammonia',
-   'tags': ['science', 'ammonia']
+   'tags': ['science', 'ammonia'],
+   'action': true,
  },
  'Bloodline': {
    'expansion': 'dragon king',
@@ -1183,20 +1203,24 @@ const innovations = {
  'Citrinitas': {
    'expansion': 'gorm',
    'parent': 'Albedo',
-   'tags': ['science', 'gormchymy', 'albedo']
+   'tags': ['science', 'gormchymy', 'albedo'],
+   'action': true,
  },
  'Choreia': {
    'expansion': 'spidicules',
    'parent': 'Forbidden Dance',
-   'tags': ['music', 'forbidden dance']
+   'tags': ['music', 'forbidden dance'],
+   'action': true,
  },
  'Legless Ball': {
    'expansion': 'spidicules',
-   'tags': ['other']
+   'tags': ['other'],
+   'action': true,
  },
  'Silk-refining': {
    'expansion': 'spidicules',
-   'tags': ['other']
+   'tags': ['other'],
+   'action': true,
  },
  'Clan of Death': {
    'parent': 'Family',
@@ -1205,15 +1229,18 @@ const innovations = {
  },
  'Cooking': {
    'parent': 'Lantern Oven',
-   'tags': ['science', 'lantern oven']
+   'tags': ['science', 'lantern oven'],
+   'action': true,
  },
  'Crimson Candy': {
    'expansion': 'manhunter',
-   'tags': ['science']
+   'tags': ['science'],
+   'action': true,
  },
  'Dark Water Research': {
    'expansion': 'slenderman',
-   'tags': ['science']
+   'tags': ['science'],
+   'action': true,
  },
  'Destiny': {
    'tags': ['faith']
@@ -1235,7 +1262,8 @@ const innovations = {
  },
  'Face Painting': {
    'parent': 'Paint',
-   'tags': ['art', 'paint']
+   'tags': ['art', 'paint'],
+   'action': true,
  },
  'Family': {
    'parent': 'Hovel',
@@ -1244,25 +1272,30 @@ const innovations = {
  },
  'Filleting Table': {
    'expansion': 'sunstalker',
-   'tags': ['science']
+   'tags': ['science'],
+   'action': true,
  },
  'Final Fightning Art': {
    'tags': ['education']
  },
  'Forbidden Dance': {
    'parent': 'Drums',
-   'tags': ['music', 'drums']
+   'tags': ['music', 'drums'],
+   'action': true,
  },
  'Guidepost': {
-   'tags': ['other']
+   'tags': ['other'],
+   'action': true,
  },
  'Hands of the Sun': {
    'expansion': 'sunstalker',
-   'tags': ['faith']
+   'tags': ['faith'],
+   'campaign': ['Sun'],
  },
  'Heart Flute': {
    'parent': 'Forbidden Dance',
-   'tags': ['music', 'forbidden dance']
+   'tags': ['music', 'forbidden dance'],
+   'action': true,
  },
  'Hovel': {
    'parent': 'Language',
@@ -1283,15 +1316,18 @@ const innovations = {
  },
  'Momento Mori': {
    'parent': 'Pictograph',
-   'tags': ['art', 'pictograph']
+   'tags': ['art', 'pictograph'],
+   'action': true,
  },
  'Nightmare Training': {
    'parent': 'Nightmare Training',
-   'tags': ['education', 'symposium']
+   'tags': ['education', 'symposium'],
+   'action': true,
  },
  'Nigredo': {
    'expansion': 'gorm',
-   'tags': ['science', 'gormchymy']
+   'tags': ['science', 'gormchymy'],
+   'action': true,
  },
  'Paint': {
    'parent': 'Language',
@@ -1299,12 +1335,14 @@ const innovations = {
  },
  'Partnership': {
    'parent': 'Hovel',
-   'tags': ['home', 'hovel']
+   'tags': ['home', 'hovel'],
+   'action': true,
  },
  'Petal Spiral': {
    'expansion': 'flower knight',
    'parent': 'Forbidden Dance',
-   'tags': ['music', 'forbidden dance']
+   'tags': ['music', 'forbidden dance'],
+   'action': true,
  },
  'Pictograph': {
    'parent': 'Paint',
@@ -1312,7 +1350,8 @@ const innovations = {
  },
  'Pottery': {
    'parent': 'Sculpture',
-   'tags': ['art', 'sculpture']
+   'tags': ['art', 'sculpture'],
+   'action': true,
  },
  'Radiating Orb': {
    'expansion': 'dragon king',
@@ -1321,21 +1360,25 @@ const innovations = {
  },
  'Records': {
    'parent': 'Storytelling',
-   'tags': ['education', 'storytelling']
+   'tags': ['education', 'storytelling'],
+   'action': true,
  },
  'Round Stone Training': {
    'expansion': 'dung beetle knight',
    'parent': 'Nightmare Training',
-   'tags': ['education', 'nightmare training']
+   'tags': ['education', 'nightmare training'],
+   'action': true,
  },
  'Rubedo': {
    'expansion': 'gorm',
    'parent': 'Citrinitas',
-   'tags': ['science', 'gormchymy', 'citrinas']
+   'tags': ['science', 'gormchymy', 'citrinas'],
+   'action': true,
  },
  'Sacrifice': {
    'parent': 'Shrine',
-   'tags': ['faith', 'shrine']
+   'tags': ['faith', 'shrine'],
+   'action': true,
  },
  'Saga': {
    'parent': 'Song of the Brave',
@@ -1344,33 +1387,41 @@ const innovations = {
  'Sauna Shrine': {
    'expansion': 'sunstalker',
    'parent': 'Hands of the Sun',
-   'tags': ['faith', 'hands of the sun']
+   'tags': ['faith', 'hands of the sun'],
+   'campaign': ['Sun'],
+   'action': true,
  },
  'Scarification': {
    'parent': 'Inner Lantern',
-   'tags': ['faith', 'inner lantern']
+   'tags': ['faith', 'inner lantern'],
+   'action': true,
  },
  'Scrap Smelting': {
    'parent': 'Lantern Oven',
-   'tags': ['science', 'lantern oven']
+   'tags': ['science', 'lantern oven'],
+   'action': true,
  },
  'Scupture': {
    'parent': 'Paint',
-   'tags': ['art', 'paint']
+   'tags': ['art', 'paint'],
+   'action': true,
  },
  'Settlement Watch': {
    'expansion': 'manhunter',
    'parent': 'Hovel',
-   'tags': ['home', 'hovel']
+   'tags': ['home', 'hovel'],
+   'action': true,
  },
  'Shadow Dancing': {
    'expansion': 'shadow dancing',
    'parent': 'Hovel',
-   'tags': ['home', 'hovel']
+   'tags': ['home', 'hovel'],
+   'action': true,
  },
  'Shrine': {
    'parent': 'Inner Lantern',
-   'tags': ['faith', 'inner lantern']
+   'tags': ['faith', 'inner lantern'],
+   'action': true,
  },
  'Song of the Brave': {
    'parent': 'Drums',
@@ -1378,31 +1429,38 @@ const innovations = {
  },
  'Stoic Statue': {
    'expansion': 'lion knight',
-   'tags': ['other']
+   'tags': ['other'],
+   'action': true,
  },
  'Black Mask': {
    'expansion': 'lion knight',
-   'tags': ['other']
+   'tags': ['other'],
+   'action': true,
  },
  'White Mask': {
    'expansion': 'lion knight',
-   'tags': ['other']
+   'tags': ['other'],
+   'action': true,
  },
  'Storytelling': {
    'parent': 'Symposium',
-   'tags': ['education', 'symposium']
+   'tags': ['education', 'symposium'],
+   'action': true,
  },
  'Subterranean Agriculture': {
    'expansion': 'dung beetle knight',
-   'tags': ['science']
+   'tags': ['science'],
+   'action': true,
  },
  'Sun Language': {
    'expansion': 'sunstalker',
-   'tags': ['starting']
+   'tags': ['starting'],
+   'campaign': ['Sun'],
  },
  'Symposium': {
    'parent': 'Language',
-   'tags': ['education', 'language']
+   'tags': ['education', 'language'],
+   'action': true,
  },
  'The Knowedge Worm': {
    'expansion': 'lion god',
@@ -1413,12 +1471,15 @@ const innovations = {
  },
  'Umbilical Bank': {
    'expansion': 'sunstalker',
-   'tags': ['science']
+   'tags': ['science'],
+   'campaign': ['Sun'],
+   'action': true,
  },
  'War Room': {
    'expansion': 'manhunter',
    'parent': 'Storytelling',
-   'tags': ['education', 'storytelling']
+   'tags': ['education', 'storytelling'],
+   'action': true,
  },
  'Accept Darkness': {
    'tags': ['society principle']
