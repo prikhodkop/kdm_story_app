@@ -156,8 +156,10 @@ module.exports = class SettlementScene {
     }
 
     if (anew) {
+      $("#label_sub_text").hide();
       $('#hunt_icon').fadeIn(1000)
       $('#label_text').fadeIn(1000)
+      $("#label_sub_text").delay(500).fadeIn(500);
       $('#hunt_icon').delay(1000).fadeOut(1000)
       $('#label_text').delay(1000).fadeOut(1000)
       $('#settlement_background').delay(2000).fadeIn(500)
