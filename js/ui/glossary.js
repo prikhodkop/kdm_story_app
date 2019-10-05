@@ -1252,7 +1252,8 @@ const innovations = {
  },
  'Drums': {
    'parent': 'Language',
-   'tags': ['music', 'language']
+   'tags': ['music', 'language'],
+   'action': true,
  },
  'Empire': {
    'expansion': 'dragon king',
@@ -1413,7 +1414,7 @@ const innovations = {
    'action': true,
  },
  'Shadow Dancing': {
-   'expansion': 'shadow dancing',
+   'expansion': 'sunstalker',
    'parent': 'Hovel',
    'tags': ['home', 'hovel'],
    'action': true,
