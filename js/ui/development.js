@@ -119,7 +119,7 @@ function setupLocations() {
       $(this).removeClass('hoverd')
   });
 
-  $(document).on("click", '.gear_card', function(e) {
+  $('#container').on("click", '.gear_card', function(e) {
     if (!$('.gear_card[value="'+$(this).attr('value')+'"]').hasClass('active')) {
       $('.gear_card[value="'+$(this).attr('value')+'"]').addClass('active')
     } else {
@@ -127,7 +127,8 @@ function setupLocations() {
     }
   });
 
-  $(document).on("dblclick", '.tablinks[type = "location"]', function(e) {
+  $('#container').on("dblclick", '.tablinks[type = "location"]', function(e) {
+    // console.log('!!Clicked on location!!')
     if (!$(this).hasClass('selected')) {
       $(this).addClass('selected')
       if ($(this).attr('value') == 'Lantern Hoard') {
@@ -367,7 +368,7 @@ function setupInnovations() {
    }
  }
 
- $(document).on("dblclick", '.tablinks[type = "innovation"]', function(e) {
+ $('#container').on("dblclick", '.tablinks[type = "innovation"]', function(e) {
 
    $(this).addClass('selected')
    $(this).hide();
@@ -378,7 +379,7 @@ function setupInnovations() {
    moveItem($(this).attr('type'), $(this).attr('value'));
 });
 
-$(document).on("dblclick", '.innovation_card', function(e) {
+$('#container').on("dblclick", '.innovation_card', function(e) {
   $('.tablinks[value="'+$(this).attr('value')+'"]').removeClass('selected')
   $('.tablinks[value="'+$(this).attr('value')+'"]').show();
   $('.innovation_card[value="'+$(this).attr('value')+'"]').fadeOut(300, function() {
@@ -390,7 +391,8 @@ $(document).on("dblclick", '.innovation_card', function(e) {
   moveItem('innovation', $(this).attr('value'));
  });
 
- $(document).on("click", '.innovation_card', function(e) {
+ $('#container').on("click", '.innovation_card', function(e) {
+   console.log('!!Clicked on innovation card!!')
    if (!$('.innovation_card[value="'+$(this).attr('value')+'"]').hasClass('active')) {
      $('.innovation_card[value="'+$(this).attr('value')+'"]').addClass('active')
    } else {
@@ -536,7 +538,7 @@ function setupActions() {
     class: 'actions_grid use-hover',
   }));
 
-  $(document).on("click", '.action_card', function(e) {
+  $('#container').on("click", '.action_card', function(e) {
     $(this).toggleClass('active')
   });
 }
