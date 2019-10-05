@@ -119,13 +119,13 @@ function setupLocations() {
       $(this).removeClass('hoverd')
   });
 
-  $('#container').on("click", '.gear_card', function(e) {
-    if (!$('.gear_card[value="'+$(this).attr('value')+'"]').hasClass('active')) {
-      $('.gear_card[value="'+$(this).attr('value')+'"]').addClass('active')
-    } else {
-      $('.gear_card[value="'+$(this).attr('value')+'"]').removeClass('active')
-    }
-  });
+  // $('#container').on("click", '.gear_card', function(e) {
+  //   if (!$('.gear_card[value="'+$(this).attr('value')+'"]').hasClass('active')) {
+  //     $('.gear_card[value="'+$(this).attr('value')+'"]').addClass('active')
+  //   } else {
+  //     $('.gear_card[value="'+$(this).attr('value')+'"]').removeClass('active')
+  //   }
+  // });
 
   $('#container').on("dblclick", '.tablinks[type = "location"]', function(e) {
     // console.log('!!Clicked on location!!')
@@ -139,12 +139,12 @@ function setupLocations() {
         $('.tablinks[value = "Lantern Hoard"]').removeClass('selected');
         moveItem('location', "Lantern Hoard");
       }
-      if ($(this).attr('value') == 'Catarium') {
-        $('.tablinks[value = "Lantern Hoard"]').removeClass('selected');
-        moveItem('location', "Lantern Hoard");
-        $('.tablinks[value = "Exhausted Lantern Hoard"]').removeClass('selected');
-        moveItem('location', "Exhausted Lantern Hoard");
-      }
+      // if ($(this).attr('value') == 'Catarium') {
+      //   $('.tablinks[value = "Lantern Hoard"]').removeClass('selected');
+      //   moveItem('location', "Lantern Hoard");
+      //   $('.tablinks[value = "Exhausted Lantern Hoard"]').removeClass('selected');
+      //   moveItem('location', "Exhausted Lantern Hoard");
+      // }
       moveItem($(this).attr('type'), $(this).attr('value'));
     } else {
       if (!(always_on_locations.includes($(this).attr('value'))) && !($(this).attr('value') == 'Exhausted Lantern Hoard')) {
