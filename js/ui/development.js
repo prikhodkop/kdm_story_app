@@ -605,7 +605,7 @@ img.tooltipster({
   delay: [500, 300],
   trigger: 'custom',
   triggerOpen: {
-    // mouseenter: true,
+    mouseenter: true,
     click: true
   },
   triggerClose: {
