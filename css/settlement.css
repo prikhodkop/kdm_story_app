@@ -700,7 +700,11 @@ button.tablinks.active {
   --borderWidth: 1em;
 	border-radius: var(--borderWidth);
   border: 0.2rem solid #555;
+  scrollbar-width: none;
 }
+.tooltip_image_innovation::-webkit-scrollbar {
+      display: none;
+  }
 
 .tooltipster-base { box-sizing: content-box; }
 
