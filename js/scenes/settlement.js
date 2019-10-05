@@ -7,7 +7,7 @@ const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings'
 const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
-const { addDevelopment, openLocation } = require('./../ui/development')
+const { addDevelopment, openLocation, getDevelopmentState, setDevelopmentState } = require('./../ui/development')
 // const { imageMapResize } = require('./../vendor/imageMapResizer.min.js')
 
 module.exports = class SettlementScene {
@@ -31,6 +31,8 @@ module.exports = class SettlementScene {
     document.title = myself
 
     console.log(myself)
+
+    // localStorage.clear();
 
     var settings = getSettings()
     sessionStorage.setItem('settings', JSON.stringify(settings))
@@ -92,6 +94,13 @@ module.exports = class SettlementScene {
     // ### COMMON PART (exec always) #################
     $('#container').children().hide()
     // $('#turn_cheatsheet').imageMapResize();
+
+    if (anew) {
+      let state = getDevelopmentState();
+      state['activated']['innovations'] = []
+      state['activated']['actions'] = []
+      setDevelopmentState(state);
+    }
 
     createMenuButton()
     createToc()

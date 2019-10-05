@@ -8,7 +8,9 @@ const DEBUG_MODE = true
 
 module.exports = {
   addDevelopment,
-  openLocation
+  openLocation,
+  getDevelopmentState,
+  setDevelopmentState,
 }
 
 const always_on_locations = ['Throne', 'Lantern Hoard'];
@@ -355,7 +357,10 @@ function setupInnovations() {
   // var grid = new Muuri('.innovations_grid');
 
  let selected_innovations = getDevelopmentState()['innovations']
+ let activated = getDevelopmentState()['activated']['innovations']
  let settings = JSON.parse(sessionStorage.getItem('settings'));
+
+ console.log('Activated: '+activated)
 
  if (DEBUG_MODE) {console.log('Selected innovations:'+selected_innovations)}
 
@@ -363,6 +368,9 @@ function setupInnovations() {
    if (toShow(selected_innovations[i])) {
      showInnovation(selected_innovations[i], initialization=true);
      $('.tablinks[value="'+selected_innovations[i]+'"]').hide();
+     if (activated.includes(selected_innovations[i])) {
+       $('.innovation_card[value = "'+selected_innovations[i]+'"]').addClass('active')
+     }
    } else {
      updateInnovationsState();
    }
@@ -395,8 +403,17 @@ $('#container').on("dblclick", '.innovation_card', function(e) {
    console.log('!!Clicked on innovation card!!')
    if (!$('.innovation_card[value="'+$(this).attr('value')+'"]').hasClass('active')) {
      $('.innovation_card[value="'+$(this).attr('value')+'"]').addClass('active')
+     let state = getDevelopmentState();
+     state['activated']['innovations'].push($(this).attr('value'))
+     setDevelopmentState(state)
    } else {
      $('.innovation_card[value="'+$(this).attr('value')+'"]').removeClass('active')
+     let state = getDevelopmentState();
+     let index = state['activated']['innovations'].indexOf($(this).attr('value'));
+     if (index !== -1) {
+       state['activated']['innovations'].splice(index, 1);
+     }
+     setDevelopmentState(state)
    }
   });
 }
@@ -538,8 +555,26 @@ function setupActions() {
     class: 'actions_grid use-hover',
   }));
 
+  // $('#container').on("click", '.action_card', function(e) {
+  //   $(this).toggleClass('active')
+  // });
   $('#container').on("click", '.action_card', function(e) {
-    $(this).toggleClass('active')
+    if (!$(this).hasClass('active')) {
+      $(this).addClass('active')
+      let state = getDevelopmentState();
+      console.log('State prepared: '+ JSON.stringify(state))
+      state['activated']['actions'].push($(this).attr('value'))
+      console.log('State prepared: '+ JSON.stringify(state))
+      setDevelopmentState(state)
+    } else {
+      $(this).removeClass('active')
+      let state = getDevelopmentState();
+      let index = state['activated']['actions'].indexOf($(this).attr('value'));
+      if (index !== -1) {
+        state['activated']['actions'].splice(index, 1);
+      }
+      setDevelopmentState(state)
+    }
   });
 }
 
@@ -554,6 +589,9 @@ function updateActions() {
       if (toShow(development['locations'][i])) {
         console.log('Adding location: '+development['locations'][i])
         addAction(development['locations'][i], 'location')
+        if (development['activated']['actions'].includes(development['locations'][i])) {
+          $('.action_card[value = "'+development['locations'][i]+'"]').addClass('active')
+        }
       }
     }
   }
@@ -563,6 +601,9 @@ function updateActions() {
       if (toShow(development['innovations'][i])) {
         console.log('Adding innovation: '+development['innovations'][i])
         addAction(development['innovations'][i], 'innovation')
+        if (development['activated']['actions'].includes(development['innovations'][i])) {
+          $('.action_card[value = "'+development['innovations'][i]+'"]').addClass('active')
+        }
       }
     }
   }
@@ -638,6 +679,9 @@ function getDevelopmentState() {
     development_state = {}
     development_state['locations'] = always_on_locations
     development_state['innovations'] = [];
+    development_state['activated'] = {};
+    development_state['activated']['innovations'] = [];
+    development_state['activated']['actions'] = [];
     updated = true
   } else {
     if (!('locations' in development_state)) {
@@ -648,7 +692,22 @@ function getDevelopmentState() {
       development_state['innovations'] = []
       updated = true
     }
+    if (!('activated' in development_state)) {
+      development_state['activated'] = {}
+      development_state['activated']['innovations'] = []
+      development_state['activated']['actions'] = []
+      updated = true
+    } else {
+      if (!('innovations' in development_state['activated'])) {
+        development_state['activated']['innovations'] = []
+      }
+      if (!('actions' in development_state['activated'])) {
+        development_state['activated']['actions'] = []
+      }
+    }
   }
+
+  console.log('Dev state: '+JSON.stringify(development_state))
 
   if (updated) {
     setDevelopmentState(development_state)
@@ -664,6 +723,15 @@ function setDevelopmentState(development_state) {
   development_state['innovations'] = development_state['innovations'].filter(function(item, pos) {
     return development_state['innovations'].indexOf(item) == pos;
   })
+
+  development_state['activated']['innovations'] = development_state['activated']['innovations'].filter(function(item, pos) {
+    return development_state['activated']['innovations'].indexOf(item) == pos;
+  })
+  development_state['activated']['actions'] = development_state['activated']['actions'].filter(function(item, pos) {
+    return development_state['activated']['actions'].indexOf(item) == pos;
+  })
+  // console.log('State to write: '+ JSON.stringify(development_state['activated']))
+
   localStorage.setItem('development', JSON.stringify(development_state))
 }
 
