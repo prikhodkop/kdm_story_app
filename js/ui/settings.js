@@ -75,6 +75,13 @@ function addSettings (settings) {
     saveSettings()
   })
 
+  $('#settings-reset').click(function () {
+    $('#settings-window-back0').fadeOut(500)
+    $('#settings-window-background').fadeOut(500)
+    $('#settings').removeClass('active')
+    resetSettings()
+  })
+
   $('#settings-window-background').on('click', function () {
     $('#settings-window-back0').fadeOut(500)
     $('#settings-window-background').fadeOut(500)
@@ -97,6 +104,34 @@ function setSettings (settings) {
 }
 
 function saveSettings () {
+  let settings = Object()
+  $('select.settings').each(function (index) {
+    console.log($(this).attr('group') + '_1_' + $(this).attr('value') + '_2_' + $(this).val())
+    if ($(this).attr('group') == '') {
+      settings[$(this).attr('value')] = $(this).val()
+    } else {
+      if (!($(this).attr('group') in settings)) {
+        settings[$(this).attr('group')] = Object()
+      }
+      settings[$(this).attr('group')][$(this).attr('value')] = $(this).val()
+    }
+  })
+
+  console.log('New settings:')
+  console.log(settings)
+
+  // saveFile(JSON.stringify(settings), __dirname + '/settings.json')
+  saveFile(JSON.stringify(settings), app.getPath('userData') + '/settings.json')
+
+  if (settingsSavedCallback) {
+    settingsSavedCallback()
+  }
+
+  return settings
+}
+
+
+function resetSettings () {
   let settings = Object()
   $('select.settings').each(function (index) {
     console.log($(this).attr('group') + '_1_' + $(this).attr('value') + '_2_' + $(this).val())
