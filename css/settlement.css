@@ -702,7 +702,13 @@ button.tablinks.active {
   border: 0.2rem solid #555;
 }
 
-.tooltipster-base { box-sizing: content-box; }
+.tooltipster-base { box-sizing: content-box !important; }
+
+.tooltipster-content {    scrollbar-width: none !important;
+}
+.tooltipster-content::-webkit-scrollbar {
+        display: none;
+    }
 
 .actions_grid {
   /* display: grid;
