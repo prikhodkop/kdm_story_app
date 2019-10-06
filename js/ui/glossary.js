@@ -267,7 +267,7 @@ const glossary_terms = {
   'Permanent Injury': 'An injury to a survivor that does not heal with time. Its effects always apply to that survivor unless canceled by another effect.',
   'Persistent Injury': 'A special injury found on some hit location cards. When a monster suffers a critical wound on a hit location with a persistent injury, leave the card in play instead of discarding it. Some persistent injuries modify a monster\'s behavior, while others affect specific Al cards.',
   'Persistent Injury Actions': 'Found on some Al cards. Persistent injury actions are conditional actions that replace the normal rules of an Al card. They are only performed when the monster draws an Al card with a persistent injury action that matches a persistent injury in play. If a persistent injury action is performed, ignore other actions on the card.',
-  'Pickaxe': 'A gear keyword. In certain situation, this can be used to mine minerals.'
+  'Pickaxe': 'A gear keyword. In certain situation, this can be used to mine minerals.',
   'Pick Target': 'A component of most Al cards. A Pick Target list has a series of conditions. The monster controller checks to see if each targeting condition is met, starting from the first and stopping when one is met. Sometimes targets are determined by an area or zone (such as adjacent survivors or all survivors in a zone). Some Al cards pick more than one target.',
   'Place': 'Change the location of a miniature from one space on the showdown board to another. This does not count as movement.',
   // 'Possessed':'An ability. The survivor cannot use weapon specialization, weapon mastery, or fighting arts.',

@@ -677,6 +677,8 @@ button.tablinks.active {
 .innovations_grid > .active {
 	border: 0.3rem solid #dd0;
   box-shadow: 0 0 10px #cc0;
+  /* background-color: #cc0; */
+  opacity: 0.3 !important;
 }
 
 .innovations_grid.use-hover:hover > *.use-hover  {
@@ -807,6 +809,8 @@ button.tablinks.active {
 .action_card.active {
 	border: 0.2rem solid #dd0;
   box-shadow: 0 0 10px #cc0;
+  /* background-color: #cc0; */
+  opacity: 0.3 !important;
 }
 
 .item.muuri-item-dragging {
