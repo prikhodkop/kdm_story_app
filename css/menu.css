@@ -58,7 +58,7 @@
 
 
 #menu_item:hover {
-	color: #cccc00;
+	color: #cccc00 !important;
 	text-shadow: 0 0 20px #cccc00;
 }
 

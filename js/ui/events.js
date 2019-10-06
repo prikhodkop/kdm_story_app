@@ -498,6 +498,20 @@ const events = {
   },
 }
 
+const color_menu = {
+  'gorm': '#3B2621',
+  'manhunter': '#8F3830',
+  'lion knight': '#BA8D3E',
+  'dragon king': '#472F5A',
+  'dung beetle knight': '#727264',
+  'slenderman': '#765E6F',
+  'lion god': '#562522',
+  'lonely tree': '#AA946A',
+  'flower knight': '#446334',
+  'spidicules': '#85852D',
+  'sunstalker': '#E6E39E',
+}
+
 // GLOBAL TABLE OF ALL EVENTS TO BE DISPLAYED AT MENU
 // ##################
 const events_table = create_events_table(events)
@@ -701,8 +715,17 @@ function createToc (col_len = 5) {
       // a.setAttribute("href", events_table[rows[i][j]].type+'.html');
       // a.setAttribute("onclick", "setTransition('"+rows[i][j]+"')");
       a2.setAttribute('target', rows[i][j])
-      a2.style.cssText += 'width:100%;position:static; margin:auto;'
-      a2.innerHTML += events_table[rows[i][j]].label
+      a2.style.cssText += 'width:100%;position:static; margin:0 auto;'
+      if (events_table[rows[i][j]].expansion == '') {
+        a2.innerHTML += events_table[rows[i][j]].label
+      } else {
+        let dot = '<b style="color:'+color_menu[events_table[rows[i][j]].expansion]+';">&#10033;</b>'
+        a2.innerHTML += dot+' '+events_table[rows[i][j]].label
+      }
+      // a2.innerHTML += events_table[rows[i][j]].label
+      // if (events_table[rows[i][j]].expansion in color_menu) {
+      //   a2.style.cssText += 'color:'+color_menu[events_table[rows[i][j]].expansion]+';'
+      // }
 
       td.appendChild(a2)
     }
