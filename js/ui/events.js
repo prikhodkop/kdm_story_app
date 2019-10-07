@@ -1,3 +1,5 @@
+const { cdnUrl } = require('./template-renderer')
+
 const lang = 'en'
 
 const events = {
@@ -604,12 +606,12 @@ function createToc (col_len = 5) {
 
   $('#container').on('mouseenter', '#menu_item', function() {
     $(this).addClass('menu_hoverd')
-    $('.menu_hoverd > *#showdown_icon').attr('src', 'images/icons/swords_inv_c_hover.png?timestamp=' + new Date().getTime());
+    $('.menu_hoverd > *#showdown_icon').attr('src', cdnUrl('images/icons/swords_inv_c_hover.png'));
     // $('.menu_hoverd > *#expansion_icon').attr('src', 'images/icons/expansions/'+$('.menu_hoverd > *#expansion_icon').attr('value')+'_c_hover.png?timestamp=' + new Date().getTime());
   });
 
   $('#container').on('mouseleave', '#menu_item', function() {
-    $('.menu_hoverd > *#showdown_icon').attr('src', 'images/icons/swords_inv_c.png?timestamp=' + new Date().getTime());
+    $('.menu_hoverd > *#showdown_icon').attr('src', cdnUrl('images/icons/swords_inv_c.png'));
     // $('.menu_hoverd > *#expansion_icon').attr('src', 'images/icons/expansions/'+$('.menu_hoverd > *#expansion_icon').attr('value')+'_c.png?timestamp=' + new Date().getTime());
     $(this).removeClass('menu_hoverd')
   });
@@ -733,7 +735,7 @@ function createToc (col_len = 5) {
       if (events_table[rows[i][j]].label.includes('Showdown')) {
         // text = events_table[rows[i][j]].label.replace('Showdown:', '&#9876;:')
         text = events_table[rows[i][j]].label.replace('Showdown:', '')
-        text = '<img style="width:9%;" id="showdown_icon" src="images/icons/swords_inv_c.png"/>' + text
+        text = '<img style="width:9%;" id="showdown_icon" src="'+cdnUrl('images/icons/swords_inv_c.png')+'"/>' + text
       } else {
         text = events_table[rows[i][j]].label
       }
@@ -741,7 +743,7 @@ function createToc (col_len = 5) {
         a2.innerHTML += text
       } else {
         // let dot = '<b style="color:'+color_menu[events_table[rows[i][j]].expansion]+';">&#10033;</b>'
-        let dot = '<img style="width:10%;" id="expansion_icon" value="'+events_table[rows[i][j]].expansion+'" src="images/icons/expansions/'+events_table[rows[i][j]].expansion+'_c.png"/>'
+        let dot = '<img style="width:10%;" id="expansion_icon" value="'+events_table[rows[i][j]].expansion+'" src="'+cdnUrl('images/icons/expansions/'+events_table[rows[i][j]].expansion+'_c.png')+'"/>'
         a2.innerHTML += dot+' '+text
       }
       // a2.innerHTML += events_table[rows[i][j]].label
