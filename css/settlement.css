@@ -92,7 +92,7 @@
   animation: glowing 5000ms infinite;
   border-top: 0.3rem solid #c4a300;
   border-bottom: 0.3rem solid #c4a300;
-  opacity: 0.5;
+  opacity: 0.3;
   z-index: 73
 }
 

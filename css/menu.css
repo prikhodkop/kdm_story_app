@@ -53,13 +53,14 @@
 	height: 50px;
 	font-family: 'Silverado';
 	cursor: pointer;
-	transition: color 0.3s, text-shadow 0.3s;
+	transition: color 0.3s, text-shadow 0.3s, filter 0.3s, drop-shadow 0.3s;
 }
 
 
 #menu_item:hover {
 	color: #cccc00 !important;
-	text-shadow: 0 0 20px #cccc00;
+	/* text-shadow: 0 0 20px #cccc00; */
+	filter: drop-shadow(0 0 20px #cccc00);
 }
 
 #menu_item:click {

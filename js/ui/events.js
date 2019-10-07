@@ -499,6 +499,7 @@ const events = {
 }
 
 const color_menu = {
+  '': '#CCCCCC',
   'gorm': '#3B2621',
   'manhunter': '#8F3830',
   'lion knight': '#BA8D3E',
@@ -600,6 +601,18 @@ function titleCase (str) {
 
 function createToc (col_len = 5) {
   let settings = JSON.parse(sessionStorage.getItem('settings'))
+
+  $('#container').on('mouseenter', '#menu_item', function() {
+    $(this).addClass('menu_hoverd')
+    $('.menu_hoverd > *#showdown_icon').attr('src', 'images/icons/swords_inv_c_hover.png?timestamp=' + new Date().getTime());
+    // $('.menu_hoverd > *#expansion_icon').attr('src', 'images/icons/expansions/'+$('.menu_hoverd > *#expansion_icon').attr('value')+'_c_hover.png?timestamp=' + new Date().getTime());
+  });
+
+  $('#container').on('mouseleave', '#menu_item', function() {
+    $('.menu_hoverd > *#showdown_icon').attr('src', 'images/icons/swords_inv_c.png?timestamp=' + new Date().getTime());
+    // $('.menu_hoverd > *#expansion_icon').attr('src', 'images/icons/expansions/'+$('.menu_hoverd > *#expansion_icon').attr('value')+'_c.png?timestamp=' + new Date().getTime());
+    $(this).removeClass('menu_hoverd')
+  });
 
   // PREPARE LIST OF OBJECTS FOR TABLE 1 AND TABLE 2
   // ####################
@@ -716,11 +729,20 @@ function createToc (col_len = 5) {
       // a.setAttribute("onclick", "setTransition('"+rows[i][j]+"')");
       a2.setAttribute('target', rows[i][j])
       a2.style.cssText += 'width:100%;position:static; margin:0 auto;'
-      if (events_table[rows[i][j]].expansion == '') {
-        a2.innerHTML += events_table[rows[i][j]].label
+      let text = ''
+      if (events_table[rows[i][j]].label.includes('Showdown')) {
+        // text = events_table[rows[i][j]].label.replace('Showdown:', '&#9876;:')
+        text = events_table[rows[i][j]].label.replace('Showdown:', '')
+        text = '<img style="width:9%;" id="showdown_icon" src="images/icons/swords_inv_c.png"/>' + text
       } else {
-        let dot = '<b style="color:'+color_menu[events_table[rows[i][j]].expansion]+';">&#10033;</b>'
-        a2.innerHTML += dot+' '+events_table[rows[i][j]].label
+        text = events_table[rows[i][j]].label
+      }
+      if (events_table[rows[i][j]].expansion == '') {
+        a2.innerHTML += text
+      } else {
+        // let dot = '<b style="color:'+color_menu[events_table[rows[i][j]].expansion]+';">&#10033;</b>'
+        let dot = '<img style="width:10%;" id="expansion_icon" value="'+events_table[rows[i][j]].expansion+'" src="images/icons/expansions/'+events_table[rows[i][j]].expansion+'_c.png"/>'
+        a2.innerHTML += dot+' '+text
       }
       // a2.innerHTML += events_table[rows[i][j]].label
       // if (events_table[rows[i][j]].expansion in color_menu) {
