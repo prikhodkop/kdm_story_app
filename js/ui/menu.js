@@ -115,25 +115,44 @@ function createMenuButton () {
 
   $('#menu').hide()
 
-  $('#menu-toggle-wrapper').hover(function () {
-    if (!$(this).hasClass('active')) {
-      if (!$(this).hasClass('hoverd')) {
-        $('#menu').fadeIn(500)
-        $(this).toggleClass('active')
-      }
-    }
-  }, function () {
-    $(this).delay(500).removeClass('hoverd')
-  })
+  // $('#menu-toggle-wrapper').hover(function () {
+  //   if (!$(this).hasClass('active')) {
+  //     if (!$(this).hasClass('hoverd')) {
+  //       $('#menu').fadeIn(500)
+  //       $(this).toggleClass('active')
+  //     }
+  //   }
+  // }, function () {
+  //   $(this).delay(500).removeClass('hoverd')
+  // })
 
   $('#menu-toggle-wrapper').click(function () {
     if (!$(this).hasClass('active')) {
-      $('#menu').fadeIn(500)
+      $('#menu').fadeIn(500);
+      $('#menu-toggle-wrapper').tooltipster('content', null);
     } else {
-      $('#menu').hide()
+      $('#menu').hide();
+      $('#menu-toggle-wrapper').tooltipster('content', 'Show <b>Story Events</b> table.');
     }
     $(this).toggleClass('active')
   })
+
+  $('#menu-toggle-wrapper').tooltipster({
+      contentAsHTML: 'true',
+      animation: 'grow',
+      content: 'Show <b>Story Events</b> table.',
+      position: 'left',
+      delay: [300, 300],
+      trigger: 'custom',
+      triggerOpen: {
+        mouseenter: true,
+        // click: true
+      },
+      triggerClose: {
+        click: true,
+        mouseleave: true
+      }
+    });
 }
 
 function createSevereTables () {

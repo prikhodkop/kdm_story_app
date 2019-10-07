@@ -18,55 +18,74 @@ function createAbout (version) {
   $('#about_text').delay(1000).fadeIn(2000)
 
   $('#container').append($('<div>', {
-    id: 'reference-window-back0',
-    style: 'left:36%;',
+    id: 'about-window-back0',
   }))
 
-  $('#reference-window-back0').append($('<img>', {
+  $('#about-window-back0').append($('<img>', {
     id: 'reference-window-back-img',
     src: cdnUrl('images/reference/reference_back.png'),
   }))
 
-  $('#reference-window-back0').append($('<div>', {
+  $('#about-window-back0').append($('<div>', {
     id: 'reference-window-back',
   }))
 
+  // $('#about-window-back0').append($(`<img id='about_logo' src="`+cdnUrl('images/icons/poots_c.png')+`"/>`))
+
   $(`<div><h id="about_header">KDM Story app (`+version+`)</h>
   <p id="about_p">Created by <a href=https://t.me/prikhodkop style="color:#888800;" target="_blank">@prikhodkop</a></p>
-  <p id="about_p">The app is an open non profit project to enchance experience with the game. Every contribution to help is welcome!</p>
-  <p id="about_p">App sources are now on github: <a href=https://github.com/prikhodkop/kdm_story_app style="color:#888800;" target="_blank">https://github.com/prikhodkop/kdm_story_app</a>.<br/></p>
-  <p id="about_p">If you face any issues, please report it here: <a href=https://kdm-story.site/changelog style="color:#888800;" target="_blank">https://kdm-story.site/changelog</a>.</p>
-  <p id="about_p">You may support us on Patreon: <a href=https://www.patreon.com/kdmstoryapp style="color:#888800;" target="_blank">https://www.patreon.com/kdmstoryapp</a><br/></p>
+  <p id="about_p">The app is an open-source non-profit project to enchance experience with the game.</p>
+  <p id="about_p"><b style="color:#999">Support project on Patreon</b>: <a href=https://www.patreon.com/kdmstoryapp style="color:#888800;" target="_blank">https://www.patreon.com/kdmstoryapp</a><br/></p>
+  <p id="about_p">Telegram group: <a href=https://t.me/KDM_Story_App style="color:#888800;" target="_blank">https://t.me/KDM_Story_App</a></p>
+  <p id="about_p">GitHub: <a href=https://github.com/prikhodkop/kdm_story_app style="color:#888800;" target="_blank">https://github.com/prikhodkop/kdm_story_app</a><br/></p>
+  <p id="about_p">Report issues <a href=https://github.com/prikhodkop/kdm_story_app/issues style="color:#888800;" target="_blank">Here</a></p>
   <p id="about_p">Hope you enjoy the app and please share your feedback and impressions!<br/></p>
   <p id="about_p" style="color:#ddd"><b>Credits:</b></p>
-  <p id="about_p">Almost all the art and text presented in the app are the property of Adam Poots. The guy did a great job creating the game, so please pay respect to him and <b>use the app ONLY if you own a copy of the game</b> (no exceptions)! Buy it here: <a href=https://shop.kingdomdeath.com style="color:#888800;" target="_blank">https://shop.kingdomdeath.com</a></p>
-  <p id="about_p">Coding: @prikhodkop, Justin Parker (jparkerweb), Andrew Mackrodt (andrewmackrodt)</p>
-  <p id="about_p">Voice acting: @prikhodkop, Katya Prikhodko</p>
-  <p id="about_p">QA: Alexander Fedorov, Creepo</p>
-  <p id="about_p">Arts, disorders, ability and weapon specialisation cards are created by Fen, please support him at his: </br> <a href=https://www.patreon.com/FenPaints style="color:#888800;" target="_blank">https://www.patreon.com/FenPaints</a> </br>He deservers it!.</p>
-  <p id="about_p">Patreon backers: Blair, Javier Salmeron, Mithless_one, timberwolfl.</p></div>`).appendTo('#reference-window-back')
-  $('#reference-window-back0').hide()
+  <p id="about_p">Almost all the art and text presented in the app are the property of <b id="poots-text">Adam Poots</b>. The guy did a great job creating the game, so please pay respect and <b>use the app ONLY if you own a physical copy of the game</b> (no exceptions)! Buy it here: <a href=https://shop.kingdomdeath.com style="color:#888800;" target="_blank">https://shop.kingdomdeath.com</a></p>
+  <p id="about_p"><b style="color:#999">Coding</b>: @prikhodkop, Justin Parker (jparkerweb), Andrew Mackrodt (andrewmackrodt).</p>
+  <p id="about_p"><b style="color:#999">Voice acting</b>: @prikhodkop, Katya Prikhodko.</p>
+  <p id="about_p"><b style="color:#999">Testing</b>: Alexander Fedorov, Calibretto, Creepo, Cymbaline, Knolan.</p>
+  <p id="about_p">Arts, disorders, ability and weapon specialisation cards are created by Fen, please support him at his: <a href=https://www.patreon.com/FenPaints style="color:#888800;" target="_blank">https://www.patreon.com/FenPaints</a> </br>He deservers it!.</p>
+  <p id="about_p"><b style="color:#999">Patreon backers</b>: Blair, Javier Salmeron, Jesús Martin-Davila, Mithless_one, Royce, timberwolfl.</p></div>`).appendTo('#reference-window-back')
+  $('#about-window-back0').hide()
 
-  $('#about_text').click(function () {
-    if (!$(this).hasClass('active')) {
-      if (!$(this).hasClass('hoverd')) {
-        $('#reference-window-back0').fadeIn(500)
-        $('#reference-window-background').fadeIn(500)
-        $(this).toggleClass('active')
-        $('#about_text').attr('src', cdnUrl('images/icons/about_active.png'))
+  // $('#about_text').click(function () {
+  //   if (!$(this).hasClass('active')) {
+  //     if (!$(this).hasClass('hoverd')) {
+  //       $('#reference-window-back0').fadeIn(500)
+  //       $('#reference-window-background').fadeIn(500)
+  //       $(this).toggleClass('active')
+  //       $('#about_text').attr('src', cdnUrl('images/icons/about_active.png'))
+  //     }
+  //   }
+  // }, function () {
+  //   $(this).delay(500).removeClass('hoverd')
+  // })
+
+  $('#about_text').tooltipster({
+      contentAsHTML: 'true',
+      animation: 'grow',
+      content: 'Show <b>About</b> window.',
+      position: 'right',
+      delay: [300, 300],
+      trigger: 'custom',
+      triggerOpen: {
+        mouseenter: true,
+        // click: true
+      },
+      triggerClose: {
+        click: true,
+        mouseleave: true
       }
-    }
-  }, function () {
-    $(this).delay(500).removeClass('hoverd')
-  })
+    });
 
   $('#about_text').click(function () {
     if (!$(this).hasClass('active')) {
-      $('#reference-window-back0').fadeIn(500)
+      $('#about-window-back0').fadeIn(500)
       $('#reference-window-background').fadeIn(500)
       $('#about_text').attr('src', cdnUrl('images/icons/about_active.png'))
     } else {
-      $('#reference-window-back0').fadeOut(500)
+      $('#about-window-back0').fadeOut(500)
       $('#reference-window-background').fadeOut(500)
       $('#about_text').attr('src', cdnUrl('images/icons/about.png'))
     }
@@ -75,7 +94,7 @@ function createAbout (version) {
   })
 
   $('#reference-window-background').on('click', function () {
-    $('#reference-window-back0').fadeOut(500)
+    $('#about-window-back0').fadeOut(500)
     $('#reference-window-background').fadeOut(500)
     $('#about_text').removeClass('active')
     $('#about_text').attr('src', cdnUrl('images/icons/about.png'))
@@ -83,26 +102,26 @@ function createAbout (version) {
     $('#esc-menu').removeClass('active')
   })
 
-  $('#reference-window-back').on('click', function () {
-    $('#reference-window-back0').fadeOut(500)
-    $('#reference-window-background').fadeOut(500)
-    $('#about_text').removeClass('active')
-    $('#about_text').attr('src', cdnUrl('images/icons/about.png'))
-  })
+  // $('#reference-window-back').on('click', function () {
+  //   $('#about-window-back0').fadeOut(500)
+  //   $('#reference-window-background').fadeOut(500)
+  //   $('#about_text').removeClass('active')
+  //   $('#about_text').attr('src', cdnUrl('images/icons/about.png'))
+  // })
 
-  $('#about_header').on('click', function () {
-    $('#reference-window-back0').fadeOut(500)
-    $('#reference-window-background').fadeOut(500)
-    $('#about_text').removeClass('active')
-    $('#about_text').attr('src', cdnUrl('images/icons/about.png'))
-  })
+  // $('#about_header').on('click', function () {
+  //   $('#about-window-back0').fadeOut(500)
+  //   $('#reference-window-background').fadeOut(500)
+  //   $('#about_text').removeClass('active')
+  //   $('#about_text').attr('src', cdnUrl('images/icons/about.png'))
+  // })
 
-  $('#about_p').on('click', function () {
-    $('#reference-window-back0').fadeOut(500)
-    $('#reference-window-background').fadeOut(500)
-    $('#about_text').removeClass('active')
-    $('#about_text').attr('src', cdnUrl('images/icons/about.png'))
-  })
+  // $('#about_p').on('click', function () {
+  //   $('#about-window-back0').fadeOut(500)
+  //   $('#reference-window-background').fadeOut(500)
+  //   $('#about_text').removeClass('active')
+  //   $('#about_text').attr('src', cdnUrl('images/icons/about.png'))
+  // })
 
   // open links externally by default
   $(document).on('click', 'a[href^="http"]', function (event) {

@@ -60,7 +60,8 @@
 #menu_item:hover {
 	color: #cccc00 !important;
 	/* text-shadow: 0 0 20px #cccc00; */
-	filter: drop-shadow(0 0 20px #cccc00);
+	/* filter: drop-shadow(0 0 20px #cccc00); */
+	animation: glowing-image_3 3000ms infinite;
 }
 
 #menu_item:click {
@@ -136,9 +137,11 @@
 }
 #menu-toggle-wrapper:hover #menu-toggle:before {
 	top: -6px;
+	/* animation: glowing-image_2 3000ms infinite; */
 }
 #menu-toggle-wrapper:hover #menu-toggle:after {
 	bottom: -6px;
+	/* animation: glowing-image_2 3000ms infinite; */
 }
 #menu-toggle-wrapper.active:focus #menu-toggle:after,
 #menu-toggle-wrapper.active:hover #menu-toggle:after {
@@ -226,6 +229,24 @@
 	-webkit-box-shadow: 0 0 80px #000;
 	box-shadow: 0 0 80px #000;
 	overflow: visible;
+	--borderWidth: 1em;
+	border-radius: var(--borderWidth);
+	border: 0.2rem solid #555;
+}
+
+#about-window-back0 {
+	/* left:5%; */
+	top: 2%;
+	height: 95%;
+	width: 60%;
+	left: 20%;
+	position:absolute;
+	z-index: 84;
+	display:block;
+	-webkit-box-shadow: 0 0 80px #000;
+	box-shadow: 0 0 80px #000;
+	overflow: visible;
+	margin: 0 auto;
 	--borderWidth: 1em;
 	border-radius: var(--borderWidth);
 	border: 0.2rem solid #555;
@@ -370,7 +391,6 @@ div#reference-window-back0 .selectize-control {
 }
 
 #about_text {
-	transition: drop-shadow 1s ease;
 	background-color: Transparent;
 	color: #888;
 	overflow: visible;
@@ -389,15 +409,31 @@ div#reference-window-back0 .selectize-control {
 	cursor: pointer;
 	border: none;
 	opacity: 0.1;
+	transition: opacity 0.5s, filter 0.5s, drop-shadow 0.5s ease;
 }
 
 #about_text:hover {
 	color: yellow;
+	opacity: 0.8;
+	animation: glowing-image_2 3000ms infinite;
 }
 
 #about_text.active {
-	-webkit-filter: drop-shadow(0 0 80px #cccc00);
-	filter: drop-shadow(0 0 80px #cccc00);
+	/* -webkit-filter: drop-shadow(0 0 20px #cccc00); */
+	filter: drop-shadow(0 0 10px #cccc00);
+	opacity: 0.8;
+}
+
+#about_logo {
+	opacity: 0.8;
+	display: block;
+	position:absolute;
+	width: 20%;
+	top: 2%;
+	/* height: auto; */
+	left: 78%;
+	z-index: 85;
+	animation: glowing-image 3000ms infinite;
 }
 
 #about_p {
@@ -525,4 +561,47 @@ div#reference-window-back0 .selectize-control {
 	z-index: 95;
 	--borderWidth: 1em;
 	border-radius: var(--borderWidth);
+}
+
+@keyframes glowing-image_2 {
+	0% { filter: drop-shadow(0 0 20px #cc0); }
+  30% { filter: drop-shadow(0 0 -10px #cc0); }
+  50% { filter: drop-shadow(0 0 10px #cc0); }
+  70% { filter: drop-shadow(0 0 20px #cc0); }
+  /* 70% { filter: drop-shadow(0 0 10px #c4a300); } */
+  100% { filter: drop-shadow(0 0 -10px #cc0); }
+}
+
+@keyframes glowing-image_3 {
+	0% { filter: drop-shadow(0 0 20px #cc0); }
+  30% { filter: drop-shadow(0 0 17px #cc0); }
+  40% { filter: drop-shadow(0 0 15px #cc0); }
+  70% { filter: drop-shadow(0 0 17px #cc0); }
+  /* 70% { filter: drop-shadow(0 0 10px #c4a300); } */
+  100% { filter: drop-shadow(0 0 20px #cc0); }
+}
+
+@keyframes glowing-image {
+  0% { filter: drop-shadow(0 0 -10px #c4a300); }
+	10% { filter: drop-shadow(0 0 -5px #c4a300); }
+	20% { filter: drop-shadow(0 0 -2px #c4a300); }
+  30% { filter: drop-shadow(0 0 -5px #c4a300); }
+	40% { filter: drop-shadow(0 0 -10px #c4a300); }
+  50% { filter: drop-shadow(0 0 -5px #c4a300); }
+	60% { filter: drop-shadow(0 0 1px #c4a300); }
+	70% { filter: drop-shadow(0 0 -5px #c4a300); }
+  70% { filter: drop-shadow(0 0 1px #c4a300); }
+  /* 100% { filter: drop-shadow(0 0 5px #c4a300); } */
+}
+
+#poots-text {
+	/* color:#aa0; */
+	/* animation: glowing-text 3000ms infinite; */
+	color: #f5f5f5;
+ text-shadow:
+ 0px -2px 4px #fff,
+ 0px -2px 10px #FF3,
+ 0px -10px 20px #F90,
+ 0px -20px 40px #C33;
+ /* font-size: 100px; */
 }

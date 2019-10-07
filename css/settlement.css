@@ -616,7 +616,7 @@ button.tablinks.active {
   font-weight: 600;
   text-align: center;
   margin: 0 auto;
-  animation: opacity 0.5s, border 0.5s, color 0.5s;
+  transition: opacity 0.5s, border 0.5s, color 0.5s;
 }
 
 .development_tab_button:hover {
