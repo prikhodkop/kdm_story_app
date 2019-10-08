@@ -170,7 +170,7 @@ module.exports = class HuntScene {
     } else {
       $('#back_button').hide()
       $('#back_button').html('<svg class="back_button__icon" enable-background="new 0 0 492 492" version="1.1" viewBox="0 0 492 492" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m464.34 207.42l0.768 0.168h-329.22l103.5-103.72c5.068-5.064 7.848-11.924 7.848-19.124s-2.78-14.012-7.848-19.088l-16.104-16.112c-5.064-5.064-11.812-7.864-19.008-7.864-7.2 0-13.952 2.78-19.016 7.844l-177.41 177.4c-5.084 5.084-7.864 11.856-7.844 19.06-0.02 7.244 2.76 14.02 7.844 19.096l177.41 177.41c5.064 5.06 11.812 7.844 19.016 7.844 7.196 0 13.944-2.788 19.008-7.844l16.104-16.112c5.068-5.056 7.848-11.808 7.848-19.008 0-7.196-2.78-13.592-7.848-18.652l-104.66-104.3h329.99c14.828 0 27.288-12.78 27.288-27.6v-22.788c0-14.82-12.828-26.6-27.656-26.6z"></path></svg><span class="back_button__text">' + events_table[back_target].label + '</span>')
-      $('#back_button').delay(500).fadeIn(1000)
+      $('#back_button').delay(500).fadeIn(500)
     };
 
     if (anew) {
@@ -182,12 +182,12 @@ module.exports = class HuntScene {
     };
 
     if (not_selected) {
-      $('#hunt_icon').fadeIn(2000)
-      $('#label_text').fadeIn(2000)
-      $('#hunt_desc_text').delay(3500).fadeIn(2000)
-      $('#quaries_table').delay(4000).fadeIn(2000)
-      $('#hunt_icon').delay(1000).fadeOut(2000)
-      $('#label_text').delay(1000).fadeOut(2000)
+      $('#hunt_icon').fadeIn(1000)
+      $('#label_text').fadeIn(1000)
+      $('#hunt_desc_text').delay(2500).fadeIn(1000)
+      $('#quaries_table').delay(3000).fadeIn(1000)
+      $('#hunt_icon').delay(1000).fadeOut(1000)
+      $('#label_text').delay(1000).fadeOut(1000)
     };
 
     $('body').on('click', '#menu_item', function () {
@@ -379,7 +379,7 @@ module.exports = class HuntScene {
 
       $('#random_popup').delay(500).animate({
         scrollTop: $('#random_popup').prop('scrollHeight'),
-      }, 1000)
+      }, 500)
 
       console.log('Table idx:')
       console.log(table_idx)
@@ -417,15 +417,16 @@ module.exports = class HuntScene {
 
       var pos = $(this).attr('position')
       console.log(pos)
-      $(this).fadeOut(1500)
-      $('#lantern.' + pos).delay(1000).fadeIn(1500)
+      $(this).fadeOut(500)
+      $('#lantern.' + pos).delay(500).fadeIn(500)
     })
 
     $('body').on('click', '#lantern', function () {
       var pos = $(this).attr('position')
       console.log(pos)
-      $(this).fadeOut(1500)
-      $('#common.' + pos).delay(1000).fadeIn(1500)
+      $(this).fadeOut(500)
+
+      $('#common.' + pos).delay(500).fadeIn(500)
     })
 
     function set_hunt (name0, ref0, state) {
@@ -463,11 +464,11 @@ module.exports = class HuntScene {
       $('#hunt_desc_text').text(name)
       $('#hunt_desc_text').css('color', '#555')
       $('#hunt_desc_text').css('font-size', '2em')
-      $('#hunt_desc_text').fadeIn(2000)
+      $('#hunt_desc_text').fadeIn(1000)
 
-      $('#hunt_back').fadeIn(4000)
-      $('#random_event_icon').fadeIn(5000)
-      $('#random_event_input').fadeIn(5000)
+      $('#hunt_back').fadeIn(2000)
+      $('#random_event_icon').fadeIn(3000)
+      $('#random_event_input').fadeIn(3000)
       $('#random_event_input').val('')
 
       console.log(name)
@@ -476,7 +477,7 @@ module.exports = class HuntScene {
         .load(function () {
           $(this).appendTo('#container')
           $(this).hide()
-          $(this).delay(2000).fadeIn(4000)
+          $(this).delay(1000).fadeIn(2000)
           $(this).tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
@@ -498,7 +499,7 @@ module.exports = class HuntScene {
         .load(function () {
           $(this).appendTo('#container')
           $(this).hide()
-          $(this).delay(2000).fadeIn(4000)
+          $(this).delay(1000).fadeIn(2000)
           $(this).tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
@@ -549,7 +550,7 @@ module.exports = class HuntScene {
             console.log('Will hide this one:')
             console.log(i)
             $('#common.' + i).fadeOut(500)
-            $('#lantern.' + i).delay(500).fadeIn(1000)
+            $('#lantern.' + i).delay(500).fadeIn(500)
           }
         }
       },
@@ -558,7 +559,7 @@ module.exports = class HuntScene {
       addTimer(function () {
         loadHuntImage('images/hunt/darkness.png', 7, 7.3914, 31.45, 'darkness',
           'overwhelming darkness')
-      }, 4300)
+      }, 2150)
 
       loadHuntImage('images/hunt/starvation.png', 13, 7.298, 32.3, 'starvation')
 
@@ -588,11 +589,11 @@ module.exports = class HuntScene {
       let template = document.getElementById('random_popup')
       let event_html = md_to_html_2(event_idx)
       template.innerHTML = event_html
-      $('#quary_popup').fadeOut(1000)
-      $('#random_popup').delay(500).fadeIn(1500)
-      $('#quary_popup_back').fadeIn(1500)
-      $('#random_event_icon').delay(1000).fadeIn(3000)
-      $('#random_event_input').delay(1000).fadeIn(3000)
+      $('#quary_popup').fadeOut(500)
+      $('#random_popup').delay(500).fadeIn(500)
+      $('#quary_popup_back').fadeIn(1000)
+      $('#random_event_icon').delay(1000).fadeIn(1500)
+      $('#random_event_input').delay(1000).fadeIn(1500)
       $('#random_event_input').val('')
       $(':focus').blur()
     }
@@ -741,7 +742,7 @@ module.exports = class HuntScene {
         if (type == 'darkness') {
           $(this).show()
         } else {
-          $(this).delay(2000).fadeIn(4000)
+          $(this).delay(1000).fadeIn(2000)
         }
 
         $(this).attr('position', position)
@@ -849,31 +850,31 @@ module.exports = class HuntScene {
               if (ui.draggable[0]['id'] == 'survivors') {
                 if (title == 'Monster Hunt Event') {
                   $('#quary_popup').attr('src', cdnUrl($(this).attr('href')))
-                  $('#quary_popup').delay(500).fadeIn(1000)
+                  $('#quary_popup').delay(500).fadeIn(500)
                   $('#quary_popup').toggleClass('hidden')
-                  $('#quary_popup_back').fadeIn(1500)
+                  $('#quary_popup_back').fadeIn(1000)
                   // $('#random_event_icon').delay(1000).fadeIn(3000);
                   // $('#random_event_input').delay(1000).fadeIn(3000);
                   // $('#random_event_input').val('')
                 }
 
                 if (title == 'Random Hunt Event') {
-                  $('#quary_popup_back').fadeIn(1500)
+                  $('#quary_popup_back').fadeIn(1000)
                   $('#input_container').delay(500).fadeIn(
-                    1000)
+                    500)
                   $('#random_event_input_big').val('')
                   $('#random_event_icon').fadeOut(500)
                   $('#random_event_input').fadeOut(500)
                   addTimer(function () {
                     $('#random_event_input_big')
                       .focus()
-                  }, 1600)
+                  }, 1100)
                 }
 
                 let pos = $(this).attr('position')
                 console.log(pos)
-                $(this).fadeOut(1500)
-                $('#lantern.' + pos).delay(1000).fadeIn(1500)
+                $(this).fadeOut(500)
+                $('#lantern.' + pos).delay(500).fadeIn(500)
               }
             },
           })

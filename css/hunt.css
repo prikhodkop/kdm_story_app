@@ -445,34 +445,6 @@ tr.spaceUnder>td {
     animation-delay: 0.3s;
 }
 
-#darkness.token {
-  /* -webkit-filter: drop-shadow(5px 5px 5px #222);
-  filter: drop-shadow(5px 5px 5px #222); */
-  -webkit-filter: brightness(100%);
-  filter: brightness(100%);
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
-}
-
-#darkness.token:hover {
-  /* -webkit-filter: drop-shadow(5px 5px 5px #222);
-  filter: drop-shadow(5px 5px 5px #222); */
-  -webkit-filter: brightness(70%);
-  filter: brightness(70%);
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  /* transition: all 1s ease;
-  animation: pulse 1s; */
-  /* animation-iteration-count: infinite; */
-
-  /* animation: shake 1s;
-  animation-iteration-count: infinite; */
-}
 
 #mineral_gathering.token:hover {
     /* Start the shake animation and make the animation last for 0.5 seconds */

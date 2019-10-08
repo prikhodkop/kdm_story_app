@@ -97,12 +97,6 @@ module.exports = class ImageScene {
 
     var anew = true
 
-    if (myself == 'first story') {
-      $('#img_back').delay(2000).fadeIn(2000)
-    } else {
-      $('#img_back').fadeIn(2000)
-    }
-
     if (settings['music'] == 'Off') {
       music.mute(true)
     }
@@ -119,10 +113,13 @@ module.exports = class ImageScene {
 
       back_target = state.back_target
       var action = state.action
+      anew = false
+
+      $('#img_back').fadeIn(500)
 
       if (true) {
         $('#label_text').fadeIn(2000)
-        $('#img').delay(2000).fadeIn(2000)
+        $('#img').delay(2000).fadeIn(1000)
 
         if (!menus_appeared) {
           menus_appeared = true
@@ -131,7 +128,7 @@ module.exports = class ImageScene {
             createReference()
           }, 2000)
         };
-    
+
         if (!music.playing()) {
           music.volume(0.0)
           music.play();
@@ -141,6 +138,12 @@ module.exports = class ImageScene {
     } else {
       console.log('No initialized state!')
       var action = 'false' // flag to show if user clicked on #img_back
+
+      if (myself == 'first story') {
+        $('#img_back').delay(4000).fadeIn(1000)
+      } else {
+        $('#img_back').fadeIn(1000)
+      }
     };
 
     if ((back_target == null) || (back_target == 'null') || (back_target == 'undefined')) {
@@ -148,13 +151,13 @@ module.exports = class ImageScene {
     } else {
       $('#back_button').hide()
       $('#back_button').html('<svg class="back_button__icon" enable-background="new 0 0 492 492" version="1.1" viewBox="0 0 492 492" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m464.34 207.42l0.768 0.168h-329.22l103.5-103.72c5.068-5.064 7.848-11.924 7.848-19.124s-2.78-14.012-7.848-19.088l-16.104-16.112c-5.064-5.064-11.812-7.864-19.008-7.864-7.2 0-13.952 2.78-19.016 7.844l-177.41 177.4c-5.084 5.084-7.864 11.856-7.844 19.06-0.02 7.244 2.76 14.02 7.844 19.096l177.41 177.41c5.064 5.06 11.812 7.844 19.016 7.844 7.196 0 13.944-2.788 19.008-7.844l16.104-16.112c5.068-5.056 7.848-11.808 7.848-19.008 0-7.196-2.78-13.592-7.848-18.652l-104.66-104.3h329.99c14.828 0 27.288-12.78 27.288-27.6v-22.788c0-14.82-12.828-26.6-27.656-26.6z"></path></svg><span class="back_button__text">' + events_table[back_target].label + '</span>')
-      $('#back_button').delay(500).fadeIn(1000)
+      $('#back_button').delay(500).fadeIn(500)
     }
 
     // SET UP EVENT START IF IT HAS NO INITIALIZED STATE
     // #############
     if (anew) {
-      $('#label_text').delay(3000).fadeIn(2000)
+      $('#label_text').delay(1000).fadeIn(1000)
 
       console.log('Muted naration: '+ mute_narration)
 
@@ -174,9 +177,9 @@ module.exports = class ImageScene {
       console.log('I started anew!!')
       console.log(action)
       if (mute_narration) {
-        duration = 2000
+        duration = 1000
         // delay = 1000
-        delay = 2000
+        delay = 1000
       } else {
         var duration = speech.duration() * 1000
 
@@ -188,11 +191,11 @@ module.exports = class ImageScene {
       }
 
       if (myself == 'first story') {
-        duration = 4000
+        duration = 3000
         // delay = parseInt(events_table[myself].music_delay, 10)
         $('.srt').text('Open rule book on page 22 and follow the instructions.')
-        $('.srt').fadeIn(2000)
-        addTimer(function () { $('.srt').fadeOut(1000) }, 3000)
+        $('.srt').fadeIn(1000)
+        addTimer(function () { $('.srt').fadeOut(1000) }, 2000)
       }
 
       console.log('Speech ' + events_table[myself].speech)
@@ -215,18 +218,18 @@ module.exports = class ImageScene {
 
       addTimer(function () {
         if (action == 'false') {
-          $('#img').fadeIn(2000)
+          $('#img').fadeIn(1000)
           action = 'true'
           if (!menus_appeared) {
             menus_appeared = true
             addTimer(function () {
               createSevereTables()
               createReference()
-            }, 2000);
+            }, 1000);
           }
           ;
         }
-      }, start_delay + duration + 3000)
+      }, start_delay + duration + 2000)
 
       addTimer(function () {
         console.log('I play the music')
@@ -241,7 +244,7 @@ module.exports = class ImageScene {
       action = 'true'
 
       // $("#label_text").fadeOut(2000);
-      $('#img').fadeIn(2000)
+      $('#img').fadeIn(1000)
       if ((!menus_appeared) && anew) {
         menus_appeared = true
         addTimer(function () {
@@ -251,7 +254,7 @@ module.exports = class ImageScene {
       };
 
       if (speech.playing()) {
-        speech.fade(1.0, 0.0, 2000)
+        speech.fade(1.0, 0.0, 1000)
         speech.pause()
       }
       if (!music.playing()) {
@@ -260,8 +263,8 @@ module.exports = class ImageScene {
     })
 
     $('#img').click(function () {
-      $('#label_text').delay(1500).fadeIn(2000)
-      $('#img').fadeOut(2000)
+      $('#label_text').delay(1000).fadeIn(1000)
+      $('#img').fadeOut(1000)
     })
 
 

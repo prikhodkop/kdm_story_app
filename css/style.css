@@ -16,9 +16,9 @@ input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-#label_text {
+/* #label_text {
   position: absolute;
-}
+} */
 
 #container {
   position: absolute;
@@ -64,6 +64,7 @@ input[type=number]::-webkit-inner-spin-button {
     display: block;
     z-index: 0;
     display:none;
+    box-shadow: 0 0 20px #000;
 }
 
 #hunt_icon {
@@ -80,7 +81,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 #label_text {
   color: #ffffff;
-  text-shadow: 3px 2px #333333;
+  text-shadow: 0 0 5px #000;
   overflow: visible;
   visibility: show;
   z-index: 1;
@@ -236,11 +237,12 @@ tr.spaceUnder>td {
   cursor: pointer;
   border: none;
   opacity: 0.9;
-  transition:all .5s linear;
+  transition:color 0.5s, text-shadow 0.5s;
 }
 
 .button_video:hover {
   color: yellow;
+  text-shadow: 0 0 10px yellow;
   }
 
   .fadeOut{
@@ -380,24 +382,20 @@ tr.spaceUnder>td {
 }
 
 #darkness.token {
-  -webkit-filter: brightness(100%);
+  /* -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222); */
+  opacity: 0;
   filter: brightness(100%);
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
+  transition: filter 1.0s ease, opacity 1.0s;
 }
 
 #darkness.token:hover {
-  -webkit-filter: brightness(70%);
-  filter: brightness(70%);
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
-  /* animation: pulse 1s; */
+  /* -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222); */
+  filter: brightness(60%);
+  opacity: 1.0;
+  /* transition: all 1s ease;
+  animation: pulse 1s; */
   /* animation-iteration-count: infinite; */
 
   /* animation: shake 1s;

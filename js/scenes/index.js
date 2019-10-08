@@ -55,8 +55,8 @@ module.exports = class IndexScene {
       music.play()
     })
 
-    $('#label_text').delay(2000).fadeIn(8000)
-    $('.button_video').delay(3000).fadeIn(3000)
+    $('#label_text').fadeIn(8000)
+    $('.button_video').delay(3000).fadeIn(1000)
 
     createMenuButton()
     createToc()
@@ -141,7 +141,7 @@ module.exports = class IndexScene {
       // $(".button").show()
       $('#settings').show()
       $('.button_video').delay(1000).fadeIn(6000)
-      $('#label_text').delay(2000).fadeIn(8000)
+      $('#label_text').fadeIn(8000)
 
       clearSubtitles()
       // $("#video").attr('currentTime', 0);
@@ -164,8 +164,8 @@ module.exports = class IndexScene {
       $('#video').hide()
       // $(".button").show()
       $('#settings').show()
-      $('.button_video').fadeIn(2000)
-      $('#label_text').delay(2000).fadeIn(4000)
+      $('.button_video').delay(1000).fadeIn(1000)
+      $('#label_text').fadeIn(4000)
 
       clearSubtitles()
       // $("#video").attr('currentTime', 0);

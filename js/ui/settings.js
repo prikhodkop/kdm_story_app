@@ -148,6 +148,8 @@ function resetSettings () {
   console.log('New settings:')
   console.log(settings)
 
+  localStorage.empty();
+
   // saveFile(JSON.stringify(settings), __dirname + '/settings.json')
   saveFile(JSON.stringify(settings), app.getPath('userData') + '/settings.json')
 
