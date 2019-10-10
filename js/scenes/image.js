@@ -57,7 +57,7 @@ module.exports = class ImageScene {
     $('#menu').hide()
 
     var start_delay = 1000 // delay before speech playing starts
-    var music_volume = 0.8 // music volume
+    var music_volume = 0.4 // music volume
 
     var speech = new Howl({
       src: [cdnUrl(events_table[myself].speech)],

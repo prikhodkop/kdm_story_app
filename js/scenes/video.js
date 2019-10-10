@@ -123,8 +123,8 @@ module.exports = class VideoScene {
     }
 
     $('#video').on('ended', function () {
-      $('#img').fadeIn(2000)
-      $('#video').fadeOut(2000)
+      $('#img').fadeIn(1000)
+      $('#video').fadeOut(1000)
 
       clearSubtitles()
       music.play()
@@ -137,7 +137,7 @@ module.exports = class VideoScene {
       this.pause()
       music.play()
 
-      $('#img').fadeIn(2000)
+      $('#img').fadeIn(1000)
       $('#video').hide()
 
       clearSubtitles()

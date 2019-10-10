@@ -431,10 +431,7 @@ var settings_schema = {
         'type': 'option',
         'title': 'Slenderman',
         'default': 'Disabled',
-        'enum': [
-          'Disabled',
-          'Cards only',
-        ],
+        'enum': expansion_options,
       },
       'spidicules': {
         'type': 'option',

@@ -898,6 +898,14 @@ const settlement_locations = {
       '3': []},
     'action': true,
   },
+  'Light Forging': {
+    'expansion': 'slenderman',
+    'gear': {
+      '1': ['Gloom Bracelets', 'Gloom-Coated Arrows', 'Gloom Mehndi', 'Dark Water Vial'],
+      '2': ['Raptor-Worm Collar', 'Gloom Cream', 'Gloom Hammer'],
+      '3': ['Slender Ovule', 'Gloom Katana', 'Gloom Sheath']},
+    'action': true,
+  },
   'Mask Maker': {
     'gear': {
       '1': ['White Lion Mask', 'Antelope Mask', 'Phoenix Mask'],
@@ -1174,6 +1182,17 @@ const gear_list = {
   'Century Greaves': {'resources':['1 x scarab shell', '1 x beetle horn', '2 x iron'], 'innovation': 'Nightmare Corn'},
   'Rubber Bone Harness': {'resources':['1 x underplate fungus', '1 x century fingernails', '2 x leather'], 'innovation': 'Vampiric Artichoke'},
   'The Beetle Bomb': {'resources':['2 x scarab shell', '2 x preserved caustic dung', '5 x resources'], 'innovation': 'Vampiric Artichoke'},
+
+  'Gloom Bracelets': {'resources':['1 x bone', '1 x lion tail', '1 x scrap', '1 x dark water'], 'innovation': 'Dark Water Research 1'},
+  'Gloom-Coated Arrows': {'resources':['2 x bone', '1 x dark water'], 'innovation': 'Dark Water Research 1'},
+  'Gloom Mehndi': {'resources':['3 x organ', '1 x dark water'], 'innovation': 'Dark Water Research 1'},
+  'Dark Water Vial': {'resources':['1 x organ', '1 x dark water'], 'innovation': 'Dark Water Research 1'},
+  'Raptor-Worm Collar': {'resources':['1 x organ', '1 x scrap', '1 x dark water'], 'innovation': 'Dark Water Research 2'},
+  'Gloom Cream': {'resources':['1 x love juice', '1 x hide', '2 x dark water'], 'innovation': 'Dark Water Research 2'},
+  'Gloom Hammer': {'resources':['3 x skull', '1 x iron', '1 x organ', '3 x dark water'], 'innovation': 'Dark Water Research 2'},
+  'Slender Ovule': {'resources':['1 x phoenix eye',  '4 x dark water'], 'innovation': 'Dark Water Research 3'},
+  'Gloom Katana': {'resources':['1 x iron', '1 x crystal mold', '2 x dark water'], 'innovation': 'Dark Water Research 3'},
+  'Gloom Sheath': {'resources':['1 x shank bone', '2 x organ', '2 x dark water'], 'innovation': 'Dark Water Research 3'},
 }
 
 const innovations = {

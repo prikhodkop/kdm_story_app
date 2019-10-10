@@ -498,6 +498,47 @@ const events = {
     'lleft': '55%',
     // 'campaign': 'Stars',
   },
+  'dark place': {
+    'expansion': 'slenderman',
+    'music': 'music/dark place.mp3',
+    'music_delay': 'speech+500',
+    'ltop': '85%',
+    // 'lleft': '55%',
+    // // 'campaign': 'Stars',
+  },
+  'forgotten fear': {
+    'expansion': 'slenderman',
+    'music': 'music/forgotten fear.mp3',
+    'music_delay': '500',
+    'ltop': '7%',
+    'lleft': '85%',
+    // // 'campaign': 'Stars',
+  },
+  'light-forging': {
+    'expansion': 'slenderman',
+    'music': 'music/light-forging.mp3',
+    'music_delay': '500',
+    'ltop': '25%',
+    'lleft': '75%',
+    // // 'campaign': 'Stars',
+  },
+  'showdown slenderman': {
+    'expansion': 'slenderman',
+    'music': 'music/showdown slenderman.mp3',
+    'music_delay': 'speech+500',
+    // 'ltop': '7%',
+    // 'lleft': '55%',
+    // // 'campaign': 'Stars',
+  },
+  'it\'s already here': {
+    'expansion': 'slenderman',
+    'music': 'music/it\'s already here.mp3',
+    // 'music_delay': 'speech+500',
+    'type': 'video',
+    // 'ltop': '7%',
+    // 'lleft': '55%',
+    // // 'campaign': 'Stars',
+  },
 }
 
 const color_menu = {

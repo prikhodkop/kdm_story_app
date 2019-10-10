@@ -63,7 +63,7 @@ module.exports = class SettlementScene {
     // Кнопка открыть список зданий
 
     var start_delay = 1000 // delay before speech playing starts
-    var music_volume = 0.8 // music volume
+    var music_volume = 0.5 // music volume
 
     var speech = new Howl({
       src: [cdnUrl(events_table[myself].speech)],
@@ -79,7 +79,7 @@ module.exports = class SettlementScene {
     var noise = new Howl({
       src: [cdnUrl('audio/music/campfire.mp3')],
       loop: true,
-      volume: 0.6,
+      volume: 0.2,
     })
 
     console.log('Music to play ' + events_table[myself].music)
