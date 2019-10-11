@@ -39,7 +39,12 @@
   --borderWidth: 1em;
   border-radius: var(--borderWidth);
   border: 0.2rem solid #555;
+  scrollbar-width: none;
 }
+
+#settings-window-back0::-webkit-scrollbar {
+        display: none;
+    }
 
 #settings-window-back {
   /* width:30%; */
@@ -52,7 +57,12 @@
   z-index: 85;
   display:block;
   overflow:auto;
+  scrollbar-width: none;
 }
+
+#settings-window-back::-webkit-scrollbar {
+        display: none;
+    }
 
 #settings-window-back-img {
   /* width:30%; */

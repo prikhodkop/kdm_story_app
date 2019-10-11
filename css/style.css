@@ -784,18 +784,18 @@ tr.spaceUnder>td {
   top: 0%;
   margin: 0 auto;
   z-index: 10;
-  animation: glowing-image_5 3000ms infinite;
   overflow: visible;
   transition:color 0.5s, text-shadow 0.5s, animation 0.5s;
   margin-top: 70px;
   margin-bottom: 70px;
+  opacity: 0;
 }
 
 .campaign_label {
   position: static;
   display: block;
   font-family: 'Silverado';
-  cursor: pointer;
+  cursor: normal;
   color: #999;
   overflow: visible;
   visibility: show;
@@ -814,9 +814,10 @@ tr.spaceUnder>td {
   width: 50%;
   left: 20%;
   cursor: pointer;
+  animation: glowing-image_5 3000ms infinite;
 }
 
-.campaign_element:hover {
+.campaign_image:hover {
   /* color: yellow; */
   text-shadow: 0 0 10px yellow;
   font-color: yellow;

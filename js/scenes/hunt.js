@@ -22,6 +22,7 @@ module.exports = class HuntScene {
 
     let settings = getSettings()
     sessionStorage.setItem('settings', JSON.stringify(settings))
+    sessionStorage.setItem('back_target', null)
 
     console.log(sessionStorage)
     // let settings = JSON.parse(sessionStorage.getItem("settings"));

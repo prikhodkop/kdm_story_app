@@ -64,12 +64,21 @@ module.exports = class IndexScene {
     addSettings(settings)
     let gallery = setupCampaignSelect()
 
-    $('#label_text').fadeIn(8000)
+    $('#label_text').fadeIn(3000)
     // gallery.load(function () {
     //     gallery.delay(3000).fadeIn(1000)
     // })
-
     gallery.show();
+    addTimer(function() {
+      gallery.animate({opacity: 1}, 3000);
+      $('.campaign_element').each(function(){$(this).animate({opacity: 1}, 3000)});
+    }, 2000)
+
+
+    // addTimer(function() {
+    //   gallery.show();
+    // }, 2000)
+
 
     // console.log(subtitles['intro'][lang])
     if (settings['subtitles'] == 'On') {
@@ -84,7 +93,7 @@ module.exports = class IndexScene {
       music.mute(true)
     }
 
-    $('.campaign_element').click(function () {
+    $('.campaign_image').click(function () {
       if (!$(this).hasClass('active')) {
         // $("#open_audio").get(0).pause();
         music.stop()
@@ -180,8 +189,28 @@ module.exports = class IndexScene {
 
       let campaigns = ['Lantern'] // 'Sun',
 
-      if (!settings['expansions']['dragon_king'] == 'All content') {
-        campaigns.append('Stars')
+      if (settings['expansions']['dragon king'] == 'All content') {
+        campaigns.push('Stars')
+      } else {
+        if (settings['campaign'] == 'Stars') {
+          settings['campaign'] = 'Lantern'
+          setSettings(settings);
+          saveSettings();
+          sessionStorage.setItem('settings', JSON.stringify(settings))
+          createToc();
+        }
+      }
+
+      if (settings['expansions']['sunstalker'] == 'All content') {
+        campaigns.push('Sun')
+      } else {
+        if (settings['campaign'] == 'Sun') {
+          settings['campaign'] = 'Lantern'
+          setSettings(settings);
+          saveSettings();
+          sessionStorage.setItem('settings', JSON.stringify(settings))
+          createToc();
+        }
       }
 
       for (let i = 0;  i < campaigns.length; i++) {
@@ -245,7 +274,7 @@ module.exports = class IndexScene {
       campaign_element.append(campaign_label);
       // })
 
-      campaign_element.tooltipster({
+      campaign_image.tooltipster({
           contentAsHTML: 'true',
           animation: 'grow',
           content: '<b style="color:#cc0;">Click</b> to start the <b>First Story</b>.',

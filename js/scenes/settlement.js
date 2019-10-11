@@ -36,6 +36,7 @@ module.exports = class SettlementScene {
 
     var settings = getSettings()
     sessionStorage.setItem('settings', JSON.stringify(settings))
+    sessionStorage.setItem('back_target', null)
 
     var state = sessionStorage.getItem(myself)
     var transition = sessionStorage.getItem('transition')

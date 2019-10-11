@@ -85,6 +85,7 @@ function addSettings (settings) {
   })
 
   $('#settings-window-background').on('click', function () {
+
     $('#settings-window-back0').fadeOut(500)
     $('#settings-window-background').fadeOut(500)
     $('#settings').removeClass('active')
@@ -92,6 +93,30 @@ function addSettings (settings) {
       setSettings(settings)
     }, 600)
   })
+
+  $('.settings[value = "campaign"]').prop('disabled', 'disabled');
+
+  // $('#container').on('change', '.setting[value = "dragon king"]:selected', function(){
+  //     console.log('Plan to change the campaign!!!')
+  //     let expansion = $('.setting[value = "dragon king"]')
+  //     let campaign = $('.setting[value = "campaign"]')
+  //
+  //     if ((campaign.val() == 'Stars') && !(expansion.val() == 'All content')) {
+  //       console.log('Done that!')
+  //       // campaign.val('Lantern')
+  //       campaign.find('option:eq(0)').prop('selected', true);
+  //     }
+  // });
+  // $('.setting[value = "sunstalker"]').on('change', function(){
+  //     let expansion = $('.setting[value = "sunstalker"]')
+  //     let campaign = $('.setting[value = "campaign"]')
+  //
+  //     if ((campaign.val() == 'Sun') && !(expansion.val() == 'All content')) {
+  //       // campaign.val('Lantern')
+  //       campaign.find('option:eq(0)').prop('selected', true);
+  //     }
+  // });
+  // $('.settings[value = "campaign"]').attr('value', 'Campaign!!');
 }
 
 function setSettings (settings) {
@@ -102,6 +127,7 @@ function setSettings (settings) {
     } else {
       $(this).val(settings[$(this).attr('group')][$(this).attr('value')])
     }
+
   })
 }
 
@@ -110,6 +136,18 @@ function saveSettings () {
   $('select.settings').each(function (index) {
     console.log($(this).attr('group') + '_1_' + $(this).attr('value') + '_2_' + $(this).val())
     if ($(this).attr('group') == '') {
+      // if ($(this).attr('value') == 'campaign') {
+      //   if ((settings['campaign'] == 'Stars') && !(settings['expansions']['dragon king'] == 'All content')) {
+      //     $(this).attr('value', 'Lantern')
+      //     settings[$(this).attr('value')] = 'Lantern'
+      //   }
+      //   if ((settings['campaign'] == 'Sun') && !(settings['expansions']['sunstalker'] == 'All content')) {
+      //     $(this).attr('value', 'Lantern')
+      //     settings[$(this).attr('value')] = 'Lantern'
+      //   }
+      // } else {
+      //   settings[$(this).attr('value')] = $(this).val()
+      // }
       settings[$(this).attr('value')] = $(this).val()
     } else {
       if (!($(this).attr('group') in settings)) {
