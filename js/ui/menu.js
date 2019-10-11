@@ -46,113 +46,108 @@ module.exports = {
 }
 
 function createMenuButton () {
-  $('#container').append($('<div>', {
-    // style: 'opacity:.9;',
-    id: 'esc-menu',
-  }))
+  if (!$("#esc-menu").length) {
+    $('#container').append($('<div>', {
+      // style: 'opacity:.9;',
+      id: 'esc-menu',
+    }))
 
-  $('#esc-menu').append($('<img>', {
-    // style: 'opacity:.9;',
-    id: 'esc-back',
-    src: cdnUrl('images/reference/reference_back.png'),
-  }))
+    $('#esc-menu').append($('<img>', {
+      // style: 'opacity:.9;',
+      id: 'esc-back',
+      src: cdnUrl('images/reference/reference_back.png'),
+    }))
 
-  $('#esc-menu').append($('<div>', {
-    // style: 'opacity:.9;',
-    id: 'esc-text',
-  }))
+    $('#esc-menu').append($('<div>', {
+      // style: 'opacity:.9;',
+      id: 'esc-text',
+    }))
 
-  $('#esc-menu').append($('<button>', {
-    // style: 'opacity:.9;',
-    id: 'esc-yes',
-  }))
+    $('#esc-menu').append($('<button>', {
+      // style: 'opacity:.9;',
+      id: 'esc-yes',
+    }))
 
-  $('#esc-menu').append($('<button>', {
-    // style: 'opacity:.9;',
-    id: 'esc-no',
-  }))
+    $('#esc-menu').append($('<button>', {
+      // style: 'opacity:.9;',
+      id: 'esc-no',
+    }))
 
-  $('#esc-text').text('Do you really want to quit?')
-  $('#esc-yes').text('Yes')
-  $('#esc-no').text('No')
+    $('#esc-text').text('Do you really want to quit?')
+    $('#esc-yes').text('Yes')
+    $('#esc-no').text('No')
 
-  $('#esc-yes').click(function () {
-    remote.getCurrentWindow().close()
-  })
+    $('#esc-yes').click(function () {
+      remote.getCurrentWindow().close()
+    })
 
-  $('#esc-no').click(function () {
-    $('#esc-menu').fadeOut(100)
-    $('#reference-window-background').fadeOut(100)
-    $('#esc-menu').removeClass('active')
-  })
+    $('#esc-no').click(function () {
+      $('#esc-menu').fadeOut(100)
+      $('#reference-window-background').fadeOut(100)
+      $('#esc-menu').removeClass('active')
+    })
 
-  $('#esc-menu').hide()
+    $('#esc-menu').hide()
+
+  }
 
   /// /
+  if (!$("#menu-toggle-wrapper").length) {
+    $('#container').append($('<a>', {
+      href: 'javascript:void(0)',
+      id: 'menu-toggle-wrapper',
+    }))
 
-  $('#container').append($('<a>', {
-    href: 'javascript:void(0)',
-    id: 'menu-toggle-wrapper',
-  }))
-
-  $('#container').append($('<div>', {
-    style: 'opacity:.9;',
-    id: 'menu',
-  }))
-
-  $('#menu-toggle-wrapper').append($('<div>', {
-    id: 'menu-toggle',
-  }))
-
-  $('#menu').append($('<img>', {
-    id: 'menu_img',
-    src: cdnUrl('images/back.jpg'),
-  }))
-
-  $('#menu').append($('<div>', {
-    id: 'menu-back',
-  }))
-
-  $('#menu').hide()
-
-  // $('#menu-toggle-wrapper').hover(function () {
-  //   if (!$(this).hasClass('active')) {
-  //     if (!$(this).hasClass('hoverd')) {
-  //       $('#menu').fadeIn(500)
-  //       $(this).toggleClass('active')
-  //     }
-  //   }
-  // }, function () {
-  //   $(this).delay(500).removeClass('hoverd')
-  // })
-
-  $('#menu-toggle-wrapper').click(function () {
-    if (!$(this).hasClass('active')) {
-      $('#menu').fadeIn(500);
-      $('#menu-toggle-wrapper').tooltipster('content', null);
-    } else {
-      $('#menu').hide();
-      $('#menu-toggle-wrapper').tooltipster('content', 'Show <b>Story Events</b> table.');
-    }
-    $(this).toggleClass('active')
-  })
-
-  $('#menu-toggle-wrapper').tooltipster({
-      contentAsHTML: 'true',
-      animation: 'grow',
-      content: 'Show <b>Story Events</b> table.',
-      position: 'left',
-      delay: [300, 300],
-      trigger: 'custom',
-      triggerOpen: {
-        mouseenter: true,
-        // click: true
-      },
-      triggerClose: {
-        click: true,
-        mouseleave: true
+    $('#menu-toggle-wrapper').click(function () {
+      if (!$(this).hasClass('active')) {
+        $('#menu').fadeIn(500);
+        $('#menu-toggle-wrapper').tooltipster('content', null);
+      } else {
+        $('#menu').hide();
+        $('#menu-toggle-wrapper').tooltipster('content', 'Show <b>Story Events</b> table.');
       }
-    });
+      $(this).toggleClass('active')
+    })
+
+    $('#menu-toggle-wrapper').tooltipster({
+        contentAsHTML: 'true',
+        animation: 'grow',
+        content: 'Show <b>Story Events</b> table.',
+        position: 'left',
+        delay: [300, 300],
+        trigger: 'custom',
+        triggerOpen: {
+          mouseenter: true,
+          // click: true
+        },
+        triggerClose: {
+          click: true,
+          mouseleave: true
+        }
+      });
+  }
+
+  if (!$("#menu").length) {
+    $('#container').append($('<div>', {
+      style: 'opacity:.9;',
+      id: 'menu',
+    }))
+
+    $('#menu-toggle-wrapper').append($('<div>', {
+      id: 'menu-toggle',
+    }))
+
+    $('#menu').append($('<img>', {
+      id: 'menu_img',
+      src: cdnUrl('images/back.jpg'),
+    }))
+
+    $('#menu').append($('<div>', {
+      id: 'menu-back',
+    }))
+
+    $('#menu').hide()
+  }
 }
 
 function createSevereTables () {

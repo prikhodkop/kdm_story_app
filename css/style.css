@@ -101,7 +101,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 #label_text.index {
-  top: 50%;
+  top: 45%;
   left: 50%;
   width: 600px;
   height: 50px;
@@ -775,4 +775,82 @@ tr.spaceUnder>td {
   font-family: 'Silverado';
   /* transform: translate(-50%, -50%); */
   cursor: default;
+}
+
+.campaign_element {
+  position: relative;
+  display: block;
+  width: 20%;
+  top: 0%;
+  margin: 0 auto;
+  z-index: 10;
+  animation: glowing-image_5 3000ms infinite;
+  overflow: visible;
+  transition:color 0.5s, text-shadow 0.5s, animation 0.5s;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.campaign_label {
+  position: static;
+  display: block;
+  font-family: 'Silverado';
+  cursor: pointer;
+  color: #999;
+  overflow: visible;
+  visibility: show;
+  z-index: 10;
+  font-size: 1.5em;
+  font-weight:500;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 1em;
+}
+
+.campaign_image {
+  position: static;
+  margin: 0 auto;
+  display: block;
+  width: 50%;
+  left: 20%;
+  cursor: pointer;
+}
+
+.campaign_element:hover {
+  /* color: yellow; */
+  text-shadow: 0 0 10px yellow;
+  font-color: yellow;
+  animation: glowing-image_4 3000ms infinite;
+}
+
+@keyframes glowing-image_4 {
+	0% { filter: drop-shadow(0 0 20px #cc0); }
+  30% { filter: drop-shadow(0 0 40px #cc0); }
+  40% { filter: drop-shadow(0 0 10px #cc0); }
+  70% { filter: drop-shadow(0 0 50px #cc0); }
+  80% { filter: drop-shadow(0 0 70px #cc0); }
+  /* 70% { filter: drop-shadow(0 0 10px #c4a300); } */
+  100% { filter: drop-shadow(0 0 30px #cc0); }
+}
+
+@keyframes glowing-image_5 {
+	0% {}
+  30% { filter: drop-shadow(0 0 0.7px #cc0); }
+  40% { filter: drop-shadow(0 0 1.5px #cc0); }
+  50% { filter: drop-shadow(0 0 0.7px #cc0); }
+  70% {}
+  80% { filter: drop-shadow(0 0 0.7px #cc0); }
+  90% { filter: drop-shadow(0 0 3px #cc0); }
+  100% { filter: drop-shadow(0 0 1.5px #cc0); }
+}
+
+.gallery {
+  position: relative;
+  display: block;
+  width: 30%;
+  top: 57%;
+  height: auto;
+  margin: 0 auto;
+  z-index: 9;
+  overflow: visible;
 }

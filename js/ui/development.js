@@ -13,7 +13,7 @@ module.exports = {
   setDevelopmentState,
 }
 
-const always_on_locations = ['Throne', 'Lantern Hoard'];
+const always_on_locations = ['Throne', 'Lantern Hoard', 'Sacreed Pool'];
 
 function addDevelopment() {
   $('#container').append($('<div>', {

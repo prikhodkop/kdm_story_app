@@ -4,7 +4,7 @@ const { createAbout } = require('./../ui/about')
 const { createToc } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton } = require('./../ui/menu')
-const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved, setSettings, saveSettings } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition } = require('./../ui/transition')
@@ -15,9 +15,12 @@ module.exports = class IndexScene {
     document.title = 'kingdom death'
 
     onSettingsSaved(() => {
-      window.location.reload()
+      if ($("#menu_table1").length) {
+        window.location.reload()
+      }
     })
 
+    var no_reload = false
     const version = typeof window.globals !== 'undefined' ? window.globals.version : 'dev'
 
     $('#label_text').hide()
@@ -55,20 +58,25 @@ module.exports = class IndexScene {
       music.play()
     })
 
-    $('#label_text').fadeIn(8000)
-    $('.button_video').delay(3000).fadeIn(1000)
-
     createMenuButton()
     createToc()
     createAbout(version)
     addSettings(settings)
+    let gallery = setupCampaignSelect()
+
+    $('#label_text').fadeIn(8000)
+    // gallery.load(function () {
+    //     gallery.delay(3000).fadeIn(1000)
+    // })
+
+    gallery.show();
 
     // console.log(subtitles['intro'][lang])
     if (settings['subtitles'] == 'On') {
       configureSubtitle(readFile(app.getAppPath() + '/video/srt/' + lang + '/intro.srt'))
     }
 
-    if (settings['narration'] == 'Off') {
+    if ((settings['narration'] == 'Off') && (settings['music'] == 'Off')) {
       $('#video').prop('muted', true)
     }
 
@@ -76,28 +84,7 @@ module.exports = class IndexScene {
       music.mute(true)
     }
 
-    // $("#mute.button").click(function () {
-    //   console.log("Here1!");
-    //   if (!$(this).hasClass('active')) {
-    //     // $("#open_audio").get(0).pause();
-    //     music.mute(true)
-    //     $("video").prop('muted', true)
-    //     sessionStorage.setItem("Mute", "On");
-    //     // $("#speech").get(0).pause();
-    //     console.log("Here2!");
-    //   } else {
-    //     // $("#open_audio").get(0).play();
-    //     music.mute(false)
-    //     $("video").prop('muted', false)
-    //     sessionStorage.setItem("Mute", "Off");
-    //     // $("#speech").get(0).play();
-    //   };
-    //
-    //   $(this).toggleClass('active');
-    //   console.log("Here3!");
-    // });
-
-    $('.button_video').click(function () {
+    $('.campaign_element').click(function () {
       if (!$(this).hasClass('active')) {
         // $("#open_audio").get(0).pause();
         music.stop()
@@ -107,7 +94,7 @@ module.exports = class IndexScene {
         $('#video').show()
         $('#video').get(0).play()
         // $(".button").hide()
-        $('.button_video').hide()
+        gallery.hide()
         $('#settings').hide()
         $('#label_text').hide()
 
@@ -123,6 +110,7 @@ module.exports = class IndexScene {
         // $(".button").show();
         $('#settings').show()
         $('#label_text').fadeIn(8000)
+        gallery.delay(1000).fadeIn(6000)
       };
 
       $(this).toggleClass('active')
@@ -140,7 +128,7 @@ module.exports = class IndexScene {
       $('#video').hide()
       // $(".button").show()
       $('#settings').show()
-      $('.button_video').delay(1000).fadeIn(6000)
+      gallery.delay(1000).fadeIn(6000)
       $('#label_text').fadeIn(8000)
 
       clearSubtitles()
@@ -164,7 +152,7 @@ module.exports = class IndexScene {
       $('#video').hide()
       // $(".button").show()
       $('#settings').show()
-      $('.button_video').delay(1000).fadeIn(1000)
+      $('.gallery').delay(1000).fadeIn(1000)
       $('#label_text').fadeIn(4000)
 
       clearSubtitles()
@@ -182,5 +170,97 @@ module.exports = class IndexScene {
     $('body').on('click', '#menu_item', function () {
       setTransition($(this).attr('target'), 'menu')
     })
+
+    function setupCampaignSelect() {
+      let gallery = $('<div>', {
+        class: 'gallery'
+      })
+
+      let campaigns = ['Lantern', 'Stars', 'Sun']
+
+      for (let i = 0;  i < campaigns.length; i++) {
+        gallery.append(createCampaign(campaigns[i]))
+      }
+
+      $('#container').append(gallery);
+
+      let settings = getSettings();
+
+      gallery.slick({
+        dots: false,
+        initialSlide: campaigns.indexOf(settings['campaign']),
+        lazyload: 'progressive',
+        autoplay: false,
+      });
+
+      $('.gallery').on('afterChange', function(event, slick, currentSlide){
+        let settings = getSettings();
+        console.log($('.slick-current > div > .campaign_element').attr('value'))
+        settings['campaign'] = $('.slick-current > div > .campaign_element').attr('value')
+        setSettings(settings);
+        $('#menu_table1').empty();
+        $('#menu_table1').remove();
+        $('#menu_table2').empty();
+        $('#menu_table2').remove();
+        saveSettings();
+        sessionStorage.setItem('settings', JSON.stringify(settings))
+        createToc();
+        // $('#menu_table1').reload();
+        // $('#menu_table1').hide();
+        // $('#menu_table2').reload();
+        // $('#menu_table2').hide();
+        no_reload = true
+      });
+
+      gallery.hide();
+
+      return gallery;
+    }
+
+    function createCampaign(campaign) {
+      let campaign_element = $('<div>',{
+        class: "campaign_element",
+        value: campaign
+      });
+
+      let campaign_image = $('<img>',{
+        class: "campaign_image",
+        src: cdnUrl('images/icons/campaigns/'+campaign+'_campaign_icon.png')
+      });
+
+      let campaign_label = $('<div>',{
+        class: "campaign_label"
+      });
+
+      campaign_label.append('<b style="color:#bb0;font-size:0.7em;">Campaign</b><br/>People of the '+campaign);
+
+      // campaign_image.load(function() {
+      campaign_element.append(campaign_image);
+      campaign_element.append(campaign_label);
+      // })
+
+      campaign_element.tooltipster({
+          contentAsHTML: 'true',
+          animation: 'grow',
+          content: '<b style="color:#cc0;">Click</b> to start the <b>First Story</b>.',
+          position: 'top',
+          delay: [300, 100],
+          trigger: 'custom',
+          triggerOpen: {
+            mouseenter: true,
+            // click: true
+          },
+          triggerClose: {
+            click: true,
+            mouseleave: true
+          }
+        });
+
+
+      // campaign_element.hide();
+      // campaign_element.delay(1000).fadeIn(6000)
+
+      return campaign_element
+    }
   }
 }

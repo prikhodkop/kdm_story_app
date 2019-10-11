@@ -10,6 +10,8 @@ module.exports = {
   getSettings,
   addSettings,
   onSettingsSaved,
+  setSettings,
+  saveSettings
 }
 
 function getSettings () {
@@ -333,6 +335,7 @@ var settings_schema = {
     'enum': [
       'Lantern',
       'Stars',
+      'Sun',
     ],
   },
   'card design': {

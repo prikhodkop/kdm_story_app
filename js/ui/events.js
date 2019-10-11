@@ -461,8 +461,8 @@ const events = {
 
     'music': 'music/lottery.mp3',
     // 'music_delay': 'speech-1000',
-    'ltop': '60%',
-    'lleft': '45%',
+    'ltop': '80%',
+    'lleft': '40%',
     // 'campaign': 'Stars',
   },
   'showdown manhunter': {
@@ -511,7 +511,7 @@ const events = {
     'music': 'music/forgotten fear.mp3',
     'music_delay': '500',
     'ltop': '7%',
-    'lleft': '85%',
+    // 'lleft': '85%',
     // // 'campaign': 'Stars',
   },
   'light-forging': {
