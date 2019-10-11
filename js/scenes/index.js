@@ -176,7 +176,7 @@ module.exports = class IndexScene {
         class: 'gallery'
       })
 
-      let campaigns = ['Stars', 'Sun'] // 'Lantern', 
+      let campaigns = ['Stars', 'Lantern'] // 'Sun', 
 
       for (let i = 0;  i < campaigns.length; i++) {
         gallery.append(createCampaign(campaigns[i]))
