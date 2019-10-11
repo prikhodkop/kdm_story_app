@@ -176,7 +176,13 @@ module.exports = class IndexScene {
         class: 'gallery'
       })
 
-      let campaigns = ['Stars', 'Lantern'] // 'Sun', 
+      let settings = getSettings();
+
+      let campaigns = ['Lantern'] // 'Sun',
+
+      if (!settings['expansions']['dragon_king'] == 'All content') {
+        campaigns.append('Stars')
+      }
 
       for (let i = 0;  i < campaigns.length; i++) {
         gallery.append(createCampaign(campaigns[i]))
@@ -184,7 +190,7 @@ module.exports = class IndexScene {
 
       $('#container').append(gallery);
 
-      let settings = getSettings();
+
 
       gallery.slick({
         dots: false,
