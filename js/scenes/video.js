@@ -61,7 +61,7 @@ module.exports = class VideoScene {
 
     var anew = true
 
-    if (settings['narration'] == 'Off') {
+    if ((settings['narration'] == 'Off') && (settings['music'] == 'Off')) {
       $('#video').prop('muted', true)
     }
     if (settings['music'] == 'Off') {
