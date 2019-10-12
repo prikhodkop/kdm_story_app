@@ -448,10 +448,7 @@ var settings_schema = {
         'type': 'option',
         'title': 'Lion God',
         'default': 'Disabled',
-        'enum': [
-          'Disabled',
-          'Cards only',
-        ],
+        'enum': expansion_options,
       },
       'lion knight': {
         'type': 'option',

@@ -91,6 +91,9 @@ module.exports = class HuntScene {
       'dragon king': ['xmrmmrxmrrmrr', [6, 9, 12],
         './images/hunt/dragon_king.png', 8, 42,
       ],
+      'lion god': ['xrmrmrxrmrmr', [8, 10, 12],
+        './images/hunt/lion_god.png', 9, 39,
+      ],
     }
 
     createHuntTable()
@@ -729,8 +732,7 @@ module.exports = class HuntScene {
       };
 
       if (type === 'starvation') {
-        title =
-                '<b>Starvation</b> <br /> Survivors must spend <b>1d5</b> basic resources'
+        title ='<b>Starvation</b> <br /> Survivors must spend 1d5 basic resources'
       };
 
       $('<img class="token ' + position + '" position="' + position + '" id="' + type +
@@ -771,9 +773,7 @@ module.exports = class HuntScene {
                 $('#quary_popup_back').fadeIn(500)
                 var temp_text = document.getElementById(
                   'label_text').innerHTML
-                document.getElementById('label_text')
-                  .innerHTML =
-                                    'Starvation<br/>Survivors must spend <b>1d5</b> basic resources!'
+                document.getElementById('label_text').innerHTML = 'Starvation<br/><b id="starvation_text">Survivors must spend <b>1d5</b> basic resources!</b>'
                 // $('#label_text').innerHTML = 'Starvation<br/>Survivors must spend <b>1d5</b> basic resources!'
                 $('#hunt_icon').attr('src', cdnUrl('images/hunt/starvation_icon.png'))
                 $('#label_text').css('z-index', '9')

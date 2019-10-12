@@ -48,9 +48,11 @@ input[type=number]::-webkit-inner-spin-button {
     top: 0;
     left: 0;
     right: 0;
-    margin: 0 auto;
-    height: 100%;
-    max-width: 90%;
+    bottom: 0;
+    margin: auto auto;
+    /* margin-top: 0 auto; */
+    max-height: 100%;
+    max-width: 100%;
     display: block;
     z-index: 0;
     border: 1px solid #000;
@@ -117,7 +119,8 @@ input[type=number]::-webkit-inner-spin-button {
     left: 0;
     right: 0;
     margin: 0 auto;
-    height: 98%;
+    max-height: 98%;
+    max-width: 100%;
     display: block;
     --borderWidth: 2em;
     border-bottom-left-radius: var(--borderWidth);
@@ -854,4 +857,9 @@ tr.spaceUnder>td {
   margin: 0 auto;
   z-index: 9;
   overflow: visible;
+}
+
+#starvation_text {
+  color:#cc0;
+  font-size: 0.5em !important;
 }
