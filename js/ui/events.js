@@ -592,13 +592,13 @@ const events = {
 
 const color_menu = {
   '': '#CCCCCC',
-  'gorm': '#3B2621',
-  'manhunter': '#8F3830',
-  'lion knight': '#BA8D3E',
-  'dragon king': '#472F5A',
-  'dung beetle knight': '#727264',
-  'slenderman': '#765E6F',
-  'lion god': '#562522',
+  'gorm': '#3B2621', //+
+  'manhunter': '#8F3830', //+
+  'lion knight': '#BA8D3E', //+
+  'dragon king': '#472F5A', //+
+  'dung beetle knight': '#727264', //+
+  'slenderman': '#765E6F', //+
+  'lion god': '#562522', //+
   'lonely tree': '#AA946A',
   'flower knight': '#446334',
   'spidicules': '#85852D',
