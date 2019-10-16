@@ -338,6 +338,7 @@ const glossary_terms = {
   'Shadow Walk': 'When you spend movement, you may move through spaces survivors occupy without causing <b>collision</b>.',
   'Soluble': 'A gear keyword. Able to be dissolved in liquid.',
   // 'Sour Death':'An ability. When you are knocked down. you may encourage yourself. If you do. gain + 1 strength token.',
+  'Solar Track': 'The Solar Track is used during the showdown with the Sunstalker. It interacts with the monster\'s trait cards, tracks the current solar energy, and determines the direction shadows are cast.<br/><br/>Set up the Solar Track alongside the showdown board. The showdown will begin with the light at the survivors backs.',
   'Spear': 'Gear with this keyword is a spear weapon. Survivors may gain levels of spear weapon proficiency with this weapon.',
   'Special Showdown': 'Special Showdowns interrupt the Settlement Phase. After they conclude (regardless of victory or defeat), the Settlement Phase continues where it left off. Do not generate endeavors or trigger new story events. Each Special Showdown\'s details are listed on the story event or innovation that triggered it. After showdown heal all light and heavy injuries from the remaining survivors and remove all tokens.',
   'Speed (Attack Profile/Weapon)': 'The number of attack rolls (number of dice rolled). Usually determined by a monster Al card\'s attack profile or speed on a survivor\'s weapon.',
