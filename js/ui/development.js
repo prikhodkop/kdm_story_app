@@ -13,7 +13,7 @@ module.exports = {
   setDevelopmentState,
 }
 
-const always_on_locations = ['Throne', 'Lantern Hoard', 'Sacreed Pool'];
+const always_on_locations = ['Throne', 'Lantern Hoard', 'Sacreed Pool', 'The Sun'];
 
 function addDevelopment() {
   $('#container').append($('<div>', {
@@ -230,6 +230,9 @@ function createLocation(location, default_open=false) {
             src: cdnUrl("images/reference/Gear/"+gear_name+".jpg"),
             value: gear_name
           })
+          if ((location == 'Skyreef Sanctuary') && !(j == 2)) {
+            element.css('height', '15.4%')
+          }
           columns[j].append(element);
           if (gear_name in gear_list) {
             let tooltip = ''

@@ -384,6 +384,7 @@ tr.spaceUnder>td {
     /* When the animation is finished, start again */
     animation-iteration-count: infinite;
     animation-delay: 0.3s;
+    filter: drop-shadow(0 0 5px #660);
 }
 
 #darkness.token {
@@ -414,6 +415,29 @@ tr.spaceUnder>td {
     /* When the animation is finished, start again */
     animation-iteration-count: infinite;
     animation-delay: 0.3s;
+    filter: drop-shadow(0 0 5px #660);
+}
+
+#sky_fishing.token:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    /* animation: shake 1s; */
+    animation: shake 1s;
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+    animation-delay: 0.3s;
+    filter: drop-shadow(0 0 5px #660);
+}
+
+#sky_fishing.token {
+  filter: drop-shadow(0 0 5px #666);
+}
+
+#mineral_gathering.token {
+  filter: drop-shadow(0 0 5px #666);
+}
+
+#herb_gathering.token {
+  filter: drop-shadow(0 0 5px #666);
 }
 
 @keyframes shake {

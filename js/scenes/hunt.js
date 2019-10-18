@@ -88,6 +88,9 @@ module.exports = class HuntScene {
       'dung beetle knight': ['xrmmrrxmrrmr', [6, 9, 12],
         './images/hunt/dung_beetle_knight.png', 8, 40,
       ],
+      'sunstalker': ['xrmmrrxmrrmr', [5, 9, 12],
+        './images/hunt/sunstalker.png', 8, 42,
+      ],
       'dragon king': ['xmrmmrxmrrmr', [6, 9, 12],
         './images/hunt/dragon_king.png', 8, 42,
       ],
@@ -437,6 +440,8 @@ module.exports = class HuntScene {
       let name = name0.substr(0)
       let ref = ref0.substr(0)
 
+      let settings = getSettings();
+
       if (state == null) {
         var survivors_pos = 1
         var monster_pos = null
@@ -492,7 +497,7 @@ module.exports = class HuntScene {
           $(this).tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
-            content: '<i>Sickle required!</i>',
+            content: '<i style="color:#aa0;">Sickle required!</i>',
             position: 'bottom',
             delay: '600',
             multiple: 'true',
@@ -514,12 +519,36 @@ module.exports = class HuntScene {
           $(this).tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
-            content: '<i>Pickaxe required!</i>',
+            content: '<i style="color:#aa0;">Pickaxe required!</i>',
             position: 'bottom',
             delay: '600',
             multiple: 'true',
           })
         })
+
+        if (settings['expansions']['sunstalker'] == 'All content') {
+          $('<img class="token" id="sky_fishing" title="" src="' + cdnUrl('images/hunt/sky_fishing.png') + '" width="9%" style="left: 45.5%; top:73.5%;">')
+            .load(function () {
+              $(this).appendTo('#container')
+              $(this).hide()
+              $(this).delay(1000).fadeIn(2000)
+              $(this).tooltipster({
+                contentAsHTML: 'true',
+                animation: 'grow',
+                content: '<b>Sky Fishing</b>',
+                position: 'top',
+                delay: '600',
+              })
+              $(this).tooltipster({
+                contentAsHTML: 'true',
+                animation: 'grow',
+                content: '<i style="color:#aa0;">Sun Lure and Hook required!</i>',
+                position: 'bottom',
+                delay: '600',
+                multiple: 'true',
+              })
+            })
+        }
 
       var token_size = 7.298
       var token_heigh = 40.5
@@ -579,6 +608,11 @@ module.exports = class HuntScene {
 
       $('body').on('click', '#mineral_gathering', function () {
         setTransition('mineral gathering', 'menu', document.title,
+          current_state())
+      })
+
+      $('body').on('click', '#sky_fishing', function () {
+        setTransition('sky fishing', 'menu', document.title,
           current_state())
       })
 

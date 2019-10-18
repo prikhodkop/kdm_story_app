@@ -449,6 +449,7 @@ button.tablinks.active {
     display:block;
     overflow-y: scroll;
     overflow-x: hidden;
+    /* overflow: auto; */
     scrollbar-width: none;
 }
 .column_2::-webkit-scrollbar {
@@ -505,7 +506,7 @@ button.tablinks.active {
 
 .gear_column:hover > *:hover {
   /* transform: scale(1.1); */
-  height: 24%;
+  height: 24% !important;
   filter: drop-shadow(0 0 5px #cc0);
   opacity: 1.0;
 }

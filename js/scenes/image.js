@@ -44,6 +44,11 @@ module.exports = class ImageScene {
       $('#img').attr('src', cdnUrl('images/' + myself + ' stars/img.jpg'))
     }
 
+    if ((myself == 'intimacy') && (settings['campaign'] == 'Sun')) {
+      $('#img_back').attr('src', cdnUrl('images/' + myself + ' sun/back.jpg'))
+      $('#img').attr('src', cdnUrl('images/' + myself + ' sun/img.jpg'))
+    }
+
     if (!events_table[myself].hide_label) {
       $('#label_text').addClass(myself.replace(' ', '_'))
       $('#label_text').text(events_table[myself].label)

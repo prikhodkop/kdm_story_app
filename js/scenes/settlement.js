@@ -523,6 +523,9 @@ module.exports = class SettlementScene {
       if (settings['campaign'] == 'Lantern') {
         $('#milestones').append($('<div id="milestone">&bull; Settlement has 5 innovations - <a id="milestone-trigger" target="hooded knight">Hooded Knight</a></div>'))
       }
+      if (settings['campaign'] == 'Sun') {
+        $('#milestones').append($('<div id="milestone">&bull; Settlement has 8 innovations - <a id="milestone-trigger" target="edged tonometry">Edged Tonometry</a></div>'))
+      }
 
       $('body').on('click', '#milestone-trigger', function () {
         setTransition($(this).attr('target'), 'menu', document.title, current_state())

@@ -484,10 +484,7 @@ var settings_schema = {
         'type': 'option',
         'title': 'Sunstalker',
         'default': 'Disabled',
-        'enum': [
-          'Disabled',
-          'Cards only',
-        ],
+        'enum': expansion_options,
       },
 
     },

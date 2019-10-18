@@ -34,26 +34,26 @@ const events = {
   'armored strangers': {
     'music': 'music/armored strangers.mp3',
     'music_delay': '4000',
-    'campaign': 'Lantern',
+    'campaign': ['Lantern'],
   },
   'birth of a savior': {
     'music': 'music/birth of a savior.mp3',
     'music_delay': 'speech-1000',
     'ltop': '15%',
     'lleft': '50%',
-    'campaign': 'Lantern',
+    'campaign': ['Lantern'],
   },
   'blackout': {
     'music': 'music/overwhelming darkness.mp3',
     'music_delay': '3000',
     'ltop': '37%',
     'lleft': '50%',
-    'campaign': 'Lantern',
+    'campaign': ['Lantern'],
   },
   'bold': {
     'ltop': '50%',
     'lleft': '75%',
-    'campaign': 'Lantern',
+    'campaign': ['Lantern', 'Sun'],
   },
   'bone witch': {
     'music': 'music/see the truth.mp3',
@@ -81,13 +81,13 @@ const events = {
   },
   'hammer and nail': {
     'music': 'music/hammer and nail.mp3',
-    'campaign': 'Lantern',
+    'campaign': ['Lantern'],
   },
   'hands of heat': {
     'music': 'music/hands of heat.mp3',
     'ltop': '75%',
     'lleft': '37%',
-    'campaign': 'Lantern',
+    'campaign': ['Lantern'],
   },
   'herb gathering': {
     'music': 'music/herb gathering.mp3',
@@ -96,10 +96,10 @@ const events = {
   'hooded knight': {
     'music': 'music/hooded knight.mp3',
     'music_delay': 'speech-1000',
-    'campaign': 'Lantern',
+    'campaign': ['Lantern'],
   },
   'insight': {
-    'campaign': 'Lantern',
+    'campaign': ['Lantern', 'Sun'],
   },
   'intimacy': {
     'music': 'music/intimacy.mp3',
@@ -120,7 +120,7 @@ const events = {
     'lleft': '53%',
   },
   'lantern research': {
-    'campaign': 'Lantern',
+    'campaign': ['Lantern'],
   },
   'legendary lungs': {
     'music': 'music/legendary lungs.mp3',
@@ -141,7 +141,7 @@ const events = {
   'oxidation': {
     'ltop': '75%',
     'lleft': '35%',
-    'campaign': 'Lantern',
+    'campaign': ['Lantern'],
   },
   'phoenix feather': {
     'music': 'music/legendary monsters.mp3',
@@ -178,12 +178,12 @@ const events = {
     'music_delay': 'speech-1000',
     'ltop': '65%',
     'lleft': '50%',
-    'campaign': 'Lantern',
+    'campaign': ['Lantern'],
   },
   'returning survivors': {},
   'run away': {
     'music': 'music/run away.mp3',
-    'campaign': 'Lantern',
+    // 'campaign': 'Lantern',
   },
   'see the truth': {
     'music': 'music/see the truth.mp3',
@@ -195,7 +195,7 @@ const events = {
     'music': 'music/showdown gold smoke knight.mp3',
     'ltop': '87%',
     'lleft': '80%',
-    'campaign': 'Lantern',
+    'campaign': ['Lantern'],
   },
   'showdown kings man': {
     'music': 'music/showdown kings man.mp3',
@@ -217,7 +217,7 @@ const events = {
     'music': 'music/showdown watcher.mp3',
     'ltop': '15%',
     'lleft': '50%',
-    'campaign': 'Lantern',
+    'campaign': ['Lantern'],
   },
   'showdown white lion': {
     'music': 'music/showdown query.mp3',
@@ -228,7 +228,7 @@ const events = {
     'music': 'music/watched.mp3',
     'ltop': '15%',
     'lleft': '50%',
-    'campaign': 'Lantern',
+    'campaign': ['Lantern'],
   },
   'white secret': {
     'music': 'music/white secret.mp3',
@@ -354,7 +354,7 @@ const events = {
     // 'music_delay': 'speech-1000',
     'ltop': '50%',
     'lleft': '75%',
-    'campaign': 'Stars',
+    'campaign': ['Stars'],
   },
   'death of the dragon king': {
     'expansion': 'dragon king',
@@ -362,7 +362,7 @@ const events = {
     // 'music_delay': 'speech-1000',
     'ltop': '80%',
     'lleft': '75%',
-    'campaign': 'Stars',
+    'campaign': ['Stars'],
   },
   'faces in the sky': {
     'expansion': 'dragon king',
@@ -370,7 +370,7 @@ const events = {
     // 'music_delay': 'speech-1000',
     'ltop': '15%',
     'lleft': '25%',
-    'campaign': 'Stars',
+    'campaign': ['Stars'],
   },
   'foundlings': {
     'expansion': 'dragon king',
@@ -378,7 +378,7 @@ const events = {
     // 'music_delay': 'speech-1000',
     'ltop': '10%',
     'lleft': '80%',
-    'campaign': 'Stars',
+    'campaign': ['Stars'],
   },
   'glowing crater': {
     'expansion': 'dragon king',
@@ -407,7 +407,7 @@ const events = {
     // 'music_delay': 'speech-1000',
     'ltop': '5%',
     // 'lleft': '45%',
-    'campaign': 'Stars',
+    'campaign': ['Stars'],
   },
   'showdown dragon king': {
     'expansion': 'dragon king',
@@ -422,14 +422,14 @@ const events = {
     // 'music_delay': 'speech-1000',
     // 'ltop': '15%',
     // 'lleft': '40%',
-    'campaign': 'Stars',
+    'campaign': ['Stars'],
   },
   'the tomb': {
     'expansion': 'dragon king',
     'music': 'music/the tomb.mp3',
     // 'music_delay': 'speech-1000',
     'ltop': '85%',
-    'campaign': 'Stars',
+    'campaign': ['Stars'],
   },
   'unveil the sky': {
     'expansion': 'dragon king',
@@ -437,7 +437,7 @@ const events = {
     // 'music_delay': 'speech-1000',
     'ltop': '55%',
     'lleft': '67%',
-    'campaign': 'Stars',
+    'campaign': ['Stars'],
   },
   'bleeding heart': {
     'expansion': 'manhunter',
@@ -588,6 +588,112 @@ const events = {
     // 'lleft': '55%',
     // // 'campaign': 'Stars',
   },
+  'birth of color': {
+    'expansion': 'sunstalker',
+    'music': 'music/birth of color.mp3',
+    'music_delay': 'speech-2000',
+    // 'ltop': '15%',
+    // 'lleft': '75%',
+    'campaign': ['Sun'],
+  },
+  'conquer your shadow': {
+    'expansion': 'sunstalker',
+    'music': 'music/conquer your shadow.mp3',
+    // 'music_delay': '300',
+    // 'ltop': '15%',
+    // 'lleft': '75%',
+    // 'campaign': ['Sun'],
+  },
+  'edged tonometry': {
+    'expansion': 'sunstalker',
+    'music': 'music/edged tonometry.mp3',
+    // 'music_delay': '300',
+    'ltop': '12%',
+    'lleft': '35%',
+    'campaign': ['Sun'],
+  },
+  'final gift': {
+    'expansion': 'sunstalker',
+    'music': 'music/final gift.mp3',
+    'music_delay': 'speech - 5000',
+    // 'ltop': '15%',
+    // 'lleft': '75%',
+    'campaign': ['Sun'],
+  },
+  'showdown sunstalker': {
+    'expansion': 'sunstalker',
+    'music': 'music/showdown sunstalker.mp3',
+    'music_delay': 'speech + 500',
+    // 'ltop': '10%',
+    // 'lleft': '60%',
+    // 'campaign': ['Sun'],
+  },
+  'sky fishing': {
+    'expansion': 'sunstalker',
+    'music': 'music/sky fishing.mp3',
+    // 'music_delay': '300',
+    'ltop': '15%',
+    'lleft': '38%',
+    // 'campaign': ['Sun'],
+  },
+  'sun dipping': {
+    'expansion': 'sunstalker',
+    'music': 'music/sun dipping.mp3',
+    // 'music_delay': '300',
+    'ltop': '12%',
+    'lleft': '40%',
+    'campaign': ['Sun'],
+  },
+  'the great devourer': {
+    'expansion': 'sunstalker',
+    'music': 'music/promise under the sun.mp3',
+    'music_delay': 'speech + 1000',
+    // 'ltop': '85%',
+    // 'lleft': '75%',
+    'campaign': ['Sun'],
+  },
+  'the great sky gift': {
+    'expansion': 'sunstalker',
+    'music': 'music/the great sky gift.mp3',
+    'music_delay': '1000',
+    'ltop': '18%',
+    'lleft': '25%',
+    'campaign': ['Sun'],
+  },
+  'the pool and the sun': {
+    'expansion': 'sunstalker',
+    'music': 'music/the pool and the sun.mp3',
+    // 'music_delay': '300',
+    // 'ltop': '15%',
+    // 'lleft': '75%',
+    'campaign': ['Sun'],
+  },
+  'umbilical symbiosis': {
+    'expansion': 'sunstalker',
+    'music': 'music/umbilical symbiosis.mp3',
+    // 'music_delay': '300',
+    // 'ltop': '15%',
+    // 'lleft': '75%',
+    'campaign': ['Sun'],
+  },
+  'warriors of the sun': {
+    'expansion': 'sunstalker',
+    'music': 'music/warriors of the sun.mp3',
+    // 'music_delay': '300',
+    // 'ltop': '15%',
+    // 'lleft': '75%',
+    'campaign': ['Sun'],
+  },
+  'promise under the sun': {
+    'expansion': 'sunstalker',
+    'music': 'music/promise under the sun.mp3',
+    // 'music_delay': '300',
+    // 'ltop': '15%',
+    // 'lleft': '75%',
+    'type': 'video',
+    // 'campaign': ['Sun'],
+  },
+
 }
 
 const color_menu = {
@@ -718,7 +824,7 @@ function createToc (col_len = 5) {
       table_1_ids.push(events_table_ids[i])
     } else if (events_table[events_table_ids[i]].table == 2) {
       if ((events_table[events_table_ids[i]]['expansion'] == '') || (settings['expansions'][events_table[events_table_ids[i]]['expansion']] == 'All content')) {
-        if ((events_table[events_table_ids[i]]['campaign'] == '') || (settings['campaign'] == events_table[events_table_ids[i]]['campaign'])) {
+        if ((events_table[events_table_ids[i]]['campaign'] == '') || (events_table[events_table_ids[i]]['campaign'].includes(settings['campaign']))) {
           table_2_ids.push(events_table_ids[i])
         }
       }
