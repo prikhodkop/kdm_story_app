@@ -103,12 +103,13 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 #label_text.index {
-  top: 45%;
-  left: 50%;
+  top: 38%;
+  /* left: 50%; */
+  margin: 0 auto;
   width: 600px;
   height: 50px;
   margin-left: -300px;
-  margin-top: -25px;
+  /* margin-top: -25px; */
   font-size: 5em;
   color: #888
 }
@@ -876,7 +877,7 @@ tr.spaceUnder>td {
   position: relative;
   display: block;
   width: 30%;
-  top: 57%;
+  top: 52%;
   height: auto;
   margin: 0 auto;
   z-index: 9;

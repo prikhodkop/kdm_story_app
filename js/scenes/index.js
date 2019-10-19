@@ -273,13 +273,21 @@ module.exports = class IndexScene {
       campaign_element.append(campaign_image);
       campaign_element.append(campaign_label);
       // })
-
+      let content = ''
+      // if (campaign == 'Sun') {
+      //   content = 'Once the sky had no day. There was a Shadow that was sad, it could only play in small light of a lantern. The Shadow found a hole in the sky and decided to steal enough lanterns to fill it. It took many generations, and when it was done the shadow slept under its big light, dreaming dreams about how it would play. When it awoke, all of the light was gone! At the center of the hole in the sky, was a tiny shining entity, with a great big mouth. The shadow named the tiny thing thr sun and they played forever.<br/><br/>'
+      // }
+      // if (campaign == 'Stars') {
+      //   content = 'The Dragon King\'s species is long dead. It remains alone, clinging to the memories of its once mighty race.<br/><br/>Its destructive moods swing wildly from impotent rage to obsessive nostalgia. It stalks the darkness, lashing out at anything it meets.<br/><br/>'
+      // }
+      content = content + '<b style="color:#cc0;">Click</b> to start the <b>First Story</b>.'
       campaign_image.tooltipster({
           contentAsHTML: 'true',
           animation: 'grow',
-          content: '<b style="color:#cc0;">Click</b> to start the <b>First Story</b>.',
+          content: content,
           position: 'top',
           delay: [300, 100],
+          fixedWidth: 250,
           trigger: 'custom',
           triggerOpen: {
             mouseenter: true,
