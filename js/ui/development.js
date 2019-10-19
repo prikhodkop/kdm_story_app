@@ -595,6 +595,14 @@ function updateActions() {
         if (development['activated']['actions'].includes(development['locations'][i])) {
           $('.action_card[value = "'+development['locations'][i]+'"]').addClass('active')
         }
+        if ('num_actions' in settlement_locations[development['locations'][i]]) {
+          for (let j = 1; j < settlement_locations[development['locations'][i]]['num_actions']; j++) {
+            addAction(development['locations'][i]+'_'+j, 'location')
+            if (development['activated']['actions'].includes(development['locations'][i]+'_'+j)) {
+              $('.action_card[value = "'+development['locations'][i]+'_'+j+'"]').addClass('active')
+            }
+          }
+        }
       }
     }
   }
@@ -606,6 +614,14 @@ function updateActions() {
         addAction(development['innovations'][i], 'innovation')
         if (development['activated']['actions'].includes(development['innovations'][i])) {
           $('.action_card[value = "'+development['innovations'][i]+'"]').addClass('active')
+        }
+        if ('num_actions' in innovations[development['innovations'][i]]) {
+          for (let j = 1; j < innovations[development['innovations'][i]]['num_actions']; j++) {
+            addAction(development['innovations'][i]+'_'+j, 'innovation')
+            if (development['activated']['actions'].includes(development['innovations'][i]+'_'+j)) {
+              $('.action_card[value = "'+development['innovations'][i]+'_'+j+'"]').addClass('active')
+            }
+          }
         }
       }
     }
@@ -646,7 +662,7 @@ let img = $('<img>', {
 img.tooltipster({
   contentAsHTML: 'true',
   animation: 'grow',
-  content: name,
+  content: name.split('_')[0],
   position: 'left',
   delay: [500, 300],
   trigger: 'custom',

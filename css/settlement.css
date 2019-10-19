@@ -671,15 +671,16 @@ button.tablinks.active {
 	border-radius: var(--borderWidth);
 	border: 0.1rem solid #555;
   margin: 0 auto;
-  transition: opacity 0.5s, transform 0.5s, border 0.5s, box-shadow 0.5s;
+  transition: opacity 0.5s, transform 0.5s, border 0.5s, box-shadow 0.5s, filter 0.5s;
   /* overflow: visible; */
 }
 
 .innovations_grid > .active {
-	border: 0.3rem solid #dd0;
-  box-shadow: 0 0 10px #cc0;
+	/* border: 0.3rem solid #dd0; */
+  /* box-shadow: 0 0 10px #cc0; */
   /* background-color: #cc0; */
-  opacity: 0.3 !important;
+  /* opacity: 0.3 !important; */
+  filter: brightness(30%);
 }
 
 .innovations_grid.use-hover:hover > *.use-hover  {
@@ -758,7 +759,7 @@ button.tablinks.active {
   z-index: 79;
   opacity: 0.9;
   margin: 0 auto;
-  transition: opacity 0.5s, transform 0.5s, border 0.5s, box-shadow 0.5s, overflow 0.5s;
+  transition: opacity 0.5s, transform 0.5s, border 0.5s, box-shadow 0.5s, overflow 0.5s, filter 0.5s;
   overflow: visible;
   padding: 0.3%;
 }
@@ -786,7 +787,7 @@ button.tablinks.active {
 }
 
 .action_card {
-  transition: opacity 0.5s, transform 0.5s, border 0.3s, box-shadow 0.3s;
+  transition: opacity 0.5s, transform 0.5s, border 0.3s, box-shadow 0.3s, filter 0.3s;
   z-index: 85;
   position: relative;
   width: 100%;
@@ -808,10 +809,11 @@ button.tablinks.active {
 }
 
 .action_card.active {
-	border: 0.2rem solid #dd0;
-  box-shadow: 0 0 10px #cc0;
+	/* border: 0.2rem solid #dd0; */
+  /* box-shadow: 0 0 10px #cc0; */
   /* background-color: #cc0; */
-  opacity: 0.3 !important;
+  /* opacity: 0.3 !important; */
+  filter: brightness(30%);
 }
 
 .item.muuri-item-dragging {

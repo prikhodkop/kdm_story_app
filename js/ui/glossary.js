@@ -861,6 +861,7 @@ const settlement_locations = {
       '2': ['Survivors Lantern'],
       '3': []},
     'action': true,
+    'num_actions': 3,
   },
   'Gormchymist': {
     'expansion': 'gorm',
@@ -891,6 +892,7 @@ const settlement_locations = {
       '2': [],
       '3': []},
     'action': true,
+    'num_actions': 5,
   },
   'Leather Worker': {
     'gear': {
@@ -920,6 +922,7 @@ const settlement_locations = {
       '2': ['Dried Acantus', 'Lucky Charm', 'Monster Tooth Necklace'],
       '3': []},
     'action': true,
+    'num_actions': 2,
   },
   'Plumery': {
     'gear': {
@@ -934,6 +937,7 @@ const settlement_locations = {
       '2': ['Sun Vestments', 'Sunring Bow'],
       '3': ['Apostle Crown', 'Prism Mace']},
     'action': true,
+    'num_actions': 3,
   },
   'Silk Mill': {
     'expansion': 'spidicules',
@@ -970,6 +974,7 @@ const settlement_locations = {
       '2': [],
       '3': []},
     'action': true,
+    'num_actions': 4,
   },
   'Throne': {
     'campaign': 'Stars',
@@ -978,6 +983,7 @@ const settlement_locations = {
       '2': [],
       '3': []},
     'action': true,
+    'num_actions': 3,
   },
   'Weapon Crafter': {
     'gear': {
@@ -985,6 +991,7 @@ const settlement_locations = {
       '2': ['Skullcap Hammer', 'Scrap Sword', 'Scrap Dagger', 'Finger of God'],
       '3': []},
     'action': true,
+    'num_actions': 2,
   },
   'Wet Resin Crafter': {
     'expansion': 'dung beetle knight',
@@ -1438,6 +1445,7 @@ const innovations = {
    'parent': 'Lantern Oven',
    'tags': ['science', 'lantern oven'],
    'action': true,
+   'num_actions': 2,
  },
  'Scupture': {
    'parent': 'Paint',
@@ -1489,6 +1497,7 @@ const innovations = {
    'expansion': 'dung beetle knight',
    'tags': ['science'],
    'action': true,
+   'num_actions': 2,
  },
  'Sun Language': {
    'expansion': 'sunstalker',
@@ -1512,6 +1521,7 @@ const innovations = {
    'tags': ['science'],
    'campaign': ['Sun'],
    'action': true,
+   'num_actions': 2,
  },
  'War Room': {
    'expansion': 'manhunter',
