@@ -7,6 +7,8 @@ const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
+const { eventsSugar } = require('./../ui/events_sugar')
+
 module.exports = class ImageScene {
   render () {
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/image.html')
@@ -131,6 +133,7 @@ module.exports = class ImageScene {
           addTimer(function () {
             createSevereTables()
             createReference()
+            eventsSugar(myself)
           }, 2000)
         };
 
@@ -230,6 +233,7 @@ module.exports = class ImageScene {
             addTimer(function () {
               createSevereTables()
               createReference()
+              eventsSugar(myself)
             }, 1000);
           }
           ;
@@ -255,6 +259,7 @@ module.exports = class ImageScene {
         addTimer(function () {
           createSevereTables()
           createReference()
+          eventsSugar(myself)
         }, 500);
       };
 

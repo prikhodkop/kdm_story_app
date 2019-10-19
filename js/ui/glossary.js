@@ -1555,6 +1555,55 @@ const innovations = {
  }
 }
 
+const terrain = {
+  '2 Acantus Plants': {
+    'num_cards': 4
+  },
+  '2 Salt Sculptures': {
+    'expansion': 'sunstalker'
+  },
+  '2 Tall Grass': {
+    'num_cards': 2
+  },
+  '3 Stone Columns': {
+    'num_cards': 2
+  },
+  'Bug Patch': {},
+  'Dead Monster': {},
+  'Debris': {},
+  'Giant Stone Face': {
+    'num_cards': 2
+  },
+  'Lava Pool': {
+    'expansion': 'dragon king'
+  },
+  'Lion Statue': {
+    'expansion': 'lion god'
+  },
+  'Nightmare Tree': {},
+  'Obsidian Tower': {
+    'expansion': 'dragon king'
+  },
+  'Ore Vein': {
+    'num_cards': 2
+  },
+  'Resin Dung Ball': {
+    'expansion': 'dung beetle knight'
+  },
+  'Sinkhole': {
+    'expansion': 'lion god'
+  },
+  'Survivor Corpse': {
+    'num_cards': 2
+  },
+  'The Lonely Tree': {
+    'expansion': 'lonely tree'
+  },
+  'Toppled Pillar': {
+    'num_cards': 2
+  },
+}
+
 const principles = {
   'Principle Accept Darkness': {},
   'Principle Barbaric': {},
@@ -1636,6 +1685,7 @@ function get_all_options () {
   options = options.concat(get_options(armor_sets, 'armor sets'))
   options = options.concat(get_options(survivor_statuses, 'survivor statuses'))
   options = options.concat(get_options(innovations, 'innovations'))
+  options = options.concat(get_options(terrain, 'terrain'))
   options = options.concat(get_options(principles, 'principles'))
   // $.get( "files.php", function( data ) {
   //   console.log('Here...')
@@ -1787,6 +1837,9 @@ function get_representation (word) {
   }  else if (word in principles) {
     // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
     return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="' + cdnUrl('images/reference/Innovations/' + word + '.jpg') + '"/>'
+  } else if (word in terrain) {
+    // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
+    return '<img id=reference-image style="width:75%;border: 1px solid #333;" src="' + cdnUrl('images/reference/Terrain/' + word + '.jpg') + '"/>'
   }
 }
 

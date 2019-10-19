@@ -191,7 +191,7 @@ function addLocationTable (location, top) {
 
   $('#severe.' + location).hide()
   $('#severe-table.' + location).hide()
-  $('#severe.' + location).delay(1000).fadeIn(2000)
+  $('#severe.' + location).fadeIn(1000)
 
   $('#severe.' + location).hover(function () {
     if (!$(this).hasClass('active')) {
@@ -254,7 +254,7 @@ function createReference () {
   }))
 
   $('#reference').hide()
-  $('#reference').delay(1000).fadeIn(2000)
+  $('#reference').fadeIn(1000)
 
   $('#container').append($('<div>', {
     id: 'reference-window-back0',
@@ -339,6 +339,10 @@ function createReference () {
     {
       value: 'principles',
       label: 'Principles',
+    },
+    {
+      value: 'terrain',
+      label: 'Terrain',
     },
     ],
     optgroupField: 'class',
