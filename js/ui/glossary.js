@@ -974,7 +974,7 @@ const settlement_locations = {
       '2': [],
       '3': []},
     'action': true,
-    'num_actions': 4,
+    'num_actions': 3,
   },
   'Throne': {
     'campaign': 'Stars',
