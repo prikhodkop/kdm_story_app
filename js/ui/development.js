@@ -1,7 +1,7 @@
 const { get_random_draws, settlement_locations, gear_list, innovations } = require('./../ui/glossary')
 const { cdnUrl } = require('./../ui/template-renderer')
 const { titleCase } = require('./../ui/events')
-
+const { getSettings } = require('./../ui/settings')
 const { addTimer } = require('./../ui/timer')
 
 const DEBUG_MODE = true
@@ -11,6 +11,12 @@ module.exports = {
   openLocation,
   getDevelopmentState,
   setDevelopmentState,
+  addElement,
+  addInnovation,
+  addLocation,
+  removeElement,
+  removeInnovation,
+  removeLocation
 }
 
 const always_on_locations = ['Throne', 'Lantern Hoard', 'Sacreed Pool', 'The Sun'];
@@ -170,7 +176,7 @@ function createLocation(location, default_open=false) {
   $('#development_tabs').append(button);
 
   if (['Throne', 'Sacreed Pool', 'Lantern Hoard', 'Exhausted Lantern Hoard'].includes(location)) {
-    let settings = JSON.parse(sessionStorage.getItem('settings'));
+    let settings = getSettings();
 
     if ((settings['whiteboxes']['before the wall'] == 'Enabled') && !(settlement_locations[location]['gear']['1'].includes('Tabard'))) {
       settlement_locations[location]['gear']['1'].push('Tabard')
@@ -293,6 +299,8 @@ function openLocation(evt, locationName) {
 // #### Innovations specific functions
 
 function setupInnovations() {
+  let settings = getSettings();
+
   $('#settlement_locations_window').append($('<div>', {
     id: 'innovations_tab',
     class: 'tab',
@@ -317,6 +325,8 @@ function setupInnovations() {
   $('.innovations_grid_wrapper').append($('<div>', {
     class: 'innovations_grid use-hover',
   }));
+
+  // $('.innovations_grid').css('columns', '1fr '.repeat(settings['innovation_row_length'])+'!important')
 
   // $('.innovations_grid').sortable({
   //   // items:'.tablinks',
@@ -361,7 +371,6 @@ function setupInnovations() {
 
  let selected_innovations = getDevelopmentState()['innovations']
  let activated = getDevelopmentState()['activated']['innovations']
- let settings = JSON.parse(sessionStorage.getItem('settings'));
 
  console.log('Activated: '+activated)
 
@@ -498,7 +507,7 @@ function createInnovation(innovation) {
       content: $(this),
       position: 'right',
       delay: [1500, 100],
-      maxWidth: 200,
+      maxWidth: 400,
       trigger: 'custom',
       triggerOpen: {
         mouseenter: true,
@@ -579,11 +588,19 @@ function setupActions() {
       setDevelopmentState(state)
     }
   });
+
+  $('.action_card').hover(function () {
+    let card = $(this)
+    $(this).addClass('hoverd')
+    $(this).parent().scrollTo($(this), duration = 500);
+    }, function(){
+      $(this).removeClass('hoverd')
+  });
 }
 
 function updateActions() {
   let development = getDevelopmentState();
-  let settings = JSON.parse(sessionStorage.getItem('settings'));
+  let settings = getSettings();
 
   $('.actions_grid').empty();
 
@@ -756,7 +773,7 @@ function setDevelopmentState(development_state) {
 
 function allignItems(type) {
   let development_state = getDevelopmentState();
-  let settings = JSON.parse(sessionStorage.getItem('settings'));
+  let settings = getSettings
 
   if (DEBUG_MODE) {console.log('Dev state'+development_state)}
 
@@ -890,4 +907,35 @@ function toShow(name) {
     return true
   }
 
+}
+
+function addElement(name, type) {
+  let development_state = getDevelopmentState();
+
+  if (!development_state[type].includes(name)) {
+    development_state[type].unshift(name);
+  }
+  setDevelopmentState(name)
+}
+
+function addInnovation(name) {
+  addElement(name, 'innovations')
+}
+function addLocation(name) {
+  addElement(name, 'locations')
+}
+
+function removeElement(name, type) {
+  let development_state = getDevelopmentState();
+
+  if (development_state[type].includes(name)) {
+    development_state[type].splice(development_state[type].indexOf(name), 1);
+  }
+  setDevelopmentState(name)
+}
+function removeInnovation(name) {
+  removeElement(name, 'innovations')
+}
+function removeLocation(name) {
+  removeElement(name, 'locations')
 }

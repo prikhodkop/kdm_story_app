@@ -376,6 +376,17 @@ var settings_schema = {
       'Sun',
     ],
   },
+  // 'innovation_row_length': {
+  //   'type': 'option',
+  //   'title': 'Innovations columns',
+  //   'description': 'How many columns in innovations grid to show.',
+  //   'default': '4',
+  //   'enum': [
+  //     '4',
+  //     '5',
+  //     '6',
+  //   ],
+  // },
   'card design': {
     'type': 'group',
     'title': 'Cards design',

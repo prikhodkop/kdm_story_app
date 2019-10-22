@@ -55,6 +55,21 @@ function eventsSugar(name) {
   }
 }
 
+function terrainToDraw(monster) {
+  let terrain = {
+    'showdown gorm': ['2 Tall Grass', 'random'],
+    'showdown white lion': [],
+    'showdown screaming antelope': [],
+    'showdown phoenix': [],
+    'showdown dung beetle knight': [],
+    'showdown sunstalker': [],
+    'showdown dragon king': [],
+    'showdown lion god': [],
+    'showdown flower knight': [],
+    'showdown spidicules': [],
+  }
+}
+
 // function generateCardGrid(names, type) {
 //
 // }

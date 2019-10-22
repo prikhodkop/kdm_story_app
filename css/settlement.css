@@ -97,7 +97,7 @@
 }
 
 #setup_button {
-  top: 0%;
+  top: -0.5%;
 }
 
 #survivors_return_button {
@@ -650,7 +650,7 @@ button.tablinks.active {
 
 .innovations_grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
   pointer-events: none;
   /* overflow-x: visible; */
@@ -684,12 +684,13 @@ button.tablinks.active {
 }
 
 .innovations_grid.use-hover:hover > *.use-hover  {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .innovations_grid.use-hover:hover > *.use-hover:hover {
   opacity: 1.0;
-  transform: scale(1.1);
+  /* transform: scale(1.01); */
+  /* transition-delay:0.3s; */
   /* width: 110%; */
   /* height: 110%; */
   z-index: 80;
@@ -697,7 +698,7 @@ button.tablinks.active {
 }
 
 .tooltip_image_innovation {
-  width:180pt;
+  width:260pt;
   display:block;
   position:inline;
   overflow:visible;
@@ -722,14 +723,14 @@ button.tablinks.active {
   position: relative;
   /* overflow-x: visible; */
   /* overflow-y: scroll; */
-  /* overflow: visible; */
+  overflow: scroll;
   pointer-events: none;
   }
 .actions_grid_wrapper {
   width: 98%;
   left: 0%;
   top: 5%;
-  height: 97%;
+  height: 92%;
   border-left: none;
   /* height: 300px; */
   position: absolute;
@@ -737,9 +738,9 @@ button.tablinks.active {
   display:block;
   /* overflow-y: visible;
   overflow-x: visible; */
-  /* overflow: visible; */
-  overflow-x: visible;
-  overflow-y: scroll;
+  overflow: scroll;
+  /* overflow-x: visible;
+  overflow-y: scroll; */
   scrollbar-width: none;
   padding: 1.1%;
 }
@@ -759,26 +760,26 @@ button.tablinks.active {
   z-index: 79;
   opacity: 0.9;
   margin: 0 auto;
-  transition: opacity 0.5s, transform 0.5s, border 0.5s, box-shadow 0.5s, overflow 0.5s, filter 0.5s;
+  transition: opacity 0.5s, transform 0.5s, border 0.5s, box-shadow 0.5s, overflow 0.5s, filter 0.5s, width 0.3s;;
   overflow: visible;
   padding: 0.3%;
 }
 
 .actions_grid > *.location {
-  width: 27%;
+  width: 38%;
 }
 
 .actions_grid > *.innovation {
-  width: 19%;
+  width: 22%;
 }
 
 .actions_grid:hover > *  {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .actions_grid:hover > *:hover {
   opacity: 1.0;
-  /* transform: scale(1.2); */
+  /* transform: scale(1.05); */
   /* width: 110%; */
   /* height: 110%; */
   z-index: 80;
@@ -787,7 +788,7 @@ button.tablinks.active {
 }
 
 .action_card {
-  transition: opacity 0.5s, transform 0.5s, border 0.3s, box-shadow 0.3s, filter 0.3s;
+  transition: opacity 0.5s, transform 0.5s, border 0.3s, box-shadow 0.3s, filter 0.3s, width 0.3s;
   z-index: 85;
   position: relative;
   width: 100%;
@@ -795,18 +796,22 @@ button.tablinks.active {
   --borderWidth: 1em;
 	border-radius: var(--borderWidth);
 	border: 0.1rem solid #555;
-  transform-origin: top left;
+  /* transform-origin: top left; */
+  overflow: visible;
 }
 
 .action_card:hover {
-  /* opacity: 1.0; */
-  transform: scale(1.2);
-  transition-delay:0.3s;
-  /* width: 110%; */
-  /* height: 110%; */
-  /* width: 120%; */
-  /* z-index: 99 */
+  /* transform: scale(1.01); */
+  /* transition-delay:0.3s; */
 }
+
+/* .actions_grid:hover > *.location:hover {
+  width: 54%;
+} */
+
+/* .actions_grid:hover > *.innovation:hover {
+  width: 39%;
+} */
 
 .action_card.active {
 	/* border: 0.2rem solid #dd0; */
