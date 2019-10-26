@@ -650,7 +650,7 @@ button.tablinks.active {
 
 .innovations_grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 1rem;
   pointer-events: none;
   /* overflow-x: visible; */
@@ -689,7 +689,7 @@ button.tablinks.active {
 
 .innovations_grid.use-hover:hover > *.use-hover:hover {
   opacity: 1.0;
-  /* transform: scale(1.01); */
+  transform: scale(1.1);
   /* transition-delay:0.3s; */
   /* width: 110%; */
   /* height: 110%; */
@@ -721,11 +721,19 @@ button.tablinks.active {
   grid-gap: 1rem;
   pointer-events: none; */
   position: relative;
-  /* overflow-x: visible; */
+  overflow-x: visible;
   /* overflow-y: scroll; */
-  overflow: scroll;
+  /* overflow: scroll; */
   pointer-events: none;
+  scrollbar-width: none;
+  height: 100%;
+  width: 100%;
   }
+
+  .actions_grid::-webkit-scrollbar {
+      display: none;
+  }
+
 .actions_grid_wrapper {
   width: 98%;
   left: 0%;
@@ -801,7 +809,7 @@ button.tablinks.active {
 }
 
 .action_card:hover {
-  /* transform: scale(1.01); */
+  transform: scale(1.01);
   /* transition-delay:0.3s; */
 }
 

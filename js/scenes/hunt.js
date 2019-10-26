@@ -656,7 +656,7 @@ module.exports = class HuntScene {
       // tbl1.style.width  = '80%';
       // tbl1.style.top  = '3%';
       tbl.setAttribute('id', 'quaries_table')
-      tbl.style.cssText += 'width:80%; top:30%; position: absolute; left:15%;overflow-y:scroll; overflow-x:hidden;'
+      tbl.style.cssText += 'width:80%; top:20%; position: absolute; left:15%;overflow-y:scroll; overflow-x:hidden;'
 
       let tbdy = document.createElement('tbody')
 
