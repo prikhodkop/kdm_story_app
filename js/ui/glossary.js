@@ -1800,23 +1800,24 @@ function get_representation (word) {
     if (settings['card design']['fighting arts'] == 'Poots') {
       let result = '<img id=reference-image style="width:60%;float:left;padding-bottom:10px;filter: drop-shadow(0 0 5px #333);" src="' + cdnUrl('images/reference/Fighting Arts/' + word + '.jpg') + '"/>'
       if (word == 'Necromancer') {
-        result = result + '<img id=reference-image style="width:50%;border: 1px solid #333;" src="' + cdnUrl('images/reference/Fighting Arts/' + word + '_back.jpg') + '"/>'
+        result = '<img id=reference-image style="width:49%;float:left;padding-right:5px;padding-bottom:10px;" src="' + cdnUrl('images/reference/Fighting Arts/' + word + '.jpg') + '"/>'
+        result = result + '<img id=reference-image style="width:49%;float:left;padding-bottom:10px;" src="' + cdnUrl('images/reference/Fighting Arts/' + word + '_back.jpg') + '"/>'
       }
       return result
     } else if (settings['card design']['fighting arts'] == 'Fen Small') {
-      return '<img id=reference-image style="width:50%" src="' + cdnUrl('images/reference/Fighting Arts_fen/' + word + '.png') + '"/>'
+      return '<img id=reference-image style="width:60%;float:left;padding-bottom:10px;" src="' + cdnUrl('images/reference/Fighting Arts_fen/' + word + '.png') + '"/>'
     }
   } else if (word in disorders_text) {
     if (settings['card design']['disorders'] == 'Poots') {
       return '<img id=reference-image style="width:60%;float:left;padding-bottom:10px;filter: drop-shadow(0 0 5px #333);" src="' + cdnUrl('images/reference/Disorders/' + word + '.jpg') + '"/>'
     } else if (settings['card design']['disorders'] == 'Fen Small') {
-      return '<img id=reference-image style="width:50%;" src="' + cdnUrl('images/reference/Disorders_fen/' + word + '.png') + '"/>'
+      return '<img id=reference-image style="width:60%;float:left;padding-bottom:10px;" src="' + cdnUrl('images/reference/Disorders_fen/' + word + '.png') + '"/>'
     } else if (settings['card design']['disorders'] == 'Fen Wide') {
       return '<img id=reference-image style="width:99%;border: 1px solid #333;box-shadow: 0 0 10px #000;" src="' + cdnUrl('images/reference/Disorders_fen_wide/' + word + '.png') + '"/>'
     }
   } else if (word in abilities) {
     // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
-    return '<img id=reference-image style="width:50%;" src="' + cdnUrl('images/reference/Abilities/' + word + '.png') + '"/>'
+    return '<img id=reference-image style="width:60%;float:left;padding-bottom:10px;" src="' + cdnUrl('images/reference/Abilities/' + word + '.png') + '"/>'
   } else if (word in settlement_events) {
     // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
     return '<img id=reference-image style="width:100%;" src="' + cdnUrl('images/reference/Settlement Events/' + word + '.jpg') + '"/>'
@@ -1825,8 +1826,13 @@ function get_representation (word) {
     return '<img id=reference-image style="width:90%;" src="' + cdnUrl('images/reference/Settlement Locations/' + word + '.jpg') + '"/>'
   } else if (word in armor_sets) {
     // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
+    // let result = ''
+    // if (['Gorment Armor', 'Brawler Armor', 'Rawhide Armor'].includes(word)) {
+    //   result = '<img id=reference-image style="width:100%;float:left;padding-bottom:10px;" src="' + cdnUrl('images/reference/Armor Sets/' + word + '.png') + '"/>'
+    // } else {
     let result = '<img id=reference-image style="width:49%;float:left;padding-right:5px;padding-bottom:10px;" src="' + cdnUrl('images/reference/Armor Sets/' + word + '.jpg') + '"/>'
     result = result + '<img id=reference-image style="width:49%;float:left;padding-bottom:10px;" src="' + cdnUrl('images/reference/Armor Sets/' + word + ' 2.jpg') + '"/><br/>'
+    // }
     return result
   } else if (word in survivor_statuses) {
     // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fightning art)</i> <hr/>'+fightning_arts_text[word]
