@@ -221,8 +221,8 @@ const events = {
   },
   'showdown white lion': {
     'music': 'music/showdown query.mp3',
-    'ltop': '65%',
-    'lleft': '75%',
+    'ltop': '63%',
+    'lleft': '68%',
   },
   'watched': {
     'music': 'music/watched.mp3',
@@ -260,7 +260,7 @@ const events = {
     'music': 'music/the approaching storm.mp3',
     'music_delay': '500',
     'ltop': '20%',
-    'lleft': '72%',
+    'lleft': '70%',
   },
   'melting horror': {
     'expansion': 'gorm',
@@ -377,7 +377,7 @@ const events = {
     'music': 'music/foundlings.mp3',
     // 'music_delay': 'speech-1000',
     'ltop': '10%',
-    'lleft': '80%',
+    'lleft': '75%',
     'campaign': ['Stars'],
   },
   'glowing crater': {
@@ -436,7 +436,7 @@ const events = {
     'music': 'music/unveil the sky.mp3',
     // 'music_delay': 'speech-1000',
     'ltop': '55%',
-    'lleft': '67%',
+    'lleft': '65%',
     'campaign': ['Stars'],
   },
   'bleeding heart': {
@@ -568,7 +568,7 @@ const events = {
     'music': 'music/showdown lion god.mp3',
     'music_delay': 'speech + 1000',
     'ltop': '18%',
-    'lleft': '25%',
+    'lleft': '28%',
     // // 'campaign': 'Stars',
   },
   'the knowledge worm': {

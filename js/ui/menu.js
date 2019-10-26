@@ -458,10 +458,10 @@ function createReference () {
     // $('#reference-window-back').animate({
     //     scrollTop: $('#reference-data.' + adapt_name(name)).offset().top
     // }, 1000);
-    $('#reference-window-back').scrollTo($('#reference-data.' + adapt_name(name)), duration = 1000)
+    $('#reference-window-back').scrollTo($('#reference-data.' + adapt_name(name)), duration = 100)
   })
   $(document).on('click', '#reference-data', function () {
-    $('#reference-window-back').scrollTo($(this), duration = 1000)
+    $('#reference-window-back').scrollTo($(this), duration = 100)
   })
   $(document).on('dblclick', '#reference-data', function () {
     let adapted_name = $(this).attr('class');

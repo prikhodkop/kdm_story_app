@@ -382,10 +382,10 @@ tr.spaceUnder>td {
 
 #herb_gathering.token:hover  {
     /* Start the shake animation and make the animation last for 0.5 seconds */
-    animation: shake 1s;
+    /* animation: shake 1s; */
     /* When the animation is finished, start again */
-    animation-iteration-count: infinite;
-    animation-delay: 0.3s;
+    /* animation-iteration-count: infinite; */
+    /* animation-delay: 0.3s; */
     filter: drop-shadow(0 0 5px #660);
 }
 
@@ -413,20 +413,20 @@ tr.spaceUnder>td {
 #mineral_gathering.token:hover {
     /* Start the shake animation and make the animation last for 0.5 seconds */
     /* animation: shake 1s; */
-    animation: shake 1s;
+    /* animation: shake 1s; */
     /* When the animation is finished, start again */
-    animation-iteration-count: infinite;
-    animation-delay: 0.3s;
+    /* animation-iteration-count: infinite; */
+    /* animation-delay: 0.3s; */
     filter: drop-shadow(0 0 5px #660);
 }
 
 #sky_fishing.token:hover {
     /* Start the shake animation and make the animation last for 0.5 seconds */
     /* animation: shake 1s; */
-    animation: shake 1s;
+    /* animation: shake 1s; */
     /* When the animation is finished, start again */
-    animation-iteration-count: infinite;
-    animation-delay: 0.3s;
+    /* animation-iteration-count: infinite; */
+    /* animation-delay: 0.3s; */
     filter: drop-shadow(0 0 5px #660);
 }
 
