@@ -515,9 +515,9 @@ var settings_schema = {
           'Unlocked',
         ],
       },
-      'etheral pact': {
+      'ethereal pact': {
         'type': 'option',
-        'title': 'Etheral Pact',
+        'title': 'Ethereal Pact',
         'default': 'Locked',
         'enum': [
           'Locked',
