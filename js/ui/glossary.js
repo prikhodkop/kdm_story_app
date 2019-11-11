@@ -1,4 +1,5 @@
 const { cdnUrl } = require('./template-renderer')
+const { getSettings } = require('./../ui/settings')
 
 const glossary_terms = {
   'Abilities': 'Skills and techniques learned by survivors, usually through story events, and recorded on the Survivor Record Sheet.',
@@ -1656,17 +1657,31 @@ module.exports = {
   settlement_locations,
   gear_list,
   innovations,
+  get_events_options,
 }
 
-function get_options (data, type) {
+function get_options (data, type, filter=false) {
   let result = []
+  let settings = getSettings();
   for (let key in data) {
+    if (!filter) {
+      result.push({
+        class: type,
+        name: key,
+        value: key,
+      })
+    } else {
+      if (!('expansion' in data[key]) || (settings['expansions'][data[key]['expansion']] == 'All content')){
+        result.push({
+          class: type,
+          name: key,
+          value: key,
+        })
+      }
+    }
+
     // console.log(key)
-    result.push({
-      class: type,
-      name: key,
-      value: key,
-    })
+
   }
 
   // console.log(result)
@@ -1696,7 +1711,11 @@ function get_all_options () {
   // options = options.concat(get_options(fightning_arts_text, 'disorders'));
   // options = options.concat(get_options(fightning_arts_text, 'abilities'));
   // options = options.concat(get_options(secret_fightning_arts_text, 'secret figtning arts'));
-  return options.concat(get_options(glossary_terms, 'glossary'))
+  return options.concat(get_options(settlement_events, 'settlement events'))
+}
+
+function get_events_options() {
+  return get_options(settlement_events, 'settlement events', filter=true)
 }
 
 function get_locations_list() {
@@ -1977,7 +1996,7 @@ function getSettlementEventPath () {
     }
   })
 
-  return 'images/reference/Settlement Events/' + getRandom(Object.keys(list), 1) + '.jpg'
+  return getRandom(Object.keys(list), 1)
 }
 
 function clone (obj) {

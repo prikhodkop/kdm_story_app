@@ -1,7 +1,7 @@
 const { app } = require('electron').remote
 
 const { createToc, events_table } = require('./../ui/events')
-const { getSettlementEventPath } = require('./../ui/glossary')
+const { getSettlementEventPath, get_random_draws, get_events_options } = require('./../ui/glossary')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
@@ -165,6 +165,36 @@ module.exports = class SettlementScene {
       speech.mute(true)
     }
 
+    var selectize = $('#settlement_event_list').selectize({
+      options: get_events_options(),
+      labelField: 'name',
+      searchField: ['name'],
+      onChange: function(value, isOnInitialize) {
+        console.log('Selectize value: '+ value);
+        $('#settlement_event_back').attr('src', cdnUrl('images/reference/Settlement Events/' + value + '.jpg'))
+        $('#settlement_event_back').attr('val', value)
+        addTimer(function () {
+          $("#settlement_event_screen > .selectize-control").css({
+            'width': ($("#settlement_event_back").width() + 'px')
+          }); }, 100)
+      },
+      onDropdownOpen: function ($dropdown) {
+        if (!$('#settlement_event_screen > .selectize-control > .selectize-input').hasClass('active')) {
+          $('#settlement_event_screen > .selectize-control > .selectize-input').addClass('active')
+        }
+
+      },
+
+      onDropdownClose: function ($dropdown) {
+        if ($('#settlement_event_screen > .selectize-control > .selectize-input').hasClass('active')) {
+          $('#settlement_event_screen > .selectize-control > .selectize-input').removeClass('active')
+        }
+      },
+      // create: true,
+    })[0].selectize;
+    window.selectize = selectize
+    $('#settlement_event_screen > .selectize-control > .selectize-input input').prop('disabled', true);
+
     if (anew) {
       $("#label_sub_text").hide();
       $('#hunt_icon').fadeIn(1000)
@@ -216,7 +246,23 @@ module.exports = class SettlementScene {
         music.fade(0.0, music_volume, 500)
       }
 
-      $('#settlement_event_back').attr('src', cdnUrl(state.settlement_event))
+      // $('#settlement_event_back').attr('src', cdnUrl('images/reference/Settlement Events/' + state.settlement_event + '.jpg'))
+      // $('#settlement_event_back').attr('val', state.settlement_event)
+      // selectize.setValue(state.settlement_event, false)
+      // $('#settlement_event_back').fadeOut(500, function(){
+      //     $(this).attr('src',cdnUrl('images/reference/Settlement Events/' + state.settlement_event + '.jpg')).bind('onreadystatechange load', function(){
+      //        if (this.complete) {
+      //          $(this).fadeIn(300);
+      //          $("#settlement_event_screen > .selectize-control").css({
+      //            'width': ($("#settlement_event_back").width() + 'px')
+      //          });
+      //        }
+      //     });
+      //  });
+      // addTimer(function () {
+      //   $("#settlement_event_screen > .selectize-control").css({
+      //     'width': ($("#settlement_event_back").width() + 'px')
+      //   }); }, 100)
 
       // if (state.milestones_open) {
       //   $('#milestones').delay(150).fadeIn(500)
@@ -237,7 +283,28 @@ module.exports = class SettlementScene {
       if (!$(this).hasClass('active')) {
         $('#settlement_event_screen').delay(50).fadeIn(500)
         if ($('#settlement_event_back').attr('src') == '#') {
-          $('#settlement_event_back').attr('src', cdnUrl(getSettlementEventPath()))
+          let selected_event = getSettlementEventPath();
+          if (!anew) {
+            selected_event = state.settlement_event
+          }
+
+          // $('#settlement_event_back').attr('src', cdnUrl('images/reference/Settlement Events/' + selected_event + '.jpg'))
+          $('#settlement_event_back').attr('val', selected_event)
+          selectize.setValue(selected_event, false)
+          // addTimer(function () {
+          //   $("#settlement_event_screen > .selectize-control").css({
+          //     'width': ($("#settlement_event_back").width() + 'px')
+          //   }); }, 100)
+          $('#settlement_event_back').fadeOut(300, function(){
+              $(this).attr('src',cdnUrl('images/reference/Settlement Events/' + selected_event + '.jpg')).bind('onreadystatechange load', function(){
+                 if (this.complete) {
+                   $(this).fadeIn(300);
+                   $("#settlement_event_screen > .selectize-control").css({
+                     'width': ($("#settlement_event_back").width() + 'px')
+                   });
+                 }
+              });
+           });
         };
         $('#settlement_event_back').delay(150).fadeIn(500)
         $('.cheatsheet_button').each(function() {$(this).removeClass('active'); $('#milestones').hide(); $('#settlement_event_back').hide();})
@@ -564,7 +631,7 @@ module.exports = class SettlementScene {
       current_state.locations = null
       current_state.innovations = null
 
-      current_state.settlement_event = $('#settlement_event_back').attr('src')
+      current_state.settlement_event = $('#settlement_event_back').attr('val')
       current_state.milestones_open = $('#milestones_button').hasClass('active')
 
       console.log(current_state)
