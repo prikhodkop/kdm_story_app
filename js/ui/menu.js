@@ -493,7 +493,7 @@ function createReference () {
       ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
       ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
       ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
-      ['space', 'clear', 'random'],
+      ['space', "\u2190", 'random'],
     ]
 
     const keypadEl = $('#reference-window-keypad').empty()
@@ -605,14 +605,14 @@ function refPadEntry (refValue) {
   //   'clear': 8
   //   // 'random',
   // };
-
+  console.log('Clicked on: '+refValue)
   if (refValue == 'space') {
     let text = refInput.val()
     window.selectize.setTextboxValue(text + ' ')
   } else if (refValue == 'random') {
     let text = refInput.val()
     window.selectize.setTextboxValue(text + ' random ')
-  } else if (refValue == 'clear') {
+  } else if (refValue == "\u2190") {
     window.selectize.setTextboxValue('')
   } else {
     // console.log('Trigger key press: '+refValue+' '+key_codes[refValue])

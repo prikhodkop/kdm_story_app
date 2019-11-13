@@ -287,22 +287,22 @@ module.exports = class HuntScene {
       }
     })
 
-    if (settings['onscreenKeypads'] == 'On') {
-      $('#pad0').on('click', function () { addToEventNumber('0', false, false) })
-      $('#pad1').on('click', function () { addToEventNumber('1', false, false) })
-      $('#pad2').on('click', function () { addToEventNumber('2', false, false) })
-      $('#pad3').on('click', function () { addToEventNumber('3', false, false) })
-      $('#pad4').on('click', function () { addToEventNumber('4', false, false) })
-      $('#pad5').on('click', function () { addToEventNumber('5', false, false) })
-      $('#pad6').on('click', function () { addToEventNumber('6', false, false) })
-      $('#pad7').on('click', function () { addToEventNumber('7', false, false) })
-      $('#pad8').on('click', function () { addToEventNumber('8', false, false) })
-      $('#pad9').on('click', function () { addToEventNumber('9', false, false) })
-      $('#padClear').on('click', function () { addToEventNumber('', true, false) })
-      $('#padSubmit').on('click', function () { addToEventNumber('', false, true) })
-    } else {
-      $('#random_event_pad_wrapper').hide()
-    }
+    // if (settings['onscreenKeypads'] == 'On') {
+    $('#pad0').on('click', function () { addToEventNumber('0', false, false) })
+    $('#pad1').on('click', function () { addToEventNumber('1', false, false) })
+    $('#pad2').on('click', function () { addToEventNumber('2', false, false) })
+    $('#pad3').on('click', function () { addToEventNumber('3', false, false) })
+    $('#pad4').on('click', function () { addToEventNumber('4', false, false) })
+    $('#pad5').on('click', function () { addToEventNumber('5', false, false) })
+    $('#pad6').on('click', function () { addToEventNumber('6', false, false) })
+    $('#pad7').on('click', function () { addToEventNumber('7', false, false) })
+    $('#pad8').on('click', function () { addToEventNumber('8', false, false) })
+    $('#pad9').on('click', function () { addToEventNumber('9', false, false) })
+    $('#padClear').on('click', function () { addToEventNumber('', true, false) })
+    $('#padSubmit').on('click', function () { addToEventNumber('', false, true) })
+    // } else {
+    //   $('#random_event_pad_wrapper').hide()
+    // }
 
     function addToEventNumber (addThis, clearVal, submitVal) {
       if (submitVal) {

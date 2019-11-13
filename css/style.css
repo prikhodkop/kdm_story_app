@@ -772,6 +772,7 @@ tr.spaceUnder>td {
 	user-select: none;
 	font-family: 'Silverado';
 	text-transform: capitalize;
+  vertical-align: middle;
 }
 .random_event_pad_wrapper__pad:hover {
 	background: #ffffff42;

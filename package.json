@@ -32,7 +32,8 @@
     "publish": [
       {
         "provider": "s3",
-        "bucket": "prikhodkop.data1"
+        "bucket": "prikhodkop.data1",
+        "region": "eu-central-1"
       }
     ],
     "appId": "com.github.prikhodkop.kdmstoryapp",

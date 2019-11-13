@@ -192,7 +192,7 @@ module.exports = class SettlementScene {
       },
       // create: true,
     })[0].selectize;
-    window.selectize = selectize
+    // window.selectize = selectize
     $('#settlement_event_screen > .selectize-control > .selectize-input input').prop('disabled', true);
 
     if (anew) {
