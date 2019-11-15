@@ -156,9 +156,20 @@
   left: 0%;
   width: 100%;
   height: 100%;
-  z-index: 71;
+  /* z-index: 81; */
   /* background: #030303;
-  opacity: 0.6; */
+  opacity: 0.5; */
+}
+#settlement_event_screen_2 {
+  display: block;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 81;
+  background: #030303;
+  opacity: 0.5;
 }
 
 #settlement_event_back {
@@ -168,13 +179,14 @@
   left: 30%;
   /* width: 100%; */
   height: 97%;
-  z-index: 72;
+  z-index: 82;
   --borderWidth: 1em;
   border-radius: var(--borderWidth);
   /* border-bottom-right-radius: var(--borderWidth); */
   /* box-shadow: 0px 0px 1px 5000px rgba(0,0,0,0.8); */
   -webkit-box-shadow: 0 0 80px #000;
         box-shadow: 0 0 80px #000;
+  opacity: 1.0;
 }
 
 
@@ -187,6 +199,7 @@
   opacity: 0.2;
   color: #333;
   height: 1%;
+
 }
 
 #settlement_event_screen > .selectize-control {
@@ -196,8 +209,9 @@
   left: 30%;
   /* height: 2%; */
   z-index: 73;
-  font-size: 0.8em;
+  font-size: 1em;
   /* padding-bottom: 0; */
+  z-index: 83;
 }
 
 #settlement_event_screen > .selectize-control > .selectize-input:hover {

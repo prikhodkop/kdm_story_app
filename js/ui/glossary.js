@@ -322,7 +322,7 @@ const glossary_terms = {
   'Settlement Event': 'An event occurring during the Settlement Phase.',
   'Settlement Phase': 'During the Settlement Phase. survivors experience settlement and story events, spend endeavors, craft gear, and determine which survivors depart on the next hunt. This is the only phase where survivors may change or rearrange their gear grids.',
   'Settlement Record Sheet': 'Helps the players keep track of the development of their settlement.',
-  'Severe Injury [Location]': 'When survivors\' armor points and injury levels are exhausted, they may accumulate temporary or permanent severe injuries from the severe injury table.<br\>&emsp;When a survivor suffers permanent injuries, note the name and rules on your record sheet and adjust their attributes as necessary.<br\>&emsp;Some injuries fill the Skip Next Hunt on survivor record sheet. Otherwise, severe injuries last until the end of the showdown and are marked by attribute tokens.<br\>&emsp;Some permanent injuries have limits to how many times they can be recorded. If a survivor suffers a severe injury they have already recorded the maximum number of times, they instead gain 1 bleeding token.',
+  'Severe Injury': 'When survivors\' armor points and injury levels are exhausted, they may accumulate temporary or permanent severe injuries from the severe injury table.<br\>&emsp;When a survivor suffers permanent injuries, note the name and rules on your record sheet and adjust their attributes as necessary. Some injuries fill the Skip Next Hunt on survivor record sheet.<br\>&emsp;Otherwise, severe injuries last until the end of the showdown and are marked by attribute tokens.<br\>&emsp;Some permanent injuries have limits to how many times they can be recorded. If a survivor suffers a severe injury they have already recorded the maximum number of times, they instead gain 1 bleeding token.',
   'Severe Injury Tables': 'Contains sections of possible severe Injuries to hit locations. Each hit that causes a severe injury prompts a roll on that location\'s severe injury table.',
   'Sharp': 'A gear special rule. Add 1d10 strength to each wound attempt using this gear. This 1d10 is not a wound roll and cannot cause critical wounds.',
   'Shield': 'Gear with this keyword is a shield weapon. Survivors may gain levels of shield weapon proficiency with this weapon.',
@@ -1690,7 +1690,7 @@ function get_options (data, type, filter=false) {
 
 function get_all_options () {
   var options = get_options(random_draws, 'random draws')
-
+  options = options.concat(get_options(glossary_terms, 'glossary'))
   options = options.concat(get_options(fightning_arts_text, 'fightning arts'))
   options = options.concat(get_options(secret_fightning_arts_text, 'secret fightning arts'))
   options = options.concat(get_options(disorders_text, 'disorders'))
@@ -1701,7 +1701,7 @@ function get_all_options () {
   options = options.concat(get_options(survivor_statuses, 'survivor statuses'))
   options = options.concat(get_options(innovations, 'innovations'))
   options = options.concat(get_options(terrain, 'terrain'))
-  options = options.concat(get_options(principles, 'principles'))
+  // options = options.concat(get_options(principles, 'principles'))
   // $.get( "files.php", function( data ) {
   //   console.log('Here...')
   //   console.log(data)
@@ -1746,6 +1746,7 @@ function get_representation (word) {
 
     if (['Movement (Attribute)', 'Endeavors'].includes(word)) {
       result = result + '<br/><br/><img id=reference-image style="width:99%;" src="images/reference/terms/'+word+'.png"/>'
+      result = result + '<br\>Monster must move as close to straight line to target as possible:'
       result = result + '<br/><img id=reference-image style="width:99%;" src="images/reference/terms/'+word+' 2.png"/>'
     }
 

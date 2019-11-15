@@ -87,7 +87,7 @@ const events = {
     'music': 'music/hands of heat.mp3',
     'ltop': '75%',
     'lleft': '37%',
-    'campaign': ['Lantern'],
+    // 'campaign': ['Lantern'],
   },
   'herb gathering': {
     'music': 'music/herb gathering.mp3',

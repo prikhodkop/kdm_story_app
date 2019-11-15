@@ -923,3 +923,19 @@ tr.spaceUnder>td {
   border: 0.2rem solid #cc0;
   filter: drop-shadow(0 0 5px #cc0);
 }
+
+div.selectize-dropdown {
+  scrollbar-width: none !important;
+}
+
+div.selectize-dropdown::-webkit-scrollbar {
+  display: none !important;
+}
+
+div.selectize-dropdown-content {
+scrollbar-width: none !important;
+}
+
+div.selectize-dropdown-content::-webkit-scrollbar {
+    display: none !important;
+}

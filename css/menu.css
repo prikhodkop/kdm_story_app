@@ -250,6 +250,7 @@
 	--borderWidth: 1em;
 	border-radius: var(--borderWidth);
 	border: 0.2rem solid #555;
+	overflow-x:none;
 }
 
 #reference-window-back {
@@ -359,7 +360,8 @@ div#reference-window-back0 .selectize-control {
 	font-size: 1.3em;
 	left: 3%;
 	width: 95%;
-	overflow:auto;
+	/* overflow-y:auto; */
+	overflow:none;
 	font-family: 'Silverado';
 	/* --borderWidth: 0.8em;
 	border-radius: var(--borderWidth);

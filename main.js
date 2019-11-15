@@ -153,15 +153,15 @@ autoUpdater.on('update-available', () => {
 // autoUpdater.on('update-not-available', (info) => {
 //   sendStatusToWindow('Update not available.');
 // })
-autoUpdater.on('error', (err) => {
-  sendStatusToWindow('Error in auto-updater. ' + err)
-  dialog.showMessageBox({
-    title: 'Error:',
-    message: 'Error in auto update: ' + err,
-  })
-  // updater.enabled = true
-  // updater = null
-})
+// autoUpdater.on('error', (err) => {
+//   sendStatusToWindow('Error in auto-updater. ' + err)
+//   dialog.showMessageBox({
+//     title: 'Error:',
+//     message: 'Error in auto update: ' + err,
+//   })
+//   // updater.enabled = true
+//   // updater = null
+// })
 let prevPercent = 0
 
 autoUpdater.on('download-progress', (progressObj) => {

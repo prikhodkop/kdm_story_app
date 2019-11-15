@@ -336,10 +336,10 @@ function createReference () {
       value: 'innovations',
       label: 'Innovations',
     },
-    {
-      value: 'principles',
-      label: 'Principles',
-    },
+    // {
+    //   value: 'principles',
+    //   label: 'Principles',
+    // },
     {
       value: 'terrain',
       label: 'Terrain',
