@@ -1508,7 +1508,6 @@ const innovations = {
  'Symposium': {
    'parent': 'Language',
    'tags': ['education', 'language'],
-   'action': true,
  },
  'The Knowedge Worm': {
    'expansion': 'lion god',

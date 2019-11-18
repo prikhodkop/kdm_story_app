@@ -939,3 +939,41 @@ scrollbar-width: none !important;
 div.selectize-dropdown-content::-webkit-scrollbar {
     display: none !important;
 }
+
+#starvation_button {
+  display:block;
+  position:absolute;
+  top: 90%;
+  width: 14%;
+  left: 43%;
+  border: 1px solid #888;
+  color: #888;
+  background-color: Transparent;
+  --borderWidth: 1em;
+  border-radius: var(--borderWidth);
+  filter: drop-shadow(0, 0, 0, 5px, #000);
+  font-family: 'Silverado';
+  z-index: 9;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+#starvation_button:hover {
+  border: 2px solid #cc0;
+  color: #cc0;
+  filter: drop-shadow(0, 0, 0, 5px, #cc0);
+}
+
+#starvation_popup_back {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  overflow:auto;
+  z-index: 8;
+  display: none;
+  opacity: 0.9;
+  /* filter : alpha(opacity=90); */
+
+}

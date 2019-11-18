@@ -13,6 +13,7 @@ const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/tra
 module.exports = class HuntScene {
   render () {
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/hunt.html')
+    window.darkness_enabled = true
 
     onSettingsSaved(() => {
       setTransition(document.title, 'back', getBackTarget(), current_state())
@@ -766,7 +767,7 @@ module.exports = class HuntScene {
       };
 
       if (type === 'starvation') {
-        title ='<b>Starvation</b> <br /> Survivors must spend 1d5 basic resources'
+        title ='<b>Starvation</b><br/>The hunting team takes too long to bring food back home.<br/>Remove d5 resources from settlement storage.'
       };
 
       $('<img class="token ' + position + '" position="' + position + '" id="' + type +
@@ -804,10 +805,10 @@ module.exports = class HuntScene {
             drop: function (event, ui) {
               // setTransition(ref, 'menu', document.title, current_state())
               if ($('#monster').attr('position') == 13) {
-                $('#quary_popup_back').fadeIn(500)
+                $('#starvation_popup_back').fadeIn(500)
                 var temp_text = document.getElementById(
                   'label_text').innerHTML
-                document.getElementById('label_text').innerHTML = 'Starvation<br/><b id="starvation_text">Survivors must spend <b>1d5</b> basic resources!</b>'
+                document.getElementById('label_text').innerHTML = 'Starvation<br/><b id="starvation_text">Remove d5 resources from settlement storage.</b>'
                 // $('#label_text').innerHTML = 'Starvation<br/>Survivors must spend <b>1d5</b> basic resources!'
                 $('#hunt_icon').attr('src', cdnUrl('images/hunt/starvation_icon.png'))
                 $('#label_text').css('z-index', '9')
@@ -815,18 +816,26 @@ module.exports = class HuntScene {
                 $('#label_text').css('color', '#fff')
                 $('#label_text').delay(500).fadeIn(1000)
                 $('#hunt_icon').delay(500).fadeIn(1000)
-                $('#label_text').delay(2700).fadeOut(1000)
-                $('#hunt_icon').delay(2700).fadeOut(1000)
-                addTimer(function () { $('#label_text').hide() }, 3750)
-                addTimer(function () {
-                  document.getElementById(
-                    'label_text').innerHTML =
-                                        temp_text
-                  // $('#label_text').css('color','#999');
-                  // let state = current_state();
-                  // state.monster_type = temp_text;
-                  setTransition($('#monster').attr('target'), 'menu', document.title, current_state())
-                }, 4000)
+                $('#random_event_icon').fadeOut(1000)
+                $('#random_event_input').fadeOut(1000)
+
+                $('#container').append($('<button>', {
+                  id: 'starvation_button',
+                }))
+                $('#starvation_button').text('Start Showdown')
+                $('#starvation_button').hide()
+                $('#starvation_button').delay(1500).fadeIn(500)
+
+                $('#starvation_button').click(function() {
+                  $('#label_text').fadeOut(500, function() {
+                    $('#label_text').hide();
+                    $('#label_text').html(temp_text)
+                    addTimer(function () {
+                      setTransition($('#monster').attr('target'), 'menu', document.title, current_state())
+                    }, 100)
+                  })
+                  $('#hunt_icon').fadeOut(500)
+                })
               } else {
                 setTransition($('#monster').attr('target'),
                   'menu', document.title,
@@ -857,21 +866,20 @@ module.exports = class HuntScene {
           $(this).droppable({
             drop: function (event, ui) {
               snapToMiddle(ui.draggable, $(this))
-              if ((ui.draggable[0]['id'] == 'survivors') && (
-                type == 'darkness')) {
-                if ($('#monster').attr('position') == $(this)
-                  .attr('position')) {
-                  // setTransition($('#monster').attr('target'), 'menu', document.title, current_state());
-                  // continue;
-                  console.log(
-                    'Ignoring Overwhelming Darkness to start showdown!'
-                  )
-                } else {
-                  setTransition('overwhelming darkness',
-                    'menu', document.title,
-                    current_state())
+              if ((ui.draggable[0]['id'] == 'survivors') && ($(this).attr('id') == 'darkness')) {
+                if (window.darkness_enabled) {
+                  setTransition('overwhelming darkness', 'menu', document.title, current_state())
                 }
               };
+              if (ui.draggable[0]['id'] == 'monster') {
+                if ($(this).attr('id') == 'darkness'){
+                  console.log('Disabling darkness drop')
+                  window.darkness_enabled = false;
+                } else {
+                  console.log('Enabling darkness drop')
+                  window.darkness_enabled = true;
+                }
+              }
             },
           })
         };
@@ -881,6 +889,11 @@ module.exports = class HuntScene {
             drop: function (event, ui) {
               snapToMiddle(ui.draggable, $(this))
               let title = $(this).attr('title')
+
+              if (ui.draggable[0]['id'] == 'monster') {
+                console.log('Enabling darkness drop')
+                window.darkness_enabled = true;
+              }
 
               if (ui.draggable[0]['id'] == 'survivors') {
                 if (title == 'Monster Hunt Event') {
