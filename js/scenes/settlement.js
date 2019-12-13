@@ -64,7 +64,7 @@ module.exports = class SettlementScene {
     // Кнопка открыть список зданий
 
     var start_delay = 1000 // delay before speech playing starts
-    var music_volume = 0.5 // music volume
+    var music_volume = 0.3 // music volume
 
     var speech = new Howl({
       src: [cdnUrl(events_table[myself].speech)],
@@ -80,7 +80,7 @@ module.exports = class SettlementScene {
     var noise = new Howl({
       src: [cdnUrl('audio/music/campfire.mp3')],
       loop: true,
-      volume: 0.2,
+      volume: 0.15,
     })
 
     console.log('Music to play ' + events_table[myself].music)
@@ -171,8 +171,12 @@ module.exports = class SettlementScene {
       searchField: ['name'],
       onChange: function(value, isOnInitialize) {
         console.log('Selectize value: '+ value);
+        if (value == '...random Settlement Event') {
+          value = getSettlementEventPath()
+        }
         $('#settlement_event_back').attr('src', cdnUrl('images/reference/Settlement Events/' + value + '.jpg'))
         $('#settlement_event_back').attr('val', value)
+        selectize.setValue(value, true)
         addTimer(function () {
           $("#settlement_event_screen > .selectize-control").css({
             'width': ($("#settlement_event_back").width() + 'px')
@@ -596,6 +600,10 @@ module.exports = class SettlementScene {
     // });
 
     // $("#turn_cheatsheet").mapify();
+
+    function change_selected_event() {
+
+    }
 
     function addMilestones () {
       $('#milestones').append($('<div id="milestone-title">Milestones</div>'))

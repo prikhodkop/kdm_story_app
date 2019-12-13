@@ -1714,7 +1714,8 @@ function get_all_options () {
 }
 
 function get_events_options() {
-  return get_options(settlement_events, 'settlement events', filter=true)
+  let options = [{class: 'settlement events', name: '...random Settlement Event', value: '...random Settlement Event',}]
+  return options.concat(get_options(settlement_events, 'settlement events', filter=true))
 }
 
 function get_locations_list() {
@@ -1885,7 +1886,7 @@ function get_random_draws (word, randomize=true, ) {
     list = clone(fightning_arts_text)
   } else if (word.includes('Disorder')) {
     list = clone(disorders_text)
-  } else if (word.includes('Settlement Event')) {
+  } else if (word.includes(get_events_options)) {
     list = clone(settlement_events)
     delete list['First Day']
   } else if (word.includes('Location')) {
