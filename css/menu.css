@@ -169,6 +169,7 @@
 	outline: 0.2rem solid #cccc00;
 	-webkit-box-shadow: 0 0 40px #cccc00;
 	box-shadow: 0 0 40px #cccc00;
+	z-index: 98;
 }
 
 #severe-background {
@@ -183,14 +184,14 @@
 }
 
 #severe-table {
-	right:6%;
+	right:4.35%;
 	top: 0%;
 	height: 100%;
 	position:absolute;
-	z-index: 88;
+	z-index: 97;
 	display:block;
-	-webkit-box-shadow: 0 0 80px #000;
-	box-shadow: 0 0 80px #000;
+	-webkit-box-shadow: 0 0 50px 0 #000;
+	box-shadow: 0 0 50px 0 #000;
 }
 
 #reference {

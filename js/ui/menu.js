@@ -229,12 +229,15 @@ function showLocationTable (location) {
   // $('#severe-background').fadeIn(500);
   // $('#severe-table').hide();
   // $('#severe-table').attr('src', cdnUrl('images/severe injuries/'+location+'.png'));
-  $('#severe-table.' + location).delay(100).fadeIn(200)
+  // $('#severe-table.' + location).delay(100).fadeIn(200)
+  // $('#severe-table.' + location).toggle( "slide" );
+  $('#severe-table.' + location).show("slide", { direction: "right" }, 200);
   // $('#severe-table').slideLeft(1000);
 }
 
 function hideLocationTable (location) {
-  $('#severe-table.' + location).fadeOut(100)
+  // $('#severe-table.' + location).fadeOut(100)
+  $('#severe-table.' + location).hide("slide", { direction: "right" }, 100);
   // $('#severe-background').delay(500).fadeOut(00);
   // $('#severe-table').slideRight(1000);
 }
