@@ -117,6 +117,16 @@ function setupLocations() {
     createLocation(locations_list[i], (i==0) ? true : false);
   }
 
+  tippy('.tablinks[type = "location"]', {
+    placement: 'bottom-start',
+    content: '<b style="color:#cc0;">Click</b> to <b>show location</b>.<br/><br/><b style="color:#cc0;">Double click</b> to <b>toggle built status</b>.',
+    duration: 50,
+    delay: [600, 100],
+    animation: 'shift-away-subtle',
+    followCursor: true,
+    theme: 'kdm',
+  });
+
   allignItems('location');
   $('button.tablinks.selected:first').attr('id', "defaultOpen")
 
@@ -168,20 +178,22 @@ function createLocation(location, default_open=false) {
     class: "tablinks",
     onclick: "openLocation(event, '"+location+"')",
     val: location,
+    name: location,
     type: 'location'
   })
   button.html(titleCase(location));
   $('#development_tabs').append(button);
 
-  button.tooltipster({animationDuration: 50,
-    contentAsHTML: 'true',
-    animation: 'fade',
-    content: '<b style="color:#cc0;">Click</b> to <b>show location</b>.<br/><br/><b style="color:#cc0;">Double click</b> to <b>toggle built status</b>.',
-    position: 'right',
-    // timer: 1500,
-    delay: [500, 0],
-    plugins: ['follower'],
-  })
+  // button.tooltipster({animationDuration: 50,
+  //   contentAsHTML: 'true',
+  //   animation: 'fade',c
+  //   content: '<b style="color:#cc0;">Click</b> to <b>show location</b>.<br/><br/><b style="color:#cc0;">Double click</b> to <b>toggle built status</b>.',
+  //   position: 'right',
+  //   // timer: 1500,
+  //   delay: [500, 0],
+  //   plugins: ['follower'],
+  // })
+
 
   if (['Throne', 'Sacreed Pool', 'Lantern Hoard', 'Exhausted Lantern Hoard'].includes(location)) {
     let settings = getSettings();
@@ -413,33 +425,21 @@ function setupInnovations() {
   	},
   })
 
-  // var sortable = Sortable.create(document.getElementsByClassName('innovations_grid')[0], {
-  //   animation: 300,  // ms, animation speed moving items when sorting, `0` — without animation
-  //   // ghostClass: 'blue-background-class'
-  // 	// easing: "cubic-bezier(1, 0, 0, 1)",
-  //   // sort: false,  // sorting inside list
-  //   // Called by any change to the list (add / update / remove)
-  //   onStart: function (/**Event*/evt, /**Event*/originalEvent) {
-  //     // dragging = true;
-  //     $(this).removeClass('use-hover');
-  //     $('.innovations_grid').removeClass('use-hover')
-  //
-  //   },
-  // 	onEnd: function (/**Event*/evt) {
-  // 		// same properties as onEnd
-  //     $(this).addClass('use-hover');
-  //     $('.innovations_grid').addClass('use-hover')
-  //
-  //     updateInnovationsState();
-  // 	},
-  // });
-  // })
-
   let innovations_list = get_random_draws('Innovation', false).sort();
 
   for (let i = 0; i < innovations_list.length; i++) {
     createInnovation(innovations_list[i]);
   }
+
+  tippy('.tablinks[type = "innovation"]', {
+    placement: 'bottom-start',
+    content:'<b style="color:#cc0;">Double click</b> to <b>add innovation</b>.<br/>',
+    duration: 50,
+    delay: [600, 100],
+    animation: 'shift-away-subtle',
+    followCursor: true,
+    theme: 'kdm',
+  });
 
   allignItems('innovation');
 
@@ -597,15 +597,15 @@ function createInnovation(innovation) {
   })
   button.html(titleCase(innovation).replace(' Of ', ' of ').replace(' The ', ' the '));
   $('#innovations_tab').append(button);
-  button.tooltipster({animationDuration: 50,
-    contentAsHTML: 'true',
-    animation: 'fade',
-    content: '<b style="color:#cc0;">Double click</b> to <b>add innovation</b>.<br/>',
-    position: 'bottom',
-    delay: [800, 0],
-    plugins: ['follower'],
-    // timer: 1000,
-  })
+  // button.tooltipster({animationDuration: 50,
+  //   contentAsHTML: 'true',
+  //   animation: 'fade',
+  //   content: '<b style="color:#cc0;">Double click</b> to <b>add innovation</b>.<br/>',
+  //   position: 'bottom',
+  //   delay: [800, 0],
+  //   plugins: ['follower'],
+  //   // timer: 1000,
+  // })
 
 }
 
@@ -625,23 +625,23 @@ function showInnovation(innovationName, initialization=false, newitem=false) {
 
   img.hide();
 
-  img.tooltipster({animationDuration: 50,
-    contentAsHTML: 'true',
-    animation: 'fade',
-    content: '<b style="color:#cc0;">Click</b> to activate.<br/><br/><b style="color:#cc0;">Double click</b> to remove.</b>.<br/><br/><b style="color:#cc0;">Drag</b> to rearange.</b>.',
-    position: 'bottom',
-    delay: [300, 0],
-    trigger: 'custom',
-    triggerOpen: {
-      mouseenter: true,
-      click: true
-    },
-    triggerClose: {
-      click: true,
-      mouseleave: true
-    },
-    plugins: ['follower'],
-  })
+  // img.tooltipster({animationDuration: 50,
+  //   contentAsHTML: 'true',
+  //   animation: 'fade',
+  //   content: '<b style="color:#cc0;">Click</b> to activate.<br/><br/><b style="color:#cc0;">Double click</b> to remove.</b>.<br/><br/><b style="color:#cc0;">Drag</b> to rearange.</b>.',
+  //   position: 'bottom',
+  //   delay: [300, 0],
+  //   trigger: 'custom',
+  //   triggerOpen: {
+  //     mouseenter: true,
+  //     click: true
+  //   },
+  //   triggerClose: {
+  //     click: true,
+  //     mouseleave: true
+  //   },
+  //   plugins: ['follower'],
+  // })
 
   if (($('.innovation_card').length) && (!initialization)){
 		img.insertBefore('.innovation_card:first');
@@ -662,6 +662,17 @@ function showInnovation(innovationName, initialization=false, newitem=false) {
     $('.innovation_card[value="'+innovationName+'"]').addClass('magictime')
     $('.innovation_card[value="'+innovationName+'"]').addClass(INNOVATION_CARD_SHOW)
   }
+
+  tippy('.innovation_card[value="'+innovationName+'"]', {
+    placement: 'bottom-start',
+    content:'<b style="color:#cc0;">Click</b> to activate.<br/><br/><b style="color:#cc0;">Double click</b> to remove.</b>.<br/><br/><b style="color:#cc0;">Drag</b> to rearange.</b>.',
+    duration: 50,
+    delay: [600, 100],
+    animation: 'shift-away-subtle',
+    followCursor: true,
+    theme: 'kdm',
+    // updateDuration: 400,
+  });
 
 };
 
@@ -792,23 +803,23 @@ let img = $('<img>', {
   src: cdnUrl('images/settlement/actions/'+name+'.jpg'),
 });
 
-img.tooltipster({animationDuration: 50,
-  contentAsHTML: 'true',
-  animation: 'fade',
-  content: '<b>Source: '+name.split('_')[0]+'</b><br/><br/><b style="color:#cc0;">Click</b> to activate.',
-  position: 'left',
-  delay: [500, 0],
-  trigger: 'custom',
-  triggerOpen: {
-    mouseenter: true,
-    click: true
-  },
-  triggerClose: {
-    click: true,
-    mouseleave: true
-  },
-  plugins: ['follower'],
-})
+// img.tooltipster({animationDuration: 50,
+//   contentAsHTML: 'true',
+//   animation: 'fade',
+//   content: '<b>Source: '+name.split('_')[0]+'</b><br/><br/><b style="color:#cc0;">Click</b> to activate.',
+//   position: 'left',
+//   delay: [500, 0],
+//   trigger: 'custom',
+//   triggerOpen: {
+//     mouseenter: true,
+//     click: true
+//   },
+//   triggerClose: {
+//     click: true,
+//     mouseleave: true
+//   },
+//   plugins: ['follower'],
+// })
 
 item_content.append(img)
 item.append(item_content)
@@ -820,6 +831,17 @@ item.append(item_content)
  img.load(function() {
    $(this).delay(50).fadeIn(300);
  })
+
+ tippy('.action_card[value="'+name+'"]', {
+   placement: 'bottom-start',
+   content:'<b>Source: '+name.split('_')[0]+'</b><br/><br/><b style="color:#cc0;">Click</b> to activate.',
+   duration: 50,
+   delay: [600, 100],
+   animation: 'shift-away-subtle',
+   followCursor: true,
+   theme: 'kdm',
+   // updateDuration: 400,
+ });
 }
 
 // #### General purpose functions

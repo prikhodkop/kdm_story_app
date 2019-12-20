@@ -981,3 +981,12 @@ div.selectize-dropdown-content::-webkit-scrollbar {
 .no-close .ui-dialog-titlebar-close {
   display: none;
 }
+
+.tippy-tooltip.kdm-theme {
+  background-color: black;
+  color: #ccc;
+  opacity: 0.9;
+  --borderWidth: 1em;
+  border-radius: var(--borderWidth);
+  border: 1px solid #333;
+}
