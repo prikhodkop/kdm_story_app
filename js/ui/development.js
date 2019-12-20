@@ -178,6 +178,7 @@ function createLocation(location, default_open=false) {
     animation: 'fade',
     content: '<b style="color:#cc0;">Click</b> to <b>show location</b>.<br/><br/><b style="color:#cc0;">Double click</b> to <b>toggle built status</b>.',
     position: 'right',
+    // timer: 1500,
     delay: [500, 0],
   })
 
@@ -357,7 +358,7 @@ function setupInnovations() {
           if ($('#innovations_tab').hasClass('tablinks_hoverd')) {
             $('.tooltip_image_innovation').show("slide", { direction: "left" }, 200);
           }
-        }, 100)
+        }, 300)
         $('.innovations_grid').addClass('shaded')
       }
       $('#innovations_tab').addClass('tablinks_hoverd')
@@ -601,6 +602,7 @@ function createInnovation(innovation) {
     content: '<b style="color:#cc0;">Double click</b> to <b>add innovation</b>.<br/>',
     position: 'bottom',
     delay: [800, 0],
+    // timer: 1000,
   })
 
 }

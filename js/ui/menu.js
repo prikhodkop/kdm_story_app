@@ -2,7 +2,9 @@ const remote = require('electron').remote
 
 const { get_all_options, is_random_draw, get_random_draws, get_representation } = require('./glossary')
 const { cdnUrl } = require('./template-renderer')
-const { addTimer } = require('./timer')
+const { addTimer, clearTimer } = require('./timer')
+
+window.severe_timers = {}
 
 document.onkeydown = function (evt) {
   evt = evt || window.event
@@ -231,12 +233,16 @@ function showLocationTable (location) {
   // $('#severe-table').attr('src', cdnUrl('images/severe injuries/'+location+'.png'));
   // $('#severe-table.' + location).delay(100).fadeIn(200)
   // $('#severe-table.' + location).toggle( "slide" );
-  $('#severe-table.' + location).show("slide", { direction: "right" }, 200);
+  window.severe_timers[location] = addTimer(function(){
+    $('#severe-table.' + location).show("slide", { direction: "right" }, 200);
+  }, 300)
+
   // $('#severe-table').slideLeft(1000);
 }
 
 function hideLocationTable (location) {
   // $('#severe-table.' + location).fadeOut(100)
+  clearTimer(window.severe_timers[location])
   $('#severe-table.' + location).hide("slide", { direction: "right" }, 100);
   // $('#severe-background').delay(500).fadeOut(00);
   // $('#severe-table').slideRight(1000);

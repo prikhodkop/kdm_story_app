@@ -6,6 +6,7 @@ module.exports = {
   clearLoops,
   addTimer,
   clearTimers,
+  clearTimer,
 }
 
 function addLoop(handler, timeout = null) {
@@ -40,6 +41,8 @@ function addTimer(handler, timeout = null) {
       ...Array.prototype.slice.call(arguments, 2))
 
   timers[handle] = true
+
+  return handle
 }
 
 function clearTimers() {
@@ -48,4 +51,14 @@ function clearTimers() {
   }
 
   timers = {}
+}
+
+function clearTimer(thehandle) {
+  for (let handle in timers) {
+    if (handle == thehandle) {
+        clearTimeout(handle)
+        delete timers[handle]
+        console.log('Handle cleared!')
+    }
+  }
 }

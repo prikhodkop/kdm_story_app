@@ -488,7 +488,7 @@ module.exports = class SettlementScene {
     $('#development_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: '<b style="color:#cc0;">Click</b> to show <b>Development</b> window.<br/><br/><i>Double click to select/deselect location and innovation.</i>',
+      content: '<b style="color:#cc0;">Click</b> to show <b>Development</b> window.',
       position: 'right',
       delay: 0,
       maxWidth: 300,
