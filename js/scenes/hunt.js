@@ -571,7 +571,7 @@ module.exports = class HuntScene {
       500)
 
       addTimer(function () {
-        loadHuntImage('images/hunt/darkness.png', 7, 7.3914, 31.45, 'darkness',
+        loadHuntImage('images/hunt/darkness.png', 7, 7.3914, 31.55, 'darkness',
           'overwhelming darkness')
       }, 2150)
 
