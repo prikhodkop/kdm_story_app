@@ -1813,7 +1813,7 @@ As the survivors carefully pick their way past the verdant hazards, the straggle
 
 The survivors approach a 5-sided monolith made of flesh that stretches into the darkness overhead. Limbs and faces both human and bizarre protrude from all sides. The event revealer gains +1 courage and <b>investigates</b>.
 
-[TA] 1d10
+[TO] 1d10
 [td] Event revealer - investigate
 [c] 1
 [d<]
