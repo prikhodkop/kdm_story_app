@@ -383,26 +383,54 @@ function setupInnovations() {
 
   // $('.innovations_grid').load(function() {
   //   console.log('Creating sortable!!')
-  var sortable = Sortable.create(document.getElementsByClassName('innovations_grid')[0], {
-    animation: 300,  // ms, animation speed moving items when sorting, `0` — without animation
+
+  $('.innovations_grid').sortable({
+    animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
     // ghostClass: 'blue-background-class'
   	// easing: "cubic-bezier(1, 0, 0, 1)",
     // sort: false,  // sorting inside list
     // Called by any change to the list (add / update / remove)
-    onStart: function (/**Event*/evt, /**Event*/originalEvent) {
+    tolerance: "pointer",
+    containment: "parent",
+    cursor: "move",
+
+    // revert: true,
+    // containment: 'parent',
+    start: function (event, ui) {
       // dragging = true;
       $(this).removeClass('use-hover');
       $('.innovations_grid').removeClass('use-hover')
 
     },
-  	onEnd: function (/**Event*/evt) {
+  	stop: function( event, ui ) {
   		// same properties as onEnd
       $(this).addClass('use-hover');
       $('.innovations_grid').addClass('use-hover')
 
       updateInnovationsState();
   	},
-  });
+  })
+
+  // var sortable = Sortable.create(document.getElementsByClassName('innovations_grid')[0], {
+  //   animation: 300,  // ms, animation speed moving items when sorting, `0` — without animation
+  //   // ghostClass: 'blue-background-class'
+  // 	// easing: "cubic-bezier(1, 0, 0, 1)",
+  //   // sort: false,  // sorting inside list
+  //   // Called by any change to the list (add / update / remove)
+  //   onStart: function (/**Event*/evt, /**Event*/originalEvent) {
+  //     // dragging = true;
+  //     $(this).removeClass('use-hover');
+  //     $('.innovations_grid').removeClass('use-hover')
+  //
+  //   },
+  // 	onEnd: function (/**Event*/evt) {
+  // 		// same properties as onEnd
+  //     $(this).addClass('use-hover');
+  //     $('.innovations_grid').addClass('use-hover')
+  //
+  //     updateInnovationsState();
+  // 	},
+  // });
   // })
 
   let innovations_list = get_random_draws('Innovation', false).sort();
@@ -450,7 +478,7 @@ $('#container').on("dblclick", '.innovation_card', function(e) {
   $('.tablinks[value="'+$(this).attr('value')+'"]').show();
   $('.innovation_card[value="'+$(this).attr('value')+'"]').addClass('magictime')
   $('.innovation_card[value="'+$(this).attr('value')+'"]').addClass(INNOVATION_CARD_HIDE)
-  $('.innovation_card[value="'+$(this).attr('value')+'"]').fadeOut(1000, function() {
+  $('.innovation_card[value="'+$(this).attr('value')+'"]').fadeOut(500, function() {
     $('.innovation_card[value="'+$(this).attr('value')+'"]').remove();
     updateInnovationsState();
     console.log('Selected innovations2:'+getDevelopmentState()['innovations'])
