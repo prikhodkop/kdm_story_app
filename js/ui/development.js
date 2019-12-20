@@ -180,6 +180,7 @@ function createLocation(location, default_open=false) {
     position: 'right',
     // timer: 1500,
     delay: [500, 0],
+    plugins: ['follower'],
   })
 
   if (['Throne', 'Sacreed Pool', 'Lantern Hoard', 'Exhausted Lantern Hoard'].includes(location)) {
@@ -602,6 +603,7 @@ function createInnovation(innovation) {
     content: '<b style="color:#cc0;">Double click</b> to <b>add innovation</b>.<br/>',
     position: 'bottom',
     delay: [800, 0],
+    plugins: ['follower'],
     // timer: 1000,
   })
 
@@ -637,7 +639,8 @@ function showInnovation(innovationName, initialization=false, newitem=false) {
     triggerClose: {
       click: true,
       mouseleave: true
-    }
+    },
+    plugins: ['follower'],
   })
 
   if (($('.innovation_card').length) && (!initialization)){
@@ -803,7 +806,8 @@ img.tooltipster({animationDuration: 50,
   triggerClose: {
     click: true,
     mouseleave: true
-  }
+  },
+  plugins: ['follower'],
 })
 
 item_content.append(img)

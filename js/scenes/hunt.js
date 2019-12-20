@@ -775,7 +775,7 @@ module.exports = class HuntScene {
             cursor: 'move',
             stop: scaling_board_function,
           })
-          $(this).tooltipster({animationDuration: 50,animationDuration: 50,
+          $(this).tooltipster({animationDuration: 50,
             contentAsHTML: 'true',
             animation: 'fade',
             delay: '600',
