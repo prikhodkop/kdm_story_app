@@ -171,7 +171,7 @@ module.exports = class SettlementScene {
       searchField: ['name'],
       onChange: function(value, isOnInitialize) {
         console.log('Selectize value: '+ value);
-        if (value == '...random Settlement Event') {
+        if (value == 'Random Settlement Event') {
           value = getSettlementEventPath()
         }
         $('#settlement_event_back').attr('src', cdnUrl('images/reference/Settlement Events/' + value + '.jpg'))
@@ -395,20 +395,12 @@ module.exports = class SettlementScene {
     })
 
 
-    // $('#setup_button').tooltipster({
-    //   contentAsHTML: 'true',
-    //   animation: 'grow',
-    //   content: 'Praise, another day survived!',
-    //   position: 'right',
-    //   delay: '600',
-    // })
-
-    $('#survivors_return_button').tooltipster({
+    $('#survivors_return_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
-      animation: 'grow',
+      animation: 'fade',
       content: 'All survivors that endured the previous showdown are <b>returning survivors</b>.<br/><br/>Their injuries are healed and all tokens are removed.<br/><br/>Apply any effects for the <b>returning survivors</b>.',
       position: 'right',
-      // delay: 600,
+      delay: 0,
       maxWidth: 300,
       trigger: 'custom',
       triggerOpen: {
@@ -421,12 +413,12 @@ module.exports = class SettlementScene {
       }
     })
 
-    $('#gain_endeavors_button').tooltipster({
+    $('#gain_endeavors_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
-      animation: 'grow',
+      animation: 'fade',
       content: 'Gain 1 endeavor for each <b>returning survivor</b>.<br/><br/>Additional endeavors may be gained from principles, innovations and abilities.',
       position: 'right',
-      // delay: 600,
+      delay: 0,
       maxWidth: 300,
       trigger: 'custom',
       triggerOpen: {
@@ -439,12 +431,12 @@ module.exports = class SettlementScene {
       }
     })
 
-    $('#settlement_event_button').tooltipster({
+    $('#settlement_event_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
-      animation: 'grow',
+      animation: 'fade',
       content: '<b style="color:#cc0;">Click</b> to draw <b>Settlement Event</b> card.',
       position: 'right',
-      // delay: 600,
+      delay: 0,
       maxWidth: 300,
       trigger: 'custom',
       triggerOpen: {
@@ -457,12 +449,12 @@ module.exports = class SettlementScene {
       }
     })
 
-    $('#update_deathcount_button').tooltipster({
+    $('#update_deathcount_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
-      animation: 'grow',
+      animation: 'fade',
       content: 'If any survivors perished during the hunt, showdown or during the preceeding steps of the settlement phase, update the death count.<br/><br/>If a survivor dies later during the Settlement Phase, upadte the death count immediately.',
       position: 'right',
-      // delay: 600,
+      delay: 0,
       maxWidth: 300,
       trigger: 'custom',
       triggerOpen: {
@@ -475,12 +467,12 @@ module.exports = class SettlementScene {
       }
     })
 
-    $('#milestones_button').tooltipster({
+    $('#milestones_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
-      animation: 'grow',
+      animation: 'fade',
       content: 'For each reached milestone trigger the corresponding story event.<br/><br/><b style="color:#cc0;">Click</b> to show <b>Milestones</b>.',
       position: 'right',
-      // delay: 600,
+      delay: 0,
       maxWidth: 300,
       trigger: 'custom',
       triggerOpen: {
@@ -493,12 +485,12 @@ module.exports = class SettlementScene {
       }
     })
 
-    $('#development_button').tooltipster({
+    $('#development_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
-      animation: 'grow',
+      animation: 'fade',
       content: '<b style="color:#cc0;">Click</b> to show <b>Development</b> window.<br/><br/><i>Double click to select/deselect location and innovation.</i>',
       position: 'right',
-      // delay: 600,
+      delay: 0,
       maxWidth: 300,
       trigger: 'custom',
       triggerOpen: {
@@ -511,12 +503,12 @@ module.exports = class SettlementScene {
       }
     })
 
-    $('#departing_button').tooltipster({
+    $('#departing_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
-      animation: 'grow',
+      animation: 'fade',
       content: 'Chose <b>4</b> departing survivors.<br/><br/>Remove the returning survivors gear and add gear to the departing survivors gear grids.<br/><br/>Record armor points, modifiers from gear and bonuses from innovations, endeavors and events that affect departing survivors.',
       position: 'right',
-      // delay: 600,
+      delay: 0,
       maxWidth: 300,
       trigger: 'custom',
       triggerOpen: {
@@ -529,12 +521,12 @@ module.exports = class SettlementScene {
       }
     })
 
-    $('#special_showdown_button').tooltipster({
+    $('#special_showdown_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
-      animation: 'grow',
+      animation: 'fade',
       content: 'Departing survivors immediately begin showdown.<br/><br/>After showdown heal all wounds and remove all tokens.',
       position: 'right',
-      // delay: 600,
+      delay: 0,
       maxWidth: 300,
       trigger: 'custom',
       triggerOpen: {
@@ -547,12 +539,12 @@ module.exports = class SettlementScene {
       }
     })
 
-    $('#record_button').tooltipster({
+    $('#record_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
-      animation: 'grow',
+      animation: 'fade',
       content: 'Record unspent resources in the settlement storage and archive all resource cards.',
       position: 'right',
-      // delay: 600,
+      delay: 0,
       maxWidth: 300,
       trigger: 'custom',
       triggerOpen: {
@@ -565,12 +557,12 @@ module.exports = class SettlementScene {
       }
     })
 
-    $('#end_phase_button').tooltipster({
+    $('#end_phase_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
-      animation: 'grow',
+      animation: 'fade',
       content: 'Lose unspent endeavors.<br/><br/><b style="color:#cc0;">Click</b> to start a new <b>Hunt</b>!',
       position: 'right',
-      // delay: 600,
+      delay: 0,
       maxWidth: 300,
       trigger: 'custom',
       triggerOpen: {

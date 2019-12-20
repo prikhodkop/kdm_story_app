@@ -104,14 +104,14 @@ function createMenuButton () {
         $('#menu-toggle-wrapper').tooltipster('content', null);
       } else {
         $('#menu').hide();
-        $('#menu-toggle-wrapper').tooltipster('content', 'Show <b>Story Events</b> table.');
+        $('#menu-toggle-wrapper').tooltipster('content', 'Show <b>Story Events</b> table.', 'delay', 0);
       }
       $(this).toggleClass('active')
     })
 
-    $('#menu-toggle-wrapper').tooltipster({
+    $('#menu-toggle-wrapper').tooltipster({animationDuration: 50,
         contentAsHTML: 'true',
-        animation: 'grow',
+        animation: 'fade',
         content: 'Show <b>Story Events</b> table.',
         position: 'left',
         delay: [300, 300],
@@ -536,12 +536,12 @@ function createReference () {
   // }, function () {
   //   $(this).delay(500).removeClass('hoverd')
   // })
-  $('#reference').tooltipster({
+  $('#reference').tooltipster({animationDuration: 50,
     contentAsHTML: 'true',
-    animation: 'grow',
+    animation: 'fade',
     content: 'Show <b>Reference</b> window.',
     position: 'right',
-    delay: '600',
+    delay: [0, 0],
   })
 
   $('#reference').click(function () {

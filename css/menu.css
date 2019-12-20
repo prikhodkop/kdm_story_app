@@ -129,11 +129,11 @@
 #menu-toggle-wrapper #menu-toggle,
 #menu-toggle-wrapper #menu-toggle:after,
 #menu-toggle-wrapper #menu-toggle:before {
-	-webkit-transition: all 0.3s cubic-bezier(0.585, -0.6, 0.43, 1.65);
-	-moz-transition: all 0.3s cubic-bezier(0.585, -0.6, 0.43, 1.65);
-	-ms-transition: all 0.3s cubic-bezier(0.585, -0.6, 0.43, 1.65);
-	-o-transition: all 0.3s cubic-bezier(0.585, -0.6, 0.43, 1.65);
-	transition: all 0.3s cubic-bezier(0.585, -0.6, 0.43, 1.65);
+	-webkit-transition: all 0.1s cubic-bezier(0.585, -0.6, 0.43, 1.65);
+	-moz-transition: all 0.1s cubic-bezier(0.585, -0.6, 0.43, 1.65);
+	-ms-transition: all 0.1s cubic-bezier(0.585, -0.6, 0.43, 1.65);
+	-o-transition: all 0.1s cubic-bezier(0.585, -0.6, 0.43, 1.65);
+	transition: all 0.1s cubic-bezier(0.585, -0.6, 0.43, 1.65);
 }
 #menu-toggle-wrapper:hover #menu-toggle:before {
 	top: -6px;

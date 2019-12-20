@@ -10,6 +10,9 @@ const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
+const QUARRY_CARD_SHOW = 'slideUpReturn' // 'slideDownReturn'
+const QUARRY_CARD_HIDE = 'vanishOut' // 'SlideDown'
+
 module.exports = class HuntScene {
   render () {
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/hunt.html')
@@ -51,25 +54,25 @@ module.exports = class HuntScene {
     createToc()
     addSettings(settings)
 
-    $('#random_event_icon').tooltipster({
+    $('#random_event_icon').tooltipster({animationDuration: 50,animationDuration: 50,
       contentAsHTML: 'true',
-      animation: 'grow',
+      animation: 'fade',
       content: 'Roll random <b>Hunt Event</b>',
       position: 'top',
       delay: '600',
     })
 
-    $('#random_event_icon_big').tooltipster({
+    $('#random_event_icon_big').tooltipster({animationDuration: 50,animationDuration: 50,
       contentAsHTML: 'true',
-      animation: 'grow',
+      animation: 'fade',
       content: 'Roll random <b>Hunt Event</b>',
       position: 'top',
       delay: '600',
     })
 
-    $('#random_event_input').tooltipster({
+    $('#random_event_input').tooltipster({animationDuration: 50,animationDuration: 50,
       contentAsHTML: 'true',
-      animation: 'grow',
+      animation: 'fade',
       content: 'Type <b>Hunt Event</b> number here',
       position: 'bottom',
       delay: '600',
@@ -213,36 +216,21 @@ module.exports = class HuntScene {
     })
 
     $('body').on('click', '#quary_popup', function () {
-      $('#quary_popup').fadeOut(500)
+      // $('#quary_popup').fadeOut(500)
+      document.querySelector('#quary_popup').classList.remove('magictime', QUARRY_CARD_SHOW, QUARRY_CARD_HIDE)
+      document.querySelector('#quary_popup').classList.add('magictime', QUARRY_CARD_HIDE)
       $('#quary_popup').toggleClass('hidden')
-      // document.getElementById('quary_popup').style.webkitAnimationPlayState = "running";
-      //
-      // $('#quary_popup').on('webkitAnimationEnd', function() {
-      //   this.style.webkitAnimationPlayState = "paused";
-      // });
       $('#quary_popup_back').delay(500).fadeOut(500)
-      // $('#random_event_icon').fadeOut(1000);
-      // $('#random_event_input').fadeOut(1000);
-      // $('#quary_popup_back').remove()
+      $('#quary_popup').delay(1000).fadeOut(100)
 
-      // $('body').removeClass('is-dimmed');
     })
 
     $('body').on('click', '#quary_popup_back', function () {
       $('#random_popup').fadeOut(500)
-      $('#quary_popup').fadeOut(500)
-      // $('#quary_popup').toggleClass('hidden');
-      // document.getElementById('quary_popup').style.webkitAnimationPlayState = "running";
-      //
-      // $('#quary_popup').on('webkitAnimationEnd', function() {
-      //   this.style.webkitAnimationPlayState = "paused";
-      // });
+      document.querySelector('#quary_popup').classList.remove('magictime', QUARRY_CARD_SHOW, QUARRY_CARD_HIDE)
+      document.querySelector('#quary_popup').classList.add('magictime', QUARRY_CARD_HIDE)
       $('#quary_popup_back').delay(500).fadeOut(500)
-      // $('#random_event_icon').fadeOut(1000);
-      // $('#random_event_input').fadeOut(1000);
-      // $('#quary_popup_back').remove()
-
-      // $('body').removeClass('is-dimmed');
+      $('#quary_popup').delay(1000).fadeOut(100)
     })
 
     $('body').on('click', '#random_event_icon', function () {
@@ -414,14 +402,6 @@ module.exports = class HuntScene {
 
     // Hide show hunt event
     $('body').on('click', '#common', function () {
-      // let title = $(this).attr('title');
-      //
-      // if (title == 'Monster Hunt Event') {
-      //   $('#quary_popup').attr('src', cdnUrl($(this).attr('href')))
-      //   $('#quary_popup').fadeIn(3000)
-      //   $('#quary_popup_back').fadeIn(3000)
-      //
-      // }
 
       var pos = $(this).attr('position')
       console.log(pos)
@@ -488,16 +468,16 @@ module.exports = class HuntScene {
           $(this).appendTo('#container')
           $(this).hide()
           $(this).delay(1000).fadeIn(2000)
-          $(this).tooltipster({
+          $(this).tooltipster({animationDuration: 50,animationDuration: 50,
             contentAsHTML: 'true',
-            animation: 'grow',
+            animation: 'fade',
             content: '<b>Herb Gathering</b><br />Survivors eat berries on the way<br />All survivors get <b>+1 survival</b>',
             position: 'top',
             delay: '600',
           })
-          $(this).tooltipster({
+          $(this).tooltipster({animationDuration: 50,animationDuration: 50,
             contentAsHTML: 'true',
-            animation: 'grow',
+            animation: 'fade',
             content: '<i style="color:#aa0;">Sickle required!</i>',
             position: 'bottom',
             delay: '600',
@@ -510,16 +490,16 @@ module.exports = class HuntScene {
           $(this).appendTo('#container')
           $(this).hide()
           $(this).delay(1000).fadeIn(2000)
-          $(this).tooltipster({
+          $(this).tooltipster({animationDuration: 50,animationDuration: 50,
             contentAsHTML: 'true',
-            animation: 'grow',
+            animation: 'fade',
             content: '<b>Mineral Gathering</b>',
             position: 'top',
             delay: '600',
           })
-          $(this).tooltipster({
+          $(this).tooltipster({animationDuration: 50,animationDuration: 50,
             contentAsHTML: 'true',
-            animation: 'grow',
+            animation: 'fade',
             content: '<i style="color:#aa0;">Pickaxe required!</i>',
             position: 'bottom',
             delay: '600',
@@ -533,16 +513,16 @@ module.exports = class HuntScene {
               $(this).appendTo('#container')
               $(this).hide()
               $(this).delay(1000).fadeIn(2000)
-              $(this).tooltipster({
+              $(this).tooltipster({animationDuration: 50,animationDuration: 50,
                 contentAsHTML: 'true',
-                animation: 'grow',
+                animation: 'fade',
                 content: '<b>Sky Fishing</b>',
                 position: 'top',
                 delay: '600',
               })
-              $(this).tooltipster({
+              $(this).tooltipster({animationDuration: 50,animationDuration: 50,
                 contentAsHTML: 'true',
-                animation: 'grow',
+                animation: 'fade',
                 content: '<i style="color:#aa0;">Sun Lure and Hook required!</i>',
                 position: 'bottom',
                 delay: '600',
@@ -795,9 +775,9 @@ module.exports = class HuntScene {
             cursor: 'move',
             stop: scaling_board_function,
           })
-          $(this).tooltipster({
+          $(this).tooltipster({animationDuration: 50,animationDuration: 50,
             contentAsHTML: 'true',
-            animation: 'grow',
+            animation: 'fade',
             delay: '600',
             plugins: ['follower'],
           })
@@ -858,9 +838,9 @@ module.exports = class HuntScene {
         };
 
         if (type == 'darkness' || type == 'starvation') {
-          $(this).tooltipster({
+          $(this).tooltipster({animationDuration: 50,animationDuration: 50,
             contentAsHTML: 'true',
-            animation: 'grow',
+            animation: 'fade',
             delay: '600',
           })
           $(this).droppable({
@@ -898,12 +878,13 @@ module.exports = class HuntScene {
               if (ui.draggable[0]['id'] == 'survivors') {
                 if (title == 'Monster Hunt Event') {
                   $('#quary_popup').attr('src', cdnUrl($(this).attr('href')))
-                  $('#quary_popup').delay(500).fadeIn(500)
+                  // $('#quary_popup').delay(500).fadeIn(500)
+                  $('#quary_popup').show();
+                  // $('#quary_popup').addClass('bling vanishIn');
+                  document.querySelector('#quary_popup').classList.remove('magictime', QUARRY_CARD_SHOW, QUARRY_CARD_HIDE)
+                  document.querySelector('#quary_popup').classList.add('magictime', QUARRY_CARD_SHOW)
                   $('#quary_popup').toggleClass('hidden')
                   $('#quary_popup_back').fadeIn(1000)
-                  // $('#random_event_icon').delay(1000).fadeIn(3000);
-                  // $('#random_event_input').delay(1000).fadeIn(3000);
-                  // $('#random_event_input').val('')
                 }
 
                 if (title == 'Random Hunt Event') {

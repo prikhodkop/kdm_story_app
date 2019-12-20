@@ -721,6 +721,10 @@ button.tablinks.active {
   /* overflow: visible; */
 }
 
+.innovations_grid.shaded > * {
+  filter: brightness(30%) !important;
+}
+
 .innovations_grid > .active {
 	/* border: 0.3rem solid #dd0; */
   /* box-shadow: 0 0 10px #cc0; */
@@ -744,13 +748,16 @@ button.tablinks.active {
 }
 
 .tooltip_image_innovation {
-  width:260pt;
+  top: 30%;
+  width:20%;
+  left: 15%;
   display:block;
-  position:inline;
-  overflow:visible;
+  position:absolute;
+  /* overflow:visible; */
   --borderWidth: 1em;
 	border-radius: var(--borderWidth);
   border: 0.2rem solid #555;
+  z-index: 98
 }
 
 .tooltipster-base { box-sizing: content-box !important; }

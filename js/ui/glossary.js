@@ -1530,28 +1530,28 @@ const innovations = {
    'action': true,
  },
  'Accept Darkness': {
-   'tags': ['society principle']
+   'tags': ['principle', 'society']
  },
  'Barbaric': {
-   'tags': ['society principle']
+   'tags': ['principle', 'conviction']
  },
  'Cannibalize': {
-   'tags': ['society principle']
+   'tags': ['principle', 'death']
  },
  'Collective Toil': {
-   'tags': ['society principle']
+   'tags': ['principle', 'society']
  },
  'Graves': {
-   'tags': ['society principle']
+   'tags': ['principle', 'death']
  },
  'Protect the Young': {
-   'tags': ['society principle']
+   'tags': ['principle', 'birth', 'new life']
  },
  'Romantic': {
-   'tags': ['society principle']
+   'tags': ['principle', 'conviction']
  },
  'Survival of the Fittest': {
-   'tags': ['society principle']
+   'tags': ['principle', 'birth', 'new life']
  }
 }
 
@@ -1714,7 +1714,7 @@ function get_all_options () {
 }
 
 function get_events_options() {
-  let options = [{class: 'settlement events', name: '...random Settlement Event', value: '...random Settlement Event',}]
+  let options = [{class: 'settlement events', name: '<Random>', value: 'Random Settlement Event',}]
   return options.concat(get_options(settlement_events, 'settlement events', filter=true))
 }
 

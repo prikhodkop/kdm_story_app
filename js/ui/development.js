@@ -5,6 +5,9 @@ const { getSettings } = require('./../ui/settings')
 const { addTimer } = require('./../ui/timer')
 
 const DEBUG_MODE = true
+const INNOVATION_HIDE = 'slideRight'
+const INNOVATION_CARD_SHOW = 'slideLeftReturn'
+const INNOVATION_CARD_HIDE = 'rotateDown'//'holeOut'
 
 module.exports = {
   addDevelopment,
@@ -147,12 +150,7 @@ function setupLocations() {
         $('.tablinks[value = "Lantern Hoard"]').removeClass('selected');
         moveItem('location', "Lantern Hoard");
       }
-      // if ($(this).attr('value') == 'Catarium') {
-      //   $('.tablinks[value = "Lantern Hoard"]').removeClass('selected');
-      //   moveItem('location', "Lantern Hoard");
-      //   $('.tablinks[value = "Exhausted Lantern Hoard"]').removeClass('selected');
-      //   moveItem('location', "Exhausted Lantern Hoard");
-      // }
+
       moveItem($(this).attr('type'), $(this).attr('value'));
     } else {
       if (!(always_on_locations.includes($(this).attr('value'))) && !($(this).attr('value') == 'Exhausted Lantern Hoard')) {
@@ -174,6 +172,14 @@ function createLocation(location, default_open=false) {
   })
   button.html(titleCase(location));
   $('#development_tabs').append(button);
+
+  button.tooltipster({animationDuration: 50,
+    contentAsHTML: 'true',
+    animation: 'fade',
+    content: '<b style="color:#cc0;">Click</b> to <b>show location</b>.<br/><br/><b style="color:#cc0;">Double click</b> to <b>toggle built status</b>.',
+    position: 'right',
+    delay: [500, 0],
+  })
 
   if (['Throne', 'Sacreed Pool', 'Lantern Hoard', 'Exhausted Lantern Hoard'].includes(location)) {
     let settings = getSettings();
@@ -248,12 +254,12 @@ function createLocation(location, default_open=false) {
             if ('resources' in gear_list[gear_name]) {
               tooltip = tooltip + '<div style="font-size:1.0em;">'+gear_list[gear_name]['resources'].join('<br/>')+'</div'
             }
-            element.tooltipster({
+            element.tooltipster({animationDuration: 50,
               contentAsHTML: 'true',
-              animation: 'grow',
+              animation: 'fade',
               content: tooltip,
               position: 'left',
-              delay: [500, 300],
+              delay: [300, 0],
               trigger: 'custom',
               triggerOpen: {
                 mouseenter: true,
@@ -311,8 +317,16 @@ function setupInnovations() {
     type: 'search',
     onkeyup: "filterInnovations()",
     onsearch: "filterInnovations(true)",
-    placeholder: "Search... (# for tags)"
+    placeholder: "Search..."
   }));
+
+  $('#innovations_filter').tooltipster({animationDuration: 50,
+    contentAsHTML: 'true',
+    animation: 'fade',
+    content: '<b style="color:#cc0;">Type</b> in the name you\'re looking for.</br><b>Start</b> with <b>#</b> to search for tags instead: <i>i.e. #principles, #death, #gormchymy</i>.',
+    position: 'right',
+    delay: 0,
+  })
 
   $('#innovations_filter').hide();
 
@@ -326,12 +340,42 @@ function setupInnovations() {
     class: 'innovations_grid use-hover',
   }));
 
-  // $('.innovations_grid').css('columns', '1fr '.repeat(settings['innovation_row_length'])+'!important')
+  $('#settlement_locations_window').append($('<img>', {
+    src: "#", //"images/reference/Innovations/"+innovation+".jpg",
+    class: "tooltip_image_innovation"
+  }))
 
-  // $('.innovations_grid').sortable({
-  //   // items:'.tablinks',
-  //   forceHelperSize: true
-  // });
+  $('.tooltip_image_innovation').hide()
+
+  $(document).on({
+    mouseenter: function (e) {
+      console.log('Show innovation tooltip!'+$(e.target).val())
+
+
+      if (!$('#innovations_tab').hasClass('tablinks_hoverd')) {
+        addTimer(function(){
+          if ($('#innovations_tab').hasClass('tablinks_hoverd')) {
+            $('.tooltip_image_innovation').show("slide", { direction: "left" }, 200);
+          }
+        }, 100)
+        $('.innovations_grid').addClass('shaded')
+      }
+      $('#innovations_tab').addClass('tablinks_hoverd')
+
+      $('.tooltip_image_innovation').attr('src', cdnUrl("images/reference/Innovations/"+$(e.target).val()+".jpg"))
+    },
+    mouseleave: function (e) {
+
+      addTimer(function(){
+        if (!$('#innovations_tab').hasClass('tablinks_hoverd')) {
+          $('.tooltip_image_innovation').hide("slide", { direction: "left" }, 200);
+          $('.innovations_grid').removeClass('shaded')
+          $('#innovations_tab').removeClass('tablinks_hoverd')
+        }
+      }, 100)
+      $('#innovations_tab').removeClass('tablinks_hoverd')
+    },
+  }, '.tablinks[type="innovation"]')
 
   console.log('++++Creating sortable!!')
 
@@ -340,7 +384,7 @@ function setupInnovations() {
   // $('.innovations_grid').load(function() {
   //   console.log('Creating sortable!!')
   var sortable = Sortable.create(document.getElementsByClassName('innovations_grid')[0], {
-    animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
+    animation: 300,  // ms, animation speed moving items when sorting, `0` — without animation
     // ghostClass: 'blue-background-class'
   	// easing: "cubic-bezier(1, 0, 0, 1)",
     // sort: false,  // sorting inside list
@@ -349,11 +393,13 @@ function setupInnovations() {
       // dragging = true;
       $(this).removeClass('use-hover');
       $('.innovations_grid').removeClass('use-hover')
+
     },
   	onEnd: function (/**Event*/evt) {
   		// same properties as onEnd
       $(this).addClass('use-hover');
       $('.innovations_grid').addClass('use-hover')
+
       updateInnovationsState();
   	},
   });
@@ -392,7 +438,7 @@ function setupInnovations() {
 
    $(this).addClass('selected')
    $(this).hide();
-   showInnovation($(this).attr('value'));
+   showInnovation($(this).attr('value'), initialization=false, newitem=true);
    updateInnovationsState();
    console.log('Selected innovations1:'+getDevelopmentState()['innovations'])
 
@@ -402,7 +448,9 @@ function setupInnovations() {
 $('#container').on("dblclick", '.innovation_card', function(e) {
   $('.tablinks[value="'+$(this).attr('value')+'"]').removeClass('selected')
   $('.tablinks[value="'+$(this).attr('value')+'"]').show();
-  $('.innovation_card[value="'+$(this).attr('value')+'"]').fadeOut(300, function() {
+  $('.innovation_card[value="'+$(this).attr('value')+'"]').addClass('magictime')
+  $('.innovation_card[value="'+$(this).attr('value')+'"]').addClass(INNOVATION_CARD_HIDE)
+  $('.innovation_card[value="'+$(this).attr('value')+'"]').fadeOut(1000, function() {
     $('.innovation_card[value="'+$(this).attr('value')+'"]').remove();
     updateInnovationsState();
     console.log('Selected innovations2:'+getDevelopmentState()['innovations'])
@@ -413,21 +461,44 @@ $('#container').on("dblclick", '.innovation_card', function(e) {
 
  $('#container').on("click", '.innovation_card', function(e) {
    console.log('!!Clicked on innovation card!!')
-   if (!$('.innovation_card[value="'+$(this).attr('value')+'"]').hasClass('active')) {
-     $('.innovation_card[value="'+$(this).attr('value')+'"]').addClass('active')
-     let state = getDevelopmentState();
-     state['activated']['innovations'].push($(this).attr('value'))
-     setDevelopmentState(state)
+   if ($('.innovation_card[value="'+$(this).attr('value')+'"]').hasClass('clickedOnce')) {
+     $('.innovation_card[value="'+$(this).attr('value')+'"]').removeClass('clickedOnce')
+     window.innovation_card_value = null
+     console.log('Removed class clickedOnce')
    } else {
-     $('.innovation_card[value="'+$(this).attr('value')+'"]').removeClass('active')
-     let state = getDevelopmentState();
-     let index = state['activated']['innovations'].indexOf($(this).attr('value'));
-     if (index !== -1) {
-       state['activated']['innovations'].splice(index, 1);
-     }
-     setDevelopmentState(state)
+     $('.innovation_card[value="'+$(this).attr('value')+'"]').addClass('clickedOnce')
+     window.innovation_card_value = $(this).attr('value')
+     console.log('Added class clickedOnce')
    }
+   addTimer(function() {
+     let value = window.innovation_card_value
+     console.log('Checking class clickedOnce '+$('.innovation_card[value="'+value+'"]').hasClass('clickedOnce'))
+     if ($('.innovation_card[value="'+value+'"]').hasClass('clickedOnce')) {
+       $('.innovation_card[value="'+value+'"]').removeClass('clickedOnce')
+       window.innovation_card_value = null
+       if (!$('.innovation_card[value="'+value+'"]').hasClass('active')) {
+         $('.innovation_card[value="'+value+'"]').addClass('active')
+         let state = getDevelopmentState();
+         state['activated']['innovations'].push($(this).attr('value'))
+         setDevelopmentState(state)
+       } else {
+         $('.innovation_card[value="'+value+'"]').removeClass('active')
+         let state = getDevelopmentState();
+         let index = state['activated']['innovations'].indexOf($(this).attr('value'));
+         if (index !== -1) {
+           state['activated']['innovations'].splice(index, 1);
+         }
+         setDevelopmentState(state)
+       }
+     }
+   }, 200)
   });
+
+  $('#container').on("mouseover",'.innovation_card', function(){
+    console.log('Hovered innovation card '+$(this).attr('value'))
+    $('.innovation_card[value="'+$(this).attr('value')+'"]').removeClass('magictime')
+    $('.innovation_card[value="'+$(this).attr('value')+'"]').removeClass(INNOVATION_CARD_SHOW)
+  })
 }
 
 function filterInnovations(clear=false) {
@@ -496,32 +567,17 @@ function createInnovation(innovation) {
   })
   button.html(titleCase(innovation).replace(' Of ', ' of ').replace(' The ', ' the '));
   $('#innovations_tab').append(button);
-
-  let img_element = $('<img>', {
-    src: "images/reference/Innovations/"+innovation+".jpg",
-    class: "tooltip_image_innovation"
-  }).load(function() {
-    button.tooltipster({
-      contentAsHTML: true,
-      animation: 'grow',
-      content: $(this),
-      position: 'right',
-      delay: [1500, 100],
-      maxWidth: 400,
-      trigger: 'custom',
-      triggerOpen: {
-        mouseenter: true,
-        click: true
-      },
-      triggerClose: {
-        click: true,
-        mouseleave: true
-      }
-    });
+  button.tooltipster({animationDuration: 50,
+    contentAsHTML: 'true',
+    animation: 'fade',
+    content: '<b style="color:#cc0;">Double click</b> to <b>add innovation</b>.<br/>',
+    position: 'bottom',
+    delay: [800, 0],
   })
+
 }
 
-function showInnovation(innovationName, initialization=false) {
+function showInnovation(innovationName, initialization=false, newitem=false) {
   // need a better solution one day - but it destroys all the duplicates that appear on windows reload
   if ($('.innovation_card[value="'+innovationName+'"]').length > 0) {
     $('.innovation_card[value="'+innovationName+'"]').each(function() {
@@ -537,15 +593,42 @@ function showInnovation(innovationName, initialization=false) {
 
   img.hide();
 
+  img.tooltipster({animationDuration: 50,
+    contentAsHTML: 'true',
+    animation: 'fade',
+    content: '<b style="color:#cc0;">Click</b> to activate.<br/><br/><b style="color:#cc0;">Double click</b> to remove.</b>.<br/><br/><b style="color:#cc0;">Drag</b> to rearange.</b>.',
+    position: 'bottom',
+    delay: [300, 0],
+    trigger: 'custom',
+    triggerOpen: {
+      mouseenter: true,
+      click: true
+    },
+    triggerClose: {
+      click: true,
+      mouseleave: true
+    }
+  })
+
   if (($('.innovation_card').length) && (!initialization)){
 		img.insertBefore('.innovation_card:first');
 	} else {
 		$('.innovations_grid').append(img);
 	}
 
-  img.load(function() {
-    $(this).delay(50).fadeIn(300);
-  })
+  // img.load(function() {
+  //
+  // })
+  if (!newitem) {
+    $('.innovation_card[value="'+innovationName+'"]').delay(50).fadeIn(300);
+  } else {
+    $('.innovation_card[value="'+innovationName+'"]').delay(50).fadeIn(100);
+    $('.innovation_card[value="'+innovationName+'"]').removeClass('magictime')
+    $('.innovation_card[value="'+innovationName+'"]').removeClass(INNOVATION_CARD_SHOW)
+    $('.innovation_card[value="'+innovationName+'"]').removeClass(INNOVATION_CARD_HIDE)
+    $('.innovation_card[value="'+innovationName+'"]').addClass('magictime')
+    $('.innovation_card[value="'+innovationName+'"]').addClass(INNOVATION_CARD_SHOW)
+  }
 
 };
 
@@ -676,12 +759,12 @@ let img = $('<img>', {
   src: cdnUrl('images/settlement/actions/'+name+'.jpg'),
 });
 
-img.tooltipster({
+img.tooltipster({animationDuration: 50,
   contentAsHTML: 'true',
-  animation: 'grow',
-  content: name.split('_')[0],
+  animation: 'fade',
+  content: '<b>Source: '+name.split('_')[0]+'</b><br/><br/><b style="color:#cc0;">Click</b> to activate.',
   position: 'left',
-  delay: [500, 300],
+  delay: [500, 0],
   trigger: 'custom',
   triggerOpen: {
     mouseenter: true,

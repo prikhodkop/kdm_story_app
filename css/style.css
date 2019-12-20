@@ -977,3 +977,7 @@ div.selectize-dropdown-content::-webkit-scrollbar {
   /* filter : alpha(opacity=90); */
 
 }
+
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
