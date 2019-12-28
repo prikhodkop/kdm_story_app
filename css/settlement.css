@@ -696,7 +696,7 @@ button.tablinks.active {
 
 .innovations_grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; // repeat(5, 1fr); */
   grid-gap: 1rem;
   pointer-events: none;
   /* overflow-x: visible; */

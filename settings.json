@@ -5,9 +5,10 @@
   "narration": "On",
   "onscreenKeypads": "On",
   "campaign": "Lantern",
+  "innovation_row_length": "5",
   "card design": {
-    "fighting arts": "Fen Small",
-    "disorders": "Fen Small"
+    "fighting arts": "Poots`",
+    "disorders": "Poots"
   },
   "expansions": {
     "gorm": "Disabled",

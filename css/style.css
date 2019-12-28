@@ -985,7 +985,7 @@ div.selectize-dropdown-content::-webkit-scrollbar {
 .tippy-tooltip.kdm-theme {
   background-color: black;
   color: #ccc;
-  opacity: 0.9;
+  opacity: 0.4;
   --borderWidth: 1em;
   border-radius: var(--borderWidth);
   border: 1px solid #333;

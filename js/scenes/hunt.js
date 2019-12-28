@@ -688,6 +688,16 @@ module.exports = class HuntScene {
           })
         };
       };
+
+      tippy('.token[name = "Survivors"]', {
+        placement: 'bottom-start',
+        content: '<b>Survivors</b><b style="color:#cc0;">Drag</b> to proceed on the hunt.',
+        duration: 50,
+        delay: [600, 100],
+        animation: 'shift-away-subtle',
+        followCursor: true,
+        theme: 'kdm',
+      });
     }
 
     function place_events (events_string, size, height, id, sequence) {
@@ -752,7 +762,7 @@ module.exports = class HuntScene {
 
       $('<img class="token ' + position + '" position="' + position + '" id="' + type +
                 '" title="' +
-                title + '" src="' + cdnUrl(path) + '" width="' + width + '%" style="left: ' + coord +
+                title + '" name="'+title+'" src="' + cdnUrl(path) + '" width="' + width + '%" style="left: ' + coord +
                 '%; top:' + top +
                 '%;"' + ref + ')>').load(function () {
         $(this).appendTo('#container')

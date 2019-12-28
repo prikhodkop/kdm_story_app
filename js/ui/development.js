@@ -424,6 +424,8 @@ function setupInnovations() {
       updateInnovationsState();
   	},
   })
+  console.log('aaaa:'+'1fr '.repeat(settings['innovation_row_length']))
+  $('.innovations_grid').css('grid-template-columns', '1fr '.repeat(settings['innovation_row_length']))
 
   let innovations_list = get_random_draws('Innovation', false).sort();
 
