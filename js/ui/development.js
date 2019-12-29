@@ -511,6 +511,10 @@ function setupInnovations() {
   	},
   })
   console.log('aaaa:'+'1fr '.repeat(settings['innovation_row_length']))
+  if ('1fr '.repeat(settings['innovation_row_length']) == '') {
+    settings['innovation_row_length'] = 5
+  }
+
   $('.innovations_grid').css('grid-template-columns', '1fr '.repeat(settings['innovation_row_length']))
 
   let innovations_list = get_random_draws('Innovation', false).sort();
