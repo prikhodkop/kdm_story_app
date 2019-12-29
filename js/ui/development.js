@@ -228,21 +228,57 @@ function createLocation(location, default_open=false) {
   let columns = []
   let gear_name = ''
 
+  let num_gear_columns = 0
+
+  for (let j = 1; j<4; j++) {
+    if (settlement_locations[location]['gear'][j].length > 0) {
+      num_gear_columns = num_gear_columns + 1;
+    }
+  }
+
+  let gear_column_width = 62.8/num_gear_columns;
+
+  let column = ''
+
   for (let j = 0; j<4; j++) {
     if (j > 0) {
-      columns.push($('<div>', {
-        class: "column_"+(j+1)+" gear_column",
-        id: (j+1),
-      }));
+      if (settlement_locations[location]['gear'][j].length > 0) {
+        column = $('<div>', {
+          class: "gear_column",
+          id: (j+1),
+        })
+        column.css('width', gear_column_width+'%')
+        column.css('left', (38+gear_column_width*(j-1))+'%')
+
+        if (('armor_set' in settlement_locations[location]) && (j == 1)) {
+          column.addClass('armor_set')
+          column.attr('armor_set', settlement_locations[location]['armor_set'])
+        }
+
+        content.append(column);
+        // columns.push($('<div>', {
+        //   class: "column_"+(j+1)+" gear_column",
+        //   id: (j+1),
+        // }));
+        // content.append(columns[j]);
+      }
+
     } else {
-      columns.push($('<div>', {
+      column = $('<div>', {
         class: "column_"+(j+1),
         id: (j+1),
-      }));
+      });
+      content.append(column);
+      // columns.push($('<div>', {
+      //   class: "column_"+(j+1),
+      //   id: (j+1),
+      // }));
+      // content.append(columns[j]);
     }
 
     if (j == 0) {
-      columns[j].append($('<img>', {
+      // columns[j].append($('<img>', {
+      column.append($('<img>', {
         class: "location_screen",
         src: cdnUrl("images/reference/Settlement Locations/"+titleCase(location)+".jpg"),
       }));
@@ -254,12 +290,23 @@ function createLocation(location, default_open=false) {
           let element = $('<img>', {
             class: "gear_card",
             src: cdnUrl("images/reference/Gear/"+gear_name+".jpg"),
-            value: gear_name
+            value: gear_name,
+            hover_height: Math.max(27.5, 0.99*gear_column_width)+'%',
+            normal_height:Math.min(23.75, 95/settlement_locations[location]['gear'][j].length)+'%'
           })
-          if ((location == 'Skyreef Sanctuary') && !(j == 2)) {
-            element.css('height', '15.4%')
-          }
-          columns[j].append(element);
+          // if ((location == 'Skyreef Sanctuary') && !(j == 2)) {
+          //   element.css('height', '15.4%')
+          // }
+          element.css('height', Math.min(23.75, 95/settlement_locations[location]['gear'][j].length)+'%') //0.93*gear_column_width
+
+          element.hover(function () {
+              console.log('I hovered this gear!')
+              $(this).css('height', $(this).attr('hover_height')) //0.93*gear_column_width
+          }, function () {
+              $(this).css('height', $(this).attr('normal_height')) //0.93*gear_column_width
+          });
+          // columns[j].append(element);
+          column.append(element);
           if (gear_name in gear_list) {
             let tooltip = ''
             if ('innovation' in gear_list[gear_name]) {
@@ -289,11 +336,50 @@ function createLocation(location, default_open=false) {
         }
       }
     }
-
-    content.append(columns[j]);
   }
 
   $('#settlement_locations_window').append(content);
+
+  $('#settlement_locations_window').append($('<img>', {
+    src: "#", //"images/reference/Innovations/"+innovation+".jpg",
+    class: "tooltip_image_armor_set"
+  }))
+
+  $('.tooltip_image_armor_set').hide()
+
+  $(document).on({
+    mouseenter: function (e) {
+      console.log('Show armor set tooltip!'+$(e.target).parent().attr('armor_set'))
+
+      $('.tooltip_image_armor_set').attr('src', cdnUrl("images/reference/Armor Sets/"+$(e.target).parent().attr('armor_set')+".jpg"))
+
+      // addTimer(function(){
+      //   $('.tooltip_image_armor_set').show("slide", { direction: "left" }, 200);
+      // }, 300)
+
+      if (!$('#innovations_tab').hasClass('set_hoverd')) {
+        addTimer(function(){
+          if ($('#innovations_tab').hasClass('set_hoverd')) {
+            $('.tooltip_image_armor_set').show("slide", { direction: "left" }, 200);
+            $(e.target).parent().parent().find('.location_screen').addClass('shaded')
+          }
+        }, 300)
+      }
+      $('#innovations_tab').addClass('set_hoverd')
+
+    },
+    mouseleave: function (e) {
+
+      addTimer(function(){
+        if (!$('#innovations_tab').hasClass('set_hoverd')) {
+          $('.tooltip_image_armor_set').hide("slide", { direction: "left" }, 200);
+          $(e.target).parent().parent().find('.location_screen').removeClass('shaded')
+        }
+      }, 100)
+      $('#innovations_tab').removeClass('set_hoverd')
+      // $('#innovations_tab').removeClass('tablinks_hoverd')
+    },
+  }, '.gear_column.armor_set')
 
 }
 

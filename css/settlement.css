@@ -483,67 +483,41 @@ button.tablinks.active {
     display:block;
     overflow: visible;
 }
-.column_2 {
-    left: 38%;
-    width: 20.6%;
-    top: 1%;
-    height: 100%;
-    border-left: none;
-    /* height: 300px; */
-    position: absolute;
-    z-index: 78;
-    display:block;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    /* overflow: auto; */
-    scrollbar-width: none;
+.column_gear {
+
 }
-.column_2::-webkit-scrollbar {
-        display: none;
-    }
-.column_3 {
-    left: 58.6%;
-    width: 20.6%;
-    top: 1%;
-    height: 100%;
-    border-left: none;
-    /* height: 300px; */
-    position: absolute;
-    z-index: 78;
-    display:block;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scrollbar-width: none;
-}
-.column_3::-webkit-scrollbar {
-        display: none;
-    }
-.column_4 {
-    left: 79.2%;
-    width: 20.6%;
-    top: 1%;
-    height: 100%;
-    border-left: none;
-    /* height: 300px; */
-    position: absolute;
-    z-index: 78;
-    display:block;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scrollbar-width: none;
-}
-.column_4::-webkit-scrollbar {
-        display: none;
-    }
 
 .gear_column {
   pointer-events: none;
+  top: 1%;
+  height: 98%;
+  border-left: none;
+  /* height: 300px; */
+  position: absolute;
+  z-index: 78;
+  display:block;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /* overflow: auto; */
+  scrollbar-width: none;
+}
+
+.gear_column.armor_set {
+  border-right: 1px solid #555
+}
+
+.gear_column::-webkit-scrollbar {
+    display: none;
 }
 
 .gear_column > * {
   opacity: 0.9;
   pointer-events: auto;
-  transition: opacity 0.5s, height 0.5s, filter 0.5s, border 0.5s;
+  transition: opacity 0.5s, width 0.5s, height 0.5s, filter 0.5s, border 0.5s;
+}
+
+.gear_column.armor_set > * {
+  filter: drop-shadow(0 0 5px #900);
 }
 
 .gear_column:hover > * {
@@ -552,7 +526,8 @@ button.tablinks.active {
 
 .gear_column:hover > *:hover {
   /* transform: scale(1.1); */
-  height: 24% !important;
+  /* height: 24%; */
+  max-height: 100%;
   filter: drop-shadow(0 0 5px #cc0);
   opacity: 1.0;
 }
@@ -579,7 +554,11 @@ button.tablinks.active {
 	/* -webkit-box-shadow: 0 0 80px #333; */
 	box-shadow: 0 0 10px #333;
   /* border: 0.1em solid #444; */
-  transition: width 1s;
+  transition: width 1s, filter 0.4s;
+}
+
+.location_screen.shaded{
+  filter: brightness(70%) !important;
 }
 
 .gear_card {
@@ -758,6 +737,20 @@ button.tablinks.active {
 	border-radius: var(--borderWidth);
   border: 0.2rem solid #555;
   z-index: 98
+}
+
+.tooltip_image_armor_set {
+  top: 10%;
+  width:20%;
+  left: 15%;
+  display:block;
+  position:absolute;
+  /* overflow:visible; */
+  --borderWidth: 1em;
+	border-radius: var(--borderWidth);
+  border: 0.2rem solid #555;
+  z-index: 98;
+  opacity: 0.8;
 }
 
 .tooltipster-base { box-sizing: content-box !important; }

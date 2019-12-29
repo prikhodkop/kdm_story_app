@@ -831,29 +831,32 @@ const settlement_locations = {
   },
   'Blacksmith': {
     'gear': {
-      '1': ['Lantern Sword', 'Lantern Dagger', 'Lantern Glaive', 'Dragon Slayer', 'Perfect Slayer'],
-      '2': ['Lantern Helm', 'Lantern Gauntlets', 'Lantern Cuirass', 'Lantern Mail', 'Lantern Greaves'],
-      '3': ['Scrap Shield', 'Beacon Shield', 'Ring Whip']},
+      '1': ['Lantern Helm', 'Lantern Gauntlets', 'Lantern Cuirass', 'Lantern Mail', 'Lantern Greaves'],
+      '2': ['Lantern Sword', 'Lantern Dagger', 'Lantern Glaive', 'Scrap Shield'],
+      '3': ['Beacon Shield', 'Ring Whip', 'Dragon Slayer', 'Perfect Slayer']},
+    'armor_set': 'Lantern Armor',
   },
   'Bone Smith': {
     'gear': {
-      '1': ['Bone Dagger', 'Bone Blade', 'Bone Axe'],
-      '2': ['Bone Darts', 'Bone Club', 'Skull Helm'],
-      '3': ['Bone Pickaxe', 'Bone Sickle']},
+      '1': ['Bone Dagger', 'Bone Blade', 'Bone Axe', 'Bone Darts'],
+      '2': ['Bone Club', 'Skull Helm', 'Bone Pickaxe', 'Bone Sickle'],
+      '3': []},
     'action': true,
   },
   'Catarium': {
     'gear': {
-      '1': ['Lion Beast Katar', 'Claw Head Arrow', 'King Spear', 'Cat Gut Bow', 'Cat Fang Knife'],
-      '2': ['White Lion Helm', 'White Lion Gauntlet', 'White Lion Coat', 'White Lion Skirt', 'White Lion Boots'],
+      '1': ['White Lion Helm', 'White Lion Gauntlet', 'White Lion Coat', 'White Lion Skirt', 'White Lion Boots'],
+      '2': ['Lion Beast Katar', 'Claw Head Arrow', 'King Spear', 'Cat Gut Bow', 'Cat Fang Knife'],
       '3': ['Cat Eye Circlet', 'Whisker Harp', 'Lion Headdress', 'Lion Skin Cloak', 'Frenzy Drink']},
+    'armor_set': 'White Lion Armor',
   },
   'Dragon Armory': {
     'expansion': 'dragon king',
     'gear': {
-      '1': ['Dragon Chakram', 'Dragon Bite Bolt', 'Talon Knife', 'Nuclear Knife', 'Red Power Core'],
-      '2': ['Dragonskull Helm', 'Dragon Gloves', 'Dragon Mantle', 'Dragon Belt', 'Dragon Boots'],
+      '1': ['Dragonskull Helm', 'Dragon Gloves', 'Dragon Mantle', 'Dragon Belt', 'Dragon Boots'],
+      '2': ['Dragon Chakram', 'Dragon Bite Bolt', 'Talon Knife', 'Nuclear Knife', 'Red Power Core'],
       '3': ['Blast Shield', 'Shielded Quiver', 'Blast Sword', 'Nuclear Scythe', 'Blue Power Core']},
+    'armor_set': 'Dragon Armor',
   },
   'Exhausted Lantern Hoard': {
     'campaign': 'Lantern',
@@ -875,9 +878,10 @@ const settlement_locations = {
   'Gormery': {
     'expansion': 'gorm',
     'gear': {
-      '1': ['Rib Blade', 'Knuckle Shield', 'Gaxe', 'Greater Gaxe', 'Riot Mace'],
-      '2': ['Gorment Mask', 'Gorment Sleeves', 'Gorment Suit', 'Gorment Boots', 'Regeneration Suit'],
+      '1': ['Gorment Mask', 'Gorment Sleeves', 'Gorment Suit', 'Gorment Boots', 'Regeneration Suit'],
+      '2': ['Rib Blade', 'Knuckle Shield', 'Gaxe', 'Greater Gaxe', 'Riot Mace'],
       '3': ['Pulse Lantern', 'Gorn', 'Armor Spikes', 'Acid Tooth Dagger', 'Black Sword']},
+    'armor_set': 'Gorment Armor',
   },
   'Inspired Crafting': {
     'expansion': 'flower knight',
@@ -897,10 +901,11 @@ const settlement_locations = {
   },
   'Leather Worker': {
     'gear': {
-      '1': ['Round Leather Shield', 'Hunter Whip'],
-      '2': ['Leather Mask', 'Leather Bracers', 'Leather Cuirass', 'Leather Skirt', 'Leather Boots'],
+      '1': ['Leather Mask', 'Leather Bracers', 'Leather Cuirass', 'Leather Skirt', 'Leather Boots'],
+      '2': ['Round Leather Shield', 'Hunter Whip'],
       '3': []},
     'action': true,
+    'armor_set': 'Leather Armor',
   },
   'Light Forging': {
     'expansion': 'slenderman',
@@ -927,9 +932,10 @@ const settlement_locations = {
   },
   'Plumery': {
     'gear': {
-      '1': ['Feather Shield', 'Bloom Sphere', 'Sonic Tomahawk', 'Hollow Sword', 'Arc Bow'],
-      '2': ['Phoenix Helm', 'Phoenix Gauntlet', 'Phoenix Plackart', 'Phoenix Faulds', 'Phoenix Greaves'],
+      '1': ['Phoenix Helm', 'Phoenix Gauntlet', 'Phoenix Plackart', 'Phoenix Faulds', 'Phoenix Greaves'],
+      '2': ['Feather Shield', 'Bloom Sphere', 'Sonic Tomahawk', 'Hollow Sword', 'Arc Bow'],
       '3': ['Feather Mantle', 'Bird Bread', 'Hours Ring', 'Crest Crown', 'Hollowpoint Arrow']},
+    'armor_set': 'Phoenix Armor',
   },
   'Sacreed Pool': {
     'campaign': 'Sun',
@@ -943,30 +949,34 @@ const settlement_locations = {
   'Silk Mill': {
     'expansion': 'spidicules',
     'gear': {
-      '1': ['Amber Poleaxe', 'Throwing Knife', 'Silk Whip', 'Hooded Scrap Katar', 'Amber Edge'],
-      '2': ['Silk Turban', 'Silk Wraps', 'Silk Robes', 'Silk Sash', 'Silk Boots'],
+      '1': ['Silk Turban', 'Silk Wraps', 'Silk Robes', 'Silk Sash', 'Silk Boots'],
+      '2': ['Amber Poleaxe', 'Throwing Knife', 'Silk Whip', 'Hooded Scrap Katar', 'Amber Edge'],
       '3': ['Body Suit', 'Silk Bomb', 'Red Ring', 'Blue Ring', 'Green Ring']},
+      'armor_set': 'Silk Armor',
   },
   'Skinnery': {
     'gear': {
-      '1': ['Bandages', 'Rawhide Drum', 'Rawhide Whip'],
-      '2': ['Rawhide Headband', 'Rawhide Gloves', 'Rawhide Vest', 'Rawhide Pants', 'Rawhide Boots'],
+      '1': ['Rawhide Headband', 'Rawhide Gloves', 'Rawhide Vest', 'Rawhide Pants', 'Rawhide Boots'],
+      '2': ['Bandages', 'Rawhide Drum', 'Rawhide Whip'],
       '3': []},
     'action': true,
+    'armor_set': 'Rawhide Armor',
   },
   'Skyreef Sanctuary': {
     'expansion': 'sunstalker',
     'gear': {
-      '1': ['Sunspot Dart', 'Sunshark Bow', 'Sunshark Arrows', 'Denticle Axe', 'Skleaver', 'Ink Sword'],
-      '2': ['Cycloid Scale Hood', 'Cycloid Scale Sleeves', 'Cycloid Scale Jacket', 'Cycloid Scale Skirt', 'Cycloid Scale Shoes'],
+      '1': ['Cycloid Scale Hood', 'Cycloid Scale Sleeves', 'Cycloid Scale Jacket', 'Cycloid Scale Skirt', 'Cycloid Scale Shoes'],
+      '2': ['Sunspot Dart', 'Sunshark Bow', 'Sunshark Arrows', 'Denticle Axe', 'Skleaver', 'Ink Sword'],
       '3': ['Sunspot Lantern', 'Quiver and Sunstring', 'Shadow Salvia Shawl', 'Sun Lure and Hook', 'Sky Harpoon', 'Ink Blood Bow']},
+    'armor_set': 'Cycloid Scale Armor',
   },
   'Stone Circle': {
     'gear': {
-      '1': ['Boss Mehndi', 'Beast Knuckle', 'Red Charm', 'Blood Paint'],
-      '2': ['Screaming Horns', 'Screaming Bracers', 'Screaming Coat', 'Screaming Skirt', 'Screaming Leg Warmers'],
+      '1': ['Screaming Horns', 'Screaming Bracers', 'Screaming Coat', 'Screaming Skirt', 'Screaming Leg Warmers'],
+      '2': ['Boss Mehndi', 'Beast Knuckle', 'Red Charm', 'Blood Paint'],
       '3': ['Bone Earrings', 'Green Charm', 'Blue Charm', 'Lance of Longinus']},
     'action': true,
+    'armor_set': 'Screaming Armor',
   },
   'The Sun': {
     'campaign': 'Sun',
@@ -997,9 +1007,10 @@ const settlement_locations = {
   'Wet Resin Crafter': {
     'expansion': 'dung beetle knight',
     'gear': {
-      '1': ['DBK Errant Badge', 'Rainbow Wing Belt', 'Digging Claw'],
-      '2': ['Seasoned Monster Meat', 'Century Shoulder Pads', 'Scarab Circlet'],
-      '3': ['Century Greaves', 'Rubber Bone Harness', 'The Beetle Bomb']},
+      '1': ['Century Shoulder Pads', 'Century Greaves', 'Rubber Bone Harness', 'Scarab Circlet', 'Rainbow Wing Belt'],
+      '2': ['DBK Errant Badge', 'Digging Claw', 'Seasoned Monster Meat', 'The Beetle Bomb'],
+      '3': []},
+    'armor_set': 'Rolling Armor',
   },
 }
 
