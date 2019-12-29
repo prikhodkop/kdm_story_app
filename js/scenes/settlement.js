@@ -12,7 +12,7 @@ const { addDevelopment, openLocation, getDevelopmentState, setDevelopmentState }
 
 module.exports = class SettlementScene {
   render () {
-    if (document.readyState === "complete") {
+    if (true) {
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/settlement.html')
 
     // $("img[usemap]").mapify();
