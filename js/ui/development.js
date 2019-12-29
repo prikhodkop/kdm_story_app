@@ -423,7 +423,7 @@ function setupInnovations() {
   $('#innovations_filter').tooltipster({animationDuration: 50,
     contentAsHTML: 'true',
     animation: 'fade',
-    content: '<b style="color:#cc0;">Type</b> in the name you\'re looking for.</br><b>Start</b> with <b>#</b> to search for tags instead: <i>i.e. #principles, #death, #gormchymy</i>.',
+    content: '<b style="color:#cc0;">Type</b>  the name you\'re looking for.</br><b>Separate</b> names by comma, to seach for several: <i>i.e. ammona, bloodletting</i></br><b>Start</b> with <b>#</b> to search for tags instead: <i>i.e. #principles, #death, #gormchymy</i>.',
     position: 'right',
     delay: 0,
   })
@@ -638,13 +638,13 @@ function filterInnovations(clear=false) {
         $('#innovations_filter').addClass('tags')
       }
       input.value = '#'+input.value.substr(1).replace(/ +(?= )/g,'');
-      input.value = '#'+input.value.substr(1).replace(/[^A-Za-z ]/gi, '')
+      input.value = '#'+input.value.substr(1).replace(/[^A-Za-z \-]/gi, '')
     } else {
       if ($('#innovations_filter').hasClass('tags')) {
         $('#innovations_filter').removeClass('tags')
       }
       input.value = input.value.replace(/ +(?= )/g,'');
-      input.value = input.value.replace(/[^A-Za-z \-]/gi, '')
+      input.value = input.value.replace(/[^A-Za-z ,\-]/gi, '')
     }
   }
 
@@ -652,21 +652,34 @@ function filterInnovations(clear=false) {
     return
   }
 
+  filter = filter.replace(/\s*,\s*/g, ",");
+  filter = filter.split(",");
+
+  let show_innovation = false
+
   $('#innovations_tab > button:not(.selected)').each(function() {
     let txtValue = $(this).text();
     if (DEBUG_MODE) {console.log('Innovation:'+txtValue)}
-    if (filter.charAt( 0 ) == '#') {
-      if (innovations[txtValue]['tags'].join(', ').toUpperCase().indexOf(filter.substr(1)) > -1) {
+    if (filter[0].charAt( 0 ) == '#') {
+      if (innovations[txtValue]['tags'].join(', ').toUpperCase().indexOf(filter[0].substr(1)) > -1) {
         $(this).css("display", "block");
       } else {
         $(this).css("display", "none");
       }
     } else {
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      show_innovation = false
+      for (let k = 0; k < filter.length; k++) {
+        if (txtValue.toUpperCase().indexOf(filter[k]) > -1) {
+          show_innovation = true
+        }
+      }
+
+      if (show_innovation) {
         $(this).css("display", "block");
       } else {
         $(this).css("display", "none");
       }
+
     }
   })
 }
