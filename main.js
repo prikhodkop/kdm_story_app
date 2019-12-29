@@ -12,6 +12,8 @@ const ProgressBar = require('electron-progressbar')
 
 const { autoUpdater } = require('electron-updater')
 
+require('v8-compile-cache');
+
 // let updater
 var progressbar
 autoUpdater.autoDownload = false

@@ -28,6 +28,7 @@
     "magic.css": "^1.4.5",
     "mocha": "^6.1.4",
     "tippy.js": "^5.1.2",
+    "v8-compile-cache": "^2.1.0",
     "web-animations-js": "^2.3.2"
   },
   "build": {
@@ -67,7 +68,7 @@
     "@babel/preset-env": "^7.4.5",
     "babel-loader": "^8.0.6",
     "copy-webpack-plugin": "^5.0.3",
-    "electron": "^5.0.1",
+    "electron": "^7.1.7",
     "electron-builder": "^20.43.0",
     "electron-notarize": "^0.1.1",
     "eslint": "^5.16.0",
