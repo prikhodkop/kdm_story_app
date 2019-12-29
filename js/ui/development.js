@@ -423,7 +423,7 @@ function setupInnovations() {
   $('#innovations_filter').tooltipster({animationDuration: 50,
     contentAsHTML: 'true',
     animation: 'fade',
-    content: '<b style="color:#cc0;">Type</b>  the name you\'re looking for.</br><b>Separate</b> names by comma, to seach for several: <i>i.e. ammona, bloodletting</i></br><b>Start</b> with <b>#</b> to search for tags instead: <i>i.e. #principles, #death, #gormchymy</i>.',
+    content: '<b style="color:#cc0;">Type</b>  the name you\'re looking for.</br></br><b>Separate</b> names by comma, to search for several: <i>i.e. ammona, bloodletting</i></br><b>Start</b> with <b>#</b> to search for tags instead: <i>i.e. #principles, #death, #gormchymy</i>.',
     position: 'right',
     delay: 0,
   })

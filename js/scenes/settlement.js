@@ -12,6 +12,7 @@ const { addDevelopment, openLocation, getDevelopmentState, setDevelopmentState }
 
 module.exports = class SettlementScene {
   render () {
+    if (document.readyState === "complete") {
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/settlement.html')
 
     // $("img[usemap]").mapify();
@@ -660,5 +661,6 @@ module.exports = class SettlementScene {
       let style = window.getComputedStyle(el)
       return (style.display === 'none')
     }
+  }
   }
 }
