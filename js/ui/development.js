@@ -291,7 +291,7 @@ function createLocation(location, default_open=false) {
             class: "gear_card",
             src: cdnUrl("images/reference/Gear/"+gear_name+".jpg"),
             value: gear_name,
-            hover_height: Math.max(27.5, 0.99*gear_column_width)+'%',
+            hover_height: 27.5+'%',
             normal_height:Math.min(23.75, 95/settlement_locations[location]['gear'][j].length)+'%'
           })
           // if ((location == 'Skyreef Sanctuary') && !(j == 2)) {
@@ -309,22 +309,45 @@ function createLocation(location, default_open=false) {
           column.append(element);
           if (gear_name in gear_list) {
             let tooltip = ''
+
+            if ('set' in gear_list[gear_name]) {
+              tooltip = tooltip + '<b style="color:#d87dc1;font-size:0.8em;">Set: '+gear_list[gear_name]['set'].join(', ')+'</b><br/><br/>'
+              element.addClass('set')
+              element.attr('set', gear_list[gear_name]['set'][0]+' Armor')
+            }
+
             if ('innovation' in gear_list[gear_name]) {
               tooltip = tooltip + '<b style="color:#cc0;font-size:1em;">Required: '+gear_list[gear_name]['innovation']+'</b><br/><br/>'
             }
+
             if ('resources' in gear_list[gear_name]) {
               tooltip = tooltip + '<div style="font-size:1.0em;">'+gear_list[gear_name]['resources'].join('<br/>')+'</div'
+            }
+
+            // tippy('.gear_card[value = "'+gear_name+'"]', {
+            //   placement: 'center-left',
+            //   content: tooltip,
+            //   duration: 50,
+            //   delay: [200, 100],
+            //   animation: 'shift-away-subtle',
+            //   // followCursor: true,
+            //   theme: 'kdm',
+            // });
+            let delay = 200
+            if (i >= 4) {
+              delay = 500
             }
             element.tooltipster({animationDuration: 50,
               contentAsHTML: 'true',
               animation: 'fade',
               content: tooltip,
               position: 'left',
-              delay: [300, 0],
+              delay: [delay, 100],
               trigger: 'custom',
+              // trackOrigin: true,
               triggerOpen: {
                 mouseenter: true,
-                click: true
+                click: true,
               },
               triggerClose: {
                 click: true,
@@ -351,7 +374,7 @@ function createLocation(location, default_open=false) {
     mouseenter: function (e) {
       console.log('Show armor set tooltip!'+$(e.target).parent().attr('armor_set'))
 
-      $('.tooltip_image_armor_set').attr('src', cdnUrl("images/reference/Armor Sets/"+$(e.target).parent().attr('armor_set')+".jpg"))
+      $('.tooltip_image_armor_set').attr('src', cdnUrl("images/reference/Armor Sets/"+$(e.target).attr('set')+".jpg"))
 
       // addTimer(function(){
       //   $('.tooltip_image_armor_set').show("slide", { direction: "left" }, 200);
@@ -379,7 +402,7 @@ function createLocation(location, default_open=false) {
       $('#innovations_tab').removeClass('set_hoverd')
       // $('#innovations_tab').removeClass('tablinks_hoverd')
     },
-  }, '.gear_column.armor_set')
+  }, '.gear_card.set')
 
 }
 

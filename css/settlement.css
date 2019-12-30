@@ -516,8 +516,8 @@ button.tablinks.active {
   transition: opacity 0.5s, width 0.5s, height 0.5s, filter 0.5s, border 0.5s;
 }
 
-.gear_column.armor_set > * {
-  filter: drop-shadow(0 0 5px #900);
+.gear_card.set {
+  filter: drop-shadow(0 0 5px #d87dc1);
 }
 
 .gear_column:hover > * {
