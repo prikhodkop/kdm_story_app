@@ -1098,7 +1098,7 @@ const gear_list = {
   'Gorn': {'resources':['1 x stout heart', '3 x bone']},
   'Armor Spikes': {'resources':['1 x stout vertebrae', '1 x scrap']},
   'Acid Tooth Dagger': {'resources':['1 x acid gland', '2 x bone']},
-  'Black Sword': {'resources':['1 x sgormite', '1 x handed skull']},
+  'Black Sword': {'resources':['1 x gormite', '1 x handed skull']},
   'Round Leather Shield': {'resources':['1 x leather', '1 x bone', '1 x hide']},
   'Hunter Whip': {'resources':['2 x leather', '1 x bone']},
   'Leather Mask': {'resources':['1 x leather', '1 x scrap'], 'set':['Leather']},
