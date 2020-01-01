@@ -1,5 +1,10 @@
 const { cdnUrl } = require('./template-renderer')
 
+const promo_hunt_events = [
+  `Percival`,
+  `Lonely Tree`,
+]
+
 const random_hunt_events = {
   1: `1 | Broken Lanterns
 The survivors feel something crunching beneath their feet. The event revealer may choose to lower their lantern and <b>investigate</b> or ignore the sensation and continue their journey.

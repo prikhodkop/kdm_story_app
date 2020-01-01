@@ -345,6 +345,10 @@ function createReference () {
       value: 'innovations',
       label: 'Innovations',
     },
+    {
+      value: 'resources',
+      label: 'Resources',
+    },
     // {
     //   value: 'principles',
     //   label: 'Principles',
