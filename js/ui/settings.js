@@ -325,6 +325,17 @@ var settings_schema = {
       'en',
     ],
   },
+  'campaign': {
+    'type': 'option',
+    'title': 'Campaign',
+    'description': 'Choose which campaign you currently play.',
+    'default': 'Lantern',
+    'enum': [
+      'Lantern',
+      'Stars',
+      'Sun',
+    ],
+  },
   'music': {
     'type': 'option',
     'title': 'Music',
@@ -365,17 +376,6 @@ var settings_schema = {
       'Off',
     ],
   },
-  'campaign': {
-    'type': 'option',
-    'title': 'Campaign',
-    'description': 'Choose which campaign you currently play.',
-    'default': 'Lantern',
-    'enum': [
-      'Lantern',
-      'Stars',
-      'Sun',
-    ],
-  },
   'innovation_row_length': {
     'type': 'option',
     'title': 'Innovations per row',
@@ -385,6 +385,18 @@ var settings_schema = {
       '4',
       '5',
       '6',
+    ],
+  },
+  'size_of_basic_hunt_deck': {
+    'type': 'option',
+    'title': 'Basic Hunt Deck Size',
+    'description': 'How many basic hunt events are in the deck (affects chance of promo).',
+    'default': '12',
+    'enum': [
+      '0',
+      '12',
+      '24',
+      '36',
     ],
   },
   'card design': {
@@ -509,10 +521,11 @@ var settings_schema = {
       'backstabber': {
         'type': 'option',
         'title': 'Backstabber',
-        'default': 'Locked',
+        'default': 'Disabled',
         'enum': [
           'Locked',
           'Unlocked',
+          'Disabled',
         ],
       },
       'ethereal pact': {
@@ -522,24 +535,27 @@ var settings_schema = {
         'enum': [
           'Locked',
           'Unlocked',
+          'Disabled',
         ],
       },
       'giants blood': {
         'type': 'option',
         'title': 'Giants Blood',
-        'default': 'Locked',
+        'default': 'Disabled',
         'enum': [
           'Locked',
           'Unlocked',
+          'Disabled',
         ],
       },
       'infinite lives': {
         'type': 'option',
         'title': 'Infinite Lives',
-        'default': 'Locked',
+        'default': 'Disabled',
         'enum': [
           'Locked',
           'Unlocked',
+          'Disabled',
         ],
       },
     },
@@ -553,6 +569,24 @@ var settings_schema = {
       'allison the twilight knight': {
         'type': 'option',
         'title': 'Allison the Twilight Knight',
+        'default': 'Disabled',
+        'enum': [
+          'Disabled',
+          'Enabled',
+        ],
+      },
+      'Fade': {
+        'type': 'option',
+        'title': 'Fade',
+        'default': 'Disabled',
+        'enum': [
+          'Disabled',
+          'Enabled',
+        ],
+      },
+      'percival': {
+        'type': 'option',
+        'title': 'Percival',
         'default': 'Disabled',
         'enum': [
           'Disabled',

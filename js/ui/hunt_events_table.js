@@ -1,9 +1,26 @@
 const { cdnUrl } = require('./template-renderer')
+const {getSettings} = require('./../ui/settings')
 
-const promo_hunt_events = [
-  `Percival`,
-  `Lonely Tree`,
-]
+const promo_hunt_events = {
+  'percival': `* | Dead Warrior
+The survivors stop a man\'s length away from a one-handed skeleton clad in ancient, rusted armor. A strange tablet covered in inscriptions lies next to it.
+
+If the settlement has <b>Pictographs</b>, a survivor with 3+ understanding may investigate.
+
+[TO] Choice
+[td] What do you do?
+[c] Investigate
+[d<]
+[TO] 1d10
+[td] Survivor with 3+ understanding
+[c] 1
+[d] You sense extreme danger, warning the others, everyone flees to safety. If you have a <b>broken jaw</b>. your garbled warning falls on deaf ears and all survivors are hacked by an unseen force.
+[c] 2+
+[dt] Remove the card from the hunt event deck permanently. You learn from the tablet. Gain the <b>Black Guard Style</b> secret fighting art! If any survivor has the honorable disorder, the group respectfully moves past the skeleton. Otherwise, gain 1 <b>bone</b> basic resource.
+[>d]
+[c] Go away
+[dt] Roll a random hunt event.`,
+}
 
 const random_hunt_events = {
   1: `1 | Broken Lanterns
@@ -2203,6 +2220,38 @@ The event revealer rolls 1d10.
 
 module.exports = {
   md_to_html_2,
+  is_promo_event
+}
+
+function is_promo_event () {
+  let settings = getSettings();
+
+  let promos = []
+
+  let size_of_base = settings['size_of_basic_hunt_deck']
+
+  if (settings['whiteboxes']['percival'] == 'Enabled') {
+    promos.push('percival')
+  }
+
+  if (promos.length == 0) {
+    return 'false'
+  }
+
+  let_guess = Math.random()
+
+  let promos_length = promos.length
+  let promo_probability = 1/(1+size_of_base/promos_length)
+
+  console.log('Num of promos: '+promos.length+' Size of base: '+size_of_base)
+  console.log('Promo probability: '+ promo_probability+' Guess: '+let_guess)
+
+  if (let_guess > promo_probability) {
+    return 'false'
+  } else {
+    return promos[Math.floor(Math.random() * promos.length)];
+  }
+
 }
 
 function get_random_event () {
@@ -2217,7 +2266,15 @@ function md_to_html_2 (event_id, init = true, current_table = 0, current_class =
   let html_end = ''
   let in_table = 0
   let parsing_child = 0
-  let event = random_hunt_events[event_id]
+  let event = ''
+  if (!isNaN(event_id)) {
+    console.log('It is a number:'+event_id)
+    event = random_hunt_events[event_id]
+  } else {
+    console.log('Its a promo!!'+event_id)
+    event = promo_hunt_events[event_id]
+  }
+
   let rows = event.split('\n')
 
   console.log('Number of rows:')

@@ -3,7 +3,7 @@ const { app } = require('electron').remote
 const { createToc, titleCase, events_table } = require('./../ui/events')
 const { clone } = require('./../ui/glossary')
 const { get_sequence } = require('./../ui/hunt_events')
-const { md_to_html_2 } = require('./../ui/hunt_events_table')
+const { md_to_html_2, is_promo_event } = require('./../ui/hunt_events_table')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
@@ -689,11 +689,11 @@ module.exports = class HuntScene {
         };
       };
 
-      tippy('.token[name = "Survivors"]', {
+      tippy(".token[title = 'Survivors']", {
         placement: 'bottom-start',
         content: '<b>Survivors</b><b style="color:#cc0;">Drag</b> to proceed on the hunt.',
         duration: 50,
-        delay: [600, 100],
+        delay: [200, 100],
         animation: 'shift-away-subtle',
         followCursor: true,
         theme: 'kdm',
@@ -899,15 +899,25 @@ module.exports = class HuntScene {
 
                 if (title == 'Random Hunt Event') {
                   $('#quary_popup_back').fadeIn(1000)
-                  $('#input_container').delay(500).fadeIn(
-                    500)
-                  $('#random_event_input_big').val('')
-                  $('#random_event_icon').fadeOut(500)
-                  $('#random_event_input').fadeOut(500)
-                  addTimer(function () {
-                    $('#random_event_input_big')
-                      .focus()
-                  }, 1100)
+
+                  let is_promo = is_promo_event()
+
+                  console.log('The event is:'+is_promo)
+
+                  if (is_promo == 'false') {
+                    $('#input_container').delay(500).fadeIn(
+                      500)
+                    $('#random_event_input_big').val('')
+                    $('#random_event_icon').fadeOut(500)
+                    $('#random_event_input').fadeOut(500)
+                    addTimer(function () {
+                      $('#random_event_input_big')
+                        .focus()
+                    }, 1100)
+                  } else {
+                    showRandomEvent(is_promo)
+                  }
+
                 }
 
                 let pos = $(this).attr('position')

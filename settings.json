@@ -1,10 +1,11 @@
 {
+  "campaign": "Lantern",
   "language": "en",
   "subtitles": "On",
   "music": "On",
   "narration": "On",
   "onscreenKeypads": "On",
-  "campaign": "Lantern",
+  "size_of_basic_hunt_deck": "5",
   "innovation_row_length": "5",
   "card design": {
     "fighting arts": "Poots`",
@@ -24,13 +25,15 @@
     "lonely tree": "Disabled"
   },
   "strains": {
-    "backstabber": "Locked",
-    "etheral pact": "Locked",
-    "giants blood": "Locked",
-    "infinite lives": "Locked"
+    "backstabber": "Disabled",
+    "etheral pact": "Disabled",
+    "giants blood": "Disabled",
+    "infinite lives": "Disabled"
   },
   "whiteboxes": {
     "allison the twilight knight": "Disabled",
+    "fade": "Disabled",
+    "percival": "Disabled",
     "white speaker": "Disabled"
   }
 }
