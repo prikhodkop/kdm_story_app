@@ -64,14 +64,14 @@ module.exports = class IndexScene {
     addSettings(settings)
     let gallery = setupCampaignSelect()
 
-    $('#label_text').fadeIn(3000)
+    $('#label_text').fadeIn(2000)
     // gallery.load(function () {
     //     gallery.delay(3000).fadeIn(1000)
     // })
     gallery.show();
     addTimer(function() {
       gallery.animate({opacity: 1}, 3000);
-      $('.campaign_element').each(function(){$(this).animate({opacity: 1}, 3000)});
+      $('.campaign_element').each(function(){$(this).animate({opacity: 1}, 2000)});
     }, 2000)
 
 

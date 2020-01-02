@@ -1182,7 +1182,7 @@ function addElement(name, type) {
   if (!development_state[type].includes(name)) {
     development_state[type].unshift(name);
   }
-  setDevelopmentState(name)
+  setDevelopmentState(development_state)
 }
 
 function addInnovation(name) {

@@ -11,7 +11,8 @@ module.exports = {
   addSettings,
   onSettingsSaved,
   setSettings,
-  saveSettings
+  saveSettings,
+  silentSaveSettings
 }
 
 function getSettings () {
@@ -129,6 +130,10 @@ function setSettings (settings) {
     }
 
   })
+}
+
+function silentSaveSettings(settings) {
+  saveFile(JSON.stringify(settings), app.getPath('userData') + '/settings.json')
 }
 
 function saveSettings () {
@@ -531,7 +536,7 @@ var settings_schema = {
       'ethereal pact': {
         'type': 'option',
         'title': 'Ethereal Pact',
-        'default': 'Locked',
+        'default': 'Disabled',
         'enum': [
           'Locked',
           'Unlocked',
@@ -575,7 +580,7 @@ var settings_schema = {
           'Enabled',
         ],
       },
-      'Fade': {
+      'fade': {
         'type': 'option',
         'title': 'Fade',
         'default': 'Disabled',

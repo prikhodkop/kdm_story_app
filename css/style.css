@@ -102,6 +102,8 @@ input[type=number]::-webkit-inner-spin-button {
   cursor: default;
 }
 
+
+
 #label_text.index {
   top: 38%;
   /* left: 50%; */
@@ -272,6 +274,27 @@ tr.spaceUnder>td {
   /* margin: 0 auto; */
   /* margin-left: -250px; */
   margin-top: -25px;
+  font-family: 'Silverado';
+  cursor: default;
+}
+
+#sublabel_hunt_text {
+  color: #ccc;
+  /* text-shadow: 3px 2px #222; */
+  overflow: visible;
+  visibility: show;
+  z-index: 1;
+  font-size: 1em;
+  font-weight:500;
+  text-align: center;
+  position: absolute;
+  top: 18%;
+  left: 15%;
+  width: 70%;
+  /* height: 50px; */
+  /* margin: 0 auto; */
+  /* margin-left: -250px; */
+  /* margin-top: -25px; */
   font-family: 'Silverado';
   cursor: default;
 }
@@ -922,6 +945,44 @@ tr.spaceUnder>td {
   color: #cc0;
   border: 0.2rem solid #cc0;
   filter: drop-shadow(0 0 5px #cc0);
+}
+
+.hunt_event_action_button {
+  display:inline;
+  /* width: 100%; */
+  left: 10%;
+  /* margin: 0 auto; */
+  color: #aaa;
+  background-color: #333;
+  cursor: default;
+  /* z-index: 80; */
+  opacity: 0.6;
+  --borderWidth: 1em;
+  border-radius: var(--borderWidth);
+  border: 0.1rem solid #555;
+  font-family: 'Silverado';
+  font-size: 1em;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 5px #333);
+  transition: opacity 0.5s, border 0.5s, color 0.5s, filter 0.5s;
+}
+
+.hunt_event_action_button.hoverable {
+  cursor: pointer;
+}
+
+.hunt_event_action_button.hoverable:hover {
+  opacity: 0.8;
+  /* animation: glowing 3000ms infinite; */
+  color: #cc0;
+  border: 0.2rem solid #cc0;
+  filter: drop-shadow(0 0 5px #cc0);
+}
+
+.button_outcome {
+  display: none;
 }
 
 div.selectize-dropdown {

@@ -1528,8 +1528,8 @@ const innovations = {
    'tags': ['starting']
  },
  'Lantern Oven': {
-   'parent': 'Lantern Oven',
-   'campaign': ['Lantern'],
+   // 'parent': 'Lantern Oven',
+   // 'campaign': ['Lantern'],
    'tags': ['science', 'ammonia']
  },
  'Momento Mori': {

@@ -1,8 +1,40 @@
 const { cdnUrl } = require('./template-renderer')
-const {getSettings} = require('./../ui/settings')
+const {setSettings, getSettings, silentSaveSettings} = require('./../ui/settings')
 
 const promo_hunt_events = {
-  'percival': `* | Dead Warrior
+'baby and the sword': `* | Baby and the Sword
+The survivors find a woman\'s corpse riddled with arrows. The body rests in the center of a pattern drawn in blood, a screaming infant in one hand and sword in the other. As the survivors approach, a massive worm bursts from the ground blocking their way!
+
+The survivors may <b>grab and dash</b>!
+
+[TO] Choice
+[td] What do you do?
+[c] Grab and dash
+[d<]
+[TO] 1d10
+[td] Grab and Dash
+[c] 1-2
+[d<]
+Trigger the Harvester hunt event (#10):
+
+<button class="hunt_event_action_button hoverable" id="harvester" onClick="showRandomEvent(10)">Trigger event #10</button>
+[>d]
+[c] 3-6
+[d] Got it! The event revealer gains: 1 random disorder and the <b>Sword of Silence</b>, or +1 courage and the <b>Newborn</b> rare gear.
+[c] 7+
+[d<]
+The survivors madly dash past the worm. Each survivor gains 1 random disorder. The group gains 1 <b>Newborn</b> and 1 <b>Sword of Silence</b> rare gear. Then. trigger the Harvester hunt event (#10).
+
+<i>Remove this card from the hunt event deck permanently:</i>
+<button class="hunt_event_action_button hoverable" id="fade" onClick="removePromoCard('fade')">Remove card</button>
+<div class="button_outcome" id="fade"> Card removed from the deck.<br/><i>You may enable it again in the <b>Setttings</b> menu</i><br/><br/><button class="hunt_event_action_button hoverable" id="harvester" onClick="showRandomEvent(10)">Trigger event #10</button></div>
+[>d]
+[T]
+[>d]
+[c] Go away
+[dt] Roll a random hunt event.`,
+
+'dead warrior': `* | Dead Warrior
 The survivors stop a man\'s length away from a one-handed skeleton clad in ancient, rusted armor. A strange tablet covered in inscriptions lies next to it.
 
 If the settlement has <b>Pictographs</b>, a survivor with 3+ understanding may investigate.
@@ -16,10 +48,41 @@ If the settlement has <b>Pictographs</b>, a survivor with 3+ understanding may i
 [c] 1
 [d] You sense extreme danger, warning the others, everyone flees to safety. If you have a <b>broken jaw</b>. your garbled warning falls on deaf ears and all survivors are hacked by an unseen force.
 [c] 2+
-[dt] Remove the card from the hunt event deck permanently. You learn from the tablet. Gain the <b>Black Guard Style</b> secret fighting art! If any survivor has the honorable disorder, the group respectfully moves past the skeleton. Otherwise, gain 1 <b>bone</b> basic resource.
+[d<]
+You learn from the tablet. Gain the <b>Black Guard Style</b> secret fighting art! If any survivor has the honorable disorder, the group respectfully moves past the skeleton. Otherwise, gain 1 <b>bone</b> basic resource.
+
+<i>Remove the card from the hunt event deck permanently:</i>
+<button class="hunt_event_action_button hoverable" id="percival" onClick="removePromoCard('percival')">Remove card</button>
+<div class="button_outcome" id="percival"> Card removed from the deck.<br/><i>You may enable it again in the <b>Setttings</b> menu</i></div>
+
+[>d]
+[T]
 [>d]
 [c] Go away
 [dt] Roll a random hunt event.`,
+
+'object of desire': `* | Object of Desire
+The survivors see a tree in the distance, reaching up from the horizon like a desperate, gnarled hand.
+
+Players may nominate a survivor with 3+ courage to <b>investigate</b>.
+
+[TO] Choice
+[td] What do you do?
+[c] Investigate
+[d<]
+
+Add <b>Lonely Tree</b> terrain card to the showdown setup and roll 1d10.
+
+[TO] 1d10
+[td] Nominated survivor
+[c] 1-3
+[d] You are removed from the rest of the Hunt Phase. Start the showdown knocked down adjacent to the Lonely Tree and with <b>priority target</b> token.
+[c] 4+
+[dt] There is something unsetting about that tree. Suffer 2 brain damage and start the showdown adjacent to the Lonely Tree.-0
+[>d]
+[c] Go away
+[dt] Roll a random hunt event.`,
+
 }
 
 const random_hunt_events = {
@@ -956,7 +1019,10 @@ The survivors continue their hunt.
 [c] 5+
 [d<]
 
-Gain the <b>Lantern Oven</b> innovation.
+Gain the <b>Lantern Oven</b> innovation:
+
+<button class="hunt_event_action_button hoverable" id="lantern_oven" onClick="placeReminder('lantern_oven')">Gain Innovation</button>
+
 [i] If the settlement already has this innovation, the event revealer harvests a <b>broken lantern</b> basic resource from the remains.
 
 [TO] Check
@@ -1002,7 +1068,19 @@ A massive Gregalope stands astride the horizon, its ancient body bloated with tu
 [TO] 1d10
 [td] Event revealer
 [c] Any survivor has <b>Strategist</b> fighting art #Strategist
-[d] Survivors may corner the Gregalope at a giant stone face instead of giving chase. If they do end the hunt immediately. Start a showdown with a level 2 Screaming Antelope, using its setup rules. In addition, place a <b>Giant Stone Face</b> adjacent to the monster and give the monster the Butcher's <b>Berserker</b> trait card. If the survivors prevail, gain the normal showdown rewards and 3 additional Screaming Antelope resources.
+[d<]
+Survivors may corner the Gregalope at a giant stone face instead of giving chase.
+
+If they do end the hunt immediately.
+
+Start a showdown with a level 2 Screaming Antelope, using its setup rules.
+In addition, place a <b>Giant Stone Face</b> adjacent to the monster and give the monster the Butcher's <b>Berserker</b> trait card.
+
+If the survivors prevail, gain the normal showdown rewards and 3 additional Screaming Antelope resources.
+
+<button class="hunt_event_action_button hoverable" id="gregalope" onClick="placeReminder('gregalope')">Start showdown!</button>
+
+[>d]
 [c] 1-6
 [d] The survivors quickly fall behind the majestic beast. Move 1 space away from the quarry on the hunt board.
 [c] 7-14
@@ -1332,7 +1410,11 @@ The survivors cover themselves in the dead monster's spilled blood. The stench w
 `,
 
   57: `57 | Gorm's Laughter
-The rhythmic wail of a Gorm's laughter reaches the survivors, filling them with fear. The cackling follows the survivors, tormenting them until they reach their quarry. Place a token on every hunt board space between the survivors and their quarry. When the survivors move into a space with a token, remove it and all <b>non-deaf</b> survivors suffer 1 brain event damage.
+The rhythmic wail of a Gorm's laughter reaches the survivors, filling them with fear. The cackling follows the survivors, tormenting them until they reach their quarry.
+
+Place a token on every hunt board space between the survivors and their quarry. When the survivors move into a space with a token, remove it and all <b>non-deaf</b> survivors suffer 1 brain event damage.
+
+<button class="hunt_event_action_button hoverable" id="gorms_laughter" onClick="placeReminder('gorms_laughter')">Place a reminder</button>
 `,
 
   58: `58 | Scent on the Wind
@@ -1360,7 +1442,16 @@ The event revealer gains +1 courage and rolls 1d10.
 [TO] 1d10
 [td] Event revealer - Investigate
 [c] 1-2
-[d] The monster springs out of the dark, taking advantage of the distracted survivors. The monster <b>ambushes</b> the survivors. During showdown setup, place the event revealer directly in front of the monster.
+[d<]
+The monster springs out of the dark, taking advantage of the distracted survivors.
+
+The monster <b>ambushes</b> the survivors.
+
+During showdown setup, place the event revealer directly in front of the monster.
+
+<button class="hunt_event_action_button hoverable" id="signs_of_battle" onClick="placeReminder('signs_of_battle')">Start showdown!</button>
+
+[>d]
 [c] 3-7
 [d<]
 
@@ -1578,6 +1669,8 @@ The event revealer <b>investigates</b> and rolls 1d10.
 The doorway to the tomb is framed with a wood that has small hands for grain. Inside, murals depict a hero at the center of a labyrinth that is holding a giant, human-filled fruit above his head. Each survivor gains +1 understanding.
 [i] If the settlement has <b>Pictographs</b>, the survivors find information about their quarry. At the start of the showdown, they may place the monster's trap at the bottom of the hit location deck.
 
+<button class="hunt_event_action_button hoverable" id="tomb_of_excelence" onClick="placeReminder('tomb_of_excelence')">[Pictographs] Place reminder</button>
+
 [>d]
 [T]
 `,
@@ -1599,6 +1692,8 @@ The event revealer <b>investigates</b> and rolls 1d10.
 
 You find a mask with living lips. If you return to the settlement with the mask, it quickly learns your language and shares its secrets before crumbling to dust. At the start of the next settlement phase, draw 3 innovations from the innovation deck and add one to your settlement at no cost.
 [i] If any survivor has a <b>Final Lantern</b>, it begins to flash and vibrate wildly. The mask disintegrates and all survivors suffer 1 brain event damage.
+
+<button class="hunt_event_action_button hoverable" id="found_relic" onClick="placeReminder('found_relic')">Place a reminder</button>
 
 [>d]
 [T]
@@ -2223,6 +2318,25 @@ module.exports = {
   is_promo_event
 }
 
+// var no_reload = false
+
+function removePromoCard(card) {
+  let settings = getSettings()
+  settings['whiteboxes'][card] = 'Disabled'
+  setSettings(settings);
+  // saveSettings();
+  localStorage.setItem('settings', JSON.stringify(settings))
+  sessionStorage.setItem('settings', JSON.stringify(settings))
+  silentSaveSettings(settings)
+  // no_reload = true
+
+  $('.hunt_event_action_button#'+card).fadeOut(300)
+  $('.button_outcome#'+card).delay(400).fadeIn(300)
+}
+window.removePromoCard = removePromoCard
+
+
+
 function is_promo_event () {
   let settings = getSettings();
 
@@ -2231,7 +2345,11 @@ function is_promo_event () {
   let size_of_base = settings['size_of_basic_hunt_deck']
 
   if (settings['whiteboxes']['percival'] == 'Enabled') {
-    promos.push('percival')
+    promos.push('dead warrior')
+  }
+
+  if (settings['whiteboxes']['fade'] == 'Enabled') {
+    promos.push('baby and the sword')
   }
 
   if (promos.length == 0) {

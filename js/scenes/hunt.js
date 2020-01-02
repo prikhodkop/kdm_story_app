@@ -9,6 +9,8 @@ const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings'
 const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
+const { addInnovation } = require('./../ui/development')
+
 
 const QUARRY_CARD_SHOW = 'slideUpReturn' // 'slideDownReturn'
 const QUARRY_CARD_HIDE = 'vanishOut' // 'SlideDown'
@@ -190,6 +192,8 @@ module.exports = class HuntScene {
       }, start_delay)
 
       music.play()
+      let hunt_reminders = {}
+      sessionStorage.setItem('current_hunt_reminders', JSON.stringify(hunt_reminders))
     };
 
     if (not_selected) {
@@ -461,6 +465,19 @@ module.exports = class HuntScene {
       $('#random_event_input').fadeIn(3000)
       $('#random_event_input').val('')
 
+      let current_hunt_keys = Object.keys(JSON.parse(sessionStorage.getItem('current_hunt_reminders')))
+      console.log('Current remembered events: '+current_hunt_keys)
+      if (current_hunt_keys.length > 0) {
+        for (let i=0; i<current_hunt_keys.length; i++) {
+          console.log('Reminder to add: '+current_hunt_keys[i])
+          placeReminder(current_hunt_keys[i], initialize=true)
+        }
+      }
+
+      if (name == 'Gorm Lv.3') {
+        placeReminder('gorm_lv3', initialize=true)
+      }
+
       console.log(name)
 
       $('<img class="token" id="herb_gathering" title="" src="' + cdnUrl('images/hunt/herbs_gathering.png') + '" width="8%" style="left:25%; top:74%;">')
@@ -616,6 +633,60 @@ module.exports = class HuntScene {
       $('#random_event_input').val('')
       $(':focus').blur()
     }
+    window.showRandomEvent = showRandomEvent
+
+    function placeReminder(name, initialize=false) {
+      let current_hunt_state = JSON.parse(sessionStorage.getItem('current_hunt_reminders'));
+
+      console.log('Current hunt state: '+ JSON.stringify(current_hunt_state))
+      console.log('Reminder name: '+ JSON.stringify(name))
+
+      let reminders = {
+        'gorms_laughter': '[Gorm\'s Laughter] When the survivors move into new hunt table space, all <b>non-deaf</b> survivors suffer 1 brain event damage.',
+        'found_relic': '[Found Relic] At the start of the next settlement phase, draw 3 innovations from the innovation deck and add one to your settlement at no cost.',
+        'tomb_of_excelence': '[Tomb of Excelence] At the start of the showdown, place the monster\'s trap at the bottom of the hit location deck.',
+        'gorm_lv3': '[Gorm Lv.3] When the Ancient\'s Gorm Bait would be the hunt event revealer, they are <b id="gorm_digested">Digested instead</b>.'
+      }
+
+      let current_text = $('#sublabel_hunt_text').html()
+
+      let updated = false
+
+      if (name in reminders) {
+        $('.hunt_event_action_button#'+name).fadeOut(500)
+        if ((name in current_hunt_state) && !initialize) {
+          console.log('Nothing to add.')
+        } else {
+          $('#sublabel_hunt_text').html(current_text+reminders[name]+'<br/>')
+          $('#sublabel_hunt_text').fadeIn(2000);
+          current_hunt_state[name] = true
+          updated = true
+        }
+      }
+      if (updated) {
+          sessionStorage.setItem('current_hunt_reminders', JSON.stringify(current_hunt_state))
+      }
+
+      let innovations_gain = {
+        'lantern_oven': 'Lantern Oven',
+      }
+
+      if (name in innovations_gain) {
+        addInnovation(innovations_gain[name])
+        $('.hunt_event_action_button#'+name).html('Innovation is added.')
+        $('.hunt_event_action_button#'+name).removeClass('hoverable')
+        $('.hunt_event_action_button#'+name).unbind('mouseenter mouseleave');
+      }
+
+      if (name == 'gregalope') {
+        setTransition('showdown screaming antelope', 'menu', document.title, current_state())
+      }
+
+      if (name == 'signs_of_battle') {
+        setTransition('showdown '+$('#hunt_desc_text').html().substring(0, $('#hunt_desc_text').html().length - 5).toLowerCase(), 'menu', document.title, current_state())
+      }
+    }
+    window.placeReminder = placeReminder
 
     function createHuntTable () {
       let names = Object.keys(clone(quaries))
