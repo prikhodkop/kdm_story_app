@@ -4,7 +4,7 @@ const { createToc, events_table } = require('./../ui/events')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
-const { addTimer } = require('./../ui/timer')
+const { addTimer, clearTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
 // const { eventsSugar } = require('./../ui/events_sugar')
@@ -267,6 +267,7 @@ module.exports = class ImageScene {
 
       // $("#label_text").fadeOut(2000);
       $('#img').fadeIn(1000)
+      $('.settlement_return_button').fadeIn(1200)
       if ((!menus_appeared) && anew) {
         menus_appeared = true
         addTimer(function () {
@@ -288,8 +289,8 @@ module.exports = class ImageScene {
     $('#img').click(function () {
       $('#label_text').delay(1000).fadeIn(1000)
       $('#img').fadeOut(1000)
+      $('.settlement_return_button').fadeOut(800)
     })
-
 
     $('body').on('click', '#back_button', function () {
       let back_target = getBackBackTarget()
@@ -345,7 +346,8 @@ module.exports = class ImageScene {
       if (quaries_events.indexOf(name) >= 0) {
         console.log('Adding the button!')
         let return_button = $('<button>', {
-          id: 'settlement_return_button'
+          // id: 'settlement_return_button',
+          class: 'settlement_return_button to_settlement hoverable'
         })
         return_button.text('Return to Settlement')
         return_button.tooltipster({
@@ -368,15 +370,81 @@ module.exports = class ImageScene {
         // return_button.hide()
         $('#container').append(return_button)
         // return_button.delay(1000).fadeIn(2000)
-        $('#container').on('click', '#settlement_return_button', function () {
+        $('#container').on('click', '.settlement_return_button.to_settlement', function () {
           setTransition('settlement', 'menu', name, current_state())
         });
+      }
+
+      if (name == 'showdown gorm') {
+        console.log('Adding the button!')
+        let grotto_button = $('<button>', {
+          // id: 'settlement_return_button',
+          class: 'settlement_return_button to_grotto hoverable2',
+          // style: 'left: 50%; top: 70.5%; width: 8%;cursor:default;'
+        })
+
+        $('#container').append($('<img>',{
+          src: cdnUrl('images/hunt/blind_exit.png'),
+          id: 'blind_exit_tooltip'
+        }))
+        $('#blind_exit_tooltip').hide();
+
+        $(document).on({
+          mouseenter: function () {
+            console.log('enter')
+            window.digested_timer = addTimer(function(){
+              $('#blind_exit_tooltip').show("slide", { direction: "right" }, 200);
+              $('#img').css('filter', 'brightness(70%)')
+            }, 300)
+          },
+          mouseleave: function () {
+            console.log('leave')
+            clearTimer(window.digested_timer)
+            $('#blind_exit_tooltip').hide("slide", { direction: "right" }, 100);
+            $('#img').css('filter', 'brightness(100%)')
+          },
+        }, '.settlement_return_button.to_grotto')
+
+        grotto_button.text('Blind Exit')
+        // tippy('#settlement_return_button.to_grotto', {
+        //   placement: 'left',
+        //   content: 'Apply only after defeating Gorm Lv.2',
+        //   duration: 50,
+        //   delay: [600, 100],
+        //   animation: 'shift-away-subtle',
+        //   // followCursor: true,
+        //   // theme: 'kdm',
+        // })
+        grotto_button.tooltipster({
+            contentAsHTML: 'true',
+            animation: 'grow',
+            content: 'Apply <b>only</b> after defeating <b>Gorm Lv.2</b>',
+            position: 'left',
+            delay: [300, 100],
+            fixedWidth: 250,
+            trigger: 'custom',
+            triggerOpen: {
+              mouseenter: true,
+              // click: true
+            },
+            triggerClose: {
+              click: true,
+              mouseleave: true
+            }
+          });
+        // return_button.hide()
+        $('#container').append(grotto_button)
+        // return_button.delay(1000).fadeIn(2000)
+        // $('#container').on('click', '#settlement_return_button.to_grotto', function () {
+        //   setTransition('fetid grotto', 'back', name, current_state())
+        // });
       }
 
       if (name == 'fetid grotto') {
         console.log('Adding the button!')
         let return_button = $('<button>', {
-          id: 'settlement_return_button'
+          // id: 'settlement_return_button',
+          class: 'settlement_return_button hoverable'
         })
         return_button.html('To Showdown: Gorm')
         return_button.tooltipster({
@@ -399,7 +467,7 @@ module.exports = class ImageScene {
         // return_button.hide()
         $('#container').append(return_button)
         // return_button.delay(1000).fadeIn(2000)
-        $('#container').on('click', '#settlement_return_button', function () {
+        $('#container').on('click', '.settlement_return_button', function () {
           setTransition('showdown gorm', 'menu', name, current_state())
         });
       }
@@ -407,8 +475,9 @@ module.exports = class ImageScene {
       if (name == 'final march') {
         console.log('Adding the button!')
         let return_button = $('<button>', {
-          id: 'settlement_return_button',
-          style: 'left: 54%;'
+          // id: 'settlement_return_button',
+          class: 'settlement_return_button to_showdown hoverable',
+          // style: 'left: 54%;'
         })
         return_button.html('To Showdown: Gorm')
         return_button.tooltipster({
@@ -431,14 +500,15 @@ module.exports = class ImageScene {
         // return_button.hide()
         $('#container').append(return_button)
         // return_button.delay(1000).fadeIn(2000)
-        $('#container').on('click', '#settlement_return_button', function () {
+        $('#container').on('click', '.settlement_return_button.to_showdown', function () {
           setTransition('showdown gorm', 'menu', name, current_state())
         });
 
         if (sessionStorage.getItem('back_target') == 'hunt') {
           let hunt_button = $('<button>', {
-            id: 'settlement_return_button',
-            style: 'left: 22%;'
+            // id: 'settlement_return_button',
+            class: 'settlement_return_button to_hunt hoverable',
+            // style: 'left: 22%;'
           })
           hunt_button.html('Back to the Hunt')
           hunt_button.tooltipster({
@@ -461,7 +531,7 @@ module.exports = class ImageScene {
           // return_button.hide()
           $('#container').append(hunt_button)
           // return_button.delay(1000).fadeIn(2000)
-          $('#container').on('click', '#settlement_return_button', function () {
+          $('#container').on('click', '.settlement_return_button.to_hunt', function () {
             setTransition('hunt', 'back', name, current_state())
           });
         }

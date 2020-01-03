@@ -56,7 +56,7 @@ module.exports = class HuntScene {
     createToc()
     addSettings(settings)
 
-    $('#random_event_icon').tooltipster({animationDuration: 50,animationDuration: 50,
+    $('#random_event_icon').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
       content: 'Roll random <b>Hunt Event</b>',
@@ -64,7 +64,7 @@ module.exports = class HuntScene {
       delay: '600',
     })
 
-    $('#random_event_icon_big').tooltipster({animationDuration: 50,animationDuration: 50,
+    $('#random_event_icon_big').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
       content: 'Roll random <b>Hunt Event</b>',
@@ -72,7 +72,7 @@ module.exports = class HuntScene {
       delay: '600',
     })
 
-    $('#random_event_input').tooltipster({animationDuration: 50,animationDuration: 50,
+    $('#random_event_input').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
       content: 'Type <b>Hunt Event</b> number here',
@@ -511,7 +511,7 @@ module.exports = class HuntScene {
           $(this).appendTo('#container')
           $(this).hide()
           $(this).delay(1000).fadeIn(2000)
-          $(this).tooltipster({animationDuration: 50,animationDuration: 50,
+          $(this).tooltipster({animationDuration: 50,
             contentAsHTML: 'true',
             animation: 'fade',
             content: '<b>Herb Gathering</b><br />Survivors eat berries on the way<br />All survivors get <b>+1 survival</b>',
@@ -533,14 +533,14 @@ module.exports = class HuntScene {
           $(this).appendTo('#container')
           $(this).hide()
           $(this).delay(1000).fadeIn(2000)
-          $(this).tooltipster({animationDuration: 50,animationDuration: 50,
+          $(this).tooltipster({animationDuration: 50,
             contentAsHTML: 'true',
             animation: 'fade',
             content: '<b>Mineral Gathering</b>',
             position: 'top',
             delay: '600',
           })
-          $(this).tooltipster({animationDuration: 50,animationDuration: 50,
+          $(this).tooltipster({animationDuration: 50,
             contentAsHTML: 'true',
             animation: 'fade',
             content: '<i style="color:#aa0;">Pickaxe required!</i>',
@@ -556,14 +556,14 @@ module.exports = class HuntScene {
               $(this).appendTo('#container')
               $(this).hide()
               $(this).delay(1000).fadeIn(2000)
-              $(this).tooltipster({animationDuration: 50,animationDuration: 50,
+              $(this).tooltipster({animationDuration: 50,
                 contentAsHTML: 'true',
                 animation: 'fade',
                 content: '<b>Sky Fishing</b>',
                 position: 'top',
                 delay: '600',
               })
-              $(this).tooltipster({animationDuration: 50,animationDuration: 50,
+              $(this).tooltipster({animationDuration: 50,
                 contentAsHTML: 'true',
                 animation: 'fade',
                 content: '<i style="color:#aa0;">Sun Lure and Hook required!</i>',
@@ -786,15 +786,23 @@ module.exports = class HuntScene {
         };
       };
 
-      tippy(".token[title = 'Survivors']", {
-        placement: 'bottom-start',
-        content: '<b>Survivors</b><b style="color:#cc0;">Drag</b> to proceed on the hunt.',
-        duration: 50,
-        delay: [200, 100],
-        animation: 'shift-away-subtle',
-        followCursor: true,
-        theme: 'kdm',
-      });
+      // $('#survivors').tooltipster({
+      //   animationDuration: 50,
+      //     contentAsHTML: 'true',
+      //     animation: 'fade',
+      //     content: '<b>Herb Gathering</b><br />Survivors eat berries on the way<br />All survivors get <b>+1 survival</b>',
+      //     position: 'top',
+      //     delay: '600',
+      // })
+      // tippy("#survivors", {
+      //   placement: 'bottom-start',
+      //   content: '<b>Survivors</b><b style="color:#cc0;">Drag</b> to proceed on the hunt.',
+      //   duration: 50,
+      //   delay: [200, 100],
+      //   animation: 'shift-away-subtle',
+      //   followCursor: true,
+      //   theme: 'kdm',
+      // });
     }
 
     function place_events (events_string, size, height, id, sequence) {
@@ -960,7 +968,7 @@ module.exports = class HuntScene {
         };
 
         if (type == 'darkness' || type == 'starvation') {
-          $(this).tooltipster({animationDuration: 50,animationDuration: 50,
+          $(this).tooltipster({animationDuration: 50,
             contentAsHTML: 'true',
             animation: 'fade',
             delay: '600',
