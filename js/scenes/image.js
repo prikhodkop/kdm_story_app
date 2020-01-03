@@ -268,6 +268,7 @@ module.exports = class ImageScene {
       // $("#label_text").fadeOut(2000);
       $('#img').fadeIn(1000)
       $('.settlement_return_button').fadeIn(1200)
+      $('.event_tooltip').fadeIn(1200)
       if ((!menus_appeared) && anew) {
         menus_appeared = true
         addTimer(function () {
@@ -290,6 +291,7 @@ module.exports = class ImageScene {
       $('#label_text').delay(1000).fadeIn(1000)
       $('#img').fadeOut(1000)
       $('.settlement_return_button').fadeOut(800)
+      $('.event_tooltip').fadeOut(800)
     })
 
     $('body').on('click', '#back_button', function () {
@@ -343,6 +345,9 @@ module.exports = class ImageScene {
     }
 
     function eventsSugar(name) {
+
+      let settings = getSettings()
+
       if (quaries_events.indexOf(name) >= 0) {
         console.log('Adding the button!')
         let return_button = $('<button>', {
@@ -536,6 +541,40 @@ module.exports = class ImageScene {
           });
         }
       }
+
+      if ((name == 'white speaker') && (settings['whiteboxes']['white speaker'] == 'Enabled')) {
+        let tooltip = $('<div>', {
+          // id: 'settlement_return_button',
+          class: 'event_tooltip',
+          style: 'left: 60%; top: 17%; width: 30%;height:33%;' //background:#cc0;opacity:0.5;
+        })
+
+        $('#container').append($('<img>',{
+          src: cdnUrl('images/white speaker/gear_tooltip.png'),
+          id: 'gear_tooltip_image',
+          style: 'top:50.1%; left: 55%; width: 30%;'
+        }))
+        $('#gear_tooltip_image').hide();
+
+        $(document).on({
+          mouseenter: function () {
+            console.log('enter')
+            window.digested_timer = addTimer(function(){
+              $('#gear_tooltip_image').show("slide", { direction: "up" }, 200);
+              // $('#img').css('filter', 'brightness(70%)')
+            }, 300)
+          },
+          mouseleave: function () {
+            console.log('leave')
+            clearTimer(window.digested_timer)
+            $('#gear_tooltip_image').hide("slide", { direction: "up" }, 100);
+            // $('#img').css('filter', 'brightness(100%)')
+          },
+        }, '.event_tooltip')
+
+        $('#container').append(tooltip)
+      }
+      ///////////////////////
     }
   }
 }
