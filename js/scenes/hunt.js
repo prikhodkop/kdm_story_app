@@ -7,7 +7,7 @@ const { md_to_html_2, is_promo_event } = require('./../ui/hunt_events_table')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
-const { addTimer } = require('./../ui/timer')
+const { addTimer, clearTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { addInnovation } = require('./../ui/development')
 
@@ -475,7 +475,33 @@ module.exports = class HuntScene {
       }
 
       if (name == 'Gorm Lv.3') {
-        placeReminder('gorm_lv3', initialize=true)
+        placeReminder('gorm_lv3')
+
+        $('#container').append($('<img>',{
+          src: cdnUrl('images/hunt/digested.png'),
+          id: 'digested_tooltip'
+        }))
+        $('#digested_tooltip').hide();
+
+        $(document).on({
+          mouseenter: function () {
+            console.log('enter')
+            window.digested_timer = addTimer(function(){
+              $('#digested_tooltip').show("slide", { direction: "up" }, 200);
+            }, 300)
+          },
+          mouseleave: function () {
+            console.log('leave')
+            clearTimer(window.digested_timer)
+            $('#digested_tooltip').hide("slide", { direction: "up" }, 100);
+          },
+        }, '#gorm_digested')
+
+        if (anew) {
+          addTimer(function(){
+            setTransition('final march', 'menu', 'hunt', current_state())
+          }, 3500)
+        }
       }
 
       console.log(name)
@@ -645,7 +671,7 @@ module.exports = class HuntScene {
         'gorms_laughter': '[Gorm\'s Laughter] When the survivors move into new hunt table space, all <b>non-deaf</b> survivors suffer 1 brain event damage.',
         'found_relic': '[Found Relic] At the start of the next settlement phase, draw 3 innovations from the innovation deck and add one to your settlement at no cost.',
         'tomb_of_excelence': '[Tomb of Excelence] At the start of the showdown, place the monster\'s trap at the bottom of the hit location deck.',
-        'gorm_lv3': '[Gorm Lv.3] When the Ancient\'s Gorm Bait would be the hunt event revealer, they are <b id="gorm_digested">Digested instead</b>.'
+        'gorm_lv3': '[Gorm Lv.3] When the Ancient\'s Gorm Bait would be the hunt event revealer, they are <b style="color:#cc0;" id="gorm_digested">Digested instead</b>.'
       }
 
       let current_text = $('#sublabel_hunt_text').html()
@@ -892,13 +918,28 @@ module.exports = class HuntScene {
                     $('#label_text').hide();
                     $('#label_text').html(temp_text)
                     addTimer(function () {
-                      setTransition($('#monster').attr('target'), 'menu', document.title, current_state())
+                      let target = $('#monster').attr('target')
+                      if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.2') {
+                        target = 'fetid grotto'
+                      }
+                      if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.3') {
+                        target = 'final march'
+                      }
+                      setTransition(target, 'menu', document.title, current_state())
                     }, 100)
                   })
                   $('#hunt_icon').fadeOut(500)
                 })
               } else {
-                setTransition($('#monster').attr('target'),
+                let target = $('#monster').attr('target')
+
+                if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.2') {
+                  target = 'fetid grotto'
+                }
+                if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.3') {
+                  target = 'final march'
+                }
+                setTransition(target,
                   'menu', document.title,
                   current_state())
               }

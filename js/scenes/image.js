@@ -7,7 +7,20 @@ const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
-const { eventsSugar } = require('./../ui/events_sugar')
+// const { eventsSugar } = require('./../ui/events_sugar')
+
+const quaries_events = [
+  'showdown gorm',
+  'showdown white lion',
+  'showdown screaming antelope',
+  'showdown phoenix',
+  'showdown dung beetle knight',
+  'showdown sunstalker',
+  'showdown dragon king',
+  'showdown lion god',
+  'showdown flower knight',
+  'showdown spidicules',
+]
 
 module.exports = class ImageScene {
   render () {
@@ -113,7 +126,7 @@ module.exports = class ImageScene {
 
     let menus_appeared = false
 
-    if ((transition == 'back') && !(state == null)) {
+    if ((transition == 'back') && !(state == null) && !(state == 'undefined')) {
       console.log('State loaded successfully!')
       state = JSON.parse(state)
       console.log(state)
@@ -326,6 +339,133 @@ module.exports = class ImageScene {
     function isHidden (el) {
       let style = window.getComputedStyle(el)
       return (style.display === 'none')
+    }
+
+    function eventsSugar(name) {
+      if (quaries_events.indexOf(name) >= 0) {
+        console.log('Adding the button!')
+        let return_button = $('<button>', {
+          id: 'settlement_return_button'
+        })
+        return_button.text('Return to Settlement')
+        return_button.tooltipster({
+            contentAsHTML: 'true',
+            animation: 'grow',
+            content: '<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>.',
+            position: 'bottom',
+            delay: [300, 100],
+            fixedWidth: 250,
+            trigger: 'custom',
+            triggerOpen: {
+              mouseenter: true,
+              // click: true
+            },
+            triggerClose: {
+              click: true,
+              mouseleave: true
+            }
+          });
+        // return_button.hide()
+        $('#container').append(return_button)
+        // return_button.delay(1000).fadeIn(2000)
+        $('#container').on('click', '#settlement_return_button', function () {
+          setTransition('settlement', 'menu', name, current_state())
+        });
+      }
+
+      if (name == 'fetid grotto') {
+        console.log('Adding the button!')
+        let return_button = $('<button>', {
+          id: 'settlement_return_button'
+        })
+        return_button.html('To Showdown: Gorm')
+        return_button.tooltipster({
+            contentAsHTML: 'true',
+            animation: 'grow',
+            content: '<b style="color:#cc0;">Click</b> to open <b>Showdown: Gorm</b>.',
+            position: 'bottom',
+            delay: [300, 100],
+            fixedWidth: 250,
+            trigger: 'custom',
+            triggerOpen: {
+              mouseenter: true,
+              // click: true
+            },
+            triggerClose: {
+              click: true,
+              mouseleave: true
+            }
+          });
+        // return_button.hide()
+        $('#container').append(return_button)
+        // return_button.delay(1000).fadeIn(2000)
+        $('#container').on('click', '#settlement_return_button', function () {
+          setTransition('showdown gorm', 'menu', name, current_state())
+        });
+      }
+
+      if (name == 'final march') {
+        console.log('Adding the button!')
+        let return_button = $('<button>', {
+          id: 'settlement_return_button',
+          style: 'left: 54%;'
+        })
+        return_button.html('To Showdown: Gorm')
+        return_button.tooltipster({
+            contentAsHTML: 'true',
+            animation: 'grow',
+            content: '<b style="color:#cc0;">Click</b> to open <b>Showdown: Gorm</b>.',
+            position: 'bottom',
+            delay: [300, 100],
+            fixedWidth: 250,
+            trigger: 'custom',
+            triggerOpen: {
+              mouseenter: true,
+              // click: true
+            },
+            triggerClose: {
+              click: true,
+              mouseleave: true
+            }
+          });
+        // return_button.hide()
+        $('#container').append(return_button)
+        // return_button.delay(1000).fadeIn(2000)
+        $('#container').on('click', '#settlement_return_button', function () {
+          setTransition('showdown gorm', 'menu', name, current_state())
+        });
+
+        if (sessionStorage.getItem('back_target') == 'hunt') {
+          let hunt_button = $('<button>', {
+            id: 'settlement_return_button',
+            style: 'left: 22%;'
+          })
+          hunt_button.html('Back to the Hunt')
+          hunt_button.tooltipster({
+              contentAsHTML: 'true',
+              animation: 'grow',
+              content: '<b style="color:#cc0;">Click</b> to return to <b>The Hunt</b>.',
+              position: 'bottom',
+              delay: [300, 100],
+              fixedWidth: 250,
+              trigger: 'custom',
+              triggerOpen: {
+                mouseenter: true,
+                // click: true
+              },
+              triggerClose: {
+                click: true,
+                mouseleave: true
+              }
+            });
+          // return_button.hide()
+          $('#container').append(hunt_button)
+          // return_button.delay(1000).fadeIn(2000)
+          $('#container').on('click', '#settlement_return_button', function () {
+            setTransition('hunt', 'back', name, current_state())
+          });
+        }
+      }
     }
   }
 }

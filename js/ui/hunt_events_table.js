@@ -1506,7 +1506,7 @@ Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of 
 
   63: `63 | Feet
 
-[img] 63
+[img] 63 # width:35%
 
 The stone faces ahead are replaced by an expanse of stone feet sprouting from the ground. The survivors walk sole-to-sole with the feet.
 
@@ -2443,6 +2443,10 @@ function md_to_html_2 (event_id, init = true, current_table = 0, current_class =
             }
           } else {
             width = '50%'
+          }
+
+          if (row.includes('fading')) {
+
           }
         } else {
           text = row.replace('[img] ', '')

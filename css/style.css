@@ -1051,3 +1051,17 @@ div.selectize-dropdown-content::-webkit-scrollbar {
   border-radius: var(--borderWidth);
   border: 1px solid #333;
 }
+
+#digested_tooltip {
+	left:63%;
+	top: 21%;
+	height: 75%;
+	position:absolute;
+	z-index: 97;
+	display:block;
+	-webkit-box-shadow: 0 0 50px 0 #000;
+	box-shadow: 0 0 50px 0 #000;
+  --borderWidth: 1em;
+  border-bottom-left-radius: var(--borderWidth);
+  border-bottom-right-radius: var(--borderWidth);
+}

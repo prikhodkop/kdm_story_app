@@ -53,6 +53,37 @@ function eventsSugar(name) {
       setTransition('settlement', 'menu', name)
     });
   }
+
+  if (name == 'fetid grotto') {
+    console.log('Adding the button!')
+    let return_button = $('<button>', {
+      id: 'settlement_return_button'
+    })
+    return_button.text('To &#9876; Gorm')
+    return_button.tooltipster({
+        contentAsHTML: 'true',
+        animation: 'grow',
+        content: '<b style="color:#cc0;">Click</b> to open &#9876; <b>Gorm</b>.',
+        position: 'bottom',
+        delay: [300, 100],
+        fixedWidth: 250,
+        trigger: 'custom',
+        triggerOpen: {
+          mouseenter: true,
+          // click: true
+        },
+        triggerClose: {
+          click: true,
+          mouseleave: true
+        }
+      });
+    // return_button.hide()
+    $('#container').append(return_button)
+    // return_button.delay(1000).fadeIn(2000)
+    $('#container').on('click', '#settlement_return_button', function () {
+      setTransition('showdown gorm', 'menu', name)
+    });
+  }
 }
 
 function terrainToDraw(monster) {
