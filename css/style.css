@@ -867,6 +867,9 @@ tr.spaceUnder>td {
   width: 50%;
   left: 20%;
   cursor: pointer;
+}
+
+.campaign_image.glow {
   animation: glowing-image_5 3000ms infinite;
 }
 

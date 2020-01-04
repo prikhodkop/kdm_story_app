@@ -470,7 +470,7 @@ module.exports = class HuntScene {
       if (current_hunt_keys.length > 0) {
         for (let i=0; i<current_hunt_keys.length; i++) {
           console.log('Reminder to add: '+current_hunt_keys[i])
-          placeReminder(current_hunt_keys[i], initialize=true)
+          placeReminder(current_hunt_keys[i], true)
         }
       }
 
@@ -671,7 +671,7 @@ module.exports = class HuntScene {
         'gorms_laughter': '[Gorm\'s Laughter] When the survivors move into new hunt table space, all <b>non-deaf</b> survivors suffer 1 brain event damage.',
         'found_relic': '[Found Relic] At the start of the next settlement phase, draw 3 innovations from the innovation deck and add one to your settlement at no cost.',
         'tomb_of_excelence': '[Tomb of Excelence] At the start of the showdown, place the monster\'s trap at the bottom of the hit location deck.',
-        'gorm_lv3': '[Gorm Lv.3] When the Ancient\'s Gorm Bait would be the hunt event revealer, they are <b style="color:#cc0;" id="gorm_digested">Digested instead</b>.'
+        'gorm_lv3': '[Gorm Lv.3 - Final March] When the Ancient\'s Gorm Bait would be the hunt event revealer, they are <b style="color:#cc0;" id="gorm_digested">Digested instead</b>.'
       }
 
       let current_text = $('#sublabel_hunt_text').html()

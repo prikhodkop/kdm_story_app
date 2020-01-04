@@ -74,6 +74,9 @@ module.exports = class IndexScene {
       $('.campaign_element').each(function(){$(this).animate({opacity: 1}, 2000)});
     }, 2000)
 
+    addTimer(function() {
+      $('.campaign_image').addClass('glow')
+    }, 5000)
 
     // addTimer(function() {
     //   gallery.show();

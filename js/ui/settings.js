@@ -344,7 +344,7 @@ var settings_schema = {
   'music': {
     'type': 'option',
     'title': 'Music',
-    'description': '',
+    'description': 'Switch on/off music playing (would also switch on/off voice in the videos).',
     'default': 'On',
     'enum': [
       'On',
@@ -354,7 +354,7 @@ var settings_schema = {
   'narration': {
     'type': 'option',
     'title': 'Narration',
-    'description': '',
+    'description':  'Switch on/off narration in story events.',
     'default': 'On',
     'enum': [
       'On',
@@ -384,7 +384,7 @@ var settings_schema = {
   'innovation_row_length': {
     'type': 'option',
     'title': 'Innovations per row',
-    'description': 'How many columns in innovations grid to show.',
+    'description': 'How many columns in innovations grid in Development window of Settlement screen to show.',
     'default': '5',
     'enum': [
       '4',
@@ -395,10 +395,10 @@ var settings_schema = {
   'size_of_basic_hunt_deck': {
     'type': 'option',
     'title': 'Basic Hunt Deck Size',
-    'description': 'How many basic hunt events are in the deck (affects chance of promo).',
+    'description': 'How many basic hunt events are in the deck (affects chance of expansions hunt events to be drawn).',
     'default': '12',
     'enum': [
-      '0',
+      // '0',
       '12',
       '24',
       '36',
@@ -413,6 +413,7 @@ var settings_schema = {
         'type': 'option',
         'title': 'Fighting Arts',
         'default': 'Poots',
+        'description': 'What card design no show.',
         'enum': [
           'Poots',
           'Fen Small',
@@ -422,6 +423,7 @@ var settings_schema = {
         'type': 'option',
         'title': 'Disorders',
         'default': 'Poots',
+        'description': 'What card design no show.',
         'enum': [
           'Poots',
           'Fen Small',
