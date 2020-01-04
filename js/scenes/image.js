@@ -551,23 +551,23 @@ module.exports = class ImageScene {
 
         $('#container').append($('<img>',{
           src: cdnUrl('images/white speaker/gear_tooltip.png'),
-          id: 'gear_tooltip_image',
+          class: 'gear_tooltip_image',
           style: 'top:50.1%; left: 55%; width: 30%;'
         }))
-        $('#gear_tooltip_image').hide();
+        $('.gear_tooltip_image').hide();
 
         $(document).on({
           mouseenter: function () {
             console.log('enter')
             window.digested_timer = addTimer(function(){
-              $('#gear_tooltip_image').show("slide", { direction: "up" }, 200);
+              $('.gear_tooltip_image').show("slide", { direction: "up" }, 200);
               // $('#img').css('filter', 'brightness(70%)')
             }, 300)
           },
           mouseleave: function () {
             console.log('leave')
             clearTimer(window.digested_timer)
-            $('#gear_tooltip_image').hide("slide", { direction: "up" }, 100);
+            $('.gear_tooltip_image').hide("slide", { direction: "up" }, 100);
             // $('#img').css('filter', 'brightness(100%)')
           },
         }, '.event_tooltip')
@@ -575,6 +575,54 @@ module.exports = class ImageScene {
         $('#container').append(tooltip)
       }
       ///////////////////////
+      let principles = {
+        'principle new life': ['Survival of the Fittest', 'Protect the Young', 51],
+        'principle death': ['Cannibalize', 'Graves', 51],
+        'principle society': ['Collective Toil', 'Accept Darkness', 56],
+        'principle conviction': ['Barbaric', 'Romantic', 56],
+      }
+
+      if (name  in principles) {
+        principles_tooltips(principles[name])
+      }
+
+      function principles_tooltips(data) {
+        let tooltip = $('<div>', {
+          // id: 'settlement_return_button',
+          class: 'event_tooltip',
+          style: 'left: 15%; top: '+data[2]+'%; width: 70%;height:48%;' //background:#cc0;opacity:0.5;
+        })
+
+        $('#container').append($('<img>',{
+          src: cdnUrl('images/reference/Innovations/'+data[0]+'.jpg'),
+          class: 'gear_tooltip_image left',
+          style: 'bottom:'+(100-data[2]+0.1)+'%; left: 24.6%; width: 15%;'
+        }))
+        $('#container').append($('<img>',{
+          src: cdnUrl('images/reference/Innovations/'+data[1]+'.jpg'),
+          class: 'gear_tooltip_image right',
+          style: 'bottom:'+(100-data[2]+0.1)+'%; left: 58.5%; width: 15%;'
+        }))
+        $('.gear_tooltip_image').hide();
+
+        $(document).on({
+          mouseenter: function () {
+            console.log('enter')
+            window.digested_timer = addTimer(function(){
+              $('.gear_tooltip_image').show("slide", { direction: "down" }, 200);
+              // $('#img').css('filter', 'brightness(70%)')
+            }, 300)
+          },
+          mouseleave: function () {
+            console.log('leave')
+            clearTimer(window.digested_timer)
+            $('.gear_tooltip_image').hide("slide", { direction: "down" }, 100);
+            // $('#img').css('filter', 'brightness(100%)')
+          },
+        }, '.event_tooltip')
+
+        $('#container').append(tooltip)
+      }
     }
   }
 }

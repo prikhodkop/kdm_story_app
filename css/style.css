@@ -1104,7 +1104,7 @@ div.selectize-dropdown-content::-webkit-scrollbar {
   left: 54%;
 }
 
-#gear_tooltip_image {
+.gear_tooltip_image {
 	position:absolute;
 	z-index: 97;
 	display:block;
