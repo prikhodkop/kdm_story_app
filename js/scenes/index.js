@@ -3,7 +3,7 @@ const { app } = require('electron').remote
 const { createAbout } = require('./../ui/about')
 const { createToc } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
-const { createMenuButton } = require('./../ui/menu')
+const { createMenuButton, createInnovationsList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved, setSettings, saveSettings } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
@@ -61,6 +61,7 @@ module.exports = class IndexScene {
     createMenuButton()
     createToc()
     createAbout(version)
+    createInnovationsList()
     addSettings(settings)
     let gallery = setupCampaignSelect()
 
@@ -70,13 +71,13 @@ module.exports = class IndexScene {
     // })
     gallery.show();
     addTimer(function() {
-      gallery.animate({opacity: 1}, 3000);
-      $('.campaign_element').each(function(){$(this).animate({opacity: 1}, 2000)});
-    }, 2000)
+      gallery.animate({opacity: 1}, 2000);
+      $('.campaign_element').each(function(){$(this).animate({opacity: 1}, 1000)});
+    }, 1000)
 
     addTimer(function() {
       $('.campaign_image').addClass('glow')
-    }, 5000)
+    }, 3000)
 
     // addTimer(function() {
     //   gallery.show();
@@ -109,6 +110,9 @@ module.exports = class IndexScene {
         gallery.hide()
         $('#settings').hide()
         $('#label_text').hide()
+        $('#about_text').hide()
+        $('.locations_button').hide()
+        $('.innovations_button').hide()
 
         console.log('Here2!')
       } else {
@@ -283,6 +287,18 @@ module.exports = class IndexScene {
       // if (campaign == 'Stars') {
       //   content = 'The Dragon King\'s species is long dead. It remains alone, clinging to the memories of its once mighty race.<br/><br/>Its destructive moods swing wildly from impotent rage to obsessive nostalgia. It stalks the darkness, lashing out at anything it meets.<br/><br/>'
       // }
+      if (campaign == 'Stars') {
+      content = content + 'Adopted by the Tyrant, the last of the People of the Stars, the survivors must grow their settlement to please its desire to leave an enduring draconian legacy before he passes.</br></br>'
+      }
+
+      if (campaign == 'Sun') {
+      content = content + 'Once sky had no day. There was a Shadow that was sad, it could only play in small light of a lantern. The Shadow found a hole in the sky and decided to steal enough lanterns to fill it. It took many generations, and when it was done the shadow slept under the big light, dreaming dreams about how it could play. When it awoke, all of the light was gone! At the center of the hole in the sky, was a tiny shining entity, with a great big mouth. The shadow named the tiny thing the sun and they played together.</br></br>'
+      }
+
+      if (campaign == 'Lantern') {
+      content = content + 'At its core, Monster is a game about the fragility of human life, the ferocity of the human spirity, and the wonder of exploration.</br></br>Your story will be shaped by the decisions you make, the strengths and weaknesses of your settlemenet, and the growth of your survivors.</br></br>'
+      }
+
       content = content + '<b style="color:#cc0;">Click</b> to start the <b>First Story</b>.'
       campaign_image.tooltipster({
           contentAsHTML: 'true',
@@ -290,7 +306,7 @@ module.exports = class IndexScene {
           content: content,
           position: 'top',
           delay: [300, 100],
-          fixedWidth: 250,
+          maxWidth: 300,
           trigger: 'custom',
           triggerOpen: {
             mouseenter: true,

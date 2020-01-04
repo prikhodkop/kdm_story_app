@@ -37,6 +37,7 @@ module.exports = class SettlementScene {
 
     var settings = getSettings()
     sessionStorage.setItem('settings', JSON.stringify(settings))
+    window.settlement_back_target = sessionStorage.getItem('back_target')
     sessionStorage.setItem('back_target', null)
 
     var state = sessionStorage.getItem(myself)
@@ -291,6 +292,9 @@ module.exports = class SettlementScene {
         $('#settlement_event_screen_2').delay(50).fadeIn(300)
         if ($('#settlement_event_back').attr('src') == '#') {
           let selected_event = getSettlementEventPath();
+          if (['foundlings', 'returning survivors', 'the pool and the sun'].indexOf(window.settlement_back_target) >= 0) {
+            selected_event = 'First Day'
+          }
           if (!anew) {
             selected_event = state.settlement_event
           }

@@ -4,7 +4,7 @@ const { createToc, titleCase, events_table } = require('./../ui/events')
 const { clone } = require('./../ui/glossary')
 const { get_sequence } = require('./../ui/hunt_events')
 const { md_to_html_2, is_promo_event } = require('./../ui/hunt_events_table')
-const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
+const { createMenuButton, createReference, createSevereTables, createInnovationsList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer, clearTimer } = require('./../ui/timer')
@@ -445,6 +445,7 @@ module.exports = class HuntScene {
 
       createSevereTables()
       createReference()
+      createInnovationsList()
 
       $('#quaries_table').hide()
       $('#random_event_icon').hide()
@@ -837,23 +838,28 @@ module.exports = class HuntScene {
       var coord = 2.65 + 7.298 * (position - 1 / 2) - width / 2.0
 
       let title
+      let tooltip_text
 
       if (type === 'common') {
         if (path.includes('random')) {
           title = 'Random Hunt Event'
+          tooltip_text = 'Random Hunt Event'
         }
         if (path.includes('monster')) {
           title = 'Monster Hunt Event'
+          tooltip_text = 'Random Hunt Event'
         };
       };
 
       if (type === 'monster') {
-        title = 'Start the <b>Showdown</b>!'
+        title = ''
+        tooltip_text = '<b style="color:#cc0;">Click</b> to start the <b>Showdown</b>!</br></br><i>It will be considered that the fight takes place where the survivors are standing for all gameplay effects.</i>'
       };
 
       if (type === 'survivors') {
         title = 'Survivors'
         coord = coord + 0.9
+        tooltip_text = '<b style="color:#cc0;">Drag</b> survivors to proceed on the <b>Hunt</b>.</br></br><i><b style="color:#cc0;">Click</b> on events to disable/enable them.</i>'
       };
 
       if (type === 'darkness') {
@@ -866,8 +872,8 @@ module.exports = class HuntScene {
       };
 
       $('<img class="token ' + position + '" position="' + position + '" id="' + type +
-                '" title="' +
-                title + '" name="'+title+'" src="' + cdnUrl(path) + '" width="' + width + '%" style="left: ' + coord +
+                '" title="'+
+                title +'" name="'+title+'" src="' + cdnUrl(path) + '" width="' + width + '%" style="left: ' + coord +
                 '%; top:' + top +
                 '%;"' + ref + ')>').load(function () {
         $(this).appendTo('#container')
@@ -891,6 +897,8 @@ module.exports = class HuntScene {
             stop: scaling_board_function,
           })
           $(this).tooltipster({animationDuration: 50,
+            content: tooltip_text,
+            maxWidth: 300,
             contentAsHTML: 'true',
             animation: 'fade',
             delay: '600',
@@ -965,10 +973,19 @@ module.exports = class HuntScene {
             cursor: 'move',
             stop: scaling_board_function,
           })
+          $(this).tooltipster({animationDuration: 50,
+            content: tooltip_text,
+            maxWidth: 300,
+            contentAsHTML: 'true',
+            animation: 'fade',
+            delay: '600',
+            plugins: ['follower'],
+          })
         };
 
         if (type == 'darkness' || type == 'starvation') {
           $(this).tooltipster({animationDuration: 50,
+            content: title,
             contentAsHTML: 'true',
             animation: 'fade',
             delay: '600',
@@ -995,6 +1012,12 @@ module.exports = class HuntScene {
         };
 
         if (type == 'common') {
+          // $(this).tooltipster({animationDuration: 50,
+          //   content: tooltip_text,
+          //   contentAsHTML: 'true',
+          //   animation: 'fade',
+          //   delay: '600',
+          // })
           $(this).droppable({
             drop: function (event, ui) {
               snapToMiddle(ui.draggable, $(this))

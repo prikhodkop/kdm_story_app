@@ -16,10 +16,10 @@ module.exports = {
   setDevelopmentState,
   addElement,
   addInnovation,
-  addLocation,
+  addSettlementLocation,
   removeElement,
   removeInnovation,
-  removeLocation
+  removeSettlementLocation
 }
 
 const always_on_locations = ['Throne', 'Lantern Hoard', 'Sacreed Pool', 'The Sun'];
@@ -1188,7 +1188,7 @@ function addElement(name, type) {
 function addInnovation(name) {
   addElement(name, 'innovations')
 }
-function addLocation(name) {
+function addSettlementLocation(name) {
   addElement(name, 'locations')
 }
 
@@ -1198,11 +1198,11 @@ function removeElement(name, type) {
   if (development_state[type].includes(name)) {
     development_state[type].splice(development_state[type].indexOf(name), 1);
   }
-  setDevelopmentState(name)
+  setDevelopmentState(development_state)
 }
 function removeInnovation(name) {
   removeElement(name, 'innovations')
 }
-function removeLocation(name) {
+function removeSettlementLocation(name) {
   removeElement(name, 'locations')
 }

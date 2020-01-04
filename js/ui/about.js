@@ -66,7 +66,7 @@ function createAbout (version) {
   $('#about_text').tooltipster({
       contentAsHTML: 'true',
       animation: 'grow',
-      content: 'Show <b>About</b> window.',
+      content: '<b style="color:#cc0;">Click</b> to show <b>About</b> window.',
       position: 'right',
       delay: [300, 300],
       trigger: 'custom',

@@ -1,11 +1,12 @@
 const { app } = require('electron').remote
 
 const { createToc, events_table } = require('./../ui/events')
-const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
+const { createMenuButton, createReference, createSevereTables, createInnovationsList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer, clearTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
+const { addInnovation } = require('./../ui/development')
 
 // const { eventsSugar } = require('./../ui/events_sugar')
 
@@ -146,6 +147,7 @@ module.exports = class ImageScene {
           addTimer(function () {
             createSevereTables()
             createReference()
+            createInnovationsList()
             eventsSugar(myself)
           }, 2000)
         };
@@ -246,6 +248,7 @@ module.exports = class ImageScene {
             addTimer(function () {
               createSevereTables()
               createReference()
+              createInnovationsList()
               eventsSugar(myself)
             }, 1000);
           }
@@ -274,6 +277,7 @@ module.exports = class ImageScene {
         addTimer(function () {
           createSevereTables()
           createReference()
+          createInnovationsList()
           eventsSugar(myself)
         }, 500);
       };
@@ -354,7 +358,7 @@ module.exports = class ImageScene {
           // id: 'settlement_return_button',
           class: 'settlement_return_button to_settlement hoverable'
         })
-        return_button.text('Return to Settlement')
+        return_button.html('Return to the <b>Settlement</b>')
         return_button.tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
@@ -377,6 +381,106 @@ module.exports = class ImageScene {
         // return_button.delay(1000).fadeIn(2000)
         $('#container').on('click', '.settlement_return_button.to_settlement', function () {
           setTransition('settlement', 'menu', name, current_state())
+        });
+      }
+
+      if (['foundlings', 'returning survivors', 'the pool and the sun'].indexOf(name) >= 0) {
+        console.log('Adding the button!')
+        let return_button = $('<button>', {
+          // id: 'settlement_return_button',
+          class: 'settlement_return_button to_settlement hoverable'
+        })
+        let content = ''
+        if (name == 'foundlings') {
+          content = '<b style="color:#cc0;">Click</b> to learn <b>Dragon Speach</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.'
+        }
+        if (name == 'returning survivors') {
+          content = '<b style="color:#cc0;">Click</b> to learn <b>Language</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.'
+        }
+        if (name == 'the pool and the sun') {
+          content = '<b style="color:#cc0;">Click</b> to learn <b>Sun Language</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.'
+        }
+        return_button.html('Go to the <b>Settlement</b>')
+        return_button.tooltipster({
+            contentAsHTML: 'true',
+            animation: 'grow',
+            content: content,
+            position: 'bottom',
+            delay: [300, 100],
+            maxWidth: 300,
+            trigger: 'custom',
+            triggerOpen: {
+              mouseenter: true,
+              // click: true
+            },
+            triggerClose: {
+              click: true,
+              mouseleave: true
+            }
+          });
+        // return_button.hide()
+        $('#container').append(return_button)
+        // return_button.delay(1000).fadeIn(2000)
+        $('#container').on('click', '.settlement_return_button.to_settlement', function () {
+          if (name == 'foundlings') {
+            addInnovation('Dragon Speech')
+          }
+          if (name == 'returning survivors') {
+            addInnovation('Language')
+          }
+          if (name == 'the pool and the sun') {
+            addInnovation('Sun Language')
+          }
+          setTransition('settlement', 'menu', name, current_state())
+        });
+      }
+
+      if (name == 'first story') {
+        console.log('Adding the button!')
+        let return_button = $('<button>', {
+          // id: 'settlement_return_button',
+          class: 'settlement_return_button to_settlement hoverable'
+        })
+
+        let content = ''
+        let target = ''
+        if (settings['campaign'] == 'Lantern') {
+          content = 'After they defeat the White Lion, the survivors wander the darkness, drawn to a soft glow blooming on the horizon.<br/><br/><b style="color:#cc0;">Click</b> to proceed.'
+          target = 'returning survivors'
+        }
+        if (settings['campaign'] == 'Stars') {
+          content = 'After they defeat the White Lion, the survivors wander the darkness, drawn to a soft glow blooming on the horizon.<br/><br/><b style="color:#cc0;">Click</b> to proceed.'
+          target = 'foundlings'
+        }
+
+        if (settings['campaign'] == 'Sun') {
+          content = 'After they defeat the White Lion, the survivors wander the darkness, drawn to a soft glow blooming on the horizon.<br/><br/><b style="color:#cc0;">Click</b> to proceed.'
+          target = 'the pool and the sun'
+        }
+
+        return_button.html('After victory...')
+        return_button.tooltipster({
+            contentAsHTML: 'true',
+            animation: 'grow',
+            content: content,
+            position: 'bottom',
+            delay: [300, 100],
+            maxWidth: 250,
+            trigger: 'custom',
+            triggerOpen: {
+              mouseenter: true,
+              // click: true
+            },
+            triggerClose: {
+              click: true,
+              mouseleave: true
+            }
+          });
+        // return_button.hide()
+        $('#container').append(return_button)
+        // return_button.delay(1000).fadeIn(2000)
+        $('#container').on('click', '.settlement_return_button.to_settlement', function () {
+          setTransition(target, 'menu', name, current_state())
         });
       }
 

@@ -1,8 +1,9 @@
 const remote = require('electron').remote
 
-const { get_all_options, is_random_draw, get_random_draws, get_representation } = require('./glossary')
+const { get_all_options, is_random_draw, get_random_draws, get_representation, get_locations_list, get_innovations_list} = require('./glossary')
 const { cdnUrl } = require('./template-renderer')
 const { addTimer, clearTimer } = require('./timer')
+const { getDevelopmentState, addInnovation, removeInnovation, addSettlementLocation, removeSettlementLocation} = require('./development')
 
 window.severe_timers = {}
 
@@ -45,6 +46,7 @@ module.exports = {
   createMenuButton,
   createReference,
   createSevereTables,
+  createInnovationsList
 }
 
 function createMenuButton () {
@@ -228,11 +230,6 @@ function addLocationTable (location, top) {
 }
 
 function showLocationTable (location) {
-  // $('#severe-background').fadeIn(500);
-  // $('#severe-table').hide();
-  // $('#severe-table').attr('src', cdnUrl('images/severe injuries/'+location+'.png'));
-  // $('#severe-table.' + location).delay(100).fadeIn(200)
-  // $('#severe-table.' + location).toggle( "slide" );
   window.severe_timers[location] = addTimer(function(){
     $('#severe-table.' + location).show("slide", { direction: "right" }, 200);
   }, 300)
@@ -253,6 +250,7 @@ function createReference () {
 
   $('#container').append($('<div>', {
     id: 'reference-window-background',
+    class: 'window-background'
   }))
 
   $('#reference-window-background').hide()
@@ -421,19 +419,21 @@ function createReference () {
           }, 500 * i)
         }
       } else {
-        // $('#reference-window-back').append('<div id="reference-data" class="'+adapt_name(values)+'">'+get_representation(values)+'<br/><br/></div>')
-        // $('#reference-data.'+adapt_name(values)).hide();
-        // $('#reference-data.'+adapt_name(values)).delay(50).fadeIn(500);
         show_element(values)
+
       }
     },
 
     onDropdownOpen: function ($dropdown) {
+      // if (!this.lastQuery.length) {
+      //   this.close()
+      // } else {
+      //   $('#glossary-symbols').hide()
+      // }
       if (!this.lastQuery.length) {
         this.close()
-      } else {
-        $('#glossary-symbols').hide()
       }
+      $('#glossary-symbols').hide()
     },
 
     onDropdownClose: function ($dropdown) {
@@ -444,26 +444,6 @@ function createReference () {
   })[0].selectize
 
   window.selectize = selectize
-
-  // selectize.on('item_remove', function() {
-  //   selectize.close();
-  // });
-
-  // selectize.$control_input.on('keydown', function (e) {
-  // 	// update hidden input buffer for onscreen keyboard
-  // 	if (settings.onscreenKeypads === 'On') {
-  // 		let refPadHiddenValue = document.getElementById("refPadHiddenValue")
-  //     if (e.keyCode == 8 && selectize.$control_input.val().length < 2) {
-  // 			selectize.close();
-  // 		} else {
-  //       refPadHiddenValue.value = refPadHiddenValue.value + e.key
-  //     }
-  //
-  // 	}
-  //
-  //
-  // });
-
 
   $(document).on('click', 'div.selectize-input div.item', function (e) {
     let name = $(this).text().slice(0, -1)
@@ -533,23 +513,10 @@ function createReference () {
     }
   }
 
-  // $('#reference').hover(function () {
-  //   // if (!$(this).hasClass('active')) {
-  //     if (!$(this).hasClass('hoverd')) {
-  //       $('#reference-window-back0').fadeIn(500)
-  //       $('#reference-window-background').fadeIn(500)
-  //       $('#reference').attr('src', 'images/icons/reference_active.png')
-  //       selectize.focus()
-  //       $(this).toggleClass('active')
-  //     }
-  //   // }
-  // }, function () {
-  //   $(this).delay(500).removeClass('hoverd')
-  // })
   $('#reference').tooltipster({animationDuration: 50,
     contentAsHTML: 'true',
     animation: 'fade',
-    content: 'Show <b>Reference</b> window.',
+    content: '<b style="color:#cc0;">Click</b> to show <b>Reference</b> window.',
     position: 'right',
     delay: [0, 0],
   })
@@ -577,6 +544,236 @@ function createReference () {
     $('#esc-menu').removeClass('active')
   })
 }
+
+function  createInnovationsList() {
+  $('#container').append($('<img>', {
+    class: 'innovations_button',
+    src: cdnUrl('images/icons/innovations_button.png'),
+  }))
+
+  $('#container').append($('<div>', {
+    id: 'innovations-list_window-background',
+    class: 'window-background'
+  }))
+
+  $('#innovations-list_window-background').hide()
+
+  $('.innovations_button').hide()
+  $('.innovations_button').fadeIn(1000)
+
+  $('#container').append($('<div>', {
+    class: 'innovations-list',
+    // src: cdnUrl('images/icons/innovations_button.png'),
+  }))
+
+  $('.innovations-list').append($('<select>', {
+    id: "innovations-list-window",
+    class: "innovations-list-window",
+    placeholder: "Type Innovation..."
+  }))
+
+  $('.innovations-list').hide();
+
+  let options = get_innovations_list()
+
+  var selectize_innovations = $('#innovations-list-window').selectize({
+    options: options,
+    optgroups: [{
+      value: 'innovations',
+      label: 'Innovations',
+    },
+    ],
+    optgroupField: 'class',
+    labelField: 'name',
+    searchField: ['name'],
+    maxItems: 100,
+    plugins: ['remove_button', 'silent_remove'],
+    // render: {
+    //     optgroup_header: function(data, escape) {
+    //         return '<div class="optgroup-header">' + escape(data.label) + ' <span class="scientific">' + escape(data.label_scientific) + '</span></div>';
+    //     }
+    // }
+    hideSelected: true,
+    // closeAfterSelect: true,
+    sortField: [{
+      field: 'name',
+      direction: 'asc',
+    },
+    {
+      field: '$score',
+    },
+    ],
+    // ignoreFocusOpen: true,
+    onItemRemove: function (values) {
+      // return confirm(values);
+      console.log('Removing: '+values)
+      removeInnovation(values)
+      selectize_innovations.setCaret(0)
+    },
+    onItemAdd: function (values, item) {
+      console.log('Adding: '+values)
+      addInnovation(values);
+      selectize_innovations.setCaret(0)
+    },
+  })[0].selectize
+
+  window.selectize_innovations = selectize_innovations
+
+  let learnt_innovations = getDevelopmentState()['innovations']
+
+  for (let i=learnt_innovations.length-1; i>=0; i--) {
+    selectize_innovations.addItem(learnt_innovations[i]);
+  }
+
+  // selectize_innovations.hide();
+
+  $('.innovations_button').tooltipster({animationDuration: 50,
+    contentAsHTML: 'true',
+    animation: 'fade',
+    content: '<b style="color:#cc0;">Click</b> to add/remove settlement <b>Innovations</b>.',
+    position: 'right',
+    delay: [0, 0],
+  })
+
+  $('.innovations_button').click(function () {
+    if (!$(this).hasClass('active')) {
+      // $('#innovations-list-window').fadeIn(500)
+      $('.innovations-list').fadeIn(500);
+      $('#innovations-list_window-background').fadeIn(400)
+      // $('#reference').attr('src', cdnUrl('images/icons/reference_active.png'))
+      selectize_innovations.focus()
+    } else {
+      $('.innovations-list').fadeOut(500);
+      $('#innovations-list_window-background').fadeOut(600)
+      // $('#innovations-list-window').fadeOut(500)
+      // $('#reference').attr('src', cdnUrl('images/icons/reference.png'))
+    }
+    $(this).toggleClass('active')
+  })
+
+  $('#innovations-list_window-background').on('click', function () {
+    $('.innovations-list').fadeOut(500)
+    $('#innovations-list_window-background').fadeOut(500)
+    $('.innovations_button').removeClass('active')
+  })
+
+  createLocationsList()
+}
+
+function  createLocationsList() {
+  $('#container').append($('<img>', {
+    class: 'locations_button',
+    src: cdnUrl('images/icons/locations_button.png'),
+  }))
+
+  $('#container').append($('<div>', {
+    id: 'locations-list_window-background',
+    class: 'window-background'
+  }))
+
+  $('#locations-list_window-background').hide()
+
+  $('.locations_button').hide()
+  $('.locations_button').fadeIn(1000)
+
+  $('#container').append($('<div>', {
+    class: 'locations-list',
+    // src: cdnUrl('images/icons/innovations_button.png'),
+  }))
+
+  $('.locations-list').append($('<select>', {
+    id: "locations-list-window",
+    class: "locations-list-window",
+    placeholder: "Type Settlement Location..."
+  }))
+
+  $('.locations-list').hide();
+
+  let options = get_locations_list()
+
+  var selectize_locations = $('#locations-list-window').selectize({
+    options: options,
+    optgroups: [{
+      value: 'settlement locations',
+      label: 'Settlement Locations',
+    },
+    ],
+    optgroupField: 'class',
+    labelField: 'name',
+    searchField: ['name'],
+    maxItems: 100,
+    plugins: ['remove_button', 'silent_remove'],
+    // render: {
+    //     optgroup_header: function(data, escape) {
+    //         return '<div class="optgroup-header">' + escape(data.label) + ' <span class="scientific">' + escape(data.label_scientific) + '</span></div>';
+    //     }
+    // }
+    hideSelected: true,
+    // closeAfterSelect: true,
+    sortField: [{
+      field: 'name',
+      direction: 'asc',
+    },
+    {
+      field: '$score',
+    },
+    ],
+    // ignoreFocusOpen: true,
+    onItemRemove: function (values) {
+      // return confirm(values);
+      console.log('Removing: '+values)
+      removeSettlementLocation(values)
+      selectize_innovations.setCaret(0)
+    },
+    onItemAdd: function (values, item) {
+      console.log('Adding: '+values)
+      addSettlementLocation(values);
+      selectize_innovations.setCaret(0)
+    },
+  })[0].selectize
+
+  window.selectize_locations = selectize_locations
+
+  let learnt_locations = getDevelopmentState()['locations']
+
+  for (let i=learnt_locations.length-1; i>=0; i--) {
+    selectize_locations.addItem(learnt_locations[i]);
+  }
+
+  // selectize_innovations.hide();
+
+  $('.locations_button').tooltipster({animationDuration: 50,
+    contentAsHTML: 'true',
+    animation: 'fade',
+    content: '<b style="color:#cc0;">Click</b> to add/remove <b>Settlement Locations</b>.',
+    position: 'right',
+    delay: [0, 0],
+  })
+
+  $('.locations_button').click(function () {
+    if (!$(this).hasClass('active')) {
+      // $('#innovations-list-window').fadeIn(500)
+      $('.locations-list').fadeIn(500);
+      $('#locations-list_window-background').fadeIn(400)
+      // $('#reference').attr('src', cdnUrl('images/icons/reference_active.png'))
+      selectize_innovations.focus()
+    } else {
+      $('.locations-list').fadeOut(500);
+      $('#locations-list_window-background').fadeOut(600)
+      // $('#innovations-list-window').fadeOut(500)
+      // $('#reference').attr('src', cdnUrl('images/icons/reference.png'))
+    }
+    $(this).toggleClass('active')
+  })
+
+  $('#locations-list_window-background').on('click', function () {
+    $('.locations-list').fadeOut(500)
+    $('#locations-list_window-background').fadeOut(500)
+    $('.locations_button').removeClass('active')
+  })
+
+}
+
 
 function refPadEntry (refValue) {
   var refInput = $('#reference-window-selectized') // $('.selectize-input') // document.getElementById("reference-window-selectized")

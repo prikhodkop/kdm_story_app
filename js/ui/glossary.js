@@ -1823,6 +1823,7 @@ module.exports = {
   is_random_draw,
   get_random_draws,
   get_locations_list,
+  get_innovations_list,
   getSettlementEventPath,
   clone,
   settlement_locations,
@@ -1843,11 +1844,14 @@ function get_options (data, type, filter=false) {
       })
     } else {
       if (!('expansion' in data[key]) || (settings['expansions'][data[key]['expansion']] == 'All content')){
-        result.push({
-          class: type,
-          name: key,
-          value: key,
-        })
+        if (!('campaign' in data[key]) || (data[key]['campaign'].indexOf(settings['campaign']) > -1)){
+          result.push({
+            class: type,
+            name: key,
+            value: key,
+          })
+        }
+
       }
     }
 
@@ -1873,17 +1877,15 @@ function get_all_options () {
   options = options.concat(get_options(innovations, 'innovations'))
   options = options.concat(get_options(terrain, 'terrain'))
   options = options.concat(get_options(resources, 'resources'))
-  // options = options.concat(get_options(principles, 'principles'))
-  // $.get( "files.php", function( data ) {
-  //   console.log('Here...')
-  //   console.log(data)
-  //   console.log('...!!!')
-  //   options.concat(data);
-  // });
-  // options = options.concat(get_options(fightning_arts_text, 'disorders'));
-  // options = options.concat(get_options(fightning_arts_text, 'abilities'));
-  // options = options.concat(get_options(secret_fightning_arts_text, 'secret figtning arts'));
   return options.concat(get_options(settlement_events, 'settlement events'))
+}
+
+function get_innovations_list() {
+  // let settings = JSON.parse(sessionStorage.getItem('settings'))
+  let options = get_options(innovations, 'innovations', true)
+
+  return options
+
 }
 
 function get_events_options() {
@@ -1893,8 +1895,9 @@ function get_events_options() {
 
 function get_locations_list() {
   let settings = JSON.parse(sessionStorage.getItem('settings'))
+  let options = get_options(settlement_locations, 'settlement locations', true)
 
-  let list = []
+  return options
 }
 
 function get_representation (word) {

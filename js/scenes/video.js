@@ -2,7 +2,7 @@ const { app } = require('electron').remote
 
 const { createToc, events_table } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
-const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
+const { createMenuButton, createReference, createSevereTables, createInnovationsList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
@@ -107,6 +107,7 @@ module.exports = class VideoScene {
 
       createSevereTables()
       createReference()
+      createInnovationsList()
 
       $('#video').hide()
       $('#video').get(0).pause()
@@ -130,6 +131,7 @@ module.exports = class VideoScene {
       music.play()
       createSevereTables()
       createReference()
+      createInnovationsList()
     })
 
     $('#video').on('click', function () {
@@ -144,6 +146,7 @@ module.exports = class VideoScene {
       document.getElementById('video').currentTime = 0
       createSevereTables()
       createReference()
+      createInnovationsList()
     })
 
     createMenuButton()
