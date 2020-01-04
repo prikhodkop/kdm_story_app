@@ -642,6 +642,7 @@ function  createInnovationsList() {
       $('#innovations-list_window-background').fadeIn(400)
       // $('#reference').attr('src', cdnUrl('images/icons/reference_active.png'))
       selectize_innovations.focus()
+      selectize_innovations.setCaret(0)
     } else {
       $('.innovations-list').fadeOut(500);
       $('#innovations-list_window-background').fadeOut(600)
@@ -723,12 +724,12 @@ function  createLocationsList() {
       // return confirm(values);
       console.log('Removing: '+values)
       removeSettlementLocation(values)
-      selectize_innovations.setCaret(0)
+      selectize_locations.setCaret(0)
     },
     onItemAdd: function (values, item) {
       console.log('Adding: '+values)
       addSettlementLocation(values);
-      selectize_innovations.setCaret(0)
+      selectize_locations.setCaret(0)
     },
   })[0].selectize
 
@@ -756,7 +757,8 @@ function  createLocationsList() {
       $('.locations-list').fadeIn(500);
       $('#locations-list_window-background').fadeIn(400)
       // $('#reference').attr('src', cdnUrl('images/icons/reference_active.png'))
-      selectize_innovations.focus()
+      selectize_locations.focus()
+      selectize_locations.setCaret(0)
     } else {
       $('.locations-list').fadeOut(500);
       $('#locations-list_window-background').fadeOut(600)
