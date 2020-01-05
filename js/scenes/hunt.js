@@ -61,21 +61,29 @@ module.exports = class HuntScene {
       animation: 'fade',
       content: 'Roll random <b>Hunt Event</b>',
       position: 'top',
-      delay: '600',
+      delay: 0,
+    })
+
+    $('#random_event_close').tooltipster({animationDuration: 50,
+      contentAsHTML: 'true',
+      animation: 'fade',
+      content: '<b style="color:#cc0">Click</b> to close <b>Hunt Event</b>',
+      position: 'right',
+      delay: 0,
     })
 
     $('#random_event_icon_big').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: 'Roll random <b>Hunt Event</b>',
+      content: '<b style="color:#cc0">Click</b> to roll random <b>Hunt Event</b>',
       position: 'top',
-      delay: '600',
+      delay: 0,
     })
 
     $('#random_event_input').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: 'Type <b>Hunt Event</b> number here',
+      content: '<b style="color:#cc0">Type</b> <b>Hunt Event</b> number here',
       position: 'bottom',
       delay: '600',
     })
@@ -231,10 +239,17 @@ module.exports = class HuntScene {
 
     $('body').on('click', '#quary_popup_back', function () {
       $('#random_popup').fadeOut(500)
+      $('#random_event_close').fadeOut(500)
       document.querySelector('#quary_popup').classList.remove('magictime', QUARRY_CARD_SHOW, QUARRY_CARD_HIDE)
       document.querySelector('#quary_popup').classList.add('magictime', QUARRY_CARD_HIDE)
       $('#quary_popup_back').delay(500).fadeOut(500)
       $('#quary_popup').delay(1000).fadeOut(100)
+    })
+
+    $('body').on('click', '#random_event_close', function () {
+      $('#random_popup').fadeOut(500)
+      $('#random_event_close').fadeOut(500)
+      $('#quary_popup_back').delay(500).fadeOut(500)
     })
 
     $('body').on('click', '#random_event_icon', function () {
@@ -654,6 +669,7 @@ module.exports = class HuntScene {
       template.innerHTML = event_html
       $('#quary_popup').fadeOut(500)
       $('#random_popup').delay(500).fadeIn(500)
+      $('#random_event_close').delay(500).fadeIn(500)
       $('#quary_popup_back').fadeIn(1000)
       $('#random_event_icon').delay(1000).fadeIn(1500)
       $('#random_event_input').delay(1000).fadeIn(1500)

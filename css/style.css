@@ -742,7 +742,7 @@ tr.spaceUnder>td {
 #random_event_icon_big {
   position: absolute;
   width:12%;
-  top:20%;
+  top:18%;
   left:44%;
   display: block;
 }
@@ -1126,4 +1126,26 @@ div.selectize-dropdown-content::-webkit-scrollbar {
 	z-index: 80;
 	display:block;
   background: Transparent
+}
+
+#random_event_close {
+  z-index:9;
+  position:absolute;
+  /* width:6%; */
+  /* top: 73%; */
+  /* right: 7.1%; */
+  top:1%;
+  /* top: 74%; */
+  right:20%;
+  opacity: 0.7;
+  font-size: 3em;
+  color: #ddd;
+  transition: opacity 0.5s, color 0.5s;
+  cursor: pointer;
+}
+
+#random_event_close:hover {
+  color: #cc0;
+  opacity: 1.;
+  filter: drop-shadow(0, 0, 0, 5px, #cc0);
 }
