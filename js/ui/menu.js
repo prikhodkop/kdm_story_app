@@ -425,20 +425,20 @@ function createReference () {
     },
 
     onDropdownOpen: function ($dropdown) {
-      // if (!this.lastQuery.length) {
-      //   this.close()
-      // } else {
-      //   $('#glossary-symbols').hide()
-      // }
       if (!this.lastQuery.length) {
         this.close()
+      } else {
+        $('#glossary-symbols').hide()
       }
-      $('#glossary-symbols').hide()
+      // if (!this.lastQuery.length) {
+      //   this.close()
+      // }
+      // $('#glossary-symbols').hide()
     },
 
     onDropdownClose: function ($dropdown) {
       if (!$('.selectize-input').hasClass('has-items')) {
-        $('#glossary-symbols').fadeIn(500)
+        $('#glossary-symbols').fadeIn(100)
       }
     },
   })[0].selectize

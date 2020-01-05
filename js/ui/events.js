@@ -544,7 +544,7 @@ const events = {
     'music': 'music/a gracious host.mp3',
     'music_delay': '500',
     'ltop': '10%',
-    'lleft': '78%',
+    'lleft': '75%',
     // // 'campaign': 'Stars',
   },
   'death reading': {

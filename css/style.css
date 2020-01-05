@@ -1137,15 +1137,15 @@ div.selectize-dropdown-content::-webkit-scrollbar {
   top:1%;
   /* top: 74%; */
   right:20%;
-  opacity: 0.7;
+  opacity: 0.4;
   font-size: 3em;
   color: #ddd;
-  transition: opacity 0.5s, color 0.5s;
+  transition: opacity 0.5s, color 0.5s, filter: 0.5s;
   cursor: pointer;
 }
 
 #random_event_close:hover {
   color: #cc0;
-  opacity: 1.;
+  opacity: 1.0;
   filter: drop-shadow(0, 0, 0, 5px, #cc0);
 }
