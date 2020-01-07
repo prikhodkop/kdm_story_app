@@ -23,6 +23,15 @@ const quaries_events = [
   'showdown spidicules',
 ]
 
+const special_events = [
+  'showdown kingsman',
+  'kings curse',
+  'showdown the hand',
+  'showdown butcher',
+  'an uninvited guest',
+  
+]
+
 module.exports = class ImageScene {
   render () {
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/image.html')
@@ -44,6 +53,8 @@ module.exports = class ImageScene {
     // let settings = JSON.parse(sessionStorage.getItem("settings"));
     var settings = getSettings()
     sessionStorage.setItem('settings', JSON.stringify(settings))
+
+    $('body').css('font-size', settings['fontSize'])
 
     $('#img_back').attr('src', cdnUrl('images/' + myself + '/back.jpg'))
 
@@ -362,7 +373,7 @@ module.exports = class ImageScene {
         return_button.tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
-            content: '<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>.',
+            content: '<b style="color:#cc0;">Click</b> to return to <b>Settlement</b><br/><br/>This will start new <b>Lighting Year</b>.',
             position: 'bottom',
             delay: [300, 100],
             fixedWidth: 250,

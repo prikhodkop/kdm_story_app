@@ -1,6 +1,4 @@
-html, body {height:100%; width: 100%; top:0; left:0; border-width:0; overflow:hidden;scrollbar-width: 0;scroll-behavior: smooth; font-size: 12px;}
-
-
+html, body {height:100%; width: 100%; top:0; left:0; border-width:0; overflow:hidden;scrollbar-width: 0;scroll-behavior: smooth;}
 
 
 @font-face {
@@ -17,7 +15,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 /* #label_text {
-  position: absolute;
+  position: absolute;o
 } */
 
 #container {

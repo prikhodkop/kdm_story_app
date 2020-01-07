@@ -30,6 +30,8 @@ module.exports = class HuntScene {
     sessionStorage.setItem('settings', JSON.stringify(settings))
     sessionStorage.setItem('back_target', null)
 
+    $('body').css('font-size', settings['fontSize'])
+
     console.log(sessionStorage)
     // let settings = JSON.parse(sessionStorage.getItem("settings"));
 

@@ -26,6 +26,8 @@ module.exports = class VideoScene {
     var settings = getSettings()
     sessionStorage.setItem('settings', JSON.stringify(settings))
 
+    $('body').css('font-size', settings['fontSize'])
+
     // $("#label_text").hide();
     $('#menu').hide()
     $('#img').hide()

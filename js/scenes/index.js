@@ -83,6 +83,8 @@ module.exports = class IndexScene {
     //   gallery.show();
     // }, 2000)
 
+    $('body').css('font-size', settings['fontSize'])
+
 
     // console.log(subtitles['intro'][lang])
     if (settings['subtitles'] == 'On') {

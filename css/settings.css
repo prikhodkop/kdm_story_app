@@ -26,10 +26,10 @@
 
 #settings-window-back0 {
   /* width:30%; */
-  left:25%;
+  left:15%;
   top: 2%;
   height: 95%;
-  width: 50%;
+  width: 70%;
   position:absolute;
   z-index: 81;
   display:block;
@@ -162,7 +162,7 @@ table.settings {
   left: 0%;
   /* height: 100%; */
   color: #888;
-  font-size: 30px;
+  font-size: 1em;
   background: Transparent;
   float: left;
 }
@@ -197,10 +197,11 @@ td#group.settings {
   width: 20%;
   text-align: right;
   vertical-align:top;
+  font-size: 1.5em;
   /* margin-right: -30px; */
   color: #666;
   text-decoration: underline;
-  font-size: 25px;
+  /* font-size: 25px; */
   /* position:static; */
   padding-top: 30px;
 }

@@ -40,6 +40,8 @@ module.exports = class SettlementScene {
     window.settlement_back_target = sessionStorage.getItem('back_target')
     sessionStorage.setItem('back_target', null)
 
+    $('body').css('font-size', settings['fontSize'])
+
     var state = sessionStorage.getItem(myself)
     var transition = sessionStorage.getItem('transition')
     var back_target = sessionStorage.getItem('back_target')

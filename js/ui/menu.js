@@ -108,7 +108,7 @@ function createMenuButton () {
         $('#menu-toggle-wrapper').tooltipster('content', null);
       } else {
         $('#menu').hide();
-        $('#menu-toggle-wrapper').tooltipster('content', 'Show <b>Story Events</b> table.', 'delay', 0);
+        $('#menu-toggle-wrapper').tooltipster('content', '<b style="color:#cc0;">Click</b> to show <b>Story Events</b> table.', 'delay', 0);
       }
       $(this).toggleClass('active')
     })
@@ -116,7 +116,7 @@ function createMenuButton () {
     $('#menu-toggle-wrapper').tooltipster({animationDuration: 50,
         contentAsHTML: 'true',
         animation: 'fade',
-        content: 'Show <b>Story Events</b> table.',
+        content: '<b style="color:#cc0;">Click</b> to show <b>Story Events</b> table.',
         position: 'left',
         delay: [300, 300],
         trigger: 'custom',
