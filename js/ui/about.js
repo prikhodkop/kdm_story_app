@@ -47,7 +47,7 @@ function createAbout (version) {
   <p id="about_p"><b style="color:#aaa">Voice acting</b>: @prikhodkop, Katya Prikhodko.</p>
   <p id="about_p"><b style="color:#aaa">Testing</b>: Alexander Fedorov, Calibretto, Creepo, Cymbaline, Knolan.</p>
   <p id="about_p">Arts, disorders, ability and weapon specialisation cards are created by Fen, please support him at his: <a href=https://www.patreon.com/FenPaints style="color:#888800;" target="_blank">https://www.patreon.com/FenPaints</a> </br>He deservers it!.</p>
-  <p id="about_p"><b style="color:#aaa">Patreon backers</b>: Blair, Javier Salmeron, Jesús Martin-Davila, Mithless_one, Royce, timberwolfl.</p></div>`).appendTo('#reference-window-back')
+  <p id="about_p"><b style="color:#aaa">Patreon backers</b>: Bekil, Blair, Cymbaline, Frosty, Javier Salmeron, Jesús Martin-Davila, Jordan White, Kliff, Mithless_one, Royce, Scott M, timberwolfl.</p></div>`).appendTo('#reference-window-back')
   $('#about-window-back0').hide()
 
   // $('#about_text').click(function () {
