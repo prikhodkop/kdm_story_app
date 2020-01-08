@@ -65,10 +65,11 @@ function createAbout (version) {
 
   $('#about_text').tooltipster({
       contentAsHTML: 'true',
-      animation: 'grow',
+      animation: 'fade',
       content: '<b style="color:#cc0;">Click</b> to show <b>About</b> window.',
+      animationDuration: 50,
       position: 'right',
-      delay: [300, 300],
+      delay: 0,
       trigger: 'custom',
       triggerOpen: {
         mouseenter: true,

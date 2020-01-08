@@ -43,7 +43,7 @@ function addSettings (settings) {
       animation: 'fade',
       content: '<b style="color:#cc0;">Click</b> to show <b>Settings</b> window.',
       position: 'left',
-      delay: [300, 300],
+      delay: 0,
       trigger: 'custom',
       triggerOpen: {
         mouseenter: true,
@@ -279,7 +279,7 @@ function createTable (schema, defaults = undefined, level = 0, group = '') {
       sel.tooltipster({
             animationDuration: 50,
             contentAsHTML: 'true',
-            animation: 'grow',
+            animation: 'fade',
             content: schema[key].description,
             position: 'right',
             delay: 0,
@@ -350,7 +350,7 @@ var expansion_options = [
 var settings_schema = {
   'campaign': {
     'type': 'option',
-    'title': 'Campaign (may be changd on Intro screen only)',
+    'title': 'Campaign',
     'description': 'Campaign you currently play.',
     'default': 'Lantern',
     'enum': [
@@ -362,7 +362,7 @@ var settings_schema = {
   'language': {
     'type': 'option',
     'title': 'Language',
-    'description': 'Sets the app language.<br/><b>Now works with video subtitles only!</b>.',
+    'description': 'Sets the app language.<br/><br/><b>Now works with video subtitles only.</b>',
     'default': 'en',
     'enum': [
       'en',
@@ -372,7 +372,7 @@ var settings_schema = {
   'music': {
     'type': 'option',
     'title': 'Music',
-    'description': 'Switch on/off music playing.<br/><b>Would also switch on/off voice in the videos in the current version</b>.',
+    'description': 'Switch on/off music playing.<br/><br/><b>Would also switch on/off voice in the videos in the current version</b>.',
     'default': 'On',
     'enum': [
       'On',
@@ -426,8 +426,8 @@ var settings_schema = {
   },
   'innovation_row_length': {
     'type': 'option',
-    'title': 'Innovations per row',
-    'description': 'How many columns to show on Innovations window in the the Settlement.',
+    'title': 'Innovations Row Length',
+    'description': 'How many columns to show on <b>Innovations</b> window in the <b>Settlement</b>.',
     'default': '5',
     'enum': [
       '4',
@@ -438,7 +438,7 @@ var settings_schema = {
   'size_of_basic_hunt_deck': {
     'type': 'option',
     'title': 'Basic Hunt Deck Size',
-    'description': 'How many basic hunt events are in the deck (affects chance of expansions hunt events to be drawn).<br/>Base game value: 12.',
+    'description': 'How many basic <b>Random Hunt Events</b> are in the deck (affects chance of expansions hunt events to be drawn).<br/><br/>Base game value: 12.',
     'default': '12',
     'enum': [
       // '0',

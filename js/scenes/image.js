@@ -29,7 +29,7 @@ const special_events = [
   'showdown the hand',
   'showdown butcher',
   'an uninvited guest',
-  
+
 ]
 
 module.exports = class ImageScene {
@@ -373,7 +373,7 @@ module.exports = class ImageScene {
         return_button.tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
-            content: '<b style="color:#cc0;">Click</b> to return to <b>Settlement</b><br/><br/>This will start new <b>Lighting Year</b>.',
+            content: '<b style="color:#cc0;">Click</b> to return to <b>Settlement</b><br/><br/>This will start new <b>Lantern Year</b>.',
             position: 'bottom',
             delay: [300, 100],
             fixedWidth: 250,

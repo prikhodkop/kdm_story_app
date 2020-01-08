@@ -26,10 +26,10 @@
 
 #settings-window-back0 {
   /* width:30%; */
-  left:15%;
+  left:20%;
   top: 2%;
   height: 95%;
-  width: 70%;
+  width: 60%;
   position:absolute;
   z-index: 81;
   display:block;
@@ -161,7 +161,7 @@ table.settings {
   width: 100%;
   left: 0%;
   /* height: 100%; */
-  color: #888;
+  color: #aaa;
   font-size: 1em;
   background: Transparent;
   float: left;
@@ -179,42 +179,44 @@ tr.settings {
 
 td#title.settings {
   width: 40%;
-  text-align: center;
-  vertical-align:top;
+  text-align: right;
+  vertical-align:center;
   /* position:static; */
-  /* margin-right: -30px; */
-  padding-bottom: 5px
+  padding-right: 10px;
+  padding-bottom: 5px;
+  font-size: 1.3em;
 }
 
 td#select.settings {
   width: 40%;
-  vertical-align:top;
+  vertical-align:center;
   left: 1%;
   /* position:static; */
 }
 
 td#group.settings {
   width: 20%;
-  text-align: right;
+  text-align: center;
   vertical-align:top;
-  font-size: 1.5em;
+  font-size: 1.6em;
   /* margin-right: -30px; */
-  color: #666;
-  text-decoration: underline;
+  color: #888;
+  /* text-decoration: underline; */
   /* font-size: 25px; */
   /* position:static; */
   padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 td#table.settings {
   width: 70%;
-  vertical-align:top;
+  vertical-align:center;
   /* position:static; */
 }
 
 select.settings {
   width: 59%;
-  font-size: 1em;
+  font-size: 1.3em;
   font-family: 'Silverado';
   border: 1px solid #ccc;
   box-shadow: 0 0 10px #000;
@@ -226,16 +228,18 @@ select.settings {
   /* margin:auto; */
   /* align: center; */
   text-align: center;
-  color: #888;
+  color: #ccc;
+  padding-left: 2px;
 }
 
 /* select.settings[level=1] {
   width: 80% !important;
 } */
 
-select#disabled.settings {
+select[value = "campaign"] {
   border: none;
   background: Transparent;
+  color: #ccc;
 }
 
 select::-ms-expand {
