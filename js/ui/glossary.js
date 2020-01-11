@@ -117,70 +117,70 @@ function get_representation (word) {
   let terms_with_pics = ['Attack', 'Collision', 'Hunt Phase', 'Settlement Phase', 'Survival', 'Knocked Down (Monster)', 'Knocked Down (Survivor)']
 
   if (terms_with_pics.includes(word)) {
-   result = result + '<br/><br/><img id=reference-image src='+cdnUrl('"images/reference/terms/' + word + '.jpg"')+'/>'
+   result = result + '<br/><br/><img id=reference-image src="'+cdnUrl('images/reference/terms/' + word + '.jpg')+'"/>'
   }
 
   // post text 1 width 98%
 
   if (['Settlement Board', 'Gear Grid', 'Hit Location (Monster)', 'Terrain Cards'].includes(word)) {
-   result = result + '<br/><br/><img id=reference-image style="width:99%;" src='+cdnUrl('"images/reference/terms/'+word+'.png"')+'/>'
+   result = result + '<br/><br/><img id=reference-image style="width:99%;" src="'+cdnUrl('images/reference/terms/'+word+'.png')+'"/>'
   }
 
   // post text 2 width 98%
 
   if (['Movement (Attribute)', 'Endeavors'].includes(word)) {
-   result = result + '<br/><br/><img id=reference-image style="width:99%;" src='+cdnUrl('"images/reference/terms/'+word+'.png"')+'/>'
+   result = result + '<br/><br/><img id=reference-image style="width:99%;" src="'+cdnUrl('images/reference/terms/'+word+'.png')+'"/>'
    result = result + '<br\>Monster must move as close to straight line to target as possible:'
-   result = result + '<br/><img id=reference-image style="width:99%;" src='+cdnUrl('"images/reference/terms/'+word+' 2.png"')+'/>'
+   result = result + '<br/><img id=reference-image style="width:99%;" src="'+cdnUrl('images/reference/terms/'+word+' 2.png')+'"/>'
   }
 
   // post text 1 width 50%
 
   if (['Hunt Event', 'Persistent Injury', 'Mood', 'Survivor Status Card'].includes(word)) {
-   result = result + '<br/><br/><img id=reference-image style="width:50%;" src='+cdnUrl('"images/reference/terms/'+word+'.png"')+'/>'
+   result = result + '<br/><br/><img id=reference-image style="width:50%;" src="'+cdnUrl('images/reference/terms/'+word+'.png')+'"/>'
   }
 
   // post text 1 width 75%
 
   if (['Wound', 'Vermin Resources', 'Monster Resources', 'Basic Resources', 'Strange Resources', 'Persistent Injury Actions', 'Flow', 'Settlement Event', 'In Range (Monster)', 'Facing', 'Alerts', 'AI Card', 'Hit Location (Survivors)', 'Weapon', 'Armor', 'Item', 'Damage (Condition)', 'Armor Set', 'Puzzle Affinity', 'Affinity (Completed)', 'Injury Level', 'Attribute Modifier Token'].includes(word)) {
-   result = result + '<br/><br/><img id=reference-image style="width:75%;" src='+cdnUrl('"images/reference/terms/'+word+'.png"')+'/>'
+   result = result + '<br/><br/><img id=reference-image style="width:75%;" src="'+cdnUrl('images/reference/terms/'+word+'.png')+'"/>'
   }
 
   // post text 2 width 75%
 
   if (['Knockback X', 'Collision', 'Affinity Bonus', 'Field of View'].includes(word)) {
-   result = result + '<br/><br/><img id=reference-image style="width:75%;" src='+cdnUrl('"images/reference/terms/'+word+'.png"')+'/>'
-   result = result + '<br/><img id=reference-image style="width:75%;" src='+cdnUrl('"images/reference/terms/'+word+' 2.png"')+'/>'
+   result = result + '<br/><br/><img id=reference-image style="width:75%;" src="'+cdnUrl('images/reference/terms/'+word+'.png')+'"/>'
+   result = result + '<br/><img id=reference-image style="width:75%;" src="'+cdnUrl('images/reference/terms/'+word+' 2.png')+'"/>'
   }
 
   // pre-text 15%
 
   if (['Bleeding Token'].includes(word)) {
-   result = '<img id=reference-image style="width:15%;" src='+cdnUrl('"images/reference/terms/'+word+' 0.png"')+'/>' + result
+   result = '<img id=reference-image style="width:15%;" src="'+cdnUrl('images/reference/terms/'+word+' 0.png')+'"/>' + result
   }
 
   // pre-text 25%
 
   if (['Natural 1', 'Conflict (Rule of Death)', 'Hit Location Dice', 'Lantern 10', 'Overwhelming Darkness', 'Reaction', 'Intimidate Actions','Accuracy (Attribute)', 'Evasion (Attribute)', 'Speed (Attribute)', 'Strength (Attribute)', 'Movement (Attribute)', 'Luck (Player Attribute)'].includes(word)) {
-   result = '<img id=reference-image style="width:25%;" src="'+cdnUrl('images/reference/terms/'+word+' 0.png"')+'/>' + result
+   result = '<img id=reference-image style="width:25%;" src="'+cdnUrl('images/reference/terms/'+word+' 0.png')+'"/>' + result
   }
 
   // pre-text 50% no br
 
   if (['Story Event', 'Settlement Phase', 'Showdown Phase', 'Hunt Phase', 'Collision', 'Duplicate Gear', 'Survival', 'Injury Level'].includes(word)) {
-   result = '<img id=reference-image style="width:50%;" src='+cdnUrl('"images/reference/terms/'+word+' 0.png"')+'/>' + result
+   result = '<img id=reference-image style="width:50%;" src="'+cdnUrl('images/reference/terms/'+word+' 0.png')+'"/>' + result
   }
 
   // pre-text 50% with br
 
   if (['Severe Injury', 'Knockback X', 'Innovation Deck', 'Fist & Tooth', 'Critical Wound'].includes(word)) {
-   result = '<img id=reference-image style="width:50%;" src='+cdnUrl('"images/reference/terms/'+word+' 0.png"')+'/><br/>' + result
+   result = '<img id=reference-image style="width:50%;" src="'+cdnUrl('images/reference/terms/'+word+' 0.png')+'"/><br/>' + result
   }
 
   // pre-text 75% with br
 
   if (['Knocked Down (Survivor)', 'Duration', 'Trap'].includes(word)) {
-   result = '<img id=reference-image style="width:75%;" src='+cdnUrl('"images/reference/terms/'+word+' 0.png"')+'/><br/>' + result
+   result = '<img id=reference-image style="width:75%;" src="'+cdnUrl('images/reference/terms/'+word+' 0.png')+'"/><br/>' + result
   }
 
   let weapons = ['Axe', 'Bow', 'Club', 'Dagger', 'Fist & Tooth', 'Grand Weapon', 'Katana', 'Katar', 'Scythe', 'Shield', 'Spear', 'Sword', 'Twilight Sword', 'Whip', 'Thrown']
@@ -207,7 +207,7 @@ function get_representation (word) {
   return result
  } else if (word in fighting_arts) {
   let header_style = ''
-  let result = '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src='+cdnUrl('"images/reference/Fighting Arts/'+word+'.jpg"')+'/>'
+  let result = '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+cdnUrl('images/reference/Fighting Arts/'+word+'.jpg')+'"/>'
   if (('type' in fighting_arts[word]) && (fighting_arts[word]['type'] == 'dragon trait')) {
    header_style='color:#863a2a;'
   }
@@ -215,14 +215,14 @@ function get_representation (word) {
 
  } else if (word in secret_fighting_arts) {
   let header_style = ''
-  let result = '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src='+cdnUrl('"images/reference/Fighting Arts/'+word+'.jpg"')+'/>'
+  let result = '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+cdnUrl('images/reference/Fighting Arts/'+word+'.jpg')+'"/>'
   if (('type' in secret_fighting_arts[word]) && (secret_fighting_arts[word]['type'] == 'dragon trait')) {
    header_style='color:#863a2a;'
   }
   return result+'<b style="font-size:1.3em;'+header_style+'">'+word+'</b> <i style="font-size:0.9em;color:#ed553d;">(secret fighting art)</i> <hr/><div class="bottom-reference">'+secret_fighting_arts[word]['description']+'</div>'
  } else if (word in disorders) {
    let header_style = ''
-   let result = '<div style="display:flex;"><div style="width: 15%; height: auto;display:inline;padding-right:2%;"><img id=reference-image src='+cdnUrl('"images/reference/disorder_head.png"')+'/></div>'
+   let result = '<div style="display:flex;"><div style="width: 15%; height: auto;display:inline;padding-right:2%;"><img id=reference-image src="'+cdnUrl('images/reference/disorder_head.png')+'"/></div>'
    if (('type' in disorders[word]) && (disorders[word]['type'] == 'dragon trait')) {
     header_style='color:#863a2a;'
    }
