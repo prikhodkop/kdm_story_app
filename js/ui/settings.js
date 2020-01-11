@@ -447,34 +447,34 @@ var settings_schema = {
       '36',
     ],
   },
-  'card design': {
-    'type': 'group',
-    'title': 'Cards design',
-    'description': 'Chose which artist\'s card design to use in the app.',
-    'properties': {
-      'fighting arts': {
-        'type': 'option',
-        'title': 'Fighting Arts',
-        'default': 'Poots',
-        'description': 'Chose which artist\'s card design to use in the app for <b>Fighting Arts in </b>Reference menu.<br/><br/><b style="color:#cc0;">Poots</b> - default game design.<br/><b style="color:#cc0;">Fen Small</b> - more compact images by Fen.',
-        'enum': [
-          'Poots',
-          'Fen Small',
-        ],
-      },
-      'disorders': {
-        'type': 'option',
-        'title': 'Disorders',
-        'default': 'Poots',
-        'description': 'Chose which artist\'s card design to use in the app for <b>Disorders</b> in <b>Reference</b> menu.<br/><br/><b style="color:#cc0;">Poots</b> - default game design.<br/><b style="color:#cc0;">Fen Small</b> - more compact images by Fen.',
-        'enum': [
-          'Poots',
-          'Fen Small',
-          // 'Fen Wide',
-        ],
-      },
-    },
-  },
+  // 'card design': {
+  //   'type': 'group',
+  //   'title': 'Cards design',
+  //   'description': 'Chose which artist\'s card design to use in the app.',
+  //   'properties': {
+  //     'fighting arts': {
+  //       'type': 'option',
+  //       'title': 'Fighting Arts',
+  //       'default': 'Poots',
+  //       'description': 'Chose which artist\'s card design to use in the app for <b>Fighting Arts in </b>Reference menu.<br/><br/><b style="color:#cc0;">Poots</b> - default game design.<br/><b style="color:#cc0;">Fen Small</b> - more compact images by Fen.',
+  //       'enum': [
+  //         'Poots',
+  //         'Fen Small',
+  //       ],
+  //     },
+  //     'disorders': {
+  //       'type': 'option',
+  //       'title': 'Disorders',
+  //       'default': 'Poots',
+  //       'description': 'Chose which artist\'s card design to use in the app for <b>Disorders</b> in <b>Reference</b> menu.<br/><br/><b style="color:#cc0;">Poots</b> - default game design.<br/><b style="color:#cc0;">Fen Small</b> - more compact images by Fen.',
+  //       'enum': [
+  //         'Poots',
+  //         'Fen Small',
+  //         // 'Fen Wide',
+  //       ],
+  //     },
+  //   },
+  // },
   'expansions': {
     'type': 'group',
     'title': 'Expansions',

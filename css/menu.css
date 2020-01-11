@@ -360,11 +360,25 @@ div#reference-window-back0 .selectize-control {
 	/* overflow-y:auto; */
 	overflow:none;
 	font-family: 'Silverado';
-	/* --borderWidth: 0.8em;
-	border-radius: var(--borderWidth);
-	border: 0.1rem solid #333; */
-	/* background-color: #333; */
-	/* opacity:0.5; */
+	padding-bottom: 0.5em;
+	/* padding-left: 0.2em; */
+	/* border-top: 0.1rem solid #888; */
+
+	/* background-color: rgb(3,3,3,0.8); */
+
+}
+
+.bottom-reference {
+	--borderWidth: 1em;
+	border-bottom-left-radius: var(--borderWidth);
+	border-bottom-right-radius: var(--borderWidth);
+	border-left: 0.1rem solid #888;
+	border-right: 0.1rem solid #888;
+	padding-bottom: 1em;
+	padding-left: 0.2em;
+	/* text-align: center; */
+	background-color: rgb(8,8,8,0.2);
+	/* display: inline; */
 }
 
 #reference-image {

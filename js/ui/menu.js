@@ -347,10 +347,6 @@ function createReference () {
       value: 'resources',
       label: 'Resources',
     },
-    // {
-    //   value: 'principles',
-    //   label: 'Principles',
-    // },
     {
       value: 'terrain',
       label: 'Terrain',
@@ -835,7 +831,7 @@ function refPadEntry (refValue) {
 }
 
 function adapt_name (name) {
-  return name.replace(/ /g, '_').replace(/\(/g, 'A').replace(/\)/g, 'A').replace(/\//g, 'A').replace(/\"/g, 'A').replace(/,/g, 'A').replace(/&/g, 'n')
+  return name.replace(/ /g, '_').replace(/\(/g, 'A').replace(/\)/g, 'A').replace(/\//g, 'A').replace(/\"/g, 'A').replace(/,/g, 'A').replace(/&/g, 'n').replace(/\?/g, 'qqq')
 }
 
 function show_element (value) {
