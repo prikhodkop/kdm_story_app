@@ -253,10 +253,13 @@ module.exports = class IndexScene {
         // $('#menu_table1').hide();
         // $('#menu_table2').reload();
         // $('#menu_table2').hide();
+        createInnovationsList();
         no_reload = true
       });
 
       gallery.hide();
+
+      // createInnovationsList()
 
       return gallery;
     }

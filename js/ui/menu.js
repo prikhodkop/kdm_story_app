@@ -542,25 +542,43 @@ function createReference () {
 }
 
 function  createInnovationsList() {
-  $('#container').append($('<img>', {
-    class: 'innovations_button',
-    src: cdnUrl('images/icons/innovations_button.png'),
-  }))
 
-  $('#container').append($('<div>', {
-    id: 'innovations-list_window-background',
-    class: 'window-background'
-  }))
 
-  $('#innovations-list_window-background').hide()
+  if ($( ".innovations-list" ).length) {
+    $( ".innovations-list" ).empty();
+    $('.innovations_button').off();
+    $('#innovations-list_window-background').off();
 
-  $('.innovations_button').hide()
-  $('.innovations_button').fadeIn(1000)
+  } else {
+    $('#container').append($('<img>', {
+      class: 'innovations_button',
+      src: cdnUrl('images/icons/innovations_button.png'),
+    }))
 
-  $('#container').append($('<div>', {
-    class: 'innovations-list',
-    // src: cdnUrl('images/icons/innovations_button.png'),
-  }))
+    $('#container').append($('<div>', {
+      id: 'innovations-list_window-background',
+      class: 'window-background'
+    }))
+
+    $('#innovations-list_window-background').hide()
+
+    $('.innovations_button').hide()
+    $('.innovations_button').fadeIn(1000)
+
+    $('#container').append($('<div>', {
+      class: 'innovations-list',
+      // src: cdnUrl('images/icons/innovations_button.png'),
+    }))
+
+    $('.innovations_button').tooltipster({animationDuration: 50,
+      contentAsHTML: 'true',
+      animation: 'fade',
+      content: '<b style="color:#cc0;">Click</b> to add/remove settlement <b>Innovations</b>.',
+      position: 'right',
+      delay: [0, 0],
+    })
+
+  }
 
   $('.innovations-list').append($('<select>', {
     id: "innovations-list-window",
@@ -569,6 +587,7 @@ function  createInnovationsList() {
   }))
 
   $('.innovations-list').hide();
+
 
   let options = get_innovations_list()
 
@@ -584,13 +603,7 @@ function  createInnovationsList() {
     searchField: ['name'],
     maxItems: 100,
     plugins: ['remove_button', 'silent_remove'],
-    // render: {
-    //     optgroup_header: function(data, escape) {
-    //         return '<div class="optgroup-header">' + escape(data.label) + ' <span class="scientific">' + escape(data.label_scientific) + '</span></div>';
-    //     }
-    // }
     hideSelected: true,
-    // closeAfterSelect: true,
     sortField: [{
       field: 'name',
       direction: 'asc',
@@ -621,16 +634,6 @@ function  createInnovationsList() {
     selectize_innovations.addItem(learnt_innovations[i]);
   }
 
-  // selectize_innovations.hide();
-
-  $('.innovations_button').tooltipster({animationDuration: 50,
-    contentAsHTML: 'true',
-    animation: 'fade',
-    content: '<b style="color:#cc0;">Click</b> to add/remove settlement <b>Innovations</b>.',
-    position: 'right',
-    delay: [0, 0],
-  })
-
   $('.innovations_button').click(function () {
     if (!$(this).hasClass('active')) {
       // $('#innovations-list-window').fadeIn(500)
@@ -654,29 +657,47 @@ function  createInnovationsList() {
     $('.innovations_button').removeClass('active')
   })
 
+  // selectize_innovations.hide();
+
   createLocationsList()
 }
 
 function  createLocationsList() {
-  $('#container').append($('<img>', {
-    class: 'locations_button',
-    src: cdnUrl('images/icons/locations_button.png'),
-  }))
+  if ($( ".locations-list" ).length) {
+    $( '.locations-list' ).empty();
+    $('.locations_button').off();
+    $('#locations-list_window-background').off();
+  } else {
 
-  $('#container').append($('<div>', {
-    id: 'locations-list_window-background',
-    class: 'window-background'
-  }))
+    $('#container').append($('<img>', {
+      class: 'locations_button',
+      src: cdnUrl('images/icons/locations_button.png'),
+    }))
 
-  $('#locations-list_window-background').hide()
+    $('#container').append($('<div>', {
+      id: 'locations-list_window-background',
+      class: 'window-background'
+    }))
 
-  $('.locations_button').hide()
-  $('.locations_button').fadeIn(1000)
+    $('#locations-list_window-background').hide()
 
-  $('#container').append($('<div>', {
-    class: 'locations-list',
-    // src: cdnUrl('images/icons/innovations_button.png'),
-  }))
+    $('.locations_button').hide()
+    $('.locations_button').fadeIn(1000)
+
+    $('#container').append($('<div>', {
+      class: 'locations-list',
+      // src: cdnUrl('images/icons/innovations_button.png'),
+    }))
+
+    $('.locations_button').tooltipster({animationDuration: 50,
+      contentAsHTML: 'true',
+      animation: 'fade',
+      content: '<b style="color:#cc0;">Click</b> to add/remove <b>Settlement Locations</b>.',
+      position: 'right',
+      delay: [0, 0],
+    })
+
+  }
 
   $('.locations-list').append($('<select>', {
     id: "locations-list-window",
@@ -700,13 +721,7 @@ function  createLocationsList() {
     searchField: ['name'],
     maxItems: 100,
     plugins: ['remove_button', 'silent_remove'],
-    // render: {
-    //     optgroup_header: function(data, escape) {
-    //         return '<div class="optgroup-header">' + escape(data.label) + ' <span class="scientific">' + escape(data.label_scientific) + '</span></div>';
-    //     }
-    // }
     hideSelected: true,
-    // closeAfterSelect: true,
     sortField: [{
       field: 'name',
       direction: 'asc',
@@ -715,7 +730,6 @@ function  createLocationsList() {
       field: '$score',
     },
     ],
-    // ignoreFocusOpen: true,
     onItemRemove: function (values) {
       // return confirm(values);
       console.log('Removing: '+values)
@@ -736,16 +750,6 @@ function  createLocationsList() {
   for (let i=learnt_locations.length-1; i>=0; i--) {
     selectize_locations.addItem(learnt_locations[i]);
   }
-
-  // selectize_innovations.hide();
-
-  $('.locations_button').tooltipster({animationDuration: 50,
-    contentAsHTML: 'true',
-    animation: 'fade',
-    content: '<b style="color:#cc0;">Click</b> to add/remove <b>Settlement Locations</b>.',
-    position: 'right',
-    delay: [0, 0],
-  })
 
   $('.locations_button').click(function () {
     if (!$(this).hasClass('active')) {
