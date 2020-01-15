@@ -3,7 +3,7 @@ const { app } = require('electron').remote
 const { createAbout } = require('./../ui/about')
 const { createToc } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
-const { createMenuButton, createInnovationsList } = require('./../ui/menu')
+const { createMenuButton, createInnovationsList, createLocationsList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved, setSettings, saveSettings } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
@@ -62,6 +62,7 @@ module.exports = class IndexScene {
     createToc()
     createAbout(version)
     createInnovationsList()
+    createLocationsList()
     addSettings(settings)
     let gallery = setupCampaignSelect()
 
@@ -253,7 +254,7 @@ module.exports = class IndexScene {
         // $('#menu_table1').hide();
         // $('#menu_table2').reload();
         // $('#menu_table2').hide();
-        createInnovationsList();
+        // createInnovationsList();
         no_reload = true
       });
 

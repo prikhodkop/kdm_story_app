@@ -46,7 +46,8 @@ module.exports = {
   createMenuButton,
   createReference,
   createSevereTables,
-  createInnovationsList
+  createInnovationsList,
+  createLocationsList
 }
 
 function createMenuButton () {
@@ -541,53 +542,15 @@ function createReference () {
   })
 }
 
-function  createInnovationsList() {
-
-
-  if ($( ".innovations-list" ).length) {
-    $( ".innovations-list" ).empty();
-    $('.innovations_button').off();
-    $('#innovations-list_window-background').off();
-
-  } else {
-    $('#container').append($('<img>', {
-      class: 'innovations_button',
-      src: cdnUrl('images/icons/innovations_button.png'),
-    }))
-
-    $('#container').append($('<div>', {
-      id: 'innovations-list_window-background',
-      class: 'window-background'
-    }))
-
-    $('#innovations-list_window-background').hide()
-
-    $('.innovations_button').hide()
-    $('.innovations_button').fadeIn(1000)
-
-    $('#container').append($('<div>', {
-      class: 'innovations-list',
-      // src: cdnUrl('images/icons/innovations_button.png'),
-    }))
-
-    $('.innovations_button').tooltipster({animationDuration: 50,
-      contentAsHTML: 'true',
-      animation: 'fade',
-      content: '<b style="color:#cc0;">Click</b> to add/remove settlement <b>Innovations</b>.',
-      position: 'right',
-      delay: [0, 0],
-    })
-
-  }
+function updateInnovationsList() {
+  $( ".innovations-list" ).empty();
 
   $('.innovations-list').append($('<select>', {
     id: "innovations-list-window",
     class: "innovations-list-window",
     placeholder: "Type Innovation..."
   }))
-
   $('.innovations-list').hide();
-
 
   let options = get_innovations_list()
 
@@ -633,15 +596,58 @@ function  createInnovationsList() {
   for (let i=learnt_innovations.length-1; i>=0; i--) {
     selectize_innovations.addItem(learnt_innovations[i]);
   }
+}
+
+function  createInnovationsList() {
+
+  if ($( ".innovations-list" ).length) {
+    $( ".innovations-list" ).empty();
+    $('.innovations_button').off();
+    $('#innovations-list_window-background').off();
+
+  } else {
+    $('#container').append($('<img>', {
+      class: 'innovations_button',
+      src: cdnUrl('images/icons/innovations_button.png'),
+    }))
+
+    $('#container').append($('<div>', {
+      id: 'innovations-list_window-background',
+      class: 'window-background'
+    }))
+
+    $('#innovations-list_window-background').hide()
+
+    $('.innovations_button').hide()
+    $('.innovations_button').fadeIn(1000)
+
+    $('#container').append($('<div>', {
+      class: 'innovations-list',
+      // src: cdnUrl('images/icons/innovations_button.png'),
+    }))
+
+    $('.innovations_button').tooltipster({animationDuration: 50,
+      contentAsHTML: 'true',
+      animation: 'fade',
+      content: '<b style="color:#cc0;">Click</b> to add/remove settlement <b>Innovations</b>.',
+      position: 'right',
+      delay: [0, 0],
+    })
+
+  }
+
+  updateInnovationsList()
 
   $('.innovations_button').click(function () {
     if (!$(this).hasClass('active')) {
       // $('#innovations-list-window').fadeIn(500)
+      updateInnovationsList()
       $('.innovations-list').fadeIn(500);
       $('#innovations-list_window-background').fadeIn(400)
       // $('#reference').attr('src', cdnUrl('images/icons/reference_active.png'))
-      selectize_innovations.focus()
-      selectize_innovations.setCaret(0)
+      window.selectize_innovations.focus()
+      window.selectize_innovations.setCaret(0)
+
     } else {
       $('.innovations-list').fadeOut(500);
       $('#innovations-list_window-background').fadeOut(600)
@@ -658,53 +664,16 @@ function  createInnovationsList() {
   })
 
   // selectize_innovations.hide();
-
-  createLocationsList()
 }
 
-function  createLocationsList() {
-  if ($( ".locations-list" ).length) {
-    $( '.locations-list' ).empty();
-    $('.locations_button').off();
-    $('#locations-list_window-background').off();
-  } else {
-
-    $('#container').append($('<img>', {
-      class: 'locations_button',
-      src: cdnUrl('images/icons/locations_button.png'),
-    }))
-
-    $('#container').append($('<div>', {
-      id: 'locations-list_window-background',
-      class: 'window-background'
-    }))
-
-    $('#locations-list_window-background').hide()
-
-    $('.locations_button').hide()
-    $('.locations_button').fadeIn(1000)
-
-    $('#container').append($('<div>', {
-      class: 'locations-list',
-      // src: cdnUrl('images/icons/innovations_button.png'),
-    }))
-
-    $('.locations_button').tooltipster({animationDuration: 50,
-      contentAsHTML: 'true',
-      animation: 'fade',
-      content: '<b style="color:#cc0;">Click</b> to add/remove <b>Settlement Locations</b>.',
-      position: 'right',
-      delay: [0, 0],
-    })
-
-  }
+function updateLocationsList() {
+  $( '.locations-list' ).empty();
 
   $('.locations-list').append($('<select>', {
     id: "locations-list-window",
     class: "locations-list-window",
     placeholder: "Type Settlement Location..."
   }))
-
   $('.locations-list').hide();
 
   let options = get_locations_list()
@@ -750,15 +719,57 @@ function  createLocationsList() {
   for (let i=learnt_locations.length-1; i>=0; i--) {
     selectize_locations.addItem(learnt_locations[i]);
   }
+}
+
+function  createLocationsList() {
+  if ($( ".locations-list" ).length) {
+    $( '.locations-list' ).empty();
+    $('.locations_button').off();
+    $('#locations-list_window-background').off();
+  } else {
+
+    $('#container').append($('<img>', {
+      class: 'locations_button',
+      src: cdnUrl('images/icons/locations_button.png'),
+    }))
+
+    $('#container').append($('<div>', {
+      id: 'locations-list_window-background',
+      class: 'window-background'
+    }))
+
+    $('#locations-list_window-background').hide()
+
+    $('.locations_button').hide()
+    $('.locations_button').fadeIn(1000)
+
+    $('#container').append($('<div>', {
+      class: 'locations-list',
+      // src: cdnUrl('images/icons/innovations_button.png'),
+    }))
+
+    $('.locations_button').tooltipster({animationDuration: 50,
+      contentAsHTML: 'true',
+      animation: 'fade',
+      content: '<b style="color:#cc0;">Click</b> to add/remove <b>Settlement Locations</b>.',
+      position: 'right',
+      delay: [0, 0],
+    })
+
+  }
+
+  updateLocationsList()
 
   $('.locations_button').click(function () {
     if (!$(this).hasClass('active')) {
       // $('#innovations-list-window').fadeIn(500)
+      updateLocationsList()
       $('.locations-list').fadeIn(500);
       $('#locations-list_window-background').fadeIn(400)
       // $('#reference').attr('src', cdnUrl('images/icons/reference_active.png'))
-      selectize_locations.focus()
-      selectize_locations.setCaret(0)
+      window.selectize_locations.focus()
+      window.selectize_locations.setCaret(0)
+
     } else {
       $('.locations-list').fadeOut(500);
       $('#locations-list_window-background').fadeOut(600)

@@ -1,7 +1,7 @@
 const { app } = require('electron').remote
 
 const { createToc, events_table } = require('./../ui/events')
-const { createMenuButton, createReference, createSevereTables, createInnovationsList } = require('./../ui/menu')
+const { createMenuButton, createReference, createSevereTables, createInnovationsList, createLocationsList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer, clearTimer } = require('./../ui/timer')
@@ -159,6 +159,7 @@ module.exports = class ImageScene {
             createSevereTables()
             createReference()
             createInnovationsList()
+            createLocationsList()
             eventsSugar(myself)
           }, 2000)
         };
@@ -260,6 +261,7 @@ module.exports = class ImageScene {
               createSevereTables()
               createReference()
               createInnovationsList()
+              createLocationsList()
               eventsSugar(myself)
             }, 1000);
           }
@@ -289,6 +291,7 @@ module.exports = class ImageScene {
           createSevereTables()
           createReference()
           createInnovationsList()
+          createLocationsList()
           eventsSugar(myself)
         }, 800);
       };
