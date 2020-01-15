@@ -241,6 +241,9 @@ const innovations = {
   'tags': ['science', 'lantern oven'],
   'action': true,
   'num_actions': 2,
+  'action_disabler': {
+    1: {'location': ['Blacksmith']},
+  },
  },
  'Scupture': {
   'parent': 'Paint',
@@ -293,6 +296,9 @@ const innovations = {
   'tags': ['science'],
   'action': true,
   'num_actions': 2,
+  'action_disabler': {
+    1: {'location': ['Wet Resin Crafter']},
+  },
  },
  'Sun Language': {
   'expansion': 'sunstalker',
@@ -316,6 +322,9 @@ const innovations = {
   'campaign': ['Sun'],
   'action': true,
   'num_actions': 2,
+  'action_disabler': {
+    1: {'innovation': ['Pottery']},
+  },
  },
  'War Room': {
   'expansion': 'manhunter',

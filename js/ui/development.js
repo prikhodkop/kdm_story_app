@@ -24,6 +24,17 @@ module.exports = {
 
 const always_on_locations = ['Throne', 'Lantern Hoard', 'Sacreed Pool', 'The Sun'];
 
+const innovation_tags = {
+  'science': '#3cb8ff',
+  'art': '#ff7d3c',
+  'faith': '#fff',
+  'home': '#ffdf3c',
+  'music': '#c13cff',
+  'education': '#3cff84',
+  'principle': "#000",
+  'other': '#ccc',
+}
+
 function addDevelopment() {
   $('#container').append($('<div>', {
     // style: 'opacity:.9;',
@@ -171,9 +182,68 @@ function setupLocations() {
     }
  });
 
+ $(document).on({
+   mouseenter: function (e) {
+     console.log('Show armor set tooltip!'+$(e.target).parent().attr('armor_set'))
+
+     if ($(e.target).hasClass('multi_set')) {
+       $('.tooltip_image_armor_set').attr('src', cdnUrl("images/reference/Armor Sets/"+$(e.target).attr('set').split('#')[$(e.target).attr('set_idx')]+" Armor.jpg"))
+     } else {
+       $('.tooltip_image_armor_set').attr('src', cdnUrl("images/reference/Armor Sets/"+$(e.target).attr('set')+" Armor.jpg"))
+     }
+
+
+     // addTimer(function(){
+     //   $('.tooltip_image_armor_set').show("slide", { direction: "left" }, 200);
+     // }, 300)
+
+     if (!$('#innovations_tab').hasClass('set_hoverd')) {
+       addTimer(function(){
+         if ($('#innovations_tab').hasClass('set_hoverd')) {
+           $('.tooltip_image_armor_set').show("slide", { direction: "left" }, 200);
+           $(e.target).parent().parent().find('.location_screen').addClass('shaded')
+         }
+       }, 300)
+     }
+     $('#innovations_tab').addClass('set_hoverd')
+
+   },
+   mouseleave: function (e) {
+
+     addTimer(function(){
+       if (!$('#innovations_tab').hasClass('set_hoverd')) {
+         $('.tooltip_image_armor_set').hide("slide", { direction: "left" }, 200);
+         $(e.target).parent().parent().find('.location_screen').removeClass('shaded')
+       }
+     }, 100)
+     $('#innovations_tab').removeClass('set_hoverd')
+     // $('#innovations_tab').removeClass('tablinks_hoverd')
+   },
+ }, '.gear_card.set')
+
+ $(document).on({
+     click: function(e) {
+       let sets_list = $(e.target).attr('set').split('#')
+       console.log('Set attr: '+$(e.target).attr('set'))
+       console.log('Set list: '+JSON.stringify(sets_list))
+       console.log('Set list length: '+sets_list.length)
+       console.log('Idx: '+$(e.target).attr('set_idx'))
+       let idx = parseInt($(e.target).attr('set_idx'))
+       idx = idx + 1
+       if (idx == sets_list.length) {
+         idx = 0
+       }
+       $(e.target).attr('set_idx', idx)
+       $('.tooltip_image_armor_set').attr('src', cdnUrl("images/reference/Armor Sets/"+sets_list[idx]+" Armor.jpg"))
+     }
+   }, '.gear_card.multi_set')
+
 }
 
 function createLocation(location, default_open=false) {
+  let development = getDevelopmentState()
+  let gormchymy_innovations = ['Albedo', 'Nigredo', 'Citrinitas', 'Rubedo']
+
   let button = $('<button>', {
     class: "tablinks",
     onclick: "openLocation(event, '"+location+"')",
@@ -287,23 +357,58 @@ function createLocation(location, default_open=false) {
         for (let i = 0; i < settlement_locations[location]['gear'][j].length; i++) {
           gear_name = settlement_locations[location]['gear'][j][i]
           // if (DEBUG_MODE) {console.log('Adding 1: '+i)}
+          let max_width = 31
+          let normal_height = Math.min(23.75, 95/settlement_locations[location]['gear'][j].length)
+          if (num_gear_columns == 1) {
+            max_width = 29
+          } else if (num_gear_columns == 2) {
+            max_width = 27.9
+          } else {
+            max_width = 25.5
+          }
+
           let element = $('<img>', {
             class: "gear_card",
             src: cdnUrl("images/reference/Gear/"+gear_name+".jpg"),
             value: gear_name,
-            hover_height: 27.5+'%',
-            normal_height:Math.min(23.75, 95/settlement_locations[location]['gear'][j].length)+'%'
+            // hover_width: max_width+'%',
+            hover_height: max_width +'%',
+            normal_height:normal_height+'%'
           })
           // if ((location == 'Skyreef Sanctuary') && !(j == 2)) {
           //   element.css('height', '15.4%')
           // }
-          element.css('height', Math.min(23.75, 95/settlement_locations[location]['gear'][j].length)+'%') //0.93*gear_column_width
+          element.css('height', normal_height+'%') //0.93*gear_column_width
+          // element.css('width', 'auto')
 
           element.hover(function () {
               console.log('I hovered this gear!')
               $(this).css('height', $(this).attr('hover_height')) //0.93*gear_column_width
+              // $(this).animate({
+              //   width: $(this).attr('hover_width'),
+              //   height: 'auto',
+              //   options: {
+              //     queue: false,
+              //   },
+              //   duration: 200,
+              // })
+              // $(this).css({
+              //   'width': $(this).attr('hover_width'),
+              //   'height': 'auto'
+              // }) //0.93*gear_column_width
           }, function () {
-              $(this).css('height', $(this).attr('normal_height')) //0.93*gear_column_width
+            // $(this).animate({
+            //   height: $(this).attr('normal_height'), //0.93*gear_column_width
+            //   width: 'auto',
+            //   options: {
+            //     queue: false,
+            //   },
+            //   duration: 200,
+            // })
+              $(this).css({
+                'height': $(this).attr('normal_height'), //0.93*gear_column_width
+                // 'width': 'auto'
+              }) //0.93*gear_column_width
           });
           // columns[j].append(element);
           column.append(element);
@@ -313,7 +418,21 @@ function createLocation(location, default_open=false) {
             if ('set' in gear_list[gear_name]) {
               tooltip = tooltip + '<b style="color:#d87dc1;font-size:0.8em;">Set: '+gear_list[gear_name]['set'].join(', ')+'</b><br/><br/>'
               element.addClass('set')
-              element.attr('set', gear_list[gear_name]['set'][0]+' Armor')
+              element.attr('set', gear_list[gear_name]['set'].join('#'))
+              if (gear_list[gear_name]['set'].length > 1) {
+                element.addClass('multi_set')
+                element.attr('set_idx', 0)
+              }
+            }
+
+            if ('gormchymy' in gear_list[gear_name]) {
+              let cnt = 1
+              for (let ik = 0; ik < gormchymy_innovations.length; ik++) {
+                if (development['innovations'].includes(gormchymy_innovations[ik])) {
+                  cnt = cnt + 1
+                }
+              }
+              tooltip = tooltip + '<b>Roll: '+cnt+'d10</b><br/>'
             }
 
             if ('innovation' in gear_list[gear_name]) {
@@ -350,7 +469,7 @@ function createLocation(location, default_open=false) {
                 click: true,
               },
               triggerClose: {
-                click: true,
+                click: false,
                 mouseleave: true
               }
             })
@@ -370,39 +489,15 @@ function createLocation(location, default_open=false) {
 
   $('.tooltip_image_armor_set').hide()
 
-  $(document).on({
-    mouseenter: function (e) {
-      console.log('Show armor set tooltip!'+$(e.target).parent().attr('armor_set'))
-
-      $('.tooltip_image_armor_set').attr('src', cdnUrl("images/reference/Armor Sets/"+$(e.target).attr('set')+".jpg"))
-
-      // addTimer(function(){
-      //   $('.tooltip_image_armor_set').show("slide", { direction: "left" }, 200);
-      // }, 300)
-
-      if (!$('#innovations_tab').hasClass('set_hoverd')) {
-        addTimer(function(){
-          if ($('#innovations_tab').hasClass('set_hoverd')) {
-            $('.tooltip_image_armor_set').show("slide", { direction: "left" }, 200);
-            $(e.target).parent().parent().find('.location_screen').addClass('shaded')
-          }
-        }, 300)
-      }
-      $('#innovations_tab').addClass('set_hoverd')
-
-    },
-    mouseleave: function (e) {
-
-      addTimer(function(){
-        if (!$('#innovations_tab').hasClass('set_hoverd')) {
-          $('.tooltip_image_armor_set').hide("slide", { direction: "left" }, 200);
-          $(e.target).parent().parent().find('.location_screen').removeClass('shaded')
-        }
-      }, 100)
-      $('#innovations_tab').removeClass('set_hoverd')
-      // $('#innovations_tab').removeClass('tablinks_hoverd')
-    },
-  }, '.gear_card.set')
+  tippy('.gear_card.multi_set', {
+    placement: 'bottom-start',
+    content:'<b style="color:#cc0;">Click</b> to <b>toggle armor</b> set tooltip.<br/>',
+    duration: 50,
+    delay: [600, 100],
+    animation: 'shift-away-subtle',
+    followCursor: true,
+    theme: 'kdm',
+  });
 
 }
 
@@ -558,7 +653,6 @@ function setupInnovations() {
 
   allignItems('innovation');
 
-  // var grid = new Muuri('.innovations_grid');
 
  let selected_innovations = getDevelopmentState()['innovations']
  let activated = getDevelopmentState()['activated']['innovations']
@@ -723,6 +817,8 @@ function createInnovation(innovation) {
     val: innovation,
     type: 'innovation'
   })
+
+
   button.html(titleCase(innovation).replace(' Of ', ' of ').replace(' The ', ' the '));
   $('#innovations_tab').append(button);
   // button.tooltipster({animationDuration: 50,
@@ -750,6 +846,12 @@ function showInnovation(innovationName, initialization=false, newitem=false) {
     value: innovationName,
     src: cdnUrl('images/reference/Innovations/'+innovationName+'.jpg'),
   });
+
+  img.addClass(getColorTag(innovationName))
+  img.css({
+    // 'filter':'drop-shadow(0 0 5px '+innovation_tags[getColorTag(innovationName)]+')'
+    'border':'0.1rem solid '+innovation_tags[getColorTag(innovationName)],
+  })
 
   img.hide();
 
@@ -793,7 +895,7 @@ function showInnovation(innovationName, initialization=false, newitem=false) {
 
   tippy('.innovation_card[value="'+innovationName+'"]', {
     placement: 'bottom-start',
-    content:'<b style="color:#cc0;">Click</b> to activate.<br/><br/><b style="color:#cc0;">Double click</b> to remove.</b>.<br/><br/><b style="color:#cc0;">Drag</b> to rearange.</b>.',
+    content:'<b style="color:#cc0;">Click</b> to activate.<br/><br/><b style="color:#cc0;">Double click</b> to remove.</b>.<br/><br/><b style="color:#cc0;">Drag</b> to rearrange.</b>.',
     duration: 50,
     delay: [600, 100],
     animation: 'shift-away-subtle',
@@ -864,35 +966,54 @@ function updateActions() {
       if (toShow(development['locations'][i])) {
         console.log('Adding location: '+development['locations'][i])
         addAction(development['locations'][i], 'location')
-        if (development['activated']['actions'].includes(development['locations'][i])) {
+        // if (development['activated']['actions'].includes(development['locations'][i])) {
+        if (checkActiveAction(development['locations'][i], 'locations')) {
           $('.action_card[value = "'+development['locations'][i]+'"]').addClass('active')
         }
+
         if ('num_actions' in settlement_locations[development['locations'][i]]) {
           for (let j = 1; j < settlement_locations[development['locations'][i]]['num_actions']; j++) {
             addAction(development['locations'][i]+'_'+j, 'location')
-            if (development['activated']['actions'].includes(development['locations'][i]+'_'+j)) {
+            // if (development['activated']['actions'].includes(development['locations'][i]+'_'+j)) {
+            if (checkActiveAction(development['locations'][i], 'locations', j)) {
               $('.action_card[value = "'+development['locations'][i]+'_'+j+'"]').addClass('active')
             }
+
           }
         }
       }
     }
   }
 
+  let tag = ''
   for (let i = 0; i < development['innovations'].length; i++) {
     if (('action' in innovations[development['innovations'][i]]) && innovations[development['innovations'][i]]['action']) {
+      let tag = getColorTag(development['innovations'][i])
       if (toShow(development['innovations'][i])) {
         console.log('Adding innovation: '+development['innovations'][i])
-        addAction(development['innovations'][i], 'innovation')
-        if (development['activated']['actions'].includes(development['innovations'][i])) {
+        addAction(development['innovations'][i], 'innovation', tag)
+        if (checkActiveAction(development['innovations'][i], 'innovations')) {
           $('.action_card[value = "'+development['innovations'][i]+'"]').addClass('active')
         }
+        $('.action_card[value = "'+development['innovations'][i]+'"]').addClass(tag)
+        $('.action_card[value = "'+development['innovations'][i]+'"]').css({
+          'border':'0.1rem solid '+innovation_tags[tag],
+          // 'filter':'drop-shadow(0 0 5px '+innovation_tags[tag]+')'
+        })
         if ('num_actions' in innovations[development['innovations'][i]]) {
           for (let j = 1; j < innovations[development['innovations'][i]]['num_actions']; j++) {
-            addAction(development['innovations'][i]+'_'+j, 'innovation')
-            if (development['activated']['actions'].includes(development['innovations'][i]+'_'+j)) {
+            addAction(development['innovations'][i]+'_'+j, 'innovation', tag)
+            if (checkActiveAction(development['innovations'][i], 'innovations', j)) {
               $('.action_card[value = "'+development['innovations'][i]+'_'+j+'"]').addClass('active')
             }
+            $('.action_card[value = "'+development['innovations'][i]+'"]').addClass(tag)
+            $('.action_card[value = "'+development['innovations'][i]+'"]').css({
+              'border':'0.1rem solid '+innovation_tags[tag],
+              // 'filter':'drop-shadow(0 0 5px '+innovation_tags[tag]+')'
+            })
+            // if (development['activated']['actions'].includes(development['innovations'][i]+'_'+j)) {
+            //   $('.action_card[value = "'+development['innovations'][i]+'_'+j+'"]').addClass('active')
+            // }
           }
         }
       }
@@ -902,18 +1023,51 @@ function updateActions() {
 
   addTimer(function() {var grid = new Muuri('.actions_grid', {
     dragEnabled: false,
-    layoutOnInit: true,
+    layoutOnInit: false,
+    layoutDuration: 200,
     layout: {
       round: false,
       // horizontal: true,
       fillGaps: true,
     },
-  });}, 100)
+    sortData: {
+      id: function(item, element) {
+        if (element.children[0].children[0].classList.contains('active')) {
+          return 10.
+        } else {
+          if (element.children[0].children[0].classList.contains('location')) {
+            return 1.
+          } else {
+            if (element.children[0].children[0].classList.contains('art')) {
+              return 3.
+            } else if (element.children[0].children[0].classList.contains('education')) {
+              return 4.
+            } else if (element.children[0].children[0].classList.contains('faith')) {
+              return 5.
+            } else if (element.children[0].children[0].classList.contains('home')) {
+              return 6.
+            } else if (element.children[0].children[0].classList.contains('music')) {
+              return 7.
+            } else if (element.children[0].children[0].classList.contains('science')) {
+              return 8.
+            } else if (element.children[0].children[0].classList.contains('principle')) {
+              return 9.
+            } else {
+              return 2
+            }
+
+          }
+        }
+      }
+    }
+  });
+  grid.sort('id', {layout: 'instant'})
+}, 100)
  // addTimer(function() {window.dispatchEvent(new Event('resize'))}, 300)
 
 }
 
-function addAction(name, type) {
+function addAction(name, type, tag = '') {
 
 let item = $('<div>', {
   class: 'item '+type,
@@ -926,7 +1080,7 @@ let item_content = $('<div>', {
 })
 
 let img = $('<img>', {
-  class: 'action_card use-hover',
+  class: 'action_card use-hover '+type,
   value: name,
   src: cdnUrl('images/settlement/actions/'+name+'.jpg'),
 });
@@ -960,9 +1114,27 @@ item.append(item_content)
    $(this).delay(50).fadeIn(300);
  })
 
+ let content = 'Source: <b>'+name.split('_')[0]+'</b>'
+
+ if (!(tag == '')) {
+   content = content + ' <b style="color:'+innovation_tags[tag]+';">('+titleCase(tag)+')</b>'
+ }
+
+ $('.action_card[value="'+name+'"]').tooltipster({
+   animationDuration: 50,
+   contentAsHTML: 'true',
+   animation: 'fade',
+   content: content,
+   position: 'top',
+   //   // timer: 1500,
+   delay: [0, 0],
+   //   plugins: ['follower'],
+   // })
+ })
+
  tippy('.action_card[value="'+name+'"]', {
    placement: 'bottom-start',
-   content:'<b>Source: '+name.split('_')[0]+'</b><br/><br/><b style="color:#cc0;">Click</b> to activate.',
+   content: '<b style="color:#cc0;">Click</b> to activate.',
    duration: 50,
    delay: [600, 100],
    animation: 'shift-away-subtle',
@@ -970,6 +1142,90 @@ item.append(item_content)
    theme: 'kdm',
    // updateDuration: 400,
  });
+}
+
+function checkActiveAction(action, type, count = 0) {
+  let development = getDevelopmentState();
+  let active = false
+
+  let source = innovations
+  let condition_obj = 'none'
+  let condition = true
+
+  let action_num = action
+
+  if (!(count == -1)) {
+    action_num = action + '_'+count
+  }
+
+  if (development['activated']['actions'].includes(action_num)) {
+    active = true
+  } else {
+    condition = true
+    if (type == 'innovations') {
+      source = innovations
+    }
+    if (type == 'locations') {
+      source = settlement_locations
+    }
+
+    if ('action_disabler' in source[action]) {
+      console.log('Checking: '+action+'_'+count)
+      if ((count == 0) && !('num_actions' in source[action])) {
+        condition_obj = source[action]['action_disabler']
+      } else {
+        if (count in source[action]['action_disabler']) {
+          condition_obj = source[action]['action_disabler'][count]
+        }
+      }
+
+      if (!(condition_obj == 'none')) {
+        console.log('Processing conditions.')
+        if ('innovation' in condition_obj) {
+          for (let j=0; j<condition_obj['innovation'].length; j++) {
+            if (!development['innovations'].includes(condition_obj['innovation'][j])) {
+              condition = false
+            }
+          }
+        }
+        if ('location' in condition_obj) {
+          for (let j=0; j<condition_obj['location'].length; j++) {
+            if (!development['locations'].includes(condition_obj['location'][j])) {
+              condition = false
+            }
+          }
+        }
+      } else {
+        condition = false
+      }
+
+      if (condition) {
+        active = true
+      }
+    }
+
+  }
+
+  return active
+}
+
+function getColorTag(name) {
+  let tag = 'none'
+  let tags = innovations[name]['tags']
+
+  let tag_types = [
+    'science',
+    'art',
+    'faith',
+    'home',
+    'music',
+    'education',
+    'principle',
+  ]
+
+  let idx = tag_types.indexOf(innovations[name]['tags'][0])
+
+  return tag_types[idx]
 }
 
 // #### General purpose functions
@@ -1010,7 +1266,7 @@ function getDevelopmentState() {
     }
   }
 
-  console.log('Dev state: '+JSON.stringify(development_state))
+  // console.log('Dev state: '+JSON.stringify(development_state))
 
   if (updated) {
     setDevelopmentState(development_state)

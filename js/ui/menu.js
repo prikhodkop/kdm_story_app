@@ -118,7 +118,7 @@ function createMenuButton () {
         animation: 'fade',
         content: '<b style="color:#cc0;">Click</b> to show <b>Story Events</b> table.',
         position: 'left',
-        delay: [300, 300],
+        delay: 0,
         trigger: 'custom',
         triggerOpen: {
           mouseenter: true,

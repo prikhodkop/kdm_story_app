@@ -280,9 +280,9 @@ module.exports = class ImageScene {
       action = 'true'
 
       // $("#label_text").fadeOut(2000);
-      $('#img').fadeIn(1000)
-      $('.settlement_return_button').fadeIn(1200)
-      $('.event_tooltip').fadeIn(1200)
+      $('#img').fadeIn(600)
+      $('.settlement_return_button').fadeIn(800)
+      $('.event_tooltip').fadeIn(800)
       if ((!menus_appeared) && anew) {
         menus_appeared = true
         addTimer(function () {
@@ -290,7 +290,7 @@ module.exports = class ImageScene {
           createReference()
           createInnovationsList()
           eventsSugar(myself)
-        }, 500);
+        }, 800);
       };
 
       if (speech.playing()) {
@@ -303,8 +303,8 @@ module.exports = class ImageScene {
     })
 
     $('#img').click(function () {
-      $('#label_text').delay(1000).fadeIn(1000)
-      $('#img').fadeOut(1000)
+      $('#label_text').delay(800).fadeIn(800)
+      $('#img').fadeOut(800)
       $('.settlement_return_button').fadeOut(800)
       $('.event_tooltip').fadeOut(800)
     })

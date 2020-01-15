@@ -301,7 +301,7 @@ module.exports = class IndexScene {
       }
 
       if (campaign == 'Lantern') {
-      content = content + 'At its core, Monster is a game about the fragility of human life, the ferocity of the human spirity, and the wonder of exploration.</br></br>Your story will be shaped by the decisions you make, the strengths and weaknesses of your settlemenet, and the growth of your survivors.</br></br>'
+      content = content + 'At its core, Monster is a game about the fragility of human life, the ferocity of the human spirit, and the wonder of exploration.</br></br>Your story will be shaped by the decisions you make, the strengths and weaknesses of your settlemenet, and the growth of your survivors.</br></br>'
       }
 
       content = content + '<b style="color:#cc0;">Click</b> to start the <b>First Story</b>.'

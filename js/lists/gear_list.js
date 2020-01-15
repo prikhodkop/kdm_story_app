@@ -197,11 +197,11 @@ const gear_list = {
  'Slender Ovule': {'resources':['1 x phoenix eye', '4 x dark water'], 'innovation': 'Dark Water Research 3'},
  'Gloom Katana': {'resources':['1 x iron', '1 x crystal mold', '2 x dark water'], 'innovation': 'Dark Water Research 3'},
  'Gloom Sheath': {'resources':['1 x shank bone', '2 x organ', '2 x dark water'], 'innovation': 'Dark Water Research 3'},
- 'Healing Potion': {'resources':['2 x organ'], 'innovation': 'Roll 7-12'},
- 'Wisdom Potion': {'resources':['2 x organ'], 'innovation': 'Roll 13-18'},
- 'Steadfast Potion': {'resources':['2 x organ'], 'innovation': 'Roll 19-24'},
- 'Power Potion': {'resources':['2 x organ'], 'innovation': 'Roll 25-30'},
- 'Life Elixir': {'resources':['2 x organ'], 'innovation': 'Roll 31-36'},
+ 'Healing Potion': {'resources':['2 x organ'], 'innovation': '7-12', 'gormchymy':{}},
+ 'Wisdom Potion': {'resources':['2 x organ'], 'innovation': '13-18', 'gormchymy':{}},
+ 'Steadfast Potion': {'resources':['2 x organ'], 'innovation': '19-24', 'gormchymy':{}},
+ 'Power Potion': {'resources':['2 x organ'], 'innovation': '25-30', 'gormchymy':{}},
+ 'Life Elixir': {'resources':['2 x organ'], 'innovation': '31-36', 'gormchymy':{}},
 }
 
 module.exports = {

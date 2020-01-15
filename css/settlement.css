@@ -527,7 +527,7 @@ button.tablinks.active {
 .gear_column:hover > *:hover {
   /* transform: scale(1.1); */
   /* height: 24%; */
-  max-height: 100%;
+  /* max-height: 100%; */
   filter: drop-shadow(0 0 5px #cc0);
   opacity: 1.0;
 }
@@ -740,7 +740,7 @@ button.tablinks.active {
 }
 
 .tooltip_image_armor_set {
-  top: 10%;
+  top: 8%;
   width:20%;
   left: 15%;
   display:block;
@@ -855,7 +855,7 @@ button.tablinks.active {
 }
 
 .action_card:hover {
-  transform: scale(1.01);
+  transform: scale(1.03);
   /* transition-delay:0.3s; */
 }
 
@@ -890,3 +890,38 @@ button.tablinks.active {
   width: 100%;
   height: 100%;
 }
+
+/* .science {
+  filter: drop-shadow(0 0 5px #00f);
+  transition: filter 0.3s;
+}
+
+.art {
+  filter: drop-shadow(0 0 5px #f00);
+  transition: filter 0.3s;
+}
+
+.faith {
+  filter: drop-shadow(0 0 5px #fff);
+  transition: filter 0.3s;
+}
+
+.home {
+  filter: drop-shadow(0 0 5px #ff0);
+  transition: filter 0.3s;
+}
+
+.music {
+  filter: drop-shadow(0 0 5px #f0f);
+  transition: filter 0.3s;
+}
+
+.education {
+  filter: drop-shadow(0 0 5px #0f0);
+  transition: filter 0.3s;
+}
+
+.innovations_grid > .principle {
+  filter: drop-shadow(0 0 5px #000);
+  transition: filter 0.3s;
+} */

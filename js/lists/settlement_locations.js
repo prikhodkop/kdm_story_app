@@ -19,6 +19,7 @@ const settlement_locations = {
    '2': ['Bone Club', 'Skull Helm', 'Bone Pickaxe', 'Bone Sickle'],
    '3': []},
   'action': true,
+  'action_disabler': {'location': ['Weapon Crafter']},
  },
  'Catarium': {
   'gear': {
@@ -51,6 +52,7 @@ const settlement_locations = {
    '2': ['Power Potion', 'Life Elixir'],
    '3': []},
   'action': true,
+  'action_disabler': {'innovation': ['Albedo', 'Nigredo', 'Rubedo', 'Citrinitas']},
  },
  'Gormery': {
   'expansion': 'gorm',
@@ -75,6 +77,11 @@ const settlement_locations = {
    '3': []},
   'action': true,
   'num_actions': 5,
+  'action_disabler': {
+    1: {'location': ['Bone Smith']},
+    2: {'location': ['Skinnery']},
+    3: {'location': ['Organ Grinder']},
+  },
  },
  'Leather Worker': {
   'gear': {
@@ -106,6 +113,9 @@ const settlement_locations = {
    '3': []},
   'action': true,
   'num_actions': 2,
+  'action_disabler': {
+    1: {'location': ['Stone Circle']},
+  }
  },
  'Plumery': {
   'gear': {
@@ -138,6 +148,7 @@ const settlement_locations = {
    '3': []},
   'action': true,
   'armor_set': 'Rawhide Armor',
+  'action_disabler': {'location': ['Leather Worker']},
  },
  'Skyreef Sanctuary': {
   'expansion': 'sunstalker',
@@ -162,7 +173,12 @@ const settlement_locations = {
    '2': [],
    '3': []},
   'action': true,
-  'num_actions': 3,
+  'num_actions': 5,
+  'action_disabler': {
+    1: {'location': ['Bone Smith']},
+    2: {'location': ['Skinnery']},
+    3: {'location': ['Organ Grinder']},
+  },
  },
  'Throne': {
   'campaign': 'Stars',
@@ -171,7 +187,12 @@ const settlement_locations = {
    '2': [],
    '3': []},
   'action': true,
-  'num_actions': 3,
+  'num_actions': 5,
+  'action_disabler': {
+    1: {'location': ['Bone Smith']},
+    2: {'location': ['Skinnery']},
+    3: {'location': ['Organ Grinder']},
+  },
  },
  'Weapon Crafter': {
   'gear': {
@@ -180,6 +201,9 @@ const settlement_locations = {
    '3': []},
   'action': true,
   'num_actions': 2,
+  'action_disabler': {
+    1: {'innovation': ['Scrap Smelting']},
+  }
  },
  'Wet Resin Crafter': {
   'expansion': 'dung beetle knight',
