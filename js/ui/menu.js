@@ -358,7 +358,7 @@ function createReference () {
     labelField: 'name',
     searchField: ['name'],
     maxItems: 10,
-    plugins: ['remove_button', 'silent_remove'],
+    plugins: ['remove_button_2', 'silent_remove'],
     // render: {
     //     optgroup_header: function(data, escape) {
     //         return '<div class="optgroup-header">' + escape(data.label) + ' <span class="scientific">' + escape(data.label_scientific) + '</span></div>';
