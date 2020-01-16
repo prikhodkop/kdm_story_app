@@ -3820,10 +3820,14 @@
 
 						// add event listener
 						thisRef.$control.on('click', '.' + options.className, function(e) {
+              console.log('Its me!!!')
 							e.preventDefault();
 							if (self.isLocked) return;
 
 							self.clear();
+              // self.deleteSelection()
+              self.setCaret(0);
+              self.close();
 						});
 
 					};
@@ -3864,12 +3868,17 @@
 						thisRef.$control.on('click', '.' + options.className, function(e) {
 							e.preventDefault();
 							if (self.isLocked) return;
-
+              // console.log('Im here !!!2')
 							var $item = $(e.currentTarget).parent();
-							self.setActiveItem($item);
-							if (self.deleteSelection()) {
-								self.setCaret(self.items.length);
-							}
+							// self.setActiveItem($item);
+              self.removeItem($item);
+							// if (self.deleteSelection()) {
+							// 	// self.setCaret(self.items.length);
+              //   self.setCaret(0);
+              //   // self.blur();
+							// }
+              self.setCaret(0);
+              self.close();
 						});
 
 					};
