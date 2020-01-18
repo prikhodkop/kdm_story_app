@@ -19,7 +19,9 @@ module.exports = {
   addSettlementLocation,
   removeElement,
   removeInnovation,
-  removeSettlementLocation
+  removeSettlementLocation,
+  hasInnovation,
+  getHuntInnovationEffects
 }
 
 const always_on_locations = ['Throne', 'Lantern Hoard', 'Sacreed Pool', 'The Sun'];
@@ -1439,6 +1441,36 @@ function addElement(name, type) {
     development_state[type].unshift(name);
   }
   setDevelopmentState(development_state)
+}
+
+function getHuntInnovationEffects() {
+  let development_state = getDevelopmentState();
+
+  let result = {}
+  let innovation
+
+  for (let i=0; i<development_state['innovations'].length; i++) {
+    innovation = development_state['innovations'][i]
+
+    if (('passive' in innovations[innovation]) && ('hunt' in innovations[innovation]['passive'])) {
+      // it is assumed here that there is only 1 hunt effect per innovation
+      // console.log('Adding text: '+'['+innovation+'] '+ innovations[innovation]['passive']['hunt'][0])
+      result[innovation] = ''+ innovations[innovation]['passive']['hunt'][0]+'<sup class="event_sup">['+innovation+']</sup>'
+    }
+
+  }
+
+  return result
+}
+
+function hasInnovation(name) {
+  let development_state = getDevelopmentState();
+
+  if (development_state['innovations'].includes(name)) {
+    return true
+  } else {
+    return false
+  }
 }
 
 function addInnovation(name) {

@@ -286,7 +286,7 @@ tr.spaceUnder>td {
   font-weight:500;
   text-align: center;
   position: absolute;
-  top: 18%;
+  top: 8%;
   left: 15%;
   width: 70%;
   /* height: 50px; */
@@ -296,6 +296,10 @@ tr.spaceUnder>td {
   font-family: 'Silverado';
   cursor: default;
 }
+
+/* #sublabel_hunt_text_line {
+  padding-bottom: 0.1em;
+} */
 
 #quary_name {
   position: absolute;
@@ -1066,8 +1070,8 @@ div.selectize-dropdown-content::-webkit-scrollbar {
 }
 
 #digested_tooltip {
-	left:63%;
-	top: 21%;
+	left:65%;
+	top: 0%;
 	height: 75%;
 	position:absolute;
 	z-index: 97;
@@ -1146,4 +1150,30 @@ div.selectize-dropdown-content::-webkit-scrollbar {
   color: #cc0;
   opacity: 1.0;
   filter: drop-shadow(0, 0, 0, 5px, #cc0);
+}
+
+.event_sup {
+  font-size: 0.8em;
+  color: #888;
+}
+
+.event-trigger {
+  /* opacity: 1.0; */
+  display: block;
+  overflow: visible;
+  visibility: show;
+  background-color: Transparent;
+  color: #888;
+	text-shadow: 0 0 10px #000;
+  display: inline-block;
+	/* font-size: 1.5em; */
+	font-weight:500;
+  font-family: 'Silverado';
+  cursor: pointer;
+  transition: color 1s, text-shadow 1s;
+}
+
+.event-trigger:hover {
+  color: #cc0;
+  text-shadow: 0 0 10px #cc0;
 }

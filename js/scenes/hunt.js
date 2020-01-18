@@ -9,7 +9,7 @@ const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings'
 const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer, clearTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
-const { addInnovation } = require('./../ui/development')
+const { addInnovation, hasInnovation, getHuntInnovationEffects } = require('./../ui/development')
 
 
 const QUARRY_CARD_SHOW = 'slideUpReturn' // 'slideDownReturn'
@@ -476,6 +476,7 @@ module.exports = class HuntScene {
       $('#hunt_desc_text').hide()
       $('#hunt_desc_text').text(name)
       $('#hunt_desc_text').css('color', '#555')
+      $('#hunt_desc_text').css('top', '5%')
       $('#hunt_desc_text').css('font-size', '2em')
       $('#hunt_desc_text').fadeIn(1000)
 
@@ -522,6 +523,18 @@ module.exports = class HuntScene {
           }, 3500)
         }
       }
+
+      let keys_effects = Object.keys(getHuntInnovationEffects())
+
+      if (!(keys_effects.length === 0)) {
+        for (let jk=0; jk < keys_effects.length; jk++) {
+          placeReminder(keys_effects[jk])
+        }
+      }
+
+      $('body').on('click', '.event-trigger', function () {
+        setTransition($(this).attr('target'), 'menu', document.title, current_state())
+      })
 
       console.log(name)
 
@@ -688,10 +701,10 @@ module.exports = class HuntScene {
       console.log('Reminder name: '+ JSON.stringify(name))
 
       let reminders = {
-        'gorms_laughter': '[Gorm\'s Laughter] When the survivors move into new hunt table space, all <b>non-deaf</b> survivors suffer 1 brain event damage.',
-        'found_relic': '[Found Relic] At the start of the next settlement phase, draw 3 innovations from the innovation deck and add one to your settlement at no cost.',
-        'tomb_of_excelence': '[Tomb of Excelence] At the start of the showdown, place the monster\'s trap at the bottom of the hit location deck.',
-        'gorm_lv3': '[Gorm Lv.3 - Final March] When the Ancient\'s Gorm Bait would be the hunt event revealer, they are <b style="color:#cc0;" id="gorm_digested">Digested instead</b>.'
+        'gorms_laughter': 'When the survivors move into new hunt table space, all <b>non-deaf</b> survivors suffer 1 brain event damage.<sup class="event_sup">[Gorm\'s Laughter]</sup>',
+        'found_relic': 'At the start of the next settlement phase, draw 3 innovations from the innovation deck and add one to your settlement at no cost.<sup class="event_sup">[Found Relic]</sup>',
+        'tomb_of_excelence': 'At the start of the showdown, place the monster\'s trap at the bottom of the hit location deck.<sup class="event_sup">[Tomb of Excelence]</sup>',
+        'gorm_lv3': 'When the Ancient\'s Gorm Bait would be the hunt event revealer, they are <b style="color:#cc0;" id="gorm_digested">Digested instead</b>.<sup class="event_sup">[Gorm Lv.3 - Final March]</sup>'
       }
 
       let current_text = $('#sublabel_hunt_text').html()
@@ -703,12 +716,26 @@ module.exports = class HuntScene {
         if ((name in current_hunt_state) && !initialize) {
           console.log('Nothing to add.')
         } else {
-          $('#sublabel_hunt_text').html(current_text+reminders[name]+'<br/>')
+          $('#sublabel_hunt_text').html(current_text+'<div id="sublabel_hunt_text_line">'+reminders[name]+'</div><br/>')
           $('#sublabel_hunt_text').fadeIn(2000);
           current_hunt_state[name] = true
           updated = true
         }
       }
+
+      let innovation_effects = getHuntInnovationEffects()
+
+      if (name in innovation_effects) {
+        if ((name in current_hunt_state) && !initialize) {
+          console.log('Nothing to add.')
+        } else {
+          $('#sublabel_hunt_text').html(current_text+'<div id="sublabel_hunt_text_line">'+innovation_effects[name]+'</div><br/>')
+          $('#sublabel_hunt_text').fadeIn(2000);
+          current_hunt_state[name] = true
+          updated = true
+        }
+      }
+
       if (updated) {
           sessionStorage.setItem('current_hunt_reminders', JSON.stringify(current_hunt_state))
       }
