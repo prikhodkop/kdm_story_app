@@ -358,6 +358,7 @@ function createReference () {
     labelField: 'name',
     searchField: ['name'],
     maxItems: 10,
+    openOnFocus: false,
     plugins: ['remove_button_2', 'silent_remove'],
     // render: {
     //     optgroup_header: function(data, escape) {
@@ -461,6 +462,13 @@ function createReference () {
 
   window.selectize = selectize
 
+  $("input#reference-window-selectized").keyup(function() {
+    console.log('Current input value:'+this.value)
+    if (!this.value) {
+        selectize.close()
+    }
+  });
+
   $('select.reference-window').change(function(){
     // window.selectize.setCaret(0);
     if (window.blur_mode) {
@@ -559,10 +567,12 @@ function createReference () {
       $('#reference-window-background').fadeIn(500)
       $('#reference').attr('src', cdnUrl('images/icons/reference_active.png'))
       selectize.focus()
+
     } else {
       $('#reference-window-back0').fadeOut(500)
       $('#reference-window-background').fadeOut(500)
       $('#reference').attr('src', cdnUrl('images/icons/reference.png'))
+      selectize.clear()
     }
     $(this).toggleClass('active')
   })
@@ -867,17 +877,22 @@ function refPadEntry (refValue) {
   if (refValue == 'space') {
     let text = refInput.val()
     window.selectize.setTextboxValue(text + ' ')
+    window.selectize.open()
   } else if (refValue == 'random') {
     let text = refInput.val()
     window.selectize.setTextboxValue(text + ' random ')
+    window.selectize.open()
   } else if (refValue == "\u2190") {
     window.selectize.setTextboxValue('')
+    window.selectize.close()
   } else {
     // console.log('Trigger key press: '+refValue+' '+key_codes[refValue])
     // window.selectize.trigger(jQuery.Event('keypress', { keyCode: key_codes[refValue]}));
     let text = refInput.val()
     window.selectize.setTextboxValue(text + refValue)
+    window.selectize.open()
   }
+
 }
 
 function adapt_name (name) {
