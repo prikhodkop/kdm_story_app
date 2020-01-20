@@ -18,7 +18,7 @@ const abilities = {
    'description': 'For each red affinity you have, 1 of your attack rolls hits automatically each attack.',
  },
  'Crystal Skin': {
-   'description': 'An ability. You cannot place armor in your gear grid. When you depart, gain 2 armor points to all hit locations. Suffer -1 to the result of all severe injury rolls.',
+   'description': 'You cannot place armor in your gear grid. When you depart, gain 2 armor points to all hit locations. Suffer -1 to the result of all severe injury rolls.',
  },
  'Dead Inside': {
    'description': 'You can not gain <b>survival</b>.',

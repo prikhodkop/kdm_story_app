@@ -205,6 +205,7 @@ function get_representation (word) {
   let result = '<b style="font-size:1.3em;">' + word + '</b><br/><i style="font-size:0.9em;color:'+color+';">('+resources[word]['type']+')</i> <hr/>' + resources[word]['text']
 
   return result
+
  } else if (word in fighting_arts) {
   let header_style = ''
   let result = '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+cdnUrl('images/reference/Fighting Arts/'+word+'.jpg')+'"/>'
@@ -247,8 +248,8 @@ function get_representation (word) {
   // if (['Gorment Armor', 'Brawler Armor', 'Rawhide Armor'].includes(word)) {
   //  result = '<img id=reference-image style="width:100%;float:left;padding-bottom:10px;" src="' + cdnUrl('images/reference/Armor Sets/' + word + '.png') + '"/>'
   // } else {
-  let result = '<img id=reference-image style="width:49%;float:left;padding-right:5px;padding-bottom:10px;" src="' + cdnUrl('images/reference/Armor Sets/' + word + '.jpg') + '"/>'
-  result = result + '<img id=reference-image style="width:49%;float:left;padding-bottom:10px;" src="' + cdnUrl('images/reference/Armor Sets/' + word + ' 2.jpg') + '"/><br/>'
+  let result = '<img id=reference-image style="width:50%;float:left;padding-right:5px;padding-bottom:10px;" src="' + cdnUrl('images/reference/Armor Sets/' + word + '.jpg') + '"/>'
+  // result = result + '<img id=reference-image style="width:49%;float:left;padding-bottom:10px;" src="' + cdnUrl('images/reference/Armor Sets/' + word + ' 2.jpg') + '"/><br/>'
   // }
   return result
  } else if (word in survivor_statuses) {

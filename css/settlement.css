@@ -742,6 +742,7 @@ button.tablinks.active {
 .tooltip_image_armor_set {
   top: 5%;
   width:20%;
+  max-height: 94%;
   left: 15%;
   display:block;
   position:absolute;
