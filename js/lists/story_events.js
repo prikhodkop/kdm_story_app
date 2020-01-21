@@ -13,7 +13,7 @@ const events = {
     'ltop': '70%',
     'lleft': '50%',
     'music': 'music/white secret.mp3',
-    'speech': 'audio/speech/en/hunt.mp3',
+    'speech': 'translations/en/speech/hunt.mp3',
   },
   'settlement': {
     'table': 1,
@@ -21,7 +21,7 @@ const events = {
     'label': 'Settlement',
     'music': 'music/settlement.mp3',
     'music_delay': '2000',
-    'speech': 'audio/speech/en/settlement.mp3',
+    'speech': 'translations/en/speech/settlement.mp3',
   },
   'age': {
     'ltop': '27%',
@@ -176,7 +176,9 @@ const events = {
     'lleft': '50%',
     'campaign': ['Lantern'],
   },
-  'returning survivors': {},
+  'returning survivors': {
+    'campaign': ['Lantern'],
+  },
   'run away': {
     'music': 'music/run away.mp3',
     // 'campaign': 'Lantern',
@@ -310,12 +312,6 @@ const events = {
   'finale': {
     // 'type': 'slideshow',
     'expansion': 'lion knight',
-    // 'music': 'music/finale.mp3',
-    // 'number_of_slides': 6,
-    // 'hide_label': true,
-    // 'speech': 'audio/speech/'+lang+'/finale',
-    // 'ltop': '5%',
-    // 'lleft': '55%',
     'type': 'video',
     'music': 'music/finale.mp3',
   },
@@ -383,14 +379,7 @@ const events = {
     'ltop': '50%',
     'lleft': '25%',
   },
-  // 'intimacy Stars': {
-  //   'expansion': 'dragon king',
-  //   'music': 'music/intimacy.mp3',
-  //   'speech': 'audio/speech/'+lang+'/imtimacy.mp3',
-  //   'ltop': '7%',
-  //   'lleft': '28%',
-  //   'campaign': 'Stars',
-  // },
+
   'meltdown': {
     'expansion': 'dragon king',
     'music': 'music/crush and devour.mp3',

@@ -30,7 +30,7 @@ function createWindow () {
     resizable: true,
     fullscreen: true,
     webPreferences: {
-      // devTools: true,
+      devTools: true,
       preload: 'js/jquery.min.js',
       nodeIntegration: true,
       // sandbox: false,
@@ -48,7 +48,7 @@ function createWindow () {
   win.removeMenu();
   win.loadFile('index.html')
   // app.disableHardwareAcceleration();
-  // win.webContents.openDevTools();
+  win.webContents.openDevTools();
 }
 
 let win

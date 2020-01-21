@@ -207,7 +207,7 @@ function addLocationTable (location, top) {
   $('#container').append($('<img>', {
     class: location,
     id: 'severe-table',
-    src: cdnUrl('images/severe injuries/' + location + '.jpg'),
+    src: cdnUrl('images/reference/severe injuries/' + location + '.jpg'),
   }))
 
   $('#severe.' + location).hide()

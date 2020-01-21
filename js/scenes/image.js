@@ -56,25 +56,30 @@ module.exports = class ImageScene {
 
     $('body').css('font-size', settings['fontSize'])
 
-    $('#img_back').attr('src', cdnUrl('images/' + myself + '/back.jpg'))
+
+
+    let img_path = 'translations/en/images/story events/content/' + myself + '.jpg'
+    let img_back = 'images/story events/backs/' + myself + '.jpg'
 
     if ((myself == 'white speaker') && (settings['whiteboxes']['white speaker'] == 'Enabled')) {
-      $('#img').attr('src', cdnUrl('images/' + myself + '/img_wb.jpg'))
+      img_path = img_path.replace('.jpg', '_wb.jpg')
     } else if ((myself == 'hooded knight') && (settings['whiteboxes']['allison the twilight knight'] == 'Enabled')) {
-      $('#img').attr('src', cdnUrl('images/' + myself + '/img_wb.jpg'))
-    } else {
-      $('#img').attr('src', cdnUrl('images/' + myself + '/img.jpg'))
+       img_path = img_path.replace('.jpg', '_wb.jpg')
     }
 
     if ((myself == 'intimacy') && (settings['campaign'] == 'Stars')) {
-      $('#img_back').attr('src', cdnUrl('images/' + myself + ' stars/back.jpg'))
-      $('#img').attr('src', cdnUrl('images/' + myself + ' stars/img.jpg'))
+      img_back = img_back.replace('.jpg', '_stars.jpg')
+      img_path = img_path.replace('.jpg', '_stars.jpg')
     }
 
     if ((myself == 'intimacy') && (settings['campaign'] == 'Sun')) {
-      $('#img_back').attr('src', cdnUrl('images/' + myself + ' sun/back.jpg'))
-      $('#img').attr('src', cdnUrl('images/' + myself + ' sun/img.jpg'))
+      img_back = img_back.replace('.jpg', '_sun.jpg')
+      img_path = img_path.replace('.jpg', '_sun.jpg')
     }
+
+    $('#img_back').attr('src', cdnUrl(img_back))
+    $('#img').attr('src', cdnUrl(img_path, true))
+
 
     if (!events_table[myself].hide_label) {
       $('#label_text').addClass(myself.replace(' ', '_'))
@@ -668,7 +673,7 @@ module.exports = class ImageScene {
         })
 
         $('#container').append($('<img>',{
-          src: cdnUrl('images/white speaker/gear_tooltip.png'),
+          src: cdnUrl('translations/en/images/story events/content/white speaker_gear_tooltip.png'),
           class: 'gear_tooltip_image',
           style: 'top:50.1%; left: 55%; width: 30%;'
         }))

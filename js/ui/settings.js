@@ -12,18 +12,31 @@ module.exports = {
   onSettingsSaved,
   setSettings,
   saveSettings,
-  silentSaveSettings
+  silentSaveSettings,
+  initSettings
+}
+
+function initSettings() {
+  let settings = getSettings();
+  sessionStorage.setItem('settings', JSON.stringify(settings))
+  console.log('Setting initialized!')
 }
 
 function getSettings () {
-  let dirname = app.getPath('userData')
+  let dirname = app.getPath('userData');
   console.log('Dirname: ' + dirname)
+  let settings_string = {}
+  let settings_string_default
 
-  if (exists(dirname + '/settings.json')) {
-    return JSON.parse(readFile(dirname + '/settings.json'))
-  } else {
-    return JSON.parse(readFile(app.getAppPath() + '/settings.json'))
+  settings_string_default = JSON.parse(readFile(app.getAppPath() + '/settings.json'))
+
+  try {
+    settings_string = JSON.parse(readFile(dirname + '/settings.json'))
+  } catch (e) {
   }
+
+  // if no user options are saved or new option appears - value from settings.json is used
+  return {...settings_string_default, ...settings_string }
 }
 
 function addSettings (settings) {

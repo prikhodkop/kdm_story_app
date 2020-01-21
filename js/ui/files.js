@@ -1,4 +1,5 @@
 const fs = require('fs')
+const { app } = require('electron').remote
 
 module.exports = {
   readFile,
@@ -6,8 +7,25 @@ module.exports = {
   exists,
 }
 
-function readFile (path) {
-  return fs.readFileSync(path)
+function readFile (path, app_path='', lang='') {
+  let final_path = ''
+
+  if (app_path == 'root') {
+    final_path = app.getAppPath() + '/'
+  }
+  if (app_path == 'override') {
+    final_path = app.getPath('userData') + '/override/'
+  }
+
+  if (!(lang == '')) {
+    final_path = final_path +'translations/'+lang+'/'
+  }
+
+  final_path = final_path + path
+
+  console.log('File path: '+final_path)
+
+  return fs.readFileSync(final_path)
 }
 
 function saveFile (data, path) {
@@ -18,6 +36,9 @@ function saveFile (data, path) {
   }
 }
 
-function exists (path) {
+function exists (path, app_path=false) {
+  if (app_path) {
+    path = app.getAppPath() + '/'+path
+  }
   return fs.existsSync(path)
 }

@@ -4,7 +4,7 @@ const { createAbout } = require('./../ui/about')
 const { createToc } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton, createInnovationsList, createLocationsList } = require('./../ui/menu')
-const { getSettings, addSettings, onSettingsSaved, setSettings, saveSettings } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved, setSettings, saveSettings, initSettings } = require('./../ui/settings')
 const { render, cdnUrl } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition } = require('./../ui/transition')
@@ -28,7 +28,10 @@ module.exports = class IndexScene {
     $('#video').hide()
     $('.button_video').hide()
 
+    initSettings();
+
     var settings = getSettings()
+
 
     console.log('Settings:')
     console.log(settings)
@@ -37,7 +40,7 @@ module.exports = class IndexScene {
     $('#video').attr('width', '100%')
     $('#video').attr('height', '100%')
 
-    sessionStorage.setItem('settings', JSON.stringify(settings))
+    // sessionStorage.setItem('settings', JSON.stringify(settings))
     sessionStorage.setItem('back_target', null)
     // sessionStorage.setItem("Mute", "Off");
 

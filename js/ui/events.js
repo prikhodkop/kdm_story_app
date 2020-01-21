@@ -1,7 +1,9 @@
 const { cdnUrl } = require('./template-renderer')
 const { events } = require('./../lists/story_events')
 
-const lang = 'en'
+const { loadJSON } = require('./assets_loader')
+
+// const lang = 'en'
 
 const color_menu = {
   '': '#CCCCCC',
@@ -50,7 +52,7 @@ function Event (
   this.music_delay = music_delay
 
   if (speech == '') {
-    this.speech = 'audio/speech/' + lang + '/' + id + '.mp3'
+    this.speech = 'translations/en/speech/' + id + '.mp3'
   } else {
     this.speech = 'audio/' + speech
   }
@@ -63,6 +65,8 @@ function Event (
     this.label = label
   }
 
+
+
   this.ltop = ltop
   this.lleft = lleft
   this.table = table
@@ -72,6 +76,10 @@ function Event (
 function create_events_table (events) {
   let events_table = {}
   let event_ids = Object.keys(events)
+
+  // let lang = getSettings()['language']
+  // let translate = false
+  let event_names_loc = loadJSON('text/lists/story_events.json')
 
   for (let i = 0; i < event_ids.length; i++) {
     events_table[event_ids[i]] = new Event(event_ids[i])
@@ -84,6 +92,8 @@ function create_events_table (events) {
         } else {
           events_table[event_ids[i]][property] = event[property]
         }
+
+        events_table[event_ids[i]].label = event_names_loc[event_ids[i]]
 
         // console.log('Set property for '+event_ids[i]+':');
         // console.log(property+' : '+ event[property]);
@@ -140,7 +150,15 @@ function createToc (col_len = 5) {
     }
   }
 
-  table_2_ids.sort()
+  table_2_ids.sort(function(a, b) {
+    if (events_table[a].label < events_table[b].label) {
+      return -1
+    } else if (events_table[a].label > events_table[b].label) {
+      return 1
+    } else {
+      return 0
+    }
+  })
   // #####################
 
   let container = document.getElementById('menu-back')
@@ -235,9 +253,9 @@ function createToc (col_len = 5) {
       a2.setAttribute('target', rows[i][j])
       a2.style.cssText += 'width:100%;position:static; margin:0 auto;'
       let text = ''
-      if (events_table[rows[i][j]].label.includes('Showdown')) {
+      if (rows[i][j].includes('showdown')) {
         // text = events_table[rows[i][j]].label.replace('Showdown:', '&#9876;:')
-        text = events_table[rows[i][j]].label.replace('Showdown:', '')
+        text = events_table[rows[i][j]].label.substring(events_table[rows[i][j]].label.indexOf(":")+1);
         text = '<img style="width:9%;" id="showdown_icon" src="'+cdnUrl('images/icons/swords_inv_c.png')+'"/>' + text
       } else {
         text = events_table[rows[i][j]].label

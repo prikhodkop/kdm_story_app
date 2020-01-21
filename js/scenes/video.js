@@ -33,7 +33,7 @@ module.exports = class VideoScene {
     $('#img').hide()
     $('#video').hide()
     $('#video').attr('src', cdnUrl('video/' + myself + '.mp4'))
-    $('#img').attr('src', cdnUrl('images/' + myself + '/img.jpg'))
+    $('#img').attr('src', cdnUrl('images/story events/' + myself + '/img.jpg'))
 
     $('#video').attr('width', '100%')
     $('#video').attr('height', '100%')
