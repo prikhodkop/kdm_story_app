@@ -237,6 +237,7 @@
   border-radius: var(--borderWidth);
   border: 0.2rem solid #555;
   box-shadow: 0 0 20px #000;
+  background: rgba(0, 0, 0, .5);
 }
 
 #milestone {

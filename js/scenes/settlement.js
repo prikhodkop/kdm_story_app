@@ -605,9 +605,14 @@ module.exports = class SettlementScene {
     }
 
     function addMilestones () {
+      // settings['str']
+      // $('#milestones').append($('<div id="milestone-title">Strains</div>'))
+      // $('#milestones').append($('<div id="milestone">&bull; First time death cound is updated - <a id="milestone-trigger" target="principle death">Principle: Death</a></div>'))
       $('#milestones').append($('<div id="milestone-title">Milestones</div>'))
-      $('#milestones').append($('<div id="milestone">&bull; First child is born - <a id="milestone-trigger" target="principle new life">Principle: New Life</a></div>'))
-      $('#milestones').append($('<div id="milestone">&bull; First time death cound is updated - <a id="milestone-trigger" target="principle death">Principle: Death</a></div>'))
+      if (['Lantern', 'Stars'].includes(settings['campaign'])) {
+        $('#milestones').append($('<div id="milestone">&bull; First child is born - <a id="milestone-trigger" target="principle new life">Principle: New Life</a></div>'))
+      }
+      $('#milestones').append($('<div id="milestone">&bull; First time death count is updated - <a id="milestone-trigger" target="principle death">Principle: Death</a></div>'))
       $('#milestones').append($('<div id="milestone">&bull; Population reaches 15 - <a id="milestone-trigger" target="principle society">Principle: Society</a></div>'))
       $('#milestones').append($('<div id="milestone">&bull; Lantern Year 12 - <a id="milestone-trigger" target="principle conviction">Principle: Conviction</a></div>'))
       if (settings['campaign'] == 'Lantern') {
