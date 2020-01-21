@@ -1,5 +1,3 @@
-const path_to_quary_events = 'images/hunt/quary_events/'
-
 const quary_events = [
   'dragon king 1.jpg',
   'dragon king 2.jpg',
@@ -67,46 +65,5 @@ const quary_events = [
 ]
 
 module.exports = {
-  get_sequence,
-}
-
-function get_sequence (name) {
-  let sequence = []
-
-  for (let i = 0; i < quary_events.length; i++) {
-    if (quary_events[i].includes(name.replace('showdown ', ''))) {
-      sequence.push(path_to_quary_events + quary_events[i])
-    }
-  }
-
-  return shuffle(sequence)
-}
-
-function next_event (sequence, idx) {
-  if (idx >= sequence.length) {
-    idx = 0
-    sequence = shuffle(sequence)
-  }
-
-  let next = sequence[idx]
-  idx += 1
-
-  return next, sequence, idx
-}
-
-function idx_event (sequence, idx) {
-  return sequence[idx]
-}
-
-function shuffle (a) {
-  let j, x, i
-
-  for (i = a.length - 1; i > 0; i--) {
-    j = Math.floor(Math.random() * (i + 1))
-    x = a[i]
-    a[i] = a[j]
-    a[j] = x
-  }
-
-  return a
+  quary_events,
 }
