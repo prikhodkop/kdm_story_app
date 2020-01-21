@@ -4,6 +4,7 @@ const { get_all_options, is_random_draw, get_random_draws, get_representation, g
 const { cdnUrl } = require('./template-renderer')
 const { addTimer, clearTimer } = require('./timer')
 const { getDevelopmentState, addInnovation, removeInnovation, addSettlementLocation, removeSettlementLocation} = require('./development')
+const { getSettings} = require('./settings')
 
 window.severe_timers = {}
 
@@ -51,6 +52,21 @@ module.exports = {
 }
 
 function createMenuButton () {
+
+  let settings = getSettings();
+  console.log('Settings: '+settings)
+
+  if ((typeof remote.getCurrentWindow().setFullScreen === "function") && ('fullscreen' in settings)) {
+    console.log('Method exists!!')
+    var cur_window = remote.getCurrentWindow()
+    if (settings['fullscreen'] == 'On') {
+      cur_window.setFullScreen(true);
+    } else {
+      cur_window.setFullScreen(false);
+    }
+  }
+
+
   if (!$("#esc-menu").length) {
     $('#container').append($('<div>', {
       // style: 'opacity:.9;',

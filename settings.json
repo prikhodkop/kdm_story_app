@@ -1,12 +1,13 @@
 {
   "campaign": "Lantern",
   "language": "en",
+  "fullscreen": "On",
   "subtitles": "On",
   "music": "On",
   "narration": "On",
   "onscreenKeypads": "On",
   "fontSize": "16px",
-  "size_of_basic_hunt_deck": "5",
+  "size_of_basic_hunt_deck": "12",
   "innovation_row_length": "5",
   "expansions": {
     "gorm": "Disabled",

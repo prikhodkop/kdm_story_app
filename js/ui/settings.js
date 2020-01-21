@@ -359,6 +359,16 @@ var settings_schema = {
       'Sun',
     ],
   },
+  'fullscreen': {
+    'type': 'option',
+    'title': 'FullScreen',
+    'description': 'Sets fullscreen or windowed mode for the app.',
+    'default': 'On',
+    'enum': [
+      'On',
+      'Off'
+    ],
+  },
   'language': {
     'type': 'option',
     'title': 'Language',
