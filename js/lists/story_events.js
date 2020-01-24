@@ -13,7 +13,7 @@ const events = {
     'ltop': '70%',
     'lleft': '50%',
     'music': 'music/white secret.mp3',
-    'speech': 'translations/en/speech/hunt.mp3',
+    'speech': 'speech/hunt.mp3',
   },
   'settlement': {
     'table': 1,
@@ -21,7 +21,7 @@ const events = {
     'label': 'Settlement',
     'music': 'music/settlement.mp3',
     'music_delay': '2000',
-    'speech': 'translations/en/speech/settlement.mp3',
+    'speech': 'speech/settlement.mp3',
   },
   'age': {
     'ltop': '27%',

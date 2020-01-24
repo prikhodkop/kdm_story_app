@@ -1,8 +1,8 @@
 const { get_random_draws, settlement_locations, gear_list, innovations } = require('./../ui/glossary')
-const { cdnUrl } = require('./../ui/template-renderer')
 const { titleCase } = require('./../ui/events')
 const { getSettings } = require('./../ui/settings')
 const { addTimer } = require('./../ui/timer')
+const { pathToAsset } = require('./../ui/assets_loader')
 
 const DEBUG_MODE = true
 const INNOVATION_HIDE = 'slideRight'
@@ -119,7 +119,7 @@ function setupLocations() {
   $('#settlement_locations_window').append($('<img>', {
     // style: 'opacity:.9;',
     id: 'settlement_locations_window_background',
-    src: cdnUrl('images/reference/reference_back.png'),
+    src: pathToAsset('images/reference/reference_back.png'),
   }));
 
   let locations_list = get_random_draws('Location', false);
@@ -189,9 +189,9 @@ function setupLocations() {
      console.log('Show armor set tooltip!'+$(e.target).parent().attr('armor_set'))
 
      if ($(e.target).hasClass('multi_set')) {
-       $('.tooltip_image_armor_set').attr('src', cdnUrl("images/reference/Armor Sets/"+$(e.target).attr('set').split('#')[$(e.target).attr('set_idx')]+" Armor.jpg"))
+       $('.tooltip_image_armor_set').attr('src', pathToAsset("images/reference/Armor Sets/"+$(e.target).attr('set').split('#')[$(e.target).attr('set_idx')]+" Armor.jpg", 'localize'))
      } else {
-       $('.tooltip_image_armor_set').attr('src', cdnUrl("images/reference/Armor Sets/"+$(e.target).attr('set')+" Armor.jpg"))
+       $('.tooltip_image_armor_set').attr('src', pathToAsset("images/reference/Armor Sets/"+$(e.target).attr('set')+" Armor.jpg", 'localize'))
      }
 
 
@@ -236,7 +236,7 @@ function setupLocations() {
          idx = 0
        }
        $(e.target).attr('set_idx', idx)
-       $('.tooltip_image_armor_set').attr('src', cdnUrl("images/reference/Armor Sets/"+sets_list[idx]+" Armor.jpg"))
+       $('.tooltip_image_armor_set').attr('src', pathToAsset("images/reference/Armor Sets/"+sets_list[idx]+" Armor.jpg", 'localize'))
      }
    }, '.gear_card.multi_set')
 
@@ -352,7 +352,7 @@ function createLocation(location, default_open=false) {
       // columns[j].append($('<img>', {
       column.append($('<img>', {
         class: "location_screen",
-        src: cdnUrl("images/reference/Settlement Locations/"+titleCase(location)+".jpg"),
+        src: pathToAsset("images/reference/Settlement Locations/"+titleCase(location)+".jpg", 'localize'),
       }));
     } else {
       if (settlement_locations[location]['gear'][j].length > 0) {
@@ -371,7 +371,7 @@ function createLocation(location, default_open=false) {
 
           let element = $('<img>', {
             class: "gear_card",
-            src: cdnUrl("images/reference/Gear/"+gear_name+".jpg"),
+            src: pathToAsset("images/reference/Gear/"+gear_name+".jpg", 'localize'),
             value: gear_name,
             // hover_width: max_width+'%',
             hover_height: max_width +'%',
@@ -582,7 +582,7 @@ function setupInnovations() {
       }
       $('#innovations_tab').addClass('tablinks_hoverd')
 
-      $('.tooltip_image_innovation').attr('src', cdnUrl("images/reference/Innovations/"+$(e.target).val()+".jpg"))
+      $('.tooltip_image_innovation').attr('src', pathToAsset("images/reference/Innovations/"+$(e.target).val()+".jpg", 'localize'))
     },
     mouseleave: function (e) {
 
@@ -846,7 +846,7 @@ function showInnovation(innovationName, initialization=false, newitem=false) {
   let img = $('<img>', {
     class: 'innovation_card use-hover',
     value: innovationName,
-    src: cdnUrl('images/reference/Innovations/'+innovationName+'.jpg'),
+    src: pathToAsset('images/reference/Innovations/'+innovationName+'.jpg', 'localize'),
   });
 
   img.addClass(getColorTag(innovationName))
@@ -1084,26 +1084,8 @@ let item_content = $('<div>', {
 let img = $('<img>', {
   class: 'action_card use-hover '+type,
   value: name,
-  src: cdnUrl('images/settlement/actions/'+name+'.jpg'),
+  src: pathToAsset('images/settlement/actions/'+name+'.jpg', 'localize'),
 });
-
-// img.tooltipster({animationDuration: 50,
-//   contentAsHTML: 'true',
-//   animation: 'fade',
-//   content: '<b>Source: '+name.split('_')[0]+'</b><br/><br/><b style="color:#cc0;">Click</b> to activate.',
-//   position: 'left',
-//   delay: [500, 0],
-//   trigger: 'custom',
-//   triggerOpen: {
-//     mouseenter: true,
-//     click: true
-//   },
-//   triggerClose: {
-//     click: true,
-//     mouseleave: true
-//   },
-//   plugins: ['follower'],
-// })
 
 item_content.append(img)
 item.append(item_content)

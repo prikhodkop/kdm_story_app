@@ -5,9 +5,11 @@ const { createToc } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton, createInnovationsList, createLocationsList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved, setSettings, saveSettings, initSettings } = require('./../ui/settings')
-const { render, cdnUrl } = require('./../ui/template-renderer')
+const { render } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition } = require('./../ui/transition')
+
+const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
 module.exports = class IndexScene {
   render () {
@@ -47,7 +49,7 @@ module.exports = class IndexScene {
     let lang = settings['language']
 
     var music = new Howl({
-      src: [cdnUrl('audio/theme.mp3')],
+      src: [pathToAsset('audio/theme.mp3')],
       // autoplay: true,
       loop: true,
       volume: 0.8,
@@ -68,6 +70,8 @@ module.exports = class IndexScene {
     createLocationsList()
     addSettings(settings)
     let gallery = setupCampaignSelect()
+
+    $('#video').attr('src', pathToAssetL('video/intro.mp4'))
 
     $('#label_text').fadeIn(2000)
     // gallery.load(function () {
@@ -92,7 +96,7 @@ module.exports = class IndexScene {
 
     // console.log(subtitles['intro'][lang])
     if (settings['subtitles'] == 'On') {
-      configureSubtitle(readFile(app.getAppPath() + '/video/srt/' + lang + '/intro.srt'))
+      configureSubtitle(readFile(pathToAssetL('video/intro.srt', false)))
     }
 
     if ((settings['narration'] == 'Off') && (settings['music'] == 'Off')) {
@@ -276,7 +280,7 @@ module.exports = class IndexScene {
 
       let campaign_image = $('<img>',{
         class: "campaign_image",
-        src: cdnUrl('images/icons/campaigns/'+campaign+'_campaign_icon.png')
+        src: pathToAsset('images/icons/campaigns/'+campaign+'_campaign_icon.png')
       });
 
       let campaign_label = $('<div>',{

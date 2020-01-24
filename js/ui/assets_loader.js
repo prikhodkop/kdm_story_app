@@ -7,29 +7,27 @@
 // 3. Check if en file exists in /overwrite/ -> if yes, load it and return
 // 4. Take en file from the root (it is assumed that it always exists) -> load it and return
 
-const { readFile } = require('./files')
+const { readFile, checkFile } = require('./files')
 const { getSettings } = require('./settings')
 const { cdnUrl } = require('./template-renderer')
 
 module.exports = {
   loadJSON,
-  pathToImage,
+  pathToAsset,
+  pathToAssetL,
   pathToScript,
 }
 
 // Finds and loads JSON file with respect to #Loading Rule#
 function loadJSON(path, localization=true) {
-
-  let lang = getSettings()['language']
   let found = false
   let result
 
   if (localization) {
-    console.log('Working with localized content!:')
-    // result = readFile(path, 'override', lang)
+    let lang = getSettings()['language']
     if (!(lang == 'en')) {
       try {
-        console.log('Try '+lang+' override...')
+        // console.log('Try '+lang+' override...')
         result = readFile(path, 'override', lang)
         result.toString();
         found = true
@@ -37,7 +35,7 @@ function loadJSON(path, localization=true) {
       }
 
       if (!found) {
-        console.log('Try '+lang+' root...')
+        // console.log('Try '+lang+' root...')
         try {
           result = readFile(path, 'root', lang)
           result.toString();
@@ -48,7 +46,7 @@ function loadJSON(path, localization=true) {
     }
 
     if (!found) {
-      console.log('Try en override...')
+      // console.log('Try en override...')
       try {
         result = readFile(path, 'override', 'en')
         result.toString();
@@ -57,39 +55,126 @@ function loadJSON(path, localization=true) {
       }
     }
     if (!found) {
-      console.log('Try en root...')
+      // console.log('Try en root...')
       result = readFile(path, 'root', 'en')
-      // result.toString();
-      // try {
-      //   result = readFile(cdnUrl(path), 'root', 'en')
-      //   found = true
-      // } catch (e) {
-      // }
     }
     return JSON.parse(result)
   } else {
     if (!found) {
       try {
         result = readFile(path, 'override')
+        result.toString();
         found = true
       } catch (e) {
       }
     }
     if (!found) {
-      try {
-        result = readFile(path, 'root')
-        found = true
-      } catch (e) {
-      }
+      result = readFile(path, 'root')
+      found = true
     }
     return JSON.parse(result)
   }
+}
 
+function pathToAssetL(path, cdn_change=true) {
+  return pathToAsset(path, 'localize', cdn_change)
 }
 
 // Returns string path for image to load with respect to #Loading Rule#
-function pathToImage(path, localization=true) {
+function pathToAsset(path, localization='', cdn_change=true) {
+  let found = false
+  let file, result
 
+  if (localization == 'localize') {
+    let lang = getSettings()['language']
+    if (!(lang == 'en')) {
+      console.log('Try '+lang+' override...')
+      file = checkFile(path, 'override', lang)
+      if ((!file == '')) {
+        found = true;
+        result = file
+        console.log('Bingo !')
+      }
+      // try {
+      //   // console.log('Try '+lang+' override...')
+      //   file = readFile(path, 'override', lang)
+      //   file.toString();
+      //   found = true
+      //   result = readFile(path, 'override', lang, 'path')
+      // } catch (e) {
+      // }
+
+      if (!found) {
+        console.log('Try '+lang+' root...')
+        file = checkFile(path, 'root', lang)
+        if ((!file == '')) {
+          found = true;
+          result = file
+          console.log('Bingo !')
+        }
+        // try {
+        //   file = readFile(path, 'root', lang)
+        //   file.toString();
+        //   found = true
+        //   result = readFile(path, 'root', lang, 'path')
+        // } catch (e) {
+        // }
+      }
+    }
+
+    if (!found) {
+      console.log('Try en override...')
+      file = checkFile(path, 'override', 'en')
+      if ((!file == '')) {
+        found = true;
+        result = file
+        console.log('Bingo !')
+      }
+      // try {
+      //   file = readFile(path, 'override', 'en')
+      //   file.toString();
+      //   found = true
+      //   result = readFile(path, 'override', 'en', 'path')
+      // } catch (e) {
+      // }
+    }
+    if (!found) {
+      console.log('Try en root...')
+      // result = readFile(path, 'root', 'en')
+      result = checkFile(path, 'root', 'en')
+      console.log('Bingo !')
+    }
+    if (cdn_change) {
+      result = cdnUrl(result)
+    }
+    return result
+
+  } else {
+    if (!found) {
+      file = checkFile(path, 'override')
+      if ((!file == '')) {
+        found = true;
+        result = file
+        console.log('Bingo !')
+      }
+      // try {
+      //   file = readFile(path, 'override')
+      //   file.toString();
+      //   found = true
+      //   result = readFile(path, 'override', '', 'path')
+      // } catch (e) {
+      // }
+    }
+    if (!found) {
+      result = checkFile(path, 'root')
+      found = true
+      console.log('Bingo !')
+    }
+    if (cdn_change) {
+      result = cdnUrl(result)
+    }
+    return result
+  }
 }
 
 // Returns string path for image to load with respect to #Loading Rule#

@@ -1,17 +1,22 @@
 const { app } = require('electron').remote
 
-const { createToc, events_table } = require('./../ui/events')
+const { createToc, generate_events_table } = require('./../ui/events')
 const { getSettlementEventPath, get_random_draws, get_events_options } = require('./../ui/glossary')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
-const { render, cdnUrl } = require('./../ui/template-renderer')
+const { render } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { addDevelopment, openLocation, getDevelopmentState, setDevelopmentState } = require('./../ui/development')
-// const { imageMapResize } = require('./../vendor/imageMapResizer.min.js')
+
+const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
+
+
 
 module.exports = class SettlementScene {
   render () {
+    var events_table = generate_events_table()
+
     if (true) {
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/settlement.html')
 
@@ -71,18 +76,18 @@ module.exports = class SettlementScene {
     var music_volume = 0.3 // music volume
 
     var speech = new Howl({
-      src: [cdnUrl(events_table[myself].speech)],
+      src: [pathToAssetL(events_table[myself].speech)],
       volume: 1.0,
     })
 
     var music = new Howl({
-      src: [cdnUrl(events_table[myself].music)],
+      src: [pathToAsset(events_table[myself].music)],
       loop: true,
       volume: music_volume,
     })
 
     var noise = new Howl({
-      src: [cdnUrl('audio/music/campfire.mp3')],
+      src: [pathToAsset('audio/music/campfire.mp3')],
       loop: true,
       volume: 0.15,
     })
@@ -113,7 +118,10 @@ module.exports = class SettlementScene {
     createReference()
     addSettings(settings)
     addMilestones()
-    addDevelopment()
+    addTimer(function() {
+        addDevelopment()
+    }, 1000)
+
 
     // MUTE BUTTON SETUP
     // $("#mute.button").click(function () {
@@ -178,7 +186,7 @@ module.exports = class SettlementScene {
         if (value == 'Random Settlement Event') {
           value = getSettlementEventPath()
         }
-        $('#settlement_event_back').attr('src', cdnUrl('images/reference/Settlement Events/' + value + '.jpg'))
+        $('#settlement_event_back').attr('src', pathToAssetL('images/reference/Settlement Events/' + value + '.jpg'))
         $('#settlement_event_back').attr('val', value)
         selectize.setValue(value, true)
         addTimer(function () {
@@ -213,6 +221,7 @@ module.exports = class SettlementScene {
       $('#label_text').delay(1000).fadeOut(1000)
       $('#settlement_background').delay(2000).fadeIn(500)
       // $('#milestones').delay(3500).fadeIn(2000);
+      $('#turn_cheatsheet_pic').attr('src', pathToAssetL('images/settlement/turn.jpg'))
       $('#turn_cheatsheet').delay(2000).fadeIn(500)
       // $('.mapify-holder').delay(2000).fadeIn(500)
       $('#settlement_event_button').delay(2500).fadeIn(1000)
@@ -230,6 +239,7 @@ module.exports = class SettlementScene {
       // $("#label_text").fadeIn(2000);
       $('#settlement_background').fadeIn(1000)
       // $('#milestones').fadeIn(2000);
+      $('#turn_cheatsheet_pic').attr('src', pathToAssetL('images/settlement/turn.jpg'))
       $('#turn_cheatsheet').fadeIn(1000)
       // $('.mapify-holder').fadeIn(1000)
 
@@ -255,35 +265,6 @@ module.exports = class SettlementScene {
         music.fade(0.0, music_volume, 500)
       }
 
-      // $('#settlement_event_back').attr('src', cdnUrl('images/reference/Settlement Events/' + state.settlement_event + '.jpg'))
-      // $('#settlement_event_back').attr('val', state.settlement_event)
-      // selectize.setValue(state.settlement_event, false)
-      // $('#settlement_event_back').fadeOut(500, function(){
-      //     $(this).attr('src',cdnUrl('images/reference/Settlement Events/' + state.settlement_event + '.jpg')).bind('onreadystatechange load', function(){
-      //        if (this.complete) {
-      //          $(this).fadeIn(300);
-      //          $("#settlement_event_screen > .selectize-control").css({
-      //            'width': ($("#settlement_event_back").width() + 'px')
-      //          });
-      //        }
-      //     });
-      //  });
-      // addTimer(function () {
-      //   $("#settlement_event_screen > .selectize-control").css({
-      //     'width': ($("#settlement_event_back").width() + 'px')
-      //   }); }, 100)
-
-      // if (state.milestones_open) {
-      //   $('#milestones').delay(150).fadeIn(500)
-      //   $('#milestones_button').addClass('active')
-      //   $('#cheatsheet_buttons').addClass('active')
-      // }
-
-      // if (state.muted) {
-      //   music.mute(true);
-      //   speech.mute(true);
-      //   $("#mute.button").toggleClass('active');
-      // }
     }
 
     // ##### COMMON LOGIC ########
@@ -301,15 +282,11 @@ module.exports = class SettlementScene {
             selected_event = state.settlement_event
           }
 
-          // $('#settlement_event_back').attr('src', cdnUrl('images/reference/Settlement Events/' + selected_event + '.jpg'))
           $('#settlement_event_back').attr('val', selected_event)
           selectize.setValue(selected_event, false)
-          // addTimer(function () {
-          //   $("#settlement_event_screen > .selectize-control").css({
-          //     'width': ($("#settlement_event_back").width() + 'px')
-          //   }); }, 100)
+
           $('#settlement_event_back').fadeOut(300, function(){
-              $(this).attr('src',cdnUrl('images/reference/Settlement Events/' + selected_event + '.jpg')).bind('onreadystatechange load', function(){
+              $(this).attr('src',pathToAssetL('images/reference/Settlement Events/' + selected_event + '.jpg')).bind('onreadystatechange load', function(){
                  if (this.complete) {
                    $(this).delay(50).fadeIn(300);
                    $("#settlement_event_screen > .selectize-control").css({

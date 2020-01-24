@@ -1,8 +1,9 @@
-const { cdnUrl } = require('./template-renderer')
 const {setSettings, getSettings, silentSaveSettings} = require('./../ui/settings')
 const { random_hunt_events } = require('./../lists/random_hunt_events')
 const { promo_hunt_events } = require('./../lists/promo_hunt_events')
 const { quary_events } = require('./../lists/quary_events')
+
+const { pathToAsset } = require('./../ui/assets_loader')
 
 module.exports = {
   md_to_html_2,
@@ -189,7 +190,7 @@ function md_to_html_2 (event_id, init = true, current_table = 0, current_class =
           width = '50%'
         }
 
-        let addition = "<img style='position:static;width:" + width + ";float:center;' " + text2 + " src='" + cdnUrl(`images/hunt/random_events/event_${text}.png`) + "'>"
+        let addition = "<img style='position:static;width:" + width + ";float:center;' " + text2 + " src='" + pathToAsset(`images/hunt/random_events/event_${text}.png`) + "'>"
 
         if (init) {
           html = addition + html

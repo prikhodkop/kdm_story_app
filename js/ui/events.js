@@ -1,7 +1,5 @@
-const { cdnUrl } = require('./template-renderer')
 const { events } = require('./../lists/story_events')
-
-const { loadJSON } = require('./assets_loader')
+const { loadJSON, pathToAsset } = require('./assets_loader')
 
 // const lang = 'en'
 
@@ -22,13 +20,18 @@ const color_menu = {
 
 // GLOBAL TABLE OF ALL EVENTS TO BE DISPLAYED AT MENU
 // ##################
-const events_table = create_events_table(events)
+var events_table = create_events_table(events)
 // ##################
 
 module.exports = {
   createToc,
   titleCase,
-  events_table: events_table,
+  // events_table: events_table,
+  generate_events_table
+}
+
+function generate_events_table () {
+  return create_events_table(events)
 }
 
 function Event (
@@ -52,9 +55,9 @@ function Event (
   this.music_delay = music_delay
 
   if (speech == '') {
-    this.speech = 'translations/en/speech/' + id + '.mp3'
+    this.speech = 'speech/' + id + '.mp3'
   } else {
-    this.speech = 'audio/' + speech
+    this.speech = speech
   }
 
   if (label == '###') {
@@ -115,16 +118,19 @@ function titleCase (str) {
 }
 
 function createToc (col_len = 5) {
+
+  let events_table = generate_events_table()
+
   let settings = JSON.parse(sessionStorage.getItem('settings'))
 
   $('#container').on('mouseenter', '#menu_item', function() {
     $(this).addClass('menu_hoverd')
-    $('.menu_hoverd > *#showdown_icon').attr('src', cdnUrl('images/icons/swords_inv_c_hover.png'));
+    $('.menu_hoverd > *#showdown_icon').attr('src', pathToAsset('images/icons/swords_inv_c_hover.png'));
     // $('.menu_hoverd > *#expansion_icon').attr('src', 'images/icons/expansions/'+$('.menu_hoverd > *#expansion_icon').attr('value')+'_c_hover.png?timestamp=' + new Date().getTime());
   });
 
   $('#container').on('mouseleave', '#menu_item', function() {
-    $('.menu_hoverd > *#showdown_icon').attr('src', cdnUrl('images/icons/swords_inv_c.png'));
+    $('.menu_hoverd > *#showdown_icon').attr('src', pathToAsset('images/icons/swords_inv_c.png'));
     // $('.menu_hoverd > *#expansion_icon').attr('src', 'images/icons/expansions/'+$('.menu_hoverd > *#expansion_icon').attr('value')+'_c.png?timestamp=' + new Date().getTime());
     $(this).removeClass('menu_hoverd')
   });
@@ -256,7 +262,7 @@ function createToc (col_len = 5) {
       if (rows[i][j].includes('showdown')) {
         // text = events_table[rows[i][j]].label.replace('Showdown:', '&#9876;:')
         text = events_table[rows[i][j]].label.substring(events_table[rows[i][j]].label.indexOf(":")+1);
-        text = '<img style="width:9%;" id="showdown_icon" src="'+cdnUrl('images/icons/swords_inv_c.png')+'"/>' + text
+        text = '<img style="width:9%;" id="showdown_icon" src="'+pathToAsset('images/icons/swords_inv_c.png')+'"/>' + text
       } else {
         text = events_table[rows[i][j]].label
       }
@@ -264,7 +270,7 @@ function createToc (col_len = 5) {
         a2.innerHTML += text
       } else {
         // let dot = '<b style="color:'+color_menu[events_table[rows[i][j]].expansion]+';">&#10033;</b>'
-        let dot = '<img style="width:10%;" id="expansion_icon" value="'+events_table[rows[i][j]].expansion+'" src="'+cdnUrl('images/icons/expansions/'+events_table[rows[i][j]].expansion+'_c.png')+'"/>'
+        let dot = '<img style="width:10%;" id="expansion_icon" value="'+events_table[rows[i][j]].expansion+'" src="'+pathToAsset('images/icons/expansions/'+events_table[rows[i][j]].expansion+'_c.png')+'"/>'
         a2.innerHTML += dot+' '+text
       }
       // a2.innerHTML += events_table[rows[i][j]].label

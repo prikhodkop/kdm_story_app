@@ -1,12 +1,14 @@
 const { app } = require('electron').remote
 
-const { createToc, events_table } = require('./../ui/events')
+const { createToc, generate_events_table } = require('./../ui/events')
 const { createMenuButton, createReference, createSevereTables, createInnovationsList, createLocationsList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
-const { render, cdnUrl } = require('./../ui/template-renderer')
+const { render } = require('./../ui/template-renderer')
 const { addTimer, clearTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { addInnovation } = require('./../ui/development')
+
+const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
 // const { eventsSugar } = require('./../ui/events_sugar')
 
@@ -34,6 +36,8 @@ const special_events = [
 
 module.exports = class ImageScene {
   render () {
+    var events_table = generate_events_table()
+
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/image.html')
 
     onSettingsSaved(() => {
@@ -58,7 +62,7 @@ module.exports = class ImageScene {
 
 
 
-    let img_path = 'translations/en/images/story events/content/' + myself + '.jpg'
+    let img_path = 'images/story events/content/' + myself + '.jpg'
     let img_back = 'images/story events/backs/' + myself + '.jpg'
 
     if ((myself == 'white speaker') && (settings['whiteboxes']['white speaker'] == 'Enabled')) {
@@ -77,8 +81,8 @@ module.exports = class ImageScene {
       img_path = img_path.replace('.jpg', '_sun.jpg')
     }
 
-    $('#img_back').attr('src', cdnUrl(img_back))
-    $('#img').attr('src', cdnUrl(img_path, true))
+    $('#img_back').attr('src', pathToAsset(img_back))
+    $('#img').attr('src', pathToAssetL(img_path))
 
 
     if (!events_table[myself].hide_label) {
@@ -97,7 +101,7 @@ module.exports = class ImageScene {
     var music_volume = 0.4 // music volume
 
     var speech = new Howl({
-      src: [cdnUrl(events_table[myself].speech)],
+      src: [pathToAssetL(events_table[myself].speech)],
       volume: 1.0,
     })
 
@@ -108,7 +112,7 @@ module.exports = class ImageScene {
     };
 
     var music = new Howl({
-      src: [cdnUrl(events_table[myself].music)],
+      src: [pathToAsset(events_table[myself].music)],
       loop: true,
       volume: music_volume,
     })
@@ -512,7 +516,7 @@ module.exports = class ImageScene {
         })
 
         $('#container').append($('<img>',{
-          src: cdnUrl('images/hunt/blind_exit.png'),
+          src: pathToAssetL('images/hunt/blind_exit.png'),
           id: 'blind_exit_tooltip'
         }))
         $('#blind_exit_tooltip').hide();
@@ -673,7 +677,7 @@ module.exports = class ImageScene {
         })
 
         $('#container').append($('<img>',{
-          src: cdnUrl('translations/en/images/story events/content/white speaker_gear_tooltip.png'),
+          src: pathToAssetL('translations/en/images/story events/content/white speaker_gear_tooltip.png'),
           class: 'gear_tooltip_image',
           style: 'top:50.1%; left: 55%; width: 30%;'
         }))
@@ -717,12 +721,12 @@ module.exports = class ImageScene {
         })
 
         $('#container').append($('<img>',{
-          src: cdnUrl('images/reference/Innovations/'+data[0]+'.jpg'),
+          src: pathToAssetL('images/reference/Innovations/'+data[0]+'.jpg'),
           class: 'gear_tooltip_image left',
           style: 'bottom:'+(100-data[2]+0.1)+'%; left: 24.6%; width: 15%;'
         }))
         $('#container').append($('<img>',{
-          src: cdnUrl('images/reference/Innovations/'+data[1]+'.jpg'),
+          src: pathToAssetL('images/reference/Innovations/'+data[1]+'.jpg'),
           class: 'gear_tooltip_image right',
           style: 'bottom:'+(100-data[2]+0.1)+'%; left: 58.5%; width: 15%;'
         }))

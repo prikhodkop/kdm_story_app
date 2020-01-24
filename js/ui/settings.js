@@ -19,12 +19,12 @@ module.exports = {
 function initSettings() {
   let settings = getSettings();
   sessionStorage.setItem('settings', JSON.stringify(settings))
-  console.log('Setting initialized!')
+  // console.log('Setting initialized!')
 }
 
 function getSettings () {
   let dirname = app.getPath('userData');
-  console.log('Dirname: ' + dirname)
+  // console.log('Dirname: ' + dirname)
   let settings_string = {}
   let settings_string_default
 

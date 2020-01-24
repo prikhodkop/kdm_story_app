@@ -1,14 +1,18 @@
 const { app } = require('electron').remote
 
-const { createToc, events_table } = require('./../ui/events')
+const { createToc, generate_events_table } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton, createReference, createSevereTables, createInnovationsList, createLocationsList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
-const { render, cdnUrl } = require('./../ui/template-renderer')
+const { render } = require('./../ui/template-renderer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
+
+const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
 module.exports = class VideoScene {
   render () {
+    var events_table = generate_events_table()
+
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/video.html')
 
     onSettingsSaved(() => {
@@ -32,8 +36,8 @@ module.exports = class VideoScene {
     $('#menu').hide()
     $('#img').hide()
     $('#video').hide()
-    $('#video').attr('src', cdnUrl('video/' + myself + '.mp4'))
-    $('#img').attr('src', cdnUrl('images/story events/' + myself + '/img.jpg'))
+    $('#video').attr('src', pathToAssetL('video/' + myself + '.mp4'))
+    $('#img').attr('src', pathToAssetL('images/story events/content/' + myself + '.jpg'))
 
     $('#video').attr('width', '100%')
     $('#video').attr('height', '100%')
@@ -42,7 +46,7 @@ module.exports = class VideoScene {
     var music_volume = 0.8 // music volume
 
     var music = new Howl({
-      src: [cdnUrl(events_table[myself].music)],
+      src: [pathToAsset(events_table[myself].music)],
       // autoplay: true,
       loop: true,
       volume: music_volume,
@@ -157,28 +161,9 @@ module.exports = class VideoScene {
     createMenuButton()
     createToc()
     if (settings['subtitles'] == 'On') {
-      configureSubtitle(readFile(app.getAppPath() + '/video/srt/' + settings['language'] + '/' + myself + '.srt'))
+      configureSubtitle(readFile(pathToAssetL('video/'+ myself + '.srt', false)))
     };
     addSettings(settings)
-
-    // $("#mute.button").click(function () {
-    //   if (!$(this).hasClass('active')) {
-    //     music.mute(true);
-    //
-    //     $("#video").prop('muted', true)
-    //
-    //     sessionStorage.setItem("Mute", "On");
-    //     // speech.mute(true);
-    //   } else {
-    //     // speech.mute(false);
-    //     music.mute(false);
-    //
-    //     $("#video").prop('muted', false)
-    //
-    //     sessionStorage.setItem("Mute", "Off");
-    //   };
-    //   $(this).toggleClass('active');
-    // });
 
     $('body').on('click', '#back_button', function () {
       let back_target = getBackBackTarget()

@@ -1,21 +1,24 @@
 const { app } = require('electron').remote
 
-const { createToc, titleCase, events_table } = require('./../ui/events')
+const { createToc, titleCase, generate_events_table } = require('./../ui/events')
 const { clone } = require('./../ui/glossary')
 const { md_to_html_2, is_promo_event, get_sequence } = require('./../ui/hunt_events_table')
 const { createMenuButton, createReference, createSevereTables, createInnovationsList, createLocationsList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
-const { render, cdnUrl } = require('./../ui/template-renderer')
+const { render } = require('./../ui/template-renderer')
 const { addTimer, clearTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { addInnovation, hasInnovation, getHuntInnovationEffects } = require('./../ui/development')
 
+const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
 const QUARRY_CARD_SHOW = 'slideUpReturn' // 'slideDownReturn'
 const QUARRY_CARD_HIDE = 'vanishOut' // 'SlideDown'
 
 module.exports = class HuntScene {
   render () {
+    var events_table = generate_events_table()
+
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/hunt.html')
     window.darkness_enabled = true
 
@@ -38,13 +41,13 @@ module.exports = class HuntScene {
     document.title = myself
 
     var music = new Howl({
-      src: [cdnUrl(events_table[myself].music)],
+      src: [pathToAsset(events_table[myself].music)],
       loop: true,
       volume: 0.8,
     })
 
     var speech = new Howl({
-      src: [cdnUrl(events_table[myself].speech)],
+      src: [pathToAssetL(events_table[myself].speech)],
       volume: 1.0,
     })
 
@@ -497,7 +500,7 @@ module.exports = class HuntScene {
         placeReminder('gorm_lv3')
 
         $('#container').append($('<img>',{
-          src: cdnUrl('images/hunt/digested.png'),
+          src: pathToAssetL('images/hunt/digested.png'),
           id: 'digested_tooltip'
         }))
         $('#digested_tooltip').hide();
@@ -537,7 +540,7 @@ module.exports = class HuntScene {
 
       console.log(name)
 
-      $('<img class="token" id="herb_gathering" title="" src="' + cdnUrl('images/hunt/herbs_gathering.png') + '" width="8%" style="left:25%; top:74%;">')
+      $('<img class="token" id="herb_gathering" title="" src="' + pathToAsset('images/hunt/herbs_gathering.png') + '" width="8%" style="left:25%; top:74%;">')
         .load(function () {
           $(this).appendTo('#container')
           $(this).hide()
@@ -559,7 +562,7 @@ module.exports = class HuntScene {
           })
         })
 
-      $('<img class="token" id="mineral_gathering" title="" src="' + cdnUrl('images/hunt/mineral_gathering.png') + '" width="8%" style="left:67%; top:74%;">')
+      $('<img class="token" id="mineral_gathering" title="" src="' + pathToAsset('images/hunt/mineral_gathering.png') + '" width="8%" style="left:67%; top:74%;">')
         .load(function () {
           $(this).appendTo('#container')
           $(this).hide()
@@ -582,7 +585,7 @@ module.exports = class HuntScene {
         })
 
         if (settings['expansions']['sunstalker'] == 'All content') {
-          $('<img class="token" id="sky_fishing" title="" src="' + cdnUrl('images/hunt/sky_fishing.png') + '" width="9%" style="left: 45.5%; top:73.5%;">')
+          $('<img class="token" id="sky_fishing" title="" src="' + pathToAsset('images/hunt/sky_fishing.png') + '" width="9%" style="left: 45.5%; top:73.5%;">')
             .load(function () {
               $(this).appendTo('#container')
               $(this).hide()
@@ -918,7 +921,7 @@ module.exports = class HuntScene {
 
       $('<img class="token ' + position + '" position="' + position + '" id="' + type +
                 '" title="'+
-                title +'" name="'+title+'" src="' + cdnUrl(path) + '" width="' + width + '%" style="left: ' + coord +
+                title +'" name="'+title+'" src="' + pathToAsset(path) + '" width="' + width + '%" style="left: ' + coord +
                 '%; top:' + top +
                 '%;"' + ref + ')>').load(function () {
         $(this).appendTo('#container')
@@ -958,7 +961,7 @@ module.exports = class HuntScene {
                   'label_text').innerHTML
                 document.getElementById('label_text').innerHTML = 'Starvation<br/><b id="starvation_text">Remove d5 resources from settlement storage.</b>'
                 // $('#label_text').innerHTML = 'Starvation<br/>Survivors must spend <b>1d5</b> basic resources!'
-                $('#hunt_icon').attr('src', cdnUrl('images/hunt/starvation_icon.png'))
+                $('#hunt_icon').attr('src', pathToAsset('images/hunt/starvation_icon.png'))
                 $('#label_text').css('z-index', '9')
                 $('#hunt_icon').css('z-index', '9')
                 $('#label_text').css('color', '#fff')
@@ -1075,7 +1078,7 @@ module.exports = class HuntScene {
 
               if (ui.draggable[0]['id'] == 'survivors') {
                 if (title == 'Monster Hunt Event') {
-                  $('#quary_popup').attr('src', cdnUrl($(this).attr('href')))
+                  $('#quary_popup').attr('src', pathToAssetL($(this).attr('href')))
                   // $('#quary_popup').delay(500).fadeIn(500)
                   $('#quary_popup').show();
                   // $('#quary_popup').addClass('bling vanishIn');
@@ -1123,7 +1126,7 @@ module.exports = class HuntScene {
         // var coord = 9.842 + 7.31*(position-2) + 7.35/2 - lantern_width/2.;
         var coord = 2.65 + 7.298 * (position - 1 / 2) - lantern_width / 2.0
         $('<img class="token ' + position + '" position="' + position +
-                    '" id="lantern" title="Event Cleared" src="' + cdnUrl('images/hunt/lantern.png') + '" width="' +
+                    '" id="lantern" title="Event Cleared" src="' + pathToAsset('images/hunt/lantern.png') + '" width="' +
                     lantern_width +
                     '%" style="left: ' + coord + '%; top:' + (top) + '%;">').load(
           function () {

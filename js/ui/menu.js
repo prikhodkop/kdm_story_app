@@ -1,10 +1,11 @@
 const remote = require('electron').remote
 
 const { get_all_options, is_random_draw, get_random_draws, get_representation, get_locations_list, get_innovations_list} = require('./glossary')
-const { cdnUrl } = require('./template-renderer')
+// const { cdnUrl } = require('./template-renderer')
 const { addTimer, clearTimer } = require('./timer')
 const { getDevelopmentState, addInnovation, removeInnovation, addSettlementLocation, removeSettlementLocation} = require('./development')
 const { getSettings} = require('./settings')
+const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
 window.severe_timers = {}
 
@@ -76,7 +77,7 @@ function createMenuButton () {
     $('#esc-menu').append($('<img>', {
       // style: 'opacity:.9;',
       id: 'esc-back',
-      src: cdnUrl('images/reference/reference_back.png'),
+      src: pathToAsset('images/reference/reference_back.png'),
     }))
 
     $('#esc-menu').append($('<div>', {
@@ -160,7 +161,7 @@ function createMenuButton () {
 
     $('#menu').append($('<img>', {
       id: 'menu_img',
-      src: cdnUrl('images/back.jpg'),
+      src: pathToAsset('images/back.jpg'),
     }))
 
     $('#menu').append($('<div>', {
@@ -200,14 +201,14 @@ function addLocationTable (location, top) {
   $('#container').append($('<img>', {
     class: location,
     id: 'severe',
-    src: cdnUrl('images/icons/' + location + '.png'),
+    src: pathToAsset('images/icons/' + location + '.png'),
     style: 'top:' + top + ';',
   }))
 
   $('#container').append($('<img>', {
     class: location,
     id: 'severe-table',
-    src: cdnUrl('images/reference/severe injuries/' + location + '.jpg'),
+    src: pathToAssetL('images/reference/severe injuries/' + location + '.jpg'),
   }))
 
   $('#severe.' + location).hide()
@@ -275,7 +276,7 @@ function createReference () {
 
   $('#container').append($('<img>', {
     id: 'reference',
-    src: cdnUrl('images/icons/reference.png'),
+    src: pathToAsset('images/icons/reference.png'),
   }))
 
   $('#reference').hide()
@@ -287,7 +288,7 @@ function createReference () {
 
   $('#reference-window-back0').append($('<img>', {
     id: 'reference-window-back-img',
-    src: cdnUrl('images/reference/reference_back.png'),
+    src: pathToAsset('images/reference/reference_back.png'),
   }))
 
   // $('#reference-window-back').append('<label for="reference-window">Terms:</label>')
@@ -308,7 +309,7 @@ function createReference () {
 
   $('#reference-window-back').append($('<img>', {
     id: 'glossary-symbols',
-    src: cdnUrl('images/reference/symbols.png'),
+    src: pathToAssetL('images/reference/symbols.png'),
   }))
 
   let all_option = get_all_options()
@@ -581,13 +582,13 @@ function createReference () {
     if (!$(this).hasClass('active')) {
       $('#reference-window-back0').fadeIn(500)
       $('#reference-window-background').fadeIn(500)
-      $('#reference').attr('src', cdnUrl('images/icons/reference_active.png'))
+      $('#reference').attr('src', pathToAsset('images/icons/reference_active.png'))
       selectize.focus()
 
     } else {
       $('#reference-window-back0').fadeOut(500)
       $('#reference-window-background').fadeOut(500)
-      $('#reference').attr('src', cdnUrl('images/icons/reference.png'))
+      $('#reference').attr('src', pathToAsset('images/icons/reference.png'))
       selectize.clear()
     }
     $(this).toggleClass('active')
@@ -596,7 +597,7 @@ function createReference () {
   $('#reference-window-background').on('click', function () {
     $('#reference-window-back0').fadeOut(500)
     $('#reference-window-background').fadeOut(500)
-    $('#reference').attr('src', cdnUrl('images/icons/reference.png'))
+    $('#reference').attr('src', pathToAsset('images/icons/reference.png'))
     $('#reference').removeClass('active')
     $('#esc-menu').fadeOut(100)
     $('#esc-menu').removeClass('active')
@@ -669,7 +670,7 @@ function  createInnovationsList() {
   } else {
     $('#container').append($('<img>', {
       class: 'innovations_button',
-      src: cdnUrl('images/icons/innovations_button.png'),
+      src: pathToAsset('images/icons/innovations_button.png'),
     }))
 
     $('#container').append($('<div>', {
@@ -684,7 +685,6 @@ function  createInnovationsList() {
 
     $('#container').append($('<div>', {
       class: 'innovations-list',
-      // src: cdnUrl('images/icons/innovations_button.png'),
     }))
 
     $('.innovations_button').tooltipster({animationDuration: 50,
@@ -705,15 +705,12 @@ function  createInnovationsList() {
       updateInnovationsList()
       $('.innovations-list').fadeIn(500);
       $('#innovations-list_window-background').fadeIn(400)
-      // $('#reference').attr('src', cdnUrl('images/icons/reference_active.png'))
       window.selectize_innovations.focus()
       window.selectize_innovations.setCaret(0)
 
     } else {
       $('.innovations-list').fadeOut(500);
       $('#innovations-list_window-background').fadeOut(600)
-      // $('#innovations-list-window').fadeOut(500)
-      // $('#reference').attr('src', cdnUrl('images/icons/reference.png'))
     }
     $(this).toggleClass('active')
   })
@@ -791,7 +788,7 @@ function  createLocationsList() {
 
     $('#container').append($('<img>', {
       class: 'locations_button',
-      src: cdnUrl('images/icons/locations_button.png'),
+      src: pathToAsset('images/icons/locations_button.png'),
     }))
 
     $('#container').append($('<div>', {
@@ -806,7 +803,6 @@ function  createLocationsList() {
 
     $('#container').append($('<div>', {
       class: 'locations-list',
-      // src: cdnUrl('images/icons/innovations_button.png'),
     }))
 
     $('.locations_button').tooltipster({animationDuration: 50,
@@ -827,15 +823,12 @@ function  createLocationsList() {
       updateLocationsList()
       $('.locations-list').fadeIn(500);
       $('#locations-list_window-background').fadeIn(400)
-      // $('#reference').attr('src', cdnUrl('images/icons/reference_active.png'))
       window.selectize_locations.focus()
       window.selectize_locations.setCaret(0)
 
     } else {
       $('.locations-list').fadeOut(500);
       $('#locations-list_window-background').fadeOut(600)
-      // $('#innovations-list-window').fadeOut(500)
-      // $('#reference').attr('src', cdnUrl('images/icons/reference.png'))
     }
     $(this).toggleClass('active')
   })
