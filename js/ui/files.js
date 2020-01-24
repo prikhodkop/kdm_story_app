@@ -26,7 +26,7 @@ function readFile (path, app_path='', lang='', return_type='file') {
 
   final_path = final_path + path
 
-  // console.log('File path: '+final_path)
+  console.log('File path: '+final_path)
 
   if (return_type == 'file') {
       return fs.readFileSync(final_path)
@@ -52,7 +52,7 @@ function checkFile (path, app_path='', lang='', check=true) {
 
   final_path = final_path + path
 
-  // console.log('File path: '+final_path)
+  console.log('File path: '+final_path)
 
   // if (fs.existsSync(final_path)) {
   if (check) {
@@ -66,9 +66,9 @@ function checkFile (path, app_path='', lang='', check=true) {
   }
   // fs.stat(final_path, function(err, stat) {
   //   if(err == null) {
-  //       // // console.log('File exists');
+  //       // console.log('File exists');
   //   } else {
-  //       // console.log('Some other error: ', err.code);
+  //       console.log('Some other error: ', err.code);
   //       final_path = ''
   //   }
   // })

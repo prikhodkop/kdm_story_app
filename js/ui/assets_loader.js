@@ -78,7 +78,7 @@ function pathToAsset(path, localization='', cdn_change=true) {
     }
 
     if (cdn_change) {
-      result = cdnUrl(result)
+      result = cdnUrl(result.replace('./', '/'))
     }
     return result
 
