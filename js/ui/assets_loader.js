@@ -9,7 +9,7 @@
 
 const { readFile, checkFile } = require('./files')
 const { getSettings } = require('./settings')
-const { cdnUrl } = require('./template-renderer')
+const { cdnUrl } = require('./template-cdnurl')
 
 module.exports = {
   loadJSON,

@@ -1,6 +1,6 @@
 const shell = require('electron').shell
 
-const { cdnUrl } = require('./template-renderer')
+const { cdnUrl } = require('./template-cdnurl')
 
 module.exports = {
   createAbout,

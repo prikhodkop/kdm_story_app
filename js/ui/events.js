@@ -1,6 +1,6 @@
 const { events } = require('./../lists/story_events')
 const { loadJSON, pathToAsset } = require('./assets_loader')
-
+const { cdnUrl } = require('./template-cdnurl')
 // const lang = 'en'
 
 const color_menu = {

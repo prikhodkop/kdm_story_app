@@ -1,6 +1,8 @@
 const fs = require('fs')
 const { app } = require('electron').remote
 
+const { cdnUrl } = require('./template-cdnurl.js')
+
 module.exports = {
   readFile,
   saveFile,

@@ -1,7 +1,7 @@
 const { app } = require('electron').remote
 
 const { readFile, saveFile, exists } = require('./files')
-const { cdnUrl } = require('./template-renderer')
+const { cdnUrl } = require('./template-cdnurl')
 const { addTimer } = require('./timer')
 
 let settingsSavedCallback
