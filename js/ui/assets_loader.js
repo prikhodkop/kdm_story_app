@@ -27,7 +27,7 @@ function loadJSON(path, localization=true) {
     let lang = getSettings()['language']
     if (!(lang == 'en')) {
       try {
-        // console.log('Try '+lang+' override...')
+        console.log('Try '+lang+' override...')
         result = readFile(path, 'override', lang)
         result.toString();
         found = true
@@ -35,7 +35,7 @@ function loadJSON(path, localization=true) {
       }
 
       if (!found) {
-        // console.log('Try '+lang+' root...')
+        console.log('Try '+lang+' root...')
         try {
           result = readFile(path, 'root', lang)
           result.toString();
@@ -46,7 +46,7 @@ function loadJSON(path, localization=true) {
     }
 
     if (!found) {
-      // console.log('Try en override...')
+      console.log('Try en override...')
       try {
         result = readFile(path, 'override', 'en')
         result.toString();
@@ -55,7 +55,7 @@ function loadJSON(path, localization=true) {
       }
     }
     if (!found) {
-      // console.log('Try en root...')
+      console.log('Try en root...')
       result = readFile(path, 'root', 'en')
     }
     return JSON.parse(result)

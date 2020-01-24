@@ -24,7 +24,7 @@ function readFile (path, app_path='', lang='', return_type='file') {
 
   final_path = final_path + path
 
-  // console.log('File path: '+final_path)
+  console.log('File path: '+final_path)
 
   if (return_type == 'file') {
       return fs.readFileSync(final_path)
