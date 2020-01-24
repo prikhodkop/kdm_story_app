@@ -26,9 +26,12 @@ function getSettings () {
   let dirname = app.getPath('userData');
   // console.log('Dirname: ' + dirname)
   let settings_string = {}
-  let settings_string_default
+  let settings_string_default = {}
 
-  settings_string_default = JSON.parse(readFile(app.getAppPath() + '/settings.json'))
+  try {
+    settings_string_default = JSON.parse(readFile(app.getAppPath() + '/settings.json'))
+  } catch (e) {
+  }
 
   try {
     settings_string = JSON.parse(readFile(dirname + '/settings.json'))

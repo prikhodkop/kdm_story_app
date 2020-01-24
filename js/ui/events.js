@@ -82,7 +82,7 @@ function create_events_table (events) {
 
   // let lang = getSettings()['language']
   // let translate = false
-  let event_names_loc = loadJSON('text/lists/story_events.json')
+  // let event_names_loc = loadJSON('text/lists/story_events.json')
 
   for (let i = 0; i < event_ids.length; i++) {
     events_table[event_ids[i]] = new Event(event_ids[i])
@@ -96,7 +96,7 @@ function create_events_table (events) {
           events_table[event_ids[i]][property] = event[property]
         }
 
-        events_table[event_ids[i]].label = event_names_loc[event_ids[i]]
+        // events_table[event_ids[i]].label = event_names_loc[event_ids[i]]
 
         // console.log('Set property for '+event_ids[i]+':');
         // console.log(property+' : '+ event[property]);
