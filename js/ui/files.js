@@ -40,7 +40,7 @@ function checkFile (path, app_path='', lang='', check=true) {
   let final_path = ''
 
   if (app_path == 'root') {
-    final_path = app.getAppPath() + '/'
+    final_path = '/' // app.getAppPath() + 
   }
   if (app_path == 'override') {
     final_path = app.getPath('documents') + '/KDM Story App/override/'
