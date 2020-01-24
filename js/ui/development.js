@@ -2,7 +2,8 @@ const { get_random_draws, settlement_locations, gear_list, innovations } = requi
 const { titleCase } = require('./../ui/events')
 const { getSettings } = require('./../ui/settings')
 const { addTimer } = require('./../ui/timer')
-const { pathToAsset } = require('./../ui/assets_loader')
+const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
+// const { cdnUrl }
 
 const DEBUG_MODE = true
 const INNOVATION_HIDE = 'slideRight'
@@ -127,9 +128,13 @@ function setupLocations() {
   if (DEBUG_MODE) {console.log('Locations list: '+locations_list)}
 
   for (let i = 0; i < locations_list.length; i++) {
-    createLocation(locations_list[i], (i==0) ? true : false);
+    addTimer(function() {
+      // console.log('Im checking: '+i+'  '+locations_list[i])
+      createLocation(locations_list[i], (i==0) ? true : false);
+    }, 100*i);
   }
 
+  addTimer(function(){
   tippy('.tablinks[type = "location"]', {
     placement: 'bottom-start',
     content: '<b style="color:#cc0;">Click</b> to <b>show location</b>.<br/><br/><b style="color:#cc0;">Double click</b> to <b>toggle built status</b>.',
@@ -152,14 +157,6 @@ function setupLocations() {
     }, function(){
       $(this).removeClass('hoverd')
   });
-
-  // $('#container').on("click", '.gear_card', function(e) {
-  //   if (!$('.gear_card[value="'+$(this).attr('value')+'"]').hasClass('active')) {
-  //     $('.gear_card[value="'+$(this).attr('value')+'"]').addClass('active')
-  //   } else {
-  //     $('.gear_card[value="'+$(this).attr('value')+'"]').removeClass('active')
-  //   }
-  // });
 
   $('#container').on("dblclick", '.tablinks[type = "location"]', function(e) {
     // console.log('!!Clicked on location!!')
@@ -193,11 +190,6 @@ function setupLocations() {
      } else {
        $('.tooltip_image_armor_set').attr('src', pathToAsset("images/reference/Armor Sets/"+$(e.target).attr('set')+" Armor.jpg", 'localize'))
      }
-
-
-     // addTimer(function(){
-     //   $('.tooltip_image_armor_set').show("slide", { direction: "left" }, 200);
-     // }, 300)
 
      if (!$('#innovations_tab').hasClass('set_hoverd')) {
        addTimer(function(){
@@ -239,6 +231,8 @@ function setupLocations() {
        $('.tooltip_image_armor_set').attr('src', pathToAsset("images/reference/Armor Sets/"+sets_list[idx]+" Armor.jpg", 'localize'))
      }
    }, '.gear_card.multi_set')
+
+ }, 100+100*locations_list.length);
 
 }
 
@@ -352,7 +346,7 @@ function createLocation(location, default_open=false) {
       // columns[j].append($('<img>', {
       column.append($('<img>', {
         class: "location_screen",
-        src: pathToAsset("images/reference/Settlement Locations/"+titleCase(location)+".jpg", 'localize'),
+        src: pathToAssetL("images/reference/Settlement Locations/"+titleCase(location)+".jpg"),
       }));
     } else {
       if (settlement_locations[location]['gear'][j].length > 0) {
@@ -371,7 +365,7 @@ function createLocation(location, default_open=false) {
 
           let element = $('<img>', {
             class: "gear_card",
-            src: pathToAsset("images/reference/Gear/"+gear_name+".jpg", 'localize'),
+            src: pathToAssetL("images/reference/Gear/"+gear_name+".jpg"),
             value: gear_name,
             // hover_width: max_width+'%',
             hover_height: max_width +'%',
@@ -386,27 +380,7 @@ function createLocation(location, default_open=false) {
           element.hover(function () {
               console.log('I hovered this gear!')
               $(this).css('height', $(this).attr('hover_height')) //0.93*gear_column_width
-              // $(this).animate({
-              //   width: $(this).attr('hover_width'),
-              //   height: 'auto',
-              //   options: {
-              //     queue: false,
-              //   },
-              //   duration: 200,
-              // })
-              // $(this).css({
-              //   'width': $(this).attr('hover_width'),
-              //   'height': 'auto'
-              // }) //0.93*gear_column_width
           }, function () {
-            // $(this).animate({
-            //   height: $(this).attr('normal_height'), //0.93*gear_column_width
-            //   width: 'auto',
-            //   options: {
-            //     queue: false,
-            //   },
-            //   duration: 200,
-            // })
               $(this).css({
                 'height': $(this).attr('normal_height'), //0.93*gear_column_width
                 // 'width': 'auto'

@@ -118,9 +118,9 @@ module.exports = class SettlementScene {
     createReference()
     addSettings(settings)
     addMilestones()
-    addTimer(function() {
-        addDevelopment()
-    }, 1000)
+    // addTimer(function() {
+    addDevelopment()
+    // }, 1000)
 
 
     // MUTE BUTTON SETUP

@@ -2,6 +2,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const InjectPlugin = require('webpack-inject-plugin').default
 const path = require('path')
+var webpack = require('webpack');
 
 const isDev = (process.env.npm_lifecycle_script || '').indexOf('development') !== -1
 
@@ -61,7 +62,13 @@ module.exports = {
             removeComments: true,
           }
         })(),
-      })
+      }),
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify('production'),
+          APP_ENV: JSON.stringify('browser')
+        }
+      }),
     ]
         .concat((() => {
             // only set cdnHost on production build

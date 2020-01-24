@@ -26,7 +26,7 @@ function readFile (path, app_path='', lang='', return_type='file') {
 
   final_path = final_path + path
 
-  console.log('File path: '+final_path)
+  // console.log('File path: '+final_path)
 
   if (return_type == 'file') {
       return fs.readFileSync(final_path)
@@ -36,7 +36,7 @@ function readFile (path, app_path='', lang='', return_type='file') {
 
 }
 
-function checkFile (path, app_path='', lang='') {
+function checkFile (path, app_path='', lang='', check=true) {
   let final_path = ''
 
   if (app_path == 'root') {
@@ -52,18 +52,23 @@ function checkFile (path, app_path='', lang='') {
 
   final_path = final_path + path
 
-  console.log('File path: '+final_path)
+  // console.log('File path: '+final_path)
 
-  if (fs.existsSync(final_path)) {
-    return final_path
+  // if (fs.existsSync(final_path)) {
+  if (check) {
+    if (fs.existsSync(final_path)) {
+      return final_path
+    } else {
+      return ''
+    }
   } else {
-    return ''
+    return final_path
   }
   // fs.stat(final_path, function(err, stat) {
   //   if(err == null) {
-  //       // console.log('File exists');
+  //       // // console.log('File exists');
   //   } else {
-  //       console.log('Some other error: ', err.code);
+  //       // console.log('Some other error: ', err.code);
   //       final_path = ''
   //   }
   // })
@@ -89,4 +94,15 @@ function exists (path, app_path=false) {
     path = app.getAppPath() + '/'+path
   }
   return fs.existsSync(path)
+}
+
+function imageExists(image_url){
+
+    var http = new XMLHttpRequest();
+
+    http.open('HEAD', image_url, false);
+    http.send();
+
+    return http.status != 404;
+
 }

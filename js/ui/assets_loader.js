@@ -26,16 +26,8 @@ function loadJSON(path, localization=true) {
   if (localization) {
     let lang = getSettings()['language']
     if (!(lang == 'en')) {
-      try {
-        console.log('Try '+lang+' override...')
-        result = readFile(path, 'override', lang)
-        result.toString();
-        found = true
-      } catch (e) {
-      }
-
       if (!found) {
-        console.log('Try '+lang+' root...')
+        // console.log('Try '+lang+' root...')
         try {
           result = readFile(path, 'root', lang)
           result.toString();
@@ -44,34 +36,16 @@ function loadJSON(path, localization=true) {
         }
       }
     }
-
     if (!found) {
-      console.log('Try en override...')
-      try {
-        result = readFile(path, 'override', 'en')
-        result.toString();
-        found = true
-      } catch (e) {
-      }
-    }
-    if (!found) {
-      console.log('Try en root...')
+      // console.log('Try en root...')
       result = readFile(path, 'root', 'en')
     }
     return JSON.parse(result)
   } else {
-    if (!found) {
-      try {
-        result = readFile(path, 'override')
-        result.toString();
-        found = true
-      } catch (e) {
-      }
-    }
-    if (!found) {
-      result = readFile(path, 'root')
-      found = true
-    }
+
+    result = readFile(path, 'root')
+    found = true
+
     return JSON.parse(result)
   }
 }
@@ -88,88 +62,31 @@ function pathToAsset(path, localization='', cdn_change=true) {
   if (localization == 'localize') {
     let lang = getSettings()['language']
     if (!(lang == 'en')) {
-      console.log('Try '+lang+' override...')
-      file = checkFile(path, 'override', lang)
+      // console.log('Try '+lang+' root...')
+      file = checkFile(path, 'root', lang)
       if ((!file == '')) {
         found = true;
         result = file
-        console.log('Bingo !')
-      }
-      // try {
-      //   // console.log('Try '+lang+' override...')
-      //   file = readFile(path, 'override', lang)
-      //   file.toString();
-      //   found = true
-      //   result = readFile(path, 'override', lang, 'path')
-      // } catch (e) {
-      // }
-
-      if (!found) {
-        console.log('Try '+lang+' root...')
-        file = checkFile(path, 'root', lang)
-        if ((!file == '')) {
-          found = true;
-          result = file
-          console.log('Bingo !')
-        }
-        // try {
-        //   file = readFile(path, 'root', lang)
-        //   file.toString();
-        //   found = true
-        //   result = readFile(path, 'root', lang, 'path')
-        // } catch (e) {
-        // }
+        // console.log('Bingo !')
       }
     }
 
     if (!found) {
-      console.log('Try en override...')
-      file = checkFile(path, 'override', 'en')
-      if ((!file == '')) {
-        found = true;
-        result = file
-        console.log('Bingo !')
-      }
-      // try {
-      //   file = readFile(path, 'override', 'en')
-      //   file.toString();
-      //   found = true
-      //   result = readFile(path, 'override', 'en', 'path')
-      // } catch (e) {
-      // }
+      // console.log('Try en root...')
+      result = checkFile(path, 'root', 'en', false)
+      // console.log('Bingo !')
     }
-    if (!found) {
-      console.log('Try en root...')
-      // result = readFile(path, 'root', 'en')
-      result = checkFile(path, 'root', 'en')
-      console.log('Bingo !')
-    }
+
     if (cdn_change) {
       result = cdnUrl(result)
     }
     return result
 
   } else {
-    if (!found) {
-      file = checkFile(path, 'override')
-      if ((!file == '')) {
-        found = true;
-        result = file
-        console.log('Bingo !')
-      }
-      // try {
-      //   file = readFile(path, 'override')
-      //   file.toString();
-      //   found = true
-      //   result = readFile(path, 'override', '', 'path')
-      // } catch (e) {
-      // }
-    }
-    if (!found) {
-      result = checkFile(path, 'root')
-      found = true
-      console.log('Bingo !')
-    }
+    result = checkFile(path, 'root', false)
+    found = true
+    // console.log('Bingo !')
+
     if (cdn_change) {
       result = cdnUrl(result)
     }

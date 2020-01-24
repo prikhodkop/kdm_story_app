@@ -14,6 +14,8 @@ const {
 
 require('v8-compile-cache');
 
+
+
 app.commandLine.appendSwitch('--autoplay-policy', 'no-user-gesture-required', '--no-sandbox')
 // app.disableHardwareAcceleration();
 let template = []

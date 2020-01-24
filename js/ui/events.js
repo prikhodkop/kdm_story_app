@@ -3,6 +3,10 @@ const { loadJSON, pathToAsset } = require('./assets_loader')
 const { cdnUrl } = require('./template-cdnurl')
 // const lang = 'en'
 
+const { getSettings } = require('./settings')
+
+const { app } = require('electron').remote
+
 const color_menu = {
   '': '#CCCCCC',
   'gorm': '#3B2621', //+
@@ -80,9 +84,24 @@ function create_events_table (events) {
   let events_table = {}
   let event_ids = Object.keys(events)
 
-  // let lang = getSettings()['language']
-  // let translate = false
-  // let event_names_loc = loadJSON('text/lists/story_events.json')
+  let lang = getSettings()['language']
+  let found = false
+
+  console.log('Current language: '+lang)
+  if (!(lang == 'en')) {
+    console.log('Trying: '+lang)
+    try {
+      var { story_events_labels } = require('../../translations/'+lang+'/text/lists/story_events_labels')
+      found = true
+    } catch(e) {
+    }
+  }
+
+  if (!found) {
+    console.log('Trying: en')
+    var { story_events_labels } = require('../../translations/en/text/lists/story_events_labels')
+  }
+
 
   for (let i = 0; i < event_ids.length; i++) {
     events_table[event_ids[i]] = new Event(event_ids[i])
@@ -96,7 +115,7 @@ function create_events_table (events) {
           events_table[event_ids[i]][property] = event[property]
         }
 
-        // events_table[event_ids[i]].label = event_names_loc[event_ids[i]]
+        events_table[event_ids[i]].label = story_events_labels[event_ids[i]]
 
         // console.log('Set property for '+event_ids[i]+':');
         // console.log(property+' : '+ event[property]);
