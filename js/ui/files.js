@@ -41,7 +41,7 @@ function checkFile (path, app_path='', lang='') {
     final_path = app.getAppPath() + '/'
   }
   if (app_path == 'override') {
-    final_path = app.getPath('userData') + '/override/'
+    final_path = app.getPath('documents') + '/KDM Story App/override/'
   }
 
   if (!(lang == '')) {
