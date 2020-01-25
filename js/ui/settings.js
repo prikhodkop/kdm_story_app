@@ -392,7 +392,8 @@ var settings_schema = {
     'default': 'en',
     'enum': [
       'en',
-      'ru'
+      'ru',
+      'pl'
     ],
   },
   'music': {
