@@ -10,7 +10,7 @@ const  fighting_arts_texts = {
  //  "description": "#",
  // },
  'Ambidextrous': {
-   'label': 'Ambidextrous',
+   'label': ' Oburęczność',
   "description": "#"
  },
  // 'Backstabber': {
@@ -19,7 +19,7 @@ const  fighting_arts_texts = {
  //  "description": "#"
  // },
  'Berserker': {
-   'label': 'Berserker',
+   'label': ' Berserk',
   "description": "#"
  },
  // 'Blotted Out': {
@@ -49,19 +49,19 @@ const  fighting_arts_texts = {
  //  "description": "#"
  // },
  'Clutch Fighter': {
-   'label': 'Clutch Fighter',
+   'label': 'Zapaśnik',
   "description": "#",
  },
  'Combo Master': {
-   'label': 'Combo Master',
+   'label': 'Mistrz układów',
   "description": "#"
  },
  'Crazed': {
-   'label': 'Crazed',
+   'label': 'Oszalały',
   "description": "#"
  },
  'Crossarm Block': {
-   'label': 'Crossarm Block',
+   'label': 'Blok krzyżowy',
   "description": "#"
  },
  // 'Defender': {
@@ -70,7 +70,7 @@ const  fighting_arts_texts = {
  //  "description": "#",
  // },
  'Double Dash': {
-   'label': 'Double Dash',
+   'label': 'Podwójny sprint',
   "description": "#"
  },
  // 'Ethereal Pact': {
@@ -80,7 +80,7 @@ const  fighting_arts_texts = {
  //  "description": "#"
  // },
  'Extra Sense': {
-   'label': 'Extra Sense',
+   'label': 'Szósty zmysł',
   "description": "#"
  },
  // 'Fated Blow': {
@@ -117,11 +117,11 @@ const  fighting_arts_texts = {
  //  "description": "#",
  // },
  'Last Man Standing': {
-   'label': 'Last Man Standing',
+   'label': 'Ostatni Ocalały',
   "description": "#"
  },
  'Leader': {
-   'label': 'Leader',
+   'label': 'Przywódca',
   "description": "#"
  },
  // 'Lure Epilepsy': {
@@ -135,15 +135,15 @@ const  fighting_arts_texts = {
  //  "description": "#",
  // },
  'Mighty Strike': {
-   'label': 'Mighty Strike',
+   'label': 'Potężny cios',
   "description": "#"
  },
  'Monster Claw Style': {
-   'label': 'Monster Claw Style',
+   'label': 'Styl szpon potwora',
   "description": "#"
  },
  'Orator of Death': {
-   'label': 'Orator of Death',
+   'label': 'Mówca śmierci',
   "description": "#",
  },
  // 'Otherworldly Luck': {
@@ -167,7 +167,7 @@ const  fighting_arts_texts = {
  //  "description": "#",
  // },
  'Rhythm Chaser': {
-   'label': 'Rhythm Chaser',
+   'label': 'Zwodniczy rytm',
   "description": "#"
  },
  // 'Ruthless': {
@@ -186,7 +186,7 @@ const  fighting_arts_texts = {
  //  "description": "#",
  // },
  'Strategist': {
-   'label': 'Strategist',
+   'label': 'Strateg',
   "description": "#"
  },
  // 'Tenacious': {
@@ -195,15 +195,15 @@ const  fighting_arts_texts = {
  //  "description": "#",
  // },
  'Thrill Seeker': {
-   'label': 'Thrill Seeker',
+   'label': 'Szukający wrażeń',
   "description": "#"
  },
  'Timeless Eye': {
-   'label': 'Timeless Eye',
+   'label': 'Bystre oko',
   "description": "#",
  },
  'Tough': {
-   'label': 'Tough',
+   'label': 'Twardziel',
   "description": "#"
  },
  // 'Trailblazer': {
@@ -222,7 +222,7 @@ const  fighting_arts_texts = {
  //  "description": "#",
  // },
  'Tumble': {
-   'label': 'Tumble',
+   'label': 'Sprężysty',
   "description": "#"
  },
  // 'Unbreakable': {
@@ -232,7 +232,7 @@ const  fighting_arts_texts = {
  //  "description": "#",
  // },
  'Unconscious Fighter': {
-   'label': 'Unconscious Fighter',
+   'label': 'Walczący w szoku',
   "description": "#"
  },
  // 'Unrelenting': {
@@ -269,7 +269,7 @@ const secret_fighting_arts_texts = {
  //  "description": "#",
  // },
  'Beast of Caratosis': {
-   'label': 'Beast of Caratosis',
+   'label': 'Bestia z Karatozy',
   "description": "#",
  },
  // 'Beetle Strength': {
@@ -283,7 +283,7 @@ const secret_fighting_arts_texts = {
  //  "description": "#",
  // },
  'Bone Whisperer': {
-   'label': 'Bone Whisperer',
+   'label': 'Zaklinacz kości',
   "description": "#",
  },
  // 'Clarity of Darkness': {
@@ -318,7 +318,7 @@ const secret_fighting_arts_texts = {
  //  "description": "#",
  // },
  'Grace of Dormentaus': {
-   'label': 'Grace of Dormentaus',
+   'label': 'Łaska Dormenatus',
   "description": "#",
  },
  // 'Hellfire': {
@@ -332,19 +332,19 @@ const secret_fighting_arts_texts = {
  //  "description": "#",
  // },
  'King of a Thousand Battles': {
-   'label': 'King of a Thousand Battles',
+   'label': 'Król tysiąca bitew',
   "description": "#",
  },
  'Kings Step': {
-   'label': 'Kings Step',
+   'label': 'Królewskie stąpnięcie',
   "description": "#",
  },
  'Legendary Lungs': {
-   'label': 'Legendary Lungs',
+   'label': 'Legendarne płuca',
   "description": "#",
  },
  'Lucernaes Lantern': {
-   'label': 'Lucernaes Lantern',
+   'label': 'Świetlista latarnia',
   "description": "#",
  },
  // 'Necromancer': {
@@ -353,11 +353,11 @@ const secret_fighting_arts_texts = {
  //  "description": "#",
  // },
  'Red Fist': {
- 'label': 'Red Fist',
+ 'label': 'Czerwona pięść',
   "description": "#",
  },
  'Scholar of Death': {
-   'label': 'Scholar of Death',
+   'label': 'Badacze śmierci',
   "description": "#",
  },
  // 'Silk Surgeon': {
@@ -376,11 +376,11 @@ const secret_fighting_arts_texts = {
  //  "description": "#",
  // },
  'Swordsmans Promise': {
-   'label': 'Swordsmans Promise',
+   'label': 'Obietnica szermierza',
   "description": "#",
  },
  'Synchronised Strike': {
-   'label': 'Synchronised Strike',
+   'label': 'Jednoczesny cios',
   "description": "#",
  },
  // 'True Blade': {
@@ -389,7 +389,7 @@ const secret_fighting_arts_texts = {
  //  "description": "#",
  // },
  'Zero Prescence': {
-   'label': 'Zero Prescence',
+   'label': 'Nieuchwytność',
   "description": "#",
  },
 }
