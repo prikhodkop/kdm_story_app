@@ -18,11 +18,14 @@ function init_glossary() {
   var lang = getSettings()['language']
   console.log('Cards new language: '+lang)
 
-  let found = false
+  let found
+
+  //## Fighting Arts and Secret Fighting Arts Localization ##
+  found = false
   let fighting_arts_texts_local
   let secret_fighting_arts_texts_local
   if (!(lang == 'en')) {
-    console.log('Fighting Arts Trying: '+lang)
+    // console.log('Fighting Arts Trying: '+lang)
     try {
       var { fighting_arts_texts, secret_fighting_arts_texts } = require('../../translations/'+lang+'/text/lists/fighting_arts_texts')
       fighting_arts_texts_local = fighting_arts_texts
@@ -35,7 +38,7 @@ function init_glossary() {
   var { fighting_arts_texts, secret_fighting_arts_texts } = require('../../translations/en/text/lists/fighting_arts_texts')
 
   for (let key in fighting_arts) {
-    console.log('Cecking art in '+key)
+    // console.log('Cecking art in '+key)
     // console.log('Description '+key)
     // if (fighting_arts.hasOwnProperty(key)) {
        if ((found)&&(key in fighting_arts_texts_local)) {
@@ -59,10 +62,11 @@ function init_glossary() {
     }
   }
 
+  //## Disorders Localization ##
   found = false
   let disorders_texts_local
   if (!(lang == 'en')) {
-    console.log('Disorders Trying: '+lang)
+    // console.log('Disorders Trying: '+lang)
     try {
       var { disorders_texts } = require('../../translations/'+lang+'/text/lists/disorders_texts')
       found = true
@@ -77,7 +81,7 @@ function init_glossary() {
   // }
 
   for (let key in disorders) {
-    console.log('Cecking art in '+key)
+    // console.log('Cecking art in '+key)
     // console.log('Description '+key)
     // if (fighting_arts.hasOwnProperty(key)) {
        if ((found)&&(key in disorders_texts_local)) {

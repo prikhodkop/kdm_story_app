@@ -677,7 +677,7 @@ module.exports = class ImageScene {
         })
 
         $('#container').append($('<img>',{
-          src: pathToAssetL('translations/en/images/story events/content/white speaker_gear_tooltip.png'),
+          src: pathToAssetL('images/story events/content/white speaker_gear_tooltip.png'),
           class: 'gear_tooltip_image',
           style: 'top:50.1%; left: 55%; width: 30%;'
         }))
