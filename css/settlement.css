@@ -153,8 +153,8 @@
   display: block;
   position: absolute;
   top: 0%;
-  left: 0%;
-  width: 100%;
+  left: 25%;
+  width: 70%;
   height: 100%;
   /* z-index: 81; */
   /* background: #030303;
@@ -167,7 +167,7 @@
   left: 0%;
   width: 100%;
   height: 100%;
-  z-index: 81;
+  z-index: 72;
   background: #030303;
   opacity: 0.5;
 }
@@ -175,11 +175,12 @@
 #settlement_event_back {
   display: block;
   position: absolute;
-  top: 1.5%;
-  left: 30%;
+  top: 7%;
+  left: 0%;
   /* width: 100%; */
-  height: 97%;
-  z-index: 82;
+  /* height: 97%; */
+  width: 43%;
+  z-index: 72;
   --borderWidth: 1em;
   border-radius: var(--borderWidth);
   /* border-bottom-right-radius: var(--borderWidth); */
@@ -205,13 +206,14 @@
 #settlement_event_screen > .selectize-control {
 	display:block;
 	position:absolute;
-  top: 1.5%;
-  left: 30%;
+  top: 7%;
+  left: 0%;
+  width: 43%;
   /* height: 2%; */
   z-index: 73;
   font-size: 1em;
   /* padding-bottom: 0; */
-  z-index: 83;
+  z-index: 72;
 }
 
 #settlement_event_screen > .selectize-control > .selectize-input:hover {
@@ -230,14 +232,14 @@
   /* width: 40%; */
   /* background-color: #222; */
   /* opacity: 0.3; */
-  left: 30%;
+  left: 25%;
   visibility: show;
-  z-index: 51;
+  z-index: 74;
   --borderWidth: 1em;
   border-radius: var(--borderWidth);
   border: 0.2rem solid #555;
   box-shadow: 0 0 20px #000;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, .8);
 }
 
 #milestone {

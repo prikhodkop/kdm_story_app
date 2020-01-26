@@ -1,6 +1,6 @@
 const remote = require('electron').remote
 
-const { get_all_options, is_random_draw, get_random_draws, get_representation, get_locations_list, get_innovations_list} = require('./glossary')
+const { get_all_options, is_random_draw, get_random_draws, get_representation, get_locations_list, get_innovations_list, init_glossary} = require('./glossary')
 // const { cdnUrl } = require('./template-renderer')
 const { addTimer, clearTimer } = require('./timer')
 const { getDevelopmentState, addInnovation, removeInnovation, addSettlementLocation, removeSettlementLocation} = require('./development')
@@ -53,6 +53,8 @@ module.exports = {
 }
 
 function createMenuButton () {
+
+  init_glossary()
 
   let settings = getSettings();
   console.log('Settings: '+settings)
@@ -339,16 +341,16 @@ function createReference () {
       label: 'Abilities',
     },
     {
-      value: 'fightning arts',
-      label: 'Fightning Arts',
+      value: 'fighting arts',
+      label: 'Fighting Arts',
     },
     {
       value: 'disorders',
       label: 'Disorders',
     },
     {
-      value: 'secret fightning arts',
-      label: 'Secret Fightning Arts',
+      value: 'secret fighting arts',
+      label: 'Secret Fighting Arts',
     },
     {
       value: 'survivor statuses',

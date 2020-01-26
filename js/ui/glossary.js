@@ -1,19 +1,96 @@
 const { getSettings } = require('./../ui/settings')
+const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
-const { abilities } = require('./../lists/abilities')
-const { armor_sets } = require('./../lists/armor_sets')
-const { disorders } = require('./../lists/disorders')
-const { fighting_arts, secret_fighting_arts } = require('./../lists/fighting_arts')
-const { gear_list } = require('./../lists/gear_list')
-const { glossary_terms } = require('./../lists/glossary_terms')
-const { innovations } = require('./../lists/innovations')
-const { resources } = require('./../lists/resources')
-const { settlement_events } = require('./../lists/settlement_events')
-const { settlement_locations } = require('./../lists/settlement_locations')
-const { survivor_statuses } = require('./../lists/survivor_statuses')
-const { terrain } = require('./../lists/terrain')
+var { abilities } = require('./../lists/abilities')
+var { armor_sets } = require('./../lists/armor_sets')
+var { disorders } = require('./../lists/disorders')
+var { fighting_arts, secret_fighting_arts } = require('./../lists/fighting_arts')
+var { gear_list } = require('./../lists/gear_list')
+var { glossary_terms } = require('./../lists/glossary_terms')
+var { innovations } = require('./../lists/innovations')
+var { resources } = require('./../lists/resources')
+var { settlement_events } = require('./../lists/settlement_events')
+var { settlement_locations } = require('./../lists/settlement_locations')
+var { survivor_statuses } = require('./../lists/survivor_statuses')
+var { terrain } = require('./../lists/terrain')
 
-const { pathToAssetL } = require('./../ui/assets_loader')
+function init_glossary() {
+  var lang = getSettings()['language']
+  console.log('Cards new language: '+lang)
+
+  let found = false
+  let fighting_arts_texts_local
+  let secret_fighting_arts_texts_local
+  if (!(lang == 'en')) {
+    console.log('Fighting Arts Trying: '+lang)
+    try {
+      var { fighting_arts_texts, secret_fighting_arts_texts } = require('../../translations/'+lang+'/text/lists/fighting_arts_texts')
+      fighting_arts_texts_local = fighting_arts_texts
+      secret_fighting_arts_texts_local = secret_fighting_arts_texts
+      found = true
+    } catch(e) {
+    }
+  }
+
+  var { fighting_arts_texts, secret_fighting_arts_texts } = require('../../translations/en/text/lists/fighting_arts_texts')
+
+  for (let key in fighting_arts) {
+    console.log('Cecking art in '+key)
+    // console.log('Description '+key)
+    // if (fighting_arts.hasOwnProperty(key)) {
+       if ((found)&&(key in fighting_arts_texts_local)) {
+         fighting_arts[key]['label'] = fighting_arts_texts_local[key]['label']
+         fighting_arts[key]['description'] = fighting_arts_texts_local[key]['description']
+       } else {
+         fighting_arts[key]['label'] = fighting_arts_texts[key]['label']
+         fighting_arts[key]['description'] = fighting_arts_texts[key]['description']
+       }
+    // }
+  }
+  for (let key in secret_fighting_arts) {
+    if (secret_fighting_arts.hasOwnProperty(key)) {
+       if ((found)&&(key in secret_fighting_arts_texts_local)) {
+         secret_fighting_arts[key]['label'] = secret_fighting_arts_texts_local[key]['label']
+         secret_fighting_arts[key]['description'] = secret_fighting_arts_texts_local[key]['description']
+       } else {
+         secret_fighting_arts[key]['label'] = secret_fighting_arts_texts[key]['label']
+         secret_fighting_arts[key]['description'] = secret_fighting_arts_texts[key]['description']
+       }
+    }
+  }
+
+  found = false
+  let disorders_texts_local
+  if (!(lang == 'en')) {
+    console.log('Disorders Trying: '+lang)
+    try {
+      var { disorders_texts } = require('../../translations/'+lang+'/text/lists/disorders_texts')
+      found = true
+      disorders_texts_local = disorders_texts
+    } catch(e) {
+    }
+  }
+
+  // if (!found) {
+  //   console.log('Trying: en')
+  var { disorders_texts } = require('../../translations/en/text/lists/disorders_texts')
+  // }
+
+  for (let key in disorders) {
+    console.log('Cecking art in '+key)
+    // console.log('Description '+key)
+    // if (fighting_arts.hasOwnProperty(key)) {
+       if ((found)&&(key in disorders_texts_local)) {
+         disorders[key]['label'] = disorders_texts_local[key]['label']
+         disorders[key]['description'] = disorders_texts_local[key]['description']
+       } else {
+         disorders[key]['label'] = disorders_texts[key]['label']
+         disorders[key]['description'] = disorders_texts[key]['description']
+       }
+    // }
+  }
+}
+
 
 const random_draws = {
  '1 random Fighting Art': {},
@@ -39,16 +116,23 @@ module.exports = {
  gear_list,
  innovations,
  get_events_options,
+ init_glossary,
 }
 
 function get_options (data, type, filter=false) {
  let result = []
  let settings = getSettings();
+ let name
  for (let key in data) {
+   if ((typeof data[key] === 'object')&&('label' in data[key])) {
+     name = data[key]['label']
+   } else {
+     name = key
+   }
   if (!filter) {
    result.push({
     class: type,
-    name: key,
+    name: name,
     value: key,
    })
   } else {
@@ -56,7 +140,7 @@ function get_options (data, type, filter=false) {
     if (!('campaign' in data[key]) || (data[key]['campaign'].indexOf(settings['campaign']) > -1)){
      result.push({
       class: type,
-      name: key,
+      name: name,
       value: key,
      })
     }
@@ -208,27 +292,38 @@ function get_representation (word) {
 
  } else if (word in fighting_arts) {
   let header_style = ''
-  let result = '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+pathToAssetL('images/reference/Fighting Arts/'+word+'.jpg')+'"/>'
-  if (('type' in fighting_arts[word]) && (fighting_arts[word]['type'] == 'dragon trait')) {
-   header_style='color:#863a2a;'
+  if (fighting_arts[word]['description'] == '#') {
+    return '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+pathToAssetL('images/reference/Fighting Arts/'+word+'.jpg')+'"/>'
+  } else {
+    let result = '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+pathToAssetL('images/reference/Fighting Arts/'+word+'.jpg')+'"/>'
+    if (('type' in fighting_arts[word]) && (fighting_arts[word]['type'] == 'dragon trait')) {
+     header_style='color:#863a2a;'
+    }
+    return result+'<b style="font-size:1.3em;'+header_style+'">'+fighting_arts[word]['label']+'</b> <i style="font-size:0.9em;color:#cd4c39;">(fighting art)</i> <hr/><div class="bottom-reference">'+fighting_arts[word]['description']+'</div>'
   }
-  return result+'<b style="font-size:1.3em;'+header_style+'">'+word+'</b> <i style="font-size:0.9em;color:#cd4c39;">(fighting art)</i> <hr/><div class="bottom-reference">'+fighting_arts[word]['description']+'</div>'
 
  } else if (word in secret_fighting_arts) {
   let header_style = ''
-  let result = '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+pathToAssetL('images/reference/Fighting Arts/'+word+'.jpg')+'"/>'
-  if (('type' in secret_fighting_arts[word]) && (secret_fighting_arts[word]['type'] == 'dragon trait')) {
-   header_style='color:#863a2a;'
+  if (secret_fighting_arts[word]['description'] == '#') {
+    return '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+pathToAssetL('images/reference/Fighting Arts/'+word+'.jpg')+'"/>'
+  } else {
+    let result = '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+pathToAssetL('images/reference/Fighting Arts/'+word+'.jpg')+'"/>'
+    if (('type' in secret_fighting_arts[word]) && (secret_fighting_arts[word]['type'] == 'dragon trait')) {
+     header_style='color:#863a2a;'
+    }
+    return result+'<b style="font-size:1.3em;'+header_style+'">'+word+'</b> <i style="font-size:0.9em;color:#ed553d;">(secret fighting art)</i> <hr/><div class="bottom-reference">'+secret_fighting_arts[word]['description']+'</div>'
   }
-  return result+'<b style="font-size:1.3em;'+header_style+'">'+word+'</b> <i style="font-size:0.9em;color:#ed553d;">(secret fighting art)</i> <hr/><div class="bottom-reference">'+secret_fighting_arts[word]['description']+'</div>'
  } else if (word in disorders) {
    let header_style = ''
-   let result = '<div style="display:flex;"><div style="width: 15%; height: auto;display:inline;padding-right:2%;"><img id=reference-image src="'+pathToAssetL('images/reference/disorder_head.png')+'"/></div>'
-   if (('type' in disorders[word]) && (disorders[word]['type'] == 'dragon trait')) {
-    header_style='color:#863a2a;'
+   if (disorders[word]['description'] == '#') {
+     return '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+pathToAssetL('images/reference/Disorders/'+word+'.jpg')+'"/>'
+   } else {
+     let result = '<div style="display:flex;"><div style="width: 15%; height: auto;display:inline;padding-right:2%;"><img id=reference-image src="'+pathToAsset('images/reference/disorder_head.png')+'"/></div>'
+     if (('type' in disorders[word]) && (disorders[word]['type'] == 'dragon trait')) {
+      header_style='color:#863a2a;'
+     }
+     return result+'<div style="width:83%;display:fix;vertical-align:middle;"><b style="font-size:1.3em;'+header_style+'">'+disorders[word]['label']+'</b> <i style="font-size:0.9em;color:#625a8d;">(disorder)</i> <hr/><div  class="bottom-reference">'+disorders[word]['description']+'</div></div></div>'
    }
-   return result+'<div style="width:83%;display:fix;vertical-align:middle;"><b style="font-size:1.3em;'+header_style+'">'+word+'</b> <i style="font-size:0.9em;color:#625a8d;">(disorder)</i> <hr/><div  class="bottom-reference">'+disorders[word]['description']+'</div></div></div>'
-
  } else if (word in abilities) {
    let header_style = ''
    let result = ''
