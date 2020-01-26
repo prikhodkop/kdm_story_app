@@ -181,6 +181,7 @@ module.exports = class SettlementScene {
       options: get_events_options(),
       labelField: 'name',
       searchField: ['name'],
+      // maxItems: 4,
       onChange: function(value, isOnInitialize) {
         console.log('Selectize value: '+ value);
         if (value == 'Random Settlement Event') {
@@ -272,7 +273,7 @@ module.exports = class SettlementScene {
     $('#settlement_event_button').click(function () {
       if (!$(this).hasClass('active')) {
         $('#settlement_event_screen').delay(50).fadeIn(300)
-        $('#settlement_event_screen_2').delay(50).fadeIn(300)
+        // $('#settlement_event_screen_2').delay(50).fadeIn(300)
         if ($('#settlement_event_back').attr('src') == '#') {
           let selected_event = getSettlementEventPath();
           if (['foundlings', 'returning survivors', 'the pool and the sun'].indexOf(window.settlement_back_target) >= 0) {
@@ -301,23 +302,23 @@ module.exports = class SettlementScene {
           $('#settlement_event_screen > .selectize-control').delay(150).fadeIn(500);
         }
 
-        $('.cheatsheet_button').each(function() {$(this).removeClass('active'); $('#milestones').hide(); $('#settlement_event_back').hide();})
-        $(this).addClass('active')
-        $('#cheatsheet_buttons').addClass('active')
+        $('.cheatsheet_button').each(function() {$(this).removeClass('active'); $('#milestones').hide(); }) // $('#settlement_event_back').hide();
+        // $(this).addClass('active')
+        // $('#cheatsheet_buttons').addClass('active')
       } else {
-        $('#settlement_event_screen').delay(50).fadeOut(500)
-        $('#settlement_event_screen_2').delay(50).fadeOut(500)
-        $('#settlement_event_back').delay(50).fadeOut(300)
-        $('#settlement_event_screen > .selectize-control').delay(50).fadeOut(300)
-        $(this).removeClass('active')
-        $('#cheatsheet_buttons').removeClass('active')
+        // $('#settlement_event_screen').delay(50).fadeOut(500)
+        // $('#settlement_event_screen_2').delay(50).fadeOut(500)
+        // $('#settlement_event_back').delay(50).fadeOut(300)
+        // $('#settlement_event_screen > .selectize-control').delay(50).fadeOut(300)
+        // $(this).removeClass('active')
+        // $('#cheatsheet_buttons').removeClass('active')
       };
     })
 
     $('#milestones_button').click(function () {
       if (!$(this).hasClass('active')) {
         $('#milestones').delay(150).fadeIn(500)
-        $('.cheatsheet_button').each(function() {$(this).removeClass('active'); $('#milestones').hide(); $('#settlement_event_back').hide();})
+        $('.cheatsheet_button').each(function() {$(this).removeClass('active'); $('#milestones').hide(); }) // $('#settlement_event_back').hide();
         $(this).addClass('active')
         $('#cheatsheet_buttons').addClass('active')
       } else {
@@ -333,26 +334,26 @@ module.exports = class SettlementScene {
       $('#cheatsheet_buttons').removeClass('active')
     })
 
-    $('#settlement_event_screen_2').click(function () {
-      // console.log($('#settlement_event_screen > .selectize-control > .selectize-input').attr('class'))
-      // if ($('#settlement_event_screen > .selectize-control > .selectize-input input').hasClass('dropdown-active')) {
-      //   console.log('Just closing dropdown folks!')
-      // } else {
-        console.log('Closing everything!')
-        $('#settlement_event_screen').delay(50).fadeOut(500)
-        $('#settlement_event_screen_2').delay(50).fadeOut(500)
-        $('#settlement_event_back').delay(50).fadeOut(500)
-        $('#settlement_event_screen > .selectize-control').delay(50).fadeOut(500)
-        $('#settlement_event_button').removeClass('active')
-        $('#cheatsheet_buttons').removeClass('active')
-      // }
-    })
+    // $('#settlement_event_screen_2').click(function () {
+    //   // console.log($('#settlement_event_screen > .selectize-control > .selectize-input').attr('class'))
+    //   // if ($('#settlement_event_screen > .selectize-control > .selectize-input input').hasClass('dropdown-active')) {
+    //   //   console.log('Just closing dropdown folks!')
+    //   // } else {
+    //     console.log('Closing everything!')
+    //     $('#settlement_event_screen').delay(50).fadeOut(500)
+    //     $('#settlement_event_screen_2').delay(50).fadeOut(500)
+    //     $('#settlement_event_back').delay(50).fadeOut(500)
+    //     $('#settlement_event_screen > .selectize-control').delay(50).fadeOut(500)
+    //     $('#settlement_event_button').removeClass('active')
+    //     $('#cheatsheet_buttons').removeClass('active')
+    //   // }
+    // })
 
     $('#development_button').click(function () {
       if (!$(this).hasClass('active')) {
         $('#development_screen').delay(150).fadeIn(500)
         $('#settlement_locations_window').delay(150).fadeIn(500)
-        $('.cheatsheet_button').each(function() {$(this).removeClass('active'); $('#milestones').hide(); $('#settlement_event_back').hide();})
+        $('.cheatsheet_button').each(function() {$(this).removeClass('active'); $('#milestones').hide(); }) // $('#settlement_event_back').hide();
         $(this).addClass('active')
         $('#cheatsheet_buttons').addClass('active')
         if ($('#locations_button').hasClass('active')) {

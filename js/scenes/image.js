@@ -81,7 +81,7 @@ module.exports = class ImageScene {
       img_path = img_path.replace('.jpg', '_sun.jpg')
     }
 
-    $('#img_back').attr('src', pathToAsset(img_back))
+    $('#img_back').attr('src', pathToAssetL(img_back))
     $('#img').attr('src', pathToAssetL(img_path))
 
 
