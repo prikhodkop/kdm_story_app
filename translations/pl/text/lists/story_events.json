@@ -1,4 +1,4 @@
-var story_events_labels = {
+{
   "index": "Intro",
   "hunt" : "Łowy",
   "settlement" : "Osada",
@@ -107,8 +107,4 @@ var story_events_labels = {
   "umbilical symbiosis" : "Umbilical Symbiosis",
   "warriors of the sun" : "Warriors of the Sun",
   "promise under the sun" : "Promise Under the Sun"
-}
-
-module.exports = {
- story_events_labels,
 }

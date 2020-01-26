@@ -10,11 +10,11 @@ const disorders_texts = {
  //  "description": "#",
  // },
  'Anxiety': {
-   'label': 'Anxiety',
+   'label': 'Niepokój',
   "description": "#",
  },
  'Apathetic': {
-   'label': 'Apathetic',
+   'label': 'Apatia',
   "description": "#",
  },
  // 'Arithmophilia': {
@@ -23,7 +23,7 @@ const disorders_texts = {
  //  "description": "#",
  // },
  'Binge Eating': {
-   'label': 'Binge Eating',
+   'label': 'Napady obżarstwa',
   "description": "#"
  },
  // 'Controlophobia': {
@@ -32,7 +32,7 @@ const disorders_texts = {
  //  "description": "#",
  // },
  'Coprolalia': {
-   'label': 'Coprolalia',
+   'label': 'Koprolalia',
   "description": "#"
  },
  // 'Delicious': {
@@ -57,7 +57,7 @@ const disorders_texts = {
  //  "description": "#",
  // },
  'Fear of the Dark': {
-   'label': 'Fear of the Dark',
+   'label': 'Lęk przed mrokiem',
   "description": "#"
  },
  // 'Flower Addiction': {
@@ -71,27 +71,27 @@ const disorders_texts = {
  //  "description": "#",
  // },
  'Hemophobia': {
-   'label': 'Hemophobia',
+   'label': 'Hemofobia',
   "description": "#"
  },
  'Hoarder': {
-   'label': 'Hoarder',
+   'label': 'Zbieractwo',
   "description": "#",
  },
  'Honorable': {
-   'label': 'Honorable',
+   'label': 'Honorowy',
   "description": "#",
  },
  'Hyperactive': {
-   'label': 'Hyperactive',
+   'label': 'Hiperaktywność',
   "description": "#",
  },
  'Immortal': {
-   'label': 'Immortal',
+   'label': 'Nieśmiertelny',
   "description": "#"
  },
  'Indecision': {
-   'label': 'Indecision',
+   'label': 'Niezdecydowanie',
   "description": "#",
  },
  // 'Megalophobia': {
@@ -100,7 +100,7 @@ const disorders_texts = {
  //  "description": "#",
  // },
  'Monster Panic': {
-   'label': 'Monster Panic',
+   'label': 'Strach przed potworami',
   "description": "#"
  },
  // 'Motion Sickness': {
@@ -124,11 +124,11 @@ const disorders_texts = {
  //  "description": "#",
  // },
  'Post-Traumatic Stress': {
-   'label': 'Post-Traumatic Stress',
+   'label': 'Stres pourazowy',
   "description": "#",
  },
  'Prey': {
-   'label': 'Prey',
+   'label': 'Ofiara',
   "description": "#"
  },
  // 'Prima Donna': {
@@ -137,11 +137,11 @@ const disorders_texts = {
  //  "description": "#",
  // },
  'Quixotic': {
-   'label': 'Quixotic',
+   'label': 'Donkiszoteria',
   "description": "#"
  },
  'Rageholic': {
-   'label': 'Rageholic',
+   'label': 'Furiat',
   "description": "#"
  },
  // 'Revenge': {
@@ -150,11 +150,11 @@ const disorders_texts = {
  //  "description": "#",
  // },
  'Secretive': {
-   'label': 'Secretive',
+   'label': 'Skryty',
   "description": "#"
  },
  'Seizures': {
-   'label': 'Seizures',
+   'label': 'Padaczka',
   "description": "#",
  },
  // 'Shallow Lungs': {
@@ -168,7 +168,7 @@ const disorders_texts = {
  //  "description": "#",
  // },
  'Squeamish': {
-   'label': 'Squeamish',
+   'label': 'Wrażliwy',
    "description": "#"
  },
  // 'Stage Fright': {
@@ -198,7 +198,7 @@ const disorders_texts = {
  //  "description": "#",
  // },
  'Traumatized': {
-   'label': 'Traumatized',
+   'label': 'Straumatyzowany',
    "description": "#",
  },
  // 'Tunnel Vision': {
@@ -217,11 +217,11 @@ const disorders_texts = {
  //  "description": "#",
  // },
  'Vestiphobia': {
-   'label': 'Vestiphobia',
+   'label': 'Westifobia',
    "description": "#"
  },
  'Weak Spot': {
-   'label': 'Weak Spot',
+   'label': 'Czuły punkt',
    "description": "#"
  },
 }
