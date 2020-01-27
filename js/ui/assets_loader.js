@@ -83,12 +83,12 @@ function pathToAsset(path, localization='', cdn_change=true) {
     return result
 
   } else {
-    result = checkFile(path, 'root', false)
+    result = checkFile(path, 'root', '', false)
     found = true
     // console.log('Bingo !')
 
     if (cdn_change) {
-      result = cdnUrl(result)
+      result = cdnUrl(result.replace('./', '/'))
     }
     return result
   }
