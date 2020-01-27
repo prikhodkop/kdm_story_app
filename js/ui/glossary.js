@@ -92,6 +92,17 @@ function init_glossary() {
   data_en = require('../../translations/en/'+'text/lists/armor_sets_texts')
   armor_sets = localized_require(armor_sets, data_local, data_en, ['label'])
 
+  ///
+  data_local = ''
+  if (!(lang == 'en')) {
+    try {
+      data_local = require('../../translations/'+lang+'/'+'text/lists/settlement_locations_texts')
+    } catch(e) {
+    }
+  }
+  data_en = require('../../translations/en/'+'text/lists/settlement_locations_texts')
+  settlement_locations = localized_require(settlement_locations, data_local, data_en, ['label'])
+
   //## Settlement Events
   data_local = ''
   if (!(lang == 'en')) {
