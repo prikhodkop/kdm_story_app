@@ -12,7 +12,7 @@ const {
 
 // const { autoUpdater } = require('electron-updater')
 
-require('v8-compile-cache');
+// require('v8-compile-cache');
 
 
 
