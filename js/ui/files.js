@@ -54,12 +54,23 @@ function checkFile (path, app_path='', lang='', check=true) {
 
   console.log('File path: '+final_path)
 
+  let cdnHost = (window.globals.template.cdnHost || '').replace(/^[.\/]+/, '')
+
+
   // if (fs.existsSync(final_path)) {
   if (check) {
-    if (fs.existsSync(final_path)) {
-      return final_path
+    if (cdnHost.length) {
+      if (fs.existsSync(final_path)) {
+        return final_path
+      } else {
+        return ''
+      }
     } else {
-      return ''
+      if (imageExists(cdnUrl(final_path))) {
+        return final_path
+      } else {
+        return ''
+      }
     }
   } else {
     return final_path
