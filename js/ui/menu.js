@@ -672,7 +672,7 @@ function  createInnovationsList() {
   } else {
     $('#container').append($('<img>', {
       class: 'innovations_button',
-      src: pathToAsset('images/icons/innovations_button.png'),
+      src: pathToAssetL('images/icons/innovations_button.png'),
     }))
 
     $('#container').append($('<div>', {
@@ -790,7 +790,7 @@ function  createLocationsList() {
 
     $('#container').append($('<img>', {
       class: 'locations_button',
-      src: pathToAsset('images/icons/locations_button.png'),
+      src: pathToAssetL('images/icons/locations_button.png'),
     }))
 
     $('#container').append($('<div>', {

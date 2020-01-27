@@ -1,17 +1,79 @@
 const {setSettings, getSettings, silentSaveSettings} = require('./../ui/settings')
-const { random_hunt_events } = require('./../lists/random_hunt_events')
-const { promo_hunt_events } = require('./../lists/promo_hunt_events')
 const { quary_events } = require('./../lists/quary_events')
 
 const { pathToAsset } = require('./../ui/assets_loader')
+
+// var { random_hunt_events } = require('./../lists/random_hunt_events')
+// var { promo_hunt_events } = require('./../lists/promo_hunt_events')
+
+var random_hunt_events = {}
+var promo_hunt_events = {}
 
 module.exports = {
   md_to_html_2,
   is_promo_event,
   get_sequence,
+  init_hunt_events
 }
 
 const path_to_quary_events = 'images/hunt/quary_events/'
+
+function init_hunt_events() {
+
+  var lang = getSettings()['language']
+  console.log('Cards new language: '+lang)
+
+  let found
+
+  //## Random Hunt Events Localization ##
+  found = false
+  let random_hunt_events_local
+  if (!(lang == 'en')) {
+    console.log('Random Hunt Events Trying: '+lang)
+    try {
+      random_hunt_events_local = require('../../translations/'+lang+'/text/lists/random_hunt_events')
+      // random_hunt_events_local = random_hunt_events
+      found = true
+    } catch(e) {
+    }
+  }
+
+  let random_hunt_events_en = require('../../translations/en/text/lists/random_hunt_events')
+
+  // if (found) {
+    for (let key in random_hunt_events_en.random_hunt_events) {
+       if ((found)&&(key in random_hunt_events_local.random_hunt_events)) {
+         random_hunt_events[key] = random_hunt_events_local.random_hunt_events[key]
+       } else {
+         random_hunt_events[key] = random_hunt_events_en.random_hunt_events[key]
+       }
+    }
+  // }
+
+  //## Promo Hunt Events Localization ##
+  found = false
+  let promo_hunt_events_local
+  if (!(lang == 'en')) {
+    console.log('Promo Hunt Events Trying: '+lang)
+    try {
+      promo_hunt_events_local = require('../../translations/'+lang+'/text/lists/promo_hunt_events')
+      // promo_hunt_events_local = promo_hunt_events
+      found = true
+    } catch(e) {
+    }
+  }
+
+  var promo_hunt_events_en = require('../../translations/en/text/lists/promo_hunt_events')
+
+  for (let key in promo_hunt_events_en.promo_hunt_events) {
+     if ((found)&&(key in promo_hunt_events_local.promo_hunt_events)) {
+       promo_hunt_events[key] = promo_hunt_events_local.promo_hunt_events[key]
+     } else {
+       promo_hunt_events[key] = promo_hunt_events_en.promo_hunt_events[key]
+     }
+  }
+
+}
 
 // var no_reload = false
 

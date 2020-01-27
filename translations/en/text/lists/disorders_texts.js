@@ -1,4 +1,4 @@
-const disorders_texts = {
+const texts = {
  'Absent Seizures': {
   // 'expansion': 'gorm',
   'label': 'Absent Seizures',
@@ -227,5 +227,5 @@ const disorders_texts = {
 }
 
 module.exports = {
- disorders_texts,
+ texts,
 }

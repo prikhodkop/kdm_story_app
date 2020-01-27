@@ -1,13 +1,9 @@
-const innovations = {
+const texts = {
  'Albedo': {
-  'expansion': 'gorm',
-  'parent': 'Nigredo',
-  'tags': ['science', 'gormchymy', 'nigredo'],
-  'action': true,
+  'label': 'Albedo',
  },
  'Ammonia': {
-  'parent': 'Language',
-  'tags': ['science', 'language'],
+  'label': 'Ammonia',
   'passive': {
     'departing': [
       'Gain +$1$ survival.'
@@ -15,11 +11,7 @@ const innovations = {
   }
  },
  'Aquarobotics': {
-  'expansion': 'sunstalker',
-  'parent': 'Hands of the Sun',
-  'tags': ['faith', 'hands of the sun'],
-  'campaign': ['Sun'],
-  'action': true,
+  'label': 'Aquarobotics',
   'passive': {
     'settlement': [
       'Survival Limit +$1$'
@@ -27,16 +19,10 @@ const innovations = {
   }
  },
  'Arena': {
-  'expansion': 'dragon king',
-  'parent': 'Nightmare Training',
-  'campaign': 'Stars',
-  'tags': ['education', 'nightmare training'],
-  'action': true,
+  'label': 'Arena',
  },
  'Bed': {
-  'parent': 'Hovel',
-  'tags': ['home', 'hovel'],
-  'action': true,
+  'label': 'Bed',
   'passive': {
     'settlement': [
       'Survival Limit +$1$'
@@ -44,15 +30,10 @@ const innovations = {
   }
  },
  'Bloodletting': {
-  'parent': 'Ammonia',
-  'tags': ['science', 'ammonia'],
-  'action': true,
+  'label': 'Bloodletting',
  },
  'Bloodline': {
-  'expansion': 'dragon king',
-  'parent': 'Hovel',
-  'campaign': ['Stars'],
-  'tags': ['home', 'hovel'],
+  'label': 'Bloodline',
   'passive': {
     'newborn': [
       'Newborn survivors inherit the following form their parents:<br/> -The <b style="color:#863a2a;">Oracle\'s Eye</b>, <b style="color:#863a2a;">Iridescent Hide</b>, or <b style="color:#863a2a;">Pristine</b> ability (choose 1)<br/> - <b>Surname</b><br/>Half of one parent\'s weapon proficiency levels <i>(rounded up)</i>'
@@ -60,10 +41,7 @@ const innovations = {
   }
  },
  'Citrinitas': {
-  'expansion': 'gorm',
-  'parent': 'Albedo',
-  'tags': ['science', 'gormchymy', 'albedo'],
-  'action': true,
+  'label': 'Citrinitas',
   'passive': {
     'settlement': [
       'Survival Limit +$1$'
@@ -71,15 +49,10 @@ const innovations = {
   }
  },
  'Choreia': {
-  'expansion': 'spidicules',
-  'parent': 'Forbidden Dance',
-  'tags': ['music', 'forbidden dance'],
-  'action': true,
+  'label': 'Choreia',
  },
  'Legless Ball': {
-  'expansion': 'spidicules',
-  'tags': ['other'],
-  'action': true,
+  'label': 'Legless Ball',
   'passive': {
     'departing': [
       'Gain +$2$ insanity.'
@@ -87,9 +60,7 @@ const innovations = {
   }
  },
  'Silk-refining': {
-  'expansion': 'spidicules',
-  'tags': ['other'],
-  'action': true,
+  'label': 'Silk-refining',
   'passive': {
     'settlement': [
       'Survival Limit +$1$'
@@ -97,9 +68,7 @@ const innovations = {
   }
  },
  'Clan of Death': {
-  'parent': 'Family',
-  'campaign': ['Lantern', 'Sun'],
-  'tags': ['home', 'family'],
+  'label': 'Clan of Death',
   'passive': {
     'newborn': [
       'Gain +$1$ accuracy.',
@@ -109,9 +78,7 @@ const innovations = {
   }
  },
  'Cooking': {
-  'parent': 'Lantern Oven',
-  'tags': ['science', 'lantern oven'],
-  'action': true,
+  'label': 'Cooking',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -120,9 +87,7 @@ const innovations = {
   }
  },
  'Crimson Candy': {
-  'expansion': 'manhunter',
-  'tags': ['science'],
-  'action': true,
+  'label': 'Crimson Candy',
   'passive': {
     'showdown': [
       ['survival', '<b>Monster Level</b>']
@@ -130,9 +95,7 @@ const innovations = {
   }
  },
  'Dark Water Research': {
-  'expansion': 'slenderman',
-  'tags': ['science'],
-  'action': true,
+  'label': 'Dark Water Research',
   'passive': {
     'departing': [
       'Gain +$2$ insanity.'
@@ -140,7 +103,7 @@ const innovations = {
   }
  },
  'Destiny': {
-  'tags': ['faith'],
+  'label': 'Destiny',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -151,9 +114,7 @@ const innovations = {
   }
  },
  'Dragon Speech': {
-  'expansion': 'dragon king',
-  'campaign': ['Stars'],
-  'tags': ['starting'],
+  'label': 'Dragon Speech',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -164,15 +125,10 @@ const innovations = {
   }
  },
  'Drums': {
-  'parent': 'Language',
-  'tags': ['music', 'language'],
-  'action': true,
+  'label': 'Drums',
  },
  'Empire': {
-  'expansion': 'dragon king',
-  'parent': 'Bloodline',
-  'campaign': ['Stars'],
-  'tags': ['home', 'bloodline'],
+  'label': 'Empire',
   'passive': {
     'newborn': [
       'Gain +$1$ strength.',
@@ -181,14 +137,10 @@ const innovations = {
   }
  },
  'Face Painting': {
-  'parent': 'Paint',
-  'tags': ['art', 'paint'],
-  'action': true,
+  'label': 'Face Painting',
  },
  'Family': {
-  'parent': 'Hovel',
-  'campaign': ['Lantern', 'Sun'],
-  'tags': ['home', 'hovel'],
+  'label': 'Family',
   'passive': {
     'departing': [
       'Gain +$1$ survival.'
@@ -202,9 +154,7 @@ const innovations = {
   }
  },
  'Filleting Table': {
-  'expansion': 'sunstalker',
-  'tags': ['science'],
-  'action': true,
+  'label': 'Filleting Table',
   'passive': {
     'settlement': [
       'Once per settlement phase, if the <b>returning survivors</b> are victorious, gain 1 random basic resource.'
@@ -212,7 +162,7 @@ const innovations = {
   }
  },
  'Final Fightning Art': {
-  'tags': ['education'],
+  'label': 'Final Fightning Art',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -223,9 +173,7 @@ const innovations = {
   }
  },
  'Forbidden Dance': {
-  'parent': 'Drums',
-  'tags': ['music', 'drums'],
-  'action': true,
+  'label': 'Forbidden Dance',
   'passive': {
     'showdown': [
       'When a survivor uses <b>Synchronized Strike</b> secret fighting art reroll missed attack rolls once.',
@@ -233,8 +181,7 @@ const innovations = {
   }
  },
  'Guidepost': {
-  'tags': ['other'],
-  'action': true,
+  'label': 'Guidepost',
   'passive': {
     'departing': [
       'Gain +$1$ survival.'
@@ -242,9 +189,7 @@ const innovations = {
   }
  },
  'Hands of the Sun': {
-  'expansion': 'sunstalker',
-  'tags': ['faith'],
-  'campaign': ['Sun'],
+  'label': 'Hands of the Sun',
   'passive': {
     'actions': [
       '<b class="action">Overcharge</b>: if you have any +1 strength tokens, you may spend 1 survival and remove them all to give your next attack this round <b>devastating 1</b>. Limit once per round.',
@@ -252,9 +197,7 @@ const innovations = {
   }
  },
  'Heart Flute': {
-  'parent': 'Forbidden Dance',
-  'tags': ['music', 'forbidden dance'],
-  'action': true,
+  'label': 'Heart Flute',
   'passive': {
     'showdown': [
       'When a survivor uses <b>Synchronized Strike</b> secret fighting art, their attack assist may spend 1 survival to change any monster <b>Reflex</b> to <b>Failure</b> before any wound attempts are made. Limit, once per attack.',
@@ -262,8 +205,7 @@ const innovations = {
   }
  },
  'Hovel': {
-  'parent': 'Language',
-  'tags': ['home', 'language'],
+  'label': 'Hovel',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -274,8 +216,7 @@ const innovations = {
   }
  },
  'Inner Lantern': {
-  'parent': 'Language',
-  'tags': ['faith', 'language'],
+  'label': 'Inner Lantern',
   'passive': {
     'actions': [
       '<b class="action">Surge</b>: Once per round spend 1 survival to gain +1 <b>Action</b> and use it immediately.',
@@ -283,8 +224,7 @@ const innovations = {
   }
  },
  'Language': {
-  'campaign': ['Lantern'],
-  'tags': ['starting'],
+  'label': 'Language',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -295,9 +235,7 @@ const innovations = {
   }
  },
  'Lantern Oven': {
-  // 'parent': 'Lantern Oven',
-  // 'campaign': ['Lantern'],
-  'tags': ['science', 'ammonia'],
+  'label': 'Lantern Oven',
   'passive': {
     'settlement': [
       'Gain <b>Heat</b>.',
@@ -308,19 +246,13 @@ const innovations = {
   }
  },
  'Momento Mori': {
-  'parent': 'Pictograph',
-  'tags': ['art', 'pictograph'],
-  'action': true,
+  'label': 'Momento Mori',
  },
  'Nightmare Training': {
-  'parent': 'Nightmare Training',
-  'tags': ['education', 'symposium'],
-  'action': true,
+  'label': 'Nightmare Training',
  },
  'Nigredo': {
-  'expansion': 'gorm',
-  'tags': ['science', 'gormchymy'],
-  'action': true,
+  'label': 'Nigredo',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -328,8 +260,7 @@ const innovations = {
   }
  },
  'Paint': {
-  'parent': 'Language',
-  'tags': ['art', 'language'],
+  'label': 'Paint',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -340,15 +271,10 @@ const innovations = {
   }
  },
  'Partnership': {
-  'parent': 'Hovel',
-  'tags': ['home', 'hovel'],
-  'action': true,
+  'label': 'Partnership',
  },
  'Petal Spiral': {
-  'expansion': 'flower knight',
-  'parent': 'Forbidden Dance',
-  'tags': ['music', 'forbidden dance'],
-  'action': true,
+  'label': 'Petal Spiral',
   'passive': {
     'departing': [
       'Regardless of their Hunt XP, survivors may select Sword for their Weapon Proficiency.'
@@ -356,8 +282,7 @@ const innovations = {
   }
  },
  'Pictograph': {
-  'parent': 'Paint',
-  'tags': ['art', 'paint'],
+  'label': 'Pictograph',
   'passive': {
     'showdown': [
       'At the start of a survivors\'s act they may decide to skip their act and - <b class="event-trigger" target="run away">Run Away</b>.',
@@ -368,9 +293,7 @@ const innovations = {
   }
  },
  'Pottery': {
-  'parent': 'Sculpture',
-  'tags': ['art', 'sculpture'],
-  'action': true,
+  'label': 'Pottery',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -378,9 +301,7 @@ const innovations = {
   }
  },
  'Radiating Orb': {
-  'expansion': 'dragon king',
-  'campaign': ['Stars'],
-  'tags': ['science'],
+  'label': 'Radiating Orb',
   'passive': {
     'settlement': [
       'Gain <b>Heat</b>.',
@@ -395,30 +316,19 @@ const innovations = {
   }
  },
  'Records': {
-  'parent': 'Storytelling',
-  'tags': ['education', 'storytelling'],
-  'action': true,
+  'label': 'Records',
  },
  'Round Stone Training': {
-  'expansion': 'dung beetle knight',
-  'parent': 'Nightmare Training',
-  'tags': ['education', 'nightmare training'],
-  'action': true,
+  'label': 'Round Stone Training',
  },
  'Rubedo': {
-  'expansion': 'gorm',
-  'parent': 'Citrinitas',
-  'tags': ['science', 'gormchymy', 'citrinas'],
-  'action': true,
+  'label': 'Rubedo',
  },
  'Sacrifice': {
-  'parent': 'Shrine',
-  'tags': ['faith', 'shrine'],
-  'action': true,
+  'label': 'Sacrifice',
  },
  'Saga': {
-  'parent': 'Song of the Brave',
-  'tags': ['music', 'song of the brave'],
+  'label': 'Saga',
   'passive': {
     'newborn': [
       'Gain +$2$ courage.',
@@ -428,11 +338,7 @@ const innovations = {
   }
  },
  'Sauna Shrine': {
-  'expansion': 'sunstalker',
-  'parent': 'Hands of the Sun',
-  'tags': ['faith', 'hands of the sun'],
-  'campaign': ['Sun'],
-  'action': true,
+  'label': 'Sauna Shrine',
   'passive': {
     'departing': [
       'When survivors <b>depart</b> for a Nemesis Encounter or Special Showdown, they gain +10 survival.'
@@ -440,29 +346,16 @@ const innovations = {
   }
  },
  'Scarification': {
-  'parent': 'Inner Lantern',
-  'tags': ['faith', 'inner lantern'],
-  'action': true,
+  'label': 'Scarification',
  },
  'Scrap Smelting': {
-  'parent': 'Lantern Oven',
-  'tags': ['science', 'lantern oven'],
-  'action': true,
-  'num_actions': 2,
-  'action_disabler': {
-    1: {'location': ['Blacksmith']},
-  },
+  'label': 'Scrap Smelting',
  },
  'Scupture': {
-  'parent': 'Paint',
-  'tags': ['art', 'paint'],
-  'action': true,
+  'label': 'Scupture',
  },
  'Settlement Watch': {
-  'expansion': 'manhunter',
-  'parent': 'Hovel',
-  'tags': ['home', 'hovel'],
-  'action': true,
+  'label': 'Settlement Watch',
   'passive': {
     'departing': [
       'When survivors <b>depart</b> for a Nemesis Encounter or Special Showdown, they gain +2 survival.'
@@ -470,19 +363,13 @@ const innovations = {
   }
  },
  'Shadow Dancing': {
-  'expansion': 'sunstalker',
-  'parent': 'Hovel',
-  'tags': ['home', 'hovel'],
-  'action': true,
+  'label': 'Shadow Dancing',
  },
  'Shrine': {
-  'parent': 'Inner Lantern',
-  'tags': ['faith', 'inner lantern'],
-  'action': true,
+  'label': 'Shrine',
  },
  'Song of the Brave': {
-  'parent': 'Drums',
-  'tags': ['music', 'drums'],
+  'label': 'Song of the Brave',
   'passive': {
     'showdown': [
       'On <b>arrival</b>, each non-deaf survivor may remove 1 negative attribute token.',
@@ -493,24 +380,16 @@ const innovations = {
   }
  },
  'Stoic Statue': {
-  'expansion': 'lion knight',
-  'tags': ['other'],
-  'action': true,
+  'label': 'Stoic Statue',
  },
  'Black Mask': {
-  'expansion': 'lion knight',
-  'tags': ['other'],
-  'action': true,
+  'label': 'Black Mask',
  },
  'White Mask': {
-  'expansion': 'lion knight',
-  'tags': ['other'],
-  'action': true,
+  'label': 'White Mask',
  },
  'Storytelling': {
-  'parent': 'Symposium',
-  'tags': ['education', 'symposium'],
-  'action': true,
+  'label': 'Storytelling',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -518,18 +397,10 @@ const innovations = {
   }
  },
  'Subterranean Agriculture': {
-  'expansion': 'dung beetle knight',
-  'tags': ['science'],
-  'action': true,
-  'num_actions': 2,
-  'action_disabler': {
-    1: {'location': ['Wet Resin Crafter']},
-  },
+  'label': 'Subterranean Agriculture',
  },
  'Sun Language': {
-  'expansion': 'sunstalker',
-  'tags': ['starting'],
-  'campaign': ['Sun'],
+  'label': 'Sun Language',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -540,8 +411,7 @@ const innovations = {
   }
  },
  'Symposium': {
-  'parent': 'Language',
-  'tags': ['education', 'language'],
+  'label': 'Symposium',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -550,8 +420,7 @@ const innovations = {
   }
  },
  'The Knowedge Worm': {
-  'expansion': 'lion god',
-  'tags': ['other'],
+  'label': 'The Knowedge Worm',
   'passive': {
     'settlement': [
       'At the start of settlement phase add 1 scrap to settlement storage',
@@ -564,7 +433,7 @@ const innovations = {
   }
  },
  'Ultimate Weapon': {
-  'tags': ['science'],
+  'label': 'Ultimate Weapon',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -575,14 +444,7 @@ const innovations = {
   }
  },
  'Umbilical Bank': {
-  'expansion': 'sunstalker',
-  'tags': ['science'],
-  'campaign': ['Sun'],
-  'action': true,
-  'num_actions': 2,
-  'action_disabler': {
-    1: {'innovation': ['Pottery']},
-  },
+  'label': 'Umbilical Bank',
   'passive': {
     'newborn': [
       'When a new survivor is born, you may add 1 <b>Life String</b> strange resource to storage.',
@@ -590,10 +452,7 @@ const innovations = {
   }
  },
  'War Room': {
-  'expansion': 'manhunter',
-  'parent': 'Storytelling',
-  'tags': ['education', 'storytelling'],
-  'action': true,
+  'label': 'War Room',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -604,7 +463,7 @@ const innovations = {
   }
  },
  'Accept Darkness': {
-  'tags': ['principle', 'society'],
+  'label': 'Accept Darkness',
   'passive': {
     'all': [
       'Add +2 to all <b>Brain Trauma</b> rolls.',
@@ -612,7 +471,7 @@ const innovations = {
   }
  },
  'Barbaric': {
-  'tags': ['principle', 'conviction'],
+  'label': 'Barbaric',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -623,7 +482,7 @@ const innovations = {
   }
  },
  'Cannibalize': {
-  'tags': ['principle', 'death'],
+  'label': 'Cannibalize',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -634,7 +493,7 @@ const innovations = {
   }
  },
  'Collective Toil': {
-  'tags': ['principle', 'society'],
+  'label': 'Collective Toil',
   'passive': {
     'settlement': [
       'At the start of the settlement phase, gain +1 <b>Endeavor</b> for every 10 population.',
@@ -642,7 +501,7 @@ const innovations = {
   }
  },
  'Graves': {
-  'tags': ['principle', 'death'],
+  'label': 'Graves',
   'passive': {
     'settlement': [
       'When a survivor dies during the settlement phase, gain +1 <b>Endeavor</b>.',
@@ -659,7 +518,7 @@ const innovations = {
   }
  },
  'Protect the Young': {
-  'tags': ['principle', 'birth', 'new life'],
+  'label': 'Protect the Young',
   'passive': {
     'settlement': [
       'When rolling on the <b class="event">Intimacy</b> story event, roll twice and pick 1 result.',
@@ -667,7 +526,7 @@ const innovations = {
   }
  },
  'Romantic': {
-  'tags': ['principle', 'conviction'],
+  'label': 'Romantic',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -678,7 +537,7 @@ const innovations = {
   }
  },
  'Survival of the Fittest': {
-  'tags': ['principle', 'birth', 'new life'],
+  'label': 'Survival of the Fittest',
   'passive': {
     'settlement': [
       'Survival Limit +$1$',
@@ -698,5 +557,5 @@ const innovations = {
 }
 
 module.exports = {
- innovations,
+ texts,
 }

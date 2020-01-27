@@ -2,7 +2,7 @@ const { app } = require('electron').remote
 
 const { createToc, titleCase, generate_events_table } = require('./../ui/events')
 const { clone } = require('./../ui/glossary')
-const { md_to_html_2, is_promo_event, get_sequence } = require('./../ui/hunt_events_table')
+const { md_to_html_2, is_promo_event, get_sequence, init_hunt_events } = require('./../ui/hunt_events_table')
 const { createMenuButton, createReference, createSevereTables, createInnovationsList, createLocationsList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
@@ -466,6 +466,7 @@ module.exports = class HuntScene {
       createReference()
       createInnovationsList()
       createLocationsList()
+      init_hunt_events()
 
       $('#quaries_table').hide()
       $('#random_event_icon').hide()
