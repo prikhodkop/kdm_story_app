@@ -3,7 +3,7 @@ const { app } = require('electron').remote
 const { createAbout } = require('./../ui/about')
 const { createToc } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
-const { createMenuButton, createInnovationsList, createLocationsList } = require('./../ui/menu')
+const { createMenuButton, createReference, createInnovationsList, createLocationsList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved, setSettings, saveSettings, initSettings } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
@@ -68,6 +68,7 @@ module.exports = class IndexScene {
     createAbout(version)
     createInnovationsList()
     createLocationsList()
+    createReference()
     addSettings(settings)
     let gallery = setupCampaignSelect()
 

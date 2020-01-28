@@ -428,7 +428,7 @@ function get_representation (word) {
      return '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+pathToAssetL('images/reference/Survivor Statuses/'+word+'.jpg')+'"/>'
    } else {
      let result = '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+pathToAssetL('images/reference/Survivor Statuses/'+word+'.jpg')+'"/>'
-     return result+'<b style="font-size:1.3em;'+header_style+'">'+word+'</b> <i style="font-size:0.9em;color:#ed553d;">(survivor status)</i> <hr/><div class="bottom-reference">'+survivor_statuses[word]['description']+'</div>'
+     return result+'<b style="font-size:1.3em;'+header_style+'">'+survivor_statuses[word]['label']+'</b> <i style="font-size:0.9em;color:#ed553d;">(survivor status)</i> <hr/><div class="bottom-reference">'+survivor_statuses[word]['description']+'</div>'
    }
   // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fighting art)</i> <hr/>'+fighting_arts[word]
   return '<img id=reference-image style="width:60%;float:left;padding-bottom:10px;filter: drop-shadow(0 0 5px #333);" src="' + pathToAssetL('images/reference/Survivor Statuses/' + word + '.jpg') + '"/>'
