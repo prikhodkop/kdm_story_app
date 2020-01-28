@@ -15,6 +15,7 @@ function readFile (path, app_path='', lang='', return_type='file') {
 
   if (app_path == 'root') {
     final_path = app.getAppPath() + '/' // app.getAppPath() +
+    final_path = final_path.replace('//', '/')
   }
   if (app_path == 'override') {
     final_path = app.getPath('userData') + '/override/'
