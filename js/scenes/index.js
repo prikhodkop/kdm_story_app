@@ -98,7 +98,7 @@ module.exports = class IndexScene {
 
     // console.log(subtitles['intro'][lang])
     if (settings['subtitles'] == 'On') {
-      configureSubtitle(readFile(pathToAssetL('video/intro.srt', false), 'root'))
+      configureSubtitle(readFile(pathToAssetL('video/intro.srt', false)))
     }
 
     if ((settings['narration'] == 'Off') && (settings['music'] == 'Off')) {

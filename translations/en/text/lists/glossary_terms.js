@@ -200,7 +200,6 @@ const glossary_terms = {
  'Lantern Year': 'Survivors\' basic unit of time. The settlement typically advances by one lantern year as part of each Settlement Phase.',
  'Last to Wound': 'The survivor who last wounded the monster.',
  'Leap': 'A Dragon Armor set bonus.Spend Activation and Movement. You leap into the air! Place your survivor on an unoccupied space exactly 5 space away in a straight line, then activate a melee weapon and attack with +2 accuracy and +5 strength.',
- 'Last to Wound': 'The survivor who last wounded the monster.',
  'Leather': 'A gear keyword. Cured hides are a crucial component of this gear.',
  // 'Legendcaller':'An ability. Once a lifetime, on a hunt board space after Overwhelming Darkness, in place of rolling a random hunt event, use \"53\" as your result.',
  'Legs': 'A survivor hit location. \nDamage to the legs beyond the heavy injury box will prompt a roll on the Legs section of the Severe Injury table.',
