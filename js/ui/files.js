@@ -14,7 +14,7 @@ function readFile (path, app_path='', lang='', return_type='file') {
   let final_path = ''
 
   if (app_path == 'root') {
-    final_path = '/' // app.getAppPath() +
+    final_path = app.getAppPath() + '/' // app.getAppPath() +
   }
   if (app_path == 'override') {
     final_path = app.getPath('userData') + '/override/'
@@ -54,23 +54,15 @@ function checkFile (path, app_path='', lang='', check=true) {
 
   console.log('File path: '+final_path)
 
-  let cdnHost = (window.globals.template.cdnHost || '').replace(/^[.\/]+/, '')
+  // let cdnHost = (window.globals.template.cdnHost || '').replace(/^[.\/]+/, '')
 
 
   // if (fs.existsSync(final_path)) {
   if (check) {
-    if (cdnHost.length) {
-      if (fs.existsSync(final_path)) {
-        return final_path
-      } else {
-        return ''
-      }
+    if (fs.existsSync(final_path)) {
+      return final_path
     } else {
-      if (imageExists(cdnUrl(final_path))) {
-        return final_path
-      } else {
-        return ''
-      }
+      return ''
     }
   } else {
     return final_path
