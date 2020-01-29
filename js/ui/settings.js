@@ -13,10 +13,16 @@ module.exports = {
   setSettings,
   saveSettings,
   silentSaveSettings,
-  initSettings
+  initSettings,
+  defaultLang,
+}
+
+function defaultLang(){
+  return settings_schema['language']['default']
 }
 
 function initSettings() {
+  set_language_options()
   let settings = getSettings();
   sessionStorage.setItem('settings', JSON.stringify(settings))
   // console.log('Setting initialized!')
@@ -38,8 +44,14 @@ function getSettings () {
   } catch (e) {
   }
 
+   let result = {...settings_string_default, ...settings_string }
+
+   if (!(window.globals.translations['languages'].includes(result['language']))) {
+     result['language'] = settings_schema['language']['default']
+   }
+
   // if no user options are saved or new option appears - value from settings.json is used
-  return {...settings_string_default, ...settings_string }
+  return result
 }
 
 function addSettings (settings) {
@@ -363,6 +375,10 @@ var expansion_options = [
   'All content',
 ]
 
+function set_language_options() {
+  settings_schema['language']['enum'] = window.globals.translations['languages']
+}
+
 var settings_schema = {
   'campaign': {
     'type': 'option',
@@ -388,13 +404,13 @@ var settings_schema = {
   'language': {
     'type': 'option',
     'title': 'Language',
-    'description': 'Sets the app language.<br/><br/><b>Now works with video subtitles only.</b>',
-    'default': 'en',
-    'enum': [
-      'en',
-      'ru',
-      'pl'
-    ],
+    'description': 'Sets the app language.',
+    'default': 'English',
+    'enum': []
+    //   'en',
+    //   'ru',
+    //   'pl'
+    // ],
   },
   'music': {
     'type': 'option',

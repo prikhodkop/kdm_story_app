@@ -1,4 +1,4 @@
-const {setSettings, getSettings, silentSaveSettings} = require('./../ui/settings')
+const {setSettings, getSettings, silentSaveSettings, defaultLang} = require('./../ui/settings')
 const { quary_events } = require('./../lists/quary_events')
 
 const { pathToAsset } = require('./../ui/assets_loader')
@@ -28,7 +28,7 @@ function init_hunt_events() {
   //## Random Hunt Events Localization ##
   found = false
   let random_hunt_events_local
-  if (!(lang == 'en')) {
+  if (!(lang == defaultLang())) {
     console.log('Random Hunt Events Trying: '+lang)
     try {
       random_hunt_events_local = require('../../translations/'+lang+'/text/lists/random_hunt_events')
@@ -38,7 +38,7 @@ function init_hunt_events() {
     }
   }
 
-  let random_hunt_events_en = require('../../translations/en/text/lists/random_hunt_events')
+  let random_hunt_events_en = require('../../translations/'+defaultLang()+'/text/lists/random_hunt_events')
 
   // if (found) {
     for (let key in random_hunt_events_en.random_hunt_events) {
@@ -53,7 +53,7 @@ function init_hunt_events() {
   //## Promo Hunt Events Localization ##
   found = false
   let promo_hunt_events_local
-  if (!(lang == 'en')) {
+  if (!(lang == defaultLang())) {
     console.log('Promo Hunt Events Trying: '+lang)
     try {
       promo_hunt_events_local = require('../../translations/'+lang+'/text/lists/promo_hunt_events')
@@ -63,7 +63,7 @@ function init_hunt_events() {
     }
   }
 
-  var promo_hunt_events_en = require('../../translations/en/text/lists/promo_hunt_events')
+  var promo_hunt_events_en = require('../../translations/'+defaultLang()+'/text/lists/promo_hunt_events')
 
   for (let key in promo_hunt_events_en.promo_hunt_events) {
      if ((found)&&(key in promo_hunt_events_local.promo_hunt_events)) {

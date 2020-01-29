@@ -161,7 +161,7 @@ module.exports = class VideoScene {
     createMenuButton()
     createToc()
     if (settings['subtitles'] == 'On') {
-      configureSubtitle(readFile(pathToAssetL('video/'+ myself + '.srt', false)))
+      configureSubtitle(readFile(pathToAssetL('video/'+ myself + '.srt', false), 'root'))
     };
     addSettings(settings)
 

@@ -1,4 +1,7 @@
 const { app } = require('electron').remote
+const { pathToAsset, pathToAssetL, initAssets } = require('./../ui/assets_loader')
+
+initAssets();
 
 const { createAbout } = require('./../ui/about')
 const { createToc } = require('./../ui/events')
@@ -9,8 +12,6 @@ const { render } = require('./../ui/template-renderer')
 const { cdnUrl } = require('./../ui/template-cdnurl')
 const { addTimer } = require('./../ui/timer')
 const { setTransition } = require('./../ui/transition')
-
-const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
 module.exports = class IndexScene {
   render () {
@@ -34,6 +35,10 @@ module.exports = class IndexScene {
     initSettings();
 
     var settings = getSettings()
+
+    // var tree = dirTree(app.getAppPath()+'/translations');
+
+    // console.log('Tree22: '+JSON.stringify(tree))
 
 
     console.log('Settings:')
@@ -98,7 +103,7 @@ module.exports = class IndexScene {
 
     // console.log(subtitles['intro'][lang])
     if (settings['subtitles'] == 'On') {
-      configureSubtitle(readFile(pathToAssetL('video/intro.srt', false)))
+      configureSubtitle(readFile(pathToAssetL('video/intro.srt', false), 'root'))
     }
 
     if ((settings['narration'] == 'Off') && (settings['music'] == 'Off')) {

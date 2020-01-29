@@ -4,6 +4,8 @@ const InjectPlugin = require('webpack-inject-plugin').default
 const path = require('path')
 var webpack = require('webpack');
 
+const DirectoryTreePlugin = require('directory-tree-webpack-plugin')
+
 const isDev = (process.env.npm_lifecycle_script || '').indexOf('development') !== -1
 
 module.exports = {
@@ -63,12 +65,11 @@ module.exports = {
           }
         })(),
       }),
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify('production'),
-          APP_ENV: JSON.stringify('browser')
-        }
-      }),
+      new DirectoryTreePlugin({
+        dir: './translations/',
+        path: './_content.json',
+        extensions: /\.(jpg|png|js|srt|mp3|mp4)/
+      })
     ]
         .concat((() => {
             // only set cdnHost on production build

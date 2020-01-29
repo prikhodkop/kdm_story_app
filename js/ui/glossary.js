@@ -1,4 +1,4 @@
-const { getSettings } = require('./../ui/settings')
+const { getSettings, defaultLang } = require('./../ui/settings')
 const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
 var glossary_terms
@@ -28,112 +28,112 @@ function init_glossary() {
 
   ///
   data_local = ''
-  if (!(lang == 'en')) {
+  if (!(lang == defaultLang())) {
     try {
       data_local = require('../../translations/'+lang+'/'+'text/lists/fighting_arts_texts')
     } catch(e) {
     }
   }
-  data_en = require('../../translations/en/'+'text/lists/fighting_arts_texts')
+  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/fighting_arts_texts')
   fighting_arts = localized_require(fighting_arts, data_local, data_en, ['label', 'description'])
 
   ///
   data_local = ''
-  if (!(lang == 'en')) {
+  if (!(lang == defaultLang())) {
     try {
       data_local = require('../../translations/'+lang+'/'+'text/lists/secret_fighting_arts_texts')
     } catch(e) {
     }
   }
-  data_en = require('../../translations/en/'+'text/lists/secret_fighting_arts_texts')
+  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/secret_fighting_arts_texts')
   secret_fighting_arts = localized_require(secret_fighting_arts, data_local, data_en, ['label', 'description'])
 
   ///
   data_local = ''
-  if (!(lang == 'en')) {
+  if (!(lang == defaultLang())) {
     try {
       data_local = require('../../translations/'+lang+'/'+'text/lists/disorders_texts')
     } catch(e) {
     }
   }
-  data_en = require('../../translations/en/'+'text/lists/disorders_texts')
+  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/disorders_texts')
   disorders = localized_require(disorders, data_local, data_en, ['label', 'description'])
 
   ///
   data_local = ''
-  if (!(lang == 'en')) {
+  if (!(lang == defaultLang())) {
     try {
       data_local = require('../../translations/'+lang+'/'+'text/lists/innovations_texts')
     } catch(e) {
     }
   }
-  data_en = require('../../translations/en/'+'text/lists/innovations_texts')
+  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/innovations_texts')
   innovations = localized_require(innovations, data_local, data_en, ['label', 'passive'])
 
   ///
   data_local = ''
-  if (!(lang == 'en')) {
+  if (!(lang == defaultLang())) {
     try {
       data_local = require('../../translations/'+lang+'/'+'text/lists/abilities_texts')
     } catch(e) {
     }
   }
-  data_en = require('../../translations/en/'+'text/lists/abilities_texts')
+  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/abilities_texts')
   abilities = localized_require(abilities, data_local, data_en, ['label', 'description'])
 
   ///
   data_local = ''
-  if (!(lang == 'en')) {
+  if (!(lang == defaultLang())) {
     try {
       data_local = require('../../translations/'+lang+'/'+'text/lists/armor_sets_texts')
     } catch(e) {
     }
   }
-  data_en = require('../../translations/en/'+'text/lists/armor_sets_texts')
+  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/armor_sets_texts')
   armor_sets = localized_require(armor_sets, data_local, data_en, ['label'])
 
   ///
   data_local = ''
-  if (!(lang == 'en')) {
+  if (!(lang == defaultLang())) {
     try {
       data_local = require('../../translations/'+lang+'/'+'text/lists/settlement_locations_texts')
     } catch(e) {
     }
   }
-  data_en = require('../../translations/en/'+'text/lists/settlement_locations_texts')
+  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/settlement_locations_texts')
   settlement_locations = localized_require(settlement_locations, data_local, data_en, ['label'])
 
   //## Settlement Events
   data_local = ''
-  if (!(lang == 'en')) {
+  if (!(lang == defaultLang())) {
     try {
       data_local = require('../../translations/'+lang+'/'+'text/lists/settlement_events_texts')
     } catch(e) {
     }
   }
-  data_en = require('../../translations/en/'+'text/lists/settlement_events_texts')
+  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/settlement_events_texts')
   settlement_events = localized_require(settlement_events, data_local, data_en, ['label'])
 
   //## Survivor Statuses
   data_local = ''
-  if (!(lang == 'en')) {
+  if (!(lang == defaultLang())) {
     try {
       data_local = require('../../translations/'+lang+'/'+'text/lists/survivor_statuses_texts')
     } catch(e) {
     }
   }
-  data_en = require('../../translations/en/'+'text/lists/survivor_statuses_texts')
+  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/survivor_statuses_texts')
   survivor_statuses = localized_require(survivor_statuses, data_local, data_en, ['label', 'description'])
 
   //## Glossary Terms (list changed fully!)
   data_local
-  if (!(lang == 'en')) {
+  if (!(lang == defaultLang())) {
     try {
       data_local = require('../../translations/'+lang+'/'+'text/lists/glossary_terms')
     } catch(e) {
     }
   }
-  data_en = require('../../translations/en/text/lists/glossary_terms')
+  data_en = require('../../translations/'+defaultLang()+'/text/lists/glossary_terms')
   if (data_local == '') {
     glossary_terms = data_en.glossary_terms
   } else {

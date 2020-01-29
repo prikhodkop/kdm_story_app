@@ -1,9 +1,8 @@
 const { events } = require('./../lists/story_events')
 const { loadJSON, pathToAsset } = require('./assets_loader')
 const { cdnUrl } = require('./template-cdnurl')
-// const lang = 'en'
 
-const { getSettings } = require('./settings')
+const { getSettings, defaultLang } = require('./settings')
 
 const { app } = require('electron').remote
 
@@ -88,7 +87,7 @@ function create_events_table (events) {
   let found = false
 
   console.log('Current language: '+lang)
-  if (!(lang == 'en')) {
+  if (!(lang == defaultLang())) {
     console.log('Trying: '+lang)
     try {
       var { story_events_labels } = require('../../translations/'+lang+'/text/lists/story_events_labels')
@@ -98,8 +97,8 @@ function create_events_table (events) {
   }
 
   if (!found) {
-    console.log('Trying: en')
-    var { story_events_labels } = require('../../translations/en/text/lists/story_events_labels')
+    console.log('Trying: English')
+    var { story_events_labels } = require('../../translations/'+defaultLang()+'/text/lists/story_events_labels')
   }
 
 
