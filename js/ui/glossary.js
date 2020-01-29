@@ -3,19 +3,37 @@ const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
 var glossary_terms
 
-var { abilities } = require('./../lists/abilities')
-var { armor_sets } = require('./../lists/armor_sets')
-var { disorders } = require('./../lists/disorders')
-var { fighting_arts, secret_fighting_arts } = require('./../lists/fighting_arts')
-var { gear_list } = require('./../lists/gear_list')
-// var { glossary_terms } = require('./../lists/glossary_terms')
+var lang = getSettings()['language']
 
-var { innovations } = require('./../lists/innovations')
-var { resources } = require('./../lists/resources')
-var { settlement_events } = require('./../lists/settlement_events')
-var { settlement_locations } = require('./../lists/settlement_locations')
-var { survivor_statuses } = require('./../lists/survivor_statuses')
-var { terrain } = require('./../lists/terrain')
+if ((window.globals.glossary === undefined)||(window.globals.glossary[lang] === undefined)||(window.globals.glossary[lang].fighting_arts === undefined)) {
+  console.log('!!!+ I load resources')
+  var { abilities } = require('./../lists/abilities')
+  var { armor_sets } = require('./../lists/armor_sets')
+  var { disorders } = require('./../lists/disorders')
+  var { fighting_arts, secret_fighting_arts } = require('./../lists/fighting_arts')
+  var { gear_list } = require('./../lists/gear_list')
+  var { innovations } = require('./../lists/innovations')
+  var { resources } = require('./../lists/resources')
+  var { settlement_events } = require('./../lists/settlement_events')
+  var { settlement_locations } = require('./../lists/settlement_locations')
+  var { survivor_statuses } = require('./../lists/survivor_statuses')
+  var { terrain } = require('./../lists/terrain')
+
+} else {
+  console.log('!!!- I skip load resources')
+  abilities = window.globals.glossary[lang].abilities
+  armor_sets = window.globals.glossary[lang].armor_sets
+  disorders = window.globals.glossary[lang].disorders
+  fighting_arts = window.globals.glossary[lang].fighting_arts
+  secret_fighting_arts = window.globals.glossary[lang].secret_fighting_arts
+  gear_list = window.globals.glossary[lang].gear_list
+  innovations = window.globals.glossary[lang].innovations
+  resources = window.globals.glossary[lang].resources
+  settlement_events = window.globals.glossary[lang].settlement_events
+  settlement_locations = window.globals.glossary[lang].settlement_locations
+  survivor_statuses = window.globals.glossary[lang].survivor_statuses
+  terrain = window.globals.glossary[lang].terrain
+}
 
 var data_en
 var data_local
@@ -26,118 +44,197 @@ function init_glossary() {
 
   let data_local, data_en
 
-  ///
-  data_local = ''
-  if (!(lang == defaultLang())) {
-    try {
-      data_local = require('../../translations/'+lang+'/'+'text/lists/fighting_arts_texts')
-    } catch(e) {
-    }
+  if (window.globals.glossary === undefined) {
+    window.globals.glossary = {}
   }
-  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/fighting_arts_texts')
-  fighting_arts = localized_require(fighting_arts, data_local, data_en, ['label', 'description'])
+
+  if (window.globals.glossary[lang] === undefined) {
+    window.globals.glossary[lang] = {}
+  }
 
   ///
-  data_local = ''
-  if (!(lang == defaultLang())) {
-    try {
-      data_local = require('../../translations/'+lang+'/'+'text/lists/secret_fighting_arts_texts')
-    } catch(e) {
+  if (window.globals.glossary[lang].fighting_arts === undefined) {
+    data_local = ''
+    if (!(lang == defaultLang())) {
+      try {
+        data_local = require('../../translations/'+lang+'/'+'text/lists/fighting_arts_texts')
+      } catch(e) {
+      }
     }
+    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/fighting_arts_texts')
+    fighting_arts = localized_require(fighting_arts, data_local, data_en, ['label', 'description'])
+    window.globals.glossary[lang].fighting_arts = fighting_arts
+  } else {
+    fighting_arts = window.globals.glossary[lang].fighting_arts
   }
-  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/secret_fighting_arts_texts')
-  secret_fighting_arts = localized_require(secret_fighting_arts, data_local, data_en, ['label', 'description'])
+
+  if (window.globals.glossary[lang].gear_list === undefined) {
+    window.globals.glossary[lang].gear_list = gear_list
+  } else {
+    fighting_arts = window.globals.glossary[lang].fighting_arts
+  }
 
   ///
-  data_local = ''
-  if (!(lang == defaultLang())) {
-    try {
-      data_local = require('../../translations/'+lang+'/'+'text/lists/disorders_texts')
-    } catch(e) {
+  if (window.globals.glossary[lang].secret_fighting_arts === undefined) {
+    data_local = ''
+    if (!(lang == defaultLang())) {
+      try {
+        data_local = require('../../translations/'+lang+'/'+'text/lists/secret_fighting_arts_texts')
+      } catch(e) {
+      }
     }
+    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/secret_fighting_arts_texts')
+    secret_fighting_arts = localized_require(secret_fighting_arts, data_local, data_en, ['label', 'description'])
+    window.globals.glossary[lang].secret_fighting_arts = secret_fighting_arts
+  } else {
+    secret_fighting_arts = window.globals.glossary[lang].secret_fighting_arts
   }
-  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/disorders_texts')
-  disorders = localized_require(disorders, data_local, data_en, ['label', 'description'])
 
   ///
-  data_local = ''
-  if (!(lang == defaultLang())) {
-    try {
-      data_local = require('../../translations/'+lang+'/'+'text/lists/innovations_texts')
-    } catch(e) {
+  if (window.globals.glossary[lang].disorders === undefined) {
+    data_local = ''
+    if (!(lang == defaultLang())) {
+      try {
+        data_local = require('../../translations/'+lang+'/'+'text/lists/disorders_texts')
+      } catch(e) {
+      }
     }
+    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/disorders_texts')
+    disorders = localized_require(disorders, data_local, data_en, ['label', 'description'])
+    window.globals.glossary[lang].disorders = disorders
+  } else {
+    disorders = window.globals.glossary[lang].disorders
   }
-  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/innovations_texts')
-  innovations = localized_require(innovations, data_local, data_en, ['label', 'passive'])
 
   ///
-  data_local = ''
-  if (!(lang == defaultLang())) {
-    try {
-      data_local = require('../../translations/'+lang+'/'+'text/lists/abilities_texts')
-    } catch(e) {
+  if (window.globals.glossary[lang].innovations === undefined) {
+    data_local = ''
+    if (!(lang == defaultLang())) {
+      try {
+        data_local = require('../../translations/'+lang+'/'+'text/lists/innovations_texts')
+      } catch(e) {
+      }
     }
+    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/innovations_texts')
+    innovations = localized_require(innovations, data_local, data_en, ['label', 'passive'])
+    window.globals.glossary[lang].innovations = innovations
+  } else {
+    innovations = window.globals.glossary[lang].innovations
   }
-  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/abilities_texts')
-  abilities = localized_require(abilities, data_local, data_en, ['label', 'description'])
 
   ///
-  data_local = ''
-  if (!(lang == defaultLang())) {
-    try {
-      data_local = require('../../translations/'+lang+'/'+'text/lists/armor_sets_texts')
-    } catch(e) {
+  if (window.globals.glossary[lang].abilities === undefined) {
+    data_local = ''
+    if (!(lang == defaultLang())) {
+      try {
+        data_local = require('../../translations/'+lang+'/'+'text/lists/abilities_texts')
+      } catch(e) {
+      }
     }
+    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/abilities_texts')
+    abilities = localized_require(abilities, data_local, data_en, ['label', 'description'])
+    window.globals.glossary[lang].abilities = abilities
+  } else {
+    abilities = window.globals.glossary[lang].abilities
   }
-  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/armor_sets_texts')
-  armor_sets = localized_require(armor_sets, data_local, data_en, ['label'])
 
   ///
-  data_local = ''
-  if (!(lang == defaultLang())) {
-    try {
-      data_local = require('../../translations/'+lang+'/'+'text/lists/settlement_locations_texts')
-    } catch(e) {
+  if (window.globals.glossary[lang].armor_sets === undefined) {
+    data_local = ''
+    if (!(lang == defaultLang())) {
+      try {
+        data_local = require('../../translations/'+lang+'/'+'text/lists/armor_sets_texts')
+      } catch(e) {
+      }
     }
+    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/armor_sets_texts')
+    armor_sets = localized_require(armor_sets, data_local, data_en, ['label'])
+    window.globals.glossary[lang].armor_sets = armor_sets
+  } else {
+    armor_sets = window.globals.glossary[lang].armor_sets
   }
-  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/settlement_locations_texts')
-  settlement_locations = localized_require(settlement_locations, data_local, data_en, ['label'])
+
+  ///
+  if (window.globals.glossary[lang].settlement_locations === undefined) {
+    data_local = ''
+    if (!(lang == defaultLang())) {
+      try {
+        data_local = require('../../translations/'+lang+'/'+'text/lists/settlement_locations_texts')
+      } catch(e) {
+      }
+    }
+    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/settlement_locations_texts')
+    settlement_locations = localized_require(settlement_locations, data_local, data_en, ['label'])
+    window.globals.glossary[lang].settlement_locations = settlement_locations
+  } else {
+    settlement_locations = window.globals.glossary[lang].settlement_locations
+  }
 
   //## Settlement Events
-  data_local = ''
-  if (!(lang == defaultLang())) {
-    try {
-      data_local = require('../../translations/'+lang+'/'+'text/lists/settlement_events_texts')
-    } catch(e) {
+  if (window.globals.glossary[lang].settlement_events === undefined) {
+    data_local = ''
+    if (!(lang == defaultLang())) {
+      try {
+        data_local = require('../../translations/'+lang+'/'+'text/lists/settlement_events_texts')
+      } catch(e) {
+      }
     }
+    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/settlement_events_texts')
+    settlement_events = localized_require(settlement_events, data_local, data_en, ['label'])
+    window.globals.glossary[lang].settlement_events = settlement_events
+  } else {
+    settlement_events = window.globals.glossary[lang].settlement_events
   }
-  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/settlement_events_texts')
-  settlement_events = localized_require(settlement_events, data_local, data_en, ['label'])
 
   //## Survivor Statuses
-  data_local = ''
-  if (!(lang == defaultLang())) {
-    try {
-      data_local = require('../../translations/'+lang+'/'+'text/lists/survivor_statuses_texts')
-    } catch(e) {
+  if (window.globals.glossary[lang].survivor_statuses === undefined) {
+    data_local = ''
+    if (!(lang == defaultLang())) {
+      try {
+        data_local = require('../../translations/'+lang+'/'+'text/lists/survivor_statuses_texts')
+      } catch(e) {
+      }
     }
+    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/survivor_statuses_texts')
+    survivor_statuses = localized_require(survivor_statuses, data_local, data_en, ['label', 'description'])
+    window.globals.glossary[lang].survivor_statuses = survivor_statuses
+  } else {
+    survivor_statuses = window.globals.glossary[lang].survivor_statuses
   }
-  data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/survivor_statuses_texts')
-  survivor_statuses = localized_require(survivor_statuses, data_local, data_en, ['label', 'description'])
+
+  if (window.globals.glossary[lang].terrain === undefined) {
+    data_local = ''
+    if (!(lang == defaultLang())) {
+      try {
+        data_local = require('../../translations/'+lang+'/'+'text/lists/terrain_texts')
+      } catch(e) {
+      }
+    }
+    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/terrain_texts')
+    terrain = localized_require(terrain, data_local, data_en, ['label', 'description'])
+    window.globals.glossary[lang].terrain = terrain
+  } else {
+    terrain = window.globals.glossary[lang].terrain
+  }
 
   //## Glossary Terms (list changed fully!)
-  data_local
-  if (!(lang == defaultLang())) {
-    try {
-      data_local = require('../../translations/'+lang+'/'+'text/lists/glossary_terms')
-    } catch(e) {
+  if (window.globals.glossary[lang].glossary_terms === undefined) {
+    data_local
+    if (!(lang == defaultLang())) {
+      try {
+        data_local = require('../../translations/'+lang+'/'+'text/lists/glossary_terms')
+      } catch(e) {
+      }
     }
-  }
-  data_en = require('../../translations/'+defaultLang()+'/text/lists/glossary_terms')
-  if (data_local == '') {
-    glossary_terms = data_en.glossary_terms
+    data_en = require('../../translations/'+defaultLang()+'/text/lists/glossary_terms')
+    if (data_local == '') {
+      glossary_terms = data_en.glossary_terms
+    } else {
+      glossary_terms = data_local.glossary_terms
+    }
+    window.globals.glossary[lang].glossary_terms = glossary_terms
   } else {
-    glossary_terms = data_local.glossary_terms
+    glossary_terms = window.globals.glossary[lang].glossary_terms
   }
   // data_en = require('../../translations/en/'+'text/lists/secret_fighting_arts_texts')
 }
@@ -437,7 +534,14 @@ function get_representation (word) {
   return '<img id=reference-image style="width:60%;float:left;padding-bottom:10px;filter: drop-shadow(0 0 5px #333);" src="' + pathToAssetL('images/reference/Innovations/' + word + '.jpg') + '"/>'
  } else if (word in terrain) {
   // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fighting art)</i> <hr/>'+fighting_arts[word]
-  return '<img id=reference-image style="width:60%;float:left;padding-bottom:10px;filter: drop-shadow(0 0 5px #333);" src="' + pathToAssetL('images/reference/Terrain/' + word + '.jpg') + '"/>'
+  // return '<img id=reference-image style="width:60%;float:left;padding-bottom:10px;filter: drop-shadow(0 0 5px #333);" src="' + pathToAssetL('images/reference/Terrain/' + word + '.jpg') + '"/>'
+    let header_style = ''
+    if (terrain[word]['description'] == '#') {
+      return '<img id=reference-image style="width:60%;padding-bottom:0.5em;" src="'+pathToAssetL('images/reference/Terrain/'+word+'.jpg')+'"/>'
+    } else {
+      let result = '<img id=reference-image style="width:60%;padding-bottom:0.5em;" src="'+pathToAssetL('images/reference/Terrain/'+word+'.jpg')+'"/>'
+      return result+'<div style="width:83%;display:fix;vertical-align:middle;"><b style="font-size:1.3em;'+header_style+'">'+terrain[word]['label']+'</b> <i style="font-size:0.9em;color:#ccc;">(terrain)</i> <hr/><div  class="bottom-reference">'+terrain[word]['description']+'</div></div></div>'
+    }
  }
 }
 

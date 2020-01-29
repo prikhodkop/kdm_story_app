@@ -86,21 +86,11 @@ function create_events_table (events) {
   let lang = getSettings()['language']
   let found = false
 
-  console.log('Current language: '+lang)
-  if (!(lang == defaultLang())) {
-    console.log('Trying: '+lang)
-    try {
-      var { story_events_labels } = require('../../translations/'+lang+'/text/lists/story_events_labels')
-      found = true
-    } catch(e) {
-    }
-  }
-
-  if (!found) {
-    console.log('Trying: English')
+  if ((lang == defaultLang())||window.globals.translations['paths'][lang].includes('translations/'+lang+'/text/lists/story_events_labels'+'.js')) {
+    var { story_events_labels } = require('../../translations/'+lang+'/text/lists/story_events_labels')
+  } else {
     var { story_events_labels } = require('../../translations/'+defaultLang()+'/text/lists/story_events_labels')
   }
-
 
   for (let i = 0; i < event_ids.length; i++) {
     events_table[event_ids[i]] = new Event(event_ids[i])
