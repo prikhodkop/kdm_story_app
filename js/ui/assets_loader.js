@@ -17,9 +17,18 @@ module.exports = {
   initAssets
 }
 
-const ContentTree = require('./../../_content.json')
+// const ContentTree = require('./../../_content.json')
 
 function initAssets() {
+
+  if (!(window.globals.translations === undefined)) {
+    return
+  }
+
+  // if (!(ContentTree === undefined)) {
+  let ContentTree = require('./../../_content.json')
+  // }
+
   let contents = {}
 
   contents['languages'] = []
@@ -36,7 +45,7 @@ function initAssets() {
 
   console.log('Tree2222: '+JSON.stringify(contents['paths']['Russian']))
 
-  sessionStorage.setItem('translations', JSON.stringify(contents))
+  // sessionStorage.setItem('translations', JSON.stringify(contents))
   window.globals.translations = contents
 
   // console.log('Init Localization State.')
@@ -79,19 +88,16 @@ function pathToAsset(path, localization='', cdn_change=true) {
       result = checkFile(path, '', defaultLang(), false)
     }
 
-    if (cdn_change) {
-      result = cdnUrl(result)
-    }
-    return result
-
   } else {
     result = checkFile(path, '', '', false)
     found = true
     // console.log('Bingo !')
-
-    if (cdn_change) {
-      result = cdnUrl(result)
-    }
-    return result
   }
+
+  if (cdn_change) {
+    result = cdnUrl(result.replace('./', '/'))
+  }
+
+  return result
+
 }

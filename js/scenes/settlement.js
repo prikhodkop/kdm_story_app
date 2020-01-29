@@ -1,15 +1,16 @@
 const { app } = require('electron').remote
 
+const { pathToAsset, pathToAssetL, initAssets } = require('./../ui/assets_loader')
+initAssets()
+
 const { createToc, generate_events_table } = require('./../ui/events')
 const { getSettlementEventPath, get_random_draws, get_events_options } = require('./../ui/glossary')
 const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
-const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved, initSettings } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { addDevelopment, openLocation, getDevelopmentState, setDevelopmentState } = require('./../ui/development')
-
-const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
 
 
@@ -39,6 +40,8 @@ module.exports = class SettlementScene {
     console.log(myself)
 
     // localStorage.clear();
+
+    initSettings();8
 
     var settings = getSettings()
     sessionStorage.setItem('settings', JSON.stringify(settings))

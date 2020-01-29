@@ -1,7 +1,7 @@
 const { app } = require('electron').remote
-const { pathToAsset, pathToAssetL, initAssets } = require('./../ui/assets_loader')
 
-initAssets();
+const { pathToAsset, pathToAssetL, initAssets } = require('./../ui/assets_loader')
+initAssets()
 
 const { createAbout } = require('./../ui/about')
 const { createToc } = require('./../ui/events')

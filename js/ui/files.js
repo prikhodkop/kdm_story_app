@@ -27,7 +27,7 @@ function readFile (path, app_path='', lang='', return_type='file') {
 
   final_path = final_path + path
 
-  console.log('File path read: '+final_path)
+  // console.log('File path read: '+final_path)
 
   if (return_type == 'file') {
       return fs.readFileSync(final_path)
@@ -55,7 +55,7 @@ function checkFile (path, app_path='', lang='', check=true) {
 
   final_path = final_path + path
 
-  console.log('File path check: '+final_path)
+  // console.log('File path check: '+final_path)
 
   // let cdnHost = (window.globals.template.cdnHost || '').replace(/^[.\/]+/, '')
 

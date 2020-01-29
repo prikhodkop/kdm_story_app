@@ -1,14 +1,15 @@
 const { app } = require('electron').remote
 
+const { pathToAsset, pathToAssetL, initAssets } = require('./../ui/assets_loader')
+initAssets()
+
 const { createToc, generate_events_table } = require('./../ui/events')
 const { createMenuButton, createReference, createSevereTables, createInnovationsList, createLocationsList } = require('./../ui/menu')
-const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved, initSettings } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
 const { addTimer, clearTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { addInnovation } = require('./../ui/development')
-
-const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
 // const { eventsSugar } = require('./../ui/events_sugar')
 
@@ -53,6 +54,8 @@ module.exports = class ImageScene {
     // #############
 
     console.log(myself)
+
+    initSettings();
 
     // let settings = JSON.parse(sessionStorage.getItem("settings"));
     var settings = getSettings()
