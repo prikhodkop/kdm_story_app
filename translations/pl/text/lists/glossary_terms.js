@@ -334,7 +334,7 @@ const glossary_terms = {
  'Włócznia [Spear]': 'ekwipunek z tym słowem kluczowym jest bronią: włócznia. Używając tej broni, Ocalali mogą zdobywać poziomy biegłości w posługiwaniu się włócznią.',
  'Specjalne starcie [Special Showdown]': 'specjalne starcie przerywa fazę osady. Po rozegraniu jego (niezależnie zwycięskiego czy przegranego), kontynuowana jest faza osady, tam gdzie została przerwana. Nie są generowane punkty działań ani nie wyzwala się nowe wydarzenia fabularne. Szczegółowe informacje o każdym specjalnym starciu, są opisane w wydarzeniu fabularnym lub innowacji która je wywołała.',
  'Szybkość (profil ataku / broń) [Speed (Attack Profile/Weapon)]': ' liczba rzutów ataku (liczba rzucanych kości). Zwykle określana przez profil ataku na karcie SI potwora lub szybkość broni Ocalałego.',
- 'Szybkość (atrybut / modyfikator / bonus) [Speed (Attribute)]': 'Speed is added to a survivor\'s weapon speed or a monster\'s attack profile speed to determine the number of attack rolls. If speed is negative, subtract it from the number of dice rolled for an attack. A monster or survivor attack with less than one speed still has one attack roll. weapons with the Slow keyword cannot benefit from positive speed bonuses.',
+ 'Szybkość (atrybut / modyfikator / bonus) [Speed (Attribute)]': 'szybkość jest dodawana do szybkości broni Ocalałego lub szybkości ataku potwora z jego profilu w celu ustalenia liczby rzucanych ataków. Jeśli szybkość jest ujemna, należy odjąć ją od liczby kości rzucanych w ataku. Potwór lub Ocalały atakujący z szybkością mniejszą niż jeden, wciąż ma jeden rzut ataku. Broń ze słowem kluczowym powolna nie może korzystać z dodatnich bonusów szybkości.',
  // 'Stalwart':'An ability. Ignore knocked down effects of brain trauma, disorders. and intimidation actions.',
  'Pole głód [Starvation Space]': 'jeśli Ocalali wchodzą na to pole (włączając rozpoczęcie starcia) Zastosuj zasady dla pola głód na planszy łowów.',
  'Cuchnący [Stinky]': 'słowo kluczowe ekwipunku. Ten przedmiot wydziela silny odór.',
@@ -396,7 +396,7 @@ const glossary_terms = {
  'Rana (reakcja) [Wound (Reaction)]': 'Wymieniona na niektórych kartach miejsc trafienia potwora. W odpowiedzi na otrzymaną ranę, w określone miejsce trafienia, ten potwór wykonuje opisaną akcję.',
  'Rana (próba zranienia) [Wound Attempt]': 'Tcałkowita siła trafienia Ocalałego. Dodaj rezultat rzutu zranienia (1k10) do siły broni którą był wykonywany atak, łącznie z każdym innym modyfikatorem siły. Jeśli całkowity rezultat próby zranienia wyrówna lub przekroczy wytrzymałość potwora, miejsce trafienia zostało zranione.',
  'Rana (rzut zranienia) [Wound Roll]': 'reprezentuje zmienną zaciekłość trafień Ocalałego. Rzut 1k10 dodaje się do rezultatu próby zranienia. Wynik tego rzutu 1k10 (dodając modyfikatory szczęścia) określa, czy zadano ranę krytyczną w miejscu trafienia, posiadającym efekty rany krytycznej.',
- 'Strefa [ ] / [ ] [Zone of (X) / (X) Zone]': 'wskazany obszar dla akcji i reakcji, na niektórych kartach SI potwora i miejsc trafienia.',
+ 'Strefa () / () [Zone of (X) / (X) Zone]': 'wskazany obszar dla akcji i reakcji, na niektórych kartach SI potwora i miejsc trafienia.',
 }
 
 module.exports = {
