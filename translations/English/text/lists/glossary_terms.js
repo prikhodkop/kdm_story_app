@@ -1,4 +1,4 @@
-const glossary_terms = {
+const texts = {
  'Abilities': 'Skills and techniques learned by survivors, usually through story events, and recorded on the Survivor Record Sheet.',
  'Absorb': 'The Watcher\'s Instinct. Described on the Watcher\'s showdown story event.',
  'Acceleration': 'Add +1d10 movement to a move action. Before moving, you may roll the Death Die and the result to your movement for one move action this round.',
@@ -402,5 +402,5 @@ const glossary_terms = {
 }
 
 module.exports = {
- glossary_terms,
+ texts,
 }

@@ -1,4 +1,4 @@
-const glossary_terms = {
+const texts = {
 	'Abilities': {
 		'label': 'Umiejętności',
 		'description': 'umiejętności i techniki wyuczone przez Ocalałych, zazwyczaj poprzez wydarzenia fabularne, zapisywane w arkuszu bohatera.'
@@ -1466,6 +1466,5 @@ const glossary_terms = {
 }
 
 module.exports = {
- glossary_terms,
+ texts,
 }
-

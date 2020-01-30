@@ -1,7 +1,6 @@
 const { getSettings, defaultLang } = require('./../ui/settings')
 const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
-var glossary_terms
 
 var lang = getSettings()['language']
 
@@ -18,6 +17,7 @@ if ((window.globals.glossary === undefined)||(window.globals.glossary[lang] === 
   var { settlement_locations } = require('./../lists/settlement_locations')
   var { survivor_statuses } = require('./../lists/survivor_statuses')
   var { terrain } = require('./../lists/terrain')
+  var glossary_terms
 
 } else {
   console.log('!!!- I skip load resources')
@@ -33,6 +33,7 @@ if ((window.globals.glossary === undefined)||(window.globals.glossary[lang] === 
   settlement_locations = window.globals.glossary[lang].settlement_locations
   survivor_statuses = window.globals.glossary[lang].survivor_statuses
   terrain = window.globals.glossary[lang].terrain
+  glossary_terms = window.globals.glossary[lang].glossary_terms
 }
 
 var data_en
@@ -219,7 +220,7 @@ function init_glossary() {
 
   //## Glossary Terms (list changed fully!)
   if (window.globals.glossary[lang].glossary_terms === undefined) {
-    data_local
+    data_local = ''
     if (!(lang == defaultLang())) {
       try {
         data_local = require('../../translations/'+lang+'/'+'text/lists/glossary_terms')
@@ -227,11 +228,48 @@ function init_glossary() {
       }
     }
     data_en = require('../../translations/'+defaultLang()+'/text/lists/glossary_terms')
-    if (data_local == '') {
-      glossary_terms = data_en.glossary_terms
-    } else {
-      glossary_terms = data_local.glossary_terms
+
+
+    // if (data_local == '') {
+    //   glossary_terms = data_en.glossary_terms
+    // } else {
+    //   glossary_terms = data_local.glossary_terms
+    // }
+
+    let keys = Object.keys(data_en.texts)
+    glossary_terms = data_en.texts
+    let entry
+
+    for (let j=0; j<keys.length; j++) {
+      // if (args[i] in data_en.texts[keys[j]]) {
+      //   if ((found)&&(keys[j] in data_local.texts)&&(args[i] in data_local.texts[keys[j]])) {
+      //      result[keys[j]][args[i]] = data_local.texts[keys[j]][args[i]]
+      //   } else {
+      //      result[keys[j]][args[i]] = data_en.texts[keys[j]][args[i]]
+      //   }
+      // }
+      entry = {}
+      if (data_local == '') {
+        entry.label = keys[j]
+        entry.description = data_en.texts[keys[j]]
+      } else {
+        if (keys[j] in data_local.texts) {
+          if ('label' in data_local.texts[keys[j]]) {
+            entry.label = data_local.texts[keys[j]].label+'  ['+keys[j]+']'
+          } else {
+            entry.label = keys[j]
+          }
+          if ('description' in data_local.texts[keys[j]]) {
+            entry.description = data_local.texts[keys[j]].description
+          } else {
+            entry.description = data_en.texts[keys[j]]
+          }
+        }
+      }
+      glossary_terms[keys[j]] = entry
+
     }
+
     window.globals.glossary[lang].glossary_terms = glossary_terms
   } else {
     glossary_terms = window.globals.glossary[lang].glossary_terms
@@ -373,7 +411,7 @@ function get_representation (word) {
  let settings = JSON.parse(sessionStorage.getItem('settings'))
 
  if (word in glossary_terms) {
-  let result = '<b style="font-size:1.3em;">' + word + '</b> <i style="font-size:0.9em;color:#777;">(term)</i> <hr/>' + glossary_terms[word]
+  let result = '<b style="font-size:1.3em;">' + glossary_terms[word].label + '</b> <i style="font-size:0.9em;color:#777;">(term)</i> <hr/>' + glossary_terms[word].description
 
   let terms_with_pics = ['Attack', 'Collision', 'Hunt Phase', 'Settlement Phase', 'Survival', 'Knocked Down (Monster)', 'Knocked Down (Survivor)']
 
