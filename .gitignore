@@ -7,3 +7,4 @@ images/reference/Disorders/.DS_Store
 package-lock.json
 dist/
 yarn-error.log
+_content.json
