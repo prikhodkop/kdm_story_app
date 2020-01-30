@@ -12,6 +12,12 @@ const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/tra
 
 module.exports = class VideoScene {
   render () {
+    if ($('#back').attr('src') == '#') {
+        $('#back').attr('src', pathToAsset('images/back.jpg'))
+    }
+    $('#container').hide()
+    $('#container').fadeIn(300)
+
     var events_table = generate_events_table()
 
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/video.html')

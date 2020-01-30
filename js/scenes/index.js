@@ -15,6 +15,12 @@ const { setTransition } = require('./../ui/transition')
 
 module.exports = class IndexScene {
   render () {
+    if ($('#back').attr('src') == '#') {
+        $('#back').attr('src', pathToAsset('images/back.jpg'))
+    }
+    $('#container').hide()
+    $('#container').fadeIn(300)
+
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/index.html')
     document.title = 'kingdom death'
 

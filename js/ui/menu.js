@@ -200,12 +200,15 @@ function createSevereTables () {
 }
 
 function addLocationTable (location, top) {
-  $('#container').append($('<img>', {
+  let location_icon = $('<img>', {
     class: location,
     id: 'severe',
     src: pathToAsset('images/icons/' + location + '.png'),
     style: 'top:' + top + ';',
-  }))
+  })
+
+  location_icon.hide()
+  $('#container').append(location_icon)
 
   $('#container').append($('<img>', {
     class: location,
@@ -213,9 +216,9 @@ function addLocationTable (location, top) {
     src: pathToAssetL('images/reference/severe injuries/' + location + '.jpg'),
   }))
 
-  $('#severe.' + location).hide()
+
   $('#severe-table.' + location).hide()
-  $('#severe.' + location).fadeIn(1000)
+  $('#severe.' + location).delay(100).fadeIn(500)
 
   $('#severe.' + location).hover(function () {
     if (!$(this).hasClass('active')) {
@@ -276,13 +279,16 @@ function createReference () {
 
   $('#reference-window-background').hide()
 
-  $('#container').append($('<img>', {
+  let reference_icon = $('<img>', {
     id: 'reference',
     src: pathToAsset('images/icons/reference.png'),
-  }))
+  })
 
-  $('#reference').hide()
-  $('#reference').fadeIn(1000)
+  reference_icon.hide()
+
+  $('#container').append(reference_icon)
+
+  $('#reference').delay(100).fadeIn(500)
 
   $('#container').append($('<div>', {
     id: 'reference-window-back0',
@@ -670,10 +676,14 @@ function  createInnovationsList() {
     $('#innovations-list_window-background').off();
 
   } else {
-    $('#container').append($('<img>', {
+    let innovations_button_icon = $('<img>', {
       class: 'innovations_button',
       src: pathToAssetL('images/icons/innovations_button.png'),
-    }))
+    })
+
+    innovations_button_icon.hide()
+
+    $('#container').append(innovations_button_icon)
 
     $('#container').append($('<div>', {
       id: 'innovations-list_window-background',
@@ -682,8 +692,8 @@ function  createInnovationsList() {
 
     $('#innovations-list_window-background').hide()
 
-    $('.innovations_button').hide()
-    $('.innovations_button').fadeIn(1000)
+    // $('.innovations_button').hide()
+    $('.innovations_button').delay(100).fadeIn(500)
 
     $('#container').append($('<div>', {
       class: 'innovations-list',
@@ -788,10 +798,14 @@ function  createLocationsList() {
     $('#locations-list_window-background').off();
   } else {
 
-    $('#container').append($('<img>', {
+    let locations_button_icon = $('<img>', {
       class: 'locations_button',
       src: pathToAssetL('images/icons/locations_button.png'),
-    }))
+    })
+
+    locations_button_icon.hide()
+
+    $('#container').append(locations_button_icon)
 
     $('#container').append($('<div>', {
       id: 'locations-list_window-background',
@@ -800,8 +814,8 @@ function  createLocationsList() {
 
     $('#locations-list_window-background').hide()
 
-    $('.locations_button').hide()
-    $('.locations_button').fadeIn(1000)
+    // $('.locations_button').hide()
+    $('.locations_button').delay(100).fadeIn(500)
 
     $('#container').append($('<div>', {
       class: 'locations-list',

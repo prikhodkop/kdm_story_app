@@ -37,6 +37,12 @@ const special_events = [
 
 module.exports = class ImageScene {
   render () {
+    if ($('#back').attr('src') == '#') {
+        $('#back').attr('src', pathToAsset('images/back.jpg'))
+    }
+    $('#container').hide()
+    $('#container').fadeIn(500)
+
     var events_table = generate_events_table()
 
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/image.html')
@@ -159,7 +165,7 @@ module.exports = class ImageScene {
       var action = state.action
       anew = false
 
-      $('#img_back').fadeIn(500)
+      $('#img_back').delay(100).fadeIn(500)
 
       if (true) {
         $('#label_text').fadeIn(2000)
@@ -294,9 +300,9 @@ module.exports = class ImageScene {
       action = 'true'
 
       // $("#label_text").fadeOut(2000);
-      $('#img').fadeIn(600)
-      $('.settlement_return_button').fadeIn(800)
-      $('.event_tooltip').fadeIn(800)
+      $('#img').fadeIn(400)
+      $('.settlement_return_button').fadeIn(500)
+      $('.event_tooltip').fadeIn(500)
       if ((!menus_appeared) && anew) {
         menus_appeared = true
         addTimer(function () {
@@ -305,7 +311,7 @@ module.exports = class ImageScene {
           createInnovationsList()
           createLocationsList()
           eventsSugar(myself)
-        }, 800);
+        }, 500);
       };
 
       if (speech.playing()) {
@@ -318,10 +324,10 @@ module.exports = class ImageScene {
     })
 
     $('#img').click(function () {
-      $('#label_text').delay(800).fadeIn(800)
-      $('#img').fadeOut(800)
-      $('.settlement_return_button').fadeOut(800)
-      $('.event_tooltip').fadeOut(800)
+      $('#label_text').delay(300).fadeIn(400)
+      $('#img').fadeOut(300)
+      $('.settlement_return_button').fadeOut(300)
+      $('.event_tooltip').fadeOut(300)
     })
 
     $('body').on('click', '#back_button', function () {

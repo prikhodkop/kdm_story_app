@@ -16,6 +16,12 @@ const { addDevelopment, openLocation, getDevelopmentState, setDevelopmentState }
 
 module.exports = class SettlementScene {
   render () {
+    if ($('#back').attr('src') == '#') {
+        $('#back').attr('src', pathToAsset('images/back.jpg'))
+    }
+    $('#container').hide()
+    $('#container').fadeIn(500)
+
     var events_table = generate_events_table()
 
     if (true) {
@@ -41,7 +47,7 @@ module.exports = class SettlementScene {
 
     // localStorage.clear();
 
-    initSettings();8
+    initSettings();
 
     var settings = getSettings()
     sessionStorage.setItem('settings', JSON.stringify(settings))
