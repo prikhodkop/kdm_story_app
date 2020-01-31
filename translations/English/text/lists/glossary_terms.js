@@ -222,6 +222,7 @@ const texts = {
  'Metal': 'A gear keyword. This gear is substantively crafted of metal.',
  'Metabolic Surrender': 'Any time during the showdown, you may roll the Death Die. Gain twice that much survival. This round, ignore the negative effect of permanent injuries, impairments, disorders, and negative attributes (including tokens). At the end of the round, you die.',
  // 'Metal Maw':'An ability. Your Fist & Tooth attacks gain Sharp (add 1d10 strength to each wound attempt).',
+ 'Milestone': 'Milestones are special story events that are performed during the <b>Check Milestones</b> step of the settlement phase only when certain in-game conditions are accomplished.',
  'Miniature': 'The physical representation of a monster or survivor, used in the Hunt and Showdown phases.',
  // 'Monster AI Deck': 'Each monster has a unique Al deck. Its showdown story event describes how to construct a Monster Al Deck at the appropriate level.',
  'Monster AI Deck': 'Made up of Al cards used for a specific showdown. See the monster\'s story event for details of its Al deck. The Al Deck is reduced as the monster is wounded.',
