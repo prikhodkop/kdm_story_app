@@ -15,7 +15,7 @@ const texts = {
 		'label': 'Akcesorium',
 		'description': 'specjalana zasada ekwipunku. Ekwipunek akcesoriów może być noszony jako dodatek do pancerza w miejscu trafienia. Każde akcesorium określa miejsce trafienia, które obejmuje.'
 	},
-	'Accuracy': {
+	'Accuracy (Attribute)': {
 		'label': 'Precyzja (Atrybut)',
 		'description': 'reprezentuje trwałe modyfikatory w rzutach ataku. Dodatni atrybut dodaje do rzutu kośćmi, a atrybut ujemny odejmuje od rzutu kością.'
 	},
