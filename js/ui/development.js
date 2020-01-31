@@ -181,7 +181,7 @@ function setupLocations() {
     }
  });
 
- $(document).on({
+ $('#container').on({
    mouseenter: function (e) {
      console.log('Show armor set tooltip!'+$(e.target).parent().attr('armor_set'))
 
@@ -215,7 +215,7 @@ function setupLocations() {
    },
  }, '.gear_card.set')
 
- $(document).on({
+ $('#container').on({
      click: function(e) {
        let sets_list = $(e.target).attr('set').split('#')
        console.log('Set attr: '+$(e.target).attr('set'))
@@ -541,7 +541,7 @@ function setupInnovations() {
 
   $('.tooltip_image_innovation').hide()
 
-  $(document).on({
+  $('#container').on({
     mouseenter: function (e) {
       console.log('Show innovation tooltip!'+$(e.target).val())
 

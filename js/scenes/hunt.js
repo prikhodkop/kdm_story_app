@@ -518,7 +518,7 @@ module.exports = class HuntScene {
         }))
         $('#digested_tooltip').hide();
 
-        $(document).on({
+        $('#container').on({
           mouseenter: function () {
             console.log('enter')
             window.digested_timer = addTimer(function(){

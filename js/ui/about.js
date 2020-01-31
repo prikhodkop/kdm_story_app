@@ -126,7 +126,7 @@ function createAbout (version) {
   // })
 
   // open links externally by default
-  $(document).on('click', 'a[href^="http"]', function (event) {
+  $('#container').on('click', 'a[href^="http"]', function (event) {
     event.preventDefault()
     shell.openExternal(this.href)
   })

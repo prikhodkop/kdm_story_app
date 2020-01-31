@@ -19,7 +19,7 @@ const texts = {
 		'label': 'Precyzja (Atrybut)',
 		'description': 'reprezentuje trwałe modyfikatory w rzutach ataku. Dodatni atrybut dodaje do rzutu kośćmi, a atrybut ujemny odejmuje od rzutu kością.'
 	},
-	'Accuracy': {
+	'Accuracy (Weapon/Attack Profile)': {
 		'label': 'Precyzja (profil broni/ataku)',
 		'description': 'liczba, jaką musi każdy wynik rzutu ataku osiągnąć lub przekroczyć, aby zostać uznanym za trafienie. Wymienione w profilach ataku potworów i ekwipunku broni.'
 	},
