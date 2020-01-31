@@ -299,7 +299,7 @@ module.exports = class ImageScene {
     $('#img_back').click(function () {
       action = 'true'
 
-      // $("#label_text").fadeOut(2000);
+      $("#label_text").fadeOut(200);
       $('#img').fadeIn(400)
       $('.settlement_return_button').fadeIn(500)
       $('.event_tooltip').fadeIn(500)

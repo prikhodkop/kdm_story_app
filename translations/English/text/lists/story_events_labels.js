@@ -73,7 +73,7 @@ var story_events_labels = {
   "meltdown" : "Meltdown",
   "midnight's children": "Midnight's Children",
   "showdown dragon king" : "Showdown: Dragon King",
-  "showdown the tyrant" : "Showdown: Tyrant",
+  "showdown the tyrant" : "Showdown: The Tyrant",
   "the tomb" : "The Tomb",
   "unveil the sky" : "Unveil the Sky",
   "bleeding heart" : "Bleeding Heart",
