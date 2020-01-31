@@ -345,6 +345,7 @@ const texts = {
  // 'Story Of The Goblin':'An ability. Once per showdown, you may roll 1d10. On a 3+, gain the priority target token and the monster gains +1 damage token.',
  // 'Story Of The Young Hero':'An ability. At the start of each of your acts, you may choose to gain 1 survival and 2 bleeding tokens.',
  'Story Event': 'An event which impacts the settlement/survivors. Common triggers include: the settlement timeline, survivor milestones in Hunt XP/courage/understanding, monster cards, settlement events. When a Story Event appears, trigger the story event by turning to the appropriate page in the rulebook and following its instructions.',
+ 'Strain Milestone': 'Strain milestones are a way for player exploits to permanently alter the future of their games. During the settlement phase, any unreached strain milestone cards are placed on the settlement board over the <b>Check Milestones</b> step.<br/><br/>During this step, check the strain milestone cards first. If any of the card\'s milestone conditions have been reached, resolve it\'s permanent effect and remove the achieved strain milestone from the game. They can never be used again in any campaign.',
  'Strange Resources': 'Resource cards only gained in specific circumstances. Strange monster resources are not shuffled into monster resource decks.',
  'Strength (Attribute)': 'Strength is added to the result of a wound attempt. If strength is a negative number, subtract it from the wound attempt result',
  'Strength (Weapon)': 'The number a weapon adds to wound attempt.',
