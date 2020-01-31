@@ -63,8 +63,8 @@ const texts = {
   'label': 'Frozen Star',
   "description": "Once per round, you may spend 1 survival to freeze a monster's brain. They gain -2 accuracy until the end of the round.<br/><br/>Once per round, you may spend 1 survival to freeze a survivor's brain, killing them instantly. They die.",
  },
- 'Grace of Dormentaus': {
-   'label': 'Grace of Dormentaus',
+ 'Grace of Dormenatus': {
+   'label': 'Grace of Dormenatus',
   "description": "You may <b>concentrate</b>. If you do, perform <b>Grace of Dormenatus</b> at the start of your next act: All survivors gain armor at all hit locations equal to your green affinities. They may remove up to the same number of tokens. Then, gain +6 Hunt XP. If you still exist, gain the priority target token.",
  },
  'Hellfire': {

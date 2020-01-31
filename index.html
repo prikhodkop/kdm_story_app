@@ -44,6 +44,9 @@
 	<script src="js/vendor/tippy-bundle.iife.min.js"></script>
 	<script src="js/vendor/jquery.ui.touch-punch.min.js"></script>
 
+	<link rel="preload" as="script" href="js/scenes/settlement.js">
+	<link rel="preload" as="script" href="js/scenes/hunt.js">
+
 	<script>
 		<!-- electron global module end -->
 		if (window.module) {
@@ -64,7 +67,12 @@
 	</script>
 </head>
 <body bgcolor="#000000">
-	<div id="container"></div>
+	<div id="container0">
+		<!-- <img id="back" src="{{=this.cdnUrl('images/back.jpg')}}"/> -->
+		<img id="back" src="#"/>
+		<div id="container"></div>
+	</div>
+
 	<!-- electron bootstrap -->
 	<script type="text/javascript" src="js/interop/electron.js"></script>
 </body>

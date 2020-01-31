@@ -1,9 +1,8 @@
 const { events } = require('./../lists/story_events')
 const { loadJSON, pathToAsset } = require('./assets_loader')
 const { cdnUrl } = require('./template-cdnurl')
-// const lang = 'en'
 
-const { getSettings } = require('./settings')
+const { getSettings, defaultLang } = require('./settings')
 
 const { app } = require('electron').remote
 
@@ -87,21 +86,11 @@ function create_events_table (events) {
   let lang = getSettings()['language']
   let found = false
 
-  console.log('Current language: '+lang)
-  if (!(lang == 'en')) {
-    console.log('Trying: '+lang)
-    try {
-      var { story_events_labels } = require('../../translations/'+lang+'/text/lists/story_events_labels')
-      found = true
-    } catch(e) {
-    }
+  if ((lang == defaultLang())||window.globals.translations['paths'][lang].includes('translations/'+lang+'/text/lists/story_events_labels'+'.js')) {
+    var { story_events_labels } = require('../../translations/'+lang+'/text/lists/story_events_labels')
+  } else {
+    var { story_events_labels } = require('../../translations/'+defaultLang()+'/text/lists/story_events_labels')
   }
-
-  if (!found) {
-    console.log('Trying: en')
-    var { story_events_labels } = require('../../translations/en/text/lists/story_events_labels')
-  }
-
 
   for (let i = 0; i < event_ids.length; i++) {
     events_table[event_ids[i]] = new Event(event_ids[i])

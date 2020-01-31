@@ -1,16 +1,23 @@
 const { app } = require('electron').remote
 
+const { pathToAsset, pathToAssetL, initAssets } = require('./../ui/assets_loader')
+initAssets()
+
 const { createToc, generate_events_table } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton, createReference, createSevereTables, createInnovationsList, createLocationsList } = require('./../ui/menu')
-const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved, initSettings } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
-const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
-
 module.exports = class VideoScene {
   render () {
+    if ($('#back').attr('src') == '#') {
+        $('#back').attr('src', pathToAsset('images/back.jpg'))
+    }
+    $('#container').hide()
+    $('#container').fadeIn(300)
+
     var events_table = generate_events_table()
 
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/video.html')
@@ -26,6 +33,8 @@ module.exports = class VideoScene {
     var myself = sessionStorage.getItem('target')
     document.title = myself
     // #############
+
+    initSettings();
 
     var settings = getSettings()
     sessionStorage.setItem('settings', JSON.stringify(settings))
@@ -161,7 +170,7 @@ module.exports = class VideoScene {
     createMenuButton()
     createToc()
     if (settings['subtitles'] == 'On') {
-      configureSubtitle(readFile(pathToAssetL('video/'+ myself + '.srt', false)))
+      configureSubtitle(readFile(pathToAssetL('video/'+ myself + '.srt', false), 'root'))
     };
     addSettings(settings)
 

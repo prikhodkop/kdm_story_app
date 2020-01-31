@@ -1,22 +1,30 @@
 const { app } = require('electron').remote
 
+const { pathToAsset, pathToAssetL, initAssets } = require('./../ui/assets_loader')
+initAssets()
+
 const { createToc, titleCase, generate_events_table } = require('./../ui/events')
 const { clone } = require('./../ui/glossary')
 const { md_to_html_2, is_promo_event, get_sequence, init_hunt_events } = require('./../ui/hunt_events_table')
 const { createMenuButton, createReference, createSevereTables, createInnovationsList, createLocationsList } = require('./../ui/menu')
-const { getSettings, addSettings, onSettingsSaved } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved, initSettings } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
 const { addTimer, clearTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { addInnovation, hasInnovation, getHuntInnovationEffects } = require('./../ui/development')
-
-const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
+// const { cdnUrl } = require('./../ui/template-cdnurl')
 
 const QUARRY_CARD_SHOW = 'slideUpReturn' // 'slideDownReturn'
 const QUARRY_CARD_HIDE = 'vanishOut' // 'SlideDown'
 
 module.exports = class HuntScene {
   render () {
+    if ($('#back').attr('src') == '#') {
+        $('#back').attr('src', pathToAsset('images/back.jpg'))
+    }
+    $('#container').hide()
+    $('#container').fadeIn(500)
+
     var events_table = generate_events_table()
 
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/hunt.html')
@@ -28,6 +36,7 @@ module.exports = class HuntScene {
 
     var start_delay = 1000
 
+    initSettings();
     let settings = getSettings()
     sessionStorage.setItem('settings', JSON.stringify(settings))
     sessionStorage.setItem('back_target', null)
@@ -209,12 +218,13 @@ module.exports = class HuntScene {
     };
 
     if (not_selected) {
+      // $('#container').fadeIn(1000)
       $('#hunt_icon').fadeIn(1000)
       $('#label_text').fadeIn(1000)
-      $('#hunt_desc_text').delay(2500).fadeIn(1000)
-      $('#quaries_table').delay(3000).fadeIn(1000)
-      $('#hunt_icon').delay(1000).fadeOut(1000)
-      $('#label_text').delay(1000).fadeOut(1000)
+      $('#hunt_desc_text').delay(1500).fadeIn(500)
+      $('#quaries_table').delay(1500).fadeIn(500)
+      $('#hunt_icon').delay(500).fadeOut(300)
+      $('#label_text').delay(500).fadeOut(300)
     };
 
     $('body').on('click', '#menu_item', function () {
@@ -475,6 +485,8 @@ module.exports = class HuntScene {
       $('#label_text').css('color', '#999')
       $('#label_text').css('width', '800px')
       $('#label_text').css('margin-left', '-400px')
+
+      // $('#container').fadeIn(1000)
 
       $('#hunt_desc_text').hide()
       $('#hunt_desc_text').text(name)

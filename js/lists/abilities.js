@@ -3,7 +3,7 @@ const abilities = {
 
  },
  'Ageless': {
-   
+
  },
  'Analyse': {
 
@@ -41,8 +41,26 @@ const abilities = {
  'Fated Battle': {
 
  },
+ 'Heart of the Sword (Storm)': {
+ },
  'Homing Instinct': {
 
+ },
+ 'Limb-maker (Sculptor)': {
+ },
+ 'Presage (Witch)': {
+
+ },
+ 'Pristine': {
+
+ },
+ 'Psychovore (Reaper)': {
+ },
+ 'Rooted to All (Absolute)': {
+
+ },
+ 'Way of the Rust (Rust)': {
+   
  },
  'Iridescent Hide': {
 

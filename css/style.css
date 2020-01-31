@@ -18,6 +18,15 @@ input[type=number]::-webkit-inner-spin-button {
   position: absolute;o
 } */
 
+#container0 {
+  position: absolute;
+  display:block;
+  top: 0;
+  left: 0;
+  height:100%;
+  width:100%;
+  overflow:hidden;
+}
 #container {
   position: absolute;
   display:block;
@@ -93,9 +102,9 @@ input[type=number]::-webkit-inner-spin-button {
   top: 75%;
   left: 50%;
   width: 400px;
-  height: 50px;
+  /* height: 50px; */
   margin-left: -200px;
-  margin-top: -25px;
+  /* margin-top: -25px; */
   font-family: 'Silverado';
   cursor: default;
 }
@@ -112,6 +121,20 @@ input[type=number]::-webkit-inner-spin-button {
   /* margin-top: -25px; */
   font-size: 5em;
   color: #888
+}
+
+#sublabel_text.index {
+  text-align: center;
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  margin: 0 auto;
+  width: 700px;
+  /* height: 50px; */
+  margin-left: -350px;
+  /* margin-top: -25px; */
+  font-size: 1em;
+  color: #444
 }
 
 #img {

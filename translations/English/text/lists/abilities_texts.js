@@ -25,7 +25,7 @@ const texts = {
  },
  'Crystal Skin': {
    'label':'Crystal Skin',
-   'description': 'You cannot place armor in your gear grid. When you depart, gain 2 armor points to all hit locations. Suffer -1 to the result of all severe injury rolls.',
+   'description': 'You cannot place armor in your gear grid. When you depart, gain 3 armor points to all hit locations. Suffer -2 to the result of all severe injury rolls.',
  },
  'Dead Inside': {
    'label':'Dead Inside',
@@ -43,6 +43,10 @@ const texts = {
    'label':'Endless Babble',
    'description': 'When you <b>depart</b>, <b>departing survivors</b> gain +1 insanity.<br/><br/>You may not <b>encourage</b>.',
  },
+'Heart of the Sword (Storm)': {
+  'label': 'Heart of the Sword (Storm)',
+  'description':'If you gain weapon proficiency during the Aftermath, gain +3 additional ranks. You cough up a hunk of your own solidified blood and gain +1 Iron strange resource.',
+},
  'Enduring Legacy': {
    'label':'Enduring Legacy',
    'description': 'You may nominate only your <b>partner</b> and yourself for <b>Intimacy</b>. When your partner dies, gain random disorder and lose this ability.<br/><br/>Your born or adopted children may <b>inherit</b> one positive attribute and one fighting art from among their parents.<br/><br/>During the settlement phase, you may adopt an unnamed survivor that has never departed the settlement. Survivors may only <b>inherit</b> from parents once per lifetime.<br/><br/>When you have <b>3+</b> children, your family is complete, you <b>retire</b> with your partner and stop having children forever.',
@@ -79,6 +83,30 @@ const texts = {
  'Life Exchange': {
    'label':'Life Exchange',
    'description': 'In the Aftermath, gain 1 additional Hunt XP. You may not wear other gear. If you trigger the White Secret story event, you cease to exist. When you retire, you cease to exist.',
+ },
+ 'Limb-maker (Sculptor)': {
+   'label': 'Limb-maker (Sculptor)',
+   'description': 'Once per settlement phase, spend 2 endeavors to carve a prosthetic limb. Remove a survivor\'s dismembered injury and add 1 bone to the settlement\'s storage.',
+ },
+ 'Presage (Witch)': {
+   'label': 'Presage (Witch)',
+   'description': 'Each time you attack, before drawing hit locations, loudly say a name. You lightly bite the eye in your cheek to see what it sees, if you draw any hit locations with that name, gain +3 insanity and +10 strength when attempting to would them.',
+  },
+ 'Pristine': {
+   'label': 'Pristine',
+   'description': 'When you suffer <b>dismembered</b> severe injury, ignore it and gain 1 bleeding token instead.',
+ },
+ 'Psychovore (Reaper)': {
+   'label': 'Psychovore (Reaper)',
+   'description': 'Once per showdown, you may eat an adjacent survivor\'s disorder. If you do, remove the disorder. They gain 1 bleeding token and you gain +1 permanent strength. At the end of the showdown, if you haven\'t eatern a disorder, you die.',
+ },
+ 'Rooted to All (Absolute)': {
+   'label': 'Rooted to All (Absolute)',
+   'description': 'If you are standing at the start of your act, reveal the top 2 cards of the AI deck and put them back in any order.',
+ },
+ 'Way of the Rust (Rust)': {
+   'label': 'Way of the Rust (Rust)',
+   'description': 'Your bleeding tokens are also +1 evasion tokens.',
  },
  'Lucerna': {
    'label':'Lucerna',
@@ -167,7 +195,7 @@ const texts = {
  },
  'Thundercaller': {
    'label':'Thundercaller',
-   'description': 'Once per lifetime, on a hunt board space after Overwhelming Darkness, in place of rolling a random hunt event, use \"100\" as your result.',
+   'description': 'Once per lifetime, on a hunt board space after Overwhelming Darkness, in place of rolling a random hunt event, use <b>100</b> as your result.',
  },
  'Tinker': {
    'label':'Tinker',

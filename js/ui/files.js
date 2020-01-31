@@ -14,10 +14,11 @@ function readFile (path, app_path='', lang='', return_type='file') {
   let final_path = ''
 
   if (app_path == 'root') {
-    final_path = '/' // app.getAppPath() +
+    final_path = app.getAppPath() + '/' // app.getAppPath() +
+    final_path = final_path.replace('//', '/')
   }
   if (app_path == 'override') {
-    final_path = app.getPath('userData') + '/override/'
+    final_path = app.getPath('documents') + '/KDM Story App/override/'
   }
 
   if (!(lang == '')) {
@@ -26,7 +27,7 @@ function readFile (path, app_path='', lang='', return_type='file') {
 
   final_path = final_path + path
 
-  console.log('File path: '+final_path)
+  // console.log('File path read: '+final_path)
 
   if (return_type == 'file') {
       return fs.readFileSync(final_path)
@@ -40,7 +41,9 @@ function checkFile (path, app_path='', lang='', check=true) {
   let final_path = ''
 
   if (app_path == 'root') {
-    final_path = '/' // app.getAppPath() +
+    // final_path = '/' // app.getAppPath() +
+    final_path = app.getAppPath() + '/' // app.getAppPath() +
+    final_path = final_path.replace('//', '/')
   }
   if (app_path == 'override') {
     final_path = app.getPath('documents') + '/KDM Story App/override/'
@@ -52,7 +55,10 @@ function checkFile (path, app_path='', lang='', check=true) {
 
   final_path = final_path + path
 
-  console.log('File path: '+final_path)
+  // console.log('File path check: '+final_path)
+
+  // let cdnHost = (window.globals.template.cdnHost || '').replace(/^[.\/]+/, '')
+
 
   // if (fs.existsSync(final_path)) {
   if (check) {

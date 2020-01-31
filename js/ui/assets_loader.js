@@ -8,46 +8,65 @@
 // 4. Take en file from the root (it is assumed that it always exists) -> load it and return
 
 const { readFile, checkFile } = require('./files')
-const { getSettings } = require('./settings')
+const { getSettings, defaultLang } = require('./settings')
 const { cdnUrl } = require('./template-cdnurl')
 
 module.exports = {
-  loadJSON,
   pathToAsset,
   pathToAssetL,
-  pathToScript,
+  initAssets
 }
 
-// Finds and loads JSON file with respect to #Loading Rule#
-function loadJSON(path, localization=true) {
-  let found = false
-  let result
+// const ContentTree = require('./../../_content.json')
 
-  if (localization) {
-    let lang = getSettings()['language']
-    if (!(lang == 'en')) {
-      if (!found) {
-        // console.log('Try '+lang+' root...')
-        try {
-          result = readFile(path, 'root', lang)
-          result.toString();
-          found = true
-        } catch (e) {
-        }
-      }
-    }
-    if (!found) {
-      // console.log('Try en root...')
-      result = readFile(path, 'root', 'en')
-    }
-    return JSON.parse(result)
-  } else {
+function initAssets() {
 
-    result = readFile(path, 'root')
-    found = true
-
-    return JSON.parse(result)
+  if (!(window.globals.translations === undefined)) {
+    return
   }
+
+  // if (!(ContentTree === undefined)) {
+  let ContentTree = require('./../../_content.json')
+  // }
+
+  let contents = {}
+
+  contents['languages'] = []
+
+  for (let i=0; i<ContentTree.children.length; i++) {
+    contents['languages'].push(ContentTree.children[i]['name'])
+  }
+
+  contents['paths'] = {}
+
+  for (let i=0; i<contents['languages'].length; i++) {
+    contents['paths'][contents['languages'][i]] = packAssets(ContentTree['children'][i])
+  }
+
+  console.log('Tree2222: '+JSON.stringify(contents['paths']['Russian']))
+
+  // sessionStorage.setItem('translations', JSON.stringify(contents))
+  window.globals.translations = contents
+
+  // console.log('Init Localization State.')
+}
+
+function packAssets(object) {
+  let paths = []
+  // console.log('Object: '+JSON.stringify(object))
+  // console.log('Current: '+object["name"])
+
+  if ('children' in object) {
+    // console.log('Found children: '+object['children'].length)
+    for (let i=0; i<object['children'].length; i++) {
+      paths = paths.concat(packAssets(object['children'][i]))
+    }
+  } else {
+    // console.log('Found leaf')
+    paths.push(object["path"].replace(/\\/g, '/'))
+  }
+
+  return paths
 }
 
 function pathToAssetL(path, cdn_change=true) {
@@ -61,40 +80,24 @@ function pathToAsset(path, localization='', cdn_change=true) {
 
   if (localization == 'localize') {
     let lang = getSettings()['language']
-    if (!(lang == 'en')) {
-      // console.log('Try '+lang+' root...')
-      file = checkFile(path, 'root', lang)
-      if ((!file == '')) {
-        found = true;
-        result = file
-        // console.log('Bingo !')
-      }
-    }
+    file = checkFile(path, '', lang, false)
 
-    if (!found) {
-      // console.log('Try en root...')
-      result = checkFile(path, 'root', 'en', false)
-      // console.log('Bingo !')
+    if ((lang == defaultLang())||(window.globals.translations['paths'][lang].includes(file))) {
+      result = file
+    } else {
+      result = checkFile(path, '', defaultLang(), false)
     }
-
-    if (cdn_change) {
-      result = cdnUrl(result.replace('./', '/'))
-    }
-    return result
 
   } else {
-    result = checkFile(path, 'root', false)
+    result = checkFile(path, '', '', false)
     found = true
     // console.log('Bingo !')
-
-    if (cdn_change) {
-      result = cdnUrl(result)
-    }
-    return result
   }
-}
 
-// Returns string path for image to load with respect to #Loading Rule#
-function pathToScript(path, localization=true) {
+  if (cdn_change) {
+    result = cdnUrl(result.replace('./', '/'))
+  }
+
+  return result
 
 }

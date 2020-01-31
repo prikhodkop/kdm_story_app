@@ -63,7 +63,7 @@ const texts = {
  //  'label': 'Frozen Star',
  //  "description": "#",
  // },
- 'Grace of Dormentaus': {
+ 'Grace of Dormenatus': {
    'label': 'Łaska Dormenatus',
   "description": "#",
  },

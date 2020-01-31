@@ -1,18 +1,26 @@
 const { app } = require('electron').remote
 
+const { pathToAsset, pathToAssetL, initAssets } = require('./../ui/assets_loader')
+initAssets()
+
 const { createAbout } = require('./../ui/about')
 const { createToc } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
-const { createMenuButton, createInnovationsList, createLocationsList } = require('./../ui/menu')
+const { createMenuButton, createReference, createInnovationsList, createLocationsList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved, setSettings, saveSettings, initSettings } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
+const { cdnUrl } = require('./../ui/template-cdnurl')
 const { addTimer } = require('./../ui/timer')
 const { setTransition } = require('./../ui/transition')
 
-const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
-
 module.exports = class IndexScene {
   render () {
+    if ($('#back').attr('src') == '#') {
+        $('#back').attr('src', pathToAsset('images/back.jpg'))
+    }
+    $('#container').hide()
+    $('#container').fadeIn(300)
+
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/index.html')
     document.title = 'kingdom death'
 
@@ -33,6 +41,10 @@ module.exports = class IndexScene {
     initSettings();
 
     var settings = getSettings()
+
+    // var tree = dirTree(app.getAppPath()+'/translations');
+
+    // console.log('Tree22: '+JSON.stringify(tree))
 
 
     console.log('Settings:')
@@ -68,6 +80,7 @@ module.exports = class IndexScene {
     createAbout(version)
     createInnovationsList()
     createLocationsList()
+    createReference()
     addSettings(settings)
     let gallery = setupCampaignSelect()
 
@@ -96,7 +109,7 @@ module.exports = class IndexScene {
 
     // console.log(subtitles['intro'][lang])
     if (settings['subtitles'] == 'On') {
-      configureSubtitle(readFile(pathToAssetL('video/intro.srt', false)))
+      configureSubtitle(readFile(pathToAssetL('video/intro.srt', false), 'root'))
     }
 
     if ((settings['narration'] == 'Off') && (settings['music'] == 'Off')) {

@@ -16,6 +16,9 @@ const {
 
 
 
+// sessionStorage.setItem('translations', JSON.stringify(tree))
+
+
 app.commandLine.appendSwitch('--autoplay-policy', 'no-user-gesture-required', '--no-sandbox')
 // app.disableHardwareAcceleration();
 let template = []

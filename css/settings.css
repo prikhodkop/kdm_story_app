@@ -232,6 +232,10 @@ select.settings {
   padding-left: 2px;
 }
 
+select.settings > option {
+   background: #666;
+}
+
 /* select.settings[level=1] {
   width: 80% !important;
 } */
