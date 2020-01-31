@@ -30,7 +30,7 @@ const texts = {
    'label': 'Pancerz skórzany',
  },
  'Rolling Armor': {
-   'label': 'Toczący pancerz',
+   'label': 'Toczący się pancerz',
  },
  'Screaming Armor': {
    'label': 'Pancerz wrzasku',
@@ -45,7 +45,7 @@ const texts = {
    'label': 'Pancerz watażki',
  },
  'White Lion Armor': {
-   'label': 'Pancerz białego lwa',
+   'label': 'Pancerz Białego Lwa',
  },
 }
 

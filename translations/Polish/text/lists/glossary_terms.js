@@ -811,6 +811,10 @@ const texts = {
 		'label': 'Figurka',
 		'description': 'fizyczne przestawienie potwora lub Ocalałego, używane podczas łowów oraz w fazie starcia.'
 	},
+        'Milestone': {
+		'label': 'Kamień milowy',
+		'description': 'Kamienie milowe to specjalne wydarzenia fabularne, które są aktywowane podczas etapu "Sprawdzenie kamieni milowych" w fazie osady, tylko wtedy, gdy spełnione są pewne określone warunki.'
+	},
 	'Monster AI Deck': {
 		'label': 'Talia SI potwora',
 		'description': 'każdy potwór posiada unikalną talię SI. Wydarzenia fabularne starcia opisuje jak stworzyć talię SI potwora właściwego poziomu.'

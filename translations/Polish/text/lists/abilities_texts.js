@@ -29,7 +29,7 @@ const texts = {
  },
  'Dead Inside': {
    'label':'Wewnętrznie martwy',
-   'description': 'Nie możesz zdobywać <b>Przetrwania</b>.',
+   'description': 'Nie możesz zdobywać <b>przetrwania</b>.',
  },
  'Devoted Union': {
    'label':'Devoted Union',
