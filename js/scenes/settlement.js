@@ -280,7 +280,7 @@ module.exports = class SettlementScene {
     // ##### COMMON LOGIC ########
 
     $('#settlement_event_button').click(function () {
-      if (!$(this).hasClass('active')) {
+      if (!$(this).hasClass('actived')) {
         $('#settlement_event_screen').delay(50).fadeIn(300)
         // $('#settlement_event_screen_2').delay(50).fadeIn(300)
         if ($('#settlement_event_back').attr('src') == '#') {
@@ -312,15 +312,15 @@ module.exports = class SettlementScene {
         }
 
         $('.cheatsheet_button').each(function() {$(this).removeClass('active'); $('#milestones').hide(); }) // $('#settlement_event_back').hide();
-        // $(this).addClass('active')
-        // $('#cheatsheet_buttons').addClass('active')
+        $(this).addClass('actived')
+        // $('#cheatsheet_buttons').addClass('actived')
       } else {
-        // $('#settlement_event_screen').delay(50).fadeOut(500)
+        $('#settlement_event_screen').delay(50).fadeOut(500)
         // $('#settlement_event_screen_2').delay(50).fadeOut(500)
-        // $('#settlement_event_back').delay(50).fadeOut(300)
-        // $('#settlement_event_screen > .selectize-control').delay(50).fadeOut(300)
-        // $(this).removeClass('active')
-        // $('#cheatsheet_buttons').removeClass('active')
+        $('#settlement_event_back').delay(50).fadeOut(300)
+        $('#settlement_event_screen > .selectize-control').delay(50).fadeOut(300)
+        $(this).removeClass('actived')
+        // $('#cheatsheet_button').removeClass('actived')
       };
     })
 
@@ -428,7 +428,7 @@ module.exports = class SettlementScene {
     $('#settlement_event_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: '<b style="color:#cc0;">Click</b> to draw <b>Settlement Event</b> card.',
+      content: '<b style="color:#cc0;">Click</b> to draw and show <b>Settlement Event</b> card.<br/><br/><b style="color:#cc0;">Click</b> again to hide it.',
       position: 'right',
       delay: 0,
       maxWidth: 300,

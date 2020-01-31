@@ -22,7 +22,8 @@ module.exports = {
   removeInnovation,
   removeSettlementLocation,
   hasInnovation,
-  getHuntInnovationEffects
+  getHuntInnovationEffects,
+  bonusesSummary,
 }
 
 const always_on_locations = ['Throne', 'Lantern Hoard', 'Sacreed Pool', 'The Sun'];
@@ -784,6 +785,20 @@ function updateInnovationsState() {
   setDevelopmentState(development_state)
 
   if (DEBUG_MODE) {console.log(development_state['innovations'])}
+
+}
+
+function bonusesSummary() {
+  let development_state = getDevelopmentState();
+  let button = $('<button>', {
+    class: "tablinks",
+    id: "summary_button",
+  })
+  button.html('Summary');
+
+  button.hide()
+
+  $('#container').append(button)
 
 }
 
