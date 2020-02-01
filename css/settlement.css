@@ -242,6 +242,34 @@
   background: rgba(0, 0, 0, .8);
 }
 
+.summary_screen {
+  display: block;
+  position: absolute;
+  /* overflow: visible; */
+  top: 1%;
+  height: 92%;
+  width: 60%;
+  left: 25%;
+  /* height:  */
+  /* background-color: #222; */
+  /* opacity: 0.3; */
+  /* left: 25%; */
+  visibility: show;
+  z-index: 73;
+  --borderWidth: 1em;
+  border-radius: var(--borderWidth);
+  border: 0.2rem solid #555;
+  box-shadow: 0 0 20px #000;
+  background: rgba(0, 0, 0, .8);
+  overflow-y: scroll;
+  overflow-x: none;
+  scrollbar-width: none;
+}
+
+.summary_screen::-webkit-scrollbar {
+    display: none;
+}
+
 #milestone {
   /* opacity: 1.0; */
   display: block;
@@ -264,6 +292,29 @@
   cursor: default;
 }
 
+#summary-text {
+  /* opacity: 1.0; */
+  display: block;
+  position: relative;
+  overflow: visible;
+  visibility: show;
+  background-color: Transparent;
+  /* width: 100%; */
+  /* text-align: right; */
+  color: #aaa;
+  text-shadow: 0 0 10px #000;
+  /* padding-top: 5px; */
+  padding-bottom: 5px;
+  padding-left: 10px;
+  /* padding-right: 10px; */
+	text-align: left;
+	font-size: 1.2em;
+	font-weight:400;
+  font-family: 'Silverado';
+  cursor: default;
+  overflow: hidden;
+}
+
 #milestone-title {
   /* opacity: 1.0; */
   display: block;
@@ -284,6 +335,30 @@
 	font-weight:500;
   font-family: 'Silverado';
   cursor: default;
+}
+
+#summary-title {
+  /* opacity: 1.0; */
+  display: block;
+  position: relative;
+  overflow: visible;
+  visibility: show;
+  background-color: Transparent;
+  /* width: 100%; */
+  /* text-align: right; */
+  color: #660;
+  text-shadow: 0 0 10px #000;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  /* padding-right: 10px; */
+	text-align: left;
+	font-size: 1.4em;
+	font-weight:500;
+  font-family: 'Silverado';
+  cursor: default;
+  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 #milestone-trigger {
@@ -323,6 +398,16 @@
   font-family: 'Silverado';
   /* overflow: visible; */
 };
+
+.summary_button {
+  top: 2% !important;
+  width: 20%;
+  margin: 0 auto;
+  text-align: center;
+  /* font-weight:500; */
+  font-family: 'Silverado';
+  z-index: 73;
+}
 
 #container {
   position: absolute;
@@ -404,7 +489,6 @@
 #innovations_filter.tags {
   color: #cc0
 }
-
 
 .tab::-webkit-scrollbar {
         display: none;

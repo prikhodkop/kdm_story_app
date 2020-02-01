@@ -10,7 +10,7 @@ const innovations = {
   'tags': ['science', 'language'],
   'passive': {
     'departing': [
-      'Gain +$1$ survival.'
+      'Gain +$1$ survidval.'
     ],
   }
  },

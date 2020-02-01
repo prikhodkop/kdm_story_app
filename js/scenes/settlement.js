@@ -10,7 +10,7 @@ const { getSettings, addSettings, onSettingsSaved, initSettings } = require('./.
 const { render } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
-const { addDevelopment, openLocation, getDevelopmentState, setDevelopmentState } = require('./../ui/development')
+const { addDevelopment, openLocation, getDevelopmentState, setDevelopmentState, bonusesSummary } = require('./../ui/development')
 
 
 
@@ -129,6 +129,7 @@ module.exports = class SettlementScene {
     addMilestones()
     // addTimer(function() {
     addDevelopment()
+    bonusesSummary()
     // }, 1000)
 
 
@@ -224,19 +225,23 @@ module.exports = class SettlementScene {
 
     if (anew) {
       $("#label_sub_text").hide();
-      $('#hunt_icon').fadeIn(1000)
-      $('#label_text').fadeIn(1000)
-      $("#label_sub_text").delay(500).fadeIn(500);
-      $('#hunt_icon').delay(1000).fadeOut(1000)
-      $('#label_text').delay(1000).fadeOut(1000)
-      $('#settlement_background').delay(2000).fadeIn(500)
-      // $('#milestones').delay(3500).fadeIn(2000);
-      $('#turn_cheatsheet_pic').attr('src', pathToAssetL('images/settlement/turn.jpg'))
-      $('#turn_cheatsheet').delay(2000).fadeIn(500)
-      // $('.mapify-holder').delay(2000).fadeIn(500)
-      $('#settlement_event_button').delay(2500).fadeIn(1000)
-      $('#milestones_button').delay(2500).fadeIn(1000)
-      $('#development_button').delay(2500).fadeIn(1000)
+      $('#hunt_icon').ready(function(){
+        $('#hunt_icon').fadeIn(1000)
+        $('#label_text').fadeIn(1000)
+        $("#label_sub_text").delay(500).fadeIn(500);
+        $('#hunt_icon').delay(1000).fadeOut(1000)
+        $('#label_text').delay(1000).fadeOut(1000)
+        $('#settlement_background').delay(2000).fadeIn(500)
+        // $('#milestones').delay(3500).fadeIn(2000);
+        $('#turn_cheatsheet_pic').attr('src', pathToAssetL('images/settlement/turn.jpg'))
+        $('#turn_cheatsheet').delay(2000).fadeIn(500)
+        // $('.mapify-holder').delay(2000).fadeIn(500)
+        $('#settlement_event_button').delay(2500).fadeIn(1000)
+        $('#milestones_button').delay(2500).fadeIn(1000)
+        $('#development_button').delay(2500).fadeIn(1000)
+        $('.summary_button').delay(2000).fadeIn(500)
+      })
+
       $('#mute.button').show()
       // $('#back_button').show();
 
@@ -251,6 +256,7 @@ module.exports = class SettlementScene {
       // $('#milestones').fadeIn(2000);
       $('#turn_cheatsheet_pic').attr('src', pathToAssetL('images/settlement/turn.jpg'))
       $('#turn_cheatsheet').fadeIn(1000)
+      $('.summary_button').fadeIn(1000)
       // $('.mapify-holder').fadeIn(1000)
 
       $('#settlement_event_button').delay(1000).fadeIn(500)

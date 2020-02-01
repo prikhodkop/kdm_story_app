@@ -791,8 +791,7 @@ function updateInnovationsState() {
 function bonusesSummary() {
   let development_state = getDevelopmentState();
   let button = $('<button>', {
-    class: "tablinks",
-    id: "summary_button",
+    class: "summary_button settlement_return_button hoverable",
   })
   button.html('Summary');
 
@@ -800,7 +799,149 @@ function bonusesSummary() {
 
   $('#container').append(button)
 
+  // button.delay(2000).fadeIn(300)
+
+  let summary_screen = $('<div>', {
+    class: "summary_screen"
+  })
+
+  summary_screen.hide()
+
+  $('#container').append(summary_screen)
+
+  $('#container').on("click", '.summary_button', function(e) {
+    if (!$(this).hasClass('active')) {
+      $(this).addClass('active')
+      $('.summary_screen').fadeIn(300)
+    } else {
+      $(this).removeClass('active')
+      $('.summary_screen').fadeOut(200)
+    }
+  });
+
+  update_bonuses_list();
+
+  // summary_screen.append(form_bonuses_list(development_state['innovations']))
+
 }
+
+function update_bonuses_list() {
+    form_bonuses_list(getDevelopmentState()['innovations'])
+}
+
+function form_bonuses_list(innovation_names) {
+  let set = {}
+  let keys = []
+  for (let i=0; i<innovation_names.length; i++) {
+    if ('passive' in innovations[innovation_names[i]]) {
+      keys = Object.keys(innovations[innovation_names[i]]['passive'])
+      for (let j=0; j<keys.length; j++) {
+        if (!(keys[j] in set)) {
+          set[keys[j]] = []
+        }
+        set[keys[j]] = set[keys[j]].concat(innovations[innovation_names[i]]['passive'][keys[j]])
+      }
+    }
+  }
+
+  // console.log('Set: '+JSON.stringify(set))
+
+$('.summary_screen').empty()
+ let result = $('.summary_screen')
+
+  let categories = {'settlement': 'Settlement bonuses:',
+                    'newborn': 'Newborns:',
+                    'departing': 'Departing:',
+                    'hunt': 'Hunt bonuses:',
+                    'showdown': 'Showdown bonuses:',
+                    'all': 'Survivors bonuses:',
+                    'actions': 'Actions:',
+                   }
+
+  let set_keys = Object.keys(categories)
+
+  let cnts = {}
+  let cur
+  let cur_label
+  let cur_cnt
+
+  // console.log('Alls: '+JSON.stringify(set))
+
+  for (let i=0; i<set_keys.length; i++) {
+    set[set_keys[i]].sort()
+    for (let j=0; j<set[set_keys[i]].length; j++) {
+      if (set[set_keys[i]][j].includes('$')) {
+        cur = set[set_keys[i]][j]
+        cur_cnt = getNum(cur)
+        cur_label = cur.replace(/\$.*\$/, 'XXX')
+        // console.log('Proceesed string: '+cur+' '+cur_cnt+ ' '+cur_label)
+        if (!(set_keys[i]+'_'+cur_label in cnts)) {
+          cnts[set_keys[i]+'_'+cur_label] = 0
+        }
+        cnts[set_keys[i]+'_'+cur_label] = cnts[set_keys[i]+'_'+cur_label] + cur_cnt
+        set[set_keys[i]][j] = cur_label
+      }
+    }
+    set[set_keys[i]] = removeDuplicates(set[set_keys[i]])
+  }
+
+  console.log('Current cnts: '+JSON.stringify(cnts))
+
+  // set_keys.sort()
+  let text
+  for (let i=0; i<set_keys.length; i++) {
+    result.append($('<div id="summary-title">'+categories[set_keys[i]]+'</div>'))
+    for (let j=0; j<set[set_keys[i]].length; j++) {
+      text = set[set_keys[i]][j]
+      if (set_keys[i]+'_'+text in cnts) {
+        console.log('To replace: '+text)
+        text = text.replace('XXX', cnts[set_keys[i]+'_'+text])
+      }
+      if (set_keys[i] == 'newborn') {
+        text = text.replace('Gain', 'All <b>newborn</b> survivors gain ')
+      }
+      if (set_keys[i] == 'departing') {
+        text = text.replace('Gain', 'All <b>departing</b> survivors gain ')
+      }
+      if (set_keys[i] == 'settlement') {
+        text = text.replace('Survival Limit +', '<b>Survival Limit</b> +')
+      }
+      result.append($('<div id="summary-text"> - '+text+'</div>'))
+    }
+  }
+
+  return result
+}
+
+function getNum(str) {
+  return  parseInt(str.substring(
+    str.indexOf("$") + 1,
+    str.lastIndexOf("$")
+  ))
+  // return  Number.parseInt(str.match(/\$.*\$/))
+}
+
+function countDuplicates(original) {
+
+  let counts = {},
+    duplicate = 0;
+  original.forEach(function(x) {
+    counts[x] = (counts[x] || 0) + 1;
+  });
+
+  for (var key in counts) {
+    if (counts.hasOwnProperty(key)) {
+      counts[key] > 1 ? duplicate++ : duplicate;
+    }
+  }
+
+  return duplicate;
+
+}
+
+function removeDuplicates(array) {
+  return array.filter((a, b) => array.indexOf(a) === b)
+};
 
 function createInnovation(innovation) {
   let button = $('<button>', {
@@ -1265,6 +1406,8 @@ function setDevelopmentState(development_state) {
   // console.log('State to write: '+ JSON.stringify(development_state['activated']))
 
   localStorage.setItem('development', JSON.stringify(development_state))
+
+  update_bonuses_list();
 }
 
 function allignItems(type) {
