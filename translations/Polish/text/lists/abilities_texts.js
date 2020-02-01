@@ -45,7 +45,7 @@ const texts = {
  },
 'Enduring Legacy': {
   'label':'Trwała spuścizna',
-  'description': 'Możesz nominować tylko swojego <b>partnera</b> i siebie do <b>Współżycia</b>. Kiedy Twój partner umiera, otrzymujesz losowe zaburzenie i tracisz tę zdolność.<br/><br/>Twoje rodzone lub adoptowane dzieci mogą o<b>dziedziczyć</b> jeden pozytywny atrybut i jedną sztukę walki od swoich rodziców.<br/><br/>Podczas fazy osady, możesz adoptować nienazwanego Ocalałego, który nigdy nie wyruszył z osady. Ocaleni mogą <b>dziedziczyć</b> od rodziców tylko raz w życiu.<br/><br/>Jeśli masz <b>3+</b> dzieci, Twoja rodzina jest pełna, a ty przechodzisz z partnerem w <b>stan spoczynku</b> i nie możesz mieć więcej dzieci.',
+  'description': 'Możesz nominować tylko swojego <b>partnera</b> i siebie do <b>Współżycia</b>. Kiedy Twój partner umiera, otrzymujesz losowe zaburzenie i tracisz tę zdolność.<br/><br/>Twoje rodzone lub adoptowane dzieci mogą o<b>dziedziczyć</b> jeden punkt pozytywnego atrybutu i jedną sztukę walki od swoich rodziców.<br/><br/>Podczas fazy osady, możesz adoptować nienazwanego Ocalałego, który nigdy nie wyruszył z osady. Ocaleni mogą <b>dziedziczyć</b> od rodziców tylko raz w życiu.<br/><br/>Jeśli masz <b>3+</b> dzieci, Twoja rodzina jest pełna, a ty przechodzisz z partnerem w <b>stan spoczynku</b> i nie możesz mieć więcej dzieci.',
 },
  'Explore': {
    'label':'Eksploracja',
