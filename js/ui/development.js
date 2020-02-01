@@ -791,7 +791,7 @@ function updateInnovationsState() {
 function bonusesSummary() {
   let development_state = getDevelopmentState();
   let button = $('<button>', {
-    class: "summary_button settlement_return_button hoverable",
+    class: "summary_button",
   })
   button.html('Summary');
 

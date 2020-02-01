@@ -947,6 +947,39 @@ tr.spaceUnder>td {
   font-size: 0.5em !important;
 }
 
+button.summary_button {
+  position: absolute;
+  display:block;
+  /* width: 100%; */
+  bottom: 1%;
+  width: 13%;
+  left: 43.5%;
+  /* margin: 0 auto; */
+  color: #aaa;
+  background-color: #333;
+  cursor: pointer;
+  z-index: 73;
+  opacity: 0.6;
+  --borderWidth: 1em;
+  border-radius: var(--borderWidth);
+  border: 0.1rem solid #555;
+  font-family: 'Silverado';
+  font-size: 1em;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 5px #333);
+  transition: opacity 0.5s, border 0.5s, color 0.5s, filter 0.5s;
+}
+
+button.summary_button:hover {
+  opacity: 0.8;
+  /* animation: glowing 3000ms infinite; */
+  color: #cc0;
+  border: 0.2rem solid #cc0;
+  filter: drop-shadow(0 0 5px #cc0);
+}
+
 .settlement_return_button {
   position: absolute;
   display:block;

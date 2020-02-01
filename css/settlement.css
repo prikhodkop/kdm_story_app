@@ -247,7 +247,7 @@
   position: absolute;
   /* overflow: visible; */
   top: 1%;
-  height: 92%;
+  height: 94%;
   width: 60%;
   left: 25%;
   /* height:  */
@@ -399,15 +399,6 @@
   /* overflow: visible; */
 };
 
-.summary_button {
-  top: 2% !important;
-  width: 20%;
-  margin: 0 auto;
-  text-align: center;
-  /* font-weight:500; */
-  font-family: 'Silverado';
-  z-index: 73;
-}
 
 #container {
   position: absolute;
