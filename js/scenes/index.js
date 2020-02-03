@@ -21,6 +21,8 @@ module.exports = class IndexScene {
     $('#container').hide()
     $('#container').fadeIn(300)
 
+    // localStorage.clear()
+
     document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/index.html')
     document.title = 'kingdom death'
 

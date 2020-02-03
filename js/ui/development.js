@@ -791,6 +791,7 @@ function updateInnovationsState() {
 
 function bonusesSummary() {
   let development_state = getDevelopmentState();
+
   let button = $('<button>', {
     class: "summary_button",
   })
@@ -820,8 +821,7 @@ function bonusesSummary() {
     }
   });
 
-  update_bonuses_list(development_state);
-
+  update_bonuses_list()
   // summary_screen.append(form_bonuses_list(development_state['innovations']))
 
 }
@@ -831,7 +831,7 @@ function update_bonuses_list(state='') {
     state = getDevelopmentState()
   }
 
-  if (('innovations' in state) && (state['innovations'].length>0)) {
+  if (('innovations' in state) && (state['innovations'].length > 0)) {
       form_bonuses_list(state['innovations'])
   }
 }
@@ -865,13 +865,14 @@ $('.summary_screen').empty()
                     'actions': 'Actions:',
                    }
 
-  let set_keys = Object.keys(categories)
+  let set_keys = Object.keys(set)
 
   let cnts = {}
   let cur
   let cur_label
   let cur_cnt
 
+  // console.log('Bonuses set: '+JSON.stringify(set))
   if ((set == {})) {
     return ''
   }
