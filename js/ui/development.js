@@ -871,6 +871,10 @@ $('.summary_screen').empty()
   let cur_label
   let cur_cnt
 
+  if (set_keys.length == 0){
+    return
+  }
+
   // console.log('Alls: '+JSON.stringify(set))
 
   for (let i=0; i<set_keys.length; i++) {
