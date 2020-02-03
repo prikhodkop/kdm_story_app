@@ -1407,7 +1407,11 @@ function setDevelopmentState(development_state) {
 
   localStorage.setItem('development', JSON.stringify(development_state))
 
-  update_bonuses_list();
+  try {
+    update_bonuses_list();
+  } catch (e) {
+    
+  }
 }
 
 function allignItems(type) {

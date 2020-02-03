@@ -60,7 +60,7 @@ const texts = {
   }
  },
  'Silk-refining': {
-  'label': 'Silk-refining',
+  'label': 'Silk-Refining',
   'passive': {
     'settlement': [
       'Survival Limit +$1$'
