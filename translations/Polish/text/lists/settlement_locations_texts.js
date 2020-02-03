@@ -48,7 +48,7 @@ const texts = {
   'label': 'Sacreed Pool',
  },
  'Silk Mill': {
-  'label': 'Silk Mill',
+  'label': 'Jedwabny młyn',
  },
  'Skinnery': {
   'label': 'Garbarnia',

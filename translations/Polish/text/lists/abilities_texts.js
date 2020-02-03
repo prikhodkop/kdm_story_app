@@ -134,8 +134,8 @@ const texts = {
    'description': 'Podczas rzutu mającego wybrać Spóźnionego, dodaj swoje doświadczenie łowieckie do wyniku rzutu.',
  },
  'Rivals Scar': {
-   'label':'Rivals Scar',
-   'description': 'You gain permanent +1 strength and permanent -1 evasion.',
+   'label':'Blizna rywala',
+   'description': 'Otrzymujesz na stałe +1 siły oraz -1 zwody.',
  },
  'Sour Death': {
    'label':'Kwaśna śmierć',

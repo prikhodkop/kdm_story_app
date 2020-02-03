@@ -95,11 +95,11 @@ const  texts = {
  //  'label': 'Giants Blood',
  //  "description": "#",
  // },
- // 'Harvestman': {
- //  // 'expansion': 'spidicules',
- //  'label': 'Harvestman',
- //  "description": "#"
- // },
+ 'Harvestman': {
+  // 'expansion': 'spidicules',
+  'label': 'Żniwiarz',
+  "description": "#"
+ },
  // 'Headliner': {
  //  // 'expansion': 'lion knight',
  //  'label': 'Headliner',
@@ -240,11 +240,11 @@ const  texts = {
  //  'label': 'Unrelenting',
  //  "description": "#",
  // },
- // 'Vengeance': {
- //  // 'expansion': 'spidicules',
- //  'label': 'Vengeance',
- //  "description": "#",
- // },
+ 'Vengeance': {
+  // 'expansion': 'spidicules',
+  'label': 'Zemsta',
+  "description": "#",
+ },
  // 'Wardrobe Expert': {
  //  // 'expansion': 'lion knight',
  //  'label': 'Wardrobe Expert',

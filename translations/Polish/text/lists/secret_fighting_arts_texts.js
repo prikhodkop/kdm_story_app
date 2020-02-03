@@ -42,12 +42,12 @@ const texts = {
  //  'label': 'Courtly Screenwriter',
  //  "description": "#",
  // },
- // 'Death Touch': {
- //  // 'expansion': 'spidicules',
- //  'label': 'Death Touch',
- //  "description": "#",
- // },
- // 'Eternal Will': {
+ 'Death Touch': {
+  // 'expansion': 'spidicules',
+  'label': 'Dotyk śmierci',
+  "description": "#",
+ },
+//  'Eternal Will': {
  //  // 'expansion': 'manhunter',
  //  'label': 'Eternal Will',
  //  "description": "#",
@@ -106,11 +106,11 @@ const texts = {
    'label': 'Badacze śmierci',
   "description": "#",
  },
- // 'Silk Surgeon': {
- //  // 'expansion': 'spidicules',
- //  'label': 'Silk Surgeon',
- //  "description": "#",
- // },
+ 'Silk Surgeon': {
+  // 'expansion': 'spidicules',
+  'label': 'Jedwabny chirurg',
+  "description": "#",
+ },
  // 'Sun Eater': {
  //  // 'expansion': 'sunstalker',
  //  'label': 'Sun Eater',

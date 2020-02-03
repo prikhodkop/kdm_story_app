@@ -36,7 +36,7 @@ const texts = {
    'label': 'Pancerz wrzasku',
  },
  'Silk Armor': {
-   'label': 'Silk Armor',
+   'label': 'Jedwabny pancerz',
  },
  'Vagabond Armor': {
    'label': 'Vagabond Armor',
