@@ -328,7 +328,7 @@ module.exports = {
  gear_list,
  innovations,
  get_events_options,
- init_glossary,
+ init_glossary
 }
 
 function get_options (data, type, filter=false) {

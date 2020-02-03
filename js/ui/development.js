@@ -1,4 +1,4 @@
-const { get_random_draws, settlement_locations, gear_list, innovations } = require('./../ui/glossary')
+const { get_random_draws, settlement_locations, gear_list, innovations, glossary_terms } = require('./../ui/glossary')
 const { titleCase } = require('./../ui/events')
 const { getSettings } = require('./../ui/settings')
 const { addTimer } = require('./../ui/timer')
@@ -839,6 +839,12 @@ function update_bonuses_list(state='') {
 function form_bonuses_list(innovation_names) {
   let set = {}
   let keys = []
+
+  let settings = getSettings()
+  if (settings['campaign']+'#Hidden' in innovations) {
+    innovation_names.push(settings['campaign']+'#Hidden')
+  }
+
   for (let i=0; i<innovation_names.length; i++) {
     if ('passive' in innovations[innovation_names[i]]) {
       keys = Object.keys(innovations[innovation_names[i]]['passive'])
@@ -853,19 +859,26 @@ function form_bonuses_list(innovation_names) {
 
   // console.log('Set: '+JSON.stringify(set))
 
-$('.summary_screen').empty()
+ $('.summary_screen').empty()
  let result = $('.summary_screen')
 
-  let categories = {'settlement': 'Settlement bonuses:',
+ let categories = {
+                    'all': 'Bonuses Summary',
+                    'settlement': 'Settlement bonuses:',
                     'newborn': 'Newborns:',
                     'departing': 'Departing:',
                     'hunt': 'Hunt bonuses:',
                     'showdown': 'Showdown bonuses:',
-                    'all': 'Survivors bonuses:',
                     'actions': 'Actions:',
                    }
 
+  let categories_order = Object.keys(categories)
+
   let set_keys = Object.keys(set)
+
+  set_keys.sort(function(a, b) {
+    return categories_order.indexOf(a) - categories_order.indexOf(b);
+  })
 
   let cnts = {}
   let cur
@@ -897,29 +910,35 @@ $('.summary_screen').empty()
     set[set_keys[i]] = removeDuplicates(set[set_keys[i]])
   }
 
-  console.log('Current cnts: '+JSON.stringify(cnts))
+  // console.log('Current cnts: '+JSON.stringify(cnts))
 
   // set_keys.sort()
   let text
   for (let i=0; i<set_keys.length; i++) {
-    result.append($('<div id="summary-title">'+categories[set_keys[i]]+'</div>'))
+    if (set_keys[i] == 'all') {
+      result.append($('<div id="summary-title" class="big">'+categories[set_keys[i]]+'</div>'))
+    } else {
+        result.append($('<div id="summary-title">'+categories[set_keys[i]]+'</div>'))
+    }
+
     for (let j=0; j<set[set_keys[i]].length; j++) {
       text = set[set_keys[i]][j]
       if (set_keys[i]+'_'+text in cnts) {
         console.log('To replace: '+text)
         text = text.replace('XXX', cnts[set_keys[i]+'_'+text])
       }
-      if (set_keys[i] == 'newborn') {
-        text = text.replace('Gain', 'All <b>newborn</b> survivors gain ')
-      }
-      if (set_keys[i] == 'departing') {
-        text = text.replace('Gain', 'All <b>departing</b> survivors gain ')
-      }
-      if (set_keys[i] == 'settlement') {
-        text = text.replace('Survival Limit +', '<b>Survival Limit</b> +')
-      }
+      // if (set_keys[i] == 'newborn') {
+      //   text = text.replace('Gain', 'All <b>newborn</b> survivors gain ')
+      // }
+      // if (set_keys[i] == 'departing') {
+      //   text = text.replace('Gain', 'All <b>departing</b> survivors gain ')
+      // }
+      // if (set_keys[i] == 'settlement') {
+      //   text = text.replace('Survival Limit +', '<b>Survival Limit</b> +')
+      // }
       result.append($('<div id="summary-text"> - '+text+'</div>'))
     }
+    // result.append('<hr/>')
   }
 
   return result
