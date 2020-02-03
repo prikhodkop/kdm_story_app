@@ -24,6 +24,7 @@ module.exports = {
   hasInnovation,
   getHuntInnovationEffects,
   bonusesSummary,
+  update_bonuses_list
 }
 
 const always_on_locations = ['Throne', 'Lantern Hoard', 'Sacreed Pool', 'The Sun'];
@@ -871,7 +872,7 @@ $('.summary_screen').empty()
   let cur_label
   let cur_cnt
 
-  if (!(set == {})) {
+  if ((set == {})) {
     return ''
   }
 
@@ -1417,11 +1418,11 @@ function setDevelopmentState(development_state) {
 
   localStorage.setItem('development', JSON.stringify(development_state))
 
-  // try {
-  update_bonuses_list(development_state);
-  // } catch (e) {
+  try {
+    update_bonuses_list(development_state);
+  } catch (e) {
 
-  // }
+  }
 }
 
 function allignItems(type) {

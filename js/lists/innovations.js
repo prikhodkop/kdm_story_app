@@ -647,8 +647,8 @@ const innovations = {
     'settlement': [
       'When a survivor dies during the settlement phase, gain +1 <b>Endeavor</b>.',
     ],
-    'newborn': [
-      'Gain +$1$ understanding.',
+    'all': [
+      'All new survivors gain +$1$ understanding.',
     ],
     'showdown': [
       'When a survivor dies during the showdown phase, gain +2 <b>Endeavors</b>.',
