@@ -830,7 +830,7 @@ function update_bonuses_list(state='') {
     state = getDevelopmentState()
   }
 
-  if ('innovations' in state) {
+  if (('innovations' in state) && (state['innovations'].length>0)) {
       form_bonuses_list(state['innovations'])
   }
 }
@@ -871,8 +871,8 @@ $('.summary_screen').empty()
   let cur_label
   let cur_cnt
 
-  if (set_keys.length == 0){
-    return
+  if (!(set == {})) {
+    return ''
   }
 
   // console.log('Alls: '+JSON.stringify(set))
