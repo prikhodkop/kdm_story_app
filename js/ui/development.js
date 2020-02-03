@@ -819,14 +819,20 @@ function bonusesSummary() {
     }
   });
 
-  update_bonuses_list();
+  update_bonuses_list(development_state);
 
   // summary_screen.append(form_bonuses_list(development_state['innovations']))
 
 }
 
-function update_bonuses_list() {
-    form_bonuses_list(getDevelopmentState()['innovations'])
+function update_bonuses_list(state='') {
+  if (state == '') {
+    state = getDevelopmentState()
+  }
+
+  if ('innovations' in state) {
+      form_bonuses_list(state['innovations'])
+  }
 }
 
 function form_bonuses_list(innovation_names) {
@@ -1407,11 +1413,11 @@ function setDevelopmentState(development_state) {
 
   localStorage.setItem('development', JSON.stringify(development_state))
 
-  try {
-    update_bonuses_list();
-  } catch (e) {
-    
-  }
+  // try {
+  update_bonuses_list(development_state);
+  // } catch (e) {
+
+  // }
 }
 
 function allignItems(type) {
