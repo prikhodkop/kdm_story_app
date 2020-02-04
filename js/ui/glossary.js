@@ -253,18 +253,16 @@ function init_glossary() {
         entry.label = keys[j]
         entry.description = data_en.texts[keys[j]]
       } else {
-        if (keys[j] in data_local.texts) {
-          if ('label' in data_local.texts[keys[j]]) {
+          if ((keys[j] in data_local.texts)&&('label' in data_local.texts[keys[j]])) {
             entry.label = data_local.texts[keys[j]].label+'  ['+keys[j]+']'
           } else {
             entry.label = keys[j]
           }
-          if ('description' in data_local.texts[keys[j]]) {
+          if ((keys[j] in data_local.texts)&&('description' in data_local.texts[keys[j]])) {
             entry.description = data_local.texts[keys[j]].description
           } else {
             entry.description = data_en.texts[keys[j]]
           }
-        }
       }
       glossary_terms[keys[j]] = entry
 
@@ -330,7 +328,7 @@ module.exports = {
  gear_list,
  innovations,
  get_events_options,
- init_glossary,
+ init_glossary
 }
 
 function get_options (data, type, filter=false) {

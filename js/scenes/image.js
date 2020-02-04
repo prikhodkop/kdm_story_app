@@ -530,7 +530,7 @@ module.exports = class ImageScene {
         }))
         $('#blind_exit_tooltip').hide();
 
-        $(document).on({
+        $('#container').on({
           mouseenter: function () {
             console.log('enter')
             window.digested_timer = addTimer(function(){
@@ -692,7 +692,7 @@ module.exports = class ImageScene {
         }))
         $('.gear_tooltip_image').hide();
 
-        $(document).on({
+        $('#container').on({
           mouseenter: function () {
             console.log('enter')
             window.digested_timer = addTimer(function(){
@@ -741,7 +741,7 @@ module.exports = class ImageScene {
         }))
         $('.gear_tooltip_image').hide();
 
-        $(document).on({
+        $('#container').on({
           mouseenter: function () {
             console.log('enter')
             window.digested_timer = addTimer(function(){

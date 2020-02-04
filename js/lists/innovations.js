@@ -10,7 +10,7 @@ const innovations = {
   'tags': ['science', 'language'],
   'passive': {
     'departing': [
-      'Gain +$1$ survival.'
+      'All <b>departing</b> survivors gain +$1$ survidval.'
     ],
   }
  },
@@ -22,7 +22,7 @@ const innovations = {
   'action': true,
   'passive': {
     'settlement': [
-      'Survival Limit +$1$'
+      '<b>Survival Limit</b> +$1$'
     ],
   }
  },
@@ -39,7 +39,7 @@ const innovations = {
   'action': true,
   'passive': {
     'settlement': [
-      'Survival Limit +$1$'
+      '<b>Survival Limit</b> +$1$'
     ],
   }
  },
@@ -66,7 +66,7 @@ const innovations = {
   'action': true,
   'passive': {
     'settlement': [
-      'Survival Limit +$1$'
+      '<b>Survival Limit</b> +$1$'
     ],
   }
  },
@@ -82,7 +82,7 @@ const innovations = {
   'action': true,
   'passive': {
     'departing': [
-      'Gain +$2$ insanity.'
+      'All <b>departing</b> survivors gain +$2$ insanity.'
     ],
   }
  },
@@ -92,7 +92,7 @@ const innovations = {
   'action': true,
   'passive': {
     'settlement': [
-      'Survival Limit +$1$'
+      '<b>Survival Limit</b> +$1$'
     ],
   }
  },
@@ -102,9 +102,9 @@ const innovations = {
   'tags': ['home', 'family'],
   'passive': {
     'newborn': [
-      'Gain +$1$ accuracy.',
-      'Gain +$1$ strength.',
-      'Gain +$1$ evasion.'
+      'All <b>newborn</b> survivors gain +$1$ accuracy.',
+      'All <b>newborn</b> survivors gain +$1$ strength.',
+      'All <b>newborn</b> survivors gain +$1$ evasion.'
     ],
   }
  },
@@ -114,7 +114,7 @@ const innovations = {
   'action': true,
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
       'At the start of the Settlement Phase, gain +1 endeavor'
     ],
   }
@@ -135,7 +135,7 @@ const innovations = {
   'action': true,
   'passive': {
     'departing': [
-      'Gain +$2$ insanity.'
+      'All <b>departing</b> survivors gain +$2$ insanity.'
     ],
   }
  },
@@ -143,7 +143,7 @@ const innovations = {
   'tags': ['faith'],
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
     'actions': [
       '<b class="action">Endure</b>: You may spend 7 survival minus your Luck to ignore a severe injury before you roll a result.',
@@ -156,7 +156,7 @@ const innovations = {
   'tags': ['starting'],
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
     'actions': [
       '<b class="action">Encourage</b>: Once per round, if standing, spend 1 survival to call out to a non-deaf survivor. They stand if knocked down.',
@@ -175,7 +175,7 @@ const innovations = {
   'tags': ['home', 'bloodline'],
   'passive': {
     'newborn': [
-      'Gain +$1$ strength.',
+      'All <b>newborn</b> survivors gain +$1$ strength.',
       'Newborn survivors are born with the <b style="color:#863a2a;">Pristine</b> ability.'
     ],
   }
@@ -191,7 +191,7 @@ const innovations = {
   'tags': ['home', 'hovel'],
   'passive': {
     'departing': [
-      'Gain +$1$ survival.'
+      'All <b>departing</b> survivors gain +$1$ survival.'
     ],
     'settlement': [
       'Survivors nominated for <b class="event">Intimacy</b> may give themselves a surname if they  do not have one.'
@@ -215,7 +215,7 @@ const innovations = {
   'tags': ['education'],
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
     'showdown': [
       'Once per showdown, you may select a card from the discard pile or wound stack and place it on top of the AI deck.',
@@ -237,7 +237,7 @@ const innovations = {
   'action': true,
   'passive': {
     'departing': [
-      'Gain +$1$ survival.'
+      'All <b>departing</b> survivors gain +$1$ survival.'
     ],
   }
  },
@@ -266,10 +266,10 @@ const innovations = {
   'tags': ['home', 'language'],
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
     'departing': [
-      'Gain +$1$ survival.'
+      'All <b>departing</b> survivors gain +$1$ survival.'
     ],
   }
  },
@@ -287,7 +287,7 @@ const innovations = {
   'tags': ['starting'],
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
     'actions': [
       '<b class="action">Encourage</b>: Once per round, if standing, spend 1 survival to call out to a non-deaf survivor. They stand if knocked down.',
@@ -303,7 +303,7 @@ const innovations = {
       'Gain <b>Heat</b>.',
     ],
     'departing': [
-      'Gain +$1$ survival.'
+      'All <b>departing</b> survivors gain +$1$ survival.'
     ],
   }
  },
@@ -323,7 +323,7 @@ const innovations = {
   'action': true,
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
   }
  },
@@ -332,7 +332,7 @@ const innovations = {
   'tags': ['art', 'language'],
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
     'actions': [
       '<b class="action">Dash</b>: Once per round, spend 1 survival to gain +1 <b>Movemement</b> and use it immediately.',
@@ -373,7 +373,7 @@ const innovations = {
   'action': true,
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
   }
  },
@@ -386,10 +386,10 @@ const innovations = {
       'Gain <b>Heat</b>.',
     ],
     'newborn': [
-      'Gain +$1$ survival.'
+      'All <b>newborn</b> survivors gain +$1$ survival.'
     ],
     'departing': [
-      'Gain +$1$ survival.',
+      'All <b>departing</b> survivors gain +$1$ survival.',
       '<b>Departing survivors</b> with a constellation gain +1 survival.'
     ],
   }
@@ -421,9 +421,9 @@ const innovations = {
   'tags': ['music', 'song of the brave'],
   'passive': {
     'newborn': [
-      'Gain +$2$ courage.',
-      'Gain +$2$ understanding.',
-      'Gain +$2$ hunt XP.'
+      'All <b>newborn</b> survivors gain +$2$ courage.',
+      'All <b>newborn</b> survivors gain +$2$ understanding.',
+      'All <b>newborn</b> survivors gain +$2$ hunt XP.'
     ]
   }
  },
@@ -513,7 +513,7 @@ const innovations = {
   'action': true,
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
   }
  },
@@ -532,7 +532,7 @@ const innovations = {
   'campaign': ['Sun'],
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
     'actions': [
       '<b class="action">Embolden</b>: Once per round, if you have no +1 strength tokens, spend 1 survival to gain a +1 strength token. When you are knocked down, lose all +1 strength tokens.',
@@ -544,7 +544,7 @@ const innovations = {
   'tags': ['education', 'language'],
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
       'When a survivor innovates, draw an additional 2 innovation Cards to choose from.',
     ],
   }
@@ -557,8 +557,8 @@ const innovations = {
       'At the start of settlement phase add 1 scrap to settlement storage',
     ],
     'departing': [
-      'Gain +$3$ survival.',
-      'Gain +$3$ insanity.',
+      'All <b>departing</b> survivors gain +$3$ survival.',
+      'All <b>departing</b> survivors gain +$3$ insanity.',
       'If any of <b>departing survivors</b> have 10+ insanity, <b class="event">Gracious Host</b>',
     ],
   }
@@ -567,7 +567,7 @@ const innovations = {
   'tags': ['science'],
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
     'showdown': [
       'When you defeat a monster, gain 1 monster resource of your choice from its resource deck.',
@@ -596,7 +596,7 @@ const innovations = {
   'action': true,
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
     'hunt': [
       'If the survivors would move backwards on the hunt board, rolld 1d10. On 4+, they don\'t.',
@@ -615,10 +615,10 @@ const innovations = {
   'tags': ['principle', 'conviction'],
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
     'newborn': [
-      'Gain +$1$ strength.',
+      'All <b>newborn</b> survivors gain +$1$ strength.',
     ],
   }
  },
@@ -626,7 +626,7 @@ const innovations = {
   'tags': ['principle', 'death'],
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
     'all': [
       'Whenever a survivor dies, draw 1 basic resource and add it to the settlement storage. Do not gain a resource if a survivor is lost, ceases to exist, or is exiled.',
@@ -647,8 +647,8 @@ const innovations = {
     'settlement': [
       'When a survivor dies during the settlement phase, gain +1 <b>Endeavor</b>.',
     ],
-    'newborn': [
-      'Gain +$1$ understanding.',
+    'all': [
+      'All new survivors gain +$1$ understanding.',
     ],
     'showdown': [
       'When a survivor dies during the showdown phase, gain +2 <b>Endeavors</b>.',
@@ -670,7 +670,7 @@ const innovations = {
   'tags': ['principle', 'conviction'],
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
     'all': [
       'When you gain a random fighting art, draw 3 fighting art cards and select 1 to keep.',
@@ -681,20 +681,46 @@ const innovations = {
   'tags': ['principle', 'birth', 'new life'],
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      '<b>Survival Limit</b> +$1$',
     ],
     'settlement': [
       'When rolling on the <b class="event">Intimacy</b> story event, roll twice and pick lowest result.',
     ],
     'newborn': [
-      'Gain +$1$ strength.',
-      'Gain +$1$ evasion.'
+      'All <b>newborn</b> survivors gain +$1$ strength.',
+      'All <b>newborn</b> survivors gain +$1$ evasion.'
     ],
     'all': [
       'Once per lifetime, a survivor may reroll a single roll result. They must keep this new result.',
     ],
   }
- }
+},
+
+// Dirty hack to add always present bonuses to the campaigns (Innovation Name is the same as Campaign name)
+'Lantern#Hidden': {
+  'campaign': 'hidden',
+  'passive': {
+    'actions': [
+      '<b class="action">Dodge</b>: When a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform. Each survivor may only Dodge once per round.',
+    ],
+  }
+},
+'Stars#Hidden': {
+  'campaign': 'hidden',
+  'passive': {
+    'actions': [
+      '<b class="action">Dodge</b>: When a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform. Each survivor may only Dodge once per round.',
+    ],
+  }
+},
+'Sun#Hidden': {
+  'campaign': 'hidden',
+  'passive': {
+    'actions': [
+      '<b class="action">Dodge</b>: When a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform. Each survivor may only Dodge once per round.',
+    ],
+  }
+}
 }
 
 module.exports = {

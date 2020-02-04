@@ -324,6 +324,7 @@
   /* overflow: visible; */
 };
 
+
 #container {
   position: absolute;
 }
@@ -404,7 +405,6 @@
 #innovations_filter.tags {
   color: #cc0
 }
-
 
 .tab::-webkit-scrollbar {
         display: none;
