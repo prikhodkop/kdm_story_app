@@ -1249,7 +1249,7 @@ div.selectize-dropdown-content::-webkit-scrollbar {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;
-  /* padding-right: 10px; */
+  padding-right: 10px;
 	text-align: left;
 	font-size: 1.2em;
 	font-weight:500;
@@ -1278,7 +1278,7 @@ div.selectize-dropdown-content::-webkit-scrollbar {
   /* padding-top: 5px; */
   padding-bottom: 5px;
   padding-left: 10px;
-  /* padding-right: 10px; */
+  padding-right: 10px;
 	text-align: left;
 	font-size: 1em;
 	font-weight:400;
