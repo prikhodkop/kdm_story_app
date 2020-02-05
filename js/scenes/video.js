@@ -10,6 +10,12 @@ const { getSettings, addSettings, onSettingsSaved, initSettings } = require('./.
 const { render } = require('./../ui/template-renderer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
+const special_events = []
+
+const events_sequences = {
+  'the hanged man': ['showdown manhunter', 'Start the <b>Showdown</b>!'],
+}
+
 module.exports = class VideoScene {
   render () {
     if ($('#back').attr('src') == '#') {
@@ -124,6 +130,7 @@ module.exports = class VideoScene {
       createReference()
       createInnovationsList()
       createLocationsList()
+      eventsSugar(myself)
 
       $('#video').hide()
       $('#video').get(0).pause()
@@ -149,6 +156,7 @@ module.exports = class VideoScene {
       createReference()
       createInnovationsList()
       createLocationsList()
+      eventsSugar(myself)
     })
 
     $('#video').on('click', function () {
@@ -165,6 +173,7 @@ module.exports = class VideoScene {
       createReference()
       createInnovationsList()
       createLocationsList()
+      eventsSugar(myself)
     })
 
     createMenuButton()
@@ -211,6 +220,76 @@ module.exports = class VideoScene {
       sessionStorage.setItem(document.title, JSON.stringify(current_state))
 
       return JSON.stringify(current_state)
+    }
+
+    function eventsSugar(name) {
+
+      let settings = getSettings()
+
+      if ((special_events.indexOf(name) >= 0) && !(sessionStorage.getItem("settlement") === null)) {
+        console.log('Adding the button!')
+        let return_button = $('<button>', {
+          // id: 'settlement_return_button',
+          class: 'settlement_return_button to_settlement hoverable'
+        })
+        return_button.html('Return to the <b>Settlement</b>')
+        return_button.tooltipster({
+            contentAsHTML: 'true',
+            animation: 'grow',
+            content: '<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>',
+            position: 'bottom',
+            delay: [300, 100],
+            fixedWidth: 250,
+            trigger: 'custom',
+            triggerOpen: {
+              mouseenter: true,
+              // click: true
+            },
+            triggerClose: {
+              click: true,
+              mouseleave: true
+            }
+          });
+        // return_button.hide()
+        $('#container').append(return_button)
+        // return_button.delay(1000).fadeIn(2000)
+        $('#container').on('click', '.settlement_return_button.to_settlement', function () {
+          setTransition('settlement', 'back', name, current_state())
+        });
+      }
+
+      if (name in events_sequences) {
+        console.log('Adding the button!')
+        let return_button = $('<button>', {
+          // id: 'settlement_return_button',
+          class: 'settlement_return_button to_settlement hoverable'
+        })
+        return_button.html(events_sequences[name][1])
+        return_button.tooltipster({
+            contentAsHTML: 'true',
+            animation: 'grow',
+            content: '<b style="color:#cc0;">Click</b> to start <b>'+events_table[events_sequences[name][0]].label+'</b>',
+            position: 'bottom',
+            delay: [300, 100],
+            fixedWidth: 250,
+            trigger: 'custom',
+            triggerOpen: {
+              mouseenter: true,
+              // click: true
+            },
+            triggerClose: {
+              click: true,
+              mouseleave: true
+            }
+          });
+        // return_button.hide()
+        $('#container').append(return_button)
+        // return_button.delay(1000).fadeIn(2000)
+        $('#container').on('click', '.settlement_return_button.to_settlement', function () {
+          setTransition(events_sequences[name][0], 'menu', name, current_state())
+        });
+      }
+
     }
   }
 }

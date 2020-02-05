@@ -1,4 +1,4 @@
-const { get_random_draws, settlement_locations, gear_list, innovations, glossary_terms } = require('./../ui/glossary')
+const { get_random_draws, settlement_locations, innovations, glossary_terms, gear_list } = require('./../ui/glossary')
 const { titleCase } = require('./../ui/events')
 const { getSettings } = require('./../ui/settings')
 const { addTimer } = require('./../ui/timer')
@@ -23,7 +23,6 @@ module.exports = {
   removeSettlementLocation,
   hasInnovation,
   getHuntInnovationEffects,
-  bonusesSummary,
   update_bonuses_list
 }
 
@@ -130,10 +129,10 @@ function setupLocations() {
   if (DEBUG_MODE) {console.log('Locations list: '+locations_list)}
 
   for (let i = 0; i < locations_list.length; i++) {
-    addTimer(function() {
+    // addTimer(function() {
       // console.log('Im checking: '+i+'  '+locations_list[i])
       createLocation(locations_list[i], (i==0) ? true : false);
-    }, 100*i);
+    // }, 100*i);
   }
 
   addTimer(function(){
@@ -239,6 +238,9 @@ function setupLocations() {
 }
 
 function createLocation(location, default_open=false) {
+  let settings = getSettings()
+  // let gear_list = Object.assign(window.globals.glossary[settings['language']].gear_list)
+
   let development = getDevelopmentState()
   let gormchymy_innovations = ['Albedo', 'Nigredo', 'Citrinitas', 'Rubedo']
 
@@ -392,6 +394,29 @@ function createLocation(location, default_open=false) {
           column.append(element);
           if (gear_name in gear_list) {
             let tooltip = ''
+
+            if ('set' in gear_list[gear_name]) {
+              if (settings['expansions']['lion knight'] == 'Disabled') {
+                let index
+                index = gear_list[gear_name]['set'].indexOf('Dancer');
+                if (index !== -1) gear_list[gear_name]['set'].splice(index, 1);
+
+                index = gear_list[gear_name]['set'].indexOf('Brawler');
+                if (index !== -1) gear_list[gear_name]['set'].splice(index, 1);
+
+                index = gear_list[gear_name]['set'].indexOf('Warlord');
+                if (index !== -1) gear_list[gear_name]['set'].splice(index, 1);
+              }
+              if (settings['whiteboxes']['before the wall'] == 'Disabled') {
+                let index
+                index = gear_list[gear_name]['set'].indexOf('Vagabond');
+                if (index !== -1) gear_list[gear_name]['set'].splice(index, 1);
+              }
+
+              if (gear_list[gear_name]['set'].join('') == '') {
+                delete gear_list[gear_name]['set']
+              }
+            }
 
             if ('set' in gear_list[gear_name]) {
               tooltip = tooltip + '<b style="color:#d87dc1;font-size:0.8em;">Set: '+gear_list[gear_name]['set'].join(', ')+'</b><br/><br/>'
@@ -789,46 +814,14 @@ function updateInnovationsState() {
 
 }
 
-function bonusesSummary() {
-  let development_state = getDevelopmentState();
-
-  let button = $('<button>', {
-    class: "summary_button",
-  })
-  button.html('Summary');
-
-  button.hide()
-
-  $('#container').append(button)
-
-  // button.delay(2000).fadeIn(300)
-
-  let summary_screen = $('<div>', {
-    class: "summary_screen"
-  })
-
-  summary_screen.hide()
-
-  $('#container').append(summary_screen)
-
-  $('#container').on("click", '.summary_button', function(e) {
-    if (!$(this).hasClass('active')) {
-      $(this).addClass('active')
-      $('.summary_screen').fadeIn(300)
-    } else {
-      $(this).removeClass('active')
-      $('.summary_screen').fadeOut(200)
-    }
-  });
-
-  update_bonuses_list()
-  // summary_screen.append(form_bonuses_list(development_state['innovations']))
-
-}
-
 function update_bonuses_list(state='') {
   if (state == '') {
     state = getDevelopmentState()
+  }
+
+  let settings = getSettings()
+  if (settings['campaign']+'#Hidden' in innovations) {
+    state['innovations'].push(settings['campaign']+'#Hidden')
   }
 
   if (('innovations' in state) && (state['innovations'].length > 0)) {
@@ -839,11 +832,6 @@ function update_bonuses_list(state='') {
 function form_bonuses_list(innovation_names) {
   let set = {}
   let keys = []
-
-  let settings = getSettings()
-  if (settings['campaign']+'#Hidden' in innovations) {
-    innovation_names.push(settings['campaign']+'#Hidden')
-  }
 
   for (let i=0; i<innovation_names.length; i++) {
     if ('passive' in innovations[innovation_names[i]]) {
@@ -859,20 +847,32 @@ function form_bonuses_list(innovation_names) {
 
   // console.log('Set: '+JSON.stringify(set))
 
- $('.summary_screen').empty()
- let result = $('.summary_screen')
+ $('#severe-table.summary').empty()
+ let result = $('#severe-table.summary')
 
  let categories = {
-                    'all': 'Bonuses Summary',
-                    'settlement': 'Settlement bonuses:',
-                    'newborn': 'Newborns:',
-                    'departing': 'Departing:',
-                    'hunt': 'Hunt bonuses:',
-                    'showdown': 'Showdown bonuses:',
-                    'actions': 'Actions:',
-                   }
+               'all': 'Bonuses Summary',
+               'settlement': 'Settlement bonuses:',
+               'newborn': 'Newborns:',
+               'departing': 'Departing:',
+               'hunt': 'Hunt bonuses:',
+               'showdown': 'Showdown bonuses:',
+               'actions': 'Actions:',
+              }
 
-  let categories_order = Object.keys(categories)
+let categories_order
+
+if (document.title == 'hunt') {
+   categories_order = ['all', 'departing', 'hunt', 'settlement', 'newborn', 'showdown', 'actions']
+ } else if (document.title.indexOf('showdown')>-1) {
+   categories_order = ['all', 'showdown', 'actions', 'settlement', 'newborn', 'departing', 'hunt']
+ } else {
+   categories_order = ['all', 'settlement', 'newborn', 'departing', 'hunt', 'showdown', 'actions']
+ }
+
+
+
+  // let categories_order = Object.keys(categories)
 
   let set_keys = Object.keys(set)
 
@@ -888,6 +888,10 @@ function form_bonuses_list(innovation_names) {
   // console.log('Bonuses set: '+JSON.stringify(set))
   if ((set == {})) {
     return ''
+  }
+
+  if (!('all' in set)) {
+    result.append($('<div id="summary-title" class="big">'+categories['all']+'</div>'))
   }
 
   // console.log('Alls: '+JSON.stringify(set))
