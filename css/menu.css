@@ -92,8 +92,8 @@
 
 #menu-toggle-close {
 	position: absolute;
-	top: 1%;
-	right: 1.1%;
+	top: 0.6%;
+	right: 0.9%;
 	width: 3%;
 	z-index: 99;
 	opacity: 0.5;
@@ -102,6 +102,16 @@
   color: #ddd;
   transition: opacity 0.5s, color 0.5s, filter: 0.5s;
   cursor: pointer;
+}
+
+.magictime.swashOut {
+    -webkit-animation-duration: 0.15s;
+    animation-duration: 0.15s;
+}
+
+.magictime.swashIn {
+    -webkit-animation-duration: 0.15s;
+    animation-duration: 0.15s;
 }
 
 
