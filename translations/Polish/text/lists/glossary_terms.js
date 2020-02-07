@@ -35,15 +35,15 @@ const texts = {
 		'label': 'Aktywacja',
 		'description': 'aktywacja może zostać wykorzystana do ataku, aktywacji ekwipunku i interakcji z terenem. Ocalali otrzymują jedną aktywację podczas aktu Ocalałego.'
 	},
-	'Adjacent': {
+	'Adjacent (Miniature)': {
 		'label': 'Sąsiadująca (figurka)',
 		'description': 'figurka sąsiaduje z inną, gdy zajmuje pole obok pola (nie po skosie) zajmowanego przez tą drugą figurkę.'
 	},
-	'Affinity': {
+	'Affinity (Completed)': {
 		'label': 'Powiązania (skompletowane)',
 		'description': 'niektóre karty ekwipunku mają czerwone, niebieskie lub zielone półkwadraty na krawędzi karty. Jeśli półkwadrat sąsiaduje z półkwadratem tego samego koloru, na innej karcie ekwipunku, tworząc pełen kwadrat, daje to jedno powiązanie.'
 	},
-	'Affinity': {
+	'Affinity Bonus': {
 		'label': 'Powiązania (bonus)',
 		'description': 'specjalna zasada rodzaju ekwipunku. Posiadanie wskazanej liczby kolorowych powiązań wyzwoli efekt. Każdy bonus powiązań ma zastosowanie tylko raz, niezależnie od tego, ile dodatkowych powiązań posiada Ocalały.'
 	},
@@ -75,11 +75,11 @@ const texts = {
 		'label': 'Wszyscy Ocalali',
 		'description': 'efekt podczas starcia, który odnosi się do wszystkich Ocalałych, dotyczy wszystkich Ocalałych będących w danej chwili na planszy starcia.'
 	},
-	'Ambush': {
+	'Ambush (Monster)': {
 		'label': 'Zasadzka (potwór)',
 		'description': 'jeśli potwór na planszy łowów wejdzie na pole z Ocalałymi, zastawia zasadzkę na Ocalałych. Zakończ wszelkie bieżące wydarzenia na łowach i natychmiast rozpocznij starcie. Ocalali opuszczają swoją pierwszą turę. W większości przypadków oznacza to, że potwór wykona dwie tury pod rząd.'
 	},
-	'Ambush': {
+	'Ambush (Survivors)': {
 		'label': 'Zasadzka (Ocalali)',
 		'description': 'niektóre wydarzenia na łowach pozwalają Ocalałym zastawić zasadzkę na potwora. Jeśli to zrobią, Ocalali mogą pierwsi rozpocząć starcie. Nie stosuj się do zasad rozstawienia w wydarzeniu fabularnym potwora. Zamiast tego umieść na planszy wypisane do tego starcia tereny, potwora i Ocalałych na planszy starcia według decyzji graczy (nadal należy przestrzegać zasad rozstawienia na kartach terenu).'
 	},
@@ -147,11 +147,11 @@ const texts = {
 		'label': 'Atrybut - żetony modyfikatorów',
 		'description': 'żetony modyfikatora atrybutu służą do wskazywania tymczasowych zmian atrybutów. Żetony modyfikatórów atrybutu są dwustronne, aby wskazywać zmiany na dodatnie i ujemne wartości dla danego atrybutu i łączą się sumą z trwałymi atrybutami, wskazując bieżący poziomu każdego atrybutu. Wszystkie żetony są usuwane na końcu każdego starcia.'
 	},
-	'Automatic Hit': {
+	'Automatic Hit(s)': {
 		'label': 'Automatyczne trafienie',
 		'description': 'gdy Ocalały z automatycznymi trafieniami, wykonuje rzuty ataku, rezygnuje z rzutu wymaganą liczbą kości i skutecznie trafia potwora za każdą kość. Wszystkie pozostałe rzuty z tego rzutu ataku są wykonywane normalnie. Niezależnie ile automatycznych trafień Ocalały posiada, nie może trafić potwora więcej, niż całkowita liczba szybkości swojego ataku. Automatyczne trafienia nie są perfekcyjnymi trafieniami. Nie rzucasz kolejnych k10 by to sprawdzać - są to tylko zwyczajne trafienia.'
 	},
-	'Away': {
+	'Away (Movement)': {
 		'label': 'Odsunięcie - ruch ',
 		'description': 'ruch, który powoduje powstanie największej liczby pól pomiędzy dwoma punktami na planszy, takimi jak potwór, Ocalały, teren lub krawędź planszy.'
 	},
@@ -175,7 +175,7 @@ const texts = {
 		'label': 'Akcja podstawowa',
 		'description': 'podstawowa akcja potwora jest wyszczególniona na karcie akcji podstawowej. Akcja podstawowa składa się z akcji wybrania celu i akcji ataku, z profilu ataku. Potwory wykonują podstawową akcję naniektórych kartach Sl, w niektórych reakcjach lub jeśli talie Sl i zagranych kart SI są puste. Wykonanie podstawowej akcji nie liczy się jako dobranie karty Sl.'
 	},
-	'Basic Action/Reference Card': {
+	'Basic Action / Reference Card': {
 		'label': 'Akcja podstawowa / karta cech',
 		'description': 'dwustronne karty akcji podstawowej/cech zawierają podstawowe akcje potwora po jednej stronie i przegląd cech potwora po drugiej stronie.'
 	},
@@ -315,7 +315,7 @@ const texts = {
 		'label': '(X)k10',
 		'description': 'liczba (X) dziesięciościennych kości. Dołączone do gry kości posiadają logo latarni na ściance z \"10\".'
 	},
-	'1d5': {
+	'd5': {
 		'label': '1k5',
 		'description': 'rzut 1k10, podzielony rezultat na dwa i zaokrąglony w górę.'
 	},
@@ -539,8 +539,8 @@ const texts = {
 		'label': 'Ekwipunek - specjalne zasady ekwipunku',
 		'description': 'znajdują się w dolnej części karty ekwipunku. Wypisane są umiejętności, premie i wymagania.'
 	},
-	'Grand Weapon': {
-		'label': 'Wielka',
+	'Grand': {
+		'label': 'Wielka Broń',
 		'description': 'ekwipunek z tym słowem kluczowym jest wielką bronią. Ocalali mogą zdobywać poziomy biegłości w posługiwaniu się tą bronią.'
 	},
 	'Graze': {
@@ -570,10 +570,6 @@ const texts = {
 	'Healing (Survivor)': {
 		'label': 'Leczenie Ocalały',
 		'description': 'kiedy Ocalały sie leczy, wymaż wszystkie wypełnione poziomy ran, i przywróć wszystkie utracone punkty pancerza.'
-	},
-	'Heart of the Sword (Storm)': {
-		'label': '',
-		'description': 'An ability. If you gain weapon proficiency during the Aftermath, gain +3 additional ranks. You cough up a hunk of your own solidified blood and gain +1 Iron strange resource.'
 	},
 	'Heavy (Gear)': {
 		'label': 'Ciężki (ekwipunek)',
@@ -646,6 +642,10 @@ const texts = {
 	'Impairments': {
 		'label': 'Upośledzenia',
 		'description': 'trwałe zmiany lub urazy odniesione przez Ocalałego i zapisane na jego arkuszu. Często powstają w wyniku ciężkich urazów, odczytanych z tabeli ciężkich urazów.'
+	},
+	'Impassable': {
+		'label': 'Nieprzekraczalny',
+		'description': 'specjalna zasada terenu. Ocalały nie może dobrowolnie poruszyć sie na lub poprzez pole zajmowane przez nieprzekraczalny teren. Teren nieprzekraczalny zatrzymuje wszelkie ruchy, włączając odrzucenie. Jeśli Ocalały jest odrzucany na pole zajmowane przez teren nieprzekraczalny, zderza się z nim i jego ruch się kończy przed terenem.'
 	},
 	'Impervious': {
 		'label': 'Odporność',
@@ -775,10 +775,6 @@ const texts = {
 		'label': 'Limit, raz w życiu',
 		'description': 'może się wydarzyć raz dla Ocalałego. Jeśli pojawia się ponownie, nic się nie dzieje. W niezwykle rzadkich przypadkach, jest możliwe, że Ocalały będzie częścią nowej kampanii. Ocalały nadal ma limit raz w życiu i nic co się takiego wydarzyło (z limitem raz w życiu) nie może przydarzyć się ponownie. Jeśli Ocalały w jakikolwiek sposób umrze i narodzi się ponownie, może otrzymać taki benefit ponownie. Zapisz efekt raz w życiu na arkuszu Ocalałego.'
 	},
-	'Limb-maker (Sculptor)': {
-		'label': '',
-		'description': 'Once per settlement phase, spend 2 endeavors to carve a prosthetic limb. Remove a survivors dismembered injury and add 1 bone to the settlements storage.'
-	},
 	'Luck (Player Attribute)': {
 		'label': 'Szczęście (atrybut gracza)',
 		'description': 'szczęście modyfikuje szansę Ocalałego na zadanie krytycznej rany w rzucie zranienia. +1 szczęścia powoduje krytyczną ranę przy wynikach rzutu 9 lub 10, +2 szczęścia przy 8, 9 lub 10 i tak dalej. Modyfikator szczęścia może być ujemny, uniemożliwiając zadanie rany krytycznej.'
@@ -810,6 +806,10 @@ const texts = {
 	'Miniature': {
 		'label': 'Figurka',
 		'description': 'fizyczne przestawienie potwora lub Ocalałego, używane podczas łowów oraz w fazie starcia.'
+	},
+  'Milestone': {
+		'label': 'Kamień milowy',
+		'description': 'Kamienie milowe to specjalne wydarzenia fabularne, które są aktywowane podczas etapu "Sprawdzenie kamieni milowych" w fazie osady, tylko wtedy, gdy spełnione są pewne określone warunki.'
 	},
 	'Monster AI Deck': {
 		'label': 'Talia SI potwora',
@@ -967,10 +967,6 @@ const texts = {
 		'label': 'Skok',
 		'description': 'specjalna zasada ekwipunku. Wydaj Aktywację i Ruch, aby wykonać ruch o 3 pola naprzód w linii prostej i aktywuj broń do walki wręcz. Ten atak otrzymuje +1 siły.'
 	},
-	'Presage (Witch)': {
-		'label': '',
-		'description': 'Each time you attack, before drawing hit locations, loudly say a name. You lightly bite the eye in your cheek to see what it sees, if you draw any hit locations with that name, gain +3 insanity and +10 strength when attempting to would them.'
-	},
 	'Principle': {
 		'label': 'Doktryna',
 		'description': 'doktryny są filozofiami zachowań twojej osady. Kiedy wyzwalane jest wydarzenie fabularne doktryny, osada musi podjąć decyzję. Wybrana doktryna zapisywana jest w arkuszu osady i dodawana jej karta do obszaru gry osady.'
@@ -983,10 +979,6 @@ const texts = {
 		'label': '',
 		'description': 'Your complete affinities and incomplete affinity halves count as all colors.'
 	},
-	'Pristine': {
-		'label': '',
-		'description': 'When you suffer <b>dismembered</b> severe injury, ignore it and gain 1 bleeding token instead.'
-	},
 	'Provoke': {
 		'label': 'Sprowokowanie',
 		'description': 'specjalna zasada ekwipunku. Kiedy zadasz ranę tą bronią, otrzymujesz żeton celu priorytetowego.,'
@@ -998,10 +990,6 @@ const texts = {
 	'Pulse Discoveries': {
 		'label': 'Badanie impulsów',
 		'description': 'seria umiejętności które mogą zostać odkryte poprzez badania latarni. Badanie impulsów może zostać wykonane przez Ocalałego z kością śmierci.'
-	},
-	'Psychovore (Reaper)': {
-		'label': '',
-		'description': 'Once per showdown, you may eat an adjacent survivor disorder. If you do, remove the disorder. They gain 1 bleeding token and you gain +1 permanent strength. At the end of the showdown, if you havent eatern a disorder, you die.'
 	},
 	'Puzzle Affinity': {
 		'label': 'Powiązania puzzlowe',
@@ -1098,10 +1086,6 @@ const texts = {
 	'Ripple Pattern': {
 		'label': '',
 		'description': 'A gear special rule. When you are attacked, roll 1d10. On a 10+, ignore 1 hit.'
-	},
-	'Rooted to All (Absolute)': {
-		'label': '',
-		'description': 'If you are standing at the start of your act, reveal the top 2 cards of the AI deck and put them back in any order.'
 	},
 	'Round (Showdown)': {
 		'label': 'Runda (starcie)',
@@ -1418,10 +1402,6 @@ const texts = {
 	'Waist': {
 		'label': 'Talia',
 		'description': 'miejsce trafienia Ocalałego. Obrażenia w talię po przekroczeniu poziomu ciężkich ran, powodują rzut w tabeli ciężkich urazów talii.'
-	},
-	'Way of the Rust (Rust)': {
-		'label': '',
-		'description': 'Your bleeding tokens are also +1 evasion tokens.'
 	},
 	'Weapon': {
 		'label': 'Broń',

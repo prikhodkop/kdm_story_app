@@ -29,12 +29,12 @@ const texts = {
  },
  'Dead Inside': {
    'label':'Wewnętrznie martwy',
-   'description': 'Nie możesz zdobywać <b>Przetrwania</b>.',
+   'description': 'Nie możesz zdobywać <b>przetrwania</b>.',
  },
- 'Devoted Union': {
-   'label':'Devoted Union',
-   'description': 'You may nominate only your <b>partner</b> and yourself for <b>Intimacy</b>. When your partner dies, gain random disorder and lose this ability.<br/><br/>During the survivor\'s turn, while you and your partner are within range of the monster, you may perform a <b<combined attack</b>. Limit, once per round.<br/><br/><b style="color:#cc0;">Combined attack</b>: Partners each spend <b>Activation</b> and activate a weapon. They simultaneously make attack rolls, determining hits based on their individual accuracy. Draw hit locations for all hits together. Reolve hit locations one at a time. Partners choose which survivor attempts to wound each hit location <i>(including the trap)</i>. Each partner may not make more wound attempts than the number of their attack rolls.',
- },
+'Devoted Union': {
+  'label':'Pełne oddanie',
+  'description': 'Możesz nominować tylko swojego <b>partnera</b> i siebie do <b>Współżycia</b>. Kiedy Twój partner umrze, otrzymujesz losowe zaburzenie i tracisz tę umiejętność.<br/><br/>Podczas tury Ocalałych kiedy Ty i Twój partner znajdujecie się w zasięgu potwora, możesz wykonać <b>atak łączony</b>. Limit, raz na rundę.<br/><br/><b style="color:#cc0;">Atak łączony</b>: Każdy z partnerów wydaje <b>Aktywację</b> i aktywuje broń. Jednocześnie wykonują rzuty ataku, określając trafienia na podstawie ich indywidualnej precyzji. Wylosuj miejsca trafień dla wszystkich trafień jednocześnie. Rozstrzygaj lokalizacje trafień po kolei. Partnerzy wybierają, który z Ocalałych próbuje zranić każde miejsce trafienia <i>(włącznie z pułapką)</i>. Żaden z partnerów nie może podjąć więcej prób zranienia niż liczba jego rzutów ataku.',
+},
  'Dormenatus': {
    'label':'Dormenatus',
    'description': 'Kiedy otrzymujesz obrażenia, możesz zadeklarować „Dormenatus X” głośnym, wyraźnym głosem. Jeśli to zrobisz, otrzymujesz X pkt pancerza do każdego miejsca trafienia. X nie może być większe niż ilość twoich zielonych powiązań. Po rozstrzygnięciu obrażeń, otrzymujesz +X doświadczenia łowieckiego. Kiedy uaktywniasz wiek 2, odkrywasz sekretną sztukę walki Łaska Dormenatus.',
@@ -43,10 +43,10 @@ const texts = {
    'label':'Ciągły bełkot',
    'description': 'Kiedy wyruszasz, pozostali wyruszający Ocalali otrzymują +1 obłędu. Nie możesz wykonywać akcji <b>Natchnienia</b>.',
  },
- 'Enduring Legacy': {
-   'label':'Enduring Legacy',
-   'description': 'You may nominate only your <b>partner</b> and yourself for <b>Intimacy</b>. When your partner dies, gain random disorder and lose this ability.<br/><br/>Your born or adopted children may <b>inherit</b> one positive attribute and one fighting art from among their parents.<br/><br/>During the settlement phase, you may adopt an unnamed survivor that has never departed the settlement. Survivors may only <b>inherit</b> from parents once per lifetime.<br/><br/>When you have <b>3+</b> children, your family is complete, you <b>retire</b> with your partner and stop having children forever.',
- },
+'Enduring Legacy': {
+  'label':'Trwała spuścizna',
+  'description': 'Możesz nominować tylko swojego <b>partnera</b> i siebie do <b>Współżycia</b>. Kiedy Twój partner umiera, otrzymujesz losowe zaburzenie i tracisz tę zdolność.<br/><br/>Twoje rodzone lub adoptowane dzieci mogą o<b>dziedziczyć</b> jeden punkt pozytywnego atrybutu i jedną sztukę walki od swoich rodziców.<br/><br/>Podczas fazy osady, możesz adoptować nienazwanego Ocalałego, który nigdy nie wyruszył z osady. Ocaleni mogą <b>dziedziczyć</b> od rodziców tylko raz w życiu.<br/><br/>Jeśli masz <b>3+</b> dzieci, Twoja rodzina jest pełna, a ty przechodzisz z partnerem w <b>stan spoczynku</b> i nie możesz mieć więcej dzieci.',
+},
  'Explore': {
    'label':'Eksploracja',
    'description': 'Kiedy rzucasz w tabelce badania, dodaj +2 do wyniku rzutu kością.',
@@ -134,8 +134,8 @@ const texts = {
    'description': 'Podczas rzutu mającego wybrać Spóźnionego, dodaj swoje doświadczenie łowieckie do wyniku rzutu.',
  },
  'Rivals Scar': {
-   'label':'Rivals Scar',
-   'description': 'You gain permanent +1 strength and permanent -1 evasion.',
+   'label':'Blizna rywala',
+   'description': 'Otrzymujesz na stałe +1 siły oraz -1 zwody.',
  },
  'Sour Death': {
    'label':'Kwaśna śmierć',

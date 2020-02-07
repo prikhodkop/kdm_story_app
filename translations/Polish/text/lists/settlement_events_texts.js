@@ -57,10 +57,10 @@ const texts = {
    'label': 'Rywalizacja',
  },
  'Season of the Spiderling': {
-  'label': 'Season of the Spiderling',
+  'label': 'Sezon na Pajęczątka',
  },
  'Silk Storm': {
-  'label': 'Silk Storm',
+  'label': 'Jedwabna burza',
  },
  'Skull Eater': {
    'label': 'Zjadacz czaszek',
