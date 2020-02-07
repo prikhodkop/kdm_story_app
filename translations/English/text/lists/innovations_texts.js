@@ -90,7 +90,7 @@ const texts = {
   'label': 'Crimson Candy',
   'passive': {
     'showdown': [
-      ['survival', '<b>Monster Level</b>']
+      'At the start of <b>Showdown</b> each survivor gain +<b>Monster Level</b> survival.'
     ],
   }
  },

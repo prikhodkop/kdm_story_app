@@ -3,7 +3,7 @@ const remote = require('electron').remote
 const { get_all_options, is_random_draw, get_random_draws, get_representation, get_locations_list, get_innovations_list, init_glossary} = require('./glossary')
 // const { cdnUrl } = require('./template-renderer')
 const { addTimer, clearTimer } = require('./timer')
-const { getDevelopmentState, addInnovation, removeInnovation, addSettlementLocation, removeSettlementLocation} = require('./development')
+const { getDevelopmentState, addInnovation, removeInnovation, addSettlementLocation, removeSettlementLocation, update_bonuses_list} = require('./development')
 const { getSettings} = require('./settings')
 const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
@@ -49,8 +49,47 @@ module.exports = {
   createReference,
   createSevereTables,
   createInnovationsList,
-  createLocationsList
+  createLocationsList,
+  // bonusesSummary
 }
+
+
+// to use existing mechanism - app considers summary_screen to be another injury table
+function bonusesSummary(top) {
+  let development_state = getDevelopmentState();
+
+  let button = $('<img>', {
+    class: "summary",
+    value: 'summary',
+    id: 'severe',
+    src: pathToAsset('images/icons/lantern.png'),
+    style: 'top:'+top+';right: 1.1%;width: 2%;',
+  })
+
+  button.hide()
+  button.delay(100).fadeIn(500)
+
+  $('#container').append(button)
+
+  // button.delay(2000).fadeIn(300)
+
+  let summary_screen = $('<div>', {
+    class: "summary",
+    value: "summary",
+    id: 'severe-table'
+  })
+
+  summary_screen.hide()
+
+  $('#container').append(summary_screen)
+
+  update_bonuses_list()
+
+  $("#severe-div.summary").empty()
+  $("#severe-div.summary").append($('#severe-table.summary').clone())
+
+}
+
 
 function createMenuButton () {
 
@@ -115,25 +154,44 @@ function createMenuButton () {
 
   }
 
-  /// /
   if (!$("#menu-toggle-wrapper").length) {
-    $('#container').append($('<a>', {
-      href: 'javascript:void(0)',
+    let menu_toggle_wrapper = $('<img>', {
       id: 'menu-toggle-wrapper',
-    }))
-
-    $('#menu-toggle-wrapper').click(function () {
-      if (!$(this).hasClass('active')) {
-        $('#menu').fadeIn(500);
-        $('#menu-toggle-wrapper').tooltipster('content', null);
-      } else {
-        $('#menu').hide();
-        $('#menu-toggle-wrapper').tooltipster('content', '<b style="color:#cc0;">Click</b> to show <b>Story Events</b> table.', 'delay', 0);
-      }
-      $(this).toggleClass('active')
+      src: pathToAsset('images/icons/book.png')
     })
 
-    $('#menu-toggle-wrapper').tooltipster({animationDuration: 50,
+    let menu_toggle_close = $('<div id="menu-toggle-close">&#10006;</div>')
+
+    menu_toggle_wrapper.hide()
+    menu_toggle_close.hide()
+
+    $('#container').append(menu_toggle_wrapper)
+    $('#container').append(menu_toggle_close)
+
+    menu_toggle_wrapper.delay(100).fadeIn(500)
+
+    menu_toggle_wrapper.click(function () {
+      // if (!menu_toggle_wrapper.hasClass('active')) {
+        $('#menu').fadeIn(500);
+        menu_toggle_close.delay(200).fadeIn(300);
+        menu_toggle_wrapper.fadeOut(200);
+      // } else {
+      //   $('#menu').hide();
+      //   menu_toggle_close.hide();
+      //   menu_toggle_wrapper.fadeIn(500);
+      // }
+      // menu_toggle_wrapper.toggleClass('active')
+    })
+
+    menu_toggle_close.click(function () {
+      $('#menu').fadeOut(200);
+      menu_toggle_close.fadeOut(200);
+      menu_toggle_wrapper.delay(200).fadeIn(300);
+      // menu_toggle_wrapper.toggleClass('active')
+    })
+
+    menu_toggle_wrapper.tooltipster({
+        animationDuration: 50,
         contentAsHTML: 'true',
         animation: 'fade',
         content: '<b style="color:#cc0;">Click</b> to show <b>Story Events</b> table.',
@@ -180,29 +238,96 @@ function createSevereTables () {
     src: '',
   }))
 
-  addLocationTable('brain', '11%')
-  addLocationTable('head', '18%')
-  addLocationTable('arms', '25%')
-  addLocationTable('body', '32%')
-  addLocationTable('waist', '39%')
-  addLocationTable('legs', '46%')
+  // addLocationTable('brain', '11%')
+  // addLocationTable('head', '18%')
+  // addLocationTable('arms', '25%')
+  // addLocationTable('body', '32%')
+  // addLocationTable('waist', '39%')
+  // addLocationTable('legs', '46%')
 
-  // $('#container').append($('<div>',{id:'severe-background'}));
+  let start = 10
+  let distance0 = 7
+  let distance = 7
 
-  // $(document).on(
-  // {
-  //   mouseleave: function() {
-  //       $(this).removeClass('active');
-  //       hideLocationTable();
-  //   },
-  // },
-  // 'aaa')
+  bonusesSummary(start+'%')
+
+  addLocationTable('brain', start+distance0+'%')
+  addLocationTable('head', (start+distance0+distance*1)+'%')
+  addLocationTable('arms', (start+distance0+distance*2)+'%')
+  addLocationTable('body', (start+distance0+distance*3)+'%')
+  addLocationTable('waist', (start+distance0+distance*4)+'%')
+  addLocationTable('legs', (start+distance0+distance*5)+'%')
+
+  window.severe_hide_wait_time = 400
+
+  $('#container').on({
+    mouseenter: function () {
+      if (!$(this).hasClass('hovered')) {
+        $(this).addClass('hovered')
+      }
+      $('#divtwo').css('background-color', 'yellow')
+      if (!$(this).hasClass('active')) {
+        $(this).addClass('active')
+        showLocationTable($(this).attr('value'))
+        if ($(this).hasClass('summary')) {
+          // update_bonuses_list()
+          $(this).attr('src', pathToAsset('images/icons/lantern_active.png'))
+        }
+      }
+    },
+    mouseleave: function () {
+      let thise = $(this)
+      thise.removeClass('hovered')
+      clearTimer(window.severe_timers[thise.attr('value')])
+      addTimer(function() {
+        if (!(thise.hasClass('hovered'))&&!($('#severe-table.'+thise.attr('value')).hasClass('hovered'))) {
+          thise.removeClass('active')
+          hideLocationTable(thise.attr('value'))
+          if (thise.hasClass('summary')) {
+            thise.attr('src', pathToAsset('images/icons/lantern.png'))
+          }
+        }
+        window.severe_hide_wait_time = 400
+      }, window.severe_hide_wait_time)
+    },
+  }, '#severe')
+
+  $('#container').on({
+    mouseenter: function () {
+      if (!$(this).hasClass('hovered')) {
+        $(this).addClass('hovered')
+      }
+    },
+    mouseleave: function () {
+      $(this).removeClass('hovered')
+      window.severe_hide_wait_time = 200
+      $('#severe.'+$(this).attr('value')).trigger('mouseout');
+    },
+    click: function() {
+      $(this).removeClass('hovered')
+      window.severe_hide_wait_time = 0
+      $('#severe.'+$(this).attr('value')).trigger('mouseout');
+    }
+  }, '#severe-table')
+
+  tippy('#severe-table', {
+    placement: 'bottom-start',
+    content:'<b style="color:#cc0;">Click</b> to hide. ',
+    duration: 50,
+    delay: [600, 100],
+    animation: 'shift-away-subtle',
+    followCursor: true,
+    theme: 'kdm',
+    // updateDuration: 400,
+  });
+
 }
 
 function addLocationTable (location, top) {
   let location_icon = $('<img>', {
     class: location,
     id: 'severe',
+    value: location,
     src: pathToAsset('images/icons/' + location + '.png'),
     style: 'top:' + top + ';',
   })
@@ -212,6 +337,7 @@ function addLocationTable (location, top) {
 
   $('#container').append($('<img>', {
     class: location,
+    value: location,
     id: 'severe-table',
     src: pathToAssetL('images/reference/severe injuries/' + location + '.jpg'),
   }))
@@ -220,39 +346,10 @@ function addLocationTable (location, top) {
   $('#severe-table.' + location).hide()
   $('#severe.' + location).delay(100).fadeIn(500)
 
-  $('#severe.' + location).hover(function () {
-    if (!$(this).hasClass('active')) {
-      if (!$(this).hasClass('hoverd')) {
-        // $("#menu").fadeIn(500);
-        showLocationTable($(this).attr('class'))
-        $(this).toggleClass('active')
-      }
-    }
-  }, function () {
-    $(this).delay(500).removeClass('hoverd')
-  })
-
-  $('#severe.' + location).click(function () {
-    if (!$(this).hasClass('active')) {
-      showLocationTable($(this).attr('class'))
-    } else {
-      hideLocationTable()
-    }
-    $(this).toggleClass('active')
-  })
-
-  $(document).on({
-    mouseenter: function () {
-      $('#divtwo').css('background-color', 'yellow')
-    },
-    mouseleave: function () {
-      $(this).removeClass('active')
-      hideLocationTable($(this).attr('class'))
-    },
-  }, '#severe')
 }
 
 function showLocationTable (location) {
+
   window.severe_timers[location] = addTimer(function(){
     $('#severe-table.' + location).show("slide", { direction: "right" }, 200);
   }, 300)
@@ -262,7 +359,6 @@ function showLocationTable (location) {
 
 function hideLocationTable (location) {
   // $('#severe-table.' + location).fadeOut(100)
-  clearTimer(window.severe_timers[location])
   $('#severe-table.' + location).hide("slide", { direction: "right" }, 100);
   // $('#severe-background').delay(500).fadeOut(00);
   // $('#severe-table').slideRight(1000);

@@ -1,5 +1,6 @@
 const { generate_events_table } = require('./events')
 const router = require('./router')
+const {initSettings} = require('./settings')
 
 module.exports = {
   setTransition,
@@ -12,6 +13,9 @@ var events_table = generate_events_table()
 function setTransition (name, transition, back_target = null, state = null, transit = true) {
   console.log('Doing the transition...')
   console.log(transition)
+  $('#container').empty()
+  initSettings()
+
 
   sessionStorage.setItem('transition', transition)
   sessionStorage.setItem('target', name)

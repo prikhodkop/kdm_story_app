@@ -15,6 +15,7 @@ module.exports = {
   silentSaveSettings,
   initSettings,
   defaultLang,
+  resetSettings
 }
 
 function defaultLang(){
@@ -238,7 +239,7 @@ function resetSettings () {
   console.log('New settings:')
   console.log(settings)
 
-  localStorage.empty();
+  sessionStorage.clear();
 
   // saveFile(JSON.stringify(settings), __dirname + '/settings.json')
   saveFile(JSON.stringify(settings), app.getPath('userData') + '/settings.json')

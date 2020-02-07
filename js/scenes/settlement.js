@@ -5,12 +5,12 @@ initAssets()
 
 const { createToc, generate_events_table } = require('./../ui/events')
 const { getSettlementEventPath, get_random_draws, get_events_options } = require('./../ui/glossary')
-const { createMenuButton, createReference, createSevereTables } = require('./../ui/menu')
+const { createMenuButton, createReference, createSevereTables, bonusesSummary } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved, initSettings } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
-const { addDevelopment, openLocation, getDevelopmentState, setDevelopmentState, bonusesSummary } = require('./../ui/development')
+const { addDevelopment, openLocation, getDevelopmentState, setDevelopmentState } = require('./../ui/development')
 
 
 
@@ -32,7 +32,7 @@ module.exports = class SettlementScene {
 
 
     onSettingsSaved(() => {
-      setTransition(document.title, 'back', getBackTarget(), current_state())
+      setTransition(document.title, 'menu', getBackTarget(), current_state())
     })
 
     console.log(sessionStorage)
@@ -129,21 +129,6 @@ module.exports = class SettlementScene {
     addMilestones()
     // addTimer(function() {
     addDevelopment()
-    bonusesSummary()
-    // }, 1000)
-
-
-    // MUTE BUTTON SETUP
-    // $("#mute.button").click(function () {
-    //   if (!$(this).hasClass('active')) {
-    //     music.mute(true);
-    //     speech.mute(true);
-    //   } else {
-    //     speech.mute(false);
-    //     music.mute(false);
-    //   };
-    //   $(this).toggleClass('active');
-    // });
 
     // BACK BUTTON SETUP
     if ((back_target == null) || (back_target == 'null') || (back_target == 'undefined')) {
@@ -239,7 +224,6 @@ module.exports = class SettlementScene {
         $('#settlement_event_button').delay(2500).fadeIn(1000)
         $('#milestones_button').delay(2500).fadeIn(1000)
         $('#development_button').delay(2500).fadeIn(1000)
-        $('.summary_button').delay(2000).fadeIn(500)
       })
 
       $('#mute.button').show()
@@ -256,7 +240,7 @@ module.exports = class SettlementScene {
       // $('#milestones').fadeIn(2000);
       $('#turn_cheatsheet_pic').attr('src', pathToAssetL('images/settlement/turn.jpg'))
       $('#turn_cheatsheet').fadeIn(1000)
-      $('.summary_button').fadeIn(1000)
+      // $('.summary_button').fadeIn(1000)
       // $('.mapify-holder').fadeIn(1000)
 
       $('#settlement_event_button').delay(1000).fadeIn(500)
@@ -363,6 +347,7 @@ module.exports = class SettlementScene {
     //     $('#cheatsheet_buttons').removeClass('active')
     //   // }
     // })
+
 
     $('#development_button').click(function () {
       if (!$(this).hasClass('active')) {
