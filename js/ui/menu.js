@@ -169,12 +169,27 @@ function createMenuButton () {
     $('#container').append(menu_toggle_close)
 
     menu_toggle_wrapper.delay(100).fadeIn(500)
+    menu_toggle_close.addClass('magictime')
+    menu_toggle_wrapper.addClass('magictime')
 
     menu_toggle_wrapper.click(function () {
       // if (!menu_toggle_wrapper.hasClass('active')) {
         $('#menu').fadeIn(500);
-        menu_toggle_close.delay(200).fadeIn(300);
-        menu_toggle_wrapper.fadeOut(200);
+        // menu_toggle_close.delay(200).fadeIn(300);
+        addTimer(function(){
+          menu_toggle_close.show()
+          menu_toggle_close.removeClass('swashOut')
+          menu_toggle_close.addClass('swashIn')
+        }, 200)
+        addTimer(function(){
+          menu_toggle_close.removeClass('swashIn')
+        }, 400)
+        // menu_toggle_wrapper.removeClass('swashIn')
+        menu_toggle_wrapper.addClass('swashOut')
+        // addTimer(function() {
+          // menu_toggle_wrapper.removeClass('swashOut')
+        // }, 500)
+        // menu_toggle_wrapper.fadeOut(200);
       // } else {
       //   $('#menu').hide();
       //   menu_toggle_close.hide();
@@ -185,8 +200,15 @@ function createMenuButton () {
 
     menu_toggle_close.click(function () {
       $('#menu').fadeOut(200);
-      menu_toggle_close.fadeOut(200);
-      menu_toggle_wrapper.delay(200).fadeIn(300);
+      // menu_toggle_close.fadeOut(200);
+      menu_toggle_close.addClass('swashOut')
+      menu_toggle_wrapper.addClass('magictime')
+      menu_toggle_wrapper.removeClass('swashOut')
+      menu_toggle_wrapper.addClass('swashIn')
+      addTimer(function() {
+        menu_toggle_wrapper.removeClass('swashIn')
+      }, 200)
+      // menu_toggle_wrapper.delay(200).fadeIn(300);
       // menu_toggle_wrapper.toggleClass('active')
     })
 
@@ -688,12 +710,14 @@ function createReference () {
       $('#reference-window-background').fadeIn(500)
       $('#reference').attr('src', pathToAsset('images/icons/reference_active.png'))
       selectize.focus()
+      $('#reference').tooltipster('content', '<b style="color:#cc0;">Click</b> to close <b>Reference</b> window.')
 
     } else {
       $('#reference-window-back0').fadeOut(500)
       $('#reference-window-background').fadeOut(500)
       $('#reference').attr('src', pathToAsset('images/icons/reference.png'))
       selectize.clear()
+      $('#reference').tooltipster('content', '<b style="color:#cc0;">Click</b> to show <b>Reference</b> window.')
     }
     $(this).toggleClass('active')
   })
