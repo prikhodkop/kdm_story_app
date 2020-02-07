@@ -480,7 +480,7 @@ function get_representation (word) {
    result = '<img id=reference-image style="width:75%;" src="'+pathToAssetL('images/reference/terms/'+word+' 0.png')+'"/><br/>' + result
   }
 
-  let weapons = ['Axe', 'Bow', 'Club', 'Dagger', 'Fist & Tooth', 'Grand Weapon', 'Katana', 'Katar', 'Scythe', 'Shield', 'Spear', 'Sword', 'Twilight Sword', 'Whip', 'Thrown']
+  let weapons = ['Axe', 'Bow', 'Club', 'Dagger', 'Fist & Tooth', 'Grand', 'Katana', 'Katar', 'Scythe', 'Shield', 'Spear', 'Sword', 'Twilight Sword', 'Whip', 'Thrown']
 
   if (weapons.includes(word)) {
    result = result + '<br/><br/><img id=reference-image style="width:100%;" src="' + pathToAssetL('images/reference/Weapon Masteries/' + word + '.png') + '"/>'

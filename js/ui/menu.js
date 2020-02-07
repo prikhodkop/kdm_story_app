@@ -173,8 +173,8 @@ function createMenuButton () {
     menu_toggle_wrapper.click(function () {
       // if (!menu_toggle_wrapper.hasClass('active')) {
         $('#menu').fadeIn(500);
-        menu_toggle_close.fadeIn(500);
-        menu_toggle_wrapper.hide();
+        menu_toggle_close.delay(200).fadeIn(300);
+        menu_toggle_wrapper.fadeOut(200);
       // } else {
       //   $('#menu').hide();
       //   menu_toggle_close.hide();
@@ -184,9 +184,9 @@ function createMenuButton () {
     })
 
     menu_toggle_close.click(function () {
-      $('#menu').hide();
-      menu_toggle_close.hide();
-      menu_toggle_wrapper.fadeIn(500);
+      $('#menu').fadeOut(200);
+      menu_toggle_close.fadeOut(200);
+      menu_toggle_wrapper.delay(200).fadeIn(300);
       // menu_toggle_wrapper.toggleClass('active')
     })
 

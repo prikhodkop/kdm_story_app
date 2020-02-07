@@ -77,9 +77,16 @@
 	z-index: 96;
 	display: block;
 	opacity: 0.4;
+	transition: opacity 0.5s, filter 0.5s, drop-shadow 0.5s ease;
 }
 
 #menu-toggle-wrapper:hover {
+	color: yellow;
+	opacity: 0.8;
+	animation: glowing-image_2 3000ms infinite;
+}
+
+#menu-toggle-close:hover {
 	opacity: 0.8;
 }
 
@@ -89,7 +96,7 @@
 	right: 1.1%;
 	width: 3%;
 	z-index: 99;
-	opacity: 0.7;
+	opacity: 0.5;
 	display: block;
   font-size: 3em;
   color: #ddd;
