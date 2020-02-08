@@ -292,12 +292,15 @@ module.exports = class SettlementScene {
           if (['foundlings', 'returning survivors', 'the pool and the sun'].indexOf(window.settlement_back_target) >= 0) {
             selected_event = 'First Day'
           }
-          if (!anew) {
+          if ((!anew)&&('settlement_event' in state)&&!(state.settlement_event == '')) {
             selected_event = state.settlement_event
           }
 
           $('#settlement_event_back').attr('val', selected_event)
           selectize.setValue(selected_event, false)
+
+          $('#settlement_event_button').addClass('drawn_event')
+          $('#settlement_event_button').tooltipster('content','Event drawn: <b>'+settlement_events[selected_event].label+'</b><br/><br/><b style="color:#cc0;">Click</b> to show/hide <b>Settlement Event</b> card.')
 
           $('#settlement_event_back').fadeOut(300, function(){
               $(this).attr('src',pathToAssetL('images/reference/Settlement Events/' + selected_event + '.jpg')).bind('onreadystatechange load', function(){
@@ -432,10 +435,19 @@ module.exports = class SettlementScene {
       }
     })
 
+    let settlement_event_button_content
+
+    if ((!anew)&&('settlement_event' in state)) {
+      $('#settlement_event_button').addClass('drawn_event')
+      settlement_event_button_content = 'Event drawn: <b>'+settlement_events[state.settlement_event].label+'</b><br/><br/><b style="color:#cc0;">Click</b> to show/hide <b>Settlement Event</b> card.'
+    } else {
+      settlement_event_button_content = '<b style="color:#cc0;">Click</b> to draw and show/hide <b>Settlement Event</b> card.'
+    }
+
     $('#settlement_event_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: '<b style="color:#cc0;">Click</b> to draw and show <b>Settlement Event</b> card.<br/><br/><b style="color:#cc0;">Click</b> again to hide it.',
+      content: settlement_event_button_content,
       position: 'right',
       delay: 0,
       maxWidth: 300,
@@ -653,7 +665,9 @@ module.exports = class SettlementScene {
       current_state.locations = null
       current_state.innovations = null
 
-      current_state.settlement_event = $('#settlement_event_back').attr('val')
+      if (!($('#settlement_event_back').attr('src') == '#')) {
+        current_state.settlement_event = $('#settlement_event_back').attr('val')
+      }
       current_state.milestones_open = $('#milestones_button').hasClass('active')
 
       console.log(current_state)
