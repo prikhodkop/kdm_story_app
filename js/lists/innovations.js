@@ -1,3 +1,5 @@
+// It is assumed that first innovation tag is its type
+
 const innovations = {
  'Albedo': {
   'expansion': 'gorm',

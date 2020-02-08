@@ -90,6 +90,7 @@ const settlement_locations = {
    '3': []},
   'action': true,
   'armor_set': 'Leather Armor',
+  'action_enabler': {'innovation': ['Ammonia']},
  },
  'Light Forging': {
   'expansion': 'slenderman',
@@ -165,6 +166,7 @@ const settlement_locations = {
    '3': ['Bone Earrings', 'Green Charm', 'Blue Charm', 'Lance of Longinus']},
   'action': true,
   'armor_set': 'Screaming Armor',
+  'action_enabler': {'innovation': ['Forbidden Dance']},
  },
  'The Sun': {
   'campaign': 'Sun',

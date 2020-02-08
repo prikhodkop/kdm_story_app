@@ -1234,3 +1234,33 @@ div.selectize-dropdown-content::-webkit-scrollbar {
   color: #cc0;
   text-shadow: 0 0 10px #cc0;
 }
+
+.science-text {
+  color:#3cb8ff;
+}
+
+.art-text {
+  color:#ff7d3c;
+}
+
+.faith-text {
+  color:#fff;
+}
+
+.home-text {
+  color:#ffdf3c;
+}
+
+.music-text {
+  color:#c13cff;
+}
+
+.education-text {
+  color:#3cff84;
+}
+
+.event-text {
+  color:#550;
+}
+
+/* .other': '#ccc', */
