@@ -181,7 +181,7 @@ function init_glossary() {
       }
     }
     data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/settlement_events_texts')
-    settlement_events = localized_require(settlement_events, data_local, data_en, ['label'])
+    settlement_events = localized_require(settlement_events, data_local, data_en, ['label', 'passive'])
     window.globals.glossary[lang].settlement_events = settlement_events
   } else {
     settlement_events = window.globals.glossary[lang].settlement_events
@@ -328,7 +328,8 @@ module.exports = {
  gear_list,
  innovations,
  get_events_options,
- init_glossary
+ init_glossary,
+ settlement_events
 }
 
 function get_options (data, type, filter=false) {

@@ -1,4 +1,4 @@
-const { get_random_draws, settlement_locations, innovations, glossary_terms, gear_list } = require('./../ui/glossary')
+const { get_random_draws, settlement_locations, innovations, glossary_terms, gear_list, settlement_events } = require('./../ui/glossary')
 const { titleCase } = require('./../ui/events')
 const { getSettings } = require('./../ui/settings')
 const { addTimer } = require('./../ui/timer')
@@ -23,7 +23,8 @@ module.exports = {
   removeSettlementLocation,
   hasInnovation,
   getHuntInnovationEffects,
-  update_bonuses_list
+  update_bonuses_list,
+  updateActions
 }
 
 const always_on_locations = ['Throne', 'Lantern Hoard', 'Sacreed Pool', 'The Sun'];
@@ -825,11 +826,11 @@ function update_bonuses_list(state='') {
   }
 
   if (('innovations' in state) && (state['innovations'].length > 0)) {
-      form_bonuses_list(state['innovations'])
+      form_bonuses_list(state['innovations'], state['events'])
   }
 }
 
-function form_bonuses_list(innovation_names) {
+function form_bonuses_list(innovation_names, event_names) {
   let set = {}
   let keys = []
 
@@ -845,6 +846,18 @@ function form_bonuses_list(innovation_names) {
     }
   }
 
+  for (let i=0; i<event_names.length; i++) {
+    if ('passive' in settlement_events[event_names[i]]) {
+      keys = Object.keys(settlement_events[event_names[i]]['passive'])
+      for (let j=0; j<keys.length; j++) {
+        if (!(keys[j] in set)) {
+          set[keys[j]] = []
+        }
+        set[keys[j]] = set[keys[j]].concat(settlement_events[event_names[i]]['passive'][keys[j]])
+      }
+    }
+  }
+
   // console.log('Set: '+JSON.stringify(set))
 
  $('#severe-table.summary').empty()
@@ -852,11 +865,11 @@ function form_bonuses_list(innovation_names) {
 
  let categories = {
                'all': 'Bonuses Summary',
-               'settlement': 'Settlement bonuses:',
+               'settlement': '<img style="display: inline-block;width:1.2em;" src="'+pathToAsset('images/settlement/settlement.png')+'"/> '+'Settlement:',
                'newborn': 'Newborns:',
                'departing': 'Departing:',
-               'hunt': 'Hunt bonuses:',
-               'showdown': 'Showdown bonuses:',
+               'hunt': '<img style="display: inline-block;width:1.2em;vertical-allign:middle;" src="'+pathToAsset('images/hunt_icon.png')+'"/> '+'Hunt:',
+               'showdown': '<img style="display: inline-block;width:1.2em;vertical-allign:middle;" src="'+pathToAsset('images/hunt/starvation_icon.png')+'"/> '+'Showdown:',
                'actions': 'Actions:',
               }
 
@@ -1102,6 +1115,7 @@ function setupActions() {
       state['activated']['actions'].push($(this).attr('value'))
       console.log('State prepared: '+ JSON.stringify(state))
       setDevelopmentState(state)
+      // updateActions()
     } else {
       $(this).removeClass('active')
       let state = getDevelopmentState();
@@ -1110,8 +1124,28 @@ function setupActions() {
         state['activated']['actions'].splice(index, 1);
       }
       setDevelopmentState(state)
+      // updateActions()
     }
   });
+
+  // $('#container').on("dblclick", '.action_card', function(e) {
+  //   if (!$(this).hasClass('active')) {
+  //     $(this).addClass('active')
+  //     let state = getDevelopmentState();
+  //     console.log('State prepared: '+ JSON.stringify(state))
+  //     state['activated']['actions'].push($(this).attr('value'))
+  //     console.log('State prepared: '+ JSON.stringify(state))
+  //     setDevelopmentState(state)
+  //   } else {
+  //     $(this).removeClass('active')
+  //     let state = getDevelopmentState();
+  //     let index = state['activated']['actions'].indexOf($(this).attr('value'));
+  //     if (index !== -1) {
+  //       state['activated']['actions'].splice(index, 1);
+  //     }
+  //     setDevelopmentState(state)
+  //   }
+  // });
 
   $('.action_card').hover(function () {
     let card = $(this)
@@ -1149,6 +1183,30 @@ function updateActions() {
           }
         }
       }
+    }
+  }
+
+  for (let i = 0; i < development['events'].length; i++) {
+    if (('action' in settlement_events[development['events'][i]]) && settlement_events[development['events'][i]]['action']) {
+      // if (toShow(development['events'][i])) {
+        console.log('Adding event: '+development['events'][i])
+        addAction(development['events'][i], 'event')
+        // if (development['activated']['actions'].includes(development['locations'][i])) {
+        if (checkActiveAction(development['events'][i], 'events')) {
+          $('.action_card[value = "'+development['events'][i]+'"]').addClass('active')
+        }
+
+        if ('num_actions' in settlement_events[development['events'][i]]) {
+          for (let j = 1; j < settlement_events[development['events'][i]]['num_actions']; j++) {
+            addAction(development['events'][i]+'_'+j, 'event')
+            // if (development['activated']['actions'].includes(development['locations'][i]+'_'+j)) {
+            if (checkActiveAction(development['events'][i], 'events', j)) {
+              $('.action_card[value = "'+development['events'][i]+'_'+j+'"]').addClass('active')
+            }
+
+          }
+        }
+      // }
     }
   }
 
@@ -1202,6 +1260,9 @@ function updateActions() {
         if (element.children[0].children[0].classList.contains('active')) {
           return 10.
         } else {
+          if (element.children[0].children[0].classList.contains('event')) {
+            return 2.
+          }
           if (element.children[0].children[0].classList.contains('location')) {
             return 1.
           } else {
@@ -1249,7 +1310,7 @@ let item_content = $('<div>', {
 let img = $('<img>', {
   class: 'action_card use-hover '+type,
   value: name,
-  src: pathToAsset('images/settlement/actions/'+name+'.jpg', 'localize'),
+  src: pathToAssetL('images/settlement/actions/'+name+'.jpg'),
 });
 
 item_content.append(img)
@@ -1263,6 +1324,7 @@ item.append(item_content)
    $(this).delay(50).fadeIn(300);
  })
 
+ console.log('Name2: '+name)
  let content = 'Source: <b>'+name.split('_')[0]+'</b>'
 
  if (!(tag == '')) {
@@ -1303,22 +1365,72 @@ function checkActiveAction(action, type, count = 0) {
 
   let action_num = action
 
-  if (!(count == -1)) {
+  if (count > 0) {
     action_num = action + '_'+count
   }
 
   if (development['activated']['actions'].includes(action_num)) {
     active = true
   } else {
-    condition = true
     if (type == 'innovations') {
       source = innovations
     }
     if (type == 'locations') {
       source = settlement_locations
     }
+    if (type == 'events') {
+      source = settlement_events
+    }
 
-    if ('action_disabler' in source[action]) {
+    if ((type == 'innovations')&&(development['disables'].length > 0)) {
+      console.log('!!Innovation: '+source[action].label)
+      console.log('Innovation tags: '+JSON.stringify(source[action]['tags']))
+      console.log('Disables: '+JSON.stringify(development['disables']))
+      console.log('Result: '+development['disables'].filter(value => source[action]['tags'].includes(value)))
+
+      if (!(development['disables'].filter(value => source[action]['tags'].includes(value))=='')) {
+        active = true
+      }
+    }
+
+    condition = true
+    if ((!active)&&('action_enabler' in source[action])) {
+      console.log('Checking enabler: '+action+'_'+count)
+      if ((count == 0) && !('num_actions' in source[action])) {
+        condition_obj = source[action]['action_enabler']
+      } else {
+        if (count in source[action]['action_enabler']) {
+          condition_obj = source[action]['action_enabler'][count]
+        }
+      }
+
+      if (!(condition_obj == 'none')) {
+        console.log('Processing conditions.')
+        if ('innovation' in condition_obj) {
+          for (let j=0; j<condition_obj['innovation'].length; j++) {
+            if (development['innovations'].includes(condition_obj['innovation'][j])) {
+              condition = false
+            }
+          }
+        }
+        if ('location' in condition_obj) {
+          for (let j=0; j<condition_obj['location'].length; j++) {
+            if (development['locations'].includes(condition_obj['location'][j])) {
+              condition = false
+            }
+          }
+        }
+      } else {
+        condition = false
+      }
+
+      if (condition) {
+        active = true
+      }
+    }
+
+    condition = true
+    if ((!active)&&('action_disabler' in source[action])) {
       console.log('Checking: '+action+'_'+count)
       if ((count == 0) && !('num_actions' in source[action])) {
         condition_obj = source[action]['action_disabler']
@@ -1352,6 +1464,7 @@ function checkActiveAction(action, type, count = 0) {
         active = true
       }
     }
+
 
   }
 
@@ -1388,12 +1501,22 @@ function getDevelopmentState() {
     development_state['locations'] = always_on_locations
     development_state['innovations'] = [];
     development_state['activated'] = {};
+    development_state['events'] = [];
+    development_state['disables'] = [];
     development_state['activated']['innovations'] = [];
     development_state['activated']['actions'] = [];
     updated = true
   } else {
     if (!('locations' in development_state)) {
       development_state['locations'] = always_on_locations
+      updated = true
+    }
+    if (!('events' in development_state)) {
+      development_state['events'] = []
+      updated = true
+    }
+    if (!('disables' in development_state)) {
+      development_state['disables'] = []
       updated = true
     }
     if (!('innovations' in development_state)) {

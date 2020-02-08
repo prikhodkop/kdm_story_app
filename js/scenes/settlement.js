@@ -4,13 +4,13 @@ const { pathToAsset, pathToAssetL, initAssets } = require('./../ui/assets_loader
 initAssets()
 
 const { createToc, generate_events_table } = require('./../ui/events')
-const { getSettlementEventPath, get_random_draws, get_events_options } = require('./../ui/glossary')
+const { getSettlementEventPath, get_random_draws, get_events_options, settlement_events } = require('./../ui/glossary')
 const { createMenuButton, createReference, createSevereTables, bonusesSummary } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved, initSettings } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
-const { addDevelopment, openLocation, getDevelopmentState, setDevelopmentState } = require('./../ui/development')
+const { addDevelopment, openLocation, getDevelopmentState, setDevelopmentState, updateActions } = require('./../ui/development')
 
 
 
@@ -114,11 +114,14 @@ module.exports = class SettlementScene {
     $('#container').children().hide()
     // $('#turn_cheatsheet').imageMapResize();
 
+    let dev_state = getDevelopmentState();
+
     if (anew) {
-      let state = getDevelopmentState();
-      state['activated']['innovations'] = []
-      state['activated']['actions'] = []
-      setDevelopmentState(state);
+      dev_state['activated']['innovations'] = []
+      dev_state['activated']['actions'] = []
+      dev_state['events'] = []
+      dev_state['disables'] = []
+      setDevelopmentState(dev_state);
     }
 
     createMenuButton()
@@ -184,6 +187,17 @@ module.exports = class SettlementScene {
         }
         $('#settlement_event_back').attr('src', pathToAssetL('images/reference/Settlement Events/' + value + '.jpg'))
         $('#settlement_event_back').attr('val', value)
+
+        dev_state['events'] = []
+        dev_state['events'].push(value)
+
+        dev_state['disables'] = []
+        if ('disables' in settlement_events[value]) {
+            dev_state['disables'] = settlement_events[value]['disables']
+        }
+
+        setDevelopmentState(dev_state)
+
         selectize.setValue(value, true)
         addTimer(function () {
           $("#settlement_event_screen > .selectize-control").css({
@@ -358,6 +372,8 @@ module.exports = class SettlementScene {
         $('#cheatsheet_buttons').addClass('active')
         if ($('#locations_button').hasClass('active')) {
           document.getElementById("defaultOpen").click();
+        } else {
+          updateActions()
         }
 
       } else {
