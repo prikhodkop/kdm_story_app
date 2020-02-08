@@ -130,10 +130,10 @@ function setupLocations() {
   if (DEBUG_MODE) {console.log('Locations list: '+locations_list)}
 
   for (let i = 0; i < locations_list.length; i++) {
-    addTimer(function() {
+    // addTimer(function() {
       // console.log('Im checking: '+i+'  '+locations_list[i])
       createLocation(locations_list[i], (i==0) ? true : false);
-    }, 100*i);
+    // }, 100*i);
   }
 
   addTimer(function(){
