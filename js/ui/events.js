@@ -1,4 +1,4 @@
-var events
+// var events
 const { loadJSON, pathToAsset } = require('./assets_loader')
 const { cdnUrl } = require('./template-cdnurl')
 
@@ -40,7 +40,30 @@ function generate_events_table () {
 
   events = localized_require('story_events', lang, ['label', 'music'])
 
-  return create_events_table(events)
+  // console.log('Events: '+JSON.stringify(events))
+
+  // console.log('events1!!!: '+JSON.stringify(events))
+
+  events_table = {}
+  let event_ids = Object.keys(events)
+
+  for (let i = 0; i < event_ids.length; i++) {
+    events_table[event_ids[i]] = new Event(event_ids[i])
+
+    let event = events[event_ids[i]]
+    for (let property in event) {
+      if (event.hasOwnProperty(property)) {
+        if (property == 'music') {
+          events_table[event_ids[i]][property] = './audio/' + event[property]
+        } else {
+          events_table[event_ids[i]][property] = event[property]
+        }
+      }
+    }
+  }
+
+  return events_table
+  // return create_events_table(events)
 }
 
 function localized_require(text, lang, args) {
@@ -114,32 +137,32 @@ function Event (
   this.hide_label = hide_label
 }
 
-function create_events_table (events) {
-  let events_table = {}
-  let event_ids = Object.keys(events)
-
-  for (let i = 0; i < event_ids.length; i++) {
-    events_table[event_ids[i]] = new Event(event_ids[i])
-
-    let event = events[event_ids[i]]
-    for (let property in event) {
-      if (event.hasOwnProperty(property)) {
-        if (property == 'music') {
-          events_table[event_ids[i]][property] = './audio/' + event[property]
-        } else {
-          events_table[event_ids[i]][property] = event[property]
-        }
-
-        // events_table[event_ids[i]].label = story_events_labels[event_ids[i]]
-
-        // console.log('Set property for '+event_ids[i]+':');
-        // console.log(property+' : '+ event[property]);
-      }
-    }
-  }
-
-  return events_table
-}
+// function create_events_table (events) {
+//   let events_table = {}
+//   let event_ids = Object.keys(events)
+//
+//   for (let i = 0; i < event_ids.length; i++) {
+//     events_table[event_ids[i]] = new Event(event_ids[i])
+//
+//     let event = events[event_ids[i]]
+//     for (let property in event) {
+//       if (event.hasOwnProperty(property)) {
+//         if (property == 'music') {
+//           events_table[event_ids[i]][property] = './audio/' + event[property]
+//         } else {
+//           events_table[event_ids[i]][property] = event[property]
+//         }
+//
+//         // events_table[event_ids[i]].label = story_events_labels[event_ids[i]]
+//
+//         // console.log('Set property for '+event_ids[i]+':');
+//         // console.log(property+' : '+ event[property]);
+//       }
+//     }
+//   }
+//
+//   return events_table
+// }
 
 function titleCase (str) {
   let splitStr = str.toLowerCase().split(' ')
@@ -153,9 +176,11 @@ function titleCase (str) {
 
 function createToc (col_len = 5) {
 
-  let events_table = generate_events_table()
-
   let settings = getSettings();
+
+  events_table = generate_events_table()
+
+  // console.log('events!!!: '+JSON.stringify(events_table))
 
   $('#container').on('mouseenter', '#menu_item', function() {
     $(this).addClass('menu_hoverd')
@@ -287,7 +312,7 @@ function createToc (col_len = 5) {
 
       let a2 = document.createElement('div')
       a2.setAttribute('id', 'menu_item')
-      
+
       a2.setAttribute('target', rows[i][j])
       a2.style.cssText += 'width:100%;position:static; margin:0 auto;'
       let text = ''

@@ -35,7 +35,7 @@ function getSettings () {
   // let dirname = app.getPath('userData');
   // console.log('Dirname: ' + dirname)
   let settings_string = {}
-  let settings_string_default = {}
+  // let settings_string_default = {}
 
   // try {
     // settings_string_default = JSON.parse(readFile(app.getAppPath() + '/settings.json'))
@@ -47,6 +47,8 @@ function getSettings () {
   //   // settings_string = require(dirname + '/settings.json')
   // } catch (e) {
   // }
+
+  console.log('Local storage: '+localStorage.getItem("settings"))
 
   if (!(localStorage.getItem("settings") === null)) {
     settings_string = JSON.parse(localStorage.getItem("settings"))

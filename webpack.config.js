@@ -24,7 +24,8 @@ module.exports = {
               use: {
                   loader: 'html-loader',
                 options: {
-                    attrs: [],
+                    // attrs: [],
+                    attributes: true,
                 },
               },
             },
@@ -39,7 +40,7 @@ module.exports = {
                 },
             },
             {
-              test: /\.srt$/i,
+              test: /\.(srt|htm)$/i,
               use: 'raw-loader',
             },
             {
