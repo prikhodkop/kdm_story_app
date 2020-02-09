@@ -48,7 +48,7 @@ function getSettings () {
   // } catch (e) {
   // }
 
-  console.log('Local storage: '+localStorage.getItem("settings"))
+  // console.log('Local storage: '+localStorage.getItem("settings"))
 
   if (!(localStorage.getItem("settings") === null)) {
     settings_string = JSON.parse(localStorage.getItem("settings"))

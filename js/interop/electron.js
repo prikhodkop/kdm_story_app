@@ -11,6 +11,9 @@
  * immediately.
  */
 
+ window.globals.process = 'web'
+
 if (typeof process !== 'undefined' && process.versions.hasOwnProperty('electron')) {
+  window.globals.process = 'local'
   require('./js/interop/main')
 }

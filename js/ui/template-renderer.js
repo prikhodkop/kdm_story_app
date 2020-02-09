@@ -13,9 +13,15 @@ module.exports = {
 }
 
 function render (filename, data = {}) {
-  const htmlTemplate = require('./../../partials/'+filename+'.html')//readFile(filename)
-  // console.log('Template: '+JSON.stringify(htmlTemplate))
-  // const htmlTemplate = readFile(app.getAppPath()+'/partials/'+filename+'.html')//readFile(filename)
+
+  var htmlTemplate
+
+  if (window.globals.process == 'local') {
+    htmlTemplate = readFile(app.getAppPath()+'/partials/'+filename+'.html')
+  } else {
+    htmlTemplate = require('./../../partials/'+filename+'.html')
+  }
+
   const renderer = doT.template(htmlTemplate)
 
   data = Object.assign({}, window.globals.template, data)

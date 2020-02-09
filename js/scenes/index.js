@@ -25,6 +25,8 @@ module.exports = class IndexScene {
 
     // localStorage.clear()
 
+    console.log('!! Process type: '+window.globals.process)
+
     document.getElementById('container').innerHTML = render('index')//app.getAppPath() + '/partials/.html'
     document.title = 'kingdom death'
 
@@ -113,13 +115,17 @@ module.exports = class IndexScene {
     // console.log(subtitles['intro'][lang])
     if (settings['subtitles'] == 'On') {
       let subtitles
-      // configureSubtitle(readFile(pathToAssetL('video/intro.srt', false), 'root'))
-      if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('translations/'+lang+'/video/intro.srt')) {
-        subtitles = require('./../../translations/'+lang+'/video/intro.srt')
+      if (window.globals.process == 'local') {
+          subtitles = readFile(pathToAssetL('video/intro.srt', false), 'root')
       } else {
-        subtitles = require('./../../translations/'+defaultLang()+'/video/intro.srt')
+        if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('translations/'+lang+'/video/intro.srt')) {
+          subtitles = require('./../../translations/'+lang+'/video/intro.srt').default
+        } else {
+          subtitles = require('./../../translations/'+defaultLang()+'/video/intro.srt').default
+        }
       }
-      configureSubtitle(subtitles.default)
+
+      configureSubtitle(subtitles)
     }
 
 

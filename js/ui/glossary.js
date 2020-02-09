@@ -145,11 +145,13 @@ function get_options (data, type, filter=false) {
      name = key
    }
   if (!filter) {
-   result.push({
-    class: type,
-    name: name,
-    value: key,
-   })
+    if (!('campaign' in data[key]) || !(data[key]['campaign'] == 'hidden')){
+       result.push({
+        class: type,
+        name: name,
+        value: key,
+       })
+     }
   } else {
    if (!('expansion' in data[key]) || (settings['expansions'][data[key]['expansion']] == 'All content')){
     if (!('campaign' in data[key]) || (data[key]['campaign'].indexOf(settings['campaign']) > -1)){
@@ -419,7 +421,7 @@ function get_random_draws (word, randomize=true, ) {
 
   if (('expansion' in list[key]) && (settings['expansions'][list[key]['expansion']] == 'Disabled')) {
    remove = true
-  } else if ((list[key]['type'] == 'strain') && (settings['strains'][key.toLowerCase()] == 'Locked')) {
+ } else if ((list[key]['type'] == 'strain') && !(settings['strains'][key.toLowerCase()] == 'Unlocked')) {
    remove = true
   } else if (word.includes('Settlement Event')) {
    // Settlement events are shown only if "All Content" is set for expansion

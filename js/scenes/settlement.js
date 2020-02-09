@@ -24,6 +24,8 @@ module.exports = class SettlementScene {
     $('#container').hide()
     $('#container').fadeIn(500)
 
+    console.log('!! Process type: '+window.globals.process)
+
     var events_table = generate_events_table()
 
     if (true) {
