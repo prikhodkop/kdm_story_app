@@ -1,4 +1,4 @@
-const { events } = require('./../lists/story_events')
+var events
 const { loadJSON, pathToAsset } = require('./assets_loader')
 const { cdnUrl } = require('./template-cdnurl')
 
@@ -23,7 +23,7 @@ const color_menu = {
 
 // GLOBAL TABLE OF ALL EVENTS TO BE DISPLAYED AT MENU
 // ##################
-var events_table = create_events_table(events)
+var events_table = generate_events_table()
 // ##################
 
 module.exports = {
@@ -34,7 +34,42 @@ module.exports = {
 }
 
 function generate_events_table () {
+
+  let lang = getSettings()['language']
+  let found = false
+
+  events = localized_require('story_events', lang, ['label', 'music'])
+
   return create_events_table(events)
+}
+
+function localized_require(text, lang, args) {
+
+  data_en = require('../../translations/'+defaultLang()+'/text/lists/'+text+'.js').texts
+
+  // console.log('!!!Data: '+JSON.stringify(data_en))
+
+  let data_local = ''
+  if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('translations/'+lang+'/text/lists/'+text+'.js')) {
+    data_local = require('../../translations/'+lang+'/'+'text/lists/'+text+'.js').texts
+  }
+
+  if (!(data_local == '')) {
+    let keys = Object.keys(data_en)
+
+    for (let j=0; j<keys.length; j++) {
+      if (!('label' in data_en[keys[j]])||(data_en[keys[j]]['label'] == '')) {
+        data_en[keys[j]]['label'] = titleCase(keys[j])
+      }
+      for (let i=0; i<args.length; i++) {
+        if ((keys[j] in data_local)&&(args[i] in data_local[keys[j]])) {
+           data_en[keys[j]][args[i]] = data_local[keys[j]][args[i]]
+        }
+      }
+    }
+  }
+
+  return data_en
 }
 
 function Event (
@@ -83,15 +118,6 @@ function create_events_table (events) {
   let events_table = {}
   let event_ids = Object.keys(events)
 
-  let lang = getSettings()['language']
-  let found = false
-
-  if ((lang == defaultLang())||window.globals.translations['paths'][lang].includes('translations/'+lang+'/text/lists/story_events_labels'+'.js')) {
-    var { story_events_labels } = require('../../translations/'+lang+'/text/lists/story_events_labels')
-  } else {
-    var { story_events_labels } = require('../../translations/'+defaultLang()+'/text/lists/story_events_labels')
-  }
-
   for (let i = 0; i < event_ids.length; i++) {
     events_table[event_ids[i]] = new Event(event_ids[i])
 
@@ -104,7 +130,7 @@ function create_events_table (events) {
           events_table[event_ids[i]][property] = event[property]
         }
 
-        events_table[event_ids[i]].label = story_events_labels[event_ids[i]]
+        // events_table[event_ids[i]].label = story_events_labels[event_ids[i]]
 
         // console.log('Set property for '+event_ids[i]+':');
         // console.log(property+' : '+ event[property]);
@@ -129,7 +155,7 @@ function createToc (col_len = 5) {
 
   let events_table = generate_events_table()
 
-  let settings = JSON.parse(sessionStorage.getItem('settings'))
+  let settings = getSettings();
 
   $('#container').on('mouseenter', '#menu_item', function() {
     $(this).addClass('menu_hoverd')
@@ -206,7 +232,6 @@ function createToc (col_len = 5) {
     let a1 = document.createElement('div')
     a1.setAttribute('id', 'menu_item')
     a1.className = 'hunt_menu'
-    // a.setAttribute("href", events_table[rows[i][j]].type+'.html');
 
     a1.setAttribute('target', table_1_ids[j])
     a1.style.cssText += 'font-size: 2.5em;width:100%;position:static; margin:auto;'
@@ -262,8 +287,7 @@ function createToc (col_len = 5) {
 
       let a2 = document.createElement('div')
       a2.setAttribute('id', 'menu_item')
-      // a.setAttribute("href", events_table[rows[i][j]].type+'.html');
-      // a.setAttribute("onclick", "setTransition('"+rows[i][j]+"')");
+      
       a2.setAttribute('target', rows[i][j])
       a2.style.cssText += 'width:100%;position:static; margin:0 auto;'
       let text = ''

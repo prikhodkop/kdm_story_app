@@ -43,7 +43,7 @@ function initAssets() {
     contents['paths'][contents['languages'][i]] = packAssets(ContentTree['children'][i])
   }
 
-  console.log('Tree2222: '+JSON.stringify(contents['paths']['Russian']))
+  // console.log('Tree2222: '+JSON.stringify(contents['paths']['Russian']))
 
   // sessionStorage.setItem('translations', JSON.stringify(contents))
   window.globals.translations = contents

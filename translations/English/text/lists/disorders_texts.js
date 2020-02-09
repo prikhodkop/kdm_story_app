@@ -1,11 +1,11 @@
 const texts = {
  'Absent Seizures': {
-  // 'expansion': 'gorm',
+  'expansion': 'gorm',
   'label': 'Absent Seizures',
   "description": "The first time you would suffer a brain trauma each showdown, you are instead knocked down and forget a fighting art (erase it).",
  },
  'Aichmophobia': {
-  // 'expansion': 'dragon king',
+  'expansion': 'dragon king',
   'label': 'Aichmophobia',
   "description": "You cannot activate or <b>depart</b> with axes, swords, spears, daggers, scythes, or katars in your gear grid.",
  },
@@ -18,7 +18,7 @@ const texts = {
   "description": "You cannot use or gain survival. You cannot gain courage. Cure this disorder if you have 8+ understanding.",
  },
  'Arithmophilia': {
-  // 'expansion': 'dragon king',
+  'expansion': 'dragon king',
   'label': 'Arithmophilia',
   "description": "When you gain this disorder, roll 1d5. Your movement is that number.",
  },
@@ -27,7 +27,7 @@ const texts = {
   "description": "You cannot <b>depart</b> unless you have <b>consumable</b> gear in your gear grid. You must consume if a choice to consume arises."
  },
  'Controlophobia': {
-  // 'expansion': 'spidicules',
+  'expansion': 'spidicules',
   'label': 'Controlophobia',
   "description": "While you are the monster controller, double any damage you suffer.",
  },
@@ -36,23 +36,23 @@ const texts = {
   "description": "All your gear is <b>noisy</b>. You are always a threat unless you are knocked down, even if an effect says otherwise."
  },
  'Delicious': {
-  // 'expansion': 'lion god',
+  'expansion': 'lion god',
   'label': 'Delicious',
   "description": "You are still considered a threat when you are knocked down (unless you use an effect that says otherwise).",
  },
  'Destined': {
-  // 'expansion': 'dragon king',
-  // 'type': 'dragon trait',
+  'expansion': 'dragon king',
+  'type': 'dragon trait',
   'label': 'Destined',
   "description": "If you do not <b>depart</b>, lose all survival and insanity.",
  },
  'Emotionless': {
-  // 'expansion': 'sunstalker',
+  'expansion': 'sunstalker',
   'label': 'Emotionless',
   "description": "You cannot gain +1 strength tokens.",
  },
  'Enfeebled': {
-  // 'expansion': 'lion god',
+  'expansion': 'lion god',
   'label': 'Enfeebled',
   "description": "It takes one less bleeding token to kill you.",
  },
@@ -61,12 +61,12 @@ const texts = {
   "description": "You retire. If you gain this disorder during a hunt or showdown, you put on a brave face until you return to the settlement, vowing never to leave the Lantern Hoard again."
  },
  'Flower Addiction': {
-  // 'expansion': 'flower knight',
+  'expansion': 'flower knight',
   'label': 'Flower Addiction',
   "description": "You may only <b>depart</b> to hunt the Flower Knight. After you <b>depart</b>, cure this disorder.",
  },
  'Ghostly Beauty': {
-  // 'expansion': 'flower knight',
+  'expansion': 'flower knight',
   'label': 'Ghostly Beauty',
   "description": "Double all insanity you gain. Double all survival you spend.",
  },
@@ -104,22 +104,22 @@ const texts = {
   "description": "Whenever you suffer brain damage from an <b>Intimidate</b> action, suffer 1 additional brain damage."
  },
  'Motion Sickness': {
-  // 'expansion': 'dung beetle knight',
+  'expansion': 'dung beetle knight',
   'label': 'Motion Sickness',
   "description": "Whenever you suffer <b>knockback</b>, gain 1 bleeding token.",
  },
  'Narcissistic': {
-  // 'expansion': 'flower knight',
+  'expansion': 'flower knight',
   'label': 'Narcissistic',
   "description": "You may not wear armor at the head location. If you are wearing armor at the head location when you gain this disorder, archive it.",
  },
  'Overprotective': {
-  // 'expansion': 'sunstalker',
+  'expansion': 'sunstalker',
   'label': 'Overprotective',
   "description": "When an adjacent survivor is knocked down, you are also knocked down as you rush to their aid.",
  },
  'Performance Anxiety': {
-  // 'expansion': 'lion knight',
+  'expansion': 'lion knight',
   'label': 'Performance Anxiety',
   "description": "You cannot be nominated for <b>Intimacy</b>. Cure this disorder if you have 8+ courage.",
  },
@@ -132,7 +132,7 @@ const texts = {
   "description": "You may not spend survival unless you are insane."
  },
  'Prima Donna': {
-  // 'expansion': 'lion knight',
+  'expansion': 'lion knight',
   'label': 'Prima Donna',
   "description": "Each survivor turn, you must take your act first <i>(roll off each turn if multiple survivors have this disorder)</i>.",
  },
@@ -145,7 +145,7 @@ const texts = {
   "description": "Whenever you suffer a severe injury, also suffer the <b>frenzy</b> brain trauma."
  },
  'Revenge': {
-  // 'expansion': 'spidicules',
+  'expansion': 'spidicules',
   'label': 'Revenge',
   "description": "When a survivor dies during the showdown, suffer the <b>Frenzy</b> brain trauma.",
  },
@@ -158,12 +158,12 @@ const texts = {
   "description": "The first time you would suffer a brain trauma each showdown, you are instead knocked down and forget a fighting art <i>(erase it)</i>.",
  },
  'Shallow Lungs': {
-  // 'expansion': 'lion knight',
+  'expansion': 'lion knight',
   'label': 'Shallow Lungs',
   "description": "When you <b>encourage</b> you are knocked down.",
  },
  'Spiral Ganglia': {
-  // 'expansion': 'slenderman',
+  'expansion': 'slenderman',
   'label': 'Spiral Ganglia',
   "description": "At the start of the showdown, gain the <b>Darkness Awareness</b> survivor status card.",
  },
@@ -172,28 +172,27 @@ const texts = {
    "description": "You cannot <b>depart</b> with any <b>stinky</b> gear in your gear grid. If a status or effect would cause you to become stinky, lose all your survival."
  },
  'Stage Fright': {
-  // 'expansion': 'lion knight',
+  'expansion': 'lion knight',
   'label': 'Stage Fright',
   "description": "Whenever you become <b>doomed</b> or gain the <b>priority target</b> token, lose 1 survival.",
  },
  'Stark Raving': {
-  // 'expansion': 'lion god',
+  'expansion': 'lion god',
   'label': 'Stark Raving',
   "description": "You are always <b>insane</b>, regardless of your insanity.",
  },
  'Sun-Drunk': {
-  // 'expansion': 'sunstalker',
+  'expansion': 'sunstalker',
   'label': 'Sun-Drunk',
   "description": "When you have any +1 strength tokens you cannot <b>dash</b>, <b>dodge</b>, or <b>Run Away</b>.",
  },
  'Superstitious': {
-  // 'expansion': 'dragon king',
+  'expansion': 'dragon king',
   'label': 'Superstitious',
   "description": "You cannot activate or <b>depart</b> with <b>other</b> gear in your gear grid.",
  },
- // 'Sworn Enemy': {},
  'Tiny Arachnophobia': {
-  // 'expansion': 'spidicules',
+  'expansion': 'spidicules',
   'label': 'Tiny Arachnophobia',
   "description": "You cannot carry any gear with the amber keyword. You cannot gain any resources with the silk keyword.",
  },
@@ -202,17 +201,17 @@ const texts = {
    "description": "Whenever you end your act adjacent to a monster, you are knocked down.",
  },
  'Tunnel Vision': {
-  // 'expansion': 'lion god',
+  'expansion': 'lion god',
   'label': 'Tunnel Vision',
   "description": "When you spend <b>Activation</b>, you may only activate weapons.",
  },
  'Unlucky': {
-  // 'expansion': 'lion knight',
+  'expansion': 'lion knight',
   'label': 'Unlucky',
   "description": "You cannot critically wound.",
  },
  'Vermin Obsession': {
-  // 'expansion': 'dung beetle knight',
+  'expansion': 'dung beetle knight',
   'label': 'Vermin Obsession',
   "description": "While there is a <b>Bug Patch</b> terrain tile on the showdown board, you are so overwhelmed that you are <b>doomed</b>.",
  },

@@ -27,7 +27,7 @@ module.exports = class HuntScene {
 
     var events_table = generate_events_table()
 
-    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/hunt.html')
+    document.getElementById('container').innerHTML = render('hunt')
     window.darkness_enabled = true
 
     onSettingsSaved(() => {
@@ -38,13 +38,11 @@ module.exports = class HuntScene {
 
     initSettings();
     let settings = getSettings()
-    sessionStorage.setItem('settings', JSON.stringify(settings))
     sessionStorage.setItem('back_target', null)
 
     $('body').css('font-size', settings['fontSize'])
 
     console.log(sessionStorage)
-    // let settings = JSON.parse(sessionStorage.getItem("settings"));
 
     var myself = 'hunt'
     document.title = myself
@@ -554,7 +552,7 @@ module.exports = class HuntScene {
       console.log(name)
 
       $('<img class="token" id="herb_gathering" title="" src="' + pathToAsset('images/hunt/herbs_gathering.png') + '" width="8%" style="left:25%; top:74%;">')
-        .load(function () {
+        .on('load', function () {
           $(this).appendTo('#container')
           $(this).hide()
           $(this).delay(1000).fadeIn(2000)
@@ -576,7 +574,7 @@ module.exports = class HuntScene {
         })
 
       $('<img class="token" id="mineral_gathering" title="" src="' + pathToAsset('images/hunt/mineral_gathering.png') + '" width="8%" style="left:67%; top:74%;">')
-        .load(function () {
+        .on('load', function () {
           $(this).appendTo('#container')
           $(this).hide()
           $(this).delay(1000).fadeIn(2000)
@@ -599,7 +597,7 @@ module.exports = class HuntScene {
 
         if (settings['expansions']['sunstalker'] == 'All content') {
           $('<img class="token" id="sky_fishing" title="" src="' + pathToAsset('images/hunt/sky_fishing.png') + '" width="9%" style="left: 45.5%; top:73.5%;">')
-            .load(function () {
+            .on('load', function () {
               $(this).appendTo('#container')
               $(this).hide()
               $(this).delay(1000).fadeIn(2000)
@@ -779,7 +777,7 @@ module.exports = class HuntScene {
     function createHuntTable () {
       let names = Object.keys(clone(quaries))
 
-      let settings = JSON.parse(sessionStorage.getItem('settings'))
+      let settings = getSettings()
 
       for (let i = names.length - 1; i >= 0; i--) {
         console.log(names[i])
@@ -936,7 +934,7 @@ module.exports = class HuntScene {
                 '" title="'+
                 title +'" name="'+title+'" src="' + pathToAsset(path) + '" width="' + width + '%" style="left: ' + coord +
                 '%; top:' + top +
-                '%;"' + ref + ')>').load(function () {
+                '%;"' + ref + ')>').on('load', function () {
         $(this).appendTo('#container')
         $(this).hide()
         if (type == 'darkness') {
@@ -1141,7 +1139,7 @@ module.exports = class HuntScene {
         $('<img class="token ' + position + '" position="' + position +
                     '" id="lantern" title="Event Cleared" src="' + pathToAsset('images/hunt/lantern.png') + '" width="' +
                     lantern_width +
-                    '%" style="left: ' + coord + '%; top:' + (top) + '%;">').load(
+                    '%" style="left: ' + coord + '%; top:' + (top) + '%;">').on('load',
           function () {
             $(this).appendTo('#container')
             $(this).hide()

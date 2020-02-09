@@ -387,7 +387,7 @@ function hideLocationTable (location) {
 }
 
 function createReference () {
-  let settings = JSON.parse(sessionStorage.getItem('settings'))
+  let settings = getSettings()
   window.blur_mode = false
 
   $('#container').append($('<div>', {

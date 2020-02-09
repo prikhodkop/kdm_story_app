@@ -1,5 +1,7 @@
 const {setSettings, getSettings, silentSaveSettings, defaultLang} = require('./../ui/settings')
-const { quary_events } = require('./../lists/quary_events')
+
+const { quary_events } = require('../../translations/'+defaultLang()+'/text/lists/quary_events.js')
+
 
 const { pathToAsset } = require('./../ui/assets_loader')
 
@@ -122,9 +124,6 @@ function removePromoCard(card) {
   let settings = getSettings()
   settings['whiteboxes'][card] = 'Disabled'
   setSettings(settings);
-  // saveSettings();
-  localStorage.setItem('settings', JSON.stringify(settings))
-  sessionStorage.setItem('settings', JSON.stringify(settings))
   silentSaveSettings(settings)
   // no_reload = true
 

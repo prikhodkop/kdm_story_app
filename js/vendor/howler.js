@@ -530,7 +530,7 @@
 
       // Load the source file unless otherwise specified.
       if (self._preload) {
-        self.load();
+        self.on('load', );
       }
 
       return self;
@@ -2076,7 +2076,7 @@
         self._node.volume = volume * Howler.volume();
 
         // Begin loading the source.
-        self._node.load();
+        self._node.on('load', );
       }
 
       return self;
@@ -2201,7 +2201,7 @@
           self._webAudio = false;
           self._sounds = [];
           delete cache[url];
-          self.load();
+          self.on('load', );
         }
       };
       safeXhrSend(xhr);

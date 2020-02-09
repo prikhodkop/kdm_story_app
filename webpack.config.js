@@ -38,6 +38,16 @@ module.exports = {
                     },
                 },
             },
+            {
+              test: /\.srt$/i,
+              use: 'raw-loader',
+            },
+            {
+              test: /\.(png|svg|jpg|gif)$/,
+              use: [
+               'file-loader',
+              ],
+            },
         ],
     },
     devServer: {

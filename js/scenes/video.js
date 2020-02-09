@@ -26,7 +26,7 @@ module.exports = class VideoScene {
 
     var events_table = generate_events_table()
 
-    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/video.html')
+    document.getElementById('container').innerHTML = render('video')
 
     onSettingsSaved(() => {
       setTransition(document.title, 'back', getBackTarget(), current_state())
@@ -43,7 +43,6 @@ module.exports = class VideoScene {
     initSettings();
 
     var settings = getSettings()
-    sessionStorage.setItem('settings', JSON.stringify(settings))
 
     $('body').css('font-size', settings['fontSize'])
 
@@ -178,9 +177,19 @@ module.exports = class VideoScene {
 
     createMenuButton()
     createToc()
+    // if (settings['subtitles'] == 'On') {
+    //   configureSubtitle(readFile(pathToAssetL('video/'+ myself + '.srt', false), 'root'))
+    // };
     if (settings['subtitles'] == 'On') {
-      configureSubtitle(readFile(pathToAssetL('video/'+ myself + '.srt', false), 'root'))
-    };
+      let subtitles
+      // configureSubtitle(readFile(pathToAssetL('video/intro.srt', false), 'root'))
+      if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('translations/'+lang+'/video/'+myself+'.srt')) {
+        subtitles = require('./../../translations/'+lang+'/video/'+myself+'.srt')
+      } else {
+        subtitles = require('./../../translations/'+defaultLang()+'/video/'+myself+'.srt')
+      }
+      configureSubtitle(subtitles.default)
+    }
     addSettings(settings)
 
     $('body').on('click', '#back_button', function () {

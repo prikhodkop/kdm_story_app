@@ -4,7 +4,7 @@ const { pathToAsset, pathToAssetL, initAssets } = require('./../ui/assets_loader
 initAssets()
 
 const { createToc, generate_events_table } = require('./../ui/events')
-const { getSettlementEventPath, get_random_draws, get_events_options, settlement_events } = require('./../ui/glossary')
+const { getSettlementEventPath, get_random_draws, get_events_options} = require('./../ui/glossary')
 const { createMenuButton, createReference, createSevereTables, bonusesSummary } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved, initSettings } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
@@ -12,7 +12,9 @@ const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { addDevelopment, openLocation, getDevelopmentState, setDevelopmentState, updateActions } = require('./../ui/development')
 
+var lang = getSettings()['language']
 
+var settlement_events = window.globals.glossary[lang].settlement_events
 
 module.exports = class SettlementScene {
   render () {
@@ -25,7 +27,7 @@ module.exports = class SettlementScene {
     var events_table = generate_events_table()
 
     if (true) {
-    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/settlement.html')
+    document.getElementById('container').innerHTML = render('settlement')
 
     // $("img[usemap]").mapify();
     // $("#turn_cheatsheet").mapify();
@@ -50,7 +52,6 @@ module.exports = class SettlementScene {
     initSettings();
 
     var settings = getSettings()
-    sessionStorage.setItem('settings', JSON.stringify(settings))
     window.settlement_back_target = sessionStorage.getItem('back_target')
     sessionStorage.setItem('back_target', null)
 

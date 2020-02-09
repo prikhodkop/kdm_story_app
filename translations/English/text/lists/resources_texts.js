@@ -1,5 +1,5 @@
-const resources = {
-'Cabled Vein (Dragon King)': {'type': 'organ', 'text': 'A dense bundle of bloody tubes.<br\><br\><i>Drop chance: 2/21.</i>'},
+const texts = {
+'Cabled Vein (Dragon King)': {'label':'', 'type': 'organ', 'text': 'A dense bundle of bloody tubes.<br\><br\><i>Drop chance: 2/21.</i>'},
 'Dragon Iron (Dragon King)': {'type': 'iron', 'text': 'It feels heavy, but when dropped, falls as slowly as a feather.<br\><br\><i>Drop chance: 1/21.</i>'},
 'Hardened Ribs (Dragon King)': {'type': 'bone', 'text': 'Strong, flexible, and hollow.<br\><br\><i>Drop chance: 1/21.</i>'},
 'Horn Fragment (Dragon King)': {'type': 'bone', 'text': 'Nearby speech causes them to resonate.<br\><br\><i>Drop chance: 4/21.</i>'},
@@ -155,5 +155,5 @@ const resources = {
 }
 
 module.exports = {
- resources,
+ texts,
 }

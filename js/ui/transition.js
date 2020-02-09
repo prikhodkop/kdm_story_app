@@ -16,6 +16,8 @@ function setTransition (name, transition, back_target = null, state = null, tran
   $('#container').empty()
   initSettings()
 
+  // delete require.cache[require.resolve('./glossary')]
+  // delete require.cache[require.resolve('./development')]
 
   sessionStorage.setItem('transition', transition)
   sessionStorage.setItem('target', name)

@@ -1,4 +1,4 @@
-const gear_list = {
+const texts = {
  'Tabard': {'resources':['1 x cloth', '1 x organ'], 'innovation': 'Paint', 'set':['Vagabond']},
  'Hard Breastplate': {'resources':['1 x leather', '1 x bone'], 'innovation': 'Heat', 'set':['Leather', 'Vagabond']},
  'Cloth Leggings': {'resources':['1 x cloth', '1 x hide'], 'innovation': 'Ammonia', 'set':['Vagabond']},
@@ -205,5 +205,5 @@ const gear_list = {
 }
 
 module.exports = {
- gear_list,
+ texts,
 }

@@ -1,320 +1,6 @@
 const { getSettings, defaultLang } = require('./../ui/settings')
 const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
-
-var lang = getSettings()['language']
-
-if ((window.globals.glossary === undefined)||(window.globals.glossary[lang] === undefined)||(window.globals.glossary[lang].fighting_arts === undefined)) {
-  console.log('!!!+ I load resources')
-  var { abilities } = require('./../lists/abilities')
-  var { armor_sets } = require('./../lists/armor_sets')
-  var { disorders } = require('./../lists/disorders')
-  var { fighting_arts, secret_fighting_arts } = require('./../lists/fighting_arts')
-  var { gear_list } = require('./../lists/gear_list')
-  var { innovations } = require('./../lists/innovations')
-  var { resources } = require('./../lists/resources')
-  var { settlement_events } = require('./../lists/settlement_events')
-  var { settlement_locations } = require('./../lists/settlement_locations')
-  var { survivor_statuses } = require('./../lists/survivor_statuses')
-  var { terrain } = require('./../lists/terrain')
-  var glossary_terms
-
-} else {
-  console.log('!!!- I skip load resources')
-  abilities = window.globals.glossary[lang].abilities
-  armor_sets = window.globals.glossary[lang].armor_sets
-  disorders = window.globals.glossary[lang].disorders
-  fighting_arts = window.globals.glossary[lang].fighting_arts
-  secret_fighting_arts = window.globals.glossary[lang].secret_fighting_arts
-  gear_list = window.globals.glossary[lang].gear_list
-  innovations = window.globals.glossary[lang].innovations
-  resources = window.globals.glossary[lang].resources
-  settlement_events = window.globals.glossary[lang].settlement_events
-  settlement_locations = window.globals.glossary[lang].settlement_locations
-  survivor_statuses = window.globals.glossary[lang].survivor_statuses
-  terrain = window.globals.glossary[lang].terrain
-  glossary_terms = window.globals.glossary[lang].glossary_terms
-}
-
-var data_en
-var data_local
-
-function init_glossary() {
-  var lang = getSettings()['language']
-  console.log('Cards new language: '+lang)
-
-  let data_local, data_en
-
-  if (window.globals.glossary === undefined) {
-    window.globals.glossary = {}
-  }
-
-  if (window.globals.glossary[lang] === undefined) {
-    window.globals.glossary[lang] = {}
-  }
-
-  ///
-  if (window.globals.glossary[lang].fighting_arts === undefined) {
-    data_local = ''
-    if (!(lang == defaultLang())) {
-      try {
-        data_local = require('../../translations/'+lang+'/'+'text/lists/fighting_arts_texts')
-      } catch(e) {
-      }
-    }
-    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/fighting_arts_texts')
-    fighting_arts = localized_require(fighting_arts, data_local, data_en, ['label', 'description'])
-    window.globals.glossary[lang].fighting_arts = fighting_arts
-  } else {
-    fighting_arts = window.globals.glossary[lang].fighting_arts
-  }
-
-  if (window.globals.glossary[lang].gear_list === undefined) {
-    window.globals.glossary[lang].gear_list = gear_list
-  } else {
-    fighting_arts = window.globals.glossary[lang].fighting_arts
-  }
-
-  ///
-  if (window.globals.glossary[lang].secret_fighting_arts === undefined) {
-    data_local = ''
-    if (!(lang == defaultLang())) {
-      try {
-        data_local = require('../../translations/'+lang+'/'+'text/lists/secret_fighting_arts_texts')
-      } catch(e) {
-      }
-    }
-    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/secret_fighting_arts_texts')
-    secret_fighting_arts = localized_require(secret_fighting_arts, data_local, data_en, ['label', 'description'])
-    window.globals.glossary[lang].secret_fighting_arts = secret_fighting_arts
-  } else {
-    secret_fighting_arts = window.globals.glossary[lang].secret_fighting_arts
-  }
-
-  ///
-  if (window.globals.glossary[lang].disorders === undefined) {
-    data_local = ''
-    if (!(lang == defaultLang())) {
-      try {
-        data_local = require('../../translations/'+lang+'/'+'text/lists/disorders_texts')
-      } catch(e) {
-      }
-    }
-    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/disorders_texts')
-    disorders = localized_require(disorders, data_local, data_en, ['label', 'description'])
-    window.globals.glossary[lang].disorders = disorders
-  } else {
-    disorders = window.globals.glossary[lang].disorders
-  }
-
-  ///
-  if (window.globals.glossary[lang].innovations === undefined) {
-    data_local = ''
-    if (!(lang == defaultLang())) {
-      try {
-        data_local = require('../../translations/'+lang+'/'+'text/lists/innovations_texts')
-      } catch(e) {
-      }
-    }
-    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/innovations_texts')
-    innovations = localized_require(innovations, data_local, data_en, ['label', 'passive'])
-    window.globals.glossary[lang].innovations = innovations
-  } else {
-    innovations = window.globals.glossary[lang].innovations
-  }
-
-  ///
-  if (window.globals.glossary[lang].abilities === undefined) {
-    data_local = ''
-    if (!(lang == defaultLang())) {
-      try {
-        data_local = require('../../translations/'+lang+'/'+'text/lists/abilities_texts')
-      } catch(e) {
-      }
-    }
-    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/abilities_texts')
-    abilities = localized_require(abilities, data_local, data_en, ['label', 'description'])
-    window.globals.glossary[lang].abilities = abilities
-  } else {
-    abilities = window.globals.glossary[lang].abilities
-  }
-
-  ///
-  if (window.globals.glossary[lang].armor_sets === undefined) {
-    data_local = ''
-    if (!(lang == defaultLang())) {
-      try {
-        data_local = require('../../translations/'+lang+'/'+'text/lists/armor_sets_texts')
-      } catch(e) {
-      }
-    }
-    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/armor_sets_texts')
-    armor_sets = localized_require(armor_sets, data_local, data_en, ['label'])
-    window.globals.glossary[lang].armor_sets = armor_sets
-  } else {
-    armor_sets = window.globals.glossary[lang].armor_sets
-  }
-
-  ///
-  if (window.globals.glossary[lang].settlement_locations === undefined) {
-    data_local = ''
-    if (!(lang == defaultLang())) {
-      try {
-        data_local = require('../../translations/'+lang+'/'+'text/lists/settlement_locations_texts')
-      } catch(e) {
-      }
-    }
-    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/settlement_locations_texts')
-    settlement_locations = localized_require(settlement_locations, data_local, data_en, ['label'])
-    window.globals.glossary[lang].settlement_locations = settlement_locations
-  } else {
-    settlement_locations = window.globals.glossary[lang].settlement_locations
-  }
-
-  //## Settlement Events
-  if (window.globals.glossary[lang].settlement_events === undefined) {
-    data_local = ''
-    if (!(lang == defaultLang())) {
-      try {
-        data_local = require('../../translations/'+lang+'/'+'text/lists/settlement_events_texts')
-      } catch(e) {
-      }
-    }
-    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/settlement_events_texts')
-    settlement_events = localized_require(settlement_events, data_local, data_en, ['label', 'passive'])
-    window.globals.glossary[lang].settlement_events = settlement_events
-  } else {
-    settlement_events = window.globals.glossary[lang].settlement_events
-  }
-
-  //## Survivor Statuses
-  if (window.globals.glossary[lang].survivor_statuses === undefined) {
-    data_local = ''
-    if (!(lang == defaultLang())) {
-      try {
-        data_local = require('../../translations/'+lang+'/'+'text/lists/survivor_statuses_texts')
-      } catch(e) {
-      }
-    }
-    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/survivor_statuses_texts')
-    survivor_statuses = localized_require(survivor_statuses, data_local, data_en, ['label', 'description'])
-    window.globals.glossary[lang].survivor_statuses = survivor_statuses
-  } else {
-    survivor_statuses = window.globals.glossary[lang].survivor_statuses
-  }
-
-  if (window.globals.glossary[lang].terrain === undefined) {
-    data_local = ''
-    if (!(lang == defaultLang())) {
-      try {
-        data_local = require('../../translations/'+lang+'/'+'text/lists/terrain_texts')
-      } catch(e) {
-      }
-    }
-    data_en = require('../../translations/'+defaultLang()+'/'+'text/lists/terrain_texts')
-    terrain = localized_require(terrain, data_local, data_en, ['label', 'description'])
-    window.globals.glossary[lang].terrain = terrain
-  } else {
-    terrain = window.globals.glossary[lang].terrain
-  }
-
-  //## Glossary Terms (list changed fully!)
-  if (window.globals.glossary[lang].glossary_terms === undefined) {
-    data_local = ''
-    if (!(lang == defaultLang())) {
-      try {
-        data_local = require('../../translations/'+lang+'/'+'text/lists/glossary_terms')
-      } catch(e) {
-      }
-    }
-    data_en = require('../../translations/'+defaultLang()+'/text/lists/glossary_terms')
-
-
-    // if (data_local == '') {
-    //   glossary_terms = data_en.glossary_terms
-    // } else {
-    //   glossary_terms = data_local.glossary_terms
-    // }
-
-    let keys = Object.keys(data_en.texts)
-    glossary_terms = data_en.texts
-    let entry
-
-    for (let j=0; j<keys.length; j++) {
-      // if (args[i] in data_en.texts[keys[j]]) {
-      //   if ((found)&&(keys[j] in data_local.texts)&&(args[i] in data_local.texts[keys[j]])) {
-      //      result[keys[j]][args[i]] = data_local.texts[keys[j]][args[i]]
-      //   } else {
-      //      result[keys[j]][args[i]] = data_en.texts[keys[j]][args[i]]
-      //   }
-      // }
-      entry = {}
-      if (data_local == '') {
-        entry.label = keys[j]
-        entry.description = data_en.texts[keys[j]]
-      } else {
-          if ((keys[j] in data_local.texts)&&('label' in data_local.texts[keys[j]])) {
-            entry.label = data_local.texts[keys[j]].label+'  ['+keys[j]+']'
-          } else {
-            entry.label = keys[j]
-          }
-          if ((keys[j] in data_local.texts)&&('description' in data_local.texts[keys[j]])) {
-            entry.description = data_local.texts[keys[j]].description
-          } else {
-            entry.description = data_en.texts[keys[j]]
-          }
-      }
-      glossary_terms[keys[j]] = entry
-
-    }
-
-    window.globals.glossary[lang].glossary_terms = glossary_terms
-  } else {
-    glossary_terms = window.globals.glossary[lang].glossary_terms
-  }
-  // data_en = require('../../translations/en/'+'text/lists/secret_fighting_arts_texts')
-}
-
-function localized_require(data, data_local, data_en, args) {
-  let result = data
-  let found
-
-  if (data_local == '') {
-    found = false
-  } else {
-    found = true
-  }
-  // data_en = {}
-  let keys = Object.keys(data)
-
-  // let i = 0
-  for (let i=0; i<args.length; i++) {
-    for (let j=0; j<keys.length; j++) {
-      if (args[i] in data_en.texts[keys[j]]) {
-        if ((found)&&(keys[j] in data_local.texts)&&(args[i] in data_local.texts[keys[j]])) {
-           result[keys[j]][args[i]] = data_local.texts[keys[j]][args[i]]
-        } else {
-           result[keys[j]][args[i]] = data_en.texts[keys[j]][args[i]]
-        }
-      }
-    }
-  }
-
-  return result
-}
-
-
-const random_draws = {
- '1 random Fighting Art': {},
- '2 random Fighting Arts': {},
- '3 random Fighting Arts': {},
- '5 random Fighting Arts': {},
- '1 random Disorder': {},
- '2 random Disorders': {},
- '3 random Disorders': {},
- '1 random Settlement Event': {},
-}
-
 module.exports = {
  get_all_options,
  get_representation,
@@ -330,6 +16,122 @@ module.exports = {
  get_events_options,
  init_glossary,
  settlement_events
+}
+
+console.log('!! Setting up glossary !! ^_^')
+
+var lang = getSettings()['language']
+
+if (window.globals.glossary === undefined) {
+  window.globals.glossary = {}
+}
+
+if (window.globals.glossary[lang] === undefined) {
+  window.globals.glossary[lang] = {}
+}
+
+var abilities
+var armor_sets
+var disorders
+var secret_fighting_arts
+var gear_list
+var glossary_terms
+var innovations
+var resources
+var settlement_events
+var settlement_locations
+var survivor_statuses
+var resources
+var terrain
+
+
+
+let glossary_list_translations = {
+  'fighting_arts': ['label', 'description'],
+  'secret_fighting_arts': ['label', 'description'],
+  'disorders': ['label', 'description'],
+  'innovations': ['label', 'passive'],
+  'gear_list': ['resources'],
+  'abilities': ['label', 'description'],
+  'armor_sets': ['label'],
+  'settlement_locations': ['label'],
+  'settlement_events': ['label', 'passive'],
+  'survivor_statuses': ['label', 'description'],
+  'terrain': ['label', 'description'],
+  'glossary_terms': ['label', 'description'],
+  'resources': ['label', 'type', 'text'],
+}
+
+function init_glossary() {
+
+  let keys = Object.keys(glossary_list_translations)
+
+  for (let i=0; i<keys.length; i++) {
+    if (window.globals.glossary[lang][keys[i]] === undefined) {
+      window.globals.glossary[lang][keys[i]] = localized_require2(keys[i], lang, glossary_list_translations[keys[i]])
+    }
+  }
+
+  fighting_arts = window.globals.glossary[lang]['fighting_arts']
+  secret_fighting_arts = window.globals.glossary[lang]['secret_fighting_arts']
+  disorders = window.globals.glossary[lang]['disorders']
+  innovations = window.globals.glossary[lang]['innovations']
+  gear_list = window.globals.glossary[lang].gear_list
+  abilities = window.globals.glossary[lang].abilities
+  armor_sets = window.globals.glossary[lang].armor_sets
+  settlement_locations = window.globals.glossary[lang].settlement_locations
+  settlement_events = window.globals.glossary[lang].settlement_events
+  survivor_statuses = window.globals.glossary[lang].survivor_statuses
+  terrain = window.globals.glossary[lang].terrain
+  glossary_terms = window.globals.glossary[lang].glossary_terms
+  resources = window.globals.glossary[lang].resources
+
+}
+
+function localized_require2(text, lang, args) {
+
+  data_en = require('../../translations/'+defaultLang()+'/text/lists/'+text+'_texts.js').texts
+
+  let data_local = ''
+  if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('translations/'+lang+'/text/lists/'+text+'_texts.js')) {
+      data_local = require('../../translations/'+lang+'/text/lists/'+text+'_texts.js').texts
+  }
+
+  let keys = Object.keys(data_en)
+
+  for (let j=0; j<keys.length; j++) {
+    if (!('label' in data_en[keys[j]])||(data_en[keys[j]]['label'] == '')) {
+      data_en[keys[j]]['label'] = keys[j]
+    }
+  }
+
+  if (!(data_local == '')) {
+    for (let j=0; j<keys.length; j++) {
+      for (let i=0; i<args.length; i++) {
+        if ((keys[j] in data_local)&&(args[i] in data_local[keys[j]])) {
+           data_en[keys[j]][args[i]] = data_local[keys[j]][args[i]]
+        }
+      }
+    }
+  }
+
+  // console.log('!!!Data: '+JSON.stringify(data_en))
+
+  return data_en
+}
+
+init_glossary()
+
+
+const random_draws = {
+ '1 random Fighting Art': {},
+ '2 random Fighting Arts': {},
+ '3 random Fighting Arts': {},
+ '5 random Fighting Arts': {},
+ '1 random Disorder': {},
+ '2 random Disorders': {},
+ '3 random Disorders': {},
+ '1 random Settlement Event': {},
 }
 
 function get_options (data, type, filter=false) {
@@ -387,7 +189,6 @@ function get_all_options () {
 }
 
 function get_innovations_list() {
- // let settings = JSON.parse(sessionStorage.getItem('settings'))
  let options = get_options(innovations, 'innovations', true)
 
  return options
@@ -400,14 +201,14 @@ function get_events_options() {
 }
 
 function get_locations_list() {
- let settings = JSON.parse(sessionStorage.getItem('settings'))
+ let settings = getSettings()
  let options = get_options(settlement_locations, 'settlement locations', true)
 
  return options
 }
 
 function get_representation (word) {
- let settings = JSON.parse(sessionStorage.getItem('settings'))
+ let settings = getSettings()
 
  if (word in glossary_terms) {
   let result = '<b style="font-size:1.3em;">' + glossary_terms[word].label + '</b> <i style="font-size:0.9em;color:#777;">(term)</i> <hr/>' + glossary_terms[word].description
@@ -591,7 +392,7 @@ function is_random_draw (word) {
 }
 
 function get_random_draws (word, randomize=true, ) {
- let settings = JSON.parse(sessionStorage.getItem('settings'))
+ let settings = getSettings()
  let number = word.substring(0, 1)
  let list = []
 
@@ -692,7 +493,7 @@ function getSettlementEventPath () {
  let list = clone(settlement_events)
  delete list['First Day']
 
- let settings = JSON.parse(sessionStorage.getItem('settings'))
+ let settings = getSettings()
 
  let keys = Object.keys(list)
 

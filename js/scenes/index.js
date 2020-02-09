@@ -7,11 +7,13 @@ const { createAbout } = require('./../ui/about')
 const { createToc } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton, createReference, createInnovationsList, createLocationsList } = require('./../ui/menu')
-const { getSettings, addSettings, onSettingsSaved, setSettings, saveSettings, initSettings } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved, setSettings, saveSettings, initSettings, defaultLang } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
 const { cdnUrl } = require('./../ui/template-cdnurl')
 const { addTimer } = require('./../ui/timer')
 const { setTransition } = require('./../ui/transition')
+// const dev = require('./../ui/development')
+const dev = require('./settlement')
 
 module.exports = class IndexScene {
   render () {
@@ -23,10 +25,11 @@ module.exports = class IndexScene {
 
     // localStorage.clear()
 
-    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/index.html')
+    document.getElementById('container').innerHTML = render('index')//app.getAppPath() + '/partials/.html'
     document.title = 'kingdom death'
 
     onSettingsSaved(() => {
+      // delete require.cache[require.resolve('./../ui/glossary')]
       if ($("#menu_table1").length) {
         window.location.reload()
       }
@@ -56,9 +59,7 @@ module.exports = class IndexScene {
     $('#video').attr('width', '100%')
     $('#video').attr('height', '100%')
 
-    // sessionStorage.setItem('settings', JSON.stringify(settings))
     sessionStorage.setItem('back_target', null)
-    // sessionStorage.setItem("Mute", "Off");
 
     let lang = settings['language']
 
@@ -89,7 +90,7 @@ module.exports = class IndexScene {
     $('#video').attr('src', pathToAssetL('video/intro.mp4'))
 
     $('#label_text').fadeIn(2000)
-    // gallery.load(function () {
+    // gallery.on('load', function () {
     //     gallery.delay(3000).fadeIn(1000)
     // })
     gallery.show();
@@ -111,8 +112,16 @@ module.exports = class IndexScene {
 
     // console.log(subtitles['intro'][lang])
     if (settings['subtitles'] == 'On') {
-      configureSubtitle(readFile(pathToAssetL('video/intro.srt', false), 'root'))
+      let subtitles
+      // configureSubtitle(readFile(pathToAssetL('video/intro.srt', false), 'root'))
+      if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('translations/'+lang+'/video/intro.srt')) {
+        subtitles = require('./../../translations/'+lang+'/video/intro.srt')
+      } else {
+        subtitles = require('./../../translations/'+defaultLang()+'/video/intro.srt')
+      }
+      configureSubtitle(subtitles.default)
     }
+
 
     if ((settings['narration'] == 'Off') && (settings['music'] == 'Off')) {
       $('#video').prop('muted', true)
@@ -228,7 +237,6 @@ module.exports = class IndexScene {
           settings['campaign'] = 'Lantern'
           setSettings(settings);
           saveSettings();
-          sessionStorage.setItem('settings', JSON.stringify(settings))
           createToc();
         }
       }
@@ -240,7 +248,6 @@ module.exports = class IndexScene {
           settings['campaign'] = 'Lantern'
           setSettings(settings);
           saveSettings();
-          sessionStorage.setItem('settings', JSON.stringify(settings))
           createToc();
         }
       }
@@ -270,7 +277,6 @@ module.exports = class IndexScene {
         $('#menu_table2').empty();
         $('#menu_table2').remove();
         saveSettings();
-        sessionStorage.setItem('settings', JSON.stringify(settings))
         createToc();
         // $('#menu_table1').reload();
         // $('#menu_table1').hide();
@@ -304,7 +310,7 @@ module.exports = class IndexScene {
 
       campaign_label.append('<b style="color:#bb0;font-size:0.7em;">Campaign</b><br/>People of the '+campaign);
 
-      // campaign_image.load(function() {
+      // campaign_image.on('load', function() {
       campaign_element.append(campaign_image);
       campaign_element.append(campaign_label);
       // })

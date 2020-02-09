@@ -54,7 +54,7 @@ module.exports = class ImageScene {
 
     var events_table = generate_events_table()
 
-    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/image.html')
+    document.getElementById('container').innerHTML = render('image')
 
     onSettingsSaved(() => {
       setTransition(document.title, 'back', getBackTarget(), current_state())
@@ -72,9 +72,7 @@ module.exports = class ImageScene {
 
     initSettings();
 
-    // let settings = JSON.parse(sessionStorage.getItem("settings"));
     var settings = getSettings()
-    sessionStorage.setItem('settings', JSON.stringify(settings))
 
     $('body').css('font-size', settings['fontSize'])
 

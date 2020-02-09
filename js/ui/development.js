@@ -1,9 +1,16 @@
-const { get_random_draws, settlement_locations, innovations, glossary_terms, gear_list, settlement_events } = require('./../ui/glossary')
+const { get_random_draws } = require('./../ui/glossary')
 const { titleCase } = require('./../ui/events')
 const { getSettings } = require('./../ui/settings')
 const { addTimer } = require('./../ui/timer')
 const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 // const { cdnUrl }
+
+var lang = getSettings()['language']
+
+const innovations = window.globals.glossary[lang].innovations
+const settlement_locations = window.globals.glossary[lang].settlement_locations
+const gear_list = window.globals.glossary[lang].gear_list
+const settlement_events = window.globals.glossary[lang].settlement_events
 
 const DEBUG_MODE = true
 const INNOVATION_HIDE = 'slideRight'
@@ -603,7 +610,7 @@ function setupInnovations() {
 
   var dragging = false
 
-  // $('.innovations_grid').load(function() {
+  // $('.innovations_grid').on('load', function() {
   //   console.log('Creating sortable!!')
 
   $('.innovations_grid').sortable({
@@ -816,9 +823,9 @@ function updateInnovationsState() {
 }
 
 function update_bonuses_list(state='') {
-  if (state == '') {
-    state = getDevelopmentState()
-  }
+  // if (state == '') {
+  state = getDevelopmentState()
+  // }
 
   let settings = getSettings()
   if (settings['campaign']+'#Hidden' in innovations) {
@@ -941,7 +948,7 @@ if (document.title == 'hunt') {
     for (let j=0; j<set[set_keys[i]].length; j++) {
       text = set[set_keys[i]][j]
       if (set_keys[i]+'_'+text in cnts) {
-        console.log('To replace: '+text)
+        // console.log('To replace: '+text)
         text = text.replace('XXX', cnts[set_keys[i]+'_'+text])
       }
       // if (set_keys[i] == 'newborn') {
@@ -1059,7 +1066,7 @@ function showInnovation(innovationName, initialization=false, newitem=false) {
 		$('.innovations_grid').append(img);
 	}
 
-  // img.load(function() {
+  // img.on('load', function() {
   //
   // })
   if (!newitem) {
@@ -1245,57 +1252,60 @@ function updateActions() {
     }
   }
 
-
-  addTimer(function() {var grid = new Muuri('.actions_grid', {
-    dragEnabled: false,
-    layoutOnInit: false,
-    layoutDuration: 200,
-    layout: {
-      round: false,
-      // horizontal: true,
-      fillGaps: true,
-    },
-    sortData: {
-      id: function(item, element) {
-        if (element.children[0].children[0].classList.contains('active')) {
-          return 10.
-        } else {
-          if (element.children[0].children[0].classList.contains('event')) {
-            return 2.
-          }
-          if (element.children[0].children[0].classList.contains('location')) {
-            return 1.
+  // $('.actions_grid').on('load', function () {
+    addTimer(function() {var grid = new Muuri('.actions_grid', {
+      dragEnabled: false,
+      layoutOnInit: false,
+      layoutDuration: 200,
+      layout: {
+        round: false,
+        // horizontal: true,
+        fillGaps: true,
+      },
+      sortData: {
+        id: function(item, element) {
+          if (element.children[0].children[0].classList.contains('active')) {
+            return 10.
           } else {
-            if (element.children[0].children[0].classList.contains('art')) {
-              return 3.
-            } else if (element.children[0].children[0].classList.contains('education')) {
-              return 4.
-            } else if (element.children[0].children[0].classList.contains('faith')) {
-              return 5.
-            } else if (element.children[0].children[0].classList.contains('home')) {
-              return 6.
-            } else if (element.children[0].children[0].classList.contains('music')) {
-              return 7.
-            } else if (element.children[0].children[0].classList.contains('science')) {
-              return 8.
-            } else if (element.children[0].children[0].classList.contains('principle')) {
-              return 9.
-            } else {
-              return 2
+            if (element.children[0].children[0].classList.contains('event')) {
+              return 2.
             }
+            if (element.children[0].children[0].classList.contains('location')) {
+              return 1.
+            } else {
+              if (element.children[0].children[0].classList.contains('art')) {
+                return 3.
+              } else if (element.children[0].children[0].classList.contains('education')) {
+                return 4.
+              } else if (element.children[0].children[0].classList.contains('faith')) {
+                return 5.
+              } else if (element.children[0].children[0].classList.contains('home')) {
+                return 6.
+              } else if (element.children[0].children[0].classList.contains('music')) {
+                return 7.
+              } else if (element.children[0].children[0].classList.contains('science')) {
+                return 8.
+              } else if (element.children[0].children[0].classList.contains('principle')) {
+                return 9.
+              } else {
+                return 2
+              }
 
+            }
           }
         }
       }
-    }
-  });
-  grid.sort('id', {layout: 'instant'})
-}, 100)
+    });
+    grid.sort('id', {layout: 'instant'})
+  }, 200)
+// })
  // addTimer(function() {window.dispatchEvent(new Event('resize'))}, 300)
 
 }
 
 function addAction(name, type, tag = '') {
+
+name = name+''
 
 let item = $('<div>', {
   class: 'item '+type,
@@ -1320,7 +1330,7 @@ item.append(item_content)
 
  $('.actions_grid').append(item)
 
- img.load(function() {
+ img.on('load', function() {
    $(this).delay(50).fadeIn(300);
  })
 
@@ -1694,7 +1704,7 @@ function toShow(name) {
     return false
   }
 
-  let settings = JSON.parse(sessionStorage.getItem('settings'));
+  let settings = getSettings();
 
   if (('campaign' in list[name]) && !(list[name]['campaign'].includes(settings['campaign']))) {
     console.log('Different campaign.')

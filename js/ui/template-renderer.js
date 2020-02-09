@@ -11,7 +11,7 @@ module.exports = {
 }
 
 function render (filename, data = {}) {
-  const htmlTemplate = readFile(filename)
+  const htmlTemplate = require('./../../partials/'+filename+'.html')//readFile(filename)
   const renderer = doT.template(htmlTemplate)
 
   data = Object.assign({}, window.globals.template, data)

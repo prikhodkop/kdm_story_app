@@ -32,7 +32,7 @@ function configureSubtitle(srt_text) {
     if(!videoId) return;
     var srtUrl = subtitleElement.attr('data-srt');
     if(srtUrl) {
-      $(this).load(srtUrl, function (responseText, textStatus, req) { playSubtitles(subtitleElement)})
+      $(this).on('load', srtUrl, function (responseText, textStatus, req) { playSubtitles(subtitleElement)})
     } else {
       playSubtitles(subtitleElement);
     }

@@ -1,17 +1,30 @@
+// It is assumed that first innovation tag is its type
+
 const texts = {
  'Albedo': {
-  'label': 'Albedo',
+  'label': '',
+  'expansion': 'gorm',
+  'parent': 'Nigredo',
+  'tags': ['science', 'gormchymy', 'nigredo'],
+  'action': true,
  },
  'Ammonia': {
-  'label': 'Ammonia',
+  'label': '',
+  'parent': 'Language',
+  'tags': ['science', 'language'],
   'passive': {
     'departing': [
-      'All <b>departing</b> survivors gain +$1$ survival.'
+      'All <b>departing</b> survivors gain +$1$ survidval.'
     ],
   }
  },
  'Aquarobotics': {
-  'label': 'Aquarobotics',
+  'label': '',
+  'expansion': 'sunstalker',
+  'parent': 'Hands of the Sun',
+  'tags': ['faith', 'hands of the sun'],
+  'campaign': ['Sun'],
+  'action': true,
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$'
@@ -19,10 +32,18 @@ const texts = {
   }
  },
  'Arena': {
-  'label': 'Arena',
+  'label': '',
+  'expansion': 'dragon king',
+  'parent': 'Nightmare Training',
+  'campaign': 'Stars',
+  'tags': ['education', 'nightmare training'],
+  'action': true,
  },
  'Bed': {
-  'label': 'Bed',
+  'label': '',
+  'parent': 'Hovel',
+  'tags': ['home', 'hovel'],
+  'action': true,
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$'
@@ -30,10 +51,17 @@ const texts = {
   }
  },
  'Bloodletting': {
-  'label': 'Bloodletting',
+  'label': '',
+  'parent': 'Ammonia',
+  'tags': ['science', 'ammonia'],
+  'action': true,
  },
  'Bloodline': {
-  'label': 'Bloodline',
+  'label': '',
+  'expansion': 'dragon king',
+  'parent': 'Hovel',
+  'campaign': ['Stars'],
+  'tags': ['home', 'hovel'],
   'passive': {
     'newborn': [
       'Newborn survivors inherit the following form their parents:<br/> -The <b style="color:#863a2a;">Oracle\'s Eye</b>, <b style="color:#863a2a;">Iridescent Hide</b>, or <b style="color:#863a2a;">Pristine</b> ability (choose 1)<br/> - <b>Surname</b><br/>Half of one parent\'s weapon proficiency levels <i>(rounded up)</i>'
@@ -41,7 +69,11 @@ const texts = {
   }
  },
  'Citrinitas': {
-  'label': 'Citrinitas',
+  'label': '',
+  'expansion': 'gorm',
+  'parent': 'Albedo',
+  'tags': ['science', 'gormchymy', 'albedo'],
+  'action': true,
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$'
@@ -49,10 +81,17 @@ const texts = {
   }
  },
  'Choreia': {
-  'label': 'Choreia',
+  'label': '',
+  'expansion': 'spidicules',
+  'parent': 'Forbidden Dance',
+  'tags': ['music', 'forbidden dance'],
+  'action': true,
  },
  'Legless Ball': {
-  'label': 'Legless Ball',
+  'label': '',
+  'expansion': 'spidicules',
+  'tags': ['other'],
+  'action': true,
   'passive': {
     'departing': [
       'All <b>departing</b> survivors gain +$2$ insanity.'
@@ -60,7 +99,10 @@ const texts = {
   }
  },
  'Silk-refining': {
-  'label': 'Silk-Refining',
+  'label': '',
+  'expansion': 'spidicules',
+  'tags': ['other'],
+  'action': true,
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$'
@@ -68,7 +110,10 @@ const texts = {
   }
  },
  'Clan of Death': {
-  'label': 'Clan of Death',
+  'label': '',
+  'parent': 'Family',
+  'campaign': ['Lantern', 'Sun'],
+  'tags': ['home', 'family'],
   'passive': {
     'newborn': [
       'All <b>newborn</b> survivors gain +$1$ accuracy.',
@@ -78,7 +123,10 @@ const texts = {
   }
  },
  'Cooking': {
-  'label': 'Cooking',
+  'label': '',
+  'parent': 'Lantern Oven',
+  'tags': ['science', 'lantern oven'],
+  'action': true,
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -87,15 +135,21 @@ const texts = {
   }
  },
  'Crimson Candy': {
-  'label': 'Crimson Candy',
+  'label': '',
+  'expansion': 'manhunter',
+  'tags': ['science'],
+  'action': true,
   'passive': {
     'showdown': [
-      'At the start of <b>Showdown</b> each survivor gain +<b>Monster Level</b> survival.'
+      ['survival', '<b>Monster Level</b>']
     ],
   }
  },
  'Dark Water Research': {
-  'label': 'Dark Water Research',
+  'label': '',
+  'expansion': 'slenderman',
+  'tags': ['science'],
+  'action': true,
   'passive': {
     'departing': [
       'All <b>departing</b> survivors gain +$2$ insanity.'
@@ -103,7 +157,8 @@ const texts = {
   }
  },
  'Destiny': {
-  'label': 'Destiny',
+  'label': '',
+  'tags': ['faith'],
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -114,7 +169,10 @@ const texts = {
   }
  },
  'Dragon Speech': {
-  'label': 'Dragon Speech',
+  'label': '',
+  'expansion': 'dragon king',
+  'campaign': ['Stars'],
+  'tags': ['starting'],
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -125,10 +183,17 @@ const texts = {
   }
  },
  'Drums': {
-  'label': 'Drums',
+  'label': '',
+  'parent': 'Language',
+  'tags': ['music', 'language'],
+  'action': true,
  },
  'Empire': {
-  'label': 'Empire',
+  'label': '',
+  'expansion': 'dragon king',
+  'parent': 'Bloodline',
+  'campaign': ['Stars'],
+  'tags': ['home', 'bloodline'],
   'passive': {
     'newborn': [
       'All <b>newborn</b> survivors gain +$1$ strength.',
@@ -137,10 +202,16 @@ const texts = {
   }
  },
  'Face Painting': {
-  'label': 'Face Painting',
+  'label': '',
+  'parent': 'Paint',
+  'tags': ['art', 'paint'],
+  'action': true,
  },
  'Family': {
-  'label': 'Family',
+  'label': '',
+  'parent': 'Hovel',
+  'campaign': ['Lantern', 'Sun'],
+  'tags': ['home', 'hovel'],
   'passive': {
     'departing': [
       'All <b>departing</b> survivors gain +$1$ survival.'
@@ -154,7 +225,10 @@ const texts = {
   }
  },
  'Filleting Table': {
-  'label': 'Filleting Table',
+  'label': '',
+  'expansion': 'sunstalker',
+  'tags': ['science'],
+  'action': true,
   'passive': {
     'settlement': [
       'Once per settlement phase, if the <b>returning survivors</b> are victorious, gain 1 random basic resource.'
@@ -162,7 +236,8 @@ const texts = {
   }
  },
  'Final Fightning Art': {
-  'label': 'Final Fightning Art',
+  'label': '',
+  'tags': ['education'],
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -173,7 +248,10 @@ const texts = {
   }
  },
  'Forbidden Dance': {
-  'label': 'Forbidden Dance',
+  'label': '',
+  'parent': 'Drums',
+  'tags': ['music', 'drums'],
+  'action': true,
   'passive': {
     'showdown': [
       'When a survivor uses <b>Synchronized Strike</b> secret fighting art reroll missed attack rolls once.',
@@ -181,7 +259,9 @@ const texts = {
   }
  },
  'Guidepost': {
-  'label': 'Guidepost',
+  'label': '',
+  'tags': ['other'],
+  'action': true,
   'passive': {
     'departing': [
       'All <b>departing</b> survivors gain +$1$ survival.'
@@ -189,7 +269,10 @@ const texts = {
   }
  },
  'Hands of the Sun': {
-  'label': 'Hands of the Sun',
+  'label': '',
+  'expansion': 'sunstalker',
+  'tags': ['faith'],
+  'campaign': ['Sun'],
   'passive': {
     'actions': [
       '<b class="action">Overcharge</b>: if you have any +1 strength tokens, you may spend 1 survival and remove them all to give your next attack this round <b>devastating 1</b>. Limit once per round.',
@@ -197,7 +280,10 @@ const texts = {
   }
  },
  'Heart Flute': {
-  'label': 'Heart Flute',
+  'label': '',
+  'parent': 'Forbidden Dance',
+  'tags': ['music', 'forbidden dance'],
+  'action': true,
   'passive': {
     'showdown': [
       'When a survivor uses <b>Synchronized Strike</b> secret fighting art, their attack assist may spend 1 survival to change any monster <b>Reflex</b> to <b>Failure</b> before any wound attempts are made. Limit, once per attack.',
@@ -205,7 +291,9 @@ const texts = {
   }
  },
  'Hovel': {
-  'label': 'Hovel',
+  'label': '',
+  'parent': 'Language',
+  'tags': ['home', 'language'],
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -216,7 +304,9 @@ const texts = {
   }
  },
  'Inner Lantern': {
-  'label': 'Inner Lantern',
+  'label': '',
+  'parent': 'Language',
+  'tags': ['faith', 'language'],
   'passive': {
     'actions': [
       '<b class="action">Surge</b>: Once per round spend 1 survival to gain +1 <b>Action</b> and use it immediately.',
@@ -224,7 +314,9 @@ const texts = {
   }
  },
  'Language': {
-  'label': 'Language',
+  'label': '',
+  'campaign': ['Lantern'],
+  'tags': ['starting'],
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -235,7 +327,8 @@ const texts = {
   }
  },
  'Lantern Oven': {
-  'label': 'Lantern Oven',
+  'label': '',
+  'tags': ['science', 'ammonia'],
   'passive': {
     'settlement': [
       'Gain <b>Heat</b>.',
@@ -246,13 +339,22 @@ const texts = {
   }
  },
  'Momento Mori': {
-  'label': 'Momento Mori',
+  'label': '',
+  'parent': 'Pictograph',
+  'tags': ['art', 'pictograph'],
+  'action': true,
  },
  'Nightmare Training': {
-  'label': 'Nightmare Training',
+  'label': '',
+  'parent': 'Nightmare Training',
+  'tags': ['education', 'symposium'],
+  'action': true,
  },
  'Nigredo': {
-  'label': 'Nigredo',
+  'label': '',
+  'expansion': 'gorm',
+  'tags': ['science', 'gormchymy'],
+  'action': true,
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -260,7 +362,9 @@ const texts = {
   }
  },
  'Paint': {
-  'label': 'Paint',
+  'label': '',
+  'parent': 'Language',
+  'tags': ['art', 'language'],
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -271,10 +375,17 @@ const texts = {
   }
  },
  'Partnership': {
-  'label': 'Partnership',
+  'label': '',
+  'parent': 'Hovel',
+  'tags': ['home', 'hovel'],
+  'action': true,
  },
  'Petal Spiral': {
-  'label': 'Petal Spiral',
+  'label': '',
+  'expansion': 'flower knight',
+  'parent': 'Forbidden Dance',
+  'tags': ['music', 'forbidden dance'],
+  'action': true,
   'passive': {
     'departing': [
       'Regardless of their Hunt XP, survivors may select Sword for their Weapon Proficiency.'
@@ -282,7 +393,9 @@ const texts = {
   }
  },
  'Pictograph': {
-  'label': 'Pictograph',
+  'label': '',
+  'parent': 'Paint',
+  'tags': ['art', 'paint'],
   'passive': {
     'showdown': [
       'At the start of a survivors\'s act they may decide to skip their act and - <b class="event-trigger" target="run away">Run Away</b>.',
@@ -293,7 +406,10 @@ const texts = {
   }
  },
  'Pottery': {
-  'label': 'Pottery',
+  'label': '',
+  'parent': 'Sculpture',
+  'tags': ['art', 'sculpture'],
+  'action': true,
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -301,7 +417,10 @@ const texts = {
   }
  },
  'Radiating Orb': {
-  'label': 'Radiating Orb',
+  'label': '',
+  'expansion': 'dragon king',
+  'campaign': ['Stars'],
+  'tags': ['science'],
   'passive': {
     'settlement': [
       'Gain <b>Heat</b>.',
@@ -316,19 +435,35 @@ const texts = {
   }
  },
  'Records': {
-  'label': 'Records',
+  'label': '',
+  'parent': 'Storytelling',
+  'tags': ['education', 'storytelling'],
+  'action': true,
  },
  'Round Stone Training': {
-  'label': 'Round Stone Training',
+  'label': '',
+  'expansion': 'dung beetle knight',
+  'parent': 'Nightmare Training',
+  'tags': ['education', 'nightmare training'],
+  'action': true,
  },
  'Rubedo': {
-  'label': 'Rubedo',
+  'label': '',
+  'expansion': 'gorm',
+  'parent': 'Citrinitas',
+  'tags': ['science', 'gormchymy', 'citrinas'],
+  'action': true,
  },
  'Sacrifice': {
-  'label': 'Sacrifice',
+  'label': '',
+  'parent': 'Shrine',
+  'tags': ['faith', 'shrine'],
+  'action': true,
  },
  'Saga': {
-  'label': 'Saga',
+  'label': '',
+  'parent': 'Song of the Brave',
+  'tags': ['music', 'song of the brave'],
   'passive': {
     'newborn': [
       'All <b>newborn</b> survivors gain +$2$ courage.',
@@ -338,7 +473,12 @@ const texts = {
   }
  },
  'Sauna Shrine': {
-  'label': 'Sauna Shrine',
+  'label': '',
+  'expansion': 'sunstalker',
+  'parent': 'Hands of the Sun',
+  'tags': ['faith', 'hands of the sun'],
+  'campaign': ['Sun'],
+  'action': true,
   'passive': {
     'departing': [
       'When survivors <b>depart</b> for a Nemesis Encounter or Special Showdown, they gain +10 survival.'
@@ -346,16 +486,33 @@ const texts = {
   }
  },
  'Scarification': {
-  'label': 'Scarification',
+  'label': '',
+  'parent': 'Inner Lantern',
+  'tags': ['faith', 'inner lantern'],
+  'action': true,
  },
  'Scrap Smelting': {
-  'label': 'Scrap Smelting',
+  'label': '',
+  'parent': 'Lantern Oven',
+  'tags': ['science', 'lantern oven'],
+  'action': true,
+  'num_actions': 2,
+  'action_disabler': {
+    1: {'location': ['Blacksmith']},
+  },
  },
  'Scupture': {
-  'label': 'Scupture',
+  'label': '',
+  'parent': 'Paint',
+  'tags': ['art', 'paint'],
+  'action': true,
  },
  'Settlement Watch': {
-  'label': 'Settlement Watch',
+  'label': '',
+  'expansion': 'manhunter',
+  'parent': 'Hovel',
+  'tags': ['home', 'hovel'],
+  'action': true,
   'passive': {
     'departing': [
       'When survivors <b>depart</b> for a Nemesis Encounter or Special Showdown, they gain +2 survival.'
@@ -363,13 +520,22 @@ const texts = {
   }
  },
  'Shadow Dancing': {
-  'label': 'Shadow Dancing',
+  'label': '',
+  'expansion': 'sunstalker',
+  'parent': 'Hovel',
+  'tags': ['home', 'hovel'],
+  'action': true,
  },
  'Shrine': {
-  'label': 'Shrine',
+  'label': '',
+  'parent': 'Inner Lantern',
+  'tags': ['faith', 'inner lantern'],
+  'action': true,
  },
  'Song of the Brave': {
-  'label': 'Song of the Brave',
+  'label': '',
+  'parent': 'Drums',
+  'tags': ['music', 'drums'],
   'passive': {
     'showdown': [
       'On <b>arrival</b>, each non-deaf survivor may remove 1 negative attribute token.',
@@ -380,16 +546,28 @@ const texts = {
   }
  },
  'Stoic Statue': {
-  'label': 'Stoic Statue',
+  'label': '',
+  'expansion': 'lion knight',
+  'tags': ['other'],
+  'action': true,
  },
  'Black Mask': {
-  'label': 'Black Mask',
+  'label': '',
+  'expansion': 'lion knight',
+  'tags': ['other'],
+  'action': true,
  },
  'White Mask': {
-  'label': 'White Mask',
+  'label': '',
+  'expansion': 'lion knight',
+  'tags': ['other'],
+  'action': true,
  },
  'Storytelling': {
-  'label': 'Storytelling',
+  'label': '',
+  'parent': 'Symposium',
+  'tags': ['education', 'symposium'],
+  'action': true,
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -397,10 +575,20 @@ const texts = {
   }
  },
  'Subterranean Agriculture': {
-  'label': 'Subterranean Agriculture',
+  'label': '',
+  'expansion': 'dung beetle knight',
+  'tags': ['science'],
+  'action': true,
+  'num_actions': 2,
+  'action_disabler': {
+    1: {'location': ['Wet Resin Crafter']},
+  },
  },
  'Sun Language': {
-  'label': 'Sun Language',
+  'label': '',
+  'expansion': 'sunstalker',
+  'tags': ['starting'],
+  'campaign': ['Sun'],
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -411,7 +599,9 @@ const texts = {
   }
  },
  'Symposium': {
-  'label': 'Symposium',
+  'label': '',
+  'parent': 'Language',
+  'tags': ['education', 'language'],
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -420,7 +610,9 @@ const texts = {
   }
  },
  'The Knowedge Worm': {
-  'label': 'The Knowedge Worm',
+  'label': '',
+  'expansion': 'lion god',
+  'tags': ['other'],
   'passive': {
     'settlement': [
       'At the start of settlement phase add 1 scrap to settlement storage',
@@ -433,7 +625,8 @@ const texts = {
   }
  },
  'Ultimate Weapon': {
-  'label': 'Ultimate Weapon',
+  'label': '',
+  'tags': ['science'],
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -444,7 +637,15 @@ const texts = {
   }
  },
  'Umbilical Bank': {
-  'label': 'Umbilical Bank',
+  'label': '',
+  'expansion': 'sunstalker',
+  'tags': ['science'],
+  'campaign': ['Sun'],
+  'action': true,
+  'num_actions': 2,
+  'action_disabler': {
+    1: {'innovation': ['Pottery']},
+  },
   'passive': {
     'newborn': [
       'When a new survivor is born, you may add 1 <b>Life String</b> strange resource to storage.',
@@ -452,7 +653,11 @@ const texts = {
   }
  },
  'War Room': {
-  'label': 'War Room',
+  'label': '',
+  'expansion': 'manhunter',
+  'parent': 'Storytelling',
+  'tags': ['education', 'storytelling'],
+  'action': true,
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -463,7 +668,8 @@ const texts = {
   }
  },
  'Accept Darkness': {
-  'label': 'Accept Darkness',
+  'label': '',
+  'tags': ['principle', 'society'],
   'passive': {
     'all': [
       'Add +2 to all <b>Brain Trauma</b> rolls.',
@@ -471,7 +677,8 @@ const texts = {
   }
  },
  'Barbaric': {
-  'label': 'Barbaric',
+  'label': '',
+  'tags': ['principle', 'conviction'],
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -482,7 +689,8 @@ const texts = {
   }
  },
  'Cannibalize': {
-  'label': 'Cannibalize',
+  'label': '',
+  'tags': ['principle', 'death'],
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -493,7 +701,8 @@ const texts = {
   }
  },
  'Collective Toil': {
-  'label': 'Collective Toil',
+  'label': '',
+  'tags': ['principle', 'society'],
   'passive': {
     'settlement': [
       'At the start of the settlement phase, gain +1 <b>Endeavor</b> for every 10 population.',
@@ -501,7 +710,8 @@ const texts = {
   }
  },
  'Graves': {
-  'label': 'Graves',
+  'label': '',
+  'tags': ['principle', 'death'],
   'passive': {
     'settlement': [
       'When a survivor dies during the settlement phase, gain +1 <b>Endeavor</b>.',
@@ -518,7 +728,8 @@ const texts = {
   }
  },
  'Protect the Young': {
-  'label': 'Protect the Young',
+  'label': '',
+  'tags': ['principle', 'birth', 'new life'],
   'passive': {
     'settlement': [
       'When rolling on the <b class="event">Intimacy</b> story event, roll twice and pick 1 result.',
@@ -526,7 +737,8 @@ const texts = {
   }
  },
  'Romantic': {
-  'label': 'Romantic',
+  'label': '',
+  'tags': ['principle', 'conviction'],
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -537,7 +749,8 @@ const texts = {
   }
  },
  'Survival of the Fittest': {
-  'label': 'Survival of the Fittest',
+  'label': '',
+  'tags': ['principle', 'birth', 'new life'],
   'passive': {
     'settlement': [
       '<b>Survival Limit</b> +$1$',
@@ -555,28 +768,31 @@ const texts = {
   }
 },
 
- // Dirty hack to add always present bonuses to the campaigns (Innovation Name is the same as Campaign name)
- 'Lantern#Hidden': {
-   'passive': {
-     'actions': [
-       '<b class="action">Dodge</b>: When a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform. Each survivor may only Dodge once per round.',
-     ],
-   }
- },
- 'Stars#Hidden': {
-   'passive': {
-     'actions': [
-       '<b class="action">Dodge</b>: When a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform. Each survivor may only Dodge once per round.',
-     ],
-   }
- },
- 'Sun#Hidden': {
-   'passive': {
-     'actions': [
-       '<b class="action">Dodge</b>: When a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform. Each survivor may only Dodge once per round.',
-     ],
-   }
- }
+// Dirty hack to add always present bonuses to the campaigns (Innovation Name is the same as Campaign name)
+'Lantern#Hidden': {
+  'campaign': 'hidden',
+  'passive': {
+    'actions': [
+      '<b class="action">Dodge</b>: When a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform. Each survivor may only Dodge once per round.',
+    ],
+  }
+},
+'Stars#Hidden': {
+  'campaign': 'hidden',
+  'passive': {
+    'actions': [
+      '<b class="action">Dodge</b>: When a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform. Each survivor may only Dodge once per round.',
+    ],
+  }
+},
+'Sun#Hidden': {
+  'campaign': 'hidden',
+  'passive': {
+    'actions': [
+      '<b class="action">Dodge</b>: When a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform. Each survivor may only Dodge once per round.',
+    ],
+  }
+}
 }
 
 module.exports = {

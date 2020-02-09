@@ -18,6 +18,8 @@ module.exports = {
   resetSettings
 }
 
+const settings_string_default = require('./../../settings.json')
+
 function defaultLang(){
   return settings_schema['language']['default']
 }
@@ -25,33 +27,39 @@ function defaultLang(){
 function initSettings() {
   set_language_options()
   let settings = getSettings();
-  sessionStorage.setItem('settings', JSON.stringify(settings))
+  localStorage.setItem('settings', JSON.stringify(settings))
   // console.log('Setting initialized!')
 }
 
 function getSettings () {
-  let dirname = app.getPath('userData');
+  // let dirname = app.getPath('userData');
   // console.log('Dirname: ' + dirname)
   let settings_string = {}
   let settings_string_default = {}
 
-  try {
-    settings_string_default = JSON.parse(readFile(app.getAppPath() + '/settings.json'))
-  } catch (e) {
-  }
+  // try {
+    // settings_string_default = JSON.parse(readFile(app.getAppPath() + '/settings.json'))
+  // } catch (e) {
+  // }
 
-  try {
-    settings_string = JSON.parse(readFile(dirname + '/settings.json'))
-  } catch (e) {
+  // try {
+  //   settings_string = JSON.parse(readFile(dirname + '/settings.json'))
+  //   // settings_string = require(dirname + '/settings.json')
+  // } catch (e) {
+  // }
+
+  if (!(localStorage.getItem("settings") === null)) {
+    settings_string = JSON.parse(localStorage.getItem("settings"))
   }
 
    let result = {...settings_string_default, ...settings_string }
 
+   // If no languages are specified - reads and sets the default one
    if (!(window.globals.translations['languages'].includes(result['language']))) {
      result['language'] = settings_schema['language']['default']
    }
 
-  // if no user options are saved or new option appears - value from settings.json is used
+  // if no user options are saved or new option appears - value from settings.json in root is used
   return result
 }
 
@@ -174,12 +182,14 @@ function setSettings (settings) {
     } else {
       $(this).val(settings[$(this).attr('group')][$(this).attr('value')])
     }
-
   })
+
+  silentSaveSettings(settings)
 }
 
 function silentSaveSettings(settings) {
-  saveFile(JSON.stringify(settings), app.getPath('userData') + '/settings.json')
+  // saveFile(JSON.stringify(settings), app.getPath('userData') + '/settings.json')
+  localStorage.setItem('settings', JSON.stringify(settings))
 }
 
 function saveSettings () {
@@ -187,18 +197,6 @@ function saveSettings () {
   $('select.settings').each(function (index) {
     console.log($(this).attr('group') + '_1_' + $(this).attr('value') + '_2_' + $(this).val())
     if ($(this).attr('group') == '') {
-      // if ($(this).attr('value') == 'campaign') {
-      //   if ((settings['campaign'] == 'Stars') && !(settings['expansions']['dragon king'] == 'All content')) {
-      //     $(this).attr('value', 'Lantern')
-      //     settings[$(this).attr('value')] = 'Lantern'
-      //   }
-      //   if ((settings['campaign'] == 'Sun') && !(settings['expansions']['sunstalker'] == 'All content')) {
-      //     $(this).attr('value', 'Lantern')
-      //     settings[$(this).attr('value')] = 'Lantern'
-      //   }
-      // } else {
-      //   settings[$(this).attr('value')] = $(this).val()
-      // }
       settings[$(this).attr('value')] = $(this).val()
     } else {
       if (!($(this).attr('group') in settings)) {
@@ -211,8 +209,7 @@ function saveSettings () {
   console.log('New settings:')
   console.log(settings)
 
-  // saveFile(JSON.stringify(settings), __dirname + '/settings.json')
-  saveFile(JSON.stringify(settings), app.getPath('userData') + '/settings.json')
+  localStorage.setItem('settings', JSON.stringify(settings))
 
   if (settingsSavedCallback) {
     settingsSavedCallback()
@@ -241,8 +238,11 @@ function resetSettings () {
 
   sessionStorage.clear();
 
+  settings = settings_string_default
+
   // saveFile(JSON.stringify(settings), __dirname + '/settings.json')
-  saveFile(JSON.stringify(settings), app.getPath('userData') + '/settings.json')
+  // saveFile(JSON.stringify(settings), app.getPath('userData') + '/settings.json')
+  localStorage.setItem('settings', JSON.stringify(settings))
 
   if (settingsSavedCallback) {
     settingsSavedCallback()
@@ -404,14 +404,10 @@ var settings_schema = {
   },
   'language': {
     'type': 'option',
-    'title': 'Language',
-    'description': 'Sets the app language.',
+    'title': 'Version',
+    'description': 'Sets the game version.',
     'default': 'English',
     'enum': []
-    //   'en',
-    //   'ru',
-    //   'pl'
-    // ],
   },
   'music': {
     'type': 'option',

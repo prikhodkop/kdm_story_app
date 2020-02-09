@@ -6,7 +6,7 @@ const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/tra
 
 module.exports = class FinaleScene {
   render () {
-    document.getElementById('container').innerHTML = render(app.getAppPath() + '/partials/slideshow.html')
+    document.getElementById('container').innerHTML = render('slideshow')
 
     onSettingsSaved(() => {
       setTransition(document.title, 'back', getBackTarget(), current_state())
@@ -29,9 +29,7 @@ module.exports = class FinaleScene {
     createToc()
     addSettings(settings)
 
-    // let settings = JSON.parse(sessionStorage.getItem("settings"));
     var settings = getSettings()
-    sessionStorage.setItem('settings', JSON.stringify(settings))
 
     // Set constants!!
     if ((events_table[myself].speech == '') || (settings['narration'] == 'Off')) {

@@ -1,75 +1,89 @@
 const texts = {
  '2 Acantus Plants': {
-  'label': '2 Acantus Plants',
-  'description': '#'
+  'label':'',
+  'description': '#',
+  'num_cards': 4
  },
  '2 Salt Sculptures': {
-   'label': '2 Salt Sculptures',
-   'description': '#'
+   'label':'',
+   'description': '#',
+  'expansion': 'sunstalker'
  },
  '2 Tall Grass': {
-   'label': '2 Tall Grass',
-   'description': '#'
+   'label':'',
+   'description': '#',
+  'num_cards': 2
  },
  '3 Stone Columns': {
-   'label': '3 Stone Columns',
-   'description': '#'
+   'label':'',
+   'description': '#',
+  'num_cards': 2
  },
  'Bug Patch': {
-   'label': 'Bug Patch',
-   'description': '#'
+   'label':'',
+   'description': '#',
  },
  'Dead Monster': {
-   'label': 'Dead Monster',
-   'description': '#'
+   'label':'',
+   'description': '#',
  },
  'Debris': {
-   'label': 'Debris',
-   'description': '#'
+   'label':'',
+   'description': '#',
  },
  'Giant Stone Face': {
-   'label': 'Giant Stone Face',
-   'description': '#'
+   'label':'',
+   'description': '#',
+  'num_cards': 2
  },
  'Lava Pool': {
-   'label': 'Lava Pool',
-   'description': '#'
+   'label':'',
+   'description': '#',
+  'expansion': 'dragon king'
  },
  'Lion Statue': {
-   'label': 'Lion Statue',
-   'description': '#'
+   'label':'',
+   'description': '#',
+  'expansion': 'lion god'
  },
  'Nightmare Tree': {
-   'label': 'Nightmare Tree',
-   'description': '#'
+   'label':'',
+   'description': '#',
  },
  'Obsidian Tower': {
-   'label': 'Obsidian Tower',
-   'description': '#'
+   'label':'',
+   'description': '#',
+  'expansion': 'dragon king'
  },
  'Ore Vein': {
-   'label': 'Ore Vein',
-   'description': '#'
+   'label':'',
+   'description': '#',
+  'num_cards': 2
  },
  'Resin Dung Ball': {
-   'label': 'Resin Dung Ball',
-   'description': '#'
+   'label':'',
+   'description': '#',
+  'expansion': 'dung beetle knight'
  },
  'Sinkhole': {
-   'label': 'Sinkhole',
-   'description': '#'
+   'label':'',
+   'description': '#',
+  'expansion': 'lion god'
  },
  'Survivor Corpse': {
-   'label': 'Survivor Corpse',
-   'description': '#'
+   'label':'',
+   'description': '#',
+  'num_cards': 2
  },
  'The Lonely Tree': {
-   'label': 'The Lonely Tree',
-   'description': '#'
+   'label':'',
+   'description': '#',
+  'expansion': 'lonely tree'
  },
  'Toppled Pillar': {
-   'label': 'Toppled Pillar',
-   'description': '#'
+   'label':'',
+   'description': '#',
+  'num_cards': 2
  },
 }
 
