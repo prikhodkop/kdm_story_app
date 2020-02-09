@@ -6,7 +6,7 @@ initAssets()
 const { createToc, generate_events_table } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton, createReference, createSevereTables, createInnovationsList, createLocationsList } = require('./../ui/menu')
-const { getSettings, addSettings, onSettingsSaved, initSettings } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved, initSettings, defaultLang } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 
@@ -43,6 +43,9 @@ module.exports = class VideoScene {
     initSettings();
 
     var settings = getSettings()
+
+
+    var lang = settings['language']
 
     $('body').css('font-size', settings['fontSize'])
 
