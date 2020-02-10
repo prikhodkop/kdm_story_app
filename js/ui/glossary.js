@@ -64,6 +64,8 @@ let glossary_list_translations = {
 
 function init_glossary() {
 
+  let lang = getSettings()['language']
+
   let keys = Object.keys(glossary_list_translations)
 
   for (let i=0; i<keys.length; i++) {
