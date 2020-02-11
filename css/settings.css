@@ -40,7 +40,7 @@
   border-radius: var(--borderWidth);
   border: 0.2rem solid #555;
   scrollbar-width: none;
-  background: #333;
+  background: #111;
   opacity: 0.9;
 }
 
