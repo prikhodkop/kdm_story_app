@@ -336,7 +336,7 @@ function get_representation (word) {
    if (disorders[word]['description'] == '#') {
      return '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+pathToAssetL('images/reference/Disorders/'+word+'.jpg')+'"/>'
    } else {
-     let result = '<div style="display:flex;"><div style="width: 15%; height: auto;display:inline;padding-right:2%;"><img id=reference-image src="'+pathToAsset('images/reference/disorder_head.png')+'"/></div>'
+     let result = '<div style="display:flex;"><div style="width: 15%; height: auto;display:inline;padding-right:2%;"><img id=reference-image src="'+pathToAssetL('images/reference/disorder_head.png')+'"/></div>'
      if (('type' in disorders[word]) && (disorders[word]['type'] == 'dragon trait')) {
       header_style='color:#863a2a;'
      }

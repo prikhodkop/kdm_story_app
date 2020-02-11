@@ -18,7 +18,7 @@ const dev = require('./settlement')
 module.exports = class IndexScene {
   render () {
     if ($('#back').attr('src') == '#') {
-        $('#back').attr('src', pathToAsset('images/back.jpg'))
+        $('#back').attr('src', pathToAssetL('images/back.jpg'))
     }
     $('#container').hide()
     $('#container').fadeIn(300)
@@ -66,7 +66,7 @@ module.exports = class IndexScene {
     let lang = settings['language']
 
     var music = new Howl({
-      src: [pathToAsset('audio/theme.mp3')],
+      src: [pathToAssetL('theme.mp3')],
       // autoplay: true,
       loop: true,
       volume: 0.8,
@@ -307,7 +307,7 @@ module.exports = class IndexScene {
 
       let campaign_image = $('<img>',{
         class: "campaign_image",
-        src: pathToAsset('images/icons/campaigns/'+campaign+'_campaign_icon.png')
+        src: pathToAssetL('images/icons/campaigns/'+campaign+'_campaign_icon.png')
       });
 
       let campaign_label = $('<div>',{

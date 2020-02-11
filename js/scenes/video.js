@@ -19,7 +19,7 @@ const events_sequences = {
 module.exports = class VideoScene {
   render () {
     if ($('#back').attr('src') == '#') {
-        $('#back').attr('src', pathToAsset('images/back.jpg'))
+        $('#back').attr('src', pathToAssetL('images/back.jpg'))
     }
     $('#container').hide()
     $('#container').fadeIn(300)
@@ -63,7 +63,7 @@ module.exports = class VideoScene {
     var music_volume = 0.8 // music volume
 
     var music = new Howl({
-      src: [pathToAsset(events_table[myself].music)],
+      src: [pathToAssetL(events_table[myself].music)],
       // autoplay: true,
       loop: true,
       volume: music_volume,

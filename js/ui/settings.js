@@ -98,10 +98,10 @@ function addSettings (settings) {
     id: 'settings-window-back0',
   }))
 
-  $('#settings-window-back0').append($('<img>', {
-    id: 'settings-window-back-img',
-    src: cdnUrl('images/reference/reference_back.png'),
-  }))
+  // $('#settings-window-back0').append($('<img>', {
+  //   id: 'settings-window-back-img',
+  //   src: cdnUrl('images/menu_back.png'),
+  // }))
 
   $('#settings-window-back0').append($('<div>', {
     id: 'settings-window-back',
@@ -545,10 +545,7 @@ var settings_schema = {
         'title': 'Flower Knight',
         'default': 'Disabled',
         'description': 'This enigmatic knight is the source of many tales and the muse of many pieces of art. Its ethereal beauty is hard to capture and its swordplay is unmatchable. The Flower Knight expansion provides a new challenge for daring survivors. The monster rewards luck and punishes survivors who try to gang up on it. Its rewards explore the themes of addiction and short-term gain coupled with long-term losses.<br/><br/><b style="color:#cc0;">Cards Only</b> - adds only Fighting Arts, Disorders and Terrain cards.<br/><b style="color:#cc0;">All content</b> - adds all expansion content.',
-        'enum': [
-          'Disabled',
-          'Cards only',
-        ],
+        'enum': expansion_options,
       },
       'gorm': {
         'type': 'option',
@@ -583,10 +580,7 @@ var settings_schema = {
         'title': 'Lonely Tree',
         'default': 'Disabled',
         'description': 'If you can see the Lonely Tree for what it really is, it\'s probably too late. This carnivorous organism hypnotizes anything that comes near, luring prey with hallucinations of their innermost desires. Once they draw near, the hallucinations turn to ceaseless dreams, while the roots consume the victim in their sleep.<br/><br/><b style="color:#cc0;">Cards Only</b> - adds only Fighting Arts, Disorders and Terrain cards.<br/><b style="color:#cc0;">All content</b> - adds all expansion content.',
-        'enum': [
-          'Disabled',
-          'Cards only',
-        ],
+        'enum': expansion_options,
       },
       'slenderman': {
         'type': 'option',
@@ -600,10 +594,7 @@ var settings_schema = {
         'title': 'Spidicules',
         'default': 'Disabled',
         'description': 'Vibrating to make itself invisible to the human eye, the Spidicules leaves its forest dwelling and lurks in settlements unnoticed. It kidnaps survivors for its own delight as well as to nourish its ever-growing brood.<br/><br/><b style="color:#cc0;">Cards Only</b> - adds only Fighting Arts, Disorders and Terrain cards.<br/><b style="color:#cc0;">All content</b> - adds all expansion content.',
-        'enum': [
-          'Disabled',
-          'Cards only',
-        ],
+        'enum': expansion_options,
       },
       'sunstalker': {
         'type': 'option',

@@ -12,7 +12,6 @@ const { render } = require('./../ui/template-renderer')
 const { addTimer, clearTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { addInnovation, hasInnovation, getHuntInnovationEffects } = require('./../ui/development')
-// const { cdnUrl } = require('./../ui/template-cdnurl')
 
 const QUARRY_CARD_SHOW = 'slideUpReturn' // 'slideDownReturn'
 const QUARRY_CARD_HIDE = 'vanishOut' // 'SlideDown'
@@ -20,7 +19,7 @@ const QUARRY_CARD_HIDE = 'vanishOut' // 'SlideDown'
 module.exports = class HuntScene {
   render () {
     if ($('#back').attr('src') == '#') {
-        $('#back').attr('src', pathToAsset('images/back.jpg'))
+        $('#back').attr('src', pathToAssetL('images/back.jpg'))
     }
     $('#container').hide()
     $('#container').fadeIn(500)
@@ -33,6 +32,14 @@ module.exports = class HuntScene {
     onSettingsSaved(() => {
       setTransition(document.title, 'back', getBackTarget(), current_state())
     })
+
+    $('#random_event_icon').attr('src', pathToAssetL('images/hunt/random_hunt_event.png'))
+    $('#quary_popup_back').attr('src', pathToAssetL('images/hunt/random_event_back_new2.jpg'))
+    $('#starvation_popup_back').attr('src', pathToAssetL('images/hunt/random_event_back_new2.jpg'))
+    $('#random_event_icon_big').attr('src', pathToAssetL('images/hunt/random_hunt_event_old.png'))
+    $('#pad0-pic').attr('src', pathToAssetL('images/lantern.png'))
+    $('#hunt_icon').attr('src', pathToAssetL('images/hunt_icon.png'))
+    $('#hunt_back').attr('src', pathToAssetL('images/hunt_board_old.jpg'))
 
     var start_delay = 1000
 
@@ -48,7 +55,7 @@ module.exports = class HuntScene {
     document.title = myself
 
     var music = new Howl({
-      src: [pathToAsset(events_table[myself].music)],
+      src: [pathToAssetL(events_table[myself].music)],
       loop: true,
       volume: 0.8,
     })
@@ -108,6 +115,12 @@ module.exports = class HuntScene {
       'white lion': ['xmmrrmxrmmrr', [5, 8, 12], './images/hunt/white_lion.png', 8, 41],
       'screaming antelope': ['xmrmrrxmrmrr', [5, 8, 11],
         './images/hunt/screaming_antelope.png', 7, 38,
+      ],
+      'flower knight': ['xrrrrrxmmmmm', [9, 10, 11],
+        './images/hunt/flower knight.png', 9, 38.8,
+      ],
+      'spidicules': ['xmmrrmxrmmrr', [5, 8, 11],
+        './images/hunt/spidicules.png', 9, 39,
       ],
       'phoenix': ['xrmrmrxmrmrr', [6, 9, 12], './images/hunt/phoenix.png', 8, 42],
       'dung beetle knight': ['xrmmrrxmrrmr', [6, 9, 12],
@@ -454,12 +467,24 @@ module.exports = class HuntScene {
 
       let settings = getSettings();
 
+      window.globals.quarry_name = name + ''
+
       if (state == null) {
         var survivors_pos = 1
         var monster_pos = null
         var board_state = '-------------'
         q_event_sequence = get_sequence(ref)
         q_event_idx = 0
+
+        if (name == 'Flower Knight Lv.1') {
+          survivors_pos = 3
+          board_state = 'oo-----------'
+        }
+        if (name == 'Flower Knight Lv.2') {
+          survivors_pos = 2
+          board_state = 'o------------'
+        }
+
       } else {
         var survivors_pos = state.survivors_pos // 1;
         var monster_pos = state.monster_pos // null;
@@ -551,7 +576,7 @@ module.exports = class HuntScene {
 
       console.log(name)
 
-      $('<img class="token" id="herb_gathering" title="" src="' + pathToAsset('images/hunt/herbs_gathering.png') + '" width="8%" style="left:25%; top:74%;">')
+      $('<img class="token" id="herb_gathering" title="" src="' + pathToAssetL('images/hunt/herbs_gathering.png') + '" width="8%" style="left:25%; top:74%;">')
         .on('load', function () {
           $(this).appendTo('#container')
           $(this).hide()
@@ -573,7 +598,7 @@ module.exports = class HuntScene {
           })
         })
 
-      $('<img class="token" id="mineral_gathering" title="" src="' + pathToAsset('images/hunt/mineral_gathering.png') + '" width="8%" style="left:67%; top:74%;">')
+      $('<img class="token" id="mineral_gathering" title="" src="' + pathToAssetL('images/hunt/mineral_gathering.png') + '" width="8%" style="left:67%; top:74%;">')
         .on('load', function () {
           $(this).appendTo('#container')
           $(this).hide()
@@ -596,7 +621,7 @@ module.exports = class HuntScene {
         })
 
         if (settings['expansions']['sunstalker'] == 'All content') {
-          $('<img class="token" id="sky_fishing" title="" src="' + pathToAsset('images/hunt/sky_fishing.png') + '" width="9%" style="left: 45.5%; top:73.5%;">')
+          $('<img class="token" id="sky_fishing" title="" src="' + pathToAssetL('images/hunt/sky_fishing.png') + '" width="9%" style="left: 45.5%; top:73.5%;">')
             .on('load', function () {
               $(this).appendTo('#container')
               $(this).hide()
@@ -686,8 +711,15 @@ module.exports = class HuntScene {
       })
 
       $('body').on('click', '#darkness', function () {
-        setTransition('overwhelming darkness', 'menu', document.title,
+        let target
+        if ((window.globals.quarry_name.toLowerCase().includes('flower knight'))||(window.globals.quarry_name.toLowerCase().includes('spidicules'))) {
+          target = 'the forest wants what it wants'
+        } else {
+          target = 'overwhelming darkness'
+        }
+        setTransition(target, 'menu', document.title,
           current_state())
+
       })
     } // end of set_hunt
 
@@ -794,7 +826,7 @@ module.exports = class HuntScene {
       // tbl1.style.width  = '80%';
       // tbl1.style.top  = '3%';
       tbl.setAttribute('id', 'quaries_table')
-      tbl.style.cssText += 'width:80%; top:20%; position: absolute; left:15%;overflow-y:scroll; overflow-x:hidden;'
+      tbl.style.cssText += 'width:80%; top:14%; position: absolute; left:15%;overflow-y:scroll; overflow-x:hidden;'
 
       let tbdy = document.createElement('tbody')
 
@@ -922,7 +954,13 @@ module.exports = class HuntScene {
       };
 
       if (type === 'darkness') {
-        title = '<b>Overwhelming Darkness</b>'
+        let target
+        if ((window.globals.quarry_name.toLowerCase().includes('flower knight'))||(window.globals.quarry_name.toLowerCase().includes('spidicules'))) {
+          title = '<b>The Forest Wants What it Wants</b>'
+        } else {
+          title = '<b>Overwhelming Darkness</b>'
+        }
+
         coord = coord + 0.032335
       };
 
@@ -932,7 +970,7 @@ module.exports = class HuntScene {
 
       $('<img class="token ' + position + '" position="' + position + '" id="' + type +
                 '" title="'+
-                title +'" name="'+title+'" src="' + pathToAsset(path) + '" width="' + width + '%" style="left: ' + coord +
+                title +'" name="'+title+'" src="' + pathToAssetL(path) + '" width="' + width + '%" style="left: ' + coord +
                 '%; top:' + top +
                 '%;"' + ref + ')>').on('load', function () {
         $(this).appendTo('#container')
@@ -972,7 +1010,7 @@ module.exports = class HuntScene {
                   'label_text').innerHTML
                 document.getElementById('label_text').innerHTML = 'Starvation<br/><b id="starvation_text">Remove d5 resources from settlement storage.</b>'
                 // $('#label_text').innerHTML = 'Starvation<br/>Survivors must spend <b>1d5</b> basic resources!'
-                $('#hunt_icon').attr('src', pathToAsset('images/hunt/starvation_icon.png'))
+                $('#hunt_icon').attr('src', pathToAssetL('images/hunt/starvation_icon.png'))
                 $('#label_text').css('z-index', '9')
                 $('#hunt_icon').css('z-index', '9')
                 $('#label_text').css('color', '#fff')
@@ -1049,12 +1087,21 @@ module.exports = class HuntScene {
             animation: 'fade',
             delay: '600',
           })
+          if ((window.globals.quarry_name.toLowerCase().includes('flower knight'))||(window.globals.quarry_name.toLowerCase().includes('spidicules'))) {
+            $(this).addClass('forest')
+          }
           $(this).droppable({
             drop: function (event, ui) {
               snapToMiddle(ui.draggable, $(this))
               if ((ui.draggable[0]['id'] == 'survivors') && ($(this).attr('id') == 'darkness')) {
                 if (window.darkness_enabled) {
-                  setTransition('overwhelming darkness', 'menu', document.title, current_state())
+                  let target
+                  if ((window.globals.quarry_name.toLowerCase().includes('flower knight'))||(window.globals.quarry_name.toLowerCase().includes('spidicules'))) {
+                    target = 'the forest wants what it wants'
+                  } else {
+                    target = 'overwhelming darkness'
+                  }
+                  setTransition(target, 'menu', document.title, current_state())
                 }
               };
               if (ui.draggable[0]['id'] == 'monster') {
@@ -1137,7 +1184,7 @@ module.exports = class HuntScene {
         // var coord = 9.842 + 7.31*(position-2) + 7.35/2 - lantern_width/2.;
         var coord = 2.65 + 7.298 * (position - 1 / 2) - lantern_width / 2.0
         $('<img class="token ' + position + '" position="' + position +
-                    '" id="lantern" title="Event Cleared" src="' + pathToAsset('images/hunt/lantern.png') + '" width="' +
+                    '" id="lantern" title="Event Cleared" src="' + pathToAssetL('images/hunt/lantern.png') + '" width="' +
                     lantern_width +
                     '%" style="left: ' + coord + '%; top:' + (top) + '%;">').on('load',
           function () {

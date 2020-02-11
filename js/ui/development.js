@@ -129,7 +129,7 @@ function setupLocations() {
   $('#settlement_locations_window').append($('<img>', {
     // style: 'opacity:.9;',
     id: 'settlement_locations_window_background',
-    src: pathToAsset('images/reference/reference_back.png'),
+    src: pathToAssetL('images/reference/reference_back.png'),
   }));
 
   let locations_list = get_random_draws('Location', false);
@@ -195,9 +195,9 @@ function setupLocations() {
      console.log('Show armor set tooltip!'+$(e.target).parent().attr('armor_set'))
 
      if ($(e.target).hasClass('multi_set')) {
-       $('.tooltip_image_armor_set').attr('src', pathToAsset("images/reference/Armor Sets/"+$(e.target).attr('set').split('#')[$(e.target).attr('set_idx')]+" Armor.jpg", 'localize'))
+       $('.tooltip_image_armor_set').attr('src', pathToAssetL("images/reference/Armor Sets/"+$(e.target).attr('set').split('#')[$(e.target).attr('set_idx')]+" Armor.jpg", 'localize'))
      } else {
-       $('.tooltip_image_armor_set').attr('src', pathToAsset("images/reference/Armor Sets/"+$(e.target).attr('set')+" Armor.jpg", 'localize'))
+       $('.tooltip_image_armor_set').attr('src', pathToAssetL("images/reference/Armor Sets/"+$(e.target).attr('set')+" Armor.jpg", 'localize'))
      }
 
      if (!$('#innovations_tab').hasClass('set_hoverd')) {
@@ -237,7 +237,7 @@ function setupLocations() {
          idx = 0
        }
        $(e.target).attr('set_idx', idx)
-       $('.tooltip_image_armor_set').attr('src', pathToAsset("images/reference/Armor Sets/"+sets_list[idx]+" Armor.jpg", 'localize'))
+       $('.tooltip_image_armor_set').attr('src', pathToAssetL("images/reference/Armor Sets/"+sets_list[idx]+" Armor.jpg", 'localize'))
      }
    }, '.gear_card.multi_set')
 
@@ -591,7 +591,7 @@ function setupInnovations() {
       }
       $('#innovations_tab').addClass('tablinks_hoverd')
 
-      $('.tooltip_image_innovation').attr('src', pathToAsset("images/reference/Innovations/"+$(e.target).val()+".jpg", 'localize'))
+      $('.tooltip_image_innovation').attr('src', pathToAssetL("images/reference/Innovations/"+$(e.target).val()+".jpg", 'localize'))
     },
     mouseleave: function (e) {
 
@@ -872,11 +872,11 @@ function form_bonuses_list(innovation_names, event_names) {
 
  let categories = {
                'all': 'Bonuses Summary',
-               'settlement': '<img style="display: inline-block;width:1.2em;" src="'+pathToAsset('images/settlement/settlement.png')+'"/> '+'Settlement:',
+               'settlement': '<img style="display: inline-block;width:1.2em;" src="'+pathToAssetL('images/settlement/settlement.png')+'"/> '+'Settlement:',
                'newborn': 'Newborns:',
                'departing': 'Departing:',
-               'hunt': '<img style="display: inline-block;width:1.2em;vertical-allign:middle;" src="'+pathToAsset('images/hunt_icon.png')+'"/> '+'Hunt:',
-               'showdown': '<img style="display: inline-block;width:1.2em;vertical-allign:middle;" src="'+pathToAsset('images/hunt/starvation_icon.png')+'"/> '+'Showdown:',
+               'hunt': '<img style="display: inline-block;width:1.2em;vertical-allign:middle;" src="'+pathToAssetL('images/hunt_icon.png')+'"/> '+'Hunt:',
+               'showdown': '<img style="display: inline-block;width:1.2em;vertical-allign:middle;" src="'+pathToAssetL('images/hunt/starvation_icon.png')+'"/> '+'Showdown:',
                'actions': 'Actions:',
               }
 
@@ -1031,7 +1031,7 @@ function showInnovation(innovationName, initialization=false, newitem=false) {
   let img = $('<img>', {
     class: 'innovation_card use-hover',
     value: innovationName,
-    src: pathToAsset('images/reference/Innovations/'+innovationName+'.jpg', 'localize'),
+    src: pathToAssetL('images/reference/Innovations/'+innovationName+'.jpg', 'localize'),
   });
 
   img.addClass(getColorTag(innovationName))

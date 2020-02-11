@@ -251,7 +251,7 @@ function md_to_html_2 (event_id, init = true, current_table = 0, current_class =
           width = '50%'
         }
 
-        let addition = "<img style='position:static;width:" + width + ";float:center;' " + text2 + " src='" + pathToAsset(`images/hunt/random_events/event_${text}.png`) + "'>"
+        let addition = "<img style='position:static;width:" + width + ";float:center;' " + text2 + " src='" + pathToAssetL(`images/hunt/random_events/event_${text}.png`) + "'>"
 
         if (init) {
           html = addition + html

@@ -1,7 +1,10 @@
-const fs = require('fs')
 const { app } = require('electron').remote
 
 const { cdnUrl } = require('./template-cdnurl.js')
+
+if (window.globals.process == 'local') {
+  const fs = require('fs')
+}
 
 module.exports = {
   readFile,

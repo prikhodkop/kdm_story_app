@@ -47,7 +47,7 @@ const events_sequences = {
 module.exports = class ImageScene {
   render () {
     if ($('#back').attr('src') == '#') {
-        $('#back').attr('src', pathToAsset('images/back.jpg'))
+        $('#back').attr('src', pathToAssetL('images/back.jpg'))
     }
     $('#container').hide()
     $('#container').fadeIn(500)
@@ -87,15 +87,15 @@ module.exports = class ImageScene {
        img_path = img_path.replace('.jpg', '_wb.jpg')
     }
 
-    if ((myself == 'intimacy') && (settings['campaign'] == 'Stars')) {
-      img_back = img_back.replace('.jpg', '_stars.jpg')
-      img_path = img_path.replace('.jpg', '_stars.jpg')
-    }
-
-    if ((myself == 'intimacy') && (settings['campaign'] == 'Sun')) {
-      img_back = img_back.replace('.jpg', '_sun.jpg')
-      img_path = img_path.replace('.jpg', '_sun.jpg')
-    }
+    // if ((myself == 'intimacy') && (settings['campaign'] == 'Stars')) {
+    //   img_back = img_back.replace('.jpg', '_stars.jpg')
+    //   img_path = img_path.replace('.jpg', '_stars.jpg')
+    // }
+    //
+    // if ((myself == 'intimacy') && (settings['campaign'] == 'Sun')) {
+    //   img_back = img_back.replace('.jpg', '_sun.jpg')
+    //   img_path = img_path.replace('.jpg', '_sun.jpg')
+    // }
 
     $('#img_back').attr('src', pathToAssetL(img_back))
     $('#img').attr('src', pathToAssetL(img_path))
@@ -128,7 +128,7 @@ module.exports = class ImageScene {
     };
 
     var music = new Howl({
-      src: [pathToAsset(events_table[myself].music)],
+      src: [pathToAssetL(events_table[myself].music)],
       loop: true,
       volume: music_volume,
     })

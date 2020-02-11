@@ -1,5 +1,5 @@
 // var events
-const { loadJSON, pathToAsset } = require('./assets_loader')
+const { loadJSON, pathToAssetL } = require('./assets_loader')
 const { cdnUrl } = require('./template-cdnurl')
 
 const { getSettings, defaultLang } = require('./settings')
@@ -38,7 +38,7 @@ function generate_events_table () {
   let lang = getSettings()['language']
   let found = false
 
-  events = localized_require('story_events', lang, ['label', 'music'])
+  events = localized_require('story_events', lang, ['label', 'music', 'music_delay'])
 
   // console.log('Events: '+JSON.stringify(events))
 
@@ -54,7 +54,7 @@ function generate_events_table () {
     for (let property in event) {
       if (event.hasOwnProperty(property)) {
         if (property == 'music') {
-          events_table[event_ids[i]][property] = './audio/' + event[property]
+          events_table[event_ids[i]][property] = './' + event[property]
         } else {
           events_table[event_ids[i]][property] = event[property]
         }
@@ -184,12 +184,12 @@ function createToc (col_len = 5) {
 
   $('#container').on('mouseenter', '#menu_item', function() {
     $(this).addClass('menu_hoverd')
-    $('.menu_hoverd > *#showdown_icon').attr('src', pathToAsset('images/icons/swords_inv_c_hover.png'));
+    $('.menu_hoverd > *#showdown_icon').attr('src', pathToAssetL('images/icons/swords_inv_c_hover.png'));
     // $('.menu_hoverd > *#expansion_icon').attr('src', 'images/icons/expansions/'+$('.menu_hoverd > *#expansion_icon').attr('value')+'_c_hover.png?timestamp=' + new Date().getTime());
   });
 
   $('#container').on('mouseleave', '#menu_item', function() {
-    $('.menu_hoverd > *#showdown_icon').attr('src', pathToAsset('images/icons/swords_inv_c.png'));
+    $('.menu_hoverd > *#showdown_icon').attr('src', pathToAssetL('images/icons/swords_inv_c.png'));
     // $('.menu_hoverd > *#expansion_icon').attr('src', 'images/icons/expansions/'+$('.menu_hoverd > *#expansion_icon').attr('value')+'_c.png?timestamp=' + new Date().getTime());
     $(this).removeClass('menu_hoverd')
   });
@@ -319,7 +319,7 @@ function createToc (col_len = 5) {
       if (rows[i][j].includes('showdown')) {
         // text = events_table[rows[i][j]].label.replace('Showdown:', '&#9876;:')
         text = events_table[rows[i][j]].label.substring(events_table[rows[i][j]].label.indexOf(":")+1);
-        text = '<img style="width:9%;" id="showdown_icon" src="'+pathToAsset('images/icons/swords_inv_c.png')+'"/>' + text
+        text = '<img style="width:9%;" id="showdown_icon" src="'+pathToAssetL('images/icons/swords_inv_c.png')+'"/>' + text
       } else {
         text = events_table[rows[i][j]].label
       }
@@ -327,7 +327,7 @@ function createToc (col_len = 5) {
         a2.innerHTML += text
       } else {
         // let dot = '<b style="color:'+color_menu[events_table[rows[i][j]].expansion]+';">&#10033;</b>'
-        let dot = '<img style="width:10%;" id="expansion_icon" value="'+events_table[rows[i][j]].expansion+'" src="'+pathToAsset('images/icons/expansions/'+events_table[rows[i][j]].expansion+'_c.png')+'"/>'
+        let dot = '<img style="width:10%;" id="expansion_icon" value="'+events_table[rows[i][j]].expansion+'" src="'+pathToAssetL('images/icons/expansions/'+events_table[rows[i][j]].expansion+'_c.png')+'"/>'
         a2.innerHTML += dot+' '+text
       }
       // a2.innerHTML += events_table[rows[i][j]].label

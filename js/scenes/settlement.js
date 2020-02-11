@@ -19,7 +19,7 @@ var settlement_events = window.globals.glossary[lang].settlement_events
 module.exports = class SettlementScene {
   render () {
     if ($('#back').attr('src') == '#') {
-        $('#back').attr('src', pathToAsset('images/back.jpg'))
+        $('#back').attr('src', pathToAssetL('images/back.jpg'))
     }
     $('#container').hide()
     $('#container').fadeIn(500)
@@ -40,6 +40,9 @@ module.exports = class SettlementScene {
     })
 
     console.log(sessionStorage)
+
+    $('#hunt_icon').attr('src', pathToAssetL('images/settlement/settlement.png'))
+    $('#settlement_background').attr('src', pathToAssetL('images/settlement/background.jpg'))
 
     // GET STATE INFORMATION
     // #############
@@ -93,13 +96,13 @@ module.exports = class SettlementScene {
     })
 
     var music = new Howl({
-      src: [pathToAsset(events_table[myself].music)],
+      src: [pathToAssetL(events_table[myself].music)],
       loop: true,
       volume: music_volume,
     })
 
     var noise = new Howl({
-      src: [pathToAsset('audio/music/campfire.mp3')],
+      src: [pathToAssetL('music/campfire.mp3')],
       loop: true,
       volume: 0.15,
     })

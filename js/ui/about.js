@@ -1,6 +1,7 @@
 const shell = require('electron').shell
 
-const { cdnUrl } = require('./template-cdnurl')
+// const { cdnUrl } = require('./template-cdnurl')
+const { pathToAssetL } = require('./assets_loader')
 
 module.exports = {
   createAbout,
@@ -13,7 +14,7 @@ function createAbout (version) {
 
   $('#about-window-background').hide()
   // $('#container').append($('<img id="about_text">About</div>'));
-  $('#container').append($('<img id="about_text" src="' + cdnUrl('images/icons/skull.png') + '"/>'))
+  $('#container').append($('<img id="about_text" src="' + pathToAssetL('images/icons/skull.png') + '"/>'))
   $('#about_text').hide()
   $('#about_text').fadeIn(500)
 
@@ -23,7 +24,7 @@ function createAbout (version) {
 
   $('#about-window-back0').append($('<img>', {
     id: 'about-window-back-img',
-    src: cdnUrl('images/reference/reference_back.png'),
+    src: pathToAssetL('images/reference/reference_back.png'),
   }))
 
   $('#about-window-back0').append($('<div>', {

@@ -40,6 +40,8 @@
   border-radius: var(--borderWidth);
   border: 0.2rem solid #555;
   scrollbar-width: none;
+  background: #333;
+  opacity: 0.9;
 }
 
 #settings-window-back0::-webkit-scrollbar {
@@ -58,6 +60,7 @@
   display:block;
   overflow:auto;
   scrollbar-width: none;
+  opacity: 1.0;
 }
 
 #settings-window-back::-webkit-scrollbar {

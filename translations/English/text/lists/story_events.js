@@ -33,6 +33,13 @@ const texts = {
     'music': 'music/armored strangers.mp3',
     'music_delay': '4000',
     'campaign': ['Lantern'],
+    'transition_button': [
+    {
+      'type':'menu',
+      'target':'showdown kings man',
+      'text':'Resist',
+      'tooltip':'<b style="color:#cc0;">Click</b> to start the <b>Showdown: King\'s Man</b>'
+    },]
   },
   'birth of a savior': {
     "label": "Birth of a Savior",
@@ -118,13 +125,38 @@ const texts = {
     'music_delay': 'speech-1000',
     'ltop': '22%',
     'lleft': '75%',
-
+    'campaign': ['Lantern'],
+  },
+  'intimacy_stars': {
+    "label": "Intimacy",
+    'music': 'music/intimacy.mp3',
+    'music_delay': 'speech-1000',
+    'ltop': '22%',
+    'lleft': '75%',
+    'speech': 'speech/intimacy.mp3',
+    'campaign': ['Stars'],
+  },
+  'intimacy_sun': {
+    "label": "Intimacy",
+    'music': 'music/intimacy.mp3',
+    'music_delay': 'speech-1000',
+    'ltop': '22%',
+    'lleft': '75%',
+    'speech': 'speech/intimacy.mp3',
+    'campaign': ['Sun'],
   },
   'kings curse': {
     "label": "King's Curse",
     'music': 'music/kings curse.mp3',
     'ltop': '88%',
     'lleft': '50%',
+    'transition_button': [
+    {
+      'type':'back',
+      'target':'settlement',
+      'text':'Return to Settlement',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>'
+    },]
   },
   'kings step': {
     "label": "King's Step",
@@ -156,6 +188,13 @@ const texts = {
     "label": "Overwhelming Darkness",
     'music': 'music/overwhelming darkness.mp3',
     'music_delay': '3000',
+    'transition_button': [
+    {
+      'type':'back',
+      'target':'hunt',
+      'text':'Return to the Hunt',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to the <b>Hunt</b>'
+    },]
   },
   'oxidation': {
     "label": "Oxidation",
@@ -206,15 +245,35 @@ const texts = {
     'ltop': '65%',
     'lleft': '50%',
     'campaign': ['Lantern'],
+    'transition_button': [
+    {
+      'type':'back',
+      'target':'showdown the hand',
+      'text':'Challenge',
+      'tooltip':'<b style="color:#cc0;">Click</b> to start <b>Showdown: The Hand</b>'
+    },]
   },
   'returning survivors': {
     "label": "Returning Survivors",
     'campaign': ['Lantern'],
+    'transition_button': [
+    {
+      'type':'menu',
+      'target':'settlement',
+      'text':'Proceed to Settlement',
+      'tooltip':'<b style="color:#cc0;">Click</b> to  add <b>Language</b> innovations, build <b>Lantern Hoard</b> and proceed to <b>Settlement</b>'
+    },]
   },
   'run away': {
     "label": "Run Away",
     'music': 'music/run away.mp3',
-
+    'transition_button': [
+    {
+      'type':'menu',
+      'target':'settlement',
+      'text':'Return to Settlement!',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b><br/><br/>This will start new Lantern Year.'
+    },]
   },
   'see the truth': {
     "label": "See the Truth",
@@ -223,6 +282,13 @@ const texts = {
   'showdown butcher': {
     "label": "Showdown: Butcher",
     'music': 'music/showdown butcher.mp3',
+    'transition_button': [
+    {
+      'type':'back',
+      'target':'settlement',
+      'text':'Return to Settlement!',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>'
+    },]
   },
   'showdown gold smoke knight': {
     "label": "Showdown: Gold Smoke Knight",
@@ -236,20 +302,48 @@ const texts = {
     'music': 'music/showdown kings man.mp3',
     'ltop': '68%',
     'lleft': '63%',
+    'transition_button': [
+    {
+      'type':'back',
+      'target':'settlement',
+      'text':'Return to Settlement!',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>'
+    },]
   },
   'showdown phoenix': {
     "label": "Showdown: Phoenix",
     'music': 'music/showdown phoenix.mp3',
+    'transition_button': [
+    {
+      'type':'menu',
+      'target':'settlement',
+      'text':'Return to Settlement!',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>'
+    },]
   },
   'showdown screaming antelope': {
     "label": "Showdown: Screaming Antelope",
     'music': 'music/showdown query.mp3',
     'ltop': '15%',
     'lleft': '57%',
+    'transition_button': [
+    {
+      'type':'menu',
+      'target':'settlement',
+      'text':'Return to Settlement!',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>'
+    },]
   },
   'showdown the hand': {
     "label": "Showdown: The Hand",
     'music': 'music/showdown the hand.mp3',
+    'transition_button': [
+    {
+      'type':'back',
+      'target':'settlement',
+      'text':'Return to Settlement!',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>'
+    },]
   },
   'showdown watcher': {
     "label": "Showdown: Watcher",
@@ -263,6 +357,13 @@ const texts = {
     'music': 'music/showdown query.mp3',
     'ltop': '63%',
     'lleft': '68%',
+    'transition_button': [
+    {
+      'type':'menu',
+      'target':'settlement',
+      'text':'Return to Settlement!',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>'
+    },]
   },
   'watched': {
     "label": "Watched",
@@ -325,7 +426,7 @@ const texts = {
     'music': 'music/rumbling in the dark.mp3',
   },
   'rumbling in the dark': {
-    "label": "Tumbling in the Dark",
+    "label": "Rumbling in the Dark",
     'expansion': 'dung beetle knight',
     'type': 'video',
     'music': 'music/rumbling in the dark.mp3',
@@ -358,6 +459,13 @@ const texts = {
     'music': 'music/showdown butcher.mp3',
     'ltop': '5%',
     'lleft': '55%',
+    'transition_button': [
+    {
+      'type':'menu',
+      'target':'settlement',
+      'text':'Return to Settlement!',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>'
+    },]
   },
   'an uninvited guest': {
     "label": "An Uninvited Guest",
@@ -372,12 +480,26 @@ const texts = {
     'expansion': 'lion knight',
     'type': 'video',
     'music': 'music/finale.mp3',
+    'transition_button': [
+    {
+      'type':'back',
+      'target':'settlement',
+      'text':'Return to Settlement!',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>'
+    },]
   },
   'intermission': {
     "label": "Intermission",
     'expansion': 'lion knight',
     'music': 'music/lion knight main.mp3',
     'ltop': '88%',
+    'transition_button': [
+    {
+      'type':'back',
+      'target':'settlement',
+      'text':'Return to Settlement!',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>'
+    },]
   },
   'places, everyone!': {
     "label": "Places, Everyone!",
@@ -385,6 +507,13 @@ const texts = {
     'music': 'music/lion knight main.mp3',
     'ltop': '33%',
     'lleft': '37%',
+    'transition_button': [
+    {
+      'type':'menu',
+      'target':'showdown lion knight',
+      'text':'Start the Showdown',
+      'tooltip':'<b style="color:#cc0;">Click</b> to start <b>Showdown: Lion Knight</b>'
+    },]
   },
   'showdown lion knight': {
     "label": "Showdown: Lion Knight",
@@ -392,6 +521,13 @@ const texts = {
     'music': 'music/lion knight showdown.mp3',
     'ltop': '10%',
     'lleft': '66%',
+    'transition_button': [
+    {
+      'type':'back',
+      'target':'settlement',
+      'text':'Return to Settlement!',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>'
+    },]
   },
   'strange caravan': {
     "label": "Strange Caravan",
@@ -431,6 +567,13 @@ const texts = {
     'ltop': '10%',
     'lleft': '75%',
     'campaign': ['Stars'],
+    'transition_button': [
+    {
+      'type':'menu',
+      'target':'settlement',
+      'text':'Proceed to Settlement',
+      'tooltip':'<b style="color:#cc0;">Click</b> to add <b>Dragon Language</b> innovations, build <b>Throne</b> and proceed to the <b>Settlement</b>'
+    },]
   },
   'glowing crater': {
     "label": "Glowing Crater",
@@ -460,6 +603,13 @@ const texts = {
     'music_delay': 'speech+500',
     'ltop': '80%',
     'lleft': '35%',
+    'transition_button': [
+    {
+      'type':'menu',
+      'target':'settlement',
+      'text':'Return to Settlement!',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>'
+    },]
   },
   'showdown the tyrant': {
     "label": "Showdown: The Tyrant",
@@ -510,6 +660,13 @@ const texts = {
     'music_delay': 'speech+1000',
     'ltop': '15%',
     'lleft': '70%',
+    'transition_button': [
+    {
+      'type':'back',
+      'target':'settlement',
+      'text':'Return to Settlement!',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>'
+    },]
   },
   'sonorous rest': {
     "label": "Sonorous Rest",
@@ -523,6 +680,13 @@ const texts = {
     'expansion': 'manhunter',
     'type': 'video',
     'music': 'music/the hanged man.mp3',
+    'transition_button': [
+    {
+      'type':'menu',
+      'target':'showdown manhunter',
+      'text':'Start the Showdown',
+      'tooltip':'<b style="color:#cc0;">Click</b> to start <b>Showdown Manhunter</b>'
+    },]
   },
   'tools of war': {
     "label": "Tools of War",
@@ -594,6 +758,13 @@ const texts = {
     'music_delay': 'speech + 1000',
     'ltop': '18%',
     'lleft': '28%',
+    'transition_button': [
+    {
+      'type':'menu',
+      'target':'settlement',
+      'text':'Return to Settlement!',
+      'tooltip':'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>'
+    },]
   },
   'the knowledge worm': {
     "label": "The Knowledge Worm",
@@ -696,6 +867,56 @@ const texts = {
     'music': 'music/promise under the sun.mp3',
     'type': 'video',
   },
+
+  'showdown flower knight': {
+    "label": "Showdown: Flower Knight",
+    'expansion': 'flower knight',
+    'music': 'music/showdown flower knight.mp3',
+    'type': 'image',
+    'music_delay': 'speech - 1000'
+  },
+  'breakthrough': {
+    "label": "Breakthrough",
+    'expansion': 'flower knight',
+    'music': 'music/breakthrough.mp3',
+    'type': 'image',
+    'music_delay': '1000'
+  },
+  'a warm virus': {
+    "label": "A Warm Virus",
+    'expansion': 'flower knight',
+    'music': 'music/sense memory.mp3',
+    'type': 'image',
+  },
+  'sense memory': {
+    "label": "Sense Memory",
+    'expansion': 'flower knight',
+    'music': 'music/sense memory.mp3',
+    'type': 'image',
+    'music_delay': '1000'
+  },
+  'the forest wants what it wants': {
+    "label": "The Forest Wants What it Wants",
+    'expansion': 'flower knight',
+    'music': 'music/the forest wants what it wants.mp3',
+    'type': 'image',
+    'music_delay': '500',
+    'ltop': '80%',
+  },
+  'necrotoxic mistletoe': {
+    "label": "Necrotoxic Mistletoe",
+    'expansion': 'flower knight',
+    'music': 'music/necrotoxic mistletoe.mp3',
+    'type': 'image',
+    'music_delay': '1000'
+  },
+  'crones tale': {
+    "label": "Crone\'s Tale",
+    'expansion': 'flower knight',
+    'music': 'music/showdown flower knight.mp3',
+    'type': 'video',
+  },
+
 
 }
 

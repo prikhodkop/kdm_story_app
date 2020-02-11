@@ -62,7 +62,7 @@ function bonusesSummary(top) {
     class: "summary",
     value: 'summary',
     id: 'severe',
-    src: pathToAsset('images/icons/lantern.png'),
+    src: pathToAssetL('images/icons/lantern.png'),
     style: 'top:'+top+';right: 1.1%;width: 2%;',
   })
 
@@ -118,7 +118,7 @@ function createMenuButton () {
     $('#esc-menu').append($('<img>', {
       // style: 'opacity:.9;',
       id: 'esc-back',
-      src: pathToAsset('images/reference/reference_back.png'),
+      src: pathToAssetL('images/reference/reference_back.png'),
     }))
 
     $('#esc-menu').append($('<div>', {
@@ -157,7 +157,7 @@ function createMenuButton () {
   if (!$("#menu-toggle-wrapper").length) {
     let menu_toggle_wrapper = $('<img>', {
       id: 'menu-toggle-wrapper',
-      src: pathToAsset('images/icons/book.png')
+      src: pathToAssetL('images/icons/book.png')
     })
 
     let menu_toggle_close = $('<div id="menu-toggle-close">&#10006;</div>')
@@ -243,7 +243,7 @@ function createMenuButton () {
 
     $('#menu').append($('<img>', {
       id: 'menu_img',
-      src: pathToAsset('images/back.jpg'),
+      src: pathToAssetL('images/back.jpg'),
     }))
 
     $('#menu').append($('<div>', {
@@ -281,6 +281,7 @@ function createSevereTables () {
   addLocationTable('legs', (start+distance0+distance*5)+'%')
 
   window.severe_hide_wait_time = 400
+  window.open_locations = []
 
   $('#container').on({
     mouseenter: function () {
@@ -288,12 +289,12 @@ function createSevereTables () {
         $(this).addClass('hovered')
       }
       $('#divtwo').css('background-color', 'yellow')
-      if (!$(this).hasClass('active')) {
+      if (!$(this).hasClass('active')||(window.open_locations.length==0)) {
         $(this).addClass('active')
         showLocationTable($(this).attr('value'))
         if ($(this).hasClass('summary')) {
           // update_bonuses_list()
-          $(this).attr('src', pathToAsset('images/icons/lantern_active.png'))
+          $(this).attr('src', pathToAssetL('images/icons/lantern_active.png'))
         }
       }
     },
@@ -306,11 +307,30 @@ function createSevereTables () {
           thise.removeClass('active')
           hideLocationTable(thise.attr('value'))
           if (thise.hasClass('summary')) {
-            thise.attr('src', pathToAsset('images/icons/lantern.png'))
+            thise.attr('src', pathToAssetL('images/icons/lantern.png'))
           }
         }
         window.severe_hide_wait_time = 400
       }, window.severe_hide_wait_time)
+    },
+    click: function () {
+      let thise = $(this)
+      if (thise.hasClass('active')) {
+          // thise.removeClass('hovered')
+          clearTimer(window.severe_timers[thise.attr('value')])
+          hideLocationTable(thise.attr('value'))
+          thise.removeClass('active')
+          if (thise.hasClass('summary')) {
+            thise.attr('src', pathToAssetL('images/icons/lantern.png'))
+          }
+      } else {
+        $(this).addClass('active')
+        showLocationTable($(this).attr('value'))
+        if ($(this).hasClass('summary')) {
+          // update_bonuses_list()
+          $(this).attr('src', pathToAssetL('images/icons/lantern_active.png'))
+        }
+      }
     },
   }, '#severe')
 
@@ -350,7 +370,7 @@ function addLocationTable (location, top) {
     class: location,
     id: 'severe',
     value: location,
-    src: pathToAsset('images/icons/' + location + '.png'),
+    src: pathToAssetL('images/icons/' + location + '.png'),
     style: 'top:' + top + ';',
   })
 
@@ -371,10 +391,14 @@ function addLocationTable (location, top) {
 }
 
 function showLocationTable (location) {
-
+  let timer = 300
+  if (window.open_locations.length == 0) {
+    timer = 50
+  }
   window.severe_timers[location] = addTimer(function(){
     $('#severe-table.' + location).show("slide", { direction: "right" }, 200);
-  }, 300)
+    window.open_locations.push(location)
+  }, timer)
 
   // $('#severe-table').slideLeft(1000);
 }
@@ -382,6 +406,9 @@ function showLocationTable (location) {
 function hideLocationTable (location) {
   // $('#severe-table.' + location).fadeOut(100)
   $('#severe-table.' + location).hide("slide", { direction: "right" }, 100);
+  let index = window.open_locations.indexOf(location);
+  if (index !== -1) window.open_locations.splice(index, 1);
+
   // $('#severe-background').delay(500).fadeOut(00);
   // $('#severe-table').slideRight(1000);
 }
@@ -399,7 +426,7 @@ function createReference () {
 
   let reference_icon = $('<img>', {
     id: 'reference',
-    src: pathToAsset('images/icons/reference.png'),
+    src: pathToAssetL('images/icons/reference.png'),
   })
 
   reference_icon.hide()
@@ -414,7 +441,7 @@ function createReference () {
 
   $('#reference-window-back0').append($('<img>', {
     id: 'reference-window-back-img',
-    src: pathToAsset('images/reference/reference_back.png'),
+    src: pathToAssetL('images/reference/reference_back.png'),
   }))
 
   // $('#reference-window-back').append('<label for="reference-window">Terms:</label>')
@@ -708,14 +735,14 @@ function createReference () {
     if (!$(this).hasClass('active')) {
       $('#reference-window-back0').fadeIn(500)
       $('#reference-window-background').fadeIn(500)
-      $('#reference').attr('src', pathToAsset('images/icons/reference_active.png'))
+      $('#reference').attr('src', pathToAssetL('images/icons/reference_active.png'))
       selectize.focus()
       $('#reference').tooltipster('content', '<b style="color:#cc0;">Click</b> to close <b>Reference</b> window.')
 
     } else {
       $('#reference-window-back0').fadeOut(500)
       $('#reference-window-background').fadeOut(500)
-      $('#reference').attr('src', pathToAsset('images/icons/reference.png'))
+      $('#reference').attr('src', pathToAssetL('images/icons/reference.png'))
       selectize.clear()
       $('#reference').tooltipster('content', '<b style="color:#cc0;">Click</b> to show <b>Reference</b> window.')
     }
@@ -725,7 +752,7 @@ function createReference () {
   $('#reference-window-background').on('click', function () {
     $('#reference-window-back0').fadeOut(500)
     $('#reference-window-background').fadeOut(500)
-    $('#reference').attr('src', pathToAsset('images/icons/reference.png'))
+    $('#reference').attr('src', pathToAssetL('images/icons/reference.png'))
     $('#reference').removeClass('active')
     $('#esc-menu').fadeOut(100)
     $('#esc-menu').removeClass('active')
