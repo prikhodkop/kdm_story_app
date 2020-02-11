@@ -45,7 +45,7 @@ function createAbout (version) {
   <p id="about_p">Almost all the art and text presented in the app are the property of <b id="poots-text">Adam Poots</b>. The guy did a great job creating the game, so please pay respect and <b>use the app ONLY if you own a physical copy of the game</b> (no exceptions!!). Buy it here: <a href=https://shop.kingdomdeath.com style="color:#888800;" target="_blank">https://shop.kingdomdeath.com</a></p>
   <p id="about_p" style="color:#600;font-weight:600;"><u style="color:#900">And to stress that:</u> It's prohibited to use the app if you don't have correspond physical components on the table before you.</p>
   <p id="about_p"><b style="color:#aaa">Coding</b>: @prikhodkop, Justin Parker (jparkerweb), Andrew Mackrodt (andrewmackrodt).</p>
-  <p id="about_p"><b style="color:#aaa">Voice acting</b>: @prikhodkop, Katya Prikhodko.</p>
+  <p id="about_p"><b style="color:#aaa">Voice acting</b>: @prikhodkop, Katya Prikhodko, Joseph Anthony (tweet: @JA_VOX).</p>
   <p id="about_p"><b style="color:#aaa">Testing</b>: Alexander Fedorov, Calibretto, Creepo, Cymbaline, Knolan.</p>
   <p id="about_p">Arts, disorders, ability and weapon specialisation cards are created by Fen, please support him at his: <a href=https://www.patreon.com/FenPaints style="color:#888800;" target="_blank">https://www.patreon.com/FenPaints</a> </br>He deservers it!.</p>
   <p id="about_p"><b style="color:#aaa">Patreon backers</b>: Bekil, Blair, Cymbaline, Frosty, Javier Salmeron, Jesús Martin-Davila, Jordan White, Kliff, Mithless_one, Royce, Scott M, timberwolfl.</p></div>`).appendTo('#about-window-back')

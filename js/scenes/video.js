@@ -127,8 +127,9 @@ module.exports = class VideoScene {
       $('#video').delay(4000).get(0).play()
     } else {
       $('#img').fadeIn(2000)
-
-      createSevereTables()
+      if (!(myself == 'the lonely lady')) {
+        createSevereTables()
+      }
       createReference()
       createInnovationsList()
       createLocationsList()
@@ -154,7 +155,9 @@ module.exports = class VideoScene {
 
       clearSubtitles()
       music.play()
-      createSevereTables()
+      if (!(myself == 'the lonely lady')) {
+        createSevereTables()
+      }
       createReference()
       createInnovationsList()
       createLocationsList()
@@ -171,7 +174,9 @@ module.exports = class VideoScene {
 
       clearSubtitles()
       document.getElementById('video').currentTime = 0
-      createSevereTables()
+      if (!(myself == 'the lonely lady')) {
+          createSevereTables()
+      }
       createReference()
       createInnovationsList()
       createLocationsList()

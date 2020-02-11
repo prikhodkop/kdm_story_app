@@ -917,6 +917,20 @@ const texts = {
     'type': 'video',
   },
 
+  'showdown lonely tree': {
+    "label": "Showdown: Lonely Tree",
+    'expansion': 'lonely tree',
+    'music': 'music/showdown phoenix.mp3',
+    'type': 'image',
+    'lleft': '66%',
+    'ltop': '1%',
+  },
+  'the lonely lady': {
+    "label": "The Lonely Lady",
+    'expansion': 'lonely tree',
+    'music': 'music/the lonely lady.mp3',
+    'type': 'video',
+  },
 
 }
 
