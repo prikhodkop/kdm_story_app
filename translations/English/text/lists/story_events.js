@@ -938,7 +938,7 @@ const texts = {
   'young rivals': {
     "label": "Young Rivals",
     'expansion': 'spidicules',
-    // 'music': 'music/young rivals.mp3',
+    'music': 'music/young rivals.mp3',
     'type': 'video',
   },
 

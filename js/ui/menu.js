@@ -136,7 +136,7 @@ function createMenuButton () {
       id: 'esc-no',
     }))
 
-    $('#esc-text').text('Do you really want to quit?')
+    $('#esc-text').html('Do you really want to quit?<br/><b style="color:#990;font-size:0.5em;">Your settlement and hunt progress would be lost</b>')
     $('#esc-yes').text('Yes')
     $('#esc-no').text('No')
 
