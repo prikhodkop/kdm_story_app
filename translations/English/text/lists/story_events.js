@@ -657,7 +657,7 @@ const texts = {
     "label": "Showdown: Manhunter",
     'expansion': 'manhunter',
     'music': 'music/showdown manhunter.mp3',
-    'music_delay': 'speech+1000',
+    'music_delay': 'speech-2000',
     'ltop': '15%',
     'lleft': '70%',
     'transition_button': [
@@ -908,7 +908,9 @@ const texts = {
     'expansion': 'flower knight',
     'music': 'music/necrotoxic mistletoe.mp3',
     'type': 'image',
-    'music_delay': '1000'
+    'music_delay': '1000',
+    'ltop': '5%',
+    'lleft': '37%'
   },
   'crones tale': {
     "label": "Crone\'s Tale",
@@ -924,6 +926,7 @@ const texts = {
     'type': 'image',
     'lleft': '66%',
     'ltop': '1%',
+    'music_delay': '2000'
   },
   'the lonely lady': {
     "label": "The Lonely Lady",
@@ -932,6 +935,58 @@ const texts = {
     'type': 'video',
   },
 
+  'young rivals': {
+    "label": "Young Rivals",
+    'expansion': 'spidicules',
+    // 'music': 'music/young rivals.mp3',
+    'type': 'video',
+  },
+
+  'showdown spidicules': {
+    "label": "Showdown: Spidiclues",
+    'expansion': 'spidicules',
+    'music': 'music/showdown spidicules.mp3',
+    'type': 'image',
+    'music_delay': '0',
+    'ltop': '75%',
+    'lleft': '65%'
+  },
+  'spidisisyphus': {
+    "label": "Spidisisyphus",
+    'expansion': 'spidicules',
+    'music': 'music/secret meeting.mp3',
+    'type': 'image',
+    // 'music_delay': 'speech-2000'
+    'ltop': '7%',
+    'lleft': '30%'
+  },
+  'taken': {
+    "label": "Taken",
+    'expansion': 'spidicules',
+    'music': 'music/taken.mp3',
+    'type': 'image',
+    'ltop': '9%',
+    'lleft': '49%'
+    // 'music_delay': 'speech-2000'
+  },
+  'puppets embalming': {
+    "label": "Puppet's Embalming",
+    'expansion': 'spidicules',
+    'music': 'music/taken.mp3',
+    'type': 'image',
+    // 'music_delay': 'speech-2000'
+    'ltop': '90%',
+    // 'lleft': '49%'
+  },
+  'silk surgery': {
+    "label": "Silk Surgery",
+    'expansion': 'spidicules',
+    'music': 'music/death reading.mp3',
+    'type': 'image',
+    // 'ltop': '5%',
+    // 'lleft': '75%'
+    // 'music_delay': 'speech-2000'
+  },
 }
 
 module.exports = {

@@ -202,6 +202,12 @@ const texts = {
  'Steadfast Potion': {'resources':['2 x organ'], 'innovation': '19-24', 'gormchymy':{}},
  'Power Potion': {'resources':['2 x organ'], 'innovation': '25-30', 'gormchymy':{}},
  'Life Elixir': {'resources':['2 x organ'], 'innovation': '31-36', 'gormchymy':{}},
+
+ 'Vespertine Satchel': {'resources':['1 x lantern bloom', '1 x leather']},
+ 'Vespertine Foil': {'resources':['1 x osseous bloom', '1 x bone', '1 x scrap']},
+ 'Vespertine Cello': {'resources':['1 x lantern bud', '2 x flowers']},
+ 'Vespertine Arrow': {'resources':['1 x flower']},
+ 'Vespertine Bow': {'resources':['1 x osseous bloom', '1 x sighing bloom', '1 x organ', '1 x hide']},
 }
 
 module.exports = {

@@ -36,6 +36,7 @@ const special_events = [
   'showdown kings man',
   // 'an uninvited guest',
   'intermission',
+  'taken'
   // 'lottery',
 ]
 
