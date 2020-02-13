@@ -4,14 +4,16 @@ const { pathToAsset, pathToAssetL, initAssets } = require('./../ui/assets_loader
 initAssets()
 
 const { createToc, titleCase, generate_events_table } = require('./../ui/events')
-const { clone } = require('./../ui/glossary')
+const { clone, getTerms } = require('./../ui/glossary')
 const { md_to_html_2, is_promo_event, get_sequence, init_hunt_events } = require('./../ui/hunt_events_table')
 const { createMenuButton, createReference, createSevereTables, createInnovationsList, createLocationsList } = require('./../ui/menu')
-const { getSettings, addSettings, onSettingsSaved, initSettings } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved, initSettings, getLanguage } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
 const { addTimer, clearTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { addInnovation, hasInnovation, getHuntInnovationEffects } = require('./../ui/development')
+
+const tooltips = getTerms('tooltips')
 
 const QUARRY_CARD_SHOW = 'slideUpReturn' // 'slideDownReturn'
 const QUARRY_CARD_HIDE = 'vanishOut' // 'SlideDown'
@@ -77,7 +79,7 @@ module.exports = class HuntScene {
     $('#random_event_icon').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: 'Roll random <b>Hunt Event</b>',
+      content: tooltips['#random_event_icon'].text, //'Roll random <b>Hunt Event</b>',
       position: 'top',
       delay: 0,
     })
@@ -85,7 +87,7 @@ module.exports = class HuntScene {
     $('#random_event_close').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: '<b style="color:#cc0">Click</b> to close <b>Hunt Event</b>',
+      content: tooltips['#random_event_close'].text, //'<b style="color:#cc0">Click</b> to close <b>Hunt Event</b>',
       position: 'right',
       delay: 0,
     })
@@ -93,7 +95,7 @@ module.exports = class HuntScene {
     $('#random_event_icon_big').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: '<b style="color:#cc0">Click</b> to roll random <b>Hunt Event</b>',
+      content: tooltips['#random_event_icon_big'].text, //'<b style="color:#cc0">Click</b> to roll random <b>Hunt Event</b>',
       position: 'top',
       delay: 0,
     })
@@ -101,7 +103,7 @@ module.exports = class HuntScene {
     $('#random_event_input').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: '<b style="color:#cc0">Type</b> <b>Hunt Event</b> number here',
+      content: tooltips['#random_event_input'].text, //'<b style="color:#cc0">Type</b> <b>Hunt Event</b> number here',
       position: 'bottom',
       delay: '600',
     })
@@ -584,14 +586,14 @@ module.exports = class HuntScene {
           $(this).tooltipster({animationDuration: 50,
             contentAsHTML: 'true',
             animation: 'fade',
-            content: '<b>Herb Gathering</b><br />Survivors eat berries on the way<br />All survivors get <b>+1 survival</b>',
+            content: tooltips['herb_gathering_top'].text, //'<b>Herb Gathering</b><br />Survivors eat berries on the way<br />All survivors get <b>+1 survival</b>',
             position: 'top',
             delay: '600',
           })
           $(this).tooltipster({animationDuration: 50,animationDuration: 50,
             contentAsHTML: 'true',
             animation: 'fade',
-            content: '<i style="color:#aa0;">Sickle required!</i>',
+            content: tooltips['herb_gathering_top'].text, //'<i style="color:#aa0;">Sickle required!</i>',
             position: 'bottom',
             delay: '600',
             multiple: 'true',
@@ -606,14 +608,14 @@ module.exports = class HuntScene {
           $(this).tooltipster({animationDuration: 50,
             contentAsHTML: 'true',
             animation: 'fade',
-            content: '<b>Mineral Gathering</b>',
+            content: tooltips['mineral_gathering_top'].text, //'<b>Mineral Gathering</b>',
             position: 'top',
             delay: '600',
           })
           $(this).tooltipster({animationDuration: 50,
             contentAsHTML: 'true',
             animation: 'fade',
-            content: '<i style="color:#aa0;">Pickaxe required!</i>',
+            content: tooltips['mineral_gathering_bottom'].text, //'<i style="color:#aa0;">Pickaxe required!</i>',
             position: 'bottom',
             delay: '600',
             multiple: 'true',
@@ -629,14 +631,14 @@ module.exports = class HuntScene {
               $(this).tooltipster({animationDuration: 50,
                 contentAsHTML: 'true',
                 animation: 'fade',
-                content: '<b>Sky Fishing</b>',
+                content: tooltips['sky_fishing_top'].text, //'<b>Sky Fishing</b>',
                 position: 'top',
                 delay: '600',
               })
               $(this).tooltipster({animationDuration: 50,
                 contentAsHTML: 'true',
                 animation: 'fade',
-                content: '<i style="color:#aa0;">Sun Lure and Hook required!</i>',
+                content: tooltips['sky_fishing_bottom'].text, //'<i style="color:#aa0;">Sun Lure and Hook required!</i>',
                 position: 'bottom',
                 delay: '600',
                 multiple: 'true',
@@ -878,23 +880,6 @@ module.exports = class HuntScene {
         };
       };
 
-      // $('#survivors').tooltipster({
-      //   animationDuration: 50,
-      //     contentAsHTML: 'true',
-      //     animation: 'fade',
-      //     content: '<b>Herb Gathering</b><br />Survivors eat berries on the way<br />All survivors get <b>+1 survival</b>',
-      //     position: 'top',
-      //     delay: '600',
-      // })
-      // tippy("#survivors", {
-      //   placement: 'bottom-start',
-      //   content: '<b>Survivors</b><b style="color:#cc0;">Drag</b> to proceed on the hunt.',
-      //   duration: 50,
-      //   delay: [200, 100],
-      //   animation: 'shift-away-subtle',
-      //   followCursor: true,
-      //   theme: 'kdm',
-      // });
     }
 
     function place_events (events_string, size, height, id, sequence) {
@@ -933,39 +918,39 @@ module.exports = class HuntScene {
 
       if (type === 'common') {
         if (path.includes('random')) {
-          title = 'Random Hunt Event'
-          tooltip_text = 'Random Hunt Event'
+          title = tooltips['random_hunt_event'].text
+          tooltip_text = tooltips['random_hunt_event'].text //'Random Hunt Event'
         }
         if (path.includes('monster')) {
-          title = 'Monster Hunt Event'
-          tooltip_text = 'Random Hunt Event'
+          title = tooltips['monster_hunt_event'].text
+          tooltip_text = tooltips['monster_hunt_event'].text //'Monster Hunt Event',
         };
       };
 
       if (type === 'monster') {
         title = ''
-        tooltip_text = '<b style="color:#cc0;">Click</b> to start the <b>Showdown</b>!</br></br><i>It will be considered that the fight takes place where the survivors are standing for all gameplay effects.</i>'
+        tooltip_text = tooltips['hunt_monster'].text //'<b style="color:#cc0;">Click</b> to start the <b>Showdown</b>!</br></br><i>It will be considered that the fight takes place where the survivors are standing for all gameplay effects.</i>',
       };
 
       if (type === 'survivors') {
         title = 'Survivors'
         coord = coord + 0.9
-        tooltip_text = '<b style="color:#cc0;">Drag</b> survivors to proceed on the <b>Hunt</b>.</br></br><i><b style="color:#cc0;">Click</b> on events to disable/enable them.</i>'
+        tooltip_text = tooltips['hunt_survivors'].text //'<b style="color:#cc0;">Drag</b> survivors to proceed on the <b>Hunt</b>.</br></br><i><b style="color:#cc0;">Click</b> on events to disable/enable them.</i>',
       };
 
       if (type === 'darkness') {
         let target
         if ((window.globals.quarry_name.toLowerCase().includes('flower knight'))||(window.globals.quarry_name.toLowerCase().includes('spidicules'))) {
-          title = '<b>The Forest Wants What it Wants</b>'
+          title = tooltips['forest_wants_what_it_wants'].text //'<b>The Forest Wants What it Wants</b>'
         } else {
-          title = '<b>Overwhelming Darkness</b>'
+          title = tooltips['overwhelming_darkness'].text //'<b>Overwhelming Darkness</b>'
         }
 
         coord = coord + 0.032335
       };
 
       if (type === 'starvation') {
-        title ='<b>Starvation</b><br/>The hunting team takes too long to bring food back home.<br/>Remove d5 resources from settlement storage.'
+        title = tooltips['starvation'].text //'<b>Starvation</b><br/>The hunting team takes too long to bring food back home.<br/>Remove d5 resources from settlement storage.'
       };
 
       $('<img class="token ' + position + '" position="' + position + '" id="' + type +
@@ -1118,12 +1103,6 @@ module.exports = class HuntScene {
         };
 
         if (type == 'common') {
-          // $(this).tooltipster({animationDuration: 50,
-          //   content: tooltip_text,
-          //   contentAsHTML: 'true',
-          //   animation: 'fade',
-          //   delay: '600',
-          // })
           $(this).droppable({
             drop: function (event, ui) {
               snapToMiddle(ui.draggable, $(this))

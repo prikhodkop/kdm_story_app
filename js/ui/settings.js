@@ -15,7 +15,8 @@ module.exports = {
   silentSaveSettings,
   initSettings,
   defaultLang,
-  resetSettings
+  resetSettings,
+  getLanguage
 }
 
 const settings_string_default = require('./../../settings.json')
@@ -64,6 +65,12 @@ function getSettings () {
   // if no user options are saved or new option appears - value from settings.json in root is used
   return result
 }
+
+function getLanguage() {
+  return getSettings()['language']
+}
+
+
 
 function addSettings (settings) {
   $('#container').append($('<div>', {
