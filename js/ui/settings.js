@@ -87,7 +87,7 @@ function addSettings (settings) {
   $('#settings').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: '<b style="color:#cc0;">Click</b> to show <b>Settings</b> window.',
+      content: window.globals.glossary[getLanguage()].tooltips['settings'].text, //'<b style="color:#cc0;">Click</b> to show <b>Settings</b> window.',
       position: 'left',
       delay: 0,
       trigger: 'custom',

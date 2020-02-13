@@ -57,6 +57,86 @@ const texts = {
  },
  //will keep settings tooltips texts english for now
 
+ 'about': {
+   'text': '<b style="color:#cc0;">Click</b> to show <b>About</b> window.'
+ },
+
+ 'return_button_settlement_text': {
+   'text': 'Return to the <b>Settlement</b>',
+ },
+
+ 'return_button_settlement_new': {
+   'text': '<b style="color:#cc0;">Click</b> to return to <b>Settlement</b><br/><br/>This will start new <b>Lantern Year</b>.',
+ },
+
+ 'return_button_settlement_back': {
+   'text': '<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>',
+ },
+
+ 'event_transition': {
+   'text': '<b style="color:#cc0;">Click</b> to start <b>$L$</b>',
+ },
+
+ 'to_settlement_text': {
+   'text': 'Go to the <b>Settlement</b>',
+ },
+
+ 'foundlings_transition': {
+   'text': '<b style="color:#cc0;">Click</b> to learn <b>Dragon Speach</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.',
+ },
+
+ 'returning survivors_transition': {
+   'text': '<b style="color:#cc0;">Click</b> to learn <b>Language</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.'
+ },
+
+ 'the pool and the sun_transition': {
+   'text': '<b style="color:#cc0;">Click</b> to learn <b>Sun Language</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.'
+ },
+
+ 'first story_text': {
+   'text': 'After victory...'
+ },
+ 'first story_lantern': {
+   'text': 'After they defeat the White Lion, the survivors wander the darkness, drawn to a soft glow blooming on the horizon.<br/><br/><b style="color:#cc0;">Click</b> to proceed.'
+ },
+ 'first story_sun': {
+   'text': 'After they defeat the White Lion, the survivors wander the darkness, drawn to a soft glow blooming on the horizon.<br/><br/><b style="color:#cc0;">Click</b> to proceed.'
+ },
+ 'first story_stars': {
+   'text': 'After they defeat the White Lion, the survivors wander the darkness, drawn to a soft glow blooming on the horizon.<br/><br/><b style="color:#cc0;">Click</b> to proceed.'
+ },
+
+ 'blind_exit_text': {
+   'text': 'Blind Exit'
+ },
+ 'blind_exit': {
+   'text': 'Apply <b>only</b> after defeating <b>Gorm Lv.2</b>'
+ },
+
+ 'to event_text': {
+   'text': 'To $E$'
+ },
+ 'to event': {
+   'text': '<b style="color:#cc0;">Click</b> to start <b>$E$</b>.'
+ },
+
+ 'back event_text': {
+   'text': 'Back to $E$'
+ },
+ 'back event': {
+   'text': '<b style="color:#cc0;">Click</b> to return to <b>$E$</b>.'
+ },
+
+ 'start showdown': {
+   'text': 'Start the <b>Showdown</b>!'
+ },
+
+ 'campaign': {
+   'text': '<b style="color:#bb0;font-size:0.7em;">Campaign</b><br/>$C$'
+ },
+ 'campaign_bottom': {
+   'text': '<b style="color:#cc0;">Click</b> to start the <b>$E$</b>.'
+ },
 
 }
 

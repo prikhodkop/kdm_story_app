@@ -45,7 +45,7 @@ var survivor_statuses
 var resources
 var terrain
 var tooltips
-
+var campaigns
 
 
 let glossary_list_translations = {
@@ -63,6 +63,7 @@ let glossary_list_translations = {
   'glossary_terms': ['label', 'description'],
   'resources': ['label', 'type', 'text'],
   'tooltips': ['text'],
+  'campaigns': ['label', 'description'],
 }
 
 function init_glossary() {

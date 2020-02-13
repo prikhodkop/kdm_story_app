@@ -10,8 +10,10 @@ const { render } = require('./../ui/template-renderer')
 const { addTimer, clearTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { addInnovation } = require('./../ui/development')
-
+const { getTerms } = require('./../ui/glossary')
 // const { eventsSugar } = require('./../ui/events_sugar')
+
+const tooltips = getTerms('tooltips')
 
 const quaries_events = [
   'showdown gorm',
@@ -41,8 +43,8 @@ const special_events = [
 ]
 
 const events_sequences = {
-  'places, everyone!': ['showdown lion knight', 'Start the <b>Showdown</b>!'],
-  'the hanged man': ['showdown manhunter', 'Start the <b>Showdown</b>!'],
+  'places, everyone!': ['showdown lion knight', tooltips['start showdown'].text],
+  'the hanged man': ['showdown manhunter', tooltips['start showdown'].text],
 }
 
 module.exports = class ImageScene {
@@ -398,11 +400,11 @@ module.exports = class ImageScene {
           // id: 'settlement_return_button',
           class: 'settlement_return_button to_settlement hoverable'
         })
-        return_button.html('Return to the <b>Settlement</b>')
+        return_button.html(tooltips['return_button_settlement_text'].text)
         return_button.tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
-            content: '<b style="color:#cc0;">Click</b> to return to <b>Settlement</b><br/><br/>This will start new <b>Lantern Year</b>.',
+            content: tooltips['return_button_settlement_new'].text, //'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b><br/><br/>This will start new <b>Lantern Year</b>.',
             position: 'bottom',
             delay: [300, 100],
             fixedWidth: 250,
@@ -430,11 +432,11 @@ module.exports = class ImageScene {
           // id: 'settlement_return_button',
           class: 'settlement_return_button to_settlement hoverable'
         })
-        return_button.html('Return to the <b>Settlement</b>')
+        return_button.html(tooltips['return_button_settlement_text'].text)
         return_button.tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
-            content: '<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>',
+            content: tooltips['return_button_settlement_back'].text,
             position: 'bottom',
             delay: [300, 100],
             fixedWidth: 250,
@@ -466,7 +468,7 @@ module.exports = class ImageScene {
         return_button.tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
-            content: '<b style="color:#cc0;">Click</b> to start <b>'+events_table[events_sequences[name][0]].label+'</b>',
+            content: tooltips['event_transition'].text.replace('$L$', events_table[events_sequences[name][0]].label),
             position: 'bottom',
             delay: [300, 100],
             fixedWidth: 250,
@@ -496,15 +498,15 @@ module.exports = class ImageScene {
         })
         let content = ''
         if (name == 'foundlings') {
-          content = '<b style="color:#cc0;">Click</b> to learn <b>Dragon Speach</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.'
+          content = tooltips['foundlings_transition'].text
         }
         if (name == 'returning survivors') {
-          content = '<b style="color:#cc0;">Click</b> to learn <b>Language</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.'
+          content = tooltips['returning survivors_transition'].text
         }
         if (name == 'the pool and the sun') {
-          content = '<b style="color:#cc0;">Click</b> to learn <b>Sun Language</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.'
+          content = tooltips['the pool and the sun_transition'].text
         }
-        return_button.html('Go to the <b>Settlement</b>')
+        return_button.html(tooltips['to event_text'].text.replace('$E$', events_table['settlement'].label))
         return_button.tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
@@ -549,20 +551,20 @@ module.exports = class ImageScene {
         let content = ''
         let target = ''
         if (settings['campaign'] == 'Lantern') {
-          content = 'After they defeat the White Lion, the survivors wander the darkness, drawn to a soft glow blooming on the horizon.<br/><br/><b style="color:#cc0;">Click</b> to proceed.'
+          content = tooltips['first story_lantern'].text
           target = 'returning survivors'
         }
         if (settings['campaign'] == 'Stars') {
-          content = 'After they defeat the White Lion, the survivors wander the darkness, drawn to a soft glow blooming on the horizon.<br/><br/><b style="color:#cc0;">Click</b> to proceed.'
+          content = tooltips['first story_stars'].text
           target = 'foundlings'
         }
 
         if (settings['campaign'] == 'Sun') {
-          content = 'After they defeat the White Lion, the survivors wander the darkness, drawn to a soft glow blooming on the horizon.<br/><br/><b style="color:#cc0;">Click</b> to proceed.'
+          content = tooltips['first story_sun'].text
           target = 'the pool and the sun'
         }
 
-        return_button.html('After victory...')
+        return_button.html(tooltips['first story_text'].text)
         return_button.tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
@@ -618,20 +620,12 @@ module.exports = class ImageScene {
           },
         }, '.settlement_return_button.to_grotto')
 
-        grotto_button.text('Blind Exit')
-        // tippy('#settlement_return_button.to_grotto', {
-        //   placement: 'left',
-        //   content: 'Apply only after defeating Gorm Lv.2',
-        //   duration: 50,
-        //   delay: [600, 100],
-        //   animation: 'shift-away-subtle',
-        //   // followCursor: true,
-        //   // theme: 'kdm',
-        // })
+        grotto_button.text(tooltips['blind_exit_text'].text)
+
         grotto_button.tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
-            content: 'Apply <b>only</b> after defeating <b>Gorm Lv.2</b>',
+            content: tooltips['blind_exit'].text,
             position: 'left',
             delay: [300, 100],
             fixedWidth: 250,
@@ -659,11 +653,11 @@ module.exports = class ImageScene {
           // id: 'settlement_return_button',
           class: 'settlement_return_button hoverable'
         })
-        return_button.html('To Showdown: Gorm')
+        return_button.html(tooltips['to event_text'].text.replace('$E$', events_table['showdown gorm'].label))
         return_button.tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
-            content: '<b style="color:#cc0;">Click</b> to open <b>Showdown: Gorm</b>.',
+            content: tooltips['to event'].text.replace('$E$', events_table['showdown gorm'].label),
             position: 'bottom',
             delay: [300, 100],
             fixedWidth: 250,
@@ -692,11 +686,11 @@ module.exports = class ImageScene {
           class: 'settlement_return_button to_showdown hoverable',
           // style: 'left: 54%;'
         })
-        return_button.html('To Showdown: Gorm')
+        return_button.html(tooltips['to event_text'].text.replace('$E$', events_table['showdown gorm'].label))
         return_button.tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
-            content: '<b style="color:#cc0;">Click</b> to open <b>Showdown: Gorm</b>.',
+            content: tooltips['to event'].text.replace('$E$', events_table['showdown gorm'].label),
             position: 'bottom',
             delay: [300, 100],
             fixedWidth: 250,
@@ -723,11 +717,11 @@ module.exports = class ImageScene {
             class: 'settlement_return_button to_hunt hoverable',
             // style: 'left: 22%;'
           })
-          hunt_button.html('Back to the Hunt')
+          hunt_button.html(tooltips['back event_text'].text.replace('$E$', events_table['hunt'].label))
           hunt_button.tooltipster({
               contentAsHTML: 'true',
               animation: 'grow',
-              content: '<b style="color:#cc0;">Click</b> to return to <b>The Hunt</b>.',
+              content: tooltips['back event'].text.replace('$E$', events_table['hunt'].label),
               position: 'bottom',
               delay: [300, 100],
               fixedWidth: 250,
