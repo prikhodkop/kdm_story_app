@@ -4,7 +4,6 @@
   "version": "3.1.0",
   "description": "Once, there was a man, who loved Kingdom Death and praised Poots for what he created, but hated the need to browse several books and shuffle decks all the time. One day he built an app to fix that.",
   "main": "main.js",
-
   "scripts": {
     "test": "mocha",
     "start": "electron .",
@@ -29,6 +28,7 @@
     "magic.css": "^1.4.5",
     "mocha": "^7.0.1",
     "node": "^13.8.0",
+    "node-bin-setup": "^1.0.6",
     "npm": "^6.13.7",
     "tippy.js": "^5.2.0",
     "v8-compile-cache": "^2.1.0",
@@ -58,11 +58,11 @@
       ],
       "icon": "app/icon.ico",
       "target": [
-      {
-        "target": "nsis-web",
-        "arch": [
-          "x64"
-        ]
+        {
+          "target": "nsis-web",
+          "arch": [
+            "x64"
+          ]
         }
       ]
     },
