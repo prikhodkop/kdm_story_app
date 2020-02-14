@@ -3,6 +3,9 @@ const shell = require('electron').shell
 // const { cdnUrl } = require('./template-cdnurl')
 const { pathToAssetL } = require('./assets_loader')
 
+const { getTerms } = require('./../ui/glossary')
+const tooltips = getTerms('tooltips')
+
 module.exports = {
   createAbout,
 }
@@ -67,7 +70,7 @@ function createAbout (version) {
   $('#about_text').tooltipster({
       contentAsHTML: 'true',
       animation: 'fade',
-      content: '<b style="color:#cc0;">Click</b> to show <b>About</b> window.',
+      content: tooltips['about'].text,
       animationDuration: 50,
       position: 'right',
       delay: 0,

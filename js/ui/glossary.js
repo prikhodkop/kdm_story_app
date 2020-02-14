@@ -1,4 +1,4 @@
-const { getSettings, defaultLang } = require('./../ui/settings')
+const { getSettings, defaultLang, getLanguage } = require('./../ui/settings')
 const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
 module.exports = {
@@ -15,7 +15,8 @@ module.exports = {
  innovations,
  get_events_options,
  init_glossary,
- settlement_events
+ settlement_events,
+ getTerms
 }
 
 console.log('!! Setting up glossary !! ^_^')
@@ -43,7 +44,8 @@ var settlement_locations
 var survivor_statuses
 var resources
 var terrain
-
+var tooltips
+var campaigns
 
 
 let glossary_list_translations = {
@@ -60,6 +62,8 @@ let glossary_list_translations = {
   'terrain': ['label', 'description'],
   'glossary_terms': ['label', 'description'],
   'resources': ['label', 'type', 'text'],
+  'tooltips': ['text'],
+  'campaigns': ['label', 'description'],
 }
 
 function init_glossary() {
@@ -87,7 +91,11 @@ function init_glossary() {
   terrain = window.globals.glossary[lang].terrain
   glossary_terms = window.globals.glossary[lang].glossary_terms
   resources = window.globals.glossary[lang].resources
+  tooltips = window.globals.glossary[lang].tooltips
+}
 
+function getTerms(name) {
+  return window.globals.glossary[getLanguage()][name]
 }
 
 function localized_require2(text, lang, args) {

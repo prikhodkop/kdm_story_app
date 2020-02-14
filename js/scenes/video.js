@@ -9,11 +9,14 @@ const { createMenuButton, createReference, createSevereTables, createInnovations
 const { getSettings, addSettings, onSettingsSaved, initSettings, defaultLang } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
+const { getTerms } = require('./../ui/glossary')
+
+const tooltips = getTerms('tooltips')
 
 const special_events = []
 
 const events_sequences = {
-  'the hanged man': ['showdown manhunter', 'Start the <b>Showdown</b>!'],
+  'the hanged man': ['showdown manhunter', tooltips['start showdown'].text],
 }
 
 module.exports = class VideoScene {
@@ -25,6 +28,8 @@ module.exports = class VideoScene {
     $('#container').fadeIn(300)
 
     var events_table = generate_events_table()
+
+    console.log('Process type: '+window.globals.process)
 
     document.getElementById('container').innerHTML = render('video')
 
@@ -191,12 +196,17 @@ module.exports = class VideoScene {
     if (settings['subtitles'] == 'On') {
       let subtitles
       // configureSubtitle(readFile(pathToAssetL('video/intro.srt', false), 'root'))
-      if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('translations/'+lang+'/video/'+myself+'.srt')) {
-        subtitles = require('./../../translations/'+lang+'/video/'+myself+'.srt')
+      if (window.globals.process == 'local') {
+        console.log('Loading local video')
+          subtitles = readFile(pathToAssetL('video/'+myself+'.srt', false), 'root')
       } else {
-        subtitles = require('./../../translations/'+defaultLang()+'/video/'+myself+'.srt')
+        if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('translations/'+lang+'/video/'+myself+'.srt')) {
+          subtitles = require('./../../translations/'+lang+'/video/'+myself+'.srt').default
+        } else {
+          subtitles = require('./../../translations/'+defaultLang()+'/video/'+myself+'.srt').default
+        }
       }
-      configureSubtitle(subtitles.default)
+      configureSubtitle(subtitles)
     }
     addSettings(settings)
 
@@ -249,11 +259,11 @@ module.exports = class VideoScene {
           // id: 'settlement_return_button',
           class: 'settlement_return_button to_settlement hoverable'
         })
-        return_button.html('Return to the <b>Settlement</b>')
+        return_button.html(tooltips['return_button_settlement_text'].text)
         return_button.tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
-            content: '<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>',
+            content: tooltips['return_button_settlement_back'].text,
             position: 'bottom',
             delay: [300, 100],
             fixedWidth: 250,
@@ -285,7 +295,7 @@ module.exports = class VideoScene {
         return_button.tooltipster({
             contentAsHTML: 'true',
             animation: 'grow',
-            content: '<b style="color:#cc0;">Click</b> to start <b>'+events_table[events_sequences[name][0]].label+'</b>',
+            content: tooltips['to event'].text.replace('$E$', events_table[events_sequences[name][0]].label),
             position: 'bottom',
             delay: [300, 100],
             fixedWidth: 250,

@@ -15,7 +15,8 @@ module.exports = {
   silentSaveSettings,
   initSettings,
   defaultLang,
-  resetSettings
+  resetSettings,
+  getLanguage
 }
 
 const settings_string_default = require('./../../settings.json')
@@ -65,6 +66,12 @@ function getSettings () {
   return result
 }
 
+function getLanguage() {
+  return getSettings()['language']
+}
+
+
+
 function addSettings (settings) {
   $('#container').append($('<div>', {
     id: 'settings-window-background',
@@ -80,7 +87,7 @@ function addSettings (settings) {
   $('#settings').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: '<b style="color:#cc0;">Click</b> to show <b>Settings</b> window.',
+      content: window.globals.glossary[getLanguage()].tooltips['settings'].text, //'<b style="color:#cc0;">Click</b> to show <b>Settings</b> window.',
       position: 'left',
       delay: 0,
       trigger: 'custom',

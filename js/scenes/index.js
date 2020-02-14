@@ -4,7 +4,7 @@ const { pathToAsset, pathToAssetL, initAssets } = require('./../ui/assets_loader
 initAssets()
 
 const { createAbout } = require('./../ui/about')
-const { createToc } = require('./../ui/events')
+const { createToc, generate_events_table } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton, createReference, createInnovationsList, createLocationsList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved, setSettings, saveSettings, initSettings, defaultLang } = require('./../ui/settings')
@@ -14,6 +14,10 @@ const { addTimer } = require('./../ui/timer')
 const { setTransition } = require('./../ui/transition')
 // const dev = require('./../ui/development')
 const dev = require('./settlement')
+const { getTerms } = require('./../ui/glossary')
+
+const tooltips = getTerms('tooltips')
+const campaigns_list = getTerms('campaigns')
 
 module.exports = class IndexScene {
   render () {
@@ -300,6 +304,9 @@ module.exports = class IndexScene {
     }
 
     function createCampaign(campaign) {
+
+      let events_table = generate_events_table()
+
       let campaign_element = $('<div>',{
         class: "campaign_element",
         value: campaign
@@ -314,32 +321,17 @@ module.exports = class IndexScene {
         class: "campaign_label"
       });
 
-      campaign_label.append('<b style="color:#bb0;font-size:0.7em;">Campaign</b><br/>People of the '+campaign);
+      campaign_label.append(tooltips['campaign'].text.replace('$C$', campaigns_list[campaign].label));
 
       // campaign_image.on('load', function() {
       campaign_element.append(campaign_image);
       campaign_element.append(campaign_label);
       // })
       let content = ''
-      // if (campaign == 'Sun') {
-      //   content = 'Once the sky had no day. There was a Shadow that was sad, it could only play in small light of a lantern. The Shadow found a hole in the sky and decided to steal enough lanterns to fill it. It took many generations, and when it was done the shadow slept under its big light, dreaming dreams about how it would play. When it awoke, all of the light was gone! At the center of the hole in the sky, was a tiny shining entity, with a great big mouth. The shadow named the tiny thing thr sun and they played forever.<br/><br/>'
-      // }
-      // if (campaign == 'Stars') {
-      //   content = 'The Dragon King\'s species is long dead. It remains alone, clinging to the memories of its once mighty race.<br/><br/>Its destructive moods swing wildly from impotent rage to obsessive nostalgia. It stalks the darkness, lashing out at anything it meets.<br/><br/>'
-      // }
-      if (campaign == 'Stars') {
-      content = content + 'Adopted by the Tyrant, the last of the People of the Stars, the survivors must grow their settlement to please its desire to leave an enduring draconian legacy before he passes.</br></br>'
-      }
 
-      if (campaign == 'Sun') {
-      content = content + 'Once sky had no day. There was a Shadow that was sad, it could only play in small light of a lantern. The Shadow found a hole in the sky and decided to steal enough lanterns to fill it. It took many generations, and when it was done the shadow slept under the big light, dreaming dreams about how it could play. When it awoke, all of the light was gone! At the center of the hole in the sky, was a tiny shining entity, with a great big mouth. The shadow named the tiny thing the sun and they played together.</br></br>'
-      }
+      content = content + campaigns_list[campaign].description+'</br></br>'
 
-      if (campaign == 'Lantern') {
-      content = content + 'At its core, Monster is a game about the fragility of human life, the ferocity of the human spirit, and the wonder of exploration.</br></br>Your story will be shaped by the decisions you make, the strengths and weaknesses of your settlemenet, and the growth of your survivors.</br></br>'
-      }
-
-      content = content + '<b style="color:#cc0;">Click</b> to start the <b>First Story</b>.'
+      content = content + tooltips['campaign_bottom'].text.replace('$E$', events_table[campaigns_list[campaign].start_event].label)
       campaign_image.tooltipster({
           contentAsHTML: 'true',
           animation: 'grow',
