@@ -21,15 +21,6 @@ module.exports = {
 
 console.log('!! Setting up glossary !! ^_^')
 
-var lang = getSettings()['language']
-
-if (window.globals.glossary === undefined) {
-  window.globals.glossary = {}
-}
-
-if (window.globals.glossary[lang] === undefined) {
-  window.globals.glossary[lang] = {}
-}
 
 var abilities
 var armor_sets
@@ -69,6 +60,14 @@ let glossary_list_translations = {
 function init_glossary() {
 
   let lang = getSettings()['language']
+
+  if (window.globals.glossary === undefined) {
+    window.globals.glossary = {}
+  }
+
+  if (window.globals.glossary[lang] === undefined) {
+    window.globals.glossary[lang] = {}
+  }
 
   let keys = Object.keys(glossary_list_translations)
 

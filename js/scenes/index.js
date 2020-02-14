@@ -16,8 +16,6 @@ const { setTransition } = require('./../ui/transition')
 const dev = require('./settlement')
 const { getTerms } = require('./../ui/glossary')
 
-const tooltips = getTerms('tooltips')
-const campaigns_list = getTerms('campaigns')
 
 module.exports = class IndexScene {
   render () {
@@ -53,9 +51,8 @@ module.exports = class IndexScene {
 
     var settings = getSettings()
 
-    // var tree = dirTree(app.getAppPath()+'/translations');
-
-    // console.log('Tree22: '+JSON.stringify(tree))
+    var tooltips = getTerms('tooltips')
+    var campaigns_list = getTerms('campaigns')
 
 
     console.log('Settings:')

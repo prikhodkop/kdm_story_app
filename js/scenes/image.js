@@ -13,8 +13,6 @@ const { addInnovation } = require('./../ui/development')
 const { getTerms } = require('./../ui/glossary')
 // const { eventsSugar } = require('./../ui/events_sugar')
 
-const tooltips = getTerms('tooltips')
-
 const quaries_events = [
   'showdown gorm',
   'showdown white lion',
@@ -56,6 +54,7 @@ module.exports = class ImageScene {
     $('#container').fadeIn(500)
 
     var events_table = generate_events_table()
+    var tooltips = getTerms('tooltips')
 
     document.getElementById('container').innerHTML = render('image')
 

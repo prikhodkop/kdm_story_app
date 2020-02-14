@@ -13,8 +13,6 @@ const { addTimer, clearTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { addInnovation, hasInnovation, getHuntInnovationEffects } = require('./../ui/development')
 
-const tooltips = getTerms('tooltips')
-
 const QUARRY_CARD_SHOW = 'slideUpReturn' // 'slideDownReturn'
 const QUARRY_CARD_HIDE = 'vanishOut' // 'SlideDown'
 
@@ -27,6 +25,7 @@ module.exports = class HuntScene {
     $('#container').fadeIn(500)
 
     var events_table = generate_events_table()
+    var tooltips = getTerms('tooltips')
 
     document.getElementById('container').innerHTML = render('hunt')
     window.darkness_enabled = true

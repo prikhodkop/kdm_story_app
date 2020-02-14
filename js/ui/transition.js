@@ -2,6 +2,8 @@ const { generate_events_table } = require('./events')
 const router = require('./router')
 const {initSettings} = require('./settings')
 
+const {init_glossary} = require('./glossary')
+
 module.exports = {
   setTransition,
   getBackTarget,
@@ -15,6 +17,7 @@ function setTransition (name, transition, back_target = null, state = null, tran
   console.log(transition)
   $('#container').empty()
   initSettings()
+  init_glossary()
 
   // delete require.cache[require.resolve('./glossary')]
   // delete require.cache[require.resolve('./development')]

@@ -138,6 +138,52 @@ const texts = {
    'text': '<b style="color:#cc0;">Click</b> to start the <b>$E$</b>.'
  },
 
+ 'settlement_event_button': {
+   'text': '<b style="color:#cc0;">Click</b> to draw and show/hide <b>Settlement Event</b> card.'
+ },
+
+ 'settlement_event_button_drawn': {
+   'text': 'Event drawn: <b>$E$</b><br/><br/><b style="color:#cc0;">Click</b> to show/hide <b>Settlement Event</b> card.'
+ },
+
+ 'survivors_return_button': {
+   'text': 'All survivors that endured the previous showdown are <b>returning survivors</b>.<br/><br/>Their injuries are healed and all tokens are removed.<br/><br/>Apply any effects for the <b>returning survivors</b>.'
+ },
+
+ 'gain_endeavors_button': {
+   'text': 'Gain 1 endeavor for each <b>returning survivor</b>.<br/><br/>Additional endeavors may be gained from principles, innovations and abilities.'
+ },
+
+ 'update_deathcount_button': {
+   'text': 'If any survivors perished during the hunt, showdown or during the preceeding steps of the settlement phase, update the death count.<br/><br/>If a survivor dies later during the Settlement Phase, upadte the death count immediately.'
+ },
+
+ 'milestones_button': {
+   'text': 'For each reached milestone trigger the corresponding story event.<br/><br/><b style="color:#cc0;">Click</b> to show <b>Milestones</b>.'
+ },
+
+ 'development_button': {
+   'text': '<b style="color:#cc0;">Click</b> to show <b>Development</b> window.'
+ },
+
+ 'departing_button': {
+   'text': 'Chose <b>4</b> departing survivors.<br/><br/>Remove the returning survivors gear and add gear to the departing survivors gear grids.<br/><br/>Record armor points, modifiers from gear and bonuses from innovations, endeavors and events that affect departing survivors.'
+ },
+
+ 'special_showdown_button': {
+   'text': 'Departing survivors immediately begin showdown.<br/><br/>After showdown heal all wounds and remove all tokens.'
+ },
+
+ 'record_button': {
+   'text': 'Record unspent resources in the settlement storage and archive all resource cards.'
+ },
+
+ 'end_phase_button': {
+   'text': 'Lose unspent endeavors.<br/><br/><b style="color:#cc0;">Click</b> to start a new <b>Hunt</b>!'
+ },
+
+
+ // tooltips['end_phase_button'].text
 }
 
 module.exports = {

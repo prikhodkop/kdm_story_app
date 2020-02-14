@@ -4,13 +4,15 @@ const shell = require('electron').shell
 const { pathToAssetL } = require('./assets_loader')
 
 const { getTerms } = require('./../ui/glossary')
-const tooltips = getTerms('tooltips')
 
 module.exports = {
   createAbout,
 }
 
 function createAbout (version) {
+
+  var tooltips = getTerms('tooltips')
+
   $('#container').append($('<div>', {
     id: 'about-window-background',
   }))

@@ -11,8 +11,6 @@ const { render } = require('./../ui/template-renderer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { getTerms } = require('./../ui/glossary')
 
-const tooltips = getTerms('tooltips')
-
 const special_events = []
 
 const events_sequences = {
@@ -28,6 +26,7 @@ module.exports = class VideoScene {
     $('#container').fadeIn(300)
 
     var events_table = generate_events_table()
+    var tooltips = getTerms('tooltips')
 
     console.log('Process type: '+window.globals.process)
 

@@ -5,12 +5,7 @@ const { addTimer } = require('./../ui/timer')
 const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 // const { cdnUrl }
 
-var lang = getSettings()['language']
-
-const innovations = window.globals.glossary[lang].innovations
-const settlement_locations = window.globals.glossary[lang].settlement_locations
-const gear_list = window.globals.glossary[lang].gear_list
-const settlement_events = window.globals.glossary[lang].settlement_events
+const { getTerms } = require('./../ui/glossary')
 
 const DEBUG_MODE = true
 const INNOVATION_HIDE = 'slideRight'
@@ -47,7 +42,20 @@ const innovation_tags = {
   'other': '#ccc',
 }
 
+var lang = getSettings()['language']
+var innovations = getTerms('innovations')
+var settlement_locations = getTerms('settlement_locations')
+var gear_list = getTerms('gear_list')
+var settlement_events = getTerms('settlement_events')
+
+function init_variables() {
+  
+}
+
 function addDevelopment() {
+
+  init_variables()
+
   $('#container').append($('<div>', {
     // style: 'opacity:.9;',
     id: 'settlement_locations_window',
