@@ -1476,6 +1476,8 @@ function getColorTag(name) {
   let tags = innovations[name]['tags']
 
   let tag_types = [
+    'starting',
+    'other',
     'science',
     'art',
     'faith',
