@@ -55,6 +55,9 @@ module.exports = class IndexScene {
     var campaigns_list = getTerms('campaigns')
 
 
+    $('#label_text').html(tooltips['app_name'].text)
+    $('#sublabel_text').html(tooltips['license'].text)
+
     console.log('Settings:')
     console.log(settings)
     console.log('!!!')

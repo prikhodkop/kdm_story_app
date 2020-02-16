@@ -6,8 +6,11 @@ const { addTimer, clearTimer } = require('./timer')
 const { getDevelopmentState, addInnovation, removeInnovation, addSettlementLocation, removeSettlementLocation, update_bonuses_list} = require('./development')
 const { getSettings} = require('./settings')
 const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
+const { getTerms } = require('./../ui/glossary')
 
 window.severe_timers = {}
+
+var tooltips = getTerms('tooltips')
 
 document.onkeydown = function (evt) {
   evt = evt || window.event
@@ -216,7 +219,7 @@ function createMenuButton () {
         animationDuration: 50,
         contentAsHTML: 'true',
         animation: 'fade',
-        content: '<b style="color:#cc0;">Click</b> to show <b>Story Events</b> table.',
+        content: tooltips['story_events'].text,
         position: 'left',
         delay: 0,
         trigger: 'custom',
@@ -354,7 +357,7 @@ function createSevereTables () {
 
   tippy('#severe-table', {
     placement: 'bottom-start',
-    content:'<b style="color:#cc0;">Click</b> to hide. ',
+    content:tooltips['severe_table'].text,
     duration: 50,
     delay: [600, 100],
     animation: 'shift-away-subtle',
@@ -726,7 +729,7 @@ function createReference () {
   $('#reference').tooltipster({animationDuration: 50,
     contentAsHTML: 'true',
     animation: 'fade',
-    content: '<b style="color:#cc0;">Click</b> to show <b>Reference</b> window.',
+    content: tooltips['reference_open'].text,
     position: 'right',
     delay: [0, 0],
   })
@@ -737,14 +740,14 @@ function createReference () {
       $('#reference-window-background').fadeIn(500)
       $('#reference').attr('src', pathToAssetL('images/icons/reference_active.png'))
       selectize.focus()
-      $('#reference').tooltipster('content', '<b style="color:#cc0;">Click</b> to close <b>Reference</b> window.')
+      $('#reference').tooltipster('content', tooltips['reference_close'].text)
 
     } else {
       $('#reference-window-back0').fadeOut(500)
       $('#reference-window-background').fadeOut(500)
       $('#reference').attr('src', pathToAssetL('images/icons/reference.png'))
       selectize.clear()
-      $('#reference').tooltipster('content', '<b style="color:#cc0;">Click</b> to show <b>Reference</b> window.')
+      $('#reference').tooltipster('content', tooltips['reference_open'].text)
     }
     $(this).toggleClass('active')
   })
@@ -849,7 +852,7 @@ function  createInnovationsList() {
     $('.innovations_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: '<b style="color:#cc0;">Click</b> to add/remove settlement <b>Innovations</b>.',
+      content: tooltips['innovations_list'].text,
       position: 'right',
       delay: [0, 0],
     })
@@ -971,7 +974,7 @@ function  createLocationsList() {
     $('.locations_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: '<b style="color:#cc0;">Click</b> to add/remove <b>Settlement Locations</b>.',
+      content: tooltips['locations_list'].text,
       position: 'right',
       delay: [0, 0],
     })

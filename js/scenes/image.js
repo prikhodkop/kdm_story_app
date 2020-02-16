@@ -40,11 +40,6 @@ const special_events = [
   // 'lottery',
 ]
 
-const events_sequences = {
-  'places, everyone!': ['showdown lion knight', tooltips['start showdown'].text],
-  'the hanged man': ['showdown manhunter', tooltips['start showdown'].text],
-}
-
 module.exports = class ImageScene {
   render () {
     if ($('#back').attr('src') == '#') {
@@ -55,6 +50,11 @@ module.exports = class ImageScene {
 
     var events_table = generate_events_table()
     var tooltips = getTerms('tooltips')
+
+    var events_sequences = {
+      'places, everyone!': ['showdown lion knight', tooltips['start showdown'].text],
+      'the hanged man': ['showdown manhunter', tooltips['start showdown'].text],
+    }
 
     document.getElementById('container').innerHTML = render('image')
 

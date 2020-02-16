@@ -37,6 +37,7 @@ var resources
 var terrain
 var tooltips
 var campaigns
+var quaries
 
 
 let glossary_list_translations = {
@@ -55,7 +56,8 @@ let glossary_list_translations = {
   'resources': ['label', 'type', 'text'],
   'tooltips': ['text'],
   'campaigns': ['label', 'description'],
-  'tags': ['label'],
+  'tags': ['label', 'color'],
+  'quaries': ['label']
 }
 
 function init_glossary() {
@@ -114,6 +116,9 @@ function localized_require2(text, lang, args) {
   for (let j=0; j<keys.length; j++) {
     if (!('label' in data_en[keys[j]])||(data_en[keys[j]]['label'] == '')) {
       data_en[keys[j]]['label'] = keys[j]
+    }
+    if ((args.includes('color'))&&(!('color' in data_en[keys[j]])||(data_en[keys[j]]['color'] == ''))) {
+      data_en[keys[j]]['color'] = '#ccc'
     }
   }
 

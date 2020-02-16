@@ -184,15 +184,17 @@
 	z-index: 89;
 	filter: drop-shadow(0 0 20px #333);
 	opacity: 0.4;
-	transition: opacity 0.5s, filter 0.5s, animation: 0.5s;
+	transition: opacity 0.5s, filter 0.5s, animation 0.5s ease;
 }
 
 #reference:hover {
 	/* -webkit-box-shadow: 0 0 40px #cccc00; */
 	/* box-shadow: 0 0 40px #cccc00; */ */
 	filter: drop-shadow(0 0 5px #cccc00);
-	animation: glowing-image 3000ms infinite;
+	/* animation: glowing-image_2 3000ms infinite;
+	opacity: 0.8; */
 	opacity: 0.8;
+	animation: glowing-image_2 3000ms infinite;
 	/* color: #cc0; */
 }
 
@@ -656,16 +658,14 @@ div#reference-window-back0 .selectize-control {
 	width: 6%;
 	z-index: 80;
 	filter: drop-shadow(0 0 20px #333);
-	opacity: 0.8;
-	transition: opacity 0.5s, filter 0.5s, animation: 0.5s;
+	opacity: 0.4;
+	transition: opacity 0.5s, filter 0.5s, animation 0.5s ease;
 }
 
 .innovations_button:hover {
-	/* -webkit-box-shadow: 0 0 40px #cccc00; */
-	/* box-shadow: 0 0 40px #cccc00; */ */
 	opacity: 1.0;
 	filter: drop-shadow(0 0 5px #cc0);
-	animation: glowing-image 3000ms infinite;
+	animation: glowing-image_2 3000ms infinite;
 
 	/* color: #cc0; */
 }
@@ -697,16 +697,14 @@ div#reference-window-back0 .selectize-control {
 	filter: drop-shadow(0 0 20px #333);
 	--borderWidth: 2em;
 	border-radius: var(--borderWidth);
-	opacity: 0.8;
-	transition: opacity 0.5s, filter 0.5s, animation: 0.5s;
+	opacity: 0.4;
+	transition: opacity 0.5s, filter 0.5s, animation 0.5s ease;
 }
 
 .locations_button:hover {
-	/* -webkit-box-shadow: 0 0 40px #cccc00; */
-	/* box-shadow: 0 0 40px #cccc00; */ */
-	opacity: 1.0;
+	opacity: 0.8;
 	filter: drop-shadow(0 0 5px #cc0);
-	animation: glowing-image 3000ms infinite;
+	animation: glowing-image_2 3000ms infinite;
 
 	/* color: #cc0; */
 }

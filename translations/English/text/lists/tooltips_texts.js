@@ -1,34 +1,146 @@
 const texts = {
+  // GENERAL
+
+  'app_name': {
+    'text': 'KDM STORY APP'
+  },
+  'license': {
+    'text': 'You are allowed to use the app only if you have legally bought copy of the game on the table.<br/>You may only enable in-app content that you physically own.'
+  },
+
+  'settings': {
+    'text': '<b style="color:#cc0;">Click</b> to show <b>Settings</b> window.',
+  },
+  //will keep settings and their tooltips texts english for now
+
+  'about': {
+    'text': '<b style="color:#cc0;">Click</b> to show <b>About</b> window.'
+  },
+
+  'event_transition': {
+    'text': '<b style="color:#cc0;">Click</b> to start <b>$L$</b>',
+  },
+
+  'to event_text': {
+    'text': 'To $E$'
+  },
+  'to event': {
+    'text': '<b style="color:#cc0;">Click</b> to start <b>$E$</b>.'
+  },
+
+  'back event_text': {
+    'text': 'Back to $E$'
+  },
+  'back event': {
+    'text': '<b style="color:#cc0;">Click</b> to return to <b>$E$</b>.'
+  },
+
+  'set_word': {
+    'text': '<b style="color:#d87dc1;font-size:0.8em;">Set: $G$</b>'
+  },
+  'roll_word': {
+    'text': '<b>Roll: $G$d10</b>'
+  },
+  'source_word': {
+    'text': '<b>Source: $G$</b>'
+  },
+  'required_word': {
+    'text': '<b style="color:#cc0;font-size:1em;">Required: $G$d10</b>'
+  },
+
+  'start showdown': {
+    'text': 'Start the <b>Showdown</b>!'
+  },
+
+  'story_events': {
+    'text': '<b style="color:#cc0;">Click</b> to show <b>Story Events</b> table.'
+  },
+  'reference_close': {
+    'text': '<b style="color:#cc0;">Click</b> to close <b>Reference</b> window.',
+  },
+  'reference_open': {
+    'text': '<b style="color:#cc0;">Click</b> to show <b>Reference</b> window.',
+  },
+
+  'innovations_list': {
+    'text': '<b style="color:#cc0;">Click</b> to add/remove settlement <b>Innovations</b>.',
+  },
+  'locations_list': {
+    'text': '<b style="color:#cc0;">Click</b> to add/remove <b>Settlement Locations</b>.',
+  },
+  'severe_table': {
+    'text': '<b style="color:#cc0;">Click</b> to hide.'
+  },
+
+ // HUNT
+
+ 'hunt_start': {
+   'text': 'Choose which monster you want to hunt this year'
+ },
+
+ 'gorms_laughter': {
+   'text': 'When the survivors move into new hunt table space, all <b>non-deaf</b> survivors suffer 1 brain event damage.<sup class="event_sup">[Gorm\'s Laughter]</sup>'
+ },
+ 'found_relic': {
+   'text': 'At the start of the next settlement phase, draw 3 innovations from the innovation deck and add one to your settlement at no cost.<sup class="event_sup">[Found Relic]</sup>'
+ },
+ 'tomb_of_excelence': {
+   'text': 'At the start of the showdown, place the monster\'s trap at the bottom of the hit location deck.<sup class="event_sup">[Tomb of Excelence]</sup>'
+ },
+ 'gorm_lv3': {
+   'text': 'When the Ancient\'s Gorm Bait would be the hunt event revealer, they are <b style="color:#cc0;" id="gorm_digested">Digested instead</b>.<sup class="event_sup">[Gorm Lv.3 - Final March]</sup>'
+ },
+ 'lantern_oven': {
+   'text': 'Lantern Oven'
+ },
+ 'innovation_added': {
+   'text': 'Innovation is added.'
+ },
+ 'starvation': {
+   'text': '<b>Starvation</b><br/>The hunting team takes too long to bring food back home.<br/>Remove d5 resources from settlement storage.',
+ },
+
+ 'starvation_window': {
+   'text': 'Starvation<br/><b id="starvation_text">Remove d5 resources from settlement storage.</b>'
+ },
+ 'starvation_showdown': {
+   'text': 'Start Showdown'
+ },
+
+ 'lv': {
+   'text': 'Lv.'
+ },
+
  '#random_event_icon': {
-   'text': '!!!Roll random <b>Hunt Event</b>',
+   'text': 'Roll random <b>Hunt Event</b>',
  },
  '#random_event_close': {
-   'text': '!!!<b style="color:#cc0">Click</b> to close <b>Hunt Event</b>',
+   'text': '<b style="color:#cc0">Click</b> to close <b>Hunt Event</b>',
  },
  '#random_event_icon_big': {
-   'text': '!!!<b style="color:#cc0">Click</b> to roll random <b>Hunt Event</b>',
+   'text': '<b style="color:#cc0">Click</b> to roll random <b>Hunt Event</b>',
  },
  '#random_event_input': {
-   'text': '!!!<b style="color:#cc0">Type</b> <b>Hunt Event</b> number here',
+   'text': '<b style="color:#cc0">Type</b> <b>Hunt Event</b> number here',
  },
 
  'herb_gathering_top': {
-   'text': '!!!<b>Herb Gathering</b><br />Survivors eat berries on the way<br />All survivors get <b>+1 survival</b>',
+   'text': '<b>Herb Gathering</b><br />Survivors eat berries on the way<br />All survivors get <b>+1 survival</b>',
  },
  'herb_gathering_bottom': {
-   'text': '!!!<i style="color:#aa0;">Sickle required!</i>',
+   'text': '<i style="color:#aa0;">Sickle required!</i>',
  },
  'mineral_gathering_top': {
-   'text': '!!!<b>Mineral Gathering</b>',
+   'text': '<b>Mineral Gathering</b>',
  },
  'mineral_gathering_bottom': {
-   'text': '!!!<i style="color:#aa0;">Pickaxe required!</i>',
+   'text': '<i style="color:#aa0;">Pickaxe required!</i>',
  },
  'sky_fishing_top': {
-   'text': '!!!<b>Sky Fishing</b>',
+   'text': '<b>Sky Fishing</b>',
  },
  'sky_fishing_bottom': {
-   'text': '!!!<i style="color:#aa0;">Sun Lure and Hook required!</i>',
+   'text': '<i style="color:#aa0;">Sun Lure and Hook required!</i>',
  },
  'random_hunt_event': {
    'text': 'Random Hunt Event',
@@ -48,18 +160,8 @@ const texts = {
  'overwhelming_darkness': {
    'text': '<b>Overwhelming Darkness</b>',
  },
- 'starvation': {
-   'text': '<b>Starvation</b><br/>The hunting team takes too long to bring food back home.<br/>Remove d5 resources from settlement storage.',
- },
 
- 'settings': {
-   'text': '<b style="color:#cc0;">Click</b> to show <b>Settings</b> window.',
- },
- //will keep settings tooltips texts english for now
-
- 'about': {
-   'text': '<b style="color:#cc0;">Click</b> to show <b>About</b> window.'
- },
+ // SETTLEMENT
 
  'return_button_settlement_text': {
    'text': 'Return to the <b>Settlement</b>',
@@ -71,71 +173,6 @@ const texts = {
 
  'return_button_settlement_back': {
    'text': '<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>',
- },
-
- 'event_transition': {
-   'text': '<b style="color:#cc0;">Click</b> to start <b>$L$</b>',
- },
-
- 'to_settlement_text': {
-   'text': 'Go to the <b>Settlement</b>',
- },
-
- 'foundlings_transition': {
-   'text': '<b style="color:#cc0;">Click</b> to learn <b>Dragon Speach</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.',
- },
-
- 'returning survivors_transition': {
-   'text': '<b style="color:#cc0;">Click</b> to learn <b>Language</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.'
- },
-
- 'the pool and the sun_transition': {
-   'text': '<b style="color:#cc0;">Click</b> to learn <b>Sun Language</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.'
- },
-
- 'first story_text': {
-   'text': 'After victory...'
- },
- 'first story_lantern': {
-   'text': 'After they defeat the White Lion, the survivors wander the darkness, drawn to a soft glow blooming on the horizon.<br/><br/><b style="color:#cc0;">Click</b> to proceed.'
- },
- 'first story_sun': {
-   'text': 'After they defeat the White Lion, the survivors wander the darkness, drawn to a soft glow blooming on the horizon.<br/><br/><b style="color:#cc0;">Click</b> to proceed.'
- },
- 'first story_stars': {
-   'text': 'After they defeat the White Lion, the survivors wander the darkness, drawn to a soft glow blooming on the horizon.<br/><br/><b style="color:#cc0;">Click</b> to proceed.'
- },
-
- 'blind_exit_text': {
-   'text': 'Blind Exit'
- },
- 'blind_exit': {
-   'text': 'Apply <b>only</b> after defeating <b>Gorm Lv.2</b>'
- },
-
- 'to event_text': {
-   'text': 'To $E$'
- },
- 'to event': {
-   'text': '<b style="color:#cc0;">Click</b> to start <b>$E$</b>.'
- },
-
- 'back event_text': {
-   'text': 'Back to $E$'
- },
- 'back event': {
-   'text': '<b style="color:#cc0;">Click</b> to return to <b>$E$</b>.'
- },
-
- 'start showdown': {
-   'text': 'Start the <b>Showdown</b>!'
- },
-
- 'campaign': {
-   'text': '<b style="color:#bb0;font-size:0.7em;">Campaign</b><br/>$C$'
- },
- 'campaign_bottom': {
-   'text': '<b style="color:#cc0;">Click</b> to start the <b>$E$</b>.'
  },
 
  'settlement_event_button': {
@@ -182,16 +219,6 @@ const texts = {
    'text': 'Lose unspent endeavors.<br/><br/><b style="color:#cc0;">Click</b> to start a new <b>Hunt</b>!'
  },
 
- 'set_word': {
-   'text': '<b style="color:#d87dc1;font-size:0.8em;">Set: $G$</b>'
- },
- 'roll_word': {
-   'text': '<b>Roll: $G$d10</b>'
- },
- 'required_word': {
-   'text': '<b style="color:#cc0;font-size:1em;">Required: $G$d10</b>'
- },
-
  'innovations_filter': {
    'text': '<b style="color:#cc0;">Type</b>  the name you\'re looking for.</br></br><b>Separate</b> names by comma, to search for several: <i>i.e. ammona, bloodletting</i></br><b>Start</b> with <b>#</b> to search for tags instead: <i>i.e. #principles, #death, #gormchymy</i>.'
  },
@@ -200,8 +227,76 @@ const texts = {
    'text': '<b style="color:#cc0;">Type</b>  the name you\'re looking for.</br></br><b>Separate</b> names by comma, to search for several: <i>i.e. ammona, bloodletting</i></br><b>Start</b> with <b>#</b> to search for tags instead: <i>i.e. #principles, #death, #gormchymy</i>.'
  },
 
+ 'location_entry': {
+   'text': '<b style="color:#cc0;">Click</b> to <b>show location</b>.<br/><br/><b style="color:#cc0;">Double click</b> to <b>toggle built status</b>.'
+ },
+ 'innovation_entry': {
+   'text': '<b style="color:#cc0;">Double click</b> to <b>add innovation</b>.<br/>'
+ },
+ 'innovation_card': {
+   'text': '<b style="color:#cc0;">Click</b> to activate.<br/><br/><b style="color:#cc0;">Double click</b> to remove.</b>.<br/><br/><b style="color:#cc0;">Drag</b> to rearrange.</b>.'
+ },
+ 'action_card': {
+   'text': '<b style="color:#cc0;">Click</b> to activate.'
+ },
+ 'armor_set_hover': {
+   'text': '<b style="color:#cc0;">Click</b> to <b>toggle armor</b> set tooltip.<br/>'
+ },
 
- // tooltips['innovations_filter'].text
+ 'settlement_title': {
+   'text': 'Settlement'
+ },
+ 'new_year': {
+   'text': 'New year starts'
+ },
+
+ // EVENTS
+
+ 'foundlings_transition': {
+   'text': '<b style="color:#cc0;">Click</b> to learn <b>Dragon Speach</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.',
+ },
+
+ 'returning survivors_transition': {
+   'text': '<b style="color:#cc0;">Click</b> to learn <b>Language</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.'
+ },
+
+ 'the pool and the sun_transition': {
+   'text': '<b style="color:#cc0;">Click</b> to learn <b>Sun Language</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.'
+ },
+
+ 'first story_text': {
+   'text': 'After victory...'
+ },
+ 'first story_lantern': {
+   'text': 'After they defeat the White Lion, the survivors wander the darkness, drawn to a soft glow blooming on the horizon.<br/><br/><b style="color:#cc0;">Click</b> to proceed.'
+ },
+ 'first story_sun': {
+   'text': 'After they defeat the White Lion, the survivors wander the darkness, drawn to a soft glow blooming on the horizon.<br/><br/><b style="color:#cc0;">Click</b> to proceed.'
+ },
+ 'first story_stars': {
+   'text': 'After they defeat the White Lion, the survivors wander the darkness, drawn to a soft glow blooming on the horizon.<br/><br/><b style="color:#cc0;">Click</b> to proceed.'
+ },
+
+ 'blind_exit_text': {
+   'text': 'Blind Exit'
+ },
+ 'blind_exit': {
+   'text': 'Apply <b>only</b> after defeating <b>Gorm Lv.2</b>'
+ },
+
+ 'campaign': {
+   'text': '<b style="color:#bb0;font-size:0.7em;">Campaign</b><br/>$C$'
+ },
+ 'campaign_bottom': {
+   'text': '<b style="color:#cc0;">Click</b> to start the <b>$E$</b>.'
+ },
+
+ 'to_settlement_text': {
+   'text': 'Go to the <b>Settlement</b>',
+ },
+
+
+ // tooltips['action_card'].text
 }
 
 module.exports = {

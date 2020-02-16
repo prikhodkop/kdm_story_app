@@ -31,17 +31,6 @@ module.exports = {
 
 const always_on_locations = ['Throne', 'Lantern Hoard', 'Sacreed Pool', 'The Sun'];
 
-const innovation_tags = {
-  'science': '#3cb8ff',
-  'art': '#ff7d3c',
-  'faith': '#fff',
-  'home': '#ffdf3c',
-  'music': '#c13cff',
-  'education': '#3cff84',
-  'principle': "#000",
-  'other': '#ccc',
-}
-
 var lang = getSettings()['language']
 var innovations = getTerms('innovations')
 var settlement_locations = getTerms('settlement_locations')
@@ -161,7 +150,7 @@ function setupLocations() {
   addTimer(function(){
   tippy('.tablinks[type = "location"]', {
     placement: 'bottom-start',
-    content: '<b style="color:#cc0;">Click</b> to <b>show location</b>.<br/><br/><b style="color:#cc0;">Double click</b> to <b>toggle built status</b>.',
+    content: tooltips['location_entry'].text,
     duration: 50,
     delay: [600, 100],
     animation: 'shift-away-subtle',
@@ -513,7 +502,7 @@ function createLocation(location, default_open=false) {
 
   tippy('.gear_card.multi_set', {
     placement: 'bottom-start',
-    content:'<b style="color:#cc0;">Click</b> to <b>toggle armor</b> set tooltip.<br/>',
+    content:tooltips['armor_set_hover'].text,
     duration: 50,
     delay: [600, 100],
     animation: 'shift-away-subtle',
@@ -665,7 +654,7 @@ function setupInnovations() {
 
   tippy('.tablinks[type = "innovation"]', {
     placement: 'bottom-start',
-    content:'<b style="color:#cc0;">Double click</b> to <b>add innovation</b>.<br/>',
+    content:tooltips['innovation_entry'].text,
     duration: 50,
     delay: [600, 100],
     animation: 'shift-away-subtle',
@@ -800,8 +789,8 @@ function filterInnovations(clear=false) {
     let txtValue = $(this).val();
     let tag_labels = []
     for (let i=0; i < innovations[txtValue]['tags'].length; i++) {
-      if (innovations[txtValue]['tags'][i] in tags) {
-        tag_labels.push(tags[innovations[txtValue]['tags'][i]].label)
+      if (innovations[txtValue]['tags'][i] in tags_list) {
+        tag_labels.push(tags_list[innovations[txtValue]['tags'][i]].label)
       } else {
         console.log('!!! to search:'+titleCase(innovations[txtValue]['tags'][i]))
         tag_labels.push(innovations[titleCase(innovations[txtValue]['tags'][i])].text.toLowerCase())
@@ -1051,29 +1040,10 @@ function showInnovation(innovationName, initialization=false, newitem=false) {
 
   img.addClass(getColorTag(innovationName))
   img.css({
-    // 'filter':'drop-shadow(0 0 5px '+innovation_tags[getColorTag(innovationName)]+')'
-    'border':'0.1rem solid '+innovation_tags[getColorTag(innovationName)],
+    'border':'0.1rem solid '+tags_list[getColorTag(innovationName)].color,
   })
 
   img.hide();
-
-  // img.tooltipster({animationDuration: 50,
-  //   contentAsHTML: 'true',
-  //   animation: 'fade',
-  //   content: '<b style="color:#cc0;">Click</b> to activate.<br/><br/><b style="color:#cc0;">Double click</b> to remove.</b>.<br/><br/><b style="color:#cc0;">Drag</b> to rearange.</b>.',
-  //   position: 'bottom',
-  //   delay: [300, 0],
-  //   trigger: 'custom',
-  //   triggerOpen: {
-  //     mouseenter: true,
-  //     click: true
-  //   },
-  //   triggerClose: {
-  //     click: true,
-  //     mouseleave: true
-  //   },
-  //   plugins: ['follower'],
-  // })
 
   if (($('.innovation_card').length) && (!initialization)){
 		img.insertBefore('.innovation_card:first');
@@ -1097,7 +1067,7 @@ function showInnovation(innovationName, initialization=false, newitem=false) {
 
   tippy('.innovation_card[value="'+innovationName+'"]', {
     placement: 'bottom-start',
-    content:'<b style="color:#cc0;">Click</b> to activate.<br/><br/><b style="color:#cc0;">Double click</b> to remove.</b>.<br/><br/><b style="color:#cc0;">Drag</b> to rearrange.</b>.',
+    content:tooltips['innovation_card'].text,
     duration: 50,
     delay: [600, 100],
     animation: 'shift-away-subtle',
@@ -1244,8 +1214,7 @@ function updateActions() {
         }
         $('.action_card[value = "'+development['innovations'][i]+'"]').addClass(tag)
         $('.action_card[value = "'+development['innovations'][i]+'"]').css({
-          'border':'0.1rem solid '+innovation_tags[tag],
-          // 'filter':'drop-shadow(0 0 5px '+innovation_tags[tag]+')'
+          'border':'0.1rem solid '+tags_list[tag].color,
         })
         if ('num_actions' in innovations[development['innovations'][i]]) {
           for (let j = 1; j < innovations[development['innovations'][i]]['num_actions']; j++) {
@@ -1255,12 +1224,8 @@ function updateActions() {
             }
             $('.action_card[value = "'+development['innovations'][i]+'"]').addClass(tag)
             $('.action_card[value = "'+development['innovations'][i]+'"]').css({
-              'border':'0.1rem solid '+innovation_tags[tag],
-              // 'filter':'drop-shadow(0 0 5px '+innovation_tags[tag]+')'
+              'border':'0.1rem solid '+tags_list[tag].color,
             })
-            // if (development['activated']['actions'].includes(development['innovations'][i]+'_'+j)) {
-            //   $('.action_card[value = "'+development['innovations'][i]+'_'+j+'"]').addClass('active')
-            // }
           }
         }
       }
@@ -1359,14 +1324,14 @@ if (type == 'location') {
    $(this).delay(50).fadeIn(300);
  })
 
- console.log('Name2: '+name)
- let content = 'Source: <b>'+name.split('_')[0]+'</b>'
+ console.log('Name2: '+name_text)
+ let content = tooltips['source_word'].text.replace('$G$', name_text)
 
  if (!(tag == '')) {
-   content = content + ' <b style="color:'+innovation_tags[tag]+';">('+titleCase(tag)+')</b>'
+   content = content + ' <b style="color:'+tags_list[tag].color+';">('+tags_list[tag].label+')</b>'
  }
 
- $('.action_card[value="'+name_text+'"]').tooltipster({
+ $('.action_card[value="'+name+'"]').tooltipster({
    animationDuration: 50,
    contentAsHTML: 'true',
    animation: 'fade',
@@ -1380,7 +1345,7 @@ if (type == 'location') {
 
  tippy('.action_card[value="'+name+'"]', {
    placement: 'bottom-start',
-   content: '<b style="color:#cc0;">Click</b> to activate.',
+   content: tooltips['action_card'].text,
    duration: 50,
    delay: [600, 100],
    animation: 'shift-away-subtle',
@@ -1418,10 +1383,10 @@ function checkActiveAction(action, type, count = 0) {
     }
 
     if ((type == 'innovations')&&(development['disables'].length > 0)) {
-      console.log('!!Innovation: '+source[action].label)
-      console.log('Innovation tags: '+JSON.stringify(source[action]['tags']))
-      console.log('Disables: '+JSON.stringify(development['disables']))
-      console.log('Result: '+development['disables'].filter(value => source[action]['tags'].includes(value)))
+      // console.log('!!Innovation: '+source[action].label)
+      // console.log('Innovation tags: '+JSON.stringify(source[action]['tags']))
+      // console.log('Disables: '+JSON.stringify(development['disables']))
+      // console.log('Result: '+development['disables'].filter(value => source[action]['tags'].includes(value)))
 
       if (!(development['disables'].filter(value => source[action]['tags'].includes(value))=='')) {
         active = true

@@ -55,6 +55,9 @@ module.exports = class HuntScene {
     var myself = 'hunt'
     document.title = myself
 
+    $('#label_text').html(events_table[myself].label)
+    $('#hunt_desc_text').html(tooltips['hunt_start'].text)
+
     var music = new Howl({
       src: [pathToAssetL(events_table[myself].music)],
       loop: true,
@@ -111,32 +114,7 @@ module.exports = class HuntScene {
 
     // CREATES LINKS TO HUNT SCREENS FOR EACH MONSTER
     // ################
-    var quaries = {
-      'gorm': ['xmmrrmxrrmmr', [5, 8, 12], './images/hunt/gorm.png', 8, 40],
-      'white lion': ['xmmrrmxrmmrr', [5, 8, 12], './images/hunt/white_lion.png', 8, 41],
-      'screaming antelope': ['xmrmrrxmrmrr', [5, 8, 11],
-        './images/hunt/screaming_antelope.png', 7, 38,
-      ],
-      'flower knight': ['xrrrrrxmmmmm', [9, 10, 11],
-        './images/hunt/flower knight.png', 9, 38.8,
-      ],
-      'spidicules': ['xmmrrmxrmmrr', [5, 8, 11],
-        './images/hunt/spidicules.png', 9, 39,
-      ],
-      'phoenix': ['xrmrmrxmrmrr', [6, 9, 12], './images/hunt/phoenix.png', 8, 42],
-      'dung beetle knight': ['xrmmrrxmrrmr', [6, 9, 12],
-        './images/hunt/dung_beetle_knight.png', 8, 40,
-      ],
-      'sunstalker': ['xrmmrrxmrrmr', [5, 9, 12],
-        './images/hunt/sunstalker.png', 8, 42,
-      ],
-      'dragon king': ['xmrmmrxmrrmr', [6, 9, 12],
-        './images/hunt/dragon_king.png', 8, 42,
-      ],
-      'lion god': ['xrmrmrxrmrmr', [8, 10, 12],
-        './images/hunt/lion_god.png', 9, 39,
-      ],
-    }
+    var quaries = getTerms('quaries')
 
     createHuntTable()
     $('#quaries_table').hide()
@@ -188,7 +166,7 @@ module.exports = class HuntScene {
       if (state.quarry_selected) {
         console.log('Truly!')
         not_selected = false
-        set_hunt(state.monster_type, state.monster_ref, state)
+        set_hunt(state.monster_type, state.monster_ref, state.monster_key, state.monster_level, state)
       } else {
         console.log('Falsely!')
       };
@@ -462,13 +440,16 @@ module.exports = class HuntScene {
       $('#common.' + pos).delay(500).fadeIn(500)
     })
 
-    function set_hunt (name0, ref0, state) {
+    function set_hunt (name0, ref0, key, level, state) {
       let name = name0.substr(0)
       let ref = ref0.substr(0)
 
       let settings = getSettings();
 
       window.globals.quarry_name = name + ''
+      window.globals.quarry_ref = ref + ''
+      window.globals.quarry_level = level
+      window.globals.quarry_key = key
 
       if (state == null) {
         var survivors_pos = 1
@@ -477,13 +458,13 @@ module.exports = class HuntScene {
         q_event_sequence = get_sequence(ref)
         q_event_idx = 0
 
-        if (name == 'Flower Knight Lv.1') {
+        if ((key == 'flower knight') && (level == 3)) {
           survivors_pos = 3
-          board_state = 'oo-----------'
+          board_state = 'ooo----------'
         }
-        if (name == 'Flower Knight Lv.2') {
+        if ((key == 'flower knight') && (level == 2)) {
           survivors_pos = 2
-          board_state = 'o------------'
+          board_state = 'oo-----------'
         }
 
       } else {
@@ -533,7 +514,7 @@ module.exports = class HuntScene {
         }
       }
 
-      if (name == 'Gorm Lv.3') {
+        if ((key == 'gorm') && (level == 3)) {
         placeReminder('gorm_lv3')
 
         $('#container').append($('<img>',{
@@ -592,7 +573,7 @@ module.exports = class HuntScene {
           $(this).tooltipster({animationDuration: 50,animationDuration: 50,
             contentAsHTML: 'true',
             animation: 'fade',
-            content: tooltips['herb_gathering_top'].text, //'<i style="color:#aa0;">Sickle required!</i>',
+            content: tooltips['herb_gathering_bottom'].text, //'<i style="color:#aa0;">Sickle required!</i>',
             position: 'bottom',
             delay: '600',
             multiple: 'true',
@@ -648,27 +629,18 @@ module.exports = class HuntScene {
       var token_size = 7.298
       var token_heigh = 40.5
 
-      var monster = quaries[ref.replace('showdown ', '')]
+      var monster = quaries[key]
 
       console.log(ref)
       console.log(monster)
 
-      place_events(monster[0], token_size, token_heigh, 'common', q_event_sequence)
+      place_events(monster.board, token_size, token_heigh, 'common', q_event_sequence)
 
-      if ((monster_pos == null) || (monster_pos == 'null') || (monster_pos ==
-                'undefined')) {
-        if (name.includes('Lv.1')) {
-          var monster_pos = monster[1][0]
-        }
-        if (name.includes('Lv.2')) {
-          var monster_pos = monster[1][1]
-        }
-        if (name.includes('Lv.3')) {
-          var monster_pos = monster[1][2]
-        }
+      if ((monster_pos == null) || (monster_pos == 'null') || (monster_pos =='undefined')) {
+        var monster_pos = monster.monster_position[level-1]
       };
 
-      loadHuntImage(monster[2], monster_pos, monster[3], monster[4], 'monster', 'target="' +
+      loadHuntImage(monster.monster_icon, monster_pos, monster.monster_icon_width, monster.monster_icon_height, 'monster', 'target="' +
                 ref + '"')
 
       addTimer(function () {
@@ -694,7 +666,15 @@ module.exports = class HuntScene {
       loadHuntImage('images/hunt/survivors.png', survivors_pos, 6, 40, 'survivors')
 
       $('body').on('click', '#monster', function () {
-        setTransition(ref, 'menu', document.title, current_state())
+        let target = ref
+        if ((window.globals.quarry_key == 'gorm')&&(window.globals.quarry_level==2)) {
+          target = 'fetid grotto'
+        }
+        if ((window.globals.quarry_key == 'gorm')&&(window.globals.quarry_level==3)) {
+          target = 'final march'
+        }
+        setTransition(target, 'menu', document.title, current_state())
+
       })
 
       $('body').on('click', '#herb_gathering', function () {
@@ -713,7 +693,7 @@ module.exports = class HuntScene {
 
       $('body').on('click', '#darkness', function () {
         let target
-        if ((window.globals.quarry_name.toLowerCase().includes('flower knight'))||(window.globals.quarry_name.toLowerCase().includes('spidicules'))) {
+        if ((window.globals.quarry_key == 'flower knight')||(window.globals.quarry_key == 'spidicules')) {
           target = 'the forest wants what it wants'
         } else {
           target = 'overwhelming darkness'
@@ -747,10 +727,10 @@ module.exports = class HuntScene {
       console.log('Reminder name: '+ JSON.stringify(name))
 
       let reminders = {
-        'gorms_laughter': 'When the survivors move into new hunt table space, all <b>non-deaf</b> survivors suffer 1 brain event damage.<sup class="event_sup">[Gorm\'s Laughter]</sup>',
-        'found_relic': 'At the start of the next settlement phase, draw 3 innovations from the innovation deck and add one to your settlement at no cost.<sup class="event_sup">[Found Relic]</sup>',
-        'tomb_of_excelence': 'At the start of the showdown, place the monster\'s trap at the bottom of the hit location deck.<sup class="event_sup">[Tomb of Excelence]</sup>',
-        'gorm_lv3': 'When the Ancient\'s Gorm Bait would be the hunt event revealer, they are <b style="color:#cc0;" id="gorm_digested">Digested instead</b>.<sup class="event_sup">[Gorm Lv.3 - Final March]</sup>'
+        'gorms_laughter': tooltips['gorms_laughter'].text,
+        'found_relic': tooltips['found_relic'].text,
+        'tomb_of_excelence': tooltips['tomb_of_excelence'].text,
+        'gorm_lv3': tooltips['gorm_lv3'].text
       }
 
       let current_text = $('#sublabel_hunt_text').html()
@@ -787,12 +767,12 @@ module.exports = class HuntScene {
       }
 
       let innovations_gain = {
-        'lantern_oven': 'Lantern Oven',
+        'lantern_oven': tooltips['lantern_oven'].text,
       }
 
       if (name in innovations_gain) {
         addInnovation(innovations_gain[name])
-        $('.hunt_event_action_button#'+name).html('Innovation is added.')
+        $('.hunt_event_action_button#'+name).html(tooltips['innovation_added'].text)
         $('.hunt_event_action_button#'+name).removeClass('hoverable')
         $('.hunt_event_action_button#'+name).unbind('mouseenter mouseleave');
       }
@@ -802,7 +782,7 @@ module.exports = class HuntScene {
       }
 
       if (name == 'signs_of_battle') {
-        setTransition('showdown '+$('#hunt_desc_text').html().substring(0, $('#hunt_desc_text').html().length - 5).toLowerCase(), 'menu', document.title, current_state())
+        setTransition(quaries[window.globals.quarry_key].showdown, 'menu', document.title, current_state())
       }
     }
     window.placeReminder = placeReminder
@@ -843,7 +823,7 @@ module.exports = class HuntScene {
 
         let a = document.createElement('div')
         a.setAttribute('id', 'quary_name')
-        a.innerHTML += titleCase(name)
+        a.innerHTML += quaries[name].label
 
         td.appendChild(a)
         tr.appendChild(td)
@@ -854,7 +834,7 @@ module.exports = class HuntScene {
           let a1 = document.createElement('div')
           a1.setAttribute('id', name.replace(/ /g, '_') + '_' + j)
           a1.className = 'quarry'
-          a1.innerHTML += 'Lv. ' + j
+          a1.innerHTML += tooltips['lv'].text+' ' + j
 
           td1.appendChild(a1)
           tr.appendChild(td1)
@@ -869,12 +849,12 @@ module.exports = class HuntScene {
       // var quary = ''
       var titled = []
       for (let i = 0; i < names.length; i++) {
-        let titled = titleCase(names[i])
+        let titled = quaries[names[i]].label
 
         for (let j = 1; j < 4; j++) {
-          // console.log(titled+" Lv."+j);
+
           $('#' + names[i].replace(/ /g, '_') + '_' + j).click(function () {
-            set_hunt(titled + ' Lv.' + j, 'showdown ' + names[i], null)
+            set_hunt(titled + ' '+tooltips['lv'].text + j, quaries[names[i]].showdown, names[i], j, null)
           })
         };
       };
@@ -949,7 +929,8 @@ module.exports = class HuntScene {
       };
 
       if (type === 'starvation') {
-        title = tooltips['starvation'].text //'<b>Starvation</b><br/>The hunting team takes too long to bring food back home.<br/>Remove d5 resources from settlement storage.'
+        // title = '<b>Starvation</b><br/>The hunting team takes too long to bring food back home.<br/>Remove d5 resources from settlement storage.'
+        title = tooltips['starvation'].text
       };
 
       $('<img class="token ' + position + '" position="' + position + '" id="' + type +
@@ -992,7 +973,7 @@ module.exports = class HuntScene {
                 $('#starvation_popup_back').fadeIn(500)
                 var temp_text = document.getElementById(
                   'label_text').innerHTML
-                document.getElementById('label_text').innerHTML = 'Starvation<br/><b id="starvation_text">Remove d5 resources from settlement storage.</b>'
+                document.getElementById('label_text').innerHTML = tooltips['starvation_window'].text
                 // $('#label_text').innerHTML = 'Starvation<br/>Survivors must spend <b>1d5</b> basic resources!'
                 $('#hunt_icon').attr('src', pathToAssetL('images/hunt/starvation_icon.png'))
                 $('#label_text').css('z-index', '9')
@@ -1006,7 +987,7 @@ module.exports = class HuntScene {
                 $('#container').append($('<button>', {
                   id: 'starvation_button',
                 }))
-                $('#starvation_button').text('Start Showdown')
+                $('#starvation_button').html(tooltips['starvation_showdown'].text)
                 $('#starvation_button').hide()
                 $('#starvation_button').delay(1500).fadeIn(500)
 
@@ -1016,10 +997,12 @@ module.exports = class HuntScene {
                     $('#label_text').html(temp_text)
                     addTimer(function () {
                       let target = $('#monster').attr('target')
-                      if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.2') {
+                      // if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.2') {
+                      if ((window.globals.quarry_key == 'gorm')&&(window.globals.quarry_level==2)) {
                         target = 'fetid grotto'
                       }
-                      if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.3') {
+                      // if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.3') {
+                      if ((window.globals.quarry_key == 'gorm')&&(window.globals.quarry_level==3)) {
                         target = 'final march'
                       }
                       setTransition(target, 'menu', document.title, current_state())
@@ -1030,10 +1013,12 @@ module.exports = class HuntScene {
               } else {
                 let target = $('#monster').attr('target')
 
-                if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.2') {
+                // if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.2') {
+                if ((window.globals.quarry_key == 'gorm')&&(window.globals.quarry_level==2)) {
                   target = 'fetid grotto'
                 }
-                if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.3') {
+                // if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.3') {
+                if ((window.globals.quarry_key == 'gorm')&&(window.globals.quarry_level==3)) {
                   target = 'final march'
                 }
                 setTransition(target,
@@ -1065,6 +1050,7 @@ module.exports = class HuntScene {
         };
 
         if (type == 'darkness' || type == 'starvation') {
+          console.log('!!! Im loading starvation !!!')
           $(this).tooltipster({animationDuration: 50,
             content: title,
             contentAsHTML: 'true',
@@ -1242,7 +1228,9 @@ module.exports = class HuntScene {
         current_state.survivors_pos = $('#survivors').attr('position')
         current_state.monster_pos = $('#monster').attr('position')
 
-        current_state.monster_ref = 'showdown ' + type.substr(0, type.length - 1).replace(' Lv.', '').toLowerCase() // $('#monster').attr('ref');
+        current_state.monster_ref = window.globals.quarry_ref //'showdown ' + type.substr(0, type.length - 1).replace(' Lv.', '').toLowerCase() // $('#monster').attr('ref');
+        current_state.monster_level = window.globals.quarry_level //'showdown ' + type.substr(0, type.length - 1).replace(' Lv.', '').toLowerCase() // $('#monster').attr('ref');
+        current_state.monster_key = window.globals.quarry_key
 
         var board_state = '-'
         var i
