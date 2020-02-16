@@ -31,6 +31,9 @@ module.exports = class HuntScene {
     window.darkness_enabled = true
 
     onSettingsSaved(() => {
+      if ($("#menu_table1").length) {
+        window.location.reload()
+      }
       setTransition(document.title, 'back', getBackTarget(), current_state())
     })
 

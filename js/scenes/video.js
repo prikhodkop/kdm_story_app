@@ -33,6 +33,9 @@ module.exports = class VideoScene {
     document.getElementById('container').innerHTML = render('video')
 
     onSettingsSaved(() => {
+      if ($("#menu_table1").length) {
+        window.location.reload()
+      }
       setTransition(document.title, 'back', getBackTarget(), current_state())
     })
 

@@ -249,6 +249,10 @@ const texts = {
 
  // EVENTS
 
+ 'first_story_event': {
+   'text': 'Open rule book on page 22 and follow the instructions.'
+ },
+
  'foundlings_transition': {
    'text': '<b style="color:#cc0;">Click</b> to learn <b>Dragon Speach</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.',
  },

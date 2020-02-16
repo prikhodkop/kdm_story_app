@@ -37,6 +37,9 @@ module.exports = class SettlementScene {
 
     onSettingsSaved(() => {
       addDevelopment()
+      if ($("#menu_table1").length) {
+        window.location.reload()
+      }
       setTransition(document.title, 'menu', getBackTarget(), current_state())
     })
 
