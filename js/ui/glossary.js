@@ -55,6 +55,7 @@ let glossary_list_translations = {
   'resources': ['label', 'type', 'text'],
   'tooltips': ['text'],
   'campaigns': ['label', 'description'],
+  'tags': ['label'],
 }
 
 function init_glossary() {
@@ -67,30 +68,32 @@ function init_glossary() {
 
   if (window.globals.glossary[lang] === undefined) {
     window.globals.glossary[lang] = {}
-  }
 
   let keys = Object.keys(glossary_list_translations)
 
-  for (let i=0; i<keys.length; i++) {
-    if (window.globals.glossary[lang][keys[i]] === undefined) {
-      window.globals.glossary[lang][keys[i]] = localized_require2(keys[i], lang, glossary_list_translations[keys[i]])
+    for (let i=0; i<keys.length; i++) {
+      if (window.globals.glossary[lang][keys[i]] === undefined) {
+        window.globals.glossary[lang][keys[i]] = localized_require2(keys[i], lang, glossary_list_translations[keys[i]])
+      }
     }
-  }
 
-  fighting_arts = window.globals.glossary[lang]['fighting_arts']
-  secret_fighting_arts = window.globals.glossary[lang]['secret_fighting_arts']
-  disorders = window.globals.glossary[lang]['disorders']
-  innovations = window.globals.glossary[lang]['innovations']
-  gear_list = window.globals.glossary[lang].gear_list
-  abilities = window.globals.glossary[lang].abilities
-  armor_sets = window.globals.glossary[lang].armor_sets
-  settlement_locations = window.globals.glossary[lang].settlement_locations
-  settlement_events = window.globals.glossary[lang].settlement_events
-  survivor_statuses = window.globals.glossary[lang].survivor_statuses
-  terrain = window.globals.glossary[lang].terrain
-  glossary_terms = window.globals.glossary[lang].glossary_terms
-  resources = window.globals.glossary[lang].resources
-  tooltips = window.globals.glossary[lang].tooltips
+    fighting_arts = window.globals.glossary[lang]['fighting_arts']
+    secret_fighting_arts = window.globals.glossary[lang]['secret_fighting_arts']
+    disorders = window.globals.glossary[lang]['disorders']
+    innovations = window.globals.glossary[lang]['innovations']
+    gear_list = window.globals.glossary[lang].gear_list
+    abilities = window.globals.glossary[lang].abilities
+    armor_sets = window.globals.glossary[lang].armor_sets
+    settlement_locations = window.globals.glossary[lang].settlement_locations
+    settlement_events = window.globals.glossary[lang].settlement_events
+    survivor_statuses = window.globals.glossary[lang].survivor_statuses
+    terrain = window.globals.glossary[lang].terrain
+    glossary_terms = window.globals.glossary[lang].glossary_terms
+    resources = window.globals.glossary[lang].resources
+    tooltips = window.globals.glossary[lang].tooltips
+
+    tags = window.globals.glossary[lang].tags
+  }
 }
 
 function getTerms(name) {

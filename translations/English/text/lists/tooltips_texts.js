@@ -182,8 +182,26 @@ const texts = {
    'text': 'Lose unspent endeavors.<br/><br/><b style="color:#cc0;">Click</b> to start a new <b>Hunt</b>!'
  },
 
+ 'set_word': {
+   'text': '<b style="color:#d87dc1;font-size:0.8em;">Set: $G$</b>'
+ },
+ 'roll_word': {
+   'text': '<b>Roll: $G$d10</b>'
+ },
+ 'required_word': {
+   'text': '<b style="color:#cc0;font-size:1em;">Required: $G$d10</b>'
+ },
 
- // tooltips['end_phase_button'].text
+ 'innovations_filter': {
+   'text': '<b style="color:#cc0;">Type</b>  the name you\'re looking for.</br></br><b>Separate</b> names by comma, to search for several: <i>i.e. ammona, bloodletting</i></br><b>Start</b> with <b>#</b> to search for tags instead: <i>i.e. #principles, #death, #gormchymy</i>.'
+ },
+
+ 'action_card': {
+   'text': '<b style="color:#cc0;">Type</b>  the name you\'re looking for.</br></br><b>Separate</b> names by comma, to search for several: <i>i.e. ammona, bloodletting</i></br><b>Start</b> with <b>#</b> to search for tags instead: <i>i.e. #principles, #death, #gormchymy</i>.'
+ },
+
+
+ // tooltips['innovations_filter'].text
 }
 
 module.exports = {

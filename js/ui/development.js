@@ -26,7 +26,7 @@ module.exports = {
   hasInnovation,
   getHuntInnovationEffects,
   update_bonuses_list,
-  updateActions
+  updateActions,
 }
 
 const always_on_locations = ['Throne', 'Lantern Hoard', 'Sacreed Pool', 'The Sun'];
@@ -47,20 +47,27 @@ var innovations = getTerms('innovations')
 var settlement_locations = getTerms('settlement_locations')
 var gear_list = getTerms('gear_list')
 var settlement_events = getTerms('settlement_events')
+var armor_sets = getTerms('armor_sets')
+var tooltips = getTerms('tooltips')
+var tags_list = getTerms('tags')
 
 function init_variables() {
-  
+
 }
 
 function addDevelopment() {
 
   init_variables()
 
-  $('#container').append($('<div>', {
-    // style: 'opacity:.9;',
-    id: 'settlement_locations_window',
-    // class: 'window',
-  }));
+  if ($('#settlement_locations_window').length) {
+      $('#settlement_locations_window').empty()
+  } else {
+    $('#container').append($('<div>', {
+      // style: 'opacity:.9;',
+      id: 'settlement_locations_window',
+      // class: 'window',
+    }));
+  }
 
   // Subwindow selection
   $('#settlement_locations_window').hide();
@@ -267,18 +274,8 @@ function createLocation(location, default_open=false) {
     name: location,
     type: 'location'
   })
-  button.html(titleCase(location));
+  button.html(settlement_locations[location].label);
   $('#development_tabs').append(button);
-
-  // button.tooltipster({animationDuration: 50,
-  //   contentAsHTML: 'true',
-  //   animation: 'fade',c
-  //   content: '<b style="color:#cc0;">Click</b> to <b>show location</b>.<br/><br/><b style="color:#cc0;">Double click</b> to <b>toggle built status</b>.',
-  //   position: 'right',
-  //   // timer: 1500,
-  //   delay: [500, 0],
-  //   plugins: ['follower'],
-  // })
 
 
   if (['Throne', 'Sacreed Pool', 'Lantern Hoard', 'Exhausted Lantern Hoard'].includes(location)) {
@@ -411,34 +408,43 @@ function createLocation(location, default_open=false) {
           if (gear_name in gear_list) {
             let tooltip = ''
 
+            let sets_text = []
+            let sets_list = []
+
             if ('set' in gear_list[gear_name]) {
-              if (settings['expansions']['lion knight'] == 'Disabled') {
-                let index
-                index = gear_list[gear_name]['set'].indexOf('Dancer');
-                if (index !== -1) gear_list[gear_name]['set'].splice(index, 1);
+              // console.log('!!! Gear: '+gear_name)
 
-                index = gear_list[gear_name]['set'].indexOf('Brawler');
-                if (index !== -1) gear_list[gear_name]['set'].splice(index, 1);
+              for (let i=0; i<gear_list[gear_name]['set'].length; i++) {
+                let add = false
+                // console.log('Sets '+gear_list[gear_name]['set'][i])
+                // console.log('Option: '+settings['expansions']['lion knight'])
+                if ((['Dancer', 'Brawler', 'Warlord'].includes(gear_list[gear_name]['set'][i]))&&!(settings['expansions']['lion knight'] == 'Disabled')) {
+                  // console.log('!!! LION GUY !!!')
+                  add = true
+                }
+                if ((['Vagabond'].includes(gear_list[gear_name]['set'][i]))&&!(settings['whiteboxes']['before the wall'] == 'Disabled')) {
+                  add = true
+                }
+                if (!['Dancer', 'Brawler', 'Warlord', 'Vagabond'].includes(gear_list[gear_name]['set'][i])) {
+                  add = true
+                }
 
-                index = gear_list[gear_name]['set'].indexOf('Warlord');
-                if (index !== -1) gear_list[gear_name]['set'].splice(index, 1);
+                if (add) {
+                  sets_text.push(armor_sets[gear_list[gear_name]['set'][i]+' Armor'].label)
+                  sets_list.push(gear_list[gear_name]['set'][i])
+                }
               }
-              if (settings['whiteboxes']['before the wall'] == 'Disabled') {
-                let index
-                index = gear_list[gear_name]['set'].indexOf('Vagabond');
-                if (index !== -1) gear_list[gear_name]['set'].splice(index, 1);
-              }
+              // if (sets_list.length == 0) {
+              //   delete gear_list[gear_name]['set']
+              // }
 
-              if (gear_list[gear_name]['set'].join('') == '') {
-                delete gear_list[gear_name]['set']
-              }
             }
 
-            if ('set' in gear_list[gear_name]) {
-              tooltip = tooltip + '<b style="color:#d87dc1;font-size:0.8em;">Set: '+gear_list[gear_name]['set'].join(', ')+'</b><br/><br/>'
+            if (sets_list.length > 0) {
+              tooltip = tooltip + tooltips['set_word'].text.replace('$G$', sets_text.join(', '))+'<br/><br/>'
               element.addClass('set')
-              element.attr('set', gear_list[gear_name]['set'].join('#'))
-              if (gear_list[gear_name]['set'].length > 1) {
+              element.attr('set', sets_list.join('#'))
+              if (sets_list.length > 1) {
                 element.addClass('multi_set')
                 element.attr('set_idx', 0)
               }
@@ -451,26 +457,23 @@ function createLocation(location, default_open=false) {
                   cnt = cnt + 1
                 }
               }
-              tooltip = tooltip + '<b>Roll: '+cnt+'d10</b><br/>'
+              tooltip = tooltip + tooltips['roll_word'].text.replace('$G', cnt)+'<br/>'
             }
 
             if ('innovation' in gear_list[gear_name]) {
-              tooltip = tooltip + '<b style="color:#cc0;font-size:1em;">Required: '+gear_list[gear_name]['innovation']+'</b><br/><br/>'
+              console.log('Innovation label: '+gear_list[gear_name]['innovation'])
+              tooltip = tooltip + tooltips['roll_word'].text.replace('$G', innovations[gear_list[gear_name]['innovation']].label)+'<br/><br/>'
+            }
+
+            if ('roll' in gear_list[gear_name]) {
+              console.log('Roll label: '+gear_list[gear_name]['roll'])
+              tooltip = tooltip + tooltips['roll_word'].text.replace('$G', gear_list[gear_name]['roll'])+'<br/><br/>'
             }
 
             if ('resources' in gear_list[gear_name]) {
               tooltip = tooltip + '<div style="font-size:1.0em;">'+gear_list[gear_name]['resources'].join('<br/>')+'</div'
             }
 
-            // tippy('.gear_card[value = "'+gear_name+'"]', {
-            //   placement: 'center-left',
-            //   content: tooltip,
-            //   duration: 50,
-            //   delay: [200, 100],
-            //   animation: 'shift-away-subtle',
-            //   // followCursor: true,
-            //   theme: 'kdm',
-            // });
             let delay = 200
             if (i >= 4) {
               delay = 500
@@ -560,7 +563,7 @@ function setupInnovations() {
   $('#innovations_filter').tooltipster({animationDuration: 50,
     contentAsHTML: 'true',
     animation: 'fade',
-    content: '<b style="color:#cc0;">Type</b>  the name you\'re looking for.</br></br><b>Separate</b> names by comma, to search for several: <i>i.e. ammona, bloodletting</i></br><b>Start</b> with <b>#</b> to search for tags instead: <i>i.e. #principles, #death, #gormchymy</i>.',
+    content: tooltips['innovations_filter'].text,
     position: 'right',
     delay: 0,
   })
@@ -794,10 +797,23 @@ function filterInnovations(clear=false) {
   let show_innovation = false
 
   $('#innovations_tab > button:not(.selected)').each(function() {
-    let txtValue = $(this).text();
+    let txtValue = $(this).val();
+    let tag_labels = []
+    for (let i=0; i < innovations[txtValue]['tags'].length; i++) {
+      if (innovations[txtValue]['tags'][i] in tags) {
+        tag_labels.push(tags[innovations[txtValue]['tags'][i]].label)
+      } else {
+        console.log('!!! to search:'+titleCase(innovations[txtValue]['tags'][i]))
+        tag_labels.push(innovations[titleCase(innovations[txtValue]['tags'][i])].text.toLowerCase())
+      }
+
+    }
+    console.log('Tag labels: '+tag_labels)
     if (DEBUG_MODE) {console.log('Innovation:'+txtValue)}
     if (filter[0].charAt( 0 ) == '#') {
-      if (innovations[txtValue]['tags'].join(', ').toUpperCase().indexOf(filter[0].substr(1)) > -1) {
+      // if (innovations[txtValue]['tags'].join(', ').toUpperCase().indexOf(filter[0].substr(1)) > -1) {
+      if (tag_labels.join(', ').toUpperCase().indexOf(filter[0].substr(1)) > -1) {
+
         $(this).css("display", "block");
       } else {
         $(this).css("display", "none");
@@ -1014,17 +1030,8 @@ function createInnovation(innovation) {
   })
 
 
-  button.html(titleCase(innovation).replace(' Of ', ' of ').replace(' The ', ' the '));
+  button.html(innovations[innovation].label.replace(' Of ', ' of ').replace(' The ', ' the '));
   $('#innovations_tab').append(button);
-  // button.tooltipster({animationDuration: 50,
-  //   contentAsHTML: 'true',
-  //   animation: 'fade',
-  //   content: '<b style="color:#cc0;">Double click</b> to <b>add innovation</b>.<br/>',
-  //   position: 'bottom',
-  //   delay: [800, 0],
-  //   plugins: ['follower'],
-  //   // timer: 1000,
-  // })
 
 }
 
@@ -1336,6 +1343,16 @@ item.append(item_content)
 
 // img.hide();
 
+console.log('!!! Name '+name)
+
+let name_text
+if (type == 'innovation') {
+  name_text = innovations[name.split('_')[0]].label
+}
+if (type == 'location') {
+  name_text = settlement_locations[name.split('_')[0]].label
+}
+
  $('.actions_grid').append(item)
 
  img.on('load', function() {
@@ -1349,7 +1366,7 @@ item.append(item_content)
    content = content + ' <b style="color:'+innovation_tags[tag]+';">('+titleCase(tag)+')</b>'
  }
 
- $('.action_card[value="'+name+'"]').tooltipster({
+ $('.action_card[value="'+name_text+'"]').tooltipster({
    animationDuration: 50,
    contentAsHTML: 'true',
    animation: 'fade',

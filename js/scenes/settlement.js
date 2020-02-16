@@ -36,6 +36,7 @@ module.exports = class SettlementScene {
 
 
     onSettingsSaved(() => {
+      addDevelopment()
       setTransition(document.title, 'menu', getBackTarget(), current_state())
     })
 

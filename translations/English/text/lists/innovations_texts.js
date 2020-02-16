@@ -451,7 +451,7 @@ const texts = {
   'label': '',
   'expansion': 'gorm',
   'parent': 'Citrinitas',
-  'tags': ['science', 'gormchymy', 'citrinas'],
+  'tags': ['science', 'gormchymy', 'citrinitas'],
   'action': true,
  },
  'Sacrifice': {
@@ -501,7 +501,7 @@ const texts = {
     1: {'location': ['Blacksmith']},
   },
  },
- 'Scupture': {
+ 'Sculpture': {
   'label': '',
   'parent': 'Paint',
   'tags': ['art', 'paint'],
@@ -792,7 +792,36 @@ const texts = {
       '<b class="action">Dodge</b>: When a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform. Each survivor may only Dodge once per round.',
     ],
   }
-}
+},
+'Heat': {
+  'campaign': 'hidden',
+  'label': 'Heat'
+
+},
+'Perfect Crucible': {
+  'campaign': 'hidden',
+  'label': 'Perfect Crucible'
+},
+'Dark Water Research 1': {
+  'campaign': 'hidden',
+  'label': 'Dark Water Research 1'
+},
+'Dark Water Research 2': {
+  'campaign': 'hidden',
+  'label': 'Dark Water Research 2'
+},
+'Dark Water Research 3': {
+  'campaign': 'hidden',
+  'label': 'Dark Water Research 3'
+},
+'Nightmare Corn': {
+  'campaign': 'hidden',
+  'label': 'Nightmare Corn'
+},
+'Vampiric Artichoke': {
+  'campaign': 'hidden',
+  'label': 'Vampiric Artichoke'
+},
 }
 
 module.exports = {

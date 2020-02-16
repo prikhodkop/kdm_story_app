@@ -123,8 +123,7 @@
 	width: 2%;
 	z-index: 97;
 	background: #333;
-	-webkit-box-shadow: 0 0 20px #333;
-	box-shadow: 0 0 20px #333;
+	filter: drop-shadow(0 0 20px #333);
 	opacity: 0.4;
 }
 
@@ -147,8 +146,9 @@
 
 #severe.active {
 	outline: 0.2rem solid #cccc00;
-	-webkit-box-shadow: 0 0 40px #cccc00;
-	box-shadow: 0 0 40px #cccc00;
+	/* -webkit-box-shadow: 0 0 40px #cccc00; */
+	/* box-shadow: 0 0 40px #cccc00; */
+	filter: drop-shadow(0 0 5px #cccc00);
 	z-index: 97;
 	opacity: 0.8;
 }
@@ -782,6 +782,13 @@ div#reference-window-back0 .selectize-control {
 
 #severe.summary {
 	overflow-y: scroll;
+	background-color: Transparent;
+	/* width: 2.4% !important;
+	right: 0.82% !important; */
+}
+
+#severe.summary.active {
+	/* outline: none !important; */
 }
 
 #severe-table.summary {

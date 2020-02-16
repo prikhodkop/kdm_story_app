@@ -62,7 +62,7 @@ function bonusesSummary(top) {
     class: "summary",
     value: 'summary',
     id: 'severe',
-    src: pathToAssetL('images/icons/lantern.png'),
+    src: pathToAssetL('images/icons/about.png'),
     style: 'top:'+top+';right: 1.1%;width: 2%;',
   })
 
@@ -294,7 +294,7 @@ function createSevereTables () {
         showLocationTable($(this).attr('value'))
         if ($(this).hasClass('summary')) {
           // update_bonuses_list()
-          $(this).attr('src', pathToAssetL('images/icons/lantern_active.png'))
+          $(this).attr('src', pathToAssetL('images/icons/about_active.png'))
         }
       }
     },
@@ -307,7 +307,7 @@ function createSevereTables () {
           thise.removeClass('active')
           hideLocationTable(thise.attr('value'))
           if (thise.hasClass('summary')) {
-            thise.attr('src', pathToAssetL('images/icons/lantern.png'))
+            thise.attr('src', pathToAssetL('images/icons/about.png'))
           }
         }
         window.severe_hide_wait_time = 400
@@ -321,14 +321,14 @@ function createSevereTables () {
           hideLocationTable(thise.attr('value'))
           thise.removeClass('active')
           if (thise.hasClass('summary')) {
-            thise.attr('src', pathToAssetL('images/icons/lantern.png'))
+            thise.attr('src', pathToAssetL('images/icons/about.png'))
           }
       } else {
         $(this).addClass('active')
         showLocationTable($(this).attr('value'))
         if ($(this).hasClass('summary')) {
           // update_bonuses_list()
-          $(this).attr('src', pathToAssetL('images/icons/lantern_active.png'))
+          $(this).attr('src', pathToAssetL('images/icons/about_active.png'))
         }
       }
     },
