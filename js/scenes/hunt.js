@@ -767,7 +767,7 @@ module.exports = class HuntScene {
       }
 
       let innovations_gain = {
-        'lantern_oven': tooltips['lantern_oven'].text,
+        'lantern_oven': 'Lantern Oven',
       }
 
       if (name in innovations_gain) {

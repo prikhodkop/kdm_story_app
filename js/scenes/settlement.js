@@ -57,7 +57,7 @@ module.exports = class SettlementScene {
 
     initSettings();
 
-    $('#label_text').html(tooltips['settlement_title'].text+'<br/><div id="label_sub_text" style="font-size:0.5em;color:#880;">'+tooltips['new_year'].text+'</div>')
+    $('#label_text').html(events_table[myself].label+'<br/><div id="label_sub_text" style="font-size:0.5em;color:#880;">'+tooltips['new_year'].text+'</div>')
 
     var settings = getSettings()
     window.settlement_back_target = sessionStorage.getItem('back_target')

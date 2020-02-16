@@ -9,73 +9,73 @@ const texts = {
   },
 
   'settings': {
-    'text': '<b style="color:#cc0;">Click</b> to show <b>Settings</b> window.',
+    'text': '<b style="color:#cc0;">Кликните</b>, чтобы открыть окно <b>Настроек</b>.',
   },
   //will keep settings and their tooltips texts english for now
 
   'about': {
-    'text': '<b style="color:#cc0;">Click</b> to show <b>About</b> window.'
+    'text': '<b style="color:#cc0;">Кликните</b> чтобы открыть окно <b>О Программе</b>.'
   },
 
   'event_transition': {
-    'text': '<b style="color:#cc0;">Click</b> to start <b>$L$</b>',
+    'text': '<b style="color:#cc0;">Кликните</b>, чтобы открыть событие <b>$L$</b>',
   },
 
   'to event_text': {
-    'text': 'To $E$'
+    'text': 'Открыть событие $E$'
   },
   'to event': {
-    'text': '<b style="color:#cc0;">Click</b> to start <b>$E$</b>.'
+    'text': '<b style="color:#cc0;">Кликните</b>, чтобы начать событие <b>$E$</b>.'
   },
 
   'back event_text': {
-    'text': 'Back to $E$'
+    'text': 'Обратно к событию $E$'
   },
   'back event': {
-    'text': '<b style="color:#cc0;">Click</b> to return to <b>$E$</b>.'
+    'text': '<b style="color:#cc0;">Кликните</b>, чтобы вернуться к событию <b>$E$</b>.'
   },
 
   'set_word': {
-    'text': '<b style="color:#d87dc1;font-size:0.8em;">Set: $G$</b>'
+    'text': '<b style="color:#d87dc1;font-size:0.8em;">Сет: $G$</b>'
   },
   'roll_word': {
-    'text': '<b>Roll: $G$d10</b>'
+    'text': '<b>Бросок: $G$d10</b>'
   },
   'source_word': {
-    'text': '<b>Source: $G$</b>'
+    'text': '<b>Источник: $G$</b>'
   },
   'required_word': {
-    'text': '<b style="color:#cc0;font-size:1em;">Required: $G$d10</b>'
+    'text': '<b style="color:#cc0;font-size:1em;">Требуется: $G$d10</b>'
   },
 
   'start showdown': {
-    'text': 'Start the <b>Showdown</b>!'
+    'text': 'Начать <b>Схватку</b>!'
   },
 
   'story_events': {
-    'text': '<b style="color:#cc0;">Click</b> to show <b>Story Events</b> table.'
+    'text': '<b style="color:#cc0;">Кликните</b>, чтобы открыть таблицу <b>Событий Истории</b>.'
   },
   'reference_close': {
-    'text': '<b style="color:#cc0;">Click</b> to close <b>Reference</b> window.',
+    'text': '<b style="color:#cc0;">Кликните</b>, чтобы закрыть окно <b>Справки</b>.',
   },
   'reference_open': {
-    'text': '<b style="color:#cc0;">Click</b> to show <b>Reference</b> window.',
+    'text': '<b style="color:#cc0;">Кликните</b>, чтобы открыть окно <b>Справки</b>.',
   },
 
   'innovations_list': {
-    'text': '<b style="color:#cc0;">Click</b> to add/remove settlement <b>Innovations</b>.',
+    'text': '<b style="color:#cc0;">Кликните</b>, чтобы добавить/убрать <b>Инновацию</b>.',
   },
   'locations_list': {
-    'text': '<b style="color:#cc0;">Click</b> to add/remove <b>Settlement Locations</b>.',
+    'text': '<b style="color:#cc0;">Кликните</b>, чтобы добравить/убрать <b>Локацию Поселения</b>.',
   },
   'severe_table': {
-    'text': '<b style="color:#cc0;">Click</b> to hide.'
+    'text': '<b style="color:#cc0;">Кликните</b>, чтобы спрятать таблицу.'
   },
 
  // HUNT
 
  'hunt_start': {
-   'text': 'Choose which monster you want to hunt this year'
+   'text': 'Выберете, на какого монстра охотиться:'
  },
 
  'gorms_laughter': {
@@ -90,21 +90,18 @@ const texts = {
  'gorm_lv3': {
    'text': 'When the Ancient\'s Gorm Bait would be the hunt event revealer, they are <b style="color:#cc0;" id="gorm_digested">Digested instead</b>.<sup class="event_sup">[Gorm Lv.3 - Final March]</sup>'
  },
- 'lantern_oven': {
-   'text': 'Lantern Oven'
- },
  'innovation_added': {
-   'text': 'Innovation is added.'
+   'text': 'Инновация добавлена.'
  },
  'starvation': {
-   'text': '<b>Starvation</b><br/>The hunting team takes too long to bring food back home.<br/>Remove d5 resources from settlement storage.',
+   'text': '<b>Голод</b><br/>Охотники слишком долго идут за добычей.<br/>Удалите d5 ресурсов из хранилища поселения.',
  },
 
  'starvation_window': {
-   'text': 'Starvation<br/><b id="starvation_text">Remove d5 resources from settlement storage.</b>'
+   'text': 'Голод<br/><b id="starvation_text">Удалите d5 ресурсов из хранилища поселения.</b>'
  },
  'starvation_showdown': {
-   'text': 'Start Showdown'
+   'text': 'Начать Схватку'
  },
 
  'lv': {
@@ -112,16 +109,16 @@ const texts = {
  },
 
  '#random_event_icon': {
-   'text': 'Roll random <b>Hunt Event</b>',
+   'text': 'Выбросить случайное <b>Событие Охоты</b>',
  },
  '#random_event_close': {
-   'text': '<b style="color:#cc0">Click</b> to close <b>Hunt Event</b>',
+   'text': '<b style="color:#cc0">Кликните</b>, чтобы закрыть <b>Событие Охоты</b>',
  },
  '#random_event_icon_big': {
-   'text': '<b style="color:#cc0">Click</b> to roll random <b>Hunt Event</b>',
+   'text': '<b style="color:#cc0">Кликните</b>, чтобы выбросить случайное <b>Событие Охоты</b>',
  },
  '#random_event_input': {
-   'text': '<b style="color:#cc0">Type</b> <b>Hunt Event</b> number here',
+   'text': '<b style="color:#cc0">Наберите</b> здесь номер <b>События Охоты</b>',
  },
 
  'herb_gathering_top': {
@@ -149,10 +146,10 @@ const texts = {
    'text': 'Monster Hunt Event',
  },
  'hunt_monster': {
-   'text': '<b style="color:#cc0;">Click</b> to start the <b>Showdown</b>!</br></br><i>It will be considered that the fight takes place where the survivors are standing for all gameplay effects.</i>',
+   'text': '<b style="color:#cc0;">Кликните</b>, чтобы начать <b>Схватку</b>!</br></br><i>Для всех игровых эффектов будет считаться, что схватка началась на той клетке, где стояит выжившие.</i>',
  },
  'hunt_survivors': {
-   'text': '<b style="color:#cc0;">Drag</b> survivors to proceed on the <b>Hunt</b>.</br></br><i><b style="color:#cc0;">Click</b> on events to disable/enable them.</i>',
+   'text': '<b style="color:#cc0;">Перетащите</b> выживших по треку <b>Охоты</b>.</br></br><i><b style="color:#cc0;">Кликните</b> на событиях, чтобы включить/выключить их.</i>',
  },
  'forest_wants_what_it_wants': {
    'text': '<b>The Forest Wants What it Wants</b>',
@@ -164,23 +161,23 @@ const texts = {
  // SETTLEMENT
 
  'return_button_settlement_text': {
-   'text': 'Return to the <b>Settlement</b>',
+   'text': 'Вернуться в <b>Поселение</b>',
  },
 
  'return_button_settlement_new': {
-   'text': '<b style="color:#cc0;">Click</b> to return to <b>Settlement</b><br/><br/>This will start new <b>Lantern Year</b>.',
+   'text': '<b style="color:#cc0;">Кликните</b>, чтобы вернуться в <b>Поселение</b><br/><br/>Это начнет новый <b>Фонарный Год</b>.',
  },
 
  'return_button_settlement_back': {
-   'text': '<b style="color:#cc0;">Click</b> to return to <b>Settlement</b>',
+   'text': '<b style="color:#cc0;">Кликните</b>, чтобы вернуться в <b>Поселение</b>',
  },
 
  'settlement_event_button': {
-   'text': '<b style="color:#cc0;">Click</b> to draw and show/hide <b>Settlement Event</b> card.'
+   'text': '<b style="color:#cc0;">Кликните</b>, чтобы показать/спрятать карту <b>События Поселения</b>.'
  },
 
  'settlement_event_button_drawn': {
-   'text': 'Event drawn: <b>$E$</b><br/><br/><b style="color:#cc0;">Click</b> to show/hide <b>Settlement Event</b> card.'
+   'text': 'Вытянутое событие: <b>$E$</b><br/><br/><b style="color:#cc0;">Lantern Year</b>, чтобы показать/спрятать карту <b>События Посления</b>.'
  },
 
  'survivors_return_button': {
@@ -200,7 +197,7 @@ const texts = {
  },
 
  'development_button': {
-   'text': '<b style="color:#cc0;">Click</b> to show <b>Development</b> window.'
+   'text': '<b style="color:#cc0;">Кликните</b>, чтобы показать окно <b>Развития</b>.'
  },
 
  'departing_button': {
@@ -223,9 +220,9 @@ const texts = {
    'text': '<b style="color:#cc0;">Type</b>  the name you\'re looking for.</br></br><b>Separate</b> names by comma, to search for several: <i>i.e. ammona, bloodletting</i></br><b>Start</b> with <b>#</b> to search for tags instead: <i>i.e. #principles, #death, #gormchymy</i>.'
  },
 
- 'action_card': {
-   'text': '<b style="color:#cc0;">Type</b>  the name you\'re looking for.</br></br><b>Separate</b> names by comma, to search for several: <i>i.e. ammona, bloodletting</i></br><b>Start</b> with <b>#</b> to search for tags instead: <i>i.e. #principles, #death, #gormchymy</i>.'
- },
+ // 'action_card': {
+ //   'text': '<b style="color:#cc0;">Type</b>  the name you\'re looking for.</br></br><b>Separate</b> names by comma, to search for several: <i>i.e. ammona, bloodletting</i></br><b>Start</b> with <b>#</b> to search for tags instead: <i>i.e. #principles, #death, #gormchymy</i>.'
+ // },
 
  'location_entry': {
    'text': '<b style="color:#cc0;">Click</b> to <b>show location</b>.<br/><br/><b style="color:#cc0;">Double click</b> to <b>toggle built status</b>.'
@@ -244,7 +241,7 @@ const texts = {
  },
 
  'new_year': {
-   'text': 'New year starts'
+   'text': 'Начинается новый Год'
  },
 
  // EVENTS
