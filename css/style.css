@@ -116,10 +116,10 @@ input[type=number]::-webkit-inner-spin-button {
   /* left: 50%; */
   margin: 0 auto;
   width: 600px;
-  height: 50px;
+  /* height: 50px; */
   margin-left: -300px;
   /* margin-top: -25px; */
-  font-size: 5em;
+  font-size: 4em;
   color: #888
 }
 
