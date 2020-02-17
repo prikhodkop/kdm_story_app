@@ -707,14 +707,22 @@ function createReference () {
 
     keypadEl.append(txtPadEl)
 
+    let text_to_show
     for (let row of refPadArr) {
       let rowEl = $("<div class='refpad--row'></div>")
 
       for (let label of row) {
+        if (label == 'space') {
+          text_to_show = tooltips['space_key'].text
+        } else if (label == 'random') {
+          text_to_show = tooltips['random_key'].text
+        } else {
+          text_to_show = label
+        }
         let labelEl = $('<div></div>')
           .addClass('refpad__pad')
           .addClass(`-${label}`)
-          .text(label)
+          .text(text_to_show)
           .on('click', function () {
             refPadEntry(label)
           })
@@ -1055,7 +1063,7 @@ function refPadEntry (refValue) {
     window.selectize.open()
   } else if (refValue == 'random') {
     let text = refInput.val()
-    window.selectize.setTextboxValue(text + ' random ')
+    window.selectize.setTextboxValue(text + ' '+tooltips['random_key'].text+' ')
     window.selectize.open()
   } else if (refValue == "\u2190") {
     window.selectize.setTextboxValue('')

@@ -61,6 +61,12 @@ const texts = {
   'reference_open': {
     'text': '<b style="color:#cc0;">Click</b> to show <b>Reference</b> window.',
   },
+  'random_key': {
+    'text': 'random',
+  },
+  'space_key': {
+    'text': 'space',
+  },
 
   'innovations_list': {
     'text': '<b style="color:#cc0;">Click</b> to add/remove settlement <b>Innovations</b>.',

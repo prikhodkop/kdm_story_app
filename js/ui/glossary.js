@@ -38,6 +38,7 @@ var terrain
 var tooltips
 var campaigns
 var quaries
+var random_draws
 
 
 let glossary_list_translations = {
@@ -57,7 +58,8 @@ let glossary_list_translations = {
   'tooltips': ['text'],
   'campaigns': ['label', 'description'],
   'tags': ['label', 'color'],
-  'quaries': ['label']
+  'quaries': ['label'],
+  'random_draws': ['label'],
 }
 
 function init_glossary() {
@@ -93,6 +95,7 @@ function init_glossary() {
     glossary_terms = window.globals.glossary[lang].glossary_terms
     resources = window.globals.glossary[lang].resources
     tooltips = window.globals.glossary[lang].tooltips
+    random_draws = window.globals.glossary[lang].random_draws
 
     tags = window.globals.glossary[lang].tags
   }
@@ -138,18 +141,6 @@ function localized_require2(text, lang, args) {
 }
 
 init_glossary()
-
-
-const random_draws = {
- '1 random Fighting Art': {},
- '2 random Fighting Arts': {},
- '3 random Fighting Arts': {},
- '5 random Fighting Arts': {},
- '1 random Disorder': {},
- '2 random Disorders': {},
- '3 random Disorders': {},
- '1 random Settlement Event': {},
-}
 
 function get_options (data, type, filter=false) {
  let result = []
