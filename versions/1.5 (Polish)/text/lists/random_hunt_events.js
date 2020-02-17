@@ -1573,7 +1573,7 @@ Wykonawca wydarzenia przeprowadza <b>badanie</b>, wykonując rzut 1k10.
 [c] 1
 [d] Ocalali opłakują słabość wojowników na malowidłach naściennych. Wszyscy Ocalali tracą 1 przetrwania.
 [c] 2-5
-[d] Czyż nie jest miło zobaczyć czegoś tak pięknego? Ech...
+[d] Czyż nie jest miło zobaczyć coś tak pięknego? Ech...
 [c] 6-9
 [d] Ocalali nie pamiętają by kiedykolwiek czuli się tacy radośni i zainspirowani. Każdy Ocalały otrzymuje +1 do odwagi.
 [c] 10+
