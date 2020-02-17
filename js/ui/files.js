@@ -27,7 +27,7 @@ function readFile (path, app_path='', lang='', return_type='file') {
   }
 
   if (!(lang == '')) {
-    final_path = final_path +'translations/'+lang+'/'
+    final_path = final_path +'versions/'+lang+'/'
   }
 
   final_path = final_path + path
@@ -55,7 +55,7 @@ function checkFile (path, app_path='', lang='', check=true) {
   }
 
   if (!(lang == '')) {
-    final_path = final_path +'translations/'+lang+'/'
+    final_path = final_path +'versions/'+lang+'/'
   }
 
   final_path = final_path + path

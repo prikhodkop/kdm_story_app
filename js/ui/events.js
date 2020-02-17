@@ -68,13 +68,14 @@ function generate_events_table () {
 
 function localized_require(text, lang, args) {
 
-  data_en = require('../../translations/'+defaultLang()+'/text/lists/'+text+'.js').texts
+  data_en = require('../../versions/'+defaultLang()+'/text/lists/'+text+'.js').texts
 
   // console.log('!!!Data: '+JSON.stringify(data_en))
 
   let data_local = ''
-  if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('translations/'+lang+'/text/lists/'+text+'.js')) {
-    data_local = require('../../translations/'+lang+'/'+'text/lists/'+text+'.js').texts
+  if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('versions/'+lang+'/text/lists/'+text+'.js')) {
+    data_local_init = require('../../versions/'+lang+'/'+'text/lists/'+text+'.js')
+    data_local = data_local_init.texts
   }
 
   if (!(data_local == '')) {
@@ -90,6 +91,31 @@ function localized_require(text, lang, args) {
         }
       }
     }
+
+    if ('params' in data_local_init) {
+      // console.log('!!!Params found!!')
+      if (data_local_init.params.interaction == 'outer_join') {
+        let keys_local = Object.keys(data_local)
+
+        let new_keys = $.grep(keys_local, function(el){return $.inArray(el, keys) == -1});
+
+        console.log('new_keys!!! '+JSON.stringify(new_keys))
+        for (let j=0; j<new_keys.length; j++) {
+          data_en[new_keys[j]] = {}
+
+          if (!('label' in data_local[new_keys[j]])||(data_local[new_keys[j]]['label'] == '')) {
+            data_local[new_keys[j]]['label'] = new_keys[j]
+          }
+
+          for (let i=0; i<args.length; i++) {
+             data_en[new_keys[j]][args[i]] = data_local[new_keys[j]][args[i]]
+          }
+          console.log(data_en[new_keys[j]])
+        }
+
+      }
+    }
+
   }
 
   return data_en

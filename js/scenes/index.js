@@ -122,10 +122,10 @@ module.exports = class IndexScene {
       if (window.globals.process == 'local') {
           subtitles = readFile(pathToAssetL('video/intro.srt', false), 'root')
       } else {
-        if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('translations/'+lang+'/video/intro.srt')) {
-          subtitles = require('./../../translations/'+lang+'/video/intro.srt').default
+        if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('versions/'+lang+'/video/intro.srt')) {
+          subtitles = require('./../../versions/'+lang+'/video/intro.srt').default
         } else {
-          subtitles = require('./../../translations/'+defaultLang()+'/video/intro.srt').default
+          subtitles = require('./../../versions/'+defaultLang()+'/video/intro.srt').default
         }
       }
 

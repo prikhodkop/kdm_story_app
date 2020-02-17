@@ -405,6 +405,13 @@ var settings_schema = {
       'Sun',
     ],
   },
+  'language': {
+    'type': 'option',
+    'title': 'Version',
+    'description': 'Sets the game version.',
+    'default': '1.5',
+    'enum': []
+  },
   'fullscreen': {
     'type': 'option',
     'title': 'FullScreen',
@@ -414,13 +421,6 @@ var settings_schema = {
       'On',
       'Off'
     ],
-  },
-  'language': {
-    'type': 'option',
-    'title': 'Version',
-    'description': 'Sets the game version.',
-    'default': 'English',
-    'enum': []
   },
   'music': {
     'type': 'option',

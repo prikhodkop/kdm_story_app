@@ -77,7 +77,7 @@ module.exports = {
         })(),
       }),
       new DirectoryTreePlugin({
-        dir: './translations/',
+        dir: './versions/',
         path: './_content.json',
         extensions: /\.(jpg|png|js|srt|mp3|mp4)/
       })

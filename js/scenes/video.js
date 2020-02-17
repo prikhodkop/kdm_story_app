@@ -202,10 +202,10 @@ module.exports = class VideoScene {
         console.log('Loading local video')
           subtitles = readFile(pathToAssetL('video/'+myself+'.srt', false), 'root')
       } else {
-        if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('translations/'+lang+'/video/'+myself+'.srt')) {
-          subtitles = require('./../../translations/'+lang+'/video/'+myself+'.srt').default
+        if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('versions/'+lang+'/video/'+myself+'.srt')) {
+          subtitles = require('./../../versions/'+lang+'/video/'+myself+'.srt').default
         } else {
-          subtitles = require('./../../translations/'+defaultLang()+'/video/'+myself+'.srt').default
+          subtitles = require('./../../versions/'+defaultLang()+'/video/'+myself+'.srt').default
         }
       }
       configureSubtitle(subtitles)

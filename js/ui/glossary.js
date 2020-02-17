@@ -49,7 +49,7 @@ let glossary_list_translations = {
   'gear_list': ['resources'],
   'abilities': ['label', 'description'],
   'armor_sets': ['label'],
-  'settlement_locations': ['label'],
+  'settlement_locations': ['label', 'gear'],
   'settlement_events': ['label', 'passive'],
   'survivor_statuses': ['label', 'description'],
   'terrain': ['label', 'description'],
@@ -107,11 +107,12 @@ function getTerms(name) {
 
 function localized_require2(text, lang, args) {
 
-  data_en = require('../../translations/'+defaultLang()+'/text/lists/'+text+'_texts.js').texts
+  data_en = require('../../versions/'+defaultLang()+'/text/lists/'+text+'_texts.js').texts
 
   let data_local = ''
-  if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('translations/'+lang+'/text/lists/'+text+'_texts.js')) {
-      data_local = require('../../translations/'+lang+'/text/lists/'+text+'_texts.js').texts
+  if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('versions/'+lang+'/text/lists/'+text+'_texts.js')) {
+      data_local_init = require('../../versions/'+lang+'/text/lists/'+text+'_texts.js')
+      data_local = data_local_init.texts
   }
 
   let keys = Object.keys(data_en)
@@ -131,6 +132,30 @@ function localized_require2(text, lang, args) {
         if ((keys[j] in data_local)&&(args[i] in data_local[keys[j]])) {
            data_en[keys[j]][args[i]] = data_local[keys[j]][args[i]]
         }
+      }
+    }
+
+    if ('params' in data_local_init) {
+      // console.log('!!!Params found!!')
+      if (data_local_init.params.interaction == 'outer_join') {
+        let keys_local = Object.keys(data_local)
+
+        let new_keys = $.grep(keys_local, function(el){return $.inArray(el, keys) == -1});
+
+        console.log('new_keys!!! '+JSON.stringify(new_keys))
+        for (let j=0; j<new_keys.length; j++) {
+          data_en[new_keys[j]] = {}
+
+          if (!('label' in data_local[new_keys[j]])||(data_local[new_keys[j]]['label'] == '')) {
+            data_local[new_keys[j]]['label'] = new_keys[j]
+          }
+
+          for (let i=0; i<args.length; i++) {
+             data_en[new_keys[j]][args[i]] = data_local[new_keys[j]][args[i]]
+          }
+          console.log(data_en[new_keys[j]])
+        }
+
       }
     }
   }

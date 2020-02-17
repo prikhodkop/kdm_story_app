@@ -446,20 +446,20 @@ function createLocation(location, default_open=false) {
                   cnt = cnt + 1
                 }
               }
-              tooltip = tooltip + tooltips['roll_word'].text.replace('$G', cnt)+'<br/>'
+              tooltip = tooltip + tooltips['roll_word'].text.replace('$G$', cnt)+'<br/>'
             }
 
-            if ('innovation' in gear_list[gear_name]) {
+            if (('innovation' in gear_list[gear_name])&&!(gear_list[gear_name]['innovation'] == '')) {
               console.log('Innovation label: '+gear_list[gear_name]['innovation'])
-              tooltip = tooltip + tooltips['roll_word'].text.replace('$G', innovations[gear_list[gear_name]['innovation']].label)+'<br/><br/>'
+              tooltip = tooltip + tooltips['required_word'].text.replace('$G$', innovations[gear_list[gear_name]['innovation']].label)+'<br/><br/>'
             }
 
-            if ('roll' in gear_list[gear_name]) {
+            if (('roll' in gear_list[gear_name])&&!(gear_list[gear_name]['roll'] == '')) {
               console.log('Roll label: '+gear_list[gear_name]['roll'])
-              tooltip = tooltip + tooltips['roll_word'].text.replace('$G', gear_list[gear_name]['roll'])+'<br/><br/>'
+              tooltip = tooltip + tooltips['required_word'].text.replace('$G$', gear_list[gear_name]['roll'])+'<br/><br/>'
             }
 
-            if ('resources' in gear_list[gear_name]) {
+            if (('resources' in gear_list[gear_name])&&!(gear_list[gear_name]['resources'] == '')) {
               tooltip = tooltip + '<div style="font-size:1.0em;">'+gear_list[gear_name]['resources'].join('<br/>')+'</div'
             }
 
