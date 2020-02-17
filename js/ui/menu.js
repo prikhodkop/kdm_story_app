@@ -6,8 +6,11 @@ const { addTimer, clearTimer } = require('./timer')
 const { getDevelopmentState, addInnovation, removeInnovation, addSettlementLocation, removeSettlementLocation, update_bonuses_list} = require('./development')
 const { getSettings} = require('./settings')
 const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
+const { getTerms } = require('./../ui/glossary')
 
 window.severe_timers = {}
+
+var tooltips = getTerms('tooltips')
 
 document.onkeydown = function (evt) {
   evt = evt || window.event
@@ -62,7 +65,7 @@ function bonusesSummary(top) {
     class: "summary",
     value: 'summary',
     id: 'severe',
-    src: pathToAssetL('images/icons/lantern.png'),
+    src: pathToAssetL('images/icons/about.png'),
     style: 'top:'+top+';right: 1.1%;width: 2%;',
   })
 
@@ -216,7 +219,7 @@ function createMenuButton () {
         animationDuration: 50,
         contentAsHTML: 'true',
         animation: 'fade',
-        content: '<b style="color:#cc0;">Click</b> to show <b>Story Events</b> table.',
+        content: tooltips['story_events'].text,
         position: 'left',
         delay: 0,
         trigger: 'custom',
@@ -294,7 +297,7 @@ function createSevereTables () {
         showLocationTable($(this).attr('value'))
         if ($(this).hasClass('summary')) {
           // update_bonuses_list()
-          $(this).attr('src', pathToAssetL('images/icons/lantern_active.png'))
+          $(this).attr('src', pathToAssetL('images/icons/about_active.png'))
         }
       }
     },
@@ -307,7 +310,7 @@ function createSevereTables () {
           thise.removeClass('active')
           hideLocationTable(thise.attr('value'))
           if (thise.hasClass('summary')) {
-            thise.attr('src', pathToAssetL('images/icons/lantern.png'))
+            thise.attr('src', pathToAssetL('images/icons/about.png'))
           }
         }
         window.severe_hide_wait_time = 400
@@ -321,14 +324,14 @@ function createSevereTables () {
           hideLocationTable(thise.attr('value'))
           thise.removeClass('active')
           if (thise.hasClass('summary')) {
-            thise.attr('src', pathToAssetL('images/icons/lantern.png'))
+            thise.attr('src', pathToAssetL('images/icons/about.png'))
           }
       } else {
         $(this).addClass('active')
         showLocationTable($(this).attr('value'))
         if ($(this).hasClass('summary')) {
           // update_bonuses_list()
-          $(this).attr('src', pathToAssetL('images/icons/lantern_active.png'))
+          $(this).attr('src', pathToAssetL('images/icons/about_active.png'))
         }
       }
     },
@@ -354,7 +357,7 @@ function createSevereTables () {
 
   tippy('#severe-table', {
     placement: 'bottom-start',
-    content:'<b style="color:#cc0;">Click</b> to hide. ',
+    content:tooltips['severe_table'].text,
     duration: 50,
     delay: [600, 100],
     animation: 'shift-away-subtle',
@@ -704,14 +707,22 @@ function createReference () {
 
     keypadEl.append(txtPadEl)
 
+    let text_to_show
     for (let row of refPadArr) {
       let rowEl = $("<div class='refpad--row'></div>")
 
       for (let label of row) {
+        if (label == 'space') {
+          text_to_show = tooltips['space_key'].text
+        } else if (label == 'random') {
+          text_to_show = tooltips['random_key'].text
+        } else {
+          text_to_show = label
+        }
         let labelEl = $('<div></div>')
           .addClass('refpad__pad')
           .addClass(`-${label}`)
-          .text(label)
+          .text(text_to_show)
           .on('click', function () {
             refPadEntry(label)
           })
@@ -726,7 +737,7 @@ function createReference () {
   $('#reference').tooltipster({animationDuration: 50,
     contentAsHTML: 'true',
     animation: 'fade',
-    content: '<b style="color:#cc0;">Click</b> to show <b>Reference</b> window.',
+    content: tooltips['reference_open'].text,
     position: 'right',
     delay: [0, 0],
   })
@@ -737,14 +748,14 @@ function createReference () {
       $('#reference-window-background').fadeIn(500)
       $('#reference').attr('src', pathToAssetL('images/icons/reference_active.png'))
       selectize.focus()
-      $('#reference').tooltipster('content', '<b style="color:#cc0;">Click</b> to close <b>Reference</b> window.')
+      $('#reference').tooltipster('content', tooltips['reference_close'].text)
 
     } else {
       $('#reference-window-back0').fadeOut(500)
       $('#reference-window-background').fadeOut(500)
       $('#reference').attr('src', pathToAssetL('images/icons/reference.png'))
       selectize.clear()
-      $('#reference').tooltipster('content', '<b style="color:#cc0;">Click</b> to show <b>Reference</b> window.')
+      $('#reference').tooltipster('content', tooltips['reference_open'].text)
     }
     $(this).toggleClass('active')
   })
@@ -849,7 +860,7 @@ function  createInnovationsList() {
     $('.innovations_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: '<b style="color:#cc0;">Click</b> to add/remove settlement <b>Innovations</b>.',
+      content: tooltips['innovations_list'].text,
       position: 'right',
       delay: [0, 0],
     })
@@ -971,7 +982,7 @@ function  createLocationsList() {
     $('.locations_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: '<b style="color:#cc0;">Click</b> to add/remove <b>Settlement Locations</b>.',
+      content: tooltips['locations_list'].text,
       position: 'right',
       delay: [0, 0],
     })
@@ -1052,7 +1063,7 @@ function refPadEntry (refValue) {
     window.selectize.open()
   } else if (refValue == 'random') {
     let text = refInput.val()
-    window.selectize.setTextboxValue(text + ' random ')
+    window.selectize.setTextboxValue(text + ' '+tooltips['random_key'].text+' ')
     window.selectize.open()
   } else if (refValue == "\u2190") {
     window.selectize.setTextboxValue('')

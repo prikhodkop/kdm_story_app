@@ -710,7 +710,7 @@ tr.spaceUnder>td {
   z-index:9;
   position:absolute;
   width:6%;
-  top: 73%;
+  top: 74%;
   /* right: 7.1%; */
   /* top:11%; */
   /* top: 74%; */
@@ -732,7 +732,7 @@ tr.spaceUnder>td {
   font-size: 1em;
   display:block;
   width:2.5%;
-  top: 83%;
+  top: 84%;
   /* right: 8.75%; */
   /* top:21%; */
   /* top: 84%; */
@@ -902,6 +902,8 @@ tr.spaceUnder>td {
   width: 50%;
   left: 20%;
   cursor: pointer;
+  transition: animation 0.5s, text-shadow 0.5s, fond-color 0.5s, opacity 0.5s ease;
+  opacity: 0.8;
 }
 
 .campaign_image.glow {
@@ -909,10 +911,11 @@ tr.spaceUnder>td {
 }
 
 .campaign_image:hover {
+  opacity: 1.0;
   /* color: yellow; */
   text-shadow: 0 0 10px yellow;
   font-color: yellow;
-  animation: glowing-image_4 3000ms infinite;
+  animation: glowing-image_3 3000ms infinite;
 }
 
 @keyframes glowing-image_4 {

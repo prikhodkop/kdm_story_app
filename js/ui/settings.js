@@ -80,7 +80,11 @@ function addSettings (settings) {
   $('#settings-window-background').hide()
 
   // $('#container').append($('<img id="about_text">About</div>'));
-  $('#container').append($('<button id="settings">Settings</button>'))
+  // $('#container').append($('<button id="settings">Settings</button>'))
+  $('#container').append($('<img>', {
+    id:"settings",
+    src:cdnUrl('images/settings.png')
+  }))
   // $('#settings').hide();
   // $('#settings').delay(1000).fadeIn(2000);
 

@@ -123,8 +123,7 @@
 	width: 2%;
 	z-index: 97;
 	background: #333;
-	-webkit-box-shadow: 0 0 20px #333;
-	box-shadow: 0 0 20px #333;
+	filter: drop-shadow(0 0 20px #333);
 	opacity: 0.4;
 }
 
@@ -147,8 +146,9 @@
 
 #severe.active {
 	outline: 0.2rem solid #cccc00;
-	-webkit-box-shadow: 0 0 40px #cccc00;
-	box-shadow: 0 0 40px #cccc00;
+	/* -webkit-box-shadow: 0 0 40px #cccc00; */
+	/* box-shadow: 0 0 40px #cccc00; */
+	filter: drop-shadow(0 0 5px #cccc00);
 	z-index: 97;
 	opacity: 0.8;
 }
@@ -184,15 +184,17 @@
 	z-index: 89;
 	filter: drop-shadow(0 0 20px #333);
 	opacity: 0.4;
-	transition: opacity 0.5s, filter 0.5s, animation: 0.5s;
+	transition: opacity 0.5s, filter 0.5s, animation 0.5s ease;
 }
 
 #reference:hover {
 	/* -webkit-box-shadow: 0 0 40px #cccc00; */
 	/* box-shadow: 0 0 40px #cccc00; */ */
 	filter: drop-shadow(0 0 5px #cccc00);
-	animation: glowing-image 3000ms infinite;
+	/* animation: glowing-image_2 3000ms infinite;
+	opacity: 0.8; */
 	opacity: 0.8;
+	animation: glowing-image_2 3000ms infinite;
 	/* color: #cc0; */
 }
 
@@ -656,16 +658,14 @@ div#reference-window-back0 .selectize-control {
 	width: 6%;
 	z-index: 80;
 	filter: drop-shadow(0 0 20px #333);
-	opacity: 0.8;
-	transition: opacity 0.5s, filter 0.5s, animation: 0.5s;
+	opacity: 0.4;
+	transition: opacity 0.5s, filter 0.5s, animation 0.5s ease;
 }
 
 .innovations_button:hover {
-	/* -webkit-box-shadow: 0 0 40px #cccc00; */
-	/* box-shadow: 0 0 40px #cccc00; */ */
 	opacity: 1.0;
 	filter: drop-shadow(0 0 5px #cc0);
-	animation: glowing-image 3000ms infinite;
+	animation: glowing-image_2 3000ms infinite;
 
 	/* color: #cc0; */
 }
@@ -697,16 +697,14 @@ div#reference-window-back0 .selectize-control {
 	filter: drop-shadow(0 0 20px #333);
 	--borderWidth: 2em;
 	border-radius: var(--borderWidth);
-	opacity: 0.8;
-	transition: opacity 0.5s, filter 0.5s, animation: 0.5s;
+	opacity: 0.4;
+	transition: opacity 0.5s, filter 0.5s, animation 0.5s ease;
 }
 
 .locations_button:hover {
-	/* -webkit-box-shadow: 0 0 40px #cccc00; */
-	/* box-shadow: 0 0 40px #cccc00; */ */
-	opacity: 1.0;
+	opacity: 0.8;
 	filter: drop-shadow(0 0 5px #cc0);
-	animation: glowing-image 3000ms infinite;
+	animation: glowing-image_2 3000ms infinite;
 
 	/* color: #cc0; */
 }
@@ -773,7 +771,7 @@ div#reference-window-back0 .selectize-control {
   padding-left: 10px;
   padding-right: 10px;
 	text-align: left;
-	font-size: 1em;
+	font-size: 1.1em;
 	font-weight:400;
   font-family: 'Silverado';
   cursor: default;
@@ -782,6 +780,13 @@ div#reference-window-back0 .selectize-control {
 
 #severe.summary {
 	overflow-y: scroll;
+	background-color: Transparent;
+	/* width: 2.4% !important;
+	right: 0.82% !important; */
+}
+
+#severe.summary.active {
+	/* outline: none !important; */
 }
 
 #severe-table.summary {
@@ -795,15 +800,16 @@ div#reference-window-back0 .selectize-control {
   /* left: 25%; */
   /* height:  */
   /* background-color: #222; */
-  /* opacity: 0.3; */
+  /* opacity: 0.8; */
   /* left: 25%; */
+	/* font-family: 'Silverado'; */
   visibility: show;
   z-index: 97;
   --borderWidth: 1em;
   border-radius: var(--borderWidth);
   border: 0.2rem solid #555;
   box-shadow: 0 0 20px #000;
-  background: rgba(0, 0, 0, .8);
+  background: rgba(0, 0, 0, .9);
   overflow-y: scroll;
   overflow-x: none;
   scrollbar-width: none;

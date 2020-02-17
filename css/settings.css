@@ -1,27 +1,33 @@
 #settings {
   position: absolute;
   background-color: Transparent;
-  top: 94%;
-  margin-top: -25px;
-  height: 50px;
-  left: 98%;
-  width: 100px;
-  margin-left: -100px;
+  bottom: 2%;
+  /* margin-top: -25px; */
+  /* height: 50px; */
+  right: 1.1%;
+  width: 3%;
+  /* margin-left: -100px; */
+  /* width: 100px; */
   display: block;
-  font-size: 2em;
-  font-family: 'Silverado';
+  /* font-size: 2em; */
+  /* font-family: 'Silverado'; */
   cursor: pointer;
-  border: none;
+  /* border: none; */
   /* text-align: center; */
   z-index: 74;
   color: #888;
-  opacity: 0.5;
+  opacity: 0.4;
+  transition: opacity 0.5s, filter 0.5s, drop-shadow 0.5s ease;
+}
+
+#settings:hover {
+  opacity: 0.8;
+	animation: glowing-image_2 3000ms infinite;
 }
 
 #settings.active {
-  color: #fff;
-  opacity: 0.5;
-  text-shadow: 0 0 20px #cccc00;
+  opacity: 1.0;
+  filter: drop-shadow(0 0 10px #cccc00);
 }
 
 #settings-window-back0 {

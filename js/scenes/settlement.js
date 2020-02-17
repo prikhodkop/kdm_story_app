@@ -11,10 +11,7 @@ const { render } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { addDevelopment, openLocation, getDevelopmentState, setDevelopmentState, updateActions } = require('./../ui/development')
-
-var lang = getSettings()['language']
-
-var settlement_events = window.globals.glossary[lang].settlement_events
+const { getTerms } = require('./../ui/glossary')
 
 module.exports = class SettlementScene {
   render () {
@@ -27,6 +24,9 @@ module.exports = class SettlementScene {
     console.log('!! Process type: '+window.globals.process)
 
     var events_table = generate_events_table()
+    var lang = getSettings()['language']
+    var settlement_events = getTerms('settlement_events')
+    var tooltips = getTerms('tooltips')
 
     if (true) {
     document.getElementById('container').innerHTML = render('settlement')
@@ -36,6 +36,10 @@ module.exports = class SettlementScene {
 
 
     onSettingsSaved(() => {
+      addDevelopment()
+      if ($("#menu_table1").length) {
+        window.location.reload()
+      }
       setTransition(document.title, 'menu', getBackTarget(), current_state())
     })
 
@@ -55,6 +59,8 @@ module.exports = class SettlementScene {
     // localStorage.clear();
 
     initSettings();
+
+    $('#label_text').html(events_table[myself].label+'<br/><div id="label_sub_text" style="font-size:0.5em;color:#880;">'+tooltips['new_year'].text+'</div>')
 
     var settings = getSettings()
     window.settlement_back_target = sessionStorage.getItem('back_target')
@@ -306,7 +312,7 @@ module.exports = class SettlementScene {
           selectize.setValue(selected_event, false)
 
           $('#settlement_event_button').addClass('drawn_event')
-          $('#settlement_event_button').tooltipster('content','Event drawn: <b>'+settlement_events[selected_event].label+'</b><br/><br/><b style="color:#cc0;">Click</b> to show/hide <b>Settlement Event</b> card.')
+          $('#settlement_event_button').tooltipster('content',tooltips['settlement_event_button_drawn'].text.replace('$E$', settlement_events[selected_event].label))
 
           $('#settlement_event_back').fadeOut(300, function(){
               $(this).attr('src',pathToAssetL('images/reference/Settlement Events/' + selected_event + '.jpg')).bind('onreadystatechange load', function(){
@@ -408,7 +414,7 @@ module.exports = class SettlementScene {
     $('#survivors_return_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: 'All survivors that endured the previous showdown are <b>returning survivors</b>.<br/><br/>Their injuries are healed and all tokens are removed.<br/><br/>Apply any effects for the <b>returning survivors</b>.',
+      content: tooltips['survivors_return_button'].text,
       position: 'right',
       delay: 0,
       maxWidth: 300,
@@ -426,7 +432,7 @@ module.exports = class SettlementScene {
     $('#gain_endeavors_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: 'Gain 1 endeavor for each <b>returning survivor</b>.<br/><br/>Additional endeavors may be gained from principles, innovations and abilities.',
+      content: tooltips['gain_endeavors_button'].text,
       position: 'right',
       delay: 0,
       maxWidth: 300,
@@ -445,9 +451,9 @@ module.exports = class SettlementScene {
 
     if ((!anew)&&('settlement_event' in state)) {
       $('#settlement_event_button').addClass('drawn_event')
-      settlement_event_button_content = 'Event drawn: <b>'+settlement_events[state.settlement_event].label+'</b><br/><br/><b style="color:#cc0;">Click</b> to show/hide <b>Settlement Event</b> card.'
+      settlement_event_button_content = tooltips['settlement_event_button_drawn'].text.replace('$E$', settlement_events[state.settlement_event].label)
     } else {
-      settlement_event_button_content = '<b style="color:#cc0;">Click</b> to draw and show/hide <b>Settlement Event</b> card.'
+      settlement_event_button_content = tooltips['settlement_event_button'].text
     }
 
     $('#settlement_event_button').tooltipster({animationDuration: 50,
@@ -471,7 +477,7 @@ module.exports = class SettlementScene {
     $('#update_deathcount_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: 'If any survivors perished during the hunt, showdown or during the preceeding steps of the settlement phase, update the death count.<br/><br/>If a survivor dies later during the Settlement Phase, upadte the death count immediately.',
+      content: tooltips['update_deathcount_button'].text,
       position: 'right',
       delay: 0,
       maxWidth: 300,
@@ -489,7 +495,7 @@ module.exports = class SettlementScene {
     $('#milestones_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: 'For each reached milestone trigger the corresponding story event.<br/><br/><b style="color:#cc0;">Click</b> to show <b>Milestones</b>.',
+      content: tooltips['milestones_button'].text,
       position: 'right',
       delay: 0,
       maxWidth: 300,
@@ -507,7 +513,7 @@ module.exports = class SettlementScene {
     $('#development_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: '<b style="color:#cc0;">Click</b> to show <b>Development</b> window.',
+      content: tooltips['development_button'].text,
       position: 'right',
       delay: 0,
       maxWidth: 300,
@@ -525,7 +531,7 @@ module.exports = class SettlementScene {
     $('#departing_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: 'Chose <b>4</b> departing survivors.<br/><br/>Remove the returning survivors gear and add gear to the departing survivors gear grids.<br/><br/>Record armor points, modifiers from gear and bonuses from innovations, endeavors and events that affect departing survivors.',
+      content: tooltips['departing_button'].text,
       position: 'right',
       delay: 0,
       maxWidth: 300,
@@ -543,7 +549,7 @@ module.exports = class SettlementScene {
     $('#special_showdown_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: 'Departing survivors immediately begin showdown.<br/><br/>After showdown heal all wounds and remove all tokens.',
+      content: tooltips['special_showdown_button'].text,
       position: 'right',
       delay: 0,
       maxWidth: 300,
@@ -561,7 +567,7 @@ module.exports = class SettlementScene {
     $('#record_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: 'Record unspent resources in the settlement storage and archive all resource cards.',
+      content: tooltips['record_button'].text,
       position: 'right',
       delay: 0,
       maxWidth: 300,
@@ -579,7 +585,7 @@ module.exports = class SettlementScene {
     $('#end_phase_button').tooltipster({animationDuration: 50,
       contentAsHTML: 'true',
       animation: 'fade',
-      content: 'Lose unspent endeavors.<br/><br/><b style="color:#cc0;">Click</b> to start a new <b>Hunt</b>!',
+      content: tooltips['end_phase_button'].text,
       position: 'right',
       delay: 0,
       maxWidth: 300,

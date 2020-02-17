@@ -21,15 +21,6 @@ module.exports = {
 
 console.log('!! Setting up glossary !! ^_^')
 
-var lang = getSettings()['language']
-
-if (window.globals.glossary === undefined) {
-  window.globals.glossary = {}
-}
-
-if (window.globals.glossary[lang] === undefined) {
-  window.globals.glossary[lang] = {}
-}
 
 var abilities
 var armor_sets
@@ -46,6 +37,8 @@ var resources
 var terrain
 var tooltips
 var campaigns
+var quaries
+var random_draws
 
 
 let glossary_list_translations = {
@@ -64,34 +57,48 @@ let glossary_list_translations = {
   'resources': ['label', 'type', 'text'],
   'tooltips': ['text'],
   'campaigns': ['label', 'description'],
+  'tags': ['label', 'color'],
+  'quaries': ['label'],
+  'random_draws': ['label'],
 }
 
 function init_glossary() {
 
   let lang = getSettings()['language']
 
-  let keys = Object.keys(glossary_list_translations)
-
-  for (let i=0; i<keys.length; i++) {
-    if (window.globals.glossary[lang][keys[i]] === undefined) {
-      window.globals.glossary[lang][keys[i]] = localized_require2(keys[i], lang, glossary_list_translations[keys[i]])
-    }
+  if (window.globals.glossary === undefined) {
+    window.globals.glossary = {}
   }
 
-  fighting_arts = window.globals.glossary[lang]['fighting_arts']
-  secret_fighting_arts = window.globals.glossary[lang]['secret_fighting_arts']
-  disorders = window.globals.glossary[lang]['disorders']
-  innovations = window.globals.glossary[lang]['innovations']
-  gear_list = window.globals.glossary[lang].gear_list
-  abilities = window.globals.glossary[lang].abilities
-  armor_sets = window.globals.glossary[lang].armor_sets
-  settlement_locations = window.globals.glossary[lang].settlement_locations
-  settlement_events = window.globals.glossary[lang].settlement_events
-  survivor_statuses = window.globals.glossary[lang].survivor_statuses
-  terrain = window.globals.glossary[lang].terrain
-  glossary_terms = window.globals.glossary[lang].glossary_terms
-  resources = window.globals.glossary[lang].resources
-  tooltips = window.globals.glossary[lang].tooltips
+  if (window.globals.glossary[lang] === undefined) {
+    window.globals.glossary[lang] = {}
+
+  let keys = Object.keys(glossary_list_translations)
+
+    for (let i=0; i<keys.length; i++) {
+      if (window.globals.glossary[lang][keys[i]] === undefined) {
+        window.globals.glossary[lang][keys[i]] = localized_require2(keys[i], lang, glossary_list_translations[keys[i]])
+      }
+    }
+
+    fighting_arts = window.globals.glossary[lang]['fighting_arts']
+    secret_fighting_arts = window.globals.glossary[lang]['secret_fighting_arts']
+    disorders = window.globals.glossary[lang]['disorders']
+    innovations = window.globals.glossary[lang]['innovations']
+    gear_list = window.globals.glossary[lang].gear_list
+    abilities = window.globals.glossary[lang].abilities
+    armor_sets = window.globals.glossary[lang].armor_sets
+    settlement_locations = window.globals.glossary[lang].settlement_locations
+    settlement_events = window.globals.glossary[lang].settlement_events
+    survivor_statuses = window.globals.glossary[lang].survivor_statuses
+    terrain = window.globals.glossary[lang].terrain
+    glossary_terms = window.globals.glossary[lang].glossary_terms
+    resources = window.globals.glossary[lang].resources
+    tooltips = window.globals.glossary[lang].tooltips
+    random_draws = window.globals.glossary[lang].random_draws
+
+    tags = window.globals.glossary[lang].tags
+  }
 }
 
 function getTerms(name) {
@@ -113,6 +120,9 @@ function localized_require2(text, lang, args) {
     if (!('label' in data_en[keys[j]])||(data_en[keys[j]]['label'] == '')) {
       data_en[keys[j]]['label'] = keys[j]
     }
+    if ((args.includes('color'))&&(!('color' in data_en[keys[j]])||(data_en[keys[j]]['color'] == ''))) {
+      data_en[keys[j]]['color'] = '#ccc'
+    }
   }
 
   if (!(data_local == '')) {
@@ -131,18 +141,6 @@ function localized_require2(text, lang, args) {
 }
 
 init_glossary()
-
-
-const random_draws = {
- '1 random Fighting Art': {},
- '2 random Fighting Arts': {},
- '3 random Fighting Arts': {},
- '5 random Fighting Arts': {},
- '1 random Disorder': {},
- '2 random Disorders': {},
- '3 random Disorders': {},
- '1 random Settlement Event': {},
-}
 
 function get_options (data, type, filter=false) {
  let result = []

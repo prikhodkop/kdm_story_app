@@ -112,7 +112,7 @@ function Event (
   this.type = type
   this.campaign = campaign
   this.expansion = expansion
-  this.music = 'audio/' + music
+  this.music = music
   this.music_delay = music_delay
 
   if (speech == '') {

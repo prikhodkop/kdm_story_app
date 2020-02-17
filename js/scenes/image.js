@@ -13,8 +13,6 @@ const { addInnovation } = require('./../ui/development')
 const { getTerms } = require('./../ui/glossary')
 // const { eventsSugar } = require('./../ui/events_sugar')
 
-const tooltips = getTerms('tooltips')
-
 const quaries_events = [
   'showdown gorm',
   'showdown white lion',
@@ -42,11 +40,6 @@ const special_events = [
   // 'lottery',
 ]
 
-const events_sequences = {
-  'places, everyone!': ['showdown lion knight', tooltips['start showdown'].text],
-  'the hanged man': ['showdown manhunter', tooltips['start showdown'].text],
-}
-
 module.exports = class ImageScene {
   render () {
     if ($('#back').attr('src') == '#') {
@@ -55,11 +48,12 @@ module.exports = class ImageScene {
     $('#container').hide()
     $('#container').fadeIn(500)
 
-    var events_table = generate_events_table()
-
     document.getElementById('container').innerHTML = render('image')
 
     onSettingsSaved(() => {
+      if ($("#menu_table1").length) {
+        window.location.reload()
+      }
       setTransition(document.title, 'back', getBackTarget(), current_state())
     })
 
@@ -76,6 +70,14 @@ module.exports = class ImageScene {
     initSettings();
 
     var settings = getSettings()
+
+    var events_table = generate_events_table()
+    var tooltips = getTerms('tooltips')
+
+    var events_sequences = {
+      'places, everyone!': ['showdown lion knight', tooltips['start showdown'].text],
+      'the hanged man': ['showdown manhunter', tooltips['start showdown'].text],
+    }
 
     $('body').css('font-size', settings['fontSize'])
 
@@ -256,7 +258,9 @@ module.exports = class ImageScene {
       if (myself == 'first story') {
         duration = 3000
         // delay = parseInt(events_table[myself].music_delay, 10)
-        $('.srt').text('Open rule book on page 22 and follow the instructions.')
+        $('.srt').html(tooltips['first_story_event'].text)
+        // $('.srt').html('Open rule book on page 22 and follow the instructions.')
+
         $('.srt').fadeIn(1000)
         addTimer(function () { $('.srt').fadeOut(1000) }, 2000)
       }
