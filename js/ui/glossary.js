@@ -144,15 +144,15 @@ function localized_require2(text, lang, args) {
 
         console.log('new_keys!!! '+JSON.stringify(new_keys))
         for (let j=0; j<new_keys.length; j++) {
-          data_en[new_keys[j]] = {}
+          // data_en[new_keys[j]] = {}
 
           if (!('label' in data_local[new_keys[j]])||(data_local[new_keys[j]]['label'] == '')) {
             data_local[new_keys[j]]['label'] = new_keys[j]
           }
 
-          for (let i=0; i<args.length; i++) {
-             data_en[new_keys[j]][args[i]] = data_local[new_keys[j]][args[i]]
-          }
+          // for (let i=0; i<args.length; i++) {
+          data_en[new_keys[j]] = data_local[new_keys[j]]
+          // }
           console.log(data_en[new_keys[j]])
         }
 
