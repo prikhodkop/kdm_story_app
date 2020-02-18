@@ -113,7 +113,7 @@ module.exports = class IndexScene {
     //   gallery.show();
     // }, 2000)
 
-    $('body').css('font-size', parseInt(settings['fontSize'].replace('px',''))/15+'vw')
+    $('body').css('font-size', parseInt(settings['fontSize'].replace('px',''))/10+'vmin')
 
 
     // console.log(subtitles['intro'][lang])

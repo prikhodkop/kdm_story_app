@@ -475,6 +475,10 @@ var settings_schema = {
       '14px',
       '15px',
       '16px',
+      '17px',
+      '18px',
+      '19px',
+      '20px',
     ],
   },
   'innovation_row_length': {

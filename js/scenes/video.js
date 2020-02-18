@@ -53,7 +53,7 @@ module.exports = class VideoScene {
 
     var lang = settings['language']
 
-    $('body').css('font-size', parseInt(settings['fontSize'].replace('px',''))/15+'vw')
+    $('body').css('font-size', parseInt(settings['fontSize'].replace('px',''))/10+'vmin')
 
     // $("#label_text").hide();
     $('#menu').hide()

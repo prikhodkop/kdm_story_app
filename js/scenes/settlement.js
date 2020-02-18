@@ -66,7 +66,7 @@ module.exports = class SettlementScene {
     window.settlement_back_target = sessionStorage.getItem('back_target')
     sessionStorage.setItem('back_target', null)
 
-    $('body').css('font-size', parseInt(settings['fontSize'].replace('px',''))/15+'vw')
+    $('body').css('font-size', parseInt(settings['fontSize'].replace('px',''))/10+'vmin')
 
     var state = sessionStorage.getItem(myself)
     var transition = sessionStorage.getItem('transition')
@@ -299,7 +299,7 @@ module.exports = class SettlementScene {
       if (!$(this).hasClass('actived')) {
         $('#settlement_event_screen').delay(50).fadeIn(300)
         // $('#settlement_event_screen_2').delay(50).fadeIn(300)
-        if ($('#settlement_event_back').attr('src') == '#') {
+        if ($('#settlement_event_ba5ck').attr('src') == '#') {
           let selected_event = getSettlementEventPath();
           if (['foundlings', 'returning survivors', 'the pool and the sun'].indexOf(window.settlement_back_target) >= 0) {
             selected_event = 'First Day'

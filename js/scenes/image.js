@@ -79,7 +79,7 @@ module.exports = class ImageScene {
       'the hanged man': ['showdown manhunter', tooltips['start showdown'].text],
     }
 
-    $('body').css('font-size', parseInt(settings['fontSize'].replace('px',''))/15+'vw')
+    $('body').css('font-size', parseInt(settings['fontSize'].replace('px',''))/10+'vmin')
 
 
 
