@@ -213,7 +213,7 @@ module.exports = class SettlementScene {
         selectize.setValue(value, true)
         addTimer(function () {
           $("#settlement_event_screen > .selectize-control").css({
-            'width': ($("#settlement_event_back").width() + 'px')
+            'width': ($("#settlement_event_back").width()/15 + 'vw')
           }); }, 100)
       },
       onDropdownOpen: function ($dropdown) {
@@ -319,7 +319,7 @@ module.exports = class SettlementScene {
                  if (this.complete) {
                    $(this).delay(50).fadeIn(300);
                    $("#settlement_event_screen > .selectize-control").css({
-                     'width': ($("#settlement_event_back").width() + 'px')
+                     'width': ($("#settlement_event_back").width()/15 + 'vw')
                    });
                    $('#settlement_event_screen > .selectize-control').delay(50).fadeIn(300);
                  }

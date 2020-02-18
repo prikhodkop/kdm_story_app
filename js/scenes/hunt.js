@@ -491,8 +491,8 @@ module.exports = class HuntScene {
 
       $('#label_text').text(name)
       $('#label_text').css('color', '#999')
-      $('#label_text').css('width', '800px')
-      $('#label_text').css('margin-left', '-400px')
+      $('#label_text').css('width', '80vw')
+      $('#label_text').css('margin-left', '-40vw')
 
       // $('#container').fadeIn(1000)
 

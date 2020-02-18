@@ -2,12 +2,8 @@
   position: absolute;
   background-color: Transparent;
   bottom: 2%;
-  /* margin-top: -25px; */
-  /* height: 50px; */
   right: 1.1%;
   width: 3%;
-  /* margin-left: -100px; */
-  /* width: 100px; */
   display: block;
   /* font-size: 2em; */
   /* font-family: 'Silverado'; */
@@ -27,7 +23,7 @@
 
 #settings.active {
   opacity: 1.0;
-  filter: drop-shadow(0 0 10px #cccc00);
+  filter: drop-shadow(0 0 1vw #cccc00);
 }
 
 #settings-window-back0 {
@@ -39,8 +35,8 @@
   position:absolute;
   z-index: 81;
   display:block;
-  -webkit-box-shadow: 0 0 80px #000;
-        box-shadow: 0 0 80px #000;
+  -webkit-box-shadow: 0 0 8vw #000;
+        box-shadow: 0 0 8vw #000;
   overflow:hidden;
   --borderWidth: 1em;
   border-radius: var(--borderWidth);
@@ -84,8 +80,8 @@
   display:block;
   --borderWidth: 1em;
   border-radius: var(--borderWidth);
-  -webkit-box-shadow: 0 0 80px #000;
-        box-shadow: 0 0 80px #000;
+  -webkit-box-shadow: 0 0 8vw #000;
+        box-shadow: 0 0 8vw #000;
   background: #0A0A0A;
   overflow:auto;
 }
@@ -103,7 +99,7 @@
   cursor: default;
   text-align: center;
   vertical-align: center;
-  text-shadow: 0 0 10px #000;
+  text-shadow: 0 0 1vw #000;
 }
 
 #settings-save {
@@ -128,8 +124,8 @@
   /* opacity: 0.5; */
   --borderWidth: 1em;
   border-radius: var(--borderWidth);
-  -webkit-box-shadow: 0 0 80px #000;
-        box-shadow: 0 0 80px #000;
+  -webkit-box-shadow: 0 0 8vw #000;
+        box-shadow: 0 0 8vw #000;
 }
 
 #settings:hover {
@@ -148,20 +144,6 @@
   background: #030303;
   opacity: 0.6;
 }
-
-/* td.prop-value {
-  color: #666 !important;
-  position:relative !important;
-  z-index: 87 !important;
-  display:block !important;
-  width: 44% !important;
-  font-size: 2em !important;
-  font-family: 'Silverado' !important;
-  cursor: default !important;
-  text-align: left !important;
-  text-shadow: 0 0 10px #000 !important;
-} */
-
 
 table.settings {
   position:static;
@@ -182,7 +164,7 @@ table.settings {
 
 tr.settings {
   width: 100%;
-  padding-bottom: 10px;
+  padding-bottom: 1vw;
   /* position:static; */
 }
 
@@ -191,8 +173,8 @@ td#title.settings {
   text-align: right;
   vertical-align:center;
   /* position:static; */
-  padding-right: 10px;
-  padding-bottom: 5px;
+  padding-right: 1vw;
+  padding-bottom: 0.5vw;
   font-size: 1.3em;
 }
 
@@ -208,13 +190,9 @@ td#group.settings {
   text-align: center;
   vertical-align:top;
   font-size: 1.6em;
-  /* margin-right: -30px; */
   color: #888;
-  /* text-decoration: underline; */
-  /* font-size: 25px; */
-  /* position:static; */
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 3vw;
+  padding-bottom: 3vw;
 }
 
 td#table.settings {
@@ -227,8 +205,8 @@ select.settings {
   width: 59%;
   font-size: 1.3em;
   font-family: 'Silverado';
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px #000;
+  border: 0.1vw solid #ccc;
+  box-shadow: 0 0 0.1vw #000;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -238,7 +216,7 @@ select.settings {
   /* align: center; */
   text-align: center;
   color: #ccc;
-  padding-left: 2px;
+  padding-left: 0.2vw;
 }
 
 select.settings > option {

@@ -40,7 +40,7 @@ const texts = {
     'monster_position': [5, 8, 11],
     'monster_icon':'./images/hunt/spidicules.png',
     'monster_icon_width':9,
-    'monster_icon_height':39,
+    'monster_icon_height':41,
     'label': 'Spidicules',
     'showdown': 'showdown spidicules',
   },

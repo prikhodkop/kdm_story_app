@@ -49,8 +49,8 @@
 	color: #555555;
 	text-decoration: none;
 	display: block;
-	width: 300px;
-	height: 50px;
+	width: 30vw;
+	height: 5vw;
 	font-family: 'Silverado';
 	cursor: pointer;
 	transition: color 0.3s, text-shadow 0.3s, filter 0.3s, drop-shadow 0.3s;
@@ -59,8 +59,6 @@
 
 #menu_item:hover {
 	color: #cccc00 !important;
-	/* text-shadow: 0 0 20px #cccc00; */
-	/* filter: drop-shadow(0 0 20px #cccc00); */
 	animation: glowing-image_3 3000ms infinite;
 }
 
@@ -123,7 +121,7 @@
 	width: 2%;
 	z-index: 97;
 	background: #333;
-	filter: drop-shadow(0 0 20px #333);
+	filter: drop-shadow(0 0 2vw #333);
 	opacity: 0.4;
 }
 
@@ -136,9 +134,6 @@
 	width: 2%;
 	z-index: 99;
 	background: Transparent;
-	/* -webkit-box-shadow: 0 0 20px #333;
-	box-shadow: 0 0 20px #333; */
-	/* opacity: 0.7; */
 	overflow-x:hidden;
 	overflow-y:scroll;
 	opacity: 0.1;
@@ -146,9 +141,7 @@
 
 #severe.active {
 	outline: 0.2rem solid #cccc00;
-	/* -webkit-box-shadow: 0 0 40px #cccc00; */
-	/* box-shadow: 0 0 40px #cccc00; */
-	filter: drop-shadow(0 0 5px #cccc00);
+	filter: drop-shadow(0 0 0.5vw #cccc00);
 	z-index: 97;
 	opacity: 0.8;
 }
@@ -171,8 +164,8 @@
 	position:absolute;
 	z-index: 97;
 	display:block;
-	-webkit-box-shadow: 0 0 50px 0 #000;
-	box-shadow: 0 0 50px 0 #000;
+	-webkit-box-shadow: 0 0 5vw 0 #000;
+	box-shadow: 0 0 5vw 0 #000;
 }
 
 #reference {
@@ -182,15 +175,13 @@
 	display: block;
 	width: 2%;
 	z-index: 89;
-	filter: drop-shadow(0 0 20px #333);
+	filter: drop-shadow(0 0 2vw #333);
 	opacity: 0.4;
 	transition: opacity 0.5s, filter 0.5s, animation 0.5s ease;
 }
 
 #reference:hover {
-	/* -webkit-box-shadow: 0 0 40px #cccc00; */
-	/* box-shadow: 0 0 40px #cccc00; */ */
-	filter: drop-shadow(0 0 5px #cccc00);
+	filter: drop-shadow(0 0 0.5vw #cccc00);
 	/* animation: glowing-image_2 3000ms infinite;
 	opacity: 0.8; */
 	opacity: 0.8;
@@ -206,8 +197,8 @@
 	position:absolute;
 	z-index: 84;
 	display:block;
-	-webkit-box-shadow: 0 0 80px #000;
-	box-shadow: 0 0 80px #000;
+	-webkit-box-shadow: 0 0 8vw #000;
+	box-shadow: 0 0 8vw #000;
 	overflow: visible;
 	--borderWidth: 1em;
 	border-radius: var(--borderWidth);
@@ -223,8 +214,8 @@
 	position:absolute;
 	z-index: 84;
 	display:block;
-	-webkit-box-shadow: 0 0 80px #000;
-	box-shadow: 0 0 80px #000;
+	-webkit-box-shadow: 0 0 8vw #000;
+	box-shadow: 0 0 8vw #000;
 	overflow: visible;
 	margin: 0 auto;
 	--borderWidth: 1em;
@@ -277,8 +268,8 @@
 	display:block;
 	--borderWidth: 1em;
 	border-radius: var(--borderWidth);
-	-webkit-box-shadow: 0 0 80px #000;
-	box-shadow: 0 0 80px #000;
+	-webkit-box-shadow: 0 0 8vw #000;
+	box-shadow: 0 0 8vw #000;
 	background: #0A0A0A;
 	overflow:auto;
 }
@@ -293,44 +284,44 @@
 	display:block;
 	--borderWidth: 1em;
 	border-radius: var(--borderWidth);
-	-webkit-box-shadow: 0 0 80px #000;
-	box-shadow: 0 0 80px #000;
+	-webkit-box-shadow: 0 0 8vw #000;
+	box-shadow: 0 0 8vw #000;
 	background: #0A0A0A;
 	overflow:auto;
 }
 
 div#reference-window-back0 .selectize-control {
-	top: -4px;
-	margin: 8px 4px;
+	top: -0.4vw;
+	margin: 0.8vw 0.4vw;
 }
 
 #reference-window-keypad {
 	position: absolute;
-	right: -630px;
+	right: -73vh;
 	display: block;
-	padding: 20px;
-	width: 575px;
+	padding: 2vh;
+	width: 66vh;
 	color: white;
 	font-size: 2em;
-	top: -3px;
+	top: -0.3vw;
 	background: #222;
-	border: 3px solid #666;
-	border-radius: 15px;
+	border: 0.3vw solid #666;
+	border-radius: 1.5vw;
 	opacity: 0.8;
 }
 
-.refpad--row:nth-of-type(2) { margin-left: 30px; }
-.refpad--row:nth-of-type(3) { margin-left: 50px; }
-.refpad--row:nth-of-type(4) { margin: 20px 0 0 50px; }
+.refpad--row:nth-of-type(2) { margin-left: 3vh; }
+.refpad--row:nth-of-type(3) { margin-left: 5vh; }
+.refpad--row:nth-of-type(4) { margin: 2vh 0 0 5vh; }
 
 .refpad__pad {
 	display: inline-block;
-	margin: 5px;
-	padding: 3px 15px 0 15px;
+	margin: 0.5vh;
+	padding: 0.3vh 1.5vh 0 1.5vh;
 	opacity: .7;
 	cursor: pointer;
-	border-radius: 3px;
-	border: 1px solid #ededed;
+	border-radius: 0.3vh;
+	border: 0.1vh solid #ededed;
 	transition: 200ms ease-in-out background;
 	user-select: none;
 	font-family: 'Silverado';
@@ -345,7 +336,7 @@ div#reference-window-back0 .selectize-control {
 	opacity: 1;
 }
 .refpad__pad.-random {
-	margin-left: 90px;
+	margin-left: 9vh;
 	text-transform: lowercase;
 	font-style: italic;
 	opacity: 0.4;
@@ -447,8 +438,6 @@ div#reference-window-back0 .selectize-control {
 	bottom: 2%;
 	left: 1.1%;
 	width: 4%;
-	/* line-height: 50px; */
-	/* padding: 15px 25px; */
 	font-family: 'Silverado';
 	cursor: pointer;
 	border: none;
@@ -463,8 +452,7 @@ div#reference-window-back0 .selectize-control {
 }
 
 #about_text.active {
-	/* -webkit-filter: drop-shadow(0 0 20px #cccc00); */
-	filter: drop-shadow(0 0 10px #cccc00);
+	filter: drop-shadow(0 0 1vw #cccc00);
 	opacity: 0.8;
 }
 
@@ -508,8 +496,8 @@ div#reference-window-back0 .selectize-control {
   position:absolute;
   z-index: 96;
   display:block;
-  -webkit-box-shadow: 0 0 80px #000;
-        box-shadow: 0 0 80px #000;
+  -webkit-box-shadow: 0 0 8vw #000;
+        box-shadow: 0 0 8vw #000;
   overflow:hidden;
   --borderWidth: 1em;
   border-radius: var(--borderWidth);
@@ -531,7 +519,7 @@ div#reference-window-back0 .selectize-control {
 	background-color: Transparent;
 	color: #555;
 	text-align: center;
-	text-shadow: 0 0 10px #000;
+	text-shadow: 0 0 1vw #000;
 	font-size: 2em;
 	font-weight:500;
 	width: 100%;
@@ -549,7 +537,7 @@ div#reference-window-back0 .selectize-control {
 	background-color: Transparent;
 	color: #555;
 	text-align: center;
-	box-shadow: 0 0 10px #000;
+	box-shadow: 0 0 1vw #000;
 	font-size: 1em;
 	font-weight:500;
 	width: 30%;
@@ -566,7 +554,7 @@ div#reference-window-back0 .selectize-control {
 
 #esc-yes:hover {
 	color: #cc0;
-	box-shadow: 0 0 20px #cccc00;
+	box-shadow: 0 0 2vw #cccc00;
 }
 
 #esc-no {
@@ -576,7 +564,7 @@ div#reference-window-back0 .selectize-control {
 	background-color: Transparent;
 	color: #555;
 	text-align: center;
-	box-shadow: 0 0 10px #000;
+	box-shadow: 0 0 1vw #000;
 	font-size: 1em;
 	font-weight:500;
 	width: 30%;
@@ -593,7 +581,7 @@ div#reference-window-back0 .selectize-control {
 
 #esc-no:hover {
 	color: #cc0;
-	box-shadow: 0 0 20px #cccc00;
+	box-shadow: 0 0 2vw #cccc00;
 }
 
 #esc-back {
@@ -608,34 +596,31 @@ div#reference-window-back0 .selectize-control {
 }
 
 @keyframes glowing-image_2 {
-	0% { filter: drop-shadow(0 0 20px #cc0); }
-  30% { filter: drop-shadow(0 0 -10px #cc0); }
-  50% { filter: drop-shadow(0 0 10px #cc0); }
-  70% { filter: drop-shadow(0 0 20px #cc0); }
-  /* 70% { filter: drop-shadow(0 0 10px #c4a300); } */
-  100% { filter: drop-shadow(0 0 -10px #cc0); }
+	0% { filter: drop-shadow(0 0 2vw #cc0); }
+  30% { filter: drop-shadow(0 0 -1vw #cc0); }
+  50% { filter: drop-shadow(0 0 1vw #cc0); }
+  70% { filter: drop-shadow(0 0 2vw #cc0); }
+  100% { filter: drop-shadow(0 0 -1vw #cc0); }
 }
 
 @keyframes glowing-image_3 {
-	0% { filter: drop-shadow(0 0 20px #cc0); }
-  30% { filter: drop-shadow(0 0 17px #cc0); }
-  40% { filter: drop-shadow(0 0 15px #cc0); }
-  70% { filter: drop-shadow(0 0 17px #cc0); }
-  /* 70% { filter: drop-shadow(0 0 10px #c4a300); } */
-  100% { filter: drop-shadow(0 0 20px #cc0); }
+	0% { filter: drop-shadow(0 0 2vw #cc0); }
+  30% { filter: drop-shadow(0 0 1.7vw #cc0); }
+  40% { filter: drop-shadow(0 0 1.5vw #cc0); }
+  70% { filter: drop-shadow(0 0 1.7vw #cc0); }
+  100% { filter: drop-shadow(0 0 2vw #cc0); }
 }
 
 @keyframes glowing-image {
-  0% { filter: drop-shadow(0 0 -10px #c4a300); }
-	10% { filter: drop-shadow(0 0 -5px #c4a300); }
-	20% { filter: drop-shadow(0 0 -2px #c4a300); }
-  30% { filter: drop-shadow(0 0 -5px #c4a300); }
-	40% { filter: drop-shadow(0 0 -10px #c4a300); }
-  50% { filter: drop-shadow(0 0 -5px #c4a300); }
-	60% { filter: drop-shadow(0 0 1px #c4a300); }
-	70% { filter: drop-shadow(0 0 -5px #c4a300); }
-  70% { filter: drop-shadow(0 0 1px #c4a300); }
-  /* 100% { filter: drop-shadow(0 0 5px #c4a300); } */
+  0% { filter: drop-shadow(0 0 -1vw #c4a300); }
+	10% { filter: drop-shadow(0 0 -0.5vw #c4a300); }
+	20% { filter: drop-shadow(0 0 -0.2vw #c4a300); }
+  30% { filter: drop-shadow(0 0 -0.5vw #c4a300); }
+	40% { filter: drop-shadow(0 0 -0.1vw #c4a300); }
+  50% { filter: drop-shadow(0 0 -0.5vw #c4a300); }
+	60% { filter: drop-shadow(0 0 0.1vw #c4a300); }
+	70% { filter: drop-shadow(0 0 -0.5v #c4a300); }
+  70% { filter: drop-shadow(0 0 0.1vw #c4a300); }
 }
 
 #poots-text {
@@ -643,11 +628,10 @@ div#reference-window-back0 .selectize-control {
 	/* animation: glowing-text 3000ms infinite; */
 	color: #f5f5f5;
  text-shadow:
- 0px -2px 4px #fff,
- 0px -2px 10px #FF3,
- 0px -10px 20px #F90,
- 0px -20px 40px #C33;
- /* font-size: 100px; */
+ 0vw -0.2vw 4vw #fff,
+ 0vw -0.2vw 1vw #FF3,
+ 0vw -1vw 2vw #F90,
+ 0vw -2vw 4vw #C33;
 }
 
 .innovations_button {
@@ -657,14 +641,14 @@ div#reference-window-back0 .selectize-control {
 	display: block;
 	width: 6%;
 	z-index: 80;
-	filter: drop-shadow(0 0 20px #333);
+	filter: drop-shadow(0 0 2vw #333);
 	opacity: 0.4;
 	transition: opacity 0.5s, filter 0.5s, animation 0.5s ease;
 }
 
 .innovations_button:hover {
 	opacity: 1.0;
-	filter: drop-shadow(0 0 5px #cc0);
+	filter: drop-shadow(0 0 0.5vw #cc0);
 	animation: glowing-image_2 3000ms infinite;
 
 	/* color: #cc0; */
@@ -679,8 +663,8 @@ div#reference-window-back0 .selectize-control {
 	position:absolute;
 	z-index: 84;
 	display:block;
-	-webkit-box-shadow: 0 0 80px #000;
-	box-shadow: 0 0 80px #000;
+	-webkit-box-shadow: 0 0 8v #000;
+	box-shadow: 0 0 8vw #000;
 	overflow: visible;
 	--borderWidth: 1em;
 	border-radius: var(--borderWidth);
@@ -694,7 +678,7 @@ div#reference-window-back0 .selectize-control {
 	display: block;
 	width: 6%;
 	z-index: 80;
-	filter: drop-shadow(0 0 20px #333);
+	filter: drop-shadow(0 0 2vw #333);
 	--borderWidth: 2em;
 	border-radius: var(--borderWidth);
 	opacity: 0.4;
@@ -703,7 +687,7 @@ div#reference-window-back0 .selectize-control {
 
 .locations_button:hover {
 	opacity: 0.8;
-	filter: drop-shadow(0 0 5px #cc0);
+	filter: drop-shadow(0 0 0.5vw #cc0);
 	animation: glowing-image_2 3000ms infinite;
 
 	/* color: #cc0; */
@@ -718,8 +702,8 @@ div#reference-window-back0 .selectize-control {
 	position:absolute;
 	z-index: 84;
 	display:block;
-	-webkit-box-shadow: 0 0 80px #000;
-	box-shadow: 0 0 80px #000;
+	-webkit-box-shadow: 0 0 8vw #000;
+	box-shadow: 0 0 8vw #000;
 	overflow: visible;
 	--borderWidth: 1em;
 	border-radius: var(--borderWidth);
@@ -736,11 +720,11 @@ div#reference-window-back0 .selectize-control {
   /* width: 100%; */
   /* text-align: right; */
   color: #660;
-  text-shadow: 0 0 10px #000;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  text-shadow: 0 0 1vw #000;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
 	text-align: left;
 	font-size: 1.2em;
 	font-weight:500;
@@ -752,7 +736,7 @@ div#reference-window-back0 .selectize-control {
 
 #summary-title.big {
 	font-size: 1.4em;
-  padding-bottom: 10px;
+  padding-bottom: 1vw;
 }
 
 #summary-text {
@@ -765,11 +749,10 @@ div#reference-window-back0 .selectize-control {
   /* width: 100%; */
   /* text-align: right; */
   color: #aaa;
-  text-shadow: 0 0 10px #000;
-  /* padding-top: 5px; */
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  text-shadow: 0 0 1vw #000;
+  padding-bottom: 0.5vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
 	text-align: left;
 	font-size: 1.1em;
 	font-weight:400;
@@ -808,7 +791,7 @@ div#reference-window-back0 .selectize-control {
   --borderWidth: 1em;
   border-radius: var(--borderWidth);
   border: 0.2rem solid #555;
-  box-shadow: 0 0 20px #000;
+  box-shadow: 0 0 2vw #000;
   background: rgba(0, 0, 0, .9);
   overflow-y: scroll;
   overflow-x: none;
