@@ -3,7 +3,7 @@ const {setSettings, getSettings, silentSaveSettings, defaultLang} = require('./.
 const { quary_events } = require('../../versions/'+defaultLang()+'/text/lists/quary_events.js')
 
 
-const { pathToAsset } = require('./../ui/assets_loader')
+const { pathToAssetL } = require('./../ui/assets_loader')
 
 // var { random_hunt_events } = require('./../lists/random_hunt_events')
 // var { promo_hunt_events } = require('./../lists/promo_hunt_events')
