@@ -1,6 +1,6 @@
 const texts = {
   'index': {
-    "label": "Intro",
+    "label": "Home",
     'table': 1,
     'type': 'index',
     'ltop': '50%',
