@@ -1,13 +1,30 @@
-html, body {height:100%; width: 100%; top:0; left:0; border-width:0; overflow:hidden;scrollbar-width: 0;scroll-behavior: smooth;}
+html, body {
+  height:100%;
+  width: 100%;
+  top:0;
+  left:0;
+  border-width:0;
+  overflow:hidden;
+  scrollbar-width: 0;
+  scroll-behavior: smooth;
+  font-family: 'Silverado'
+}
 
 
-@font-face {
+/* @font-face {
     font-family: 'Silverado';
     src: url('../font/svcm____-webfont.woff2') format('woff2'),
          url('../font/svcm____-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
+} */
+
+@font-face {
+    font-family: 'Silverado';
+    src: url('../font/sylfaen.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
 }
 
 input[type=number]::-webkit-inner-spin-button {

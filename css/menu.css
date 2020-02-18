@@ -49,8 +49,8 @@
 	color: #555555;
 	text-decoration: none;
 	display: block;
-	width: 30vw;
-	height: 5vw;
+	width: 30vmin;
+	height: 5vmin;
 	font-family: 'Silverado';
 	cursor: pointer;
 	transition: color 0.3s, text-shadow 0.3s, filter 0.3s, drop-shadow 0.3s;
@@ -121,7 +121,7 @@
 	width: 2%;
 	z-index: 97;
 	background: #333;
-	filter: drop-shadow(0 0 2vw #333);
+	filter: drop-shadow(0 0 2vmin #333);
 	opacity: 0.4;
 }
 
@@ -141,7 +141,7 @@
 
 #severe.active {
 	outline: 0.2rem solid #cccc00;
-	filter: drop-shadow(0 0 0.5vw #cccc00);
+	filter: drop-shadow(0 0 0.5vmin #cccc00);
 	z-index: 97;
 	opacity: 0.8;
 }
@@ -164,8 +164,8 @@
 	position:absolute;
 	z-index: 97;
 	display:block;
-	-webkit-box-shadow: 0 0 5vw 0 #000;
-	box-shadow: 0 0 5vw 0 #000;
+	-webkit-box-shadow: 0 0 5vmin 0 #000;
+	box-shadow: 0 0 5vmin 0 #000;
 }
 
 #reference {
@@ -175,13 +175,13 @@
 	display: block;
 	width: 2%;
 	z-index: 89;
-	filter: drop-shadow(0 0 2vw #333);
+	filter: drop-shadow(0 0 2vmin #333);
 	opacity: 0.4;
 	transition: opacity 0.5s, filter 0.5s, animation 0.5s ease;
 }
 
 #reference:hover {
-	filter: drop-shadow(0 0 0.5vw #cccc00);
+	filter: drop-shadow(0 0 0.5vmin #cccc00);
 	/* animation: glowing-image_2 3000ms infinite;
 	opacity: 0.8; */
 	opacity: 0.8;
@@ -197,8 +197,8 @@
 	position:absolute;
 	z-index: 84;
 	display:block;
-	-webkit-box-shadow: 0 0 8vw #000;
-	box-shadow: 0 0 8vw #000;
+	-webkit-box-shadow: 0 0 8vmin #000;
+	box-shadow: 0 0 8vmin #000;
 	overflow: visible;
 	--borderWidth: 1em;
 	border-radius: var(--borderWidth);
@@ -214,8 +214,8 @@
 	position:absolute;
 	z-index: 84;
 	display:block;
-	-webkit-box-shadow: 0 0 8vw #000;
-	box-shadow: 0 0 8vw #000;
+	-webkit-box-shadow: 0 0 8vmin #000;
+	box-shadow: 0 0 8vmin #000;
 	overflow: visible;
 	margin: 0 auto;
 	--borderWidth: 1em;
@@ -268,8 +268,8 @@
 	display:block;
 	--borderWidth: 1em;
 	border-radius: var(--borderWidth);
-	-webkit-box-shadow: 0 0 8vw #000;
-	box-shadow: 0 0 8vw #000;
+	-webkit-box-shadow: 0 0 8vmin #000;
+	box-shadow: 0 0 8vmin #000;
 	background: #0A0A0A;
 	overflow:auto;
 }
@@ -284,44 +284,44 @@
 	display:block;
 	--borderWidth: 1em;
 	border-radius: var(--borderWidth);
-	-webkit-box-shadow: 0 0 8vw #000;
-	box-shadow: 0 0 8vw #000;
+	-webkit-box-shadow: 0 0 8vmin #000;
+	box-shadow: 0 0 8vmin #000;
 	background: #0A0A0A;
 	overflow:auto;
 }
 
 div#reference-window-back0 .selectize-control {
-	top: -0.4vw;
-	margin: 0.8vw 0.4vw;
+	top: -0.4vmin;
+	margin: 0.8vmin 0.4vmin;
 }
 
 #reference-window-keypad {
 	position: absolute;
-	right: -73vh;
+	right: -73vmin;
 	display: block;
-	padding: 2vh;
-	width: 66vh;
+	padding: 2vmin;
+	width: 66vmin;
 	color: white;
 	font-size: 2em;
-	top: -0.3vw;
+	top: -0.3vmin;
 	background: #222;
-	border: 0.3vw solid #666;
-	border-radius: 1.5vw;
+	border: 0.3vmin solid #666;
+	border-radius: 1.5vmin;
 	opacity: 0.8;
 }
 
-.refpad--row:nth-of-type(2) { margin-left: 3vh; }
-.refpad--row:nth-of-type(3) { margin-left: 5vh; }
-.refpad--row:nth-of-type(4) { margin: 2vh 0 0 5vh; }
+.refpad--row:nth-of-type(2) { margin-left: 3vmin; }
+.refpad--row:nth-of-type(3) { margin-left: 5vmin; }
+.refpad--row:nth-of-type(4) { margin: 2vmin 0 0 5vmin; }
 
 .refpad__pad {
 	display: inline-block;
-	margin: 0.5vh;
-	padding: 0.3vh 1.5vh 0 1.5vh;
+	margin: 0.5vmin;
+	padding: 0.3vmin 1.5vmin 0 1.5vmin;
 	opacity: .7;
 	cursor: pointer;
-	border-radius: 0.3vh;
-	border: 0.1vh solid #ededed;
+	border-radius: 0.3vmin;
+	border: 0.1vmin solid #ededed;
 	transition: 200ms ease-in-out background;
 	user-select: none;
 	font-family: 'Silverado';
@@ -336,7 +336,7 @@ div#reference-window-back0 .selectize-control {
 	opacity: 1;
 }
 .refpad__pad.-random {
-	margin-left: 9vh;
+	margin-left: 9vmin;
 	text-transform: lowercase;
 	font-style: italic;
 	opacity: 0.4;
@@ -452,7 +452,7 @@ div#reference-window-back0 .selectize-control {
 }
 
 #about_text.active {
-	filter: drop-shadow(0 0 1vw #cccc00);
+	filter: drop-shadow(0 0 1vmin #cccc00);
 	opacity: 0.8;
 }
 
@@ -496,8 +496,8 @@ div#reference-window-back0 .selectize-control {
   position:absolute;
   z-index: 96;
   display:block;
-  -webkit-box-shadow: 0 0 8vw #000;
-        box-shadow: 0 0 8vw #000;
+  -webkit-box-shadow: 0 0 8vmin #000;
+        box-shadow: 0 0 8vmin #000;
   overflow:hidden;
   --borderWidth: 1em;
   border-radius: var(--borderWidth);
@@ -519,7 +519,7 @@ div#reference-window-back0 .selectize-control {
 	background-color: Transparent;
 	color: #555;
 	text-align: center;
-	text-shadow: 0 0 1vw #000;
+	text-shadow: 0 0 1vmin #000;
 	font-size: 2em;
 	font-weight:500;
 	width: 100%;
@@ -537,7 +537,7 @@ div#reference-window-back0 .selectize-control {
 	background-color: Transparent;
 	color: #555;
 	text-align: center;
-	box-shadow: 0 0 1vw #000;
+	box-shadow: 0 0 1vmin #000;
 	font-size: 1em;
 	font-weight:500;
 	width: 30%;
@@ -554,7 +554,7 @@ div#reference-window-back0 .selectize-control {
 
 #esc-yes:hover {
 	color: #cc0;
-	box-shadow: 0 0 2vw #cccc00;
+	box-shadow: 0 0 2vmin #cccc00;
 }
 
 #esc-no {
@@ -564,7 +564,7 @@ div#reference-window-back0 .selectize-control {
 	background-color: Transparent;
 	color: #555;
 	text-align: center;
-	box-shadow: 0 0 1vw #000;
+	box-shadow: 0 0 1vmin #000;
 	font-size: 1em;
 	font-weight:500;
 	width: 30%;
@@ -581,7 +581,7 @@ div#reference-window-back0 .selectize-control {
 
 #esc-no:hover {
 	color: #cc0;
-	box-shadow: 0 0 2vw #cccc00;
+	box-shadow: 0 0 2vmin #cccc00;
 }
 
 #esc-back {
@@ -596,31 +596,31 @@ div#reference-window-back0 .selectize-control {
 }
 
 @keyframes glowing-image_2 {
-	0% { filter: drop-shadow(0 0 2vw #cc0); }
-  30% { filter: drop-shadow(0 0 -1vw #cc0); }
-  50% { filter: drop-shadow(0 0 1vw #cc0); }
-  70% { filter: drop-shadow(0 0 2vw #cc0); }
-  100% { filter: drop-shadow(0 0 -1vw #cc0); }
+	0% { filter: drop-shadow(0 0 2vmin #cc0); }
+  30% { filter: drop-shadow(0 0 -1vmin #cc0); }
+  50% { filter: drop-shadow(0 0 1vmin #cc0); }
+  70% { filter: drop-shadow(0 0 2vmin #cc0); }
+  100% { filter: drop-shadow(0 0 -1vmin #cc0); }
 }
 
 @keyframes glowing-image_3 {
-	0% { filter: drop-shadow(0 0 2vw #cc0); }
-  30% { filter: drop-shadow(0 0 1.7vw #cc0); }
-  40% { filter: drop-shadow(0 0 1.5vw #cc0); }
-  70% { filter: drop-shadow(0 0 1.7vw #cc0); }
-  100% { filter: drop-shadow(0 0 2vw #cc0); }
+	0% { filter: drop-shadow(0 0 2vmin #cc0); }
+  30% { filter: drop-shadow(0 0 1.7vmin #cc0); }
+  40% { filter: drop-shadow(0 0 1.5vmin #cc0); }
+  70% { filter: drop-shadow(0 0 1.7vmin #cc0); }
+  100% { filter: drop-shadow(0 0 2vmin #cc0); }
 }
 
 @keyframes glowing-image {
-  0% { filter: drop-shadow(0 0 -1vw #c4a300); }
-	10% { filter: drop-shadow(0 0 -0.5vw #c4a300); }
-	20% { filter: drop-shadow(0 0 -0.2vw #c4a300); }
-  30% { filter: drop-shadow(0 0 -0.5vw #c4a300); }
-	40% { filter: drop-shadow(0 0 -0.1vw #c4a300); }
-  50% { filter: drop-shadow(0 0 -0.5vw #c4a300); }
-	60% { filter: drop-shadow(0 0 0.1vw #c4a300); }
+  0% { filter: drop-shadow(0 0 -1vmin #c4a300); }
+	10% { filter: drop-shadow(0 0 -0.5vmin #c4a300); }
+	20% { filter: drop-shadow(0 0 -0.2vmin #c4a300); }
+  30% { filter: drop-shadow(0 0 -0.5vmin #c4a300); }
+	40% { filter: drop-shadow(0 0 -0.1vmin #c4a300); }
+  50% { filter: drop-shadow(0 0 -0.5vmin #c4a300); }
+	60% { filter: drop-shadow(0 0 0.1vmin #c4a300); }
 	70% { filter: drop-shadow(0 0 -0.5v #c4a300); }
-  70% { filter: drop-shadow(0 0 0.1vw #c4a300); }
+  70% { filter: drop-shadow(0 0 0.1vmin #c4a300); }
 }
 
 #poots-text {
@@ -628,10 +628,10 @@ div#reference-window-back0 .selectize-control {
 	/* animation: glowing-text 3000ms infinite; */
 	color: #f5f5f5;
  text-shadow:
- 0vw -0.2vw 4vw #fff,
- 0vw -0.2vw 1vw #FF3,
- 0vw -1vw 2vw #F90,
- 0vw -2vw 4vw #C33;
+ 0vmin -0.2vmin 4vmin #fff,
+ 0vmin -0.2vmin 1vmin #FF3,
+ 0vmin -1vmin 2vmin #F90,
+ 0vmin -2vmin 4vmin #C33;
 }
 
 .innovations_button {
@@ -641,14 +641,14 @@ div#reference-window-back0 .selectize-control {
 	display: block;
 	width: 6%;
 	z-index: 80;
-	filter: drop-shadow(0 0 2vw #333);
+	filter: drop-shadow(0 0 2vmin #333);
 	opacity: 0.4;
 	transition: opacity 0.5s, filter 0.5s, animation 0.5s ease;
 }
 
 .innovations_button:hover {
 	opacity: 1.0;
-	filter: drop-shadow(0 0 0.5vw #cc0);
+	filter: drop-shadow(0 0 0.5vmin #cc0);
 	animation: glowing-image_2 3000ms infinite;
 
 	/* color: #cc0; */
@@ -664,7 +664,7 @@ div#reference-window-back0 .selectize-control {
 	z-index: 84;
 	display:block;
 	-webkit-box-shadow: 0 0 8v #000;
-	box-shadow: 0 0 8vw #000;
+	box-shadow: 0 0 8vmin #000;
 	overflow: visible;
 	--borderWidth: 1em;
 	border-radius: var(--borderWidth);
@@ -678,7 +678,7 @@ div#reference-window-back0 .selectize-control {
 	display: block;
 	width: 6%;
 	z-index: 80;
-	filter: drop-shadow(0 0 2vw #333);
+	filter: drop-shadow(0 0 2vmin #333);
 	--borderWidth: 2em;
 	border-radius: var(--borderWidth);
 	opacity: 0.4;
@@ -687,7 +687,7 @@ div#reference-window-back0 .selectize-control {
 
 .locations_button:hover {
 	opacity: 0.8;
-	filter: drop-shadow(0 0 0.5vw #cc0);
+	filter: drop-shadow(0 0 0.5vmin #cc0);
 	animation: glowing-image_2 3000ms infinite;
 
 	/* color: #cc0; */
@@ -702,8 +702,8 @@ div#reference-window-back0 .selectize-control {
 	position:absolute;
 	z-index: 84;
 	display:block;
-	-webkit-box-shadow: 0 0 8vw #000;
-	box-shadow: 0 0 8vw #000;
+	-webkit-box-shadow: 0 0 8vmin #000;
+	box-shadow: 0 0 8vmin #000;
 	overflow: visible;
 	--borderWidth: 1em;
 	border-radius: var(--borderWidth);
@@ -720,11 +720,11 @@ div#reference-window-back0 .selectize-control {
   /* width: 100%; */
   /* text-align: right; */
   color: #660;
-  text-shadow: 0 0 1vw #000;
-  padding-top: 0.5vw;
-  padding-bottom: 0.5vw;
-  padding-left: 1vw;
-  padding-right: 1vw;
+  text-shadow: 0 0 1vmin #000;
+  padding-top: 0.5vmin;
+  padding-bottom: 0.5vmin;
+  padding-left: 1vmin;
+  padding-right: 1vmin;
 	text-align: left;
 	font-size: 1.2em;
 	font-weight:500;
@@ -736,7 +736,7 @@ div#reference-window-back0 .selectize-control {
 
 #summary-title.big {
 	font-size: 1.4em;
-  padding-bottom: 1vw;
+  padding-bottom: 1vmin;
 }
 
 #summary-text {
@@ -749,10 +749,10 @@ div#reference-window-back0 .selectize-control {
   /* width: 100%; */
   /* text-align: right; */
   color: #aaa;
-  text-shadow: 0 0 1vw #000;
-  padding-bottom: 0.5vw;
-  padding-left: 1vw;
-  padding-right: 1vw;
+  text-shadow: 0 0 1vmin #000;
+  padding-bottom: 0.5vmin;
+  padding-left: 1vmin;
+  padding-right: 1vmin;
 	text-align: left;
 	font-size: 1.1em;
 	font-weight:400;
@@ -791,7 +791,7 @@ div#reference-window-back0 .selectize-control {
   --borderWidth: 1em;
   border-radius: var(--borderWidth);
   border: 0.2rem solid #555;
-  box-shadow: 0 0 2vw #000;
+  box-shadow: 0 0 2vmin #000;
   background: rgba(0, 0, 0, .9);
   overflow-y: scroll;
   overflow-x: none;

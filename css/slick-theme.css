@@ -27,8 +27,8 @@
 
     display: block;
 
-    width: 2vw;
-    height: 2vw;
+    width: 2vmin;
+    height: 2vmin;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -67,7 +67,7 @@
 .slick-next:before
 {
     font-family: 'slick';
-    font-size: 2vw;
+    font-size: 2vmin;
     line-height: 1;
 
     opacity: .75;
@@ -79,11 +79,11 @@
 
 .slick-prev
 {
-    left: -2.5vw;
+    left: -2.5vmin;
 }
 [dir='rtl'] .slick-prev
 {
-    right: -2.5vw;
+    right: -2.5vmin;
     left: auto;
 }
 .slick-prev:before
@@ -97,12 +97,12 @@
 
 .slick-next
 {
-    right: -2.5vw;
+    right: -2.5vmin;
 }
 [dir='rtl'] .slick-next
 {
     right: auto;
-    left: -2.5vw;
+    left: -2.5vmin;
 }
 .slick-next:before
 {
@@ -116,13 +116,13 @@
 /* Dots */
 .slick-dotted.slick-slider
 {
-    margin-bottom: 3.0vw;
+    margin-bottom: 3.0vmin;
 }
 
 .slick-dots
 {
     position: absolute;
-    bottom: -2.5vw;
+    bottom: -2.5vmin;
 
     display: block;
 
@@ -140,9 +140,9 @@
 
     display: inline-block;
 
-    width: 2vw;
-    height: 2vw;
-    margin: 0 0.5vw;
+    width: 2vmin;
+    height: 2vmin;
+    margin: 0 0.5vmin;
     padding: 0;
 
     cursor: pointer;
@@ -154,9 +154,9 @@
 
     display: block;
 
-    width: 2vw;
-    height: 2vw;
-    padding: 0.5vw;
+    width: 2vmin;
+    height: 2vmin;
+    padding: 0.5vmin;
 
     cursor: pointer;
 
@@ -178,15 +178,15 @@
 .slick-dots li button:before
 {
     font-family: 'slick';
-    font-size: 0.6vw;
-    line-height: 2vw;
+    font-size: 0.6vmin;
+    line-height: 2vmin;
 
     position: absolute;
     top: 0;
     left: 0;
 
-    width: 2vw;
-    height: 2vw;
+    width: 2vmin;
+    height: 2vmin;
 
     content: '•';
     text-align: center;
