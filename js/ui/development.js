@@ -1317,6 +1317,9 @@ if (type == 'innovation') {
 if (type == 'location') {
   name_text = settlement_locations[name.split('_')[0]].label
 }
+if (type == 'event') {
+  name_text = settlement_events[name.split('_')[0]].label
+}
 
  $('.actions_grid').append(item)
 

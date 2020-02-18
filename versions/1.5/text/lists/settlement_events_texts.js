@@ -95,13 +95,7 @@ const texts = {
        '<b class="event-text">[Event]</b> The settlement\'s collective imagination is set aflame. After rolling for any endeavor, you may add +1 or +2 to the result.',
      ]
    },
-   'action': true,
-   'num_actions': 3,
-   'action_enabler': {
-     0: {'innovation': ['Graves']},
-     1: {'innovation': ['Face Painting']},
-     2: {'innovation': ['Inner Lantern']},
-   },
+
  },
  'Murder': {
    'label':'',
@@ -132,8 +126,21 @@ const texts = {
   'expansion': 'spidicules',
  },
  'Silk Storm': {
-   'label':'',
+   'label':'Silk Storm',
   'expansion': 'spidicules',
+  'action': true,
+  'num_actions': 3,
+  'action_enabler': {
+    0: {'innovation': ['Legless Ball']},
+    2: {'innovation': ['Silk Refining']},
+  },
+  'passive':{
+    'settlement': [
+      '<b class="event-text">[Event]</b> Gain +2 Endeavor this settlement phase that could only be spent on Spidicules innovations.',
+      '<b class="event-text">[Event]</b> Survivors cannot <b>depart</b> this year unless they have at least 1 empty space in their gear grids.',
+    ]
+  },
+
  },
  'Skull Eater': {
    'label':'',

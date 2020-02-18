@@ -299,7 +299,8 @@ module.exports = class SettlementScene {
       if (!$(this).hasClass('actived')) {
         $('#settlement_event_screen').delay(50).fadeIn(300)
         // $('#settlement_event_screen_2').delay(50).fadeIn(300)
-        if ($('#settlement_event_ba5ck').attr('src') == '#') {
+        if ($('#settlement_event_back').attr('src') == '#') {
+          // console.log('Got event!!!: '+)
           let selected_event = getSettlementEventPath();
           if (['foundlings', 'returning survivors', 'the pool and the sun'].indexOf(window.settlement_back_target) >= 0) {
             selected_event = 'First Day'
