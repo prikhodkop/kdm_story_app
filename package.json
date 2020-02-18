@@ -58,10 +58,10 @@
       ],
       "icon": "app/icon.ico",
       "target": [
-        "nsis-web"
+        "nsis"
       ]
     },
-    "nsisWeb": {
+    "nsis": {
       "oneClick": false,
       "runAfterFinish": false,
       "allowToChangeInstallationDirectory": true,

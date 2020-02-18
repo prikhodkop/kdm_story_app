@@ -13,10 +13,6 @@ const { getTerms } = require('./../ui/glossary')
 
 const special_events = []
 
-const events_sequences = {
-  'the hanged man': ['showdown manhunter', tooltips['start showdown'].text],
-}
-
 module.exports = class VideoScene {
   render () {
     if ($('#back').attr('src') == '#') {
@@ -26,7 +22,6 @@ module.exports = class VideoScene {
     $('#container').fadeIn(300)
 
     var events_table = generate_events_table()
-    var tooltips = getTerms('tooltips')
 
     console.log('Process type: '+window.globals.process)
 
@@ -51,6 +46,10 @@ module.exports = class VideoScene {
 
     var settings = getSettings()
 
+    var tooltips = getTerms('tooltips')
+    var events_sequences = {
+      'the hanged man': ['showdown manhunter', tooltips['start showdown'].text],
+    }
 
     var lang = settings['language']
 
