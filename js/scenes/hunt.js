@@ -51,7 +51,7 @@ module.exports = class HuntScene {
     let settings = getSettings()
     sessionStorage.setItem('back_target', null)
 
-    $('body').css('font-size', settings['fontSize'])
+    $('body').css('font-size', parseInt(settings['fontSize'].replace('px',''))/15+'vw')
 
     console.log(sessionStorage)
 
