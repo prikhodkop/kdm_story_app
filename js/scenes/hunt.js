@@ -643,8 +643,7 @@ module.exports = class HuntScene {
         var monster_pos = monster.monster_position[level-1]
       };
 
-      loadHuntImage(monster.monster_icon, monster_pos, monster.monster_icon_width, monster.monster_icon_height, 'monster', 'target="' +
-                ref + '"')
+      loadHuntImage(monster.monster_icon, monster_pos, monster.monster_icon_width, monster.monster_icon_height, 'monster', ['target', ref])
 
       addTimer(function () {
         var i
@@ -879,7 +878,7 @@ module.exports = class HuntScene {
 
           if (events_string.charAt(i) == 'm') {
             var event = monster_event
-            q_link = 'href="' + sequence[q_event_idx] + '"'
+            q_link = ['href', sequence[q_event_idx]]
             q_event_idx += 1
           }
           if (events_string.charAt(i) == 'r') {
@@ -897,27 +896,32 @@ module.exports = class HuntScene {
 
       let title
       let tooltip_text
+      let value
 
       if (type === 'common') {
         if (path.includes('random')) {
           title = tooltips['random_hunt_event'].text
           tooltip_text = tooltips['random_hunt_event'].text //'Random Hunt Event'
+          value = 'random_hunt_event'
         }
         if (path.includes('monster')) {
           title = tooltips['monster_hunt_event'].text
           tooltip_text = tooltips['monster_hunt_event'].text //'Monster Hunt Event',
+          value = 'monster_hunt_event'
         };
       };
 
       if (type === 'monster') {
         title = ''
         tooltip_text = tooltips['hunt_monster'].text //'<b style="color:#cc0;">Click</b> to start the <b>Showdown</b>!</br></br><i>It will be considered that the fight takes place where the survivors are standing for all gameplay effects.</i>',
+        value = 'monster'
       };
 
       if (type === 'survivors') {
         title = 'Survivors'
         coord = coord + 0.9
         tooltip_text = tooltips['hunt_survivors'].text //'<b style="color:#cc0;">Drag</b> survivors to proceed on the <b>Hunt</b>.</br></br><i><b style="color:#cc0;">Click</b> on events to disable/enable them.</i>',
+        value = 'survivors'
       };
 
       if (type === 'darkness') {
@@ -929,18 +933,31 @@ module.exports = class HuntScene {
         }
 
         coord = coord + 0.032335
+        value = 'darkness'
       };
 
       if (type === 'starvation') {
         // title = '<b>Starvation</b><br/>The hunting team takes too long to bring food back home.<br/>Remove d5 resources from settlement storage.'
         title = tooltips['starvation'].text
+        value = 'starvation'
       };
 
-      $('<img class="token ' + position + '" position="' + position + '" id="' + type +
-                '" title="'+
-                title +'" name="'+title+'" src="' + pathToAssetL(path) + '" width="' + width + '%" style="left: ' + coord +
-                '%; top:' + top +
-                '%;"' + ref + ')>').on('load', function () {
+      $('<img>', {
+        class:"token " + position,
+        position: position,
+        id: type,
+        title: title,
+        name: title,
+        src:pathToAssetL(path),
+        style: 'left:' + coord + '%;top:' + top +'%;width:'+ width + '%;',
+        value: value
+         // + ref + ')>'
+        }).on('load', function () {
+
+          if (!(ref == '')) {
+            $(this).attr(ref[0], ref[1])
+          }
+
         $(this).appendTo('#container')
         $(this).hide()
         if (type == 'darkness') {
@@ -1094,7 +1111,8 @@ module.exports = class HuntScene {
           $(this).droppable({
             drop: function (event, ui) {
               snapToMiddle(ui.draggable, $(this))
-              let title = $(this).attr('title')
+              let value = $(this).attr('value')
+              console.log('!!! Im droppable: '+value)
 
               if (ui.draggable[0]['id'] == 'monster') {
                 console.log('Enabling darkness drop')
@@ -1102,7 +1120,7 @@ module.exports = class HuntScene {
               }
 
               if (ui.draggable[0]['id'] == 'survivors') {
-                if (title == 'Monster Hunt Event') {
+                if (value == 'monster_hunt_event') {
                   $('#quary_popup').attr('src', pathToAssetL($(this).attr('href')))
                   // $('#quary_popup').delay(500).fadeIn(500)
                   $('#quary_popup').show();
@@ -1113,7 +1131,7 @@ module.exports = class HuntScene {
                   $('#quary_popup_back').fadeIn(1000)
                 }
 
-                if (title == 'Random Hunt Event') {
+                if (value == 'random_hunt_event') {
                   $('#quary_popup_back').fadeIn(1000)
 
                   let is_promo = is_promo_event()

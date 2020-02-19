@@ -155,10 +155,10 @@ const texts = {
    'text': 'Monster Hunt Event',
  },
  'hunt_monster': {
-   'text': '<b style="color:#cc0;">Click</b> to start the <b>Showdown</b>!</br></br><i>It will be considered that the fight takes place where the survivors are standing for all gameplay effects.</i>',
+   'text': '<b style="color:#cc0;">Drag</b> to move monster on the hunt board.</br><b style="color:#cc0;">Click</b> to start the <b>Showdown</b>!</br><i>It will be considered that the fight takes place where the survivors are standing for all gameplay effects.</i>',
  },
  'hunt_survivors': {
-   'text': '<b style="color:#cc0;">Drag</b> survivors to proceed on the <b>Hunt</b>.</br></br><i><b style="color:#cc0;">Click</b> on events to disable/enable them.</i>',
+   'text': '<b style="color:#cc0;">Drag</b> survivors to proceed on the <b>Hunt</b>.</br><i><b style="color:#cc0;">Click</b> on events to disable/enable them.</i>',
  },
  'forest_wants_what_it_wants': {
    'text': '<b>The Forest Wants What it Wants</b>',
