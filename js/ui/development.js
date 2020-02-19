@@ -772,7 +772,7 @@ function filterInnovations(clear=false) {
         $('#innovations_filter').removeClass('tags')
       }
       input.value = input.value.replace(/ +(?= )/g,'');
-      input.value = input.value.replace(/[^A-Za-z ,\-]/gi, '')
+      // input.value = input.value.replace(/[^A-Za-z ,\-]/gi, '')
     }
   }
 
@@ -782,6 +782,8 @@ function filterInnovations(clear=false) {
 
   filter = filter.replace(/\s*,\s*/g, ",");
   filter = filter.split(",");
+
+   console.log('Filter: '+filter)
 
   let show_innovation = false
 
@@ -793,7 +795,7 @@ function filterInnovations(clear=false) {
         tag_labels.push(tags_list[innovations[txtValue]['tags'][i]].label)
       } else {
         console.log('!!! to search:'+titleCase(innovations[txtValue]['tags'][i]))
-        tag_labels.push(innovations[titleCase(innovations[txtValue]['tags'][i])].text.toLowerCase())
+        tag_labels.push(innovations[titleCase(innovations[txtValue]['tags'][i]).replace('Of', 'of').replace('The', 'the')].label.toLowerCase())
       }
 
     }
@@ -810,7 +812,7 @@ function filterInnovations(clear=false) {
     } else {
       show_innovation = false
       for (let k = 0; k < filter.length; k++) {
-        if (txtValue.toUpperCase().indexOf(filter[k]) > -1) {
+        if (innovations[txtValue].label.toUpperCase().indexOf(filter[k]) > -1) {
           show_innovation = true
         }
       }

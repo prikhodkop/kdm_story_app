@@ -141,7 +141,7 @@ const texts = {
   'action': true,
   'passive': {
     'showdown': [
-      ['survival', '<b>Monster Level</b>']
+      'At the start of the showdown each survivor gain ★ survival.'
     ],
   }
  },

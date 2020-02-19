@@ -656,7 +656,7 @@ const texts = {
    'description':'The cards that collectively make up the locations a survivor may hit a given monster. Unique to each monster.',},
  'Monster Level': {
    'label':'',
-   'description':'Monster level determines the difficulty of the showdown and the monster\'s placement on the hunt board. Higher-level monsters have longer hunts and more difficult showdowns. ',},
+   'description':'Monster level (★) determines the difficulty of the showdown and the monster\'s placement on the hunt board. Higher-level monsters have longer hunts and more difficult showdowns. ',},
  'Monster Reference Card/ Basic Action': {
    'label':'',
    'description':'Contains a small overview of each monster\'s characteristics. They serve as a compact reminder of frequently-used monster information.',},

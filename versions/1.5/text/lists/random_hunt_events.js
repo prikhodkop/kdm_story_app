@@ -12,7 +12,7 @@ The event revealer gains +1 courage and rolls 1d10.
 [TO] 1d10
 [td] Event revealer - Investigate
 [c] 1-5
-[d] You fumble and cut your foot on a jagged shard. Suffer monster level event damage to your legs.
+[d] You fumble and cut your foot on a jagged shard. Suffer ★ event damage to your legs.
 [c] 6-8
 [d] You salvage something useful. Gain 1 <b>broken lantern</b> basic resource.
 [c] 9+
@@ -28,7 +28,7 @@ The event revealer gains +1 courage and rolls 1d10.
 
 [img] 2 # no-shadow
 
-The survivors are overcome by a sudden chill, their breath seizing in their lungs. The survivors' teeth chatter mercilessly. All survivors lose monster level survival. At the center of the sudden frost is a perfectly preserved corpse.
+The survivors are overcome by a sudden chill, their breath seizing in their lungs. The survivors' teeth chatter mercilessly. All survivors lose ★ survival. At the center of the sudden frost is a perfectly preserved corpse.
 
 [TA] Check
 [td] What innovations does the settlement have?
@@ -112,7 +112,7 @@ The event revealer contracts a flesh-eating disease brushing past the giant boil
 
 [>d]
 [c] 2-3
-[d] If any survivor is <b>insane</b>, they imagine the flesh fields are attacking! They become hysterical, flailing and tangling themselves in the thick hair. Each <b>insane</b> survivor suffers monster level event damage to a random location.
+[d] If any survivor is <b>insane</b>, they imagine the flesh fields are attacking! They become hysterical, flailing and tangling themselves in the thick hair. Each <b>insane</b> survivor suffers ★ event damage to a random location.
 [c] 4-7
 [d] It's hot and gross, but the survivors pass through the flesh fields with no complications.
 [c] 8-9
@@ -230,7 +230,7 @@ Each straggler rolls 1d10.
 [c] 1-3
 [d] The fog around you turns black and fills with shapes of tormented faces. You are driven to madness. Gain 1 random disorder.
 [c] 4-6
-[d] The fog grows soupy and begins to wail. You plug your ears with your fingers, but it's hopeless. Suffer monster level brain event damage.
+[d] The fog grows soupy and begins to wail. You plug your ears with your fingers, but it's hopeless. Suffer ★ brain event damage.
 [c] 7-9
 [d] You stick your thumbs into your ears and break into a run, leaving the wailing smoke.
 [c] 10+
@@ -254,7 +254,7 @@ They gain +1 courage and roll 1d10.
 [c] 1-3
 [d] The light is overpowering. Your fragile mind cannot understand its soundless words. Gain 1 random disorder.
 [c] 4-8
-[d] You wander through the light, bathed in a warm, awful feeling. You don't find anything other than exposure. Suffer monster level event damage to a random hit location.
+[d] You wander through the light, bathed in a warm, awful feeling. You don't find anything other than exposure. Suffer ★ event damage to a random hit location.
 [c] 9+
 [d] Something about the light stirs you, and your resolve intensifies. Gain +1 survival.
 [T]
@@ -436,7 +436,7 @@ Amidst the sea of stone faces, one catches the event revealer's eye. They feel c
 [c] 1
 [d] The face is identical to your own. Spend 1d5 survival or reduce your understanding to 0.
 [c] 2-7
-[d] The face reminds you of someone dear. Your heart aches with loneliness. If your survival is greater than your insanity, suffer monster level brain event damage.
+[d] The face reminds you of someone dear. Your heart aches with loneliness. If your survival is greater than your insanity, suffer ★ brain event damage.
 [c] 8+
 [dt] The face is your own but older and wiser. Gain +1 survival and +1 understanding.
 `,
@@ -512,7 +512,7 @@ Cowering in a cave, the survivors find strange drawings decorating the walls. Th
 [TA] 1d10
 [td] Any survivor with 3+ understanding
 [c] 1-3
-[d] Your nose begins to bleed. Suffer monster level brain event damage.
+[d] Your nose begins to bleed. Suffer ★ brain event damage.
 [c] 4-7
 [d] The true meaning escapes you. Gain +1 insanity.
 [c] 8+
@@ -525,14 +525,14 @@ Cowering in a cave, the survivors find strange drawings decorating the walls. Th
 `,
 
   22: `22 | Acid Rain
-The darkness above is suddenly alight with a storm of acid rain. It smells terrible, burns flesh, and forms hissing pools in the upturned mouths of the stone faces. All survivors suffer monster level event damage to every hit location as they scramble to find shelter.
+The darkness above is suddenly alight with a storm of acid rain. It smells terrible, burns flesh, and forms hissing pools in the upturned mouths of the stone faces. All survivors suffer ★ event damage to every hit location as they scramble to find shelter.
 
 [TO] Check
 [td] Does the settlement have Sculpture?
 [c] Yes #Sculpture
 [d<]
 
-The survivors silently watch the storm erode the stone faces, erasing their features. They wonder exactly who or what repairs the broken faces, if there is such a thing. The survivors share a dark laugh, each gaining monster level survival.
+The survivors silently watch the storm erode the stone faces, erasing their features. They wonder exactly who or what repairs the broken faces, if there is such a thing. The survivors share a dark laugh, each gaining ★ survival.
 
 [TO] 1d10
 [td] Event revealer
@@ -581,7 +581,7 @@ The survivors pass a stone face that appears to be holding something in its mout
 [TO] 1d10
 [td] Event revealer - Investigate
 [c] 1-2
-[d] You yell out in pain and pull your hand back, revealing a bloody gash. Did the stone face just bite? Suffer monster level brain event damage and monster level event arm damage.
+[d] You yell out in pain and pull your hand back, revealing a bloody gash. Did the stone face just bite? Suffer ★ brain event damage and ★ event arm damage.
 [c] 3-5
 [d] There's nothing. It was just a trick of the lantern light.
 [c] 6-8
@@ -595,7 +595,7 @@ The survivors pass a stone face that appears to be holding something in its mout
 
 [img] 25 # no-shadow # width:50%
 
-An earsplitting bellow marks the passing of a truly titanic beast. All <b>non-deaf</b> survivors suffer monster level brain event damage. The survivors cower on the ground, lying as flat as possible and hoping they are simply too small to be worth eating.
+An earsplitting bellow marks the passing of a truly titanic beast. All <b>non-deaf</b> survivors suffer ★ brain event damage. The survivors cower on the ground, lying as flat as possible and hoping they are simply too small to be worth eating.
 
 Each survivor rolls 1d10. The lowest scoring survivor (or survivors, in case of ties) becomes a straggler.
 
@@ -626,7 +626,7 @@ You're plucked from the ground and eaten whole.
 [c] 2-4
 [d] Something snatches you in its great maw and chews you for 1 event damage to 1d5 random hit locations.
 [c] 5-6
-[d] The clamping jaws barely nip you! Suffer monster level event damage to a random hit location.
+[d] The clamping jaws barely nip you! Suffer ★ event damage to a random hit location.
 [c] 7-9
 [d] You make yourself extra flat against the ground and avoid anything terrible.
 [c] 10+
@@ -1450,8 +1450,8 @@ If no one consumes, roll again on the hunt event table before moving on the hunt
 [c] 1-4
 [d<]
 
-The water is clear until it enters your lips, where it suddenly turns to blood. You spit out the foul liquid and suffer monster level brain event damage.
-[i] If you have the <b>Hemophobia</b> disorder, you also suffer monster level event damage to the body as you vomit violently in disgust.
+The water is clear until it enters your lips, where it suddenly turns to blood. You spit out the foul liquid and suffer ★ brain event damage.
+[i] If you have the <b>Hemophobia</b> disorder, you also suffer ★ event damage to the body as you vomit violently in disgust.
 
 [>d]
 [c] 5-8
@@ -1860,7 +1860,7 @@ The monolith's limbs spring to life, grabbing hold before you can react.
 [c] 2-4
 [d] Hands and tentacles grasp at you. Spend 1 survival to wriggle away or treat this result as if you rolled a 1.
 [c] 5-9
-[d] All survivors are driven back with horror. They all suffer quarry's monster level brain event damage.
+[d] All survivors are driven back with horror. They all suffer quarry's ★ brain event damage.
 [c] 10+
 [d<]
 
@@ -2090,7 +2090,7 @@ The survivors come upon a patch of badly damaged ground. The stone faces are cra
 
   95: `95 | Grim and Frostbitten
 There is a dead stillness in the air. The atmosphere becomes thick with worry and the survivors carry on nervously. A bitter, evil cold sets in and there is no shelter.
-The survivors huddle together for warmth, shivering loudly. Unless a survivor has armor gear at each hit location, they lose quarry monster level survival.
+The survivors huddle together for warmth, shivering loudly. Unless a survivor has armor gear at each hit location, they lose quarry ★ survival.
 `,
 
   96: `96 | Cloaked Stranger
