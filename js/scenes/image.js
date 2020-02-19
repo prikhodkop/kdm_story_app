@@ -24,6 +24,8 @@ const quaries_events = [
   'showdown lion god',
   'showdown flower knight',
   'showdown spidicules',
+  'aftermath',
+  'storm break'
 ]
 
 const special_events = [
@@ -77,6 +79,8 @@ module.exports = class ImageScene {
     var events_sequences = {
       'places, everyone!': ['showdown lion knight', tooltips['start showdown'].text],
       'the hanged man': ['showdown manhunter', tooltips['start showdown'].text],
+      'showdown storm knight lv.1-2': ['aftermath', tooltips['to event_text'].text.replace('$E$', events_table['aftermath'].label),],
+      'showdown storm knight lv.3': ['storm break', tooltips['to event_text'].text.replace('$E$', events_table['storm break'].label),],
     }
 
     $('body').css('font-size', parseInt(settings['fontSize'].replace('px',''))/10+'vmin')

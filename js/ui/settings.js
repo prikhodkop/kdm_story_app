@@ -611,6 +611,13 @@ var settings_schema = {
         'description': 'Vibrating to make itself invisible to the human eye, the Spidicules leaves its forest dwelling and lurks in settlements unnoticed. It kidnaps survivors for its own delight as well as to nourish its ever-growing brood.<br/><br/><b style="color:#cc0;">Cards Only</b> - adds only Fighting Arts, Disorders and Terrain cards.<br/><b style="color:#cc0;">All content</b> - adds all expansion content.',
         'enum': expansion_options,
       },
+      'storm knight': {
+        'type': 'option',
+        'title': 'Storm Knight',
+        'default': 'Disabled',
+        'description': 'Created by <b>CCG</b>.<br/>There was once a man, fascinated by clouds, that ardently followed storms into the darkness. He sought dominion over the heavens and built himself a floaring castle to chase the clouds until they accepted him and the man became a storm itself.<br/><br/><b style="color:#cc0;">Cards Only</b> - adds only Fighting Arts, Disorders and Terrain cards.<br/><b style="color:#cc0;">All content</b> - adds all expansion content.',
+        'enum': expansion_options,
+      },
       'sunstalker': {
         'type': 'option',
         'title': 'Sunstalker',

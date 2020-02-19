@@ -223,6 +223,17 @@ const texts = {
    'label': 'Weak Spot',
    "description": "When you gain this disorder, roll a random hit location and record it. You cannot <b>depart</b> unless you have armor at this hit location."
  },
+
+ 'Contact Electrification': {
+  'expansion': 'storm knight',
+  'label': 'Contact Electrification',
+  "description": "Whenever <b>knockback</b> would cause you to collide with another survivor, halt the <b>knockback</b> movement. Both survivors are placed one space to the left or right of the point of collision. They suffer 1 damage to a random location and are <b>knocked down</b> by the electrostatic discharge.",
+ },
+ 'Static Conductor': {
+  'expansion': 'storm knight',
+  'label': 'Static Conductor',
+  "description": "Whenever you suffer damage to the <b>Legs</b> location, you are <b>knocked down</b> and suffer <b>knockback 3</b>.",
+ },
 }
 
 module.exports = {

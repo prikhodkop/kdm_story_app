@@ -152,6 +152,8 @@ const texts = {
 'Sunstones (Sunstalker/Strange)': {'type': 'bone', 'text': ''},
 'Triptych (Lion God/Strange)': {'type': 'hide/scrap', 'text': ''},
 'Web Silk (Spidicules/Strange)': {'type': 'silk', 'text': ''},
+
+'Metal Face (Strange)': {'type':'scrap', 'text': 'During the settlement phase, you may archive 3 <b>Metal Face</b> strange resources to add 1 <b>Storm Helmet</b> rare gear to settlement storage.'}
 }
 
 module.exports = {

@@ -987,6 +987,70 @@ const texts = {
     // 'lleft': '75%'
     // 'music_delay': 'speech-2000'
   },
+
+  'aftermath': {
+    "label": "Aftermath",
+    'expansion': 'storm knight',
+    'music': 'music/kings curse.mp3',
+    'type': 'image',
+    // 'ltop': '5%',
+    // 'lleft': '75%'
+    // 'music_delay': 'speech-2000'
+  },
+  'ill-fated circumstance': {
+    "label": "Ill-Fated Circumstance",
+    'expansion': 'storm knight',
+    'music': 'music/the approaching storm.mp3',
+    'type': 'image',
+    // 'ltop': '5%',
+    // 'lleft': '75%'
+    'music_delay': '2000'
+  },
+  'looming storm': {
+    "label": "Looming Storm",
+    'expansion': 'storm knight',
+    'music': 'music/looming storm.mp3',
+    'type': 'image',
+    'ltop': '85%',
+    'lleft': '75%',
+    'music_delay': '1000'
+  },
+  'rise to the challenge': {
+    "label": "Rise to the Challenge",
+    'expansion': 'storm knight',
+    'music': 'music/rise to the challenge.mp3',
+    'type': 'image',
+    'ltop': '35%',
+    'lleft': '35%',
+    'music_delay': '2000'
+  },
+  'showdown storm knight lv.1-2': {
+    "label": "Showdown: Storm Knight Lv.1-2",
+    'expansion': 'storm knight',
+    'music': 'music/looming storm.mp3',
+    'type': 'image',
+    'ltop': '85%',
+    // 'lleft': '75%'
+    'music_delay': 'speech-2000'
+  },
+  'showdown storm knight lv.3': {
+    "label": "Showdown: Storm Knight Lv.3",
+    'expansion': 'storm knight',
+    'music': 'music/showdown lion god.mp3',
+    'type': 'image',
+    'ltop': '70%',
+    'lleft': '63%',
+    'music_delay': 'speech-2000'
+  },
+  'storm break': {
+    "label": "Storm Break",
+    'expansion': 'storm knight',
+    'music': 'music/storm break.mp3',
+    'type': 'image',
+    'ltop': '35%',
+    // 'lleft': '75%'
+    'music_delay': 'speech-1000'
+  },
 }
 
 module.exports = {

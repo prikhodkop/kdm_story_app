@@ -196,6 +196,15 @@ module.exports = class SettlementScene {
       options: get_events_options(),
       labelField: 'name',
       searchField: ['name'],
+      sortField: [
+        {
+            field: 'name',
+            direction: 'asc'
+        },
+        {
+            field: '$score'
+        }
+      ],
       // maxItems: 4,
       onChange: function(value, isOnInitialize) {
         console.log('Selectize value: '+ value);

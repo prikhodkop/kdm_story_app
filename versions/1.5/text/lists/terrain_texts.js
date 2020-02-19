@@ -85,6 +85,17 @@ const texts = {
    'description': '#',
   'num_cards': 2
  },
+
+ 'Forsaken Fog': {
+   'label':'',
+   'description': '#',
+  'expansion': 'storm knight'
+ },
+ '2 Lightning Rods': {
+   'label':'',
+   'description': '#',
+  'expansion': 'storm knight'
+ },
 }
 
 module.exports = {

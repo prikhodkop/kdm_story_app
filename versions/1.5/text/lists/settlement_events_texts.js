@@ -158,6 +158,22 @@ const texts = {
  'Weird Dream': {
    'label':'',
  },
+
+ 'Wandering Master': {
+   'label':'',
+   'expansion': 'storm knight',
+   'action': true,
+ },
+ 'Beats of the Hammer': {
+   'label':'',
+   'expansion': 'storm knight',
+   // 'action': true,
+ },
+ 'Structural Collapse': {
+   'label':'',
+   'expansion': 'storm knight',
+   // 'action': true,
+ },
 }
 
 module.exports = {

@@ -138,6 +138,19 @@ const texts = {
    'label': 'Zero Prescence',
   "description": "Gain +1 strength when attacking a monster from its blind spot. Whenever you attack a monster, you are always considered to be in its blind spot.",
  },
+
+ 'Cloud Walk': {
+  'expansion': 'storm knight',
+  "description": "Once per showdown, gain +1 <b>Movement</b> and immediately spend it to full move in any direction at any time. This movement can be used while <b>Doomed</b>. The survivor may move through impassible terrain and occupied spaces without causing collision.",
+ },
+ 'High Frequency Agility': {
+  'expansion': 'storm knight',
+  "description": "When you run out of survival, roll 1d10. On 7+, gain +1 <b>Activation</b> and a +1 speed token at the start of your next act.",
+ },
+ 'Mutual Induction': {
+  'expansion': 'storm knight',
+  "description": "At the start of your act, if you have 0 survival, roll 1d10. On a 6+, gain a <b>Charge</b> token that may be placed on this card or any gear that uses <b>Charge</b> tokens. When you are <b>knocked down</b>, remove all <b>Charge</b> tokens from this card.<br/><br/>When this card had 3+ <b>Charge</b> tokens, you may remove them all to gain +1 survival and +1 movement token.",
+ },
 }
 
 module.exports = {
