@@ -351,9 +351,10 @@ const texts = {
  'Scrap Smelting': {
   'label': 'Przetapianie złomu',
  },
- 'Scupture': {
+ 'Sculpture': {
   'label': 'Rzeźba',
  },
+
  'Settlement Watch': {
   'label': 'Settlement Watch',
   'passive': {
@@ -366,8 +367,10 @@ const texts = {
   'label': 'Shadow Dancing',
  },
  'Shrine': {
-  'label': 'Shrine',
+  'label': 'Kapliczka łowów',
  },
+
+
  'Song of the Brave': {
   'label': 'Pieśni o bohaterach',
   'passive': {
