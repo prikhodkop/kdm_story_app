@@ -21,6 +21,8 @@ module.exports = class SettlementScene {
     $('#container').hide()
     $('#container').fadeIn(500)
 
+    let dev_state1 = getDevelopmentState();
+
     console.log('!! Process type: '+window.globals.process)
 
     var events_table = generate_events_table()
@@ -36,7 +38,7 @@ module.exports = class SettlementScene {
 
 
     onSettingsSaved(() => {
-      addDevelopment()
+      // addDevelopment()
       if ($("#menu_table1").length) {
         window.location.reload()
       }
@@ -126,9 +128,12 @@ module.exports = class SettlementScene {
     $('#container').children().hide()
     // $('#turn_cheatsheet').imageMapResize();
 
+    console.log('!!!1-1')
     let dev_state = getDevelopmentState();
+    console.log('!!!1-2')
 
     if (anew) {
+      console.log('Im new!!')
       dev_state['activated']['innovations'] = []
       dev_state['activated']['actions'] = []
       dev_state['events'] = []

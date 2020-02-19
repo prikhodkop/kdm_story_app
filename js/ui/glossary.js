@@ -471,6 +471,9 @@ function get_random_draws (word, randomize=true, ) {
    }
   } else if (word.includes('Innovation')) {
 
+   if (('expansion' in list[key]) && !(settings['expansions'][list[key]['expansion']] == 'All content')) {
+    remove = true
+   }
    if (('campaign' in list[key]) && !(list[key]['campaign'].includes(settings['campaign']))) {
     remove = true
    }

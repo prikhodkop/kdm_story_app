@@ -140,7 +140,7 @@ const texts = {
    '3': ['Feather Mantle', 'Bird Bread', 'Hours Ring', 'Crest Crown', 'Hollowpoint Arrow']},
   'armor_set': 'Phoenix Armor',
  },
- 'Sacreed Pool': {
+ 'Sacred Pool': {
    'label':'',
   'campaign': 'Sun',
   'gear': {

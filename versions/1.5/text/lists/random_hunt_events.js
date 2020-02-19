@@ -2090,7 +2090,7 @@ The survivors come upon a patch of badly damaged ground. The stone faces are cra
 
   95: `95 | Grim and Frostbitten
 There is a dead stillness in the air. The atmosphere becomes thick with worry and the survivors carry on nervously. A bitter, evil cold sets in and there is no shelter.
-The survivors huddle together for warmth, shivering loudly. Unless a survivor has armor gear at each hit location, they lose quarry ★ survival.
+The survivors huddle together for warmth, shivering loudly. Unless a survivor has armor gear at each hit location, they lose ★ survival.
 `,
 
   96: `96 | Cloaked Stranger

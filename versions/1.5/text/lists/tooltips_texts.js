@@ -237,7 +237,7 @@ const texts = {
    'text': '<b style="color:#cc0;">Click</b> to <b>show location</b>.<br/><br/><b style="color:#cc0;">Double click</b> to <b>toggle built status</b>.'
  },
  'innovation_entry': {
-   'text': '<b style="color:#cc0;">Double click</b> to <b>add innovation</b>.<br/>'
+   'text': '<b style="color:#cc0;">Click</b> to <b>add innovation</b>.<br/>'
  },
  'innovation_card': {
    'text': '<b style="color:#cc0;">Click</b> to activate.<br/><br/><b style="color:#cc0;">Double click</b> to remove.</b>.<br/><br/><b style="color:#cc0;">Drag</b> to rearrange.</b>.'

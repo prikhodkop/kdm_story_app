@@ -29,7 +29,7 @@ module.exports = {
   updateActions,
 }
 
-const always_on_locations = ['Throne', 'Lantern Hoard', 'Sacreed Pool', 'The Sun'];
+const always_on_locations = ['Throne', 'Lantern Hoard', 'Sacred Pool', 'The Sun'];
 
 var lang = getSettings()['language']
 var innovations = getTerms('innovations')
@@ -83,7 +83,9 @@ function addDevelopment() {
   window.showInnovation = showInnovation;
   window.filterInnovations = filterInnovations;
 
+  console.log('!!!1')
   getDevelopmentState(); // initializes proper development state if not present
+  console.log('!!!2')
   setupLocations();
   setupInnovations();
   setupActions();
@@ -670,21 +672,25 @@ function setupInnovations() {
 
  console.log('Activated: '+activated)
 
- if (DEBUG_MODE) {console.log('Selected innovations:'+selected_innovations)}
+ if (DEBUG_MODE) {console.log('Selected innovations:'+JSON.stringify(selected_innovations))}
 
  for (let i = 0; i < selected_innovations.length; i++) {
    if (toShow(selected_innovations[i])) {
-     showInnovation(selected_innovations[i], initialization=true);
+     // try {
+       showInnovation(selected_innovations[i], initialization=true);
      $('.tablinks[value="'+selected_innovations[i]+'"]').hide();
      if (activated.includes(selected_innovations[i])) {
        $('.innovation_card[value = "'+selected_innovations[i]+'"]').addClass('active')
      }
+   // } catch {
+   //
+   // }
    } else {
-     updateInnovationsState();
+     // updateInnovationsState();
    }
  }
 
- $('#container').on("dblclick", '.tablinks[type = "innovation"]', function(e) {
+ $('#container').on("click", '.tablinks[type = "innovation"]', function(e) {
 
    $(this).addClass('selected')
    $(this).hide();
@@ -857,7 +863,7 @@ function form_bonuses_list(innovation_names, event_names) {
   let keys = []
 
   for (let i=0; i<innovation_names.length; i++) {
-    if ('passive' in innovations[innovation_names[i]]) {
+    if (toShow(innovation_names[i])&&('passive' in innovations[innovation_names[i]])) {
       keys = Object.keys(innovations[innovation_names[i]]['passive'])
       for (let j=0; j<keys.length; j++) {
         if (!(keys[j] in set)) {
@@ -869,7 +875,7 @@ function form_bonuses_list(innovation_names, event_names) {
   }
 
   for (let i=0; i<event_names.length; i++) {
-    if ('passive' in settlement_events[event_names[i]]) {
+    if (toShow(event_names[i])&&('passive' in settlement_events[event_names[i]])) {
       keys = Object.keys(settlement_events[event_names[i]]['passive'])
       for (let j=0; j<keys.length; j++) {
         if (!(keys[j] in set)) {
@@ -1157,6 +1163,7 @@ function updateActions() {
   $('.actions_grid').empty();
 
   for (let i = 0; i < development['locations'].length; i++) {
+    console.log('Locations to search: '+development['locations'][i])
     if (('action' in settlement_locations[development['locations'][i]]) && settlement_locations[development['locations'][i]]['action']) {
       if (toShow(development['locations'][i])) {
         console.log('Adding location: '+development['locations'][i])
@@ -1182,7 +1189,7 @@ function updateActions() {
 
   for (let i = 0; i < development['events'].length; i++) {
     if (('action' in settlement_events[development['events'][i]]) && settlement_events[development['events'][i]]['action']) {
-      // if (toShow(development['events'][i])) {
+      if (toShow(development['events'][i])) {
         console.log('Adding event: '+development['events'][i])
         addAction(development['events'][i], 'event')
         // if (development['activated']['actions'].includes(development['locations'][i])) {
@@ -1200,7 +1207,7 @@ function updateActions() {
 
           }
         }
-      // }
+      }
     }
   }
 
@@ -1500,6 +1507,7 @@ function getColorTag(name) {
 // #### General purpose functions
 function getDevelopmentState() {
   let development_state = JSON.parse(localStorage.getItem('development'));
+  console.log('Get state: '+JSON.stringify(development_state))
 
   let updated = false
   // check if development has the right format and is stored in local storage, and if not initialize it
@@ -1517,6 +1525,9 @@ function getDevelopmentState() {
     if (!('locations' in development_state)) {
       development_state['locations'] = always_on_locations
       updated = true
+    }
+    if (development_state['locations'].indexOf('Sacreed Pool') > -1) {
+      development_state['locations'][development_state['locations'].indexOf('Sacreed Pool')] = 'Sacred Pool'
     }
     if (!('events' in development_state)) {
       development_state['events'] = []
@@ -1555,6 +1566,8 @@ function getDevelopmentState() {
 }
 
 function setDevelopmentState(development_state) {
+  console.log('!!! Updating state: '+JSON.stringify(development_state))
+  console.log('!!! Current state: '+localStorage.getItem('development'))
   development_state['locations'] = development_state['locations'].filter(function(item, pos) {
     return development_state['locations'].indexOf(item) == pos;
   })
@@ -1694,8 +1707,12 @@ function toShow(name) {
   }
   else if (!($.inArray(name, Object.keys(innovations)) == -1)) {
     list = innovations
-    visibility = ['Cards only', 'All content']
+    visibility = ['All content']
     console.log('It is innovation.')
+  } else if (!($.inArray(name, Object.keys(settlement_events)) == -1)) {
+    list = settlement_events
+    visibility = ['All content']
+    console.log('It is settlement event.')
   } else {
     console.log('Can not say what it is...')
     return false
