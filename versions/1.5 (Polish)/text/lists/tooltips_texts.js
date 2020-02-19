@@ -1,9 +1,9 @@
 const texts = {
   // OGÓLNE
 
-  'app_name': {
-    'text': 'OPOWIEŚCI KDM'
-  },
+  // 'app_name': {
+  //   'text': 'OPOWIEŚCI KDM'
+  // },
   'license': {
     'text': 'Możesz korzystać z aplikacji tylko wtedy, gdy masz legalnie zakupioną kopię gry.<br/>Możesz włączyć w aplikacji tylko zawartość, która jest twoją fizyczną własnością.'
   },
