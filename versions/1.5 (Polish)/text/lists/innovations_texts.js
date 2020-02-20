@@ -6,7 +6,7 @@ const texts = {
   'label': 'Amoniak',
   'passive': {
     'departing': [
-      'Gain +$1$ survival.'
+      'Zdobywasz +$1$ przetrwania.'
     ],
   }
  },
@@ -14,7 +14,7 @@ const texts = {
   'label': 'Aquarobotics',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$'
+      'Limit przetrwania +$1$'
     ],
   }
  },
@@ -25,7 +25,7 @@ const texts = {
   'label': 'Łoże',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$'
+      'Limit przetrwania  +$1$'
     ],
   }
  },
@@ -44,7 +44,7 @@ const texts = {
   'label': 'Citrinitas',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$'
+      'Limit przetrwania +$1$'
     ],
   }
  },
@@ -55,7 +55,7 @@ const texts = {
   'label': 'Legless Ball',
   'passive': {
     'departing': [
-      'Gain +$2$ insanity.'
+      'Zdobywasz +$2$ obłędu.'
     ],
   }
  },
@@ -63,7 +63,7 @@ const texts = {
   'label': 'Silk-refining',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$'
+      'Limit przetrwania +$1$'
     ],
   }
  },
@@ -71,9 +71,9 @@ const texts = {
   'label': 'Klan śmierci',
   'passive': {
     'newborn': [
-      'Gain +$1$ accuracy.',
-      'Gain +$1$ strength.',
-      'Gain +$1$ evasion.'
+      'Zdobywasz +$1$ precyzji.',
+      'Zdobywasz +$1$ siły.',
+      'Zdobywasz +$1$ do zwodów.'
     ],
   }
  },
@@ -81,8 +81,8 @@ const texts = {
   'label': 'Gotowanie',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
-      'At the start of the Settlement Phase, gain +1 endeavor'
+      'Limit przetrwania +$1$',
+      'Na początku fazy osady otrzymujesz +1 punkt działań'
     ],
   }
  },
@@ -90,7 +90,7 @@ const texts = {
   'label': 'Crimson Candy',
   'passive': {
     'showdown': [
-      ['survival', '<b>Monster Level</b>']
+      ['survival', '<b>Poziom potwora</b>']
     ],
   }
  },
@@ -98,7 +98,7 @@ const texts = {
   'label': 'Dark Water Research',
   'passive': {
     'departing': [
-      'Gain +$2$ insanity.'
+      'Zdobywasz +$2$ obłedu.'
     ],
   }
  },
@@ -106,10 +106,10 @@ const texts = {
   'label': 'Przeznaczenie',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
     'actions': [
-      '<b class="action">Endure</b>: You may spend 7 survival minus your Luck to ignore a severe injury before you roll a result.',
+      '<b class="action">Wytrwałość</b>: możesz wydać 7 przetrwania minus swoje szczęście, aby zignorować ciężki uraz zanim wykonasz rzut na wynik.',
     ],
   }
  },
@@ -117,7 +117,7 @@ const texts = {
   'label': 'Dragon Speech',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
     'actions': [
       '<b class="action">Encourage</b>: Once per round, if standing, spend 1 survival to call out to a non-deaf survivor. They stand if knocked down.',
@@ -131,7 +131,7 @@ const texts = {
   'label': 'Empire',
   'passive': {
     'newborn': [
-      'Gain +$1$ strength.',
+      'Zdobywasz +$1$ siły.',
       'Newborn survivors are born with the <b style="color:#863a2a;">Pristine</b> ability.'
     ],
   }
@@ -143,13 +143,13 @@ const texts = {
   'label': 'Rodzina',
   'passive': {
     'departing': [
-      'Gain +$1$ survival.'
+      'Zdobywasz +$1$ przetrwania.'
     ],
     'settlement': [
-      'Survivors nominated for <b class="event">Intimacy</b> may give themselves a surname if they  do not have one.'
+      'Ocalali wybrani do <b class="event">współżycia</b> mogą wybrać sobie nazwisko jeśli go nie mają.'
     ],
     'newborn': [
-      'A newborn survivor inherits the surname of one parent, their weapon type, and half (rounded down) of their weapon proficiency levels.'
+      'Nowonarodzony Ocalały dziedziczy nazwisko jednego z rodziców, jego typ broni i połowę (zaokrąglając w dół) jego poziomu biegłości w broni.'
     ],
   }
  },
@@ -165,10 +165,10 @@ const texts = {
   'label': 'Ostateczna sztuka walki',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
     'showdown': [
-      'Once per showdown, you may select a card from the discard pile or wound stack and place it on top of the AI deck.',
+      'Raz na starcie możesz wybrać kartę z talii kart odrzuconych lub ran i położyć ją na wierzchu talii SI.',
     ],
   }
  },
@@ -176,7 +176,7 @@ const texts = {
   'label': 'Zakazany taniec',
   'passive': {
     'showdown': [
-      'When a survivor uses <b>Synchronized Strike</b> secret fighting art reroll missed attack rolls once.',
+      'Gdy Ocalały używa sekretnej sztuki walki <b>zsynchronizowany cios</b>, może powtórzyć raz chybiony rzut ataku.',
     ],
   }
  },
@@ -184,7 +184,7 @@ const texts = {
   'label': 'Drogowskaz',
   'passive': {
     'departing': [
-      'Gain +$1$ survival.'
+      'Zdobywasz +$1$ przetrwania.'
     ],
   }
  },
@@ -200,7 +200,7 @@ const texts = {
   'label': 'Flet z serca',
   'passive': {
     'showdown': [
-      'When a survivor uses <b>Synchronized Strike</b> secret fighting art, their attack assist may spend 1 survival to change any monster <b>Reflex</b> to <b>Failure</b> before any wound attempts are made. Limit, once per attack.',
+      'Gdy Ocalały używa sztuki walki <b>zsynchronizowany cios</b>, asystujący w ataku może wydać 1 przetrwania, aby zmienić dowolną <b>reakcję</b> potwora na <b>reakcję niepowodzenie</b>, przed rzutem na próbę zranienia. Limit raz na atak.',
     ],
   }
  },
@@ -208,10 +208,10 @@ const texts = {
   'label': 'Chałupa',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
     'departing': [
-      'Gain +$1$ survival.'
+      'Zdobywasz +$1$ przetrwania.'
     ],
   }
  },
@@ -219,7 +219,7 @@ const texts = {
   'label': 'Wewnętrzna latarnia',
   'passive': {
     'actions': [
-      '<b class="action">Surge</b>: Once per round spend 1 survival to gain +1 <b>Action</b> and use it immediately.',
+      '<b class="action">Przyśpieszenie</b>: Raz na rundę wydaj 1 przetrwania by otrzymać i natychmiast wykorzystać +1 <b>Akcję</b>.',
     ],
   }
  },
@@ -227,10 +227,10 @@ const texts = {
   'label': 'Mova',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
     'actions': [
-      '<b class="action">Encourage</b>: Once per round, if standing, spend 1 survival to call out to a non-deaf survivor. They stand if knocked down.',
+      '<b class="action">Natchnienie</b>: az na rundę - jeśli stoisz - wydaj 1 przetrwania by zawołać do nie głuchego Ocalałego. Powstaje jeśli był powalony.',
     ],
   }
  },
@@ -238,10 +238,10 @@ const texts = {
   'label': 'Latarniany piec',
   'passive': {
     'settlement': [
-      'Gain <b>Heat</b>.',
+      'Zdobywasz <b>Ciepło</b>.',
     ],
     'departing': [
-      'Gain +$1$ survival.'
+      'Zdobywasz +$1$ przetrwania.'
     ],
   }
  },
@@ -255,7 +255,7 @@ const texts = {
   'label': 'Nigredo',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
   }
  },
@@ -263,10 +263,10 @@ const texts = {
   'label': 'Farba',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
     'actions': [
-      '<b class="action">Dash</b>: Once per round, spend 1 survival to gain +1 <b>Movemement</b> and use it immediately.',
+      '<b class="action">Sprint</b>: Raz na rundę wydaj 1 przetrwania by otrzymać +1 <b>ruchu</b> do natychmiastowego użycia.',
     ],
   }
  },
@@ -285,10 +285,10 @@ const texts = {
   'label': 'Piktogram',
   'passive': {
     'showdown': [
-      'At the start of a survivors\'s act they may decide to skip their act and - <b class="event-trigger" target="run away">Run Away</b>.',
+      'Na początku aktu Ocalałego, gracz może zdecydować się na pominięcie swojego aktu i wykonać - <b class="event-trigger" target="run away">ucieczkę</b>.',
     ],
     'hunt': [
-      'After a hunt event is resolved, a survivor may decide it\'s time to go home and - <b class="event-trigger" target="run away">Run Away</b>.',
+      'Po rozegraniu wydarzenia fabularnego na łowach, Ocalały może zdecydować, że czas wrócić do domu i wykonać - <b class="event-trigger" target="run away">ucieczkę</b>.',
     ],
   }
  },
@@ -296,7 +296,7 @@ const texts = {
   'label': 'Garncarstwo',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
   }
  },
@@ -304,13 +304,13 @@ const texts = {
   'label': 'Radiating Orb',
   'passive': {
     'settlement': [
-      'Gain <b>Heat</b>.',
+      'Zdobywasz <b>Ciepło</b>.',
     ],
     'newborn': [
-      'Gain +$1$ survival.'
+      'Zdobywasz +$1$ przetrwania.'
     ],
     'departing': [
-      'Gain +$1$ survival.',
+      'Zdobywasz +$1$ przetrwania.',
       '<b>Departing survivors</b> with a constellation gain +1 survival.'
     ],
   }
@@ -331,9 +331,9 @@ const texts = {
   'label': 'Saga',
   'passive': {
     'newborn': [
-      'Gain +$2$ courage.',
-      'Gain +$2$ understanding.',
-      'Gain +$2$ hunt XP.'
+      'Zdobywasz +$2$ odwagi.',
+      'Zdobywasz +$2$ wiedzy.',
+      'Zdobywasz +$2$ doświadczenia łowieckiego.'
     ]
   }
  },
@@ -375,10 +375,10 @@ const texts = {
   'label': 'Pieśni o bohaterach',
   'passive': {
     'showdown': [
-      'On <b>arrival</b>, each non-deaf survivor may remove 1 negative attribute token.',
+      'Po <b>przybyciu</b>, wszyscy niegłusi Ocalali mogą usunąć 1 negatywny żeton atrybutu.',
     ],
     'hunt': [
-      'During the <b class="event">Overwhelming Darkness</b> story event, each non-deaf survivor may select the Path of the Brave.',
+      'Podczas wydarzenia fabularnego <b class="event">przytłaczająca ciemność</b>, każdy niegłuchy Ocalały może wybrać Ścieżkę męstwa.',
     ],
   }
  },
@@ -395,7 +395,7 @@ const texts = {
   'label': 'Opowieści',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
   }
  },
@@ -406,7 +406,7 @@ const texts = {
   'label': 'Sun Language',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
     'actions': [
       '<b class="action">Embolden</b>: Once per round, if you have no +1 strength tokens, spend 1 survival to gain a +1 strength token. When you are knocked down, lose all +1 strength tokens.',
@@ -417,8 +417,8 @@ const texts = {
   'label': 'Sympozjum',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
-      'When a survivor innovates, draw an additional 2 innovation Cards to choose from.',
+      'Limit przetrwania +$1$',
+      'Kiedy Ocalały wprowadza innowację, losowuje dodatkowe 2 karty innowacji do wyboru.',
     ],
   }
  },
@@ -429,8 +429,8 @@ const texts = {
       'At the start of settlement phase add 1 scrap to settlement storage',
     ],
     'departing': [
-      'Gain +$3$ survival.',
-      'Gain +$3$ insanity.',
+      'Zdobywasz +$3$ przetrwania.',
+      'Zdobywasz +$3$ obłędu.',
       'If any of <b>departing survivors</b> have 10+ insanity, <b class="event">Gracious Host</b>',
     ],
   }
@@ -439,10 +439,10 @@ const texts = {
   'label': 'Najlepsza broń',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
     'showdown': [
-      'When you defeat a monster, gain 1 monster resource of your choice from its resource deck.',
+      'Kiedy pokonasz potwora, wybierasz 1 dowolny zasób potwora z jego talii zasobów.',
     ],
   }
  },
@@ -458,7 +458,7 @@ const texts = {
   'label': 'War Room',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
     'hunt': [
       'If the survivors would move backwards on the hunt board, rolld 1d10. On 4+, they don\'t.',
@@ -469,7 +469,7 @@ const texts = {
   'label': 'Akceptacja ciemności',
   'passive': {
     'all': [
-      'Add +2 to all <b>Brain Trauma</b> rolls.',
+      'Dodaj +2 do wszystkich rzutów na <b>traumy umysłu</b>.',
     ],
   }
  },
@@ -477,10 +477,10 @@ const texts = {
   'label': 'Barbarzyństwo',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
     'newborn': [
-      'Gain +$1$ strength.',
+      'Zdobywasz +$1$ siły.',
     ],
   }
  },
@@ -488,10 +488,10 @@ const texts = {
   'label': 'Kanibalizm',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
     'all': [
-      'Whenever a survivor dies, draw 1 basic resource and add it to the settlement storage. Do not gain a resource if a survivor is lost, ceases to exist, or is exiled.',
+      'Zawsze gdy umiera Ocalały, wylosuj 1 podstawowy zasób i dodaj go do magazynu osady. Nie pobierasz zasobów gdy Ocalały został zagubiony, zniknął lub został wypędzony.',
     ],
   }
  },
@@ -499,7 +499,7 @@ const texts = {
   'label': 'Praca zbiorowa',
   'passive': {
     'settlement': [
-      'At the start of the settlement phase, gain +1 <b>Endeavor</b> for every 10 population.',
+      'Na początku fazy osady,otrzymujesz +1 <b>działań</b> za każde 10 populacji.',
     ],
   }
  },
@@ -507,16 +507,16 @@ const texts = {
   'label': 'Groby',
   'passive': {
     'settlement': [
-      'When a survivor dies during the settlement phase, gain +1 <b>Endeavor</b>.',
+      'Kiedy Ocalały umiera podczas fazy osady, otrzymujesz +1 <b>działań</b>.',
     ],
     'newborn': [
-      'Gain +$1$ understanding.',
+      'Zdobywasz +$1$ wiedzy.',
     ],
     'showdown': [
-      'When a survivor dies during the showdown phase, gain +2 <b>Endeavors</b>.',
+      'Kiedy Ocalały umiera podczas fazy starcia, otrzymujesz +2 <b>działań</b>.',
     ],
     'hunt': [
-      'When a survivor dies during the hunt phase, gain +2 <b>Endeavors</b>.',
+      'Kiedy Ocalały umiera podczas łowów, otrzymujesz +2 <b>działań</b>.',
     ],
   }
  },
@@ -524,7 +524,7 @@ const texts = {
   'label': 'Troska o dzieci',
   'passive': {
     'settlement': [
-      'When rolling on the <b class="event">Intimacy</b> story event, roll twice and pick 1 result.',
+      'Kiedy rzucasz kością podczas wydarzenia fabularnego <b class="event">współżycie</b> , rzuć dwa razy i wybierz jeden wynik.',
     ],
   }
  },
@@ -532,10 +532,10 @@ const texts = {
   'label': 'Romantyzm',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
     'all': [
-      'When you gain a random fighting art, draw 3 fighting art cards and select 1 to keep.',
+      'Gdy otrzymujesz losową sztukę walki, wylosuj 3 karty sztuk walki i wybierz którą z nich zachowasz.',
     ],
   }
  },
@@ -543,17 +543,17 @@ const texts = {
   'label': 'Przetrwanie najsilniejszych',
   'passive': {
     'settlement': [
-      'Survival Limit +$1$',
+      'Limit przetrwania +$1$',
     ],
     'settlement': [
-      'When rolling on the <b class="event">Intimacy</b> story event, roll twice and pick lowest result.',
+      'Podczas rzutu na wydarzenie fabularne <b class="event">współżycie</b>, rzuć dwukrotnie i wybierz niższy wynik.',
     ],
     'newborn': [
-      'Gain +$1$ strength.',
-      'Gain +$1$ evasion.'
+      'Zdobywasz +$1$ siły.',
+      'Zdobywasz +$1$ do zwodów.'
     ],
     'all': [
-      'Once per lifetime, a survivor may reroll a single roll result. They must keep this new result.',
+      'Raz podczas życia, Ocalały może powtórzyć jeden rzut. Musisz zaakceptować nowy rezultat.',
     ],
   }
  }
