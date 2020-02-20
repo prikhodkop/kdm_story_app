@@ -36,7 +36,7 @@ const texts = {
   },
 
   'set_word': {
-    'text': '<b style="color:#d87dc1;font-size:0.8em;">Set: $G$</b>'
+    'text': '<b style="color:#d87dc1;font-size:0.8em;">Ustaw: $G$</b>'
   },
   'roll_word': {
     'text': '<b>Rzut: $G$d10</b>'
@@ -70,6 +70,18 @@ const texts = {
   },
   'severe_table': {
     'text': '<b style="color:#cc0;">Kliknij</b> aby ukryć.'
+  },
+  'locations_word': {
+    'text': 'Lokacje'
+  },
+  'innovations_word': {
+    'text': 'Innowacje'
+  },
+  'actions_word': {
+    'text': 'Akcje'
+  },
+  'search_word': {
+    'text': 'Szukaj'
   },
 
  // ŁOWY
