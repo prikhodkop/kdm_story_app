@@ -83,6 +83,9 @@ const texts = {
   'search_word': {
     'text': 'Szukaj'
   },
+  'type_term': {
+    'text': 'Wpisz hasło'
+  },
 
  // ŁOWY
 
