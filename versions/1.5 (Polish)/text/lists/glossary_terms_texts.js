@@ -1384,7 +1384,7 @@ const texts = {
 		'description': 'specjalna zasada ekwipunku. Zamień wszystkie rzuty zranienia na rzut 1k10. Na 1-5: nieudany, na 6+ zranienie. Nie możesz spowodować rany krytycznej używając tej zasady.'
 	},
 	'Unwieldy': {
-		'label': 'Nieporęczny',
+		'label': 'Uciążliwa',
 		'description': 'Specjalna zasada ekwipunku. Jeśli jakikolwiek rzutu ataku wyniósł 1, broń zadaje  Ocalałemu 1 obrażenie w losową lokację za każdą wyrzuconą 1. Kontynuuj atak normalnie.'
 	},
 	'Vermin Resources': {
