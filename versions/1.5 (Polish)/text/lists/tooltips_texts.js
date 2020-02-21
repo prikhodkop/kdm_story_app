@@ -92,6 +92,12 @@ const texts = {
   'settlement_word': {
     'text': 'Osada'
   },
+  'hunt_word': {
+    'text': 'Łowy'
+  },
+  'showdown_word': {
+    'text': 'Starcie'
+  },
   'newborns_word': {
     'text': 'Nowo narodzeni'
   },
