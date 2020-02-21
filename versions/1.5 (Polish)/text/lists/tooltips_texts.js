@@ -86,8 +86,51 @@ const texts = {
   'type_term': {
     'text': 'Wpisz hasło'
   },
+  'bonusses_summary': {
+    'text': 'Podsumowanie bonusów'
+  },
+  'settlement_word': {
+    'text': 'Osada'
+  },
+  'newborns_word': {
+    'text': 'Nowo narodzeni'
+  },
+  'departing_word': {
+    'text': 'Wyruszający'
+  },
+  'milestones_word': {
+    'text': 'Kamienie milowe'
+  },
+  'first_child_is_born': {
+    'text': 'Narodziny pierwszego dziecka'
+  },
+  'first_time_death_count_is_updated': {
+    'text': 'Pierwszy wpis na liście poległych'
+  },
+  'population_reaches_15': {
+    'text': 'Populacja osiąga 15'
+  },
+  'lantern_year_12': {
+    'text': 'Latarniany rok 12'
+  },
+  'settlement_has_5_innovations': {
+    'text': 'Osada wprowadza 5 innowację'
+  },
+  'principle_new_life': {
+    'text': 'Doktryna: Nowe zycie'
+  },
+  'principle_death': {
+    'text': 'Doktryna: Śmierć'
+  },
+  'principle_society': {
+    'text': 'Doktryna: Społeczeństwo'
+  },
+  'principle_conviction': {
+    'text': 'Doktryna: Przekonania'
+  },
 
- // ŁOWY
+
+  // ŁOWY
 
  'hunt_start': {
    'text': 'Wybierz na jakiego potwora <br/>będziecie polowac w tym roku.'
