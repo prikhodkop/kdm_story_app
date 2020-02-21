@@ -138,7 +138,7 @@ const texts = {
     'text': 'Spacja'
   },
   'random': {
-    'text': 'Losowo'
+    'text': 'losow'
   },
 
   // ŁOWY

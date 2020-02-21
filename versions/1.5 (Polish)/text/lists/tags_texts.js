@@ -8,7 +8,7 @@ const texts = {
     'color': '#ff7d3c'
   },
   'faith': {
-    'label': 'wiare',
+    'label': 'wiara',
     'color': '#fff'
   },
   'home': {
