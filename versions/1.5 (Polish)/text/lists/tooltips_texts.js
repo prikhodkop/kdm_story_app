@@ -134,7 +134,12 @@ const texts = {
   'principle_conviction': {
     'text': 'Doktryna: Przekonania'
   },
-
+  'space': {
+    'text': 'Spacja'
+  },
+  'random': {
+    'text': 'Losowo'
+  },
 
   // ŁOWY
 
