@@ -36,7 +36,7 @@ const texts = {
   },
 
   'set_word': {
-    'text': '<b style="color:#d87dc1;font-size:0.8em;">Ustaw: $G$</b>'
+    'text': '<b style="color:#d87dc1;font-size:0.8em;">Zestaw: $G$</b>'
   },
   'roll_word': {
     'text': '<b>Rzut: $G$d10</b>'

@@ -97,16 +97,18 @@ var texts = {
    'label': "Biała mówczyni",},
   "zero presence": {
    'label': "Nieuchwytność",},
-  "fetid grotto": {
-   'label': "Fetid Grotto",},
+  
+   "fetid grotto": {
+   'label': "Cuchnąca pieczara",},
   "final march": {
-   'label': "Final March",},
+   'label': "Ostatni marsz",},
   "the approaching storm": {
-   'label': "The Approaching Storm",},
+   'label': "Nadchodząca burza",},
   "melting horror": {
-   'label': "Melting Horror",},
+   'label': "Rozpuszczająca groza",},
   "showdown gorm": {
-   'label': "Showdown: Gorm",},
+   'label': "Starcie: Gorm",},
+   
   "black harvest": {
    'label': "Black Harvest",},
   "rumbling in the dark": {
