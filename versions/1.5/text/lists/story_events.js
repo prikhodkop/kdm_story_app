@@ -807,7 +807,7 @@ const texts = {
     'campaign': ['Sun'],
   },
   'showdown sunstalker': {
-    "label": "Showdown Sunstalker",
+    "label": "Showdown: Sunstalker",
     'expansion': 'sunstalker',
     'music': 'music/showdown sunstalker.mp3',
     'music_delay': 'speech + 500',
