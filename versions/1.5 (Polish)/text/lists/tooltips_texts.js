@@ -62,6 +62,13 @@ const texts = {
     'text': '<b style="color:#cc0;">Kliknij</b> aby wyświetlić okno <b>słowniczka</b>.',
   },
 
+  'random_key': {
+    'text': 'losow',
+  },
+  'space_key': {
+    'text': 'spacja',
+  },
+
   'innovations_list': {
     'text': '<b style="color:#cc0;">Kliknij</b> aby dodać/usunąć <b>innowacje</b> osady.',
   },
@@ -81,7 +88,7 @@ const texts = {
     'text': 'Akcje'
   },
   'search_word': {
-    'text': 'Szukaj'
+    'text': 'Szukaj...'
   },
   'type_term': {
     'text': 'Wpisz hasło'
@@ -122,24 +129,19 @@ const texts = {
   'settlement_has_5_innovations': {
     'text': 'Osada wprowadza 5 innowację'
   },
-  'principle_new_life': {
-    'text': 'Doktryna: Nowe zycie'
-  },
-  'principle_death': {
-    'text': 'Doktryna: Śmierć'
-  },
-  'principle_society': {
-    'text': 'Doktryna: Społeczeństwo'
-  },
-  'principle_conviction': {
-    'text': 'Doktryna: Przekonania'
-  },
-  'space': {
-    'text': 'Spacja'
-  },
-  'random': {
-    'text': 'losow'
-  },
+  // 'principle_new_life': {
+  //   'text': 'Doktryna: Nowe zycie'
+  // },
+  // 'principle_death': {
+  //   'text': 'Doktryna: Śmierć'
+  // },
+  // 'principle_society': {
+  //   'text': 'Doktryna: Społeczeństwo'
+  // },
+  // 'principle_conviction': {
+  //   'text': 'Doktryna: Przekonania'
+  // },
+
 
   // ŁOWY
 

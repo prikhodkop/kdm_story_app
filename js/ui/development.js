@@ -63,9 +63,9 @@ function addDevelopment() {
 
   $('#settlement_locations_window').append($('<div class="development_tab_wrapper"></div>'))
   $('.development_tab_wrapper').append($('<div class="development_tab_buttons"></div>'))
-  $('.development_tab_buttons').append($('<div class="development_tab_button" id="locations_button">Locations</div>'));
-  $('.development_tab_buttons').append($('<div class="development_tab_button" id="innovations_button">Innovations</div>'));
-  $('.development_tab_buttons').append($('<div class="development_tab_button" id="endeavor_button">Actions</div>'));
+  $('.development_tab_buttons').append($('<div class="development_tab_button" id="locations_button">'+tooltips['locations_word'].text+'</div>'));
+  $('.development_tab_buttons').append($('<div class="development_tab_button" id="innovations_button">'+tooltips['innovations_word'].text+'</div>'));
+  $('.development_tab_buttons').append($('<div class="development_tab_button" id="endeavor_button">'+tooltips['actions_word'].text+'</div>'));
 
   $('#locations_button').addClass('active')
 
@@ -548,7 +548,7 @@ function setupInnovations() {
     type: 'search',
     onkeyup: "filterInnovations()",
     onsearch: "filterInnovations(true)",
-    placeholder: "Search..."
+    placeholder: tooltips['search_word'].text
   }));
 
   $('#innovations_filter').tooltipster({animationDuration: 50,
@@ -800,7 +800,6 @@ function filterInnovations(clear=false) {
       if (innovations[txtValue]['tags'][i] in tags_list) {
         tag_labels.push(tags_list[innovations[txtValue]['tags'][i]].label)
       } else {
-        console.log('!!! to search:'+titleCase(innovations[txtValue]['tags'][i]))
         tag_labels.push(innovations[titleCase(innovations[txtValue]['tags'][i]).replace('Of', 'of').replace('The', 'the')].label.toLowerCase())
       }
 
@@ -892,13 +891,13 @@ function form_bonuses_list(innovation_names, event_names) {
  let result = $('#severe-table.summary')
 
  let categories = {
-               'all': 'Bonuses Summary',
-               'settlement': '<img style="display: inline-block;width:1.2em;" src="'+pathToAssetL('images/settlement/settlement.png')+'"/> '+'Settlement:',
-               'newborn': 'Newborns:',
-               'departing': 'Departing:',
-               'hunt': '<img style="display: inline-block;width:1.2em;vertical-allign:middle;" src="'+pathToAssetL('images/hunt_icon.png')+'"/> '+'Hunt:',
-               'showdown': '<img style="display: inline-block;width:1.2em;vertical-allign:middle;" src="'+pathToAssetL('images/hunt/starvation_icon.png')+'"/> '+'Showdown:',
-               'actions': 'Actions:',
+               'all': tooltips['bonusses_summary'].text,
+               'settlement': '<img style="display: inline-block;width:1.2em;" src="'+pathToAssetL('images/settlement/settlement.png')+'"/> '+tooltips['settlement_word'].text+':',
+               'newborn': tooltips['newborns_word'].text+':',
+               'departing': tooltips['departing_word'].text+':',
+               'hunt': '<img style="display: inline-block;width:1.2em;vertical-allign:middle;" src="'+pathToAssetL('images/hunt_icon.png')+'"/> '+tooltips['hunt_word'].text+':',
+               'showdown': '<img style="display: inline-block;width:1.2em;vertical-allign:middle;" src="'+pathToAssetL('images/hunt/starvation_icon.png')+'"/> '+tooltips['showdown_word'].text+':',
+               'actions': tooltips['actions_word'].text+':',
               }
 
 let categories_order
@@ -1163,7 +1162,6 @@ function updateActions() {
   $('.actions_grid').empty();
 
   for (let i = 0; i < development['locations'].length; i++) {
-    console.log('Locations to search: '+development['locations'][i])
     if (('action' in settlement_locations[development['locations'][i]]) && settlement_locations[development['locations'][i]]['action']) {
       if (toShow(development['locations'][i])) {
         console.log('Adding location: '+development['locations'][i])

@@ -90,7 +90,7 @@ const texts = {
   'label': 'Crimson Candy',
   'passive': {
     'showdown': [
-      ['survival', '<b>Poziom potwora</b>']
+      'Na początku pokazu każdy z ocalałych zyskuje ★ przeżycie.'
     ],
   }
  },

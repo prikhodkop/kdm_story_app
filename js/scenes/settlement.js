@@ -638,21 +638,19 @@ module.exports = class SettlementScene {
     }
 
     function addMilestones () {
-      // settings['str']
-      // $('#milestones').append($('<div id="milestone-title">Strains</div>'))
-      // $('#milestones').append($('<div id="milestone">&bull; First time death cound is updated - <a id="milestone-trigger" target="principle death">Principle: Death</a></div>'))
-      $('#milestones').append($('<div id="milestone-title">Milestones</div>'))
+
+      $('#milestones').append($('<div id="milestone-title">'+tooltips['milestones_word'].text+'</div>'))
       if (['Lantern', 'Stars'].includes(settings['campaign'])) {
-        $('#milestones').append($('<div id="milestone">&bull; First child is born - <a id="milestone-trigger" target="principle new life">Principle: New Life</a></div>'))
+        $('#milestones').append($('<div id="milestone">&bull; '+tooltips['first_child_is_born'].text+' - <a id="milestone-trigger" target="principle new life">'+events_table['principle new life'].label+'</a></div>'))
       }
-      $('#milestones').append($('<div id="milestone">&bull; First time death count is updated - <a id="milestone-trigger" target="principle death">Principle: Death</a></div>'))
-      $('#milestones').append($('<div id="milestone">&bull; Population reaches 15 - <a id="milestone-trigger" target="principle society">Principle: Society</a></div>'))
-      $('#milestones').append($('<div id="milestone">&bull; Lantern Year 12 - <a id="milestone-trigger" target="principle conviction">Principle: Conviction</a></div>'))
+      $('#milestones').append($('<div id="milestone">&bull; '+tooltips['first_time_death_count_is_updated'].text+' - <a id="milestone-trigger" target="principle death">'+events_table['principle death'].label+'</a></div>'))
+      $('#milestones').append($('<div id="milestone">&bull; '+tooltips['population_reaches_15'].text+' - <a id="milestone-trigger" target="principle society">'+events_table['principle society'].label+'</a></div>'))
+      $('#milestones').append($('<div id="milestone">&bull; '+tooltips['lantern_year_12'].text+' - <a id="milestone-trigger" target="principle conviction">'+events_table['principle conviction'].label+'</a></div>'))
       if (settings['campaign'] == 'Lantern') {
-        $('#milestones').append($('<div id="milestone">&bull; Settlement has 5 innovations - <a id="milestone-trigger" target="hooded knight">Hooded Knight</a></div>'))
+        $('#milestones').append($('<div id="milestone">&bull; '+tooltips['settlement_has_5_innovations'].text+' - <a id="milestone-trigger" target="hooded knight">'+events_table['hooded knight'].label+'</a></div>'))
       }
       if (settings['campaign'] == 'Sun') {
-        $('#milestones').append($('<div id="milestone">&bull; Settlement has 8 innovations - <a id="milestone-trigger" target="edged tonometry">Edged Tonometry</a></div>'))
+        $('#milestones').append($('<div id="milestone">&bull; '+tooltips['settlement_has_8_innovations'].text+' - <a id="milestone-trigger" target="edged tonometry">'+events_table['edged tonometry'].label+'</a></div>'))
       }
 
       $('body').on('click', '#milestone-trigger', function () {

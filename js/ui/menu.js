@@ -447,8 +447,8 @@ function createReference () {
     src: pathToAssetL('images/reference/reference_back.png'),
   }))
 
-  // $('#reference-window-back').append('<label for="reference-window">Terms:</label>')
-  $('#reference-window-back0').append('<select id="reference-window" class="reference-window" placeholder="Type term..."></select>')
+
+  $('#reference-window-back0').append('<select id="reference-window" class="reference-window" placeholder="'+tooltips['type_term'].text+'..."></select>')
 
   $('#reference-window-back0').append($('<div>', {
     id: 'reference-window-back',

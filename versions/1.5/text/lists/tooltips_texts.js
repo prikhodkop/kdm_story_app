@@ -78,6 +78,62 @@ const texts = {
     'text': '<b style="color:#cc0;">Click</b> to hide.'
   },
 
+  'locations_word': {
+    'text': 'Locations'
+  },
+  'innovations_word': {
+    'text': 'Innovations'
+  },
+  'actions_word': {
+    'text': 'Actions'
+  },
+  'search_word': {
+    'text': "Search..."
+  },
+  'type_term': {
+    'text': 'Type term'
+  },
+  'bonusses_summary': {
+    'text': 'Bonuses Summary'
+  },
+  'settlement_word': {
+    'text': 'Settlement'
+  },
+  'hunt_word': {
+    'text': 'Hunt'
+  },
+  'showdown_word': {
+    'text': 'Showdown'
+  },
+  'newborns_word': {
+    'text': 'Newborns'
+  },
+  'departing_word': {
+    'text': 'Departing'
+  },
+
+  'milestones_word': {
+    'text': 'Milestones'
+  },
+  'first_child_is_born': {
+    'text': 'First child is born'
+  },
+  'first_time_death_count_is_updated': {
+    'text': 'First time death count is updated'
+  },
+  'population_reaches_15': {
+    'text': 'Population reaches 15'
+  },
+  'lantern_year_12': {
+    'text': 'Lantern Year 12'
+  },
+  'settlement_has_5_innovations': {
+    'text': 'Settlement has 5 innovations'
+  },
+  'settlement_has_8_innovations': {
+    'text': 'Settlement has 8 innovations'
+  },
+
  // HUNT
 
  'hunt_start': {
