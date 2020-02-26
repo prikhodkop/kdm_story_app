@@ -124,16 +124,16 @@ const  texts = {
    'label': 'Przywódca',
   "description": "#"
  },
- // 'Lure Epilepsy': {
- //  // 'expansion': 'gorm',
- //  'label': 'Lure Epilepsy',
- //  "description": "#",
- // },
- // 'Mammoth Hunting': {
- //  // 'expansion': 'gorm',
- //  'label': 'Mammoth Hunting',
- //  "description": "#",
- // },
+ 'Lure Epilepsy': {
+  // 'expansion': 'gorm',
+  'label': 'Powab epilepsji',
+  "description": "#",
+ },
+ 'Mammoth Hunting': {
+  // 'expansion': 'gorm',
+  'label': 'Polowanie na mamuty',
+  "description": "#",
+ },
  'Mighty Strike': {
    'label': 'Potężny cios',
   "description": "#"

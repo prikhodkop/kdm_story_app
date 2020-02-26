@@ -18,10 +18,10 @@ const texts = {
   'label': 'Wyczerpany latarniany kopiec',
  },
  'Gormchymist': {
-  'label': 'Gormchymist',
+  'label': 'Gormchemik',
  },
  'Gormery': {
-  'label': 'Gormery',
+  'label': 'Gormownia',
  },
  'Inspired Crafting': {
   'label': 'Inspired Crafting',

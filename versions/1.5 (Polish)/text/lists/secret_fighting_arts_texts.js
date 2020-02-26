@@ -72,11 +72,11 @@ const texts = {
  //  'label': 'Hellfire',
  //  "description": "#",
  // },
- // 'Immovable Object': {
- //  // 'expansion': 'gorm',
- //  'label': 'Immovable Object',
- //  "description": "#",
- // },
+ 'Immovable Object': {
+  // 'expansion': 'gorm',
+  'label': 'Nieruchomy obiekt',
+  "description": "#",
+ },
  'King of a Thousand Battles': {
    'label': 'Król tysiąca bitew',
   "description": "#",

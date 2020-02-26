@@ -1,9 +1,9 @@
 const texts = {
- // 'Absent Seizures': {
- //  // 'expansion': 'gorm',
- //  'label': 'Absent Seizures',
- //  "description": "#",
- // },
+ 'Absent Seizures': {
+  // 'expansion': 'gorm',
+  'label': 'Nieobecne drgawki',
+  "description": "#",
+ },
  // 'Aichmophobia': {
  //  // 'expansion': 'dragon king',
  //  'label': 'Aichmophobia',
@@ -94,11 +94,11 @@ const texts = {
    'label': 'Niezdecydowanie',
   "description": "#",
  },
- // 'Megalophobia': {
- //  // 'expansion': 'gorm',
- //  'label': 'Megalophobia',
- //  "description": "#",
- // },
+ 'Megalophobia': {
+  // 'expansion': 'gorm',
+  'label': 'Megalofobia',
+  "description": "#",
+ },
  'Monster Panic': {
    'label': 'Strach przed potworami',
   "description": "#"
