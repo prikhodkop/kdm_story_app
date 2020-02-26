@@ -39,7 +39,6 @@ function createAbout (version) {
   // $('#about-window-back0').append($(`<img id='about_logo' src="`+cdnUrl('images/icons/poots_c.png')+`"/>`))
 
   $(`<div><h id="about_header">KDM Story app (`+version+`)</h>
-  <p id="about_p">Created by <a href=https://t.me/prikhodkop style="color:#888800;" target="_blank">@prikhodkop</a> (contact me via: <a href=mailto:prikhodkop@gmail.com style="color:#888800;" target="_blank">prikhodkop@gmail.com</a>)</p>
   <p id="about_p">The app is an open-source non-profit project to make playing the game more enjoyable. I wish you to enjoy the app and please share your feedback and impressions!<br/></p>
   <p id="about_p"><b style="color:#aaa">Support project on Patreon</b>: <a href=https://www.patreon.com/kdmstoryapp style="color:#888800;" target="_blank">https://www.patreon.com/kdmstoryapp</a><br/></p>
   <p id="about_p">Web site: <a href=https://kdm-story.site style="color:#888800;" target="_blank">https://kdm-story.site</a></p>
@@ -52,9 +51,16 @@ function createAbout (version) {
   <p id="about_p"><b style="color:#aaa">Coding</b>: @prikhodkop, Justin Parker (jparkerweb), Andrew Mackrodt (andrewmackrodt).</p>
   <p id="about_p"><b style="color:#aaa">Voice acting</b>: @prikhodkop, Katya Prikhodko, Joseph Anthony (tweet: @JA_VOX).</p>
   <p id="about_p"><b style="color:#aaa">Testing</b>: Alexander Fedorov, Calibretto, Creepo, Cymbaline, Knolan.</p>
-  <p id="about_p">Arts, disorders, ability and weapon specialisation cards are created by Fen, please support him at his: <a href=https://www.patreon.com/FenPaints style="color:#888800;" target="_blank">https://www.patreon.com/FenPaints</a> </br>He deservers it!.</p>
-  <p id="about_p"><b style="color:#aaa">Patreon backers</b>: Bekil, Blair, Cymbaline, Frosty, Javier Salmeron, Jesús Martin-Davila, Jordan White, Kliff, Mithless_one, Royce, Scott M, timberwolfl.</p></div>`).appendTo('#about-window-back')
+  <p id="about_p"><b style="color:#aaa">Polish translation</b>: Artur X, Sebastian Oleksa, Marcin „Szuwar” Niedzielski, Maciej Filipiak, Jarosław Czarniak, Damian Kopczyński, DsPkT.</p>
+  <p id="about_p"><b style="color:#aaa">Community Edition and Storm Knight</b> are created by CCG Team, check their other work at: <a href=https://www.patreon.com/ccgteam style="color:#888800;" target="_blank">https://www.patreon.com/ccgteam</a></p>
+  <p id="about_p"><b style="color:#aaa">Weapon specialisation cards</b> are created by Fen, check his work at: <a href=https://www.patreon.com/FenPaints style="color:#888800;" target="_blank">https://www.patreon.com/FenPaints</a></p>
+  <p id="about_p"><b style="color:#aaa">Patreon backers</b>: Bekil, Blair, Cymbaline, Frosty, Javier Salmeron, Jesús Martin-Davila, Jordan White, Kliff, Mithless_one, Royce, Scott M, timberwolfl.</p>
+  <p id="about_p">If i missed someone or you want to discuss other app related topics, please reach me at <a href=mailto:prikhodkop@gmail.com style="color:#888800;" target="_blank">prikhodkop@gmail.com</a><br/><br/>Enjoy your play!</p></div>`).appendTo('#about-window-back')
   $('#about-window-back0').hide()
+
+  //<p id="about_p">Created by <a href=https://t.me/prikhodkop style="color:#888800;" target="_blank">@prikhodkop</a> (contact me via: <a href=mailto:prikhodkop@gmail.com style="color:#888800;" target="_blank">prikhodkop@gmail.com</a>)</p>
+
+
 
   // $('#about_text').click(function () {
   //   if (!$(this).hasClass('active')) {
