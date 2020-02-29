@@ -30,7 +30,8 @@ module.exports = {
   createToc,
   titleCase,
   // events_table: events_table,
-  generate_events_table
+  generate_events_table,
+  filterEvents
 }
 
 function generate_events_table () {
@@ -206,6 +207,8 @@ function createToc (col_len = 5) {
 
   events_table = generate_events_table()
 
+  window.filterEvents = filterEvents
+
   // console.log('events!!!: '+JSON.stringify(events_table))
 
   $('#container').on('mouseenter', '#menu_item', function() {
@@ -299,10 +302,104 @@ function createToc (col_len = 5) {
   // CREATE TABLE 2
 
   let tbl2 = document.createElement('table')
-  // tbl2.style.width  = '90%';
-  // tbl2.style.top  = '12%';
   tbl2.setAttribute('id', 'menu_table2')
-  tbl2.style.cssText += 'width:90%;top:12%;left:5%;'
+  tbl2.style.cssText += 'width:90%;top:20%;left:5%;'
+
+  container.appendChild(tbl2)
+
+  // let row_len = Math.ceil(table_2_ids.length / col_len)
+  // let rows = []
+  //
+  // for (let i = 0; i < row_len; i++) {
+  //   rows.push([])
+  // }
+  //
+  // let ctr = 0
+  // let ro_idx = 0
+  //
+  //
+  // for (let i = 0; i < table_2_ids.length; i++) {
+  //   if (ctr >= col_len) {
+  //     ctr = 0
+  //     // cl_idx = cl_idx + 1
+  //     ro_idx = ro_idx+1
+  //   }
+  //
+  //   rows[ro_idx].push(table_2_ids[i])
+  //   // ro_idx = ro_idx + 1
+  //   ctr = ctr + 1
+  // }
+  //
+  // for (let i = 0; i < rows.length; i++) {
+  //   let tr = tbl2.insertRow()
+  //   // tr.className = "spaceUnder";
+  //
+  //   for (let j = 0; j < rows[i].length; j++) {
+  //     let td = tr.insertCell()
+  //     td.style.cssText = 'width:' + width2 + '%;height:5em;position:static;'
+  //
+  //     let a2 = document.createElement('div')
+  //     a2.setAttribute('id', 'menu_item')
+  //
+  //     a2.setAttribute('target', rows[i][j])
+  //     a2.style.cssText += 'width:100%;position:static; margin:0 auto;'
+  //     let text = ''
+  //     if (rows[i][j].includes('showdown')) {
+  //       // text = events_table[rows[i][j]].label.replace('Showdown:', '&#9876;:')
+  //       text = events_table[rows[i][j]].label.substring(events_table[rows[i][j]].label.indexOf(":")+1);
+  //       text = '<img style="width:9%;" id="showdown_icon" src="'+pathToAssetL('images/icons/swords_inv_c.png')+'"/>' + text
+  //     } else {
+  //       text = events_table[rows[i][j]].label
+  //     }
+  //     if (events_table[rows[i][j]].expansion == '') {
+  //       a2.innerHTML += text
+  //     } else {
+  //       // let dot = '<b style="color:'+color_menu[events_table[rows[i][j]].expansion]+';">&#10033;</b>'
+  //       let dot = '<img style="width:10%;" id="expansion_icon" value="'+events_table[rows[i][j]].expansion+'" src="'+pathToAssetL('images/icons/expansions/'+events_table[rows[i][j]].expansion+'_c.png')+'"/>'
+  //       a2.innerHTML += dot+' '+text
+  //     }
+  //     a2.setAttribute('label', events_table[rows[i][j]].label)
+  //
+  //     td.appendChild(a2)
+  //   }
+  // }
+
+  formTable2()
+}
+
+function formTable2(col_len=5) {
+  let settings = getSettings();
+  let events_table = generate_events_table()
+
+  let width2 = Math.floor(100 / col_len)
+
+  let events_table_ids = Object.keys(events_table)
+
+  let table_2_ids = []
+
+  let filter_value = document.getElementById("events_filter").value.toUpperCase();
+
+  for (let i = 0; i < events_table_ids.length; i++) {
+    if (events_table[events_table_ids[i]].table == 2) {
+      if ((events_table[events_table_ids[i]]['expansion'] == '') || (settings['expansions'][events_table[events_table_ids[i]]['expansion']] == 'All content')) {
+        if ((events_table[events_table_ids[i]]['campaign'] == '') || (events_table[events_table_ids[i]]['campaign'].includes(settings['campaign']))) {
+          if (events_table[events_table_ids[i]].label.toUpperCase().includes(filter_value)) {
+              table_2_ids.push(events_table_ids[i])
+          }
+        }
+      }
+    }
+  }
+
+  table_2_ids.sort(function(a, b) {
+    if (events_table[a].label < events_table[b].label) {
+      return -1
+    } else if (events_table[a].label > events_table[b].label) {
+      return 1
+    } else {
+      return 0
+    }
+  })
 
   let row_len = Math.ceil(table_2_ids.length / col_len)
   let rows = []
@@ -314,10 +411,12 @@ function createToc (col_len = 5) {
   let ctr = 0
   let ro_idx = 0
 
+
   for (let i = 0; i < table_2_ids.length; i++) {
     if (ctr >= row_len) {
       ctr = 0
       // cl_idx = cl_idx + 1
+      // ro_idx = ro_idx+1
       ro_idx = 0
     }
 
@@ -326,7 +425,10 @@ function createToc (col_len = 5) {
     ctr = ctr + 1
   }
 
-  // console.log(rows);
+  let tbl2 = document.getElementById('menu_table2')
+
+  // tbl2.empty()
+  $("#menu_table2 tr").remove();
 
   for (let i = 0; i < rows.length; i++) {
     let tr = tbl2.insertRow()
@@ -345,7 +447,7 @@ function createToc (col_len = 5) {
       if (rows[i][j].includes('showdown')) {
         // text = events_table[rows[i][j]].label.replace('Showdown:', '&#9876;:')
         text = events_table[rows[i][j]].label.substring(events_table[rows[i][j]].label.indexOf(":")+1);
-        text = '<img style="width:9%;" id="showdown_icon" src="'+pathToAssetL('images/icons/swords_inv_c.png')+'"/>' + text
+        text = '<img style="width:3vmin;" id="showdown_icon" src="'+pathToAssetL('images/icons/swords_inv_c.png')+'"/>' + text
       } else {
         text = events_table[rows[i][j]].label
       }
@@ -353,17 +455,43 @@ function createToc (col_len = 5) {
         a2.innerHTML += text
       } else {
         // let dot = '<b style="color:'+color_menu[events_table[rows[i][j]].expansion]+';">&#10033;</b>'
-        let dot = '<img style="width:10%;" id="expansion_icon" value="'+events_table[rows[i][j]].expansion+'" src="'+pathToAssetL('images/icons/expansions/'+events_table[rows[i][j]].expansion+'_c.png')+'"/>'
+        let dot = '<img style="width:3vmin;" id="expansion_icon" value="'+events_table[rows[i][j]].expansion+'" src="'+pathToAssetL('images/icons/expansions/'+events_table[rows[i][j]].expansion+'_c.png')+'"/>'
         a2.innerHTML += dot+' '+text
       }
-      // a2.innerHTML += events_table[rows[i][j]].label
-      // if (events_table[rows[i][j]].expansion in color_menu) {
-      //   a2.style.cssText += 'color:'+color_menu[events_table[rows[i][j]].expansion]+';'
-      // }
+      a2.setAttribute('label', events_table[rows[i][j]].label)
 
       td.appendChild(a2)
     }
   }
 
-  container.appendChild(tbl2)
+
+}
+
+function filterEvents(clear=false) {
+
+  let input, filter;
+  input = document.getElementById("events_filter");
+  filter = input.value.toUpperCase();
+  let show = false
+
+  if (clear) {
+    input.value = ''
+  } else {
+
+    if ($('#innovations_filter').hasClass('tags')) {
+      $('#innovations_filter').removeClass('tags')
+    }
+    input.value = input.value.replace(/ +(?= )/g,'');
+    // input.value = input.value.replace(/[^A-Za-z ,\-]/gi, '')
+
+  }
+
+  filter = filter.replace(/\s*,\s*/g, ",");
+  filter = filter.split(",");
+
+   console.log('Filter: '+filter)
+
+  let show_innovation = false
+
+  formTable2()
 }

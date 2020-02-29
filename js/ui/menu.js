@@ -211,6 +211,7 @@ function createMenuButton () {
       addTimer(function() {
         menu_toggle_wrapper.removeClass('swashIn')
       }, 200)
+      window.filterEvents(true)
       // menu_toggle_wrapper.delay(200).fadeIn(300);
       // menu_toggle_wrapper.toggleClass('active')
     })
@@ -252,6 +253,14 @@ function createMenuButton () {
     $('#menu').append($('<div>', {
       id: 'menu-back',
     }))
+
+    $('#menu-back').append($('<input>', {
+      id: "events_filter",
+      type: 'search',
+      onkeyup: "filterEvents()",
+      onsearch: "filterEvents(true)",
+      placeholder: tooltips['search_word'].text
+    }));
 
     $('#menu').hide()
   }

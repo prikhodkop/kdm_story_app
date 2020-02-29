@@ -801,3 +801,24 @@ div#reference-window-back0 .selectize-control {
 #severe-table.summary::-webkit-scrollbar {
     display: none;
 }
+
+#events_filter {
+  float: left;
+  width: 34%;
+  height: 4%;
+  /* z-index: 77; */
+  /* left: 0.5%; */
+  top: 13%;
+	left: 33%;
+  position: absolute;
+  display:block;
+  background-color: #111;
+  opacity: 0.9;
+  color: #ccc;
+  border: none;
+  font-size: 2vmin;
+  --borderWidth: 1.5em;
+	border-radius: var(--borderWidth);
+	border: 0.2rem solid #555;
+	z-index: 99;
+}
