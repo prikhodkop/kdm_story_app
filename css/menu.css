@@ -776,8 +776,8 @@ div#reference-window-back0 .selectize-control {
   display: block;
   position: absolute;
   /* overflow: visible; */
-  top: 1%;
-  height: 98%;
+  top: 0%;
+  height: 99%;
   width: 60%;
 	/* right: 3.85%; */
   /* left: 25%; */
@@ -793,12 +793,44 @@ div#reference-window-back0 .selectize-control {
   border: 0.2rem solid #555;
   box-shadow: 0 0 2vmin #000;
   background: rgba(0, 0, 0, .9);
+  /* overflow-y: scroll;
+  overflow-x: none; */
+	overflow: hidden;
+  scrollbar-width: none;
+}
+
+#severe-table.summary::-webkit-scrollbar {
+    display: none;
+}
+
+#severe-table0.summary {
+  display: block;
+  position: absolute;
+  /* overflow: visible; */
+  top: 0%;
+  height: 99%;
+  width: 100%;
+	left: 0%;
+	/* right: 3.85%; */
+  /* left: 25%; */
+  /* height:  */
+  /* background-color: #222; */
+  /* opacity: 0.8; */
+  /* left: 25%; */
+	/* font-family: 'Silverado'; */
+  visibility: show;
+  z-index: 97;
+  /* --borderWidth: 1em; */
+  /* border-radius: var(--borderWidth);
+  border: 0.2rem solid #555;
+  box-shadow: 0 0 2vmin #000; */
+  /* background: rgba(0, 0, 0, .9); */
   overflow-y: scroll;
   overflow-x: none;
   scrollbar-width: none;
 }
 
-#severe-table.summary::-webkit-scrollbar {
+#severe-table0.summary::-webkit-scrollbar {
     display: none;
 }
 
@@ -821,4 +853,20 @@ div#reference-window-back0 .selectize-control {
 	border-radius: var(--borderWidth);
 	border: 0.2rem solid #555;
 	z-index: 99;
+}
+
+#summary-window-back-img {
+	left:0%;
+	top: 0%;
+	height: 100%;
+	width: 100%;
+	position:absolute;
+	z-index: 96;
+	display:block;
+	--borderWidth: 1em;
+	border-radius: var(--borderWidth);
+	-webkit-box-shadow: 0 0 8vmin #000;
+	/* box-shadow: 0 0 8vmin #000; */
+	/* background: #0A0A0A; */
+	overflow:hidden;
 }

@@ -82,14 +82,28 @@ function bonusesSummary(top) {
     id: 'severe-table'
   })
 
+
   summary_screen.hide()
 
   $('#container').append(summary_screen)
+
+  $("#severe-table.summary").append($('<div>', {
+    class: "summary",
+    value: "summary",
+    id: 'severe-table0'
+  }))
 
   update_bonuses_list()
 
   $("#severe-div.summary").empty()
   $("#severe-div.summary").append($('#severe-table.summary').clone())
+
+
+
+  $("#severe-table.summary").append($('<img>', {
+    id: 'summary-window-back-img',
+    src: pathToAssetL('images/reference/reference_back.png'),
+  }))
 
 }
 

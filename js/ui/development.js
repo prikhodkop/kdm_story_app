@@ -848,7 +848,9 @@ function update_bonuses_list(state='') {
   // }
 
   let settings = getSettings()
+  console.log('!!!Campaign try: '+settings['campaign']+'#Hidden')
   if (settings['campaign']+'#Hidden' in innovations) {
+    console.log('Adding hidden!')
     state['innovations'].push(settings['campaign']+'#Hidden')
   }
 
@@ -862,7 +864,7 @@ function form_bonuses_list(innovation_names, event_names) {
   let keys = []
 
   for (let i=0; i<innovation_names.length; i++) {
-    if (toShow(innovation_names[i])&&('passive' in innovations[innovation_names[i]])) {
+    if ((toShow(innovation_names[i])||(innovation_names[i].includes('#Hidden')))&&('passive' in innovations[innovation_names[i]])) {
       keys = Object.keys(innovations[innovation_names[i]]['passive'])
       for (let j=0; j<keys.length; j++) {
         if (!(keys[j] in set)) {
@@ -887,16 +889,16 @@ function form_bonuses_list(innovation_names, event_names) {
 
   // console.log('Set: '+JSON.stringify(set))
 
- $('#severe-table.summary').empty()
- let result = $('#severe-table.summary')
+ $('#severe-table0.summary').empty()
+ let result = $('#severe-table0.summary')
 
  let categories = {
                'all': tooltips['bonusses_summary'].text,
-               'settlement': '<img style="display: inline-block;width:1.2em;" src="'+pathToAssetL('images/settlement/settlement.png')+'"/> '+tooltips['settlement_word'].text+':',
+               'settlement': '<img style="display: inline-block;width:3vmin;" src="'+pathToAssetL('images/settlement/settlement.png')+'"/> '+tooltips['settlement_word'].text+':',
                'newborn': tooltips['newborns_word'].text+':',
                'departing': tooltips['departing_word'].text+':',
-               'hunt': '<img style="display: inline-block;width:1.2em;vertical-allign:middle;" src="'+pathToAssetL('images/hunt_icon.png')+'"/> '+tooltips['hunt_word'].text+':',
-               'showdown': '<img style="display: inline-block;width:1.2em;vertical-allign:middle;" src="'+pathToAssetL('images/hunt/starvation_icon.png')+'"/> '+tooltips['showdown_word'].text+':',
+               'hunt': '<img style="display: inline-block;width:3vmin;vertical-allign:middle;" src="'+pathToAssetL('images/hunt_icon.png')+'"/> '+tooltips['hunt_word'].text+':',
+               'showdown': '<img style="display: inline-block;width:3vmin;vertical-allign:middle;" src="'+pathToAssetL('images/hunt/starvation_icon.png')+'"/> '+tooltips['showdown_word'].text+':',
                'actions': tooltips['actions_word'].text+':',
               }
 
@@ -935,6 +937,7 @@ if (document.title == 'hunt') {
   }
 
   // console.log('Alls: '+JSON.stringify(set))
+  let toggle = true
 
   for (let i=0; i<set_keys.length; i++) {
     set[set_keys[i]].sort()
@@ -962,7 +965,14 @@ if (document.title == 'hunt') {
     if (set_keys[i] == 'all') {
       result.append($('<div id="summary-title" class="big">'+categories[set_keys[i]]+'</div>'))
     } else {
-        result.append($('<div id="summary-title">'+categories[set_keys[i]]+'</div>'))
+        if (toggle) {
+          result.append($('<div id="summary-title" style="background:rgba(100, 100, 100, .1);">'+categories[set_keys[i]]+'</div>'))
+          toggle = false
+        } else {
+          toggle = true
+          result.append($('<div id="summary-title">'+categories[set_keys[i]]+'</div>'))
+
+        }
     }
 
     for (let j=0; j<set[set_keys[i]].length; j++) {
@@ -980,7 +990,11 @@ if (document.title == 'hunt') {
       // if (set_keys[i] == 'settlement') {
       //   text = text.replace('Survival Limit +', '<b>Survival Limit</b> +')
       // }
-      result.append($('<div id="summary-text"> - '+text+'</div>'))
+      if (toggle) {
+        result.append($('<div id="summary-text"> - '+text+'</div>'))
+      } else {
+        result.append($('<div id="summary-text" style="background:rgba(100, 100, 100, .1);"> - '+text+'</div>'))
+      }
     }
     // result.append('<hr/>')
   }

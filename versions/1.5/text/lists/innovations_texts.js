@@ -14,7 +14,7 @@ const texts = {
   'tags': ['science', 'language'],
   'passive': {
     'departing': [
-      'All <b>departing</b> survivors gain +$1$ survidval.'
+      'All <b>departing</b> survivors gain +$1$ survival.'
     ],
   }
  },
