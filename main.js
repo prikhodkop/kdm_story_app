@@ -53,7 +53,7 @@ function createWindow () {
   win.removeMenu();
   win.loadFile('index.html')
   // app.disableHardwareAcceleration();
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
 }
 
 let win
