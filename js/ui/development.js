@@ -269,7 +269,7 @@ function createLocation(location, default_open=false) {
   $('#development_tabs').append(button);
 
 
-  if (['Throne', 'Sacreed Pool', 'Lantern Hoard', 'Exhausted Lantern Hoard'].includes(location)) {
+  if (['Throne', 'Sacred Pool', 'Lantern Hoard', 'Exhausted Lantern Hoard'].includes(location)) {
     let settings = getSettings();
 
     if ((settings['whiteboxes']['before the wall'] == 'Enabled') && !(settlement_locations[location]['gear']['1'].includes('Tabard'))) {
@@ -314,15 +314,20 @@ function createLocation(location, default_open=false) {
 
   let column = ''
 
+  let cln_cnt = 2
+
   for (let j = 0; j<4; j++) {
     if (j > 0) {
       if (settlement_locations[location]['gear'][j].length > 0) {
         column = $('<div>', {
           class: "gear_column",
-          id: (j+1),
+          // id: (j+1),
+          id: cln_cnt,
         })
         column.css('width', gear_column_width+'%')
-        column.css('left', (38+gear_column_width*(j-1))+'%')
+        column.css('left', (38+gear_column_width*(cln_cnt-2))+'%')
+
+        cln_cnt = cln_cnt + 1;
 
         if (('armor_set' in settlement_locations[location]) && (j == 1)) {
           column.addClass('armor_set')
