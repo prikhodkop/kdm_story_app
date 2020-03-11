@@ -143,7 +143,7 @@ const texts = {
  'Sunshark Arrows': {'resources':['3 x small sunteeth', '1 x bone', '1 x sunshark fin', '1 x salt']},
  'Denticle Axe': {'resources':['1 x 1.000 year sunspot', '1 x salt', '1 x black lens', '1 x iron', '1 x bone']},
  'Skleaver': {'resources':['2 x 1.000 year sunspot', '1 x salt', '1 x black lens', '1 x sunshark bone']},
- 'Ink Sword': {'resources':['1 x 1.000 year sunspot', '4 x hide', '1 x shallow ink gland', '1 x iron']},
+ 'Ink Sword': {'resources':['1 x 3.000 year sunspot', '4 x hide', '1 x shadow ink gland', '1 x iron']},
  'Cycloid Scale Hood': {'resources':['1 x cycloid scales', '1 x hide', '1 x prismatic gills'], 'set':['Cycloid Scale']},
  'Cycloid Scale Sleeves': {'resources':['1 x cycloid scales', '1 x bone', '1 x small sunteeth', '1 x salt'], 'set':['Cycloid Scale']},
  'Cycloid Scale Jacket': {'resources':['1 x cycloid scales', '1 x scrap', '1 x huge sunteeth', '1 x salt'], 'set':['Cycloid Scale']},
