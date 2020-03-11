@@ -6,7 +6,7 @@ The repository contains source code for the Kingdom Death: Monster companion sto
 
 More info and release downloads: https://kdm-story.site
 
-Current release version is **3.0**:
+Current release version is **3.1.1**:
 
 See changelog at: https://kdm-story.site/changelog
 
@@ -34,7 +34,11 @@ The app will run in browser at http://0.0.0.0:8080
 
 ### For release build:
 
-> \>\> npm run dist
+> \>\> npm run webpack // to create folders list in app
+
+then:
+
+> \>\> npm run dist-win // dist-mac
 
 Build artefacts would be put into ./dist folder.
   
