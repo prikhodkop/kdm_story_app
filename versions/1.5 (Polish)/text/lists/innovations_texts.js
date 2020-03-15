@@ -14,7 +14,7 @@ const texts = {
   'label': 'Aquarobotics',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$'
+      'Limit przetrwania: $1$'
     ],
   }
  },
@@ -44,7 +44,7 @@ const texts = {
   'label': 'Citrinitas',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$'
+      'Limit przetrwania: $1$'
     ],
   }
  },
@@ -63,7 +63,7 @@ const texts = {
   'label': 'Silk-refining',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$'
+      'Limit przetrwania: $1$'
     ],
   }
  },
@@ -81,7 +81,7 @@ const texts = {
   'label': 'Gotowanie',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
       'Na początku fazy osady otrzymujesz +1 punkt działań'
     ],
   }
@@ -106,7 +106,7 @@ const texts = {
   'label': 'Przeznaczenie',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
     'actions': [
       '<b class="action">Wytrwałość</b>: możesz wydać 7 przetrwania minus swoje szczęście, aby zignorować ciężki uraz zanim wykonasz rzut na wynik.',
@@ -117,7 +117,7 @@ const texts = {
   'label': 'Dragon Speech',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
     'actions': [
       '<b class="action">Encourage</b>: Once per round, if standing, spend 1 survival to call out to a non-deaf survivor. They stand if knocked down.',
@@ -165,7 +165,7 @@ const texts = {
   'label': 'Ostateczna sztuka walki',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
     'showdown': [
       'Raz na starcie możesz wybrać kartę z talii kart odrzuconych lub ran i położyć ją na wierzchu talii SI.',
@@ -208,7 +208,7 @@ const texts = {
   'label': 'Chałupa',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
     'departing': [
       'Zdobywasz +$1$ przetrwania.'
@@ -227,7 +227,7 @@ const texts = {
   'label': 'Mova',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
     'actions': [
       '<b class="action">Natchnienie</b>: az na rundę - jeśli stoisz - wydaj 1 przetrwania by zawołać do nie głuchego Ocalałego. Powstaje jeśli był powalony.',
@@ -255,7 +255,7 @@ const texts = {
   'label': 'Nigredo',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
   }
  },
@@ -263,7 +263,7 @@ const texts = {
   'label': 'Farba',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
     'actions': [
       '<b class="action">Sprint</b>: Raz na rundę wydaj 1 przetrwania by otrzymać +1 <b>ruchu</b> do natychmiastowego użycia.',
@@ -296,7 +296,7 @@ const texts = {
   'label': 'Garncarstwo',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
   }
  },
@@ -395,7 +395,7 @@ const texts = {
   'label': 'Opowieści',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
   }
  },
@@ -406,7 +406,7 @@ const texts = {
   'label': 'Sun Language',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
     'actions': [
       '<b class="action">Embolden</b>: Once per round, if you have no +1 strength tokens, spend 1 survival to gain a +1 strength token. When you are knocked down, lose all +1 strength tokens.',
@@ -417,7 +417,7 @@ const texts = {
   'label': 'Sympozjum',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
       'Kiedy Ocalały wprowadza innowację, losowuje dodatkowe 2 karty innowacji do wyboru.',
     ],
   }
@@ -439,7 +439,7 @@ const texts = {
   'label': 'Najlepsza broń',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
     'showdown': [
       'Kiedy pokonasz potwora, wybierasz 1 dowolny zasób potwora z jego talii zasobów.',
@@ -458,7 +458,7 @@ const texts = {
   'label': 'War Room',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
     'hunt': [
       'If the survivors would move backwards on the hunt board, rolld 1d10. On 4+, they don\'t.',
@@ -477,7 +477,7 @@ const texts = {
   'label': 'Barbarzyństwo',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
     'newborn': [
       'Zdobywasz +$1$ siły.',
@@ -488,7 +488,7 @@ const texts = {
   'label': 'Kanibalizm',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
     'all': [
       'Zawsze gdy umiera Ocalały, wylosuj 1 podstawowy zasób i dodaj go do magazynu osady. Nie pobierasz zasobów gdy Ocalały został zagubiony, zniknął lub został wypędzony.',
@@ -532,7 +532,7 @@ const texts = {
   'label': 'Romantyzm',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
     'all': [
       'Gdy otrzymujesz losową sztukę walki, wylosuj 3 karty sztuk walki i wybierz którą z nich zachowasz.',
@@ -543,7 +543,7 @@ const texts = {
   'label': 'Przetrwanie najsilniejszych',
   'passive': {
     'settlement': [
-      'Limit przetrwania +$1$',
+      'Limit przetrwania: $1$',
     ],
     'settlement': [
       'Podczas rzutu na wydarzenie fabularne <b class="event">współżycie</b>, rzuć dwukrotnie i wybierz niższy wynik.',
@@ -556,7 +556,32 @@ const texts = {
       'Raz podczas życia, Ocalały może powtórzyć jeden rzut. Musisz zaakceptować nowy rezultat.',
     ],
   }
- }
+},
+'Lantern#Hidden': {
+  'campaign': 'hidden',
+  'passive': {
+    'settlement': [
+      'Limit przetrwania: $1$'
+    ],
+  }
+},
+'Stars#Hidden': {
+  'campaign': 'hidden',
+  'passive': {
+    'settlement': [
+      'Limit przetrwania: $1$'
+    ],
+  }
+},
+'Sun#Hidden': {
+  'campaign': 'hidden',
+  'passive': {
+    'settlement': [
+      'Limit przetrwania: $1$'
+    ],
+  }
+},
+
 }
 
 module.exports = {
