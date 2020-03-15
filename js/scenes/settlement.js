@@ -291,7 +291,7 @@ module.exports = class SettlementScene {
 
       speech.seek(state.speech_position)
 
-      if (state.speech_playing) {
+      if ((settings['narration'] == 'On')&&(state.speech_playing)) {
         speech.volume(0.0)
         speech.play()
         speech.fade(0.0, 1.0, 500)
@@ -299,7 +299,7 @@ module.exports = class SettlementScene {
 
       music.seek(state.music_position)
 
-      if (state.music_playing) {
+      if ((settings['music'] == 'On')&&(state.music_playing)) {
         music.volume(0.0)
         music.play()
         music.fade(0.0, music_volume, 500)

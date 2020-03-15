@@ -150,9 +150,11 @@ module.exports = class HuntScene {
     // }
     if (settings['music'] == 'Off') {
       music.mute(true)
+      music.pause()
     }
     if (settings['narration'] == 'Off') {
       speech.mute(true)
+      speech.pause()
     }
 
     if ((transition == 'back') && !(state == null)) {
@@ -176,7 +178,7 @@ module.exports = class HuntScene {
 
       music.seek(state.music_position)
 
-      if (state.music_playing) {
+      if ((settings['music'] == 'On')&&(state.music_playing)) {
         music.volume(0.0)
         music.play()
         music.fade(0.0, 0.8, 500)
@@ -184,7 +186,7 @@ module.exports = class HuntScene {
 
       speech.seek(state.speech_position)
 
-      if (state.speech_playing) {
+      if ((settings['narration'] == 'On')&&(state.speech_playing)) {
         speech.volume(0.0)
         speech.play()
         speech.fade(0.0, 1.0, 500)
@@ -477,6 +479,10 @@ module.exports = class HuntScene {
         q_event_sequence = state.q_event_sequence
         q_event_idx = state.q_event_idx
       };
+
+      if (monster_pos == 7) {
+        window.darkness_enabled = false
+      }
 
       console.log(q_event_sequence)
 

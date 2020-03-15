@@ -116,7 +116,7 @@ module.exports = class VideoScene {
       if (!state.img_hidden) {
         music.seek(state.music_position)
 
-        if (state.music_playing) {
+        if ((settings['music'] == 'On')&&(state.music_playing)) {
           music.volume(0.0)
           music.play()
           music.fade(0.0, music_volume, 500)

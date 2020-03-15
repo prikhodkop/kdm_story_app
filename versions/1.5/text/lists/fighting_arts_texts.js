@@ -15,6 +15,7 @@ const texts = {
  },
  'Backstabber': {
   'expansion': 'echoes of death',
+  'type': 'strain',
   'label': 'Backstabber',
   "description": "On a <b>Perfect hit</b> with a dagger, your first wound attempt in that attack gains <b>Devastating 1</b>.<br/><br/>When you attack a monster with a dagger from its blind spot, if you have <b>Hoarder</b> or <b>Secretive</b> disorder, increase the range of your <b>Perfect hits</b> by 1."
  },

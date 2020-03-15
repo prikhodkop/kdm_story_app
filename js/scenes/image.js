@@ -25,17 +25,18 @@ const quaries_events = [
   'showdown flower knight',
   'showdown spidicules',
   'aftermath',
-  'storm break'
-]
-
-const special_events = [
-  'showdown kings man',
-  'showdown manhunter',
-  'kings curse',
-  'the knowledge worm',
+  'storm break',
   'showdown the hand',
   'showdown butcher',
   'showdown kings man',
+  'showdown kings man',
+]
+
+const special_events = [
+  'showdown manhunter',
+  'showdown lion knight',
+  'kings curse',
+  'the knowledge worm',
   // 'an uninvited guest',
   'intermission',
   'taken'
@@ -198,7 +199,7 @@ module.exports = class ImageScene {
           }, 2000)
         };
 
-        if (!music.playing()) {
+        if ((settings['music'] == 'On')&&(!music.playing())) {
           music.volume(0.0)
           music.play();
           music.fade(0.0, music_volume, 500)
@@ -332,11 +333,11 @@ module.exports = class ImageScene {
         }, 500);
       };
 
-      if (speech.playing()) {
+      // if (speech.playing()) {
         speech.fade(1.0, 0.0, 1000)
         speech.pause()
-      }
-      if (!music.playing()) {
+      // }
+      if ((settings['music'] == 'On')&&(!music.playing())) {
         music.play();
       }
     })
