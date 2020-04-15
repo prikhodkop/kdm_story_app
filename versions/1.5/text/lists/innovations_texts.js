@@ -835,6 +835,10 @@ const texts = {
   'campaign': 'hidden',
   'label': 'Final Lantern'
 },
+'Ancestral Katana': {
+  'campaign': 'hidden',
+  'label': 'Katana Specialization, Weapon Crafter'
+}
 }
 
 module.exports = {
