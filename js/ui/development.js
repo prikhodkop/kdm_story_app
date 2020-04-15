@@ -326,6 +326,8 @@ function createLocation(location, default_open=false) {
     id: location,
   });
 
+  content.hide()
+
   let columns = []
   let gear_name = ''
 

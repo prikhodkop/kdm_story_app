@@ -48,7 +48,7 @@ const texts = {
    'label': 'White Lion Armor',
  },
  'Assassin Armor': {
-   'label': 'White Lion Armor',
+   'label': 'Infiltrator Armor',
    'expansion': 'trial of champions'
  },
  'Bard Armor': {

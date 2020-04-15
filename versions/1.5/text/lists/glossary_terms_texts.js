@@ -1125,6 +1125,48 @@ const texts = {
  'Zone of (X) / (X) Zone': {
    'label':'',
    'description':'The indicated area for actions and reactions onon cards.',},
+
+   'Zone of (X) / (X) Zone': {
+     'label':'',
+     'description':'The indicated area for actions and reactions onon cards.',
+   },
+   'Bard (Hall of Light)' : {
+     'description': 'Rippling just beneath the surface, in every idle whistle and unfocused melody, the Devil’s Symphony desires to manifest. A piece of music so powerful it kills any sentient being that hears it. The Bard, the god of performance incarnate, arrives to battle the symphony.<br/><br/>Her ears are outfitted to hear into the fundamental frequencies of the world. She listens unharmed, to the insidious echoes of the symphony, following it wherever it sounds. Her weapons play harmonies and dissonances that warp the harmonics of reality to combat the symphony’s destructive power. Over centuries, generations of fans have followed her on the road to confront the symphony within the Obsidian Catacombs.<br/><br/>Secret Fighting Art roll: <b>8+</b>',
+   },
+   'Cleric (Hall of Light)' : {
+     'description': 'Curse afflicted survivors, clasping their lingering hopes close, are often the quickest to succumb to subterfuge disguised as benevolence. Entities, driven by inscrutable purposes, see to it that zealots under their command, quest and bring light to other wretched souls across the land. Noble and pious, clerics act as intermediaries between the corporeal world and the various entities governing it. They’re versatile healers and militant warriors capable of great feats. A clerics resolute faith and orison allows them to perform miraculous acts while assisting their allies in combat. These chosen individuals seek to encourage and support growing settlements. Their fervent beliefs drive them forward through all challenges. A cleric is always drawn to whatever purpose their god has designed for them.<br/><br/>Secret Fighting Art roll: <b>8+</b>',
+   },
+   'Paladin (Hall of Light)' : {
+     'description': 'Truth Bearers defend honesty and justice above all else. Every day a knight speaks the truth, their shields grow. A boon but also a burden, the impervious shields deflect any claw, but also become impossibly heavy. The most pious paladins must radically increase their bone density so they can wield the massive symbols of their faith. Grueling strength training takes place underwater, insaline pools filled with the tears of lying initiates.<br/><br/>Secret Fighting Art roll: <b>7+</b>',
+   },
+   'Monk (Hall of Light)' : {
+     'description': 'The Monks’ tradition is rooted in the restoration of artifacts and shrines. Often these restorations involve long, perilous spiritual journeys to gather rare materials. Each monk is trained as a warrior and an artist. The monks are so deeply connected to their works that as they improve and beautify them, they too are lifted, in turn becoming more beautiful and refined themselves.<br/><br/>They struggle with their swelling pride. Vanity rotting away their spiritual selves. To atone, they embark on ascetic quests into the wilderness to build something new in a secret, unknown place. They pour their grace into a new edifice and return haggard, faces lined with age, leaving their beauty behind in new shrines and artifacts scattered in the hidden corners of the world.<br/><br/>Secret Fighting Art roll: <b>8+</b>',
+   },
+   'Druid (Hall of the Horizon)' : {
+     'description': 'The Abyssal Woods exists on the precipice of obliteration, its heavy limbs pulled inexorably towards a black hole at its center, no larger than a grain of sand. The hole breathes, as though it were a living being. Every inhale threatens to devour the forest, an intense vacuum rips roots from the ground and sucks waves of tumbling debris through the air.<br/><br/>Those that live in the Abyssal Woods evolves to survive the tantrums of a tiny, unpredictable orifice at its center. Insects with opposable thumbs cling tenaciously to trees, whose roots have become powerful, gnarled hands firmly gripping the ground. Seasoned visitors carry chains and hooks to secure themselves at a moment’s notice to the largest things in sight when the winds pick up.<br/><br/>Secret Fighting Art roll: <b>6+</b>',
+   },
+   'Mage (Hall of the Horizon)' : {
+     'description': 'The Mage comes from settlement of Aromachologists. Their magic, distilled oils from a variety of eccentric entities. Maybe, the settlement met a terrible fate, the raw oil from the Vermillion Raven reducing the population to mere doll like husks. And it may be the Mage escaped with a fistful of her kin and the twisted will to burn them for power to ensure her continued prosperity.<br/><br/>Secret Fighting Art roll: <b>8+</b>',
+   },
+   'Gladiator (Hall of the Horizon)' : {
+     'description': 'Tricked into taking human form by a sly-talking adventurer, the queen of demons must defeat ten thousand worthy opponents to regain her true form. In her quest, she found an ardent purpose. Drunk on the adoration of her admirers and mounting riches, the Gladiator rose to undefeated infamy in the gleaming arena. It is with a strange sadness that she faces down the last hundred opponents. Her appearances grow rarer as she scours the crowds of contenders for a unique challenge to close her mortal life.<br/><br/>Secret Fighting Art roll: <b>7+</b>',
+   },
+   'Samurai (Hall of the Horizon)' : {
+     'description': 'By offering an eye, the apprentice becomes a Samurai. The second eye is sacrificed to become a master. A clan will take turns using their master’s eyes to see into the world of spirits. Without their master’s eyes their eye sockets are appealing places for spirits to invade. Samurai may perform favors for these spirits in exchange for insight and guidance. Each samurai carries a cursed blade that is destined to defeat foes that share a distinctive brand that is also etched into the blade. To the great sadness of some samurai, these brands may appear on their dearest allies.<br/><br/><b>Note:</b> The Samurai class can take the Katana Specialization with no prerequisite. If Master level is reached in Katana Weapon Proficiency, the Samurai does not leave the settlement.<br/><br/>Secret Fighting Art roll: <b>7+</b>',
+   },
+   'Assassin (Hall of Shadow)' : {
+     'description': 'Long ago the assassins joined their bodies with Phantasms and developed a second heart. An assassin can survive losing a heart, but they must choose to give up their corporeal form or their mastery of magic. Breaking tradition, the assassin left her people to join in the adventures of other warriors and see the world.<br/><br/>Periodically she must return to her spectral homelands to drink from the Font of Phantasms to replenish the magical might of her phantasmal heart.<br/><br/><b>Note:</b> The rules to Shades from the Suppressed Shadow Secret Fighting Art can be found in the Kingdom Death: Sunstalker Expansion.<br/><br/>Secret Fighting Art roll: <b>8+</b>',
+   },
+   'Necromancer (Hall of Shadow)' : {
+     'description': 'The dreaded Necromancer hailed from the citadel of black magic. One grief stricken night, the Necromancer cast a mighty spell to give rebirth to a lost lover, imparting her with an entirely new lifetime. The cost was dear and the necromancer’s form was reduced to a single gnarled hand.<br/><br/>Since then, the Necromancer has used his feeble power to remain at the young girl’s side, guiding her to seek power in the dark arts so that one day she may discover a way to restore him.<br/><br/>Secret Fighting Art roll: <b>7+</b>',
+   },
+   'Ranger (Hall of Shadow)' : {
+     'description': 'The Ranger’s beloved was stolen by a devious, silent hunter. Alone and vowing vengeance, she pursued the creature but it always heard her coming. She perfected her marksmanship and hunted it from afar but still, the creature heard her approach.<br/><br/>She set off into the rustling forests to become a perfect stalker. She hung bells of different timber over her body to study how each step, bow string, and arrow notch made her presence known. She would learn to kill with such skill that announcing her presence with the tinkling of bells would not prevent her from taking her revenge.<br/><br/>Secret Fighting Art roll: <b>7+</b>',
+   },
+   'Thief (Hall of Shadow)' : {
+     'description': 'Maybe she is a frantic Savior’s painting come to life. Or perhaps she comes from a small village at the center of a rainbowhued swamp that absorbs the life of its inhabitants for generations before it awakes and paints a tapestry across the horizon. She could also be a renegade from a far developed Sun Stalker settlement. One day we’ll set the record straight.<br/><br/>Secret Fighting Art roll: <b>7+</b>',
+   },
+
 }
 
 module.exports = {

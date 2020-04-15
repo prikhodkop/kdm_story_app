@@ -255,7 +255,7 @@ function get_representation (word) {
 
   // post text 1 width 98%
 
-  if (['Settlement Board', 'Gear Grid', 'Hit Location (Monster)', 'Terrain Cards'].includes(word)) {
+  if (['Settlement Board', 'Gear Grid', 'Hit Location (Monster)', 'Terrain Cards', 'Bard (Hall of Light)', 'Cleric (Hall of Light)', 'Paladin (Hall of Light)', 'Monk (Hall of Light)', 'Druid (Hall of the Horizon)', 'Mage (Hall of the Horizon)', 'Gladiator (Hall of the Horizon)', 'Samurai (Hall of the Horizon)', 'Assassin (Hall of Shadow)', 'Necromancer (Hall of Shadow)', 'Ranger (Hall of Shadow)', 'Thief (Hall of Shadow)'].includes(word)) {
    result = result + '<br/><br/><img id=reference-image style="width:99%;" src="'+pathToAssetL('images/reference/terms/'+word+'.png')+'"/>'
   }
 
@@ -306,7 +306,7 @@ function get_representation (word) {
 
   // pre-text 50% with br
 
-  if (['Severe Injury', 'Knockback X', 'Innovation Deck', 'Fist & Tooth', 'Critical Wound'].includes(word)) {
+  if (['Severe Injury', 'Knockback X', 'Innovation Deck', 'Fist & Tooth', 'Critical Wound', 'Bard (Hall of Light)', 'Cleric (Hall of Light)', 'Paladin (Hall of Light)', 'Monk (Hall of Light)', 'Druid (Hall of the Horizon)', 'Mage (Hall of the Horizon)', 'Gladiator (Hall of the Horizon)', 'Samurai (Hall of the Horizon)', 'Assassin (Hall of Shadow)', 'Necromancer (Hall of Shadow)', 'Ranger (Hall of Shadow)', 'Thief (Hall of Shadow)'].includes(word)) {
    result = '<img id=reference-image style="width:50%;" src="'+pathToAssetL('images/reference/terms/'+word+' 0.png')+'"/><br/>' + result
   }
 

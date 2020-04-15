@@ -286,8 +286,8 @@ const texts = {
   'group': 'HoL',
   'gear': {
    '1': ['Minstrel Hat', 'Minstrel Bracers', 'Minstrel Tunic', 'Minstrel Kilt', 'Minstrel Boots'],
-   '2': ['Aramis Cape', 'Masquerade Mask', 'The Perpetrator', 'Phoenix Flute', 'Bass Drum'],
-   '3': []},
+   '2': ['Aramis Cape', 'Masquerade Mask', 'The Perpetrator'],
+   '3': ['Phoenix Flute', 'Bass Drum']},
   'armor_set': 'Bard Armor',
  },
  'HoL Cleric': {
@@ -355,8 +355,8 @@ const texts = {
   'group': 'HoS',
   'gear': {
    '1': ['Shadow Shawl', 'Shadow Gloves', 'Shadow Cloak', 'Shadow Skirt', 'Shadow Boots'],
-   '2': ['Stone Mask', 'Flaying Dagger', 'Caltrops', 'The Jury', 'Smoke Bomb'],
-   '3': []},
+   '2': ['Stone Mask', 'Flaying Dagger', 'Caltrops'],
+   '3': ['The Jury', 'Smoke Bomb']},
   'armor_set': 'Thief Armor',
  },
 }

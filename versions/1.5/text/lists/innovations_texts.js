@@ -838,6 +838,23 @@ const texts = {
 'Ancestral Katana': {
   'campaign': 'hidden',
   'label': 'Katana Specialization, Weapon Crafter'
+},
+
+'Blacksmith': {
+  'campaign': 'hidden',
+  'label': 'Blacksmith'
+},
+'Mask Maker': {
+  'campaign': 'hidden',
+  'label': 'Mask Maker'
+},
+'Weapon Crafter': {
+  'campaign': 'hidden',
+  'label': 'Weapon Crafter'
+},
+'The Perpetrator': {
+  'campaign': 'hidden',
+  'label': 'Heat, Weapon Crafter'
 }
 }
 
