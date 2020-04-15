@@ -208,19 +208,18 @@ function get_options (data, type, filter=false) {
 
 function get_all_options () {
  var options = get_options(random_draws, 'random draws')
- options = options.concat(get_options(glossary_terms, 'glossary'))
+ options = options.concat(get_options(glossary_terms, 'glossary', true))
  options = options.concat(get_options(fighting_arts, 'fighting arts'))
  options = options.concat(get_options(secret_fighting_arts, 'secret fighting arts'))
  options = options.concat(get_options(disorders, 'disorders'))
  options = options.concat(get_options(abilities, 'abilities'))
- options = options.concat(get_options(settlement_events, 'settlement events'))
- options = options.concat(get_options(settlement_locations, 'settlement locations'))
- options = options.concat(get_options(armor_sets, 'armor sets'))
+ options = options.concat(get_options(settlement_locations, 'settlement locations', true))
+ options = options.concat(get_options(armor_sets, 'armor sets', true))
  options = options.concat(get_options(survivor_statuses, 'survivor statuses'))
- options = options.concat(get_options(innovations, 'innovations'))
+ options = options.concat(get_options(innovations, 'innovations', true))
  options = options.concat(get_options(terrain, 'terrain'))
  options = options.concat(get_options(resources, 'resources'))
- return options.concat(get_options(settlement_events, 'settlement events'))
+ return options.concat(get_options(settlement_events, 'settlement events', true))
 }
 
 function get_innovations_list() {

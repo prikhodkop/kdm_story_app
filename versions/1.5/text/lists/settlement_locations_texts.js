@@ -239,6 +239,126 @@ const texts = {
    '3': []},
   'armor_set': 'Rolling Armor',
  },
+
+ 'HoH Druid': {
+   'label':'HoH - Druid',
+  'expansion': 'trial of champions',
+  'group': 'HoH',
+  'gear': {
+   '1': ['Century Shoulder Pads', 'Century Greaves', 'Rubber Bone Harness', 'Scarab Circlet', 'Rainbow Wing Belt'],
+   '2': ['DBK Errant Badge', 'Digging Claw', 'Seasoned Monster Meat', 'The Beetle Bomb'],
+   '3': []},
+  'armor_set': 'Druid Armor',
+ },
+ 'HoH Gladiator': {
+   'label':'HoH - Gladiator',
+  'expansion': 'trial of champions',
+  'group': 'HoH',
+  'gear': {
+   '1': ['Century Shoulder Pads', 'Century Greaves', 'Rubber Bone Harness', 'Scarab Circlet', 'Rainbow Wing Belt'],
+   '2': ['DBK Errant Badge', 'Digging Claw', 'Seasoned Monster Meat', 'The Beetle Bomb'],
+   '3': []},
+  'armor_set': 'Gladiator Armor',
+ },
+ 'HoH Mage': {
+   'label':'HoH - Mage',
+  'expansion': 'trial of champions',
+  'group': 'HoH',
+  'gear': {
+   '1': ['Century Shoulder Pads', 'Century Greaves', 'Rubber Bone Harness', 'Scarab Circlet', 'Rainbow Wing Belt'],
+   '2': ['DBK Errant Badge', 'Digging Claw', 'Seasoned Monster Meat', 'The Beetle Bomb'],
+   '3': []},
+  'armor_set': 'Mage Armor',
+ },
+ 'HoH Samurai': {
+   'label':'HoH - Samurai',
+  'expansion': 'trial of champions',
+  'group': 'HoH',
+  'gear': {
+   '1': ['Century Shoulder Pads', 'Century Greaves', 'Rubber Bone Harness', 'Scarab Circlet', 'Rainbow Wing Belt'],
+   '2': ['DBK Errant Badge', 'Digging Claw', 'Seasoned Monster Meat', 'The Beetle Bomb'],
+   '3': []},
+  'armor_set': 'Samurai Armor',
+ },
+ 'HoL Bard': {
+   'label':'HoL - Bard',
+  'expansion': 'trial of champions',
+  'group': 'HoL',
+  'gear': {
+   '1': ['Century Shoulder Pads', 'Century Greaves', 'Rubber Bone Harness', 'Scarab Circlet', 'Rainbow Wing Belt'],
+   '2': ['DBK Errant Badge', 'Digging Claw', 'Seasoned Monster Meat', 'The Beetle Bomb'],
+   '3': []},
+  'armor_set': 'Bard Armor',
+ },
+ 'HoL Cleric': {
+   'label':'HoL - Cleric',
+  'expansion': 'trial of champions',
+  'group': 'HoL',
+  'gear': {
+   '1': ['Century Shoulder Pads', 'Century Greaves', 'Rubber Bone Harness', 'Scarab Circlet', 'Rainbow Wing Belt'],
+   '2': ['DBK Errant Badge', 'Digging Claw', 'Seasoned Monster Meat', 'The Beetle Bomb'],
+   '3': []},
+  'armor_set': 'Cleric Armor',
+ },
+ 'HoL Monk': {
+   'label':'HoL - Monk',
+  'expansion': 'trial of champions',
+  'group': 'HoL',
+  'gear': {
+   '1': ['Century Shoulder Pads', 'Century Greaves', 'Rubber Bone Harness', 'Scarab Circlet', 'Rainbow Wing Belt'],
+   '2': ['DBK Errant Badge', 'Digging Claw', 'Seasoned Monster Meat', 'The Beetle Bomb'],
+   '3': []},
+ },
+ 'HoL Paladin': {
+   'label':'HoL - Paladin',
+  'expansion': 'trial of champions',
+  'group': 'HoL',
+  'gear': {
+   '1': ['Century Shoulder Pads', 'Century Greaves', 'Rubber Bone Harness', 'Scarab Circlet', 'Rainbow Wing Belt'],
+   '2': ['DBK Errant Badge', 'Digging Claw', 'Seasoned Monster Meat', 'The Beetle Bomb'],
+   '3': []},
+  'armor_set': 'Paladin Armor',
+ },
+ 'HoS Assassin': {
+   'label':'HoS - Assassin',
+  'expansion': 'trial of champions',
+  'group': 'HoS',
+  'gear': {
+   '1': ['Century Shoulder Pads', 'Century Greaves', 'Rubber Bone Harness', 'Scarab Circlet', 'Rainbow Wing Belt'],
+   '2': ['DBK Errant Badge', 'Digging Claw', 'Seasoned Monster Meat', 'The Beetle Bomb'],
+   '3': []},
+  'armor_set': 'Assassin Armor',
+ },
+ 'HoS Necromancer': {
+   'label':'HoS - Necromancer',
+  'expansion': 'trial of champions',
+  'group': 'HoS',
+  'gear': {
+   '1': ['Century Shoulder Pads', 'Century Greaves', 'Rubber Bone Harness', 'Scarab Circlet', 'Rainbow Wing Belt'],
+   '2': ['DBK Errant Badge', 'Digging Claw', 'Seasoned Monster Meat', 'The Beetle Bomb'],
+   '3': []},
+  'armor_set': 'Necromancer Armor',
+ },
+ 'HoS Ranger': {
+   'label':'HoS - Ranger',
+  'expansion': 'trial of champions',
+  'group': 'HoS',
+  'gear': {
+   '1': ['Century Shoulder Pads', 'Century Greaves', 'Rubber Bone Harness', 'Scarab Circlet', 'Rainbow Wing Belt'],
+   '2': ['DBK Errant Badge', 'Digging Claw', 'Seasoned Monster Meat', 'The Beetle Bomb'],
+   '3': []},
+  'armor_set': 'Ranger Armor',
+ },
+ 'HoS Thief': {
+   'label':'HoS - Thief',
+  'expansion': 'trial of champions',
+  'group': 'HoS',
+  'gear': {
+   '1': ['Century Shoulder Pads', 'Century Greaves', 'Rubber Bone Harness', 'Scarab Circlet', 'Rainbow Wing Belt'],
+   '2': ['DBK Errant Badge', 'Digging Claw', 'Seasoned Monster Meat', 'The Beetle Bomb'],
+   '3': []},
+  'armor_set': 'Thief Armor',
+ },
 }
 
 module.exports = {

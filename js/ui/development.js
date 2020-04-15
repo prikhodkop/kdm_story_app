@@ -140,6 +140,8 @@ function setupLocations() {
 
   let locations_list = get_random_draws('Location', false);
 
+  locations_list.sort()
+
   if (DEBUG_MODE) {console.log('Locations list: '+locations_list)}
 
   for (let i = 0; i < locations_list.length; i++) {
@@ -187,11 +189,36 @@ function setupLocations() {
       }
 
       moveItem($(this).attr('type'), $(this).attr('value'));
+
+      if ('group' in settlement_locations[$(this).attr('value')]) {
+        let my_group = settlement_locations[$(this).attr('value')].group
+        for (var key in settlement_locations) {
+            if ((settlement_locations.hasOwnProperty(key))&&!(key == $(this).attr('value'))) {
+                if (('group' in settlement_locations[key])&&(settlement_locations[key].group == my_group)) {
+                  $('.tablinks[value = "'+key+'"]').addClass('selected')
+                  moveItem($(this).attr('type'), key);
+                }
+            }
+        }
+      }
+
     } else {
       if (!(always_on_locations.includes($(this).attr('value'))) && !($(this).attr('value') == 'Exhausted Lantern Hoard')) {
         $(this).removeClass('selected');
         $(this).show();
         moveItem($(this).attr('type'), $(this).attr('value'));
+
+        if ('group' in settlement_locations[$(this).attr('value')]) {
+          let my_group = settlement_locations[$(this).attr('value')].group
+          for (var key in settlement_locations) {
+              if ((settlement_locations.hasOwnProperty(key))&&!(key == $(this).attr('value'))) {
+                  if (('group' in settlement_locations[key])&&(settlement_locations[key].group == my_group)) {
+                    $('.tablinks[value = "'+key+'"]').removeClass('selected')
+                    moveItem($(this).attr('type'), key);
+                  }
+              }
+          }
+        }
       }
     }
  });

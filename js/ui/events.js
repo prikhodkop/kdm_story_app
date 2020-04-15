@@ -455,7 +455,7 @@ function formTable2(col_len=5) {
         a2.innerHTML += text
       } else {
         // let dot = '<b style="color:'+color_menu[events_table[rows[i][j]].expansion]+';">&#10033;</b>'
-        let dot = '<img style="width:3vmin;" id="expansion_icon" value="'+events_table[rows[i][j]].expansion+'" src="'+pathToAssetL('images/icons/expansions/'+events_table[rows[i][j]].expansion+'_c.png')+'"/>'
+        let dot = '<img style="height:3vmin;" id="expansion_icon" value="'+events_table[rows[i][j]].expansion+'" src="'+pathToAssetL('images/icons/expansions/'+events_table[rows[i][j]].expansion+'_c.png')+'"/>'
         a2.innerHTML += dot+' '+text
       }
       a2.setAttribute('label', events_table[rows[i][j]].label)

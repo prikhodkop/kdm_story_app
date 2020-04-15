@@ -1051,6 +1051,15 @@ const texts = {
     // 'lleft': '75%'
     'music_delay': 'speech-1000'
   },
+  'birth of a champion': {
+    "label": "Birth of a Champion",
+    'expansion': 'trial of champions',
+    'music': 'music/birth of a savior.mp3',
+    'type': 'image',
+    'ltop': '83%',
+    'lleft': '46%',
+    'music_delay': 'speech-1000'
+  },
 }
 
 module.exports = {
