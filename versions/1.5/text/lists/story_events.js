@@ -1058,7 +1058,8 @@ const texts = {
     'type': 'image',
     'ltop': '83%',
     'lleft': '46%',
-    'music_delay': 'speech-1000'
+    'music_delay': 'speech-1000',
+    'speech': '#'
   },
 }
 

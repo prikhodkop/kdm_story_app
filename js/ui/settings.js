@@ -631,8 +631,11 @@ var settings_schema = {
         'group': 'fan',
         'title': 'Trial of Champions',
         'default': 'Disabled',
-        'description': 'Created by <b>CCG</b>.<br/>Champions are special survivors with the potential to evolve into glorious, immortal warriors. They represent the classic character classes found throughout fantasy genres. Each champion comes with a wide array of potential new abilities to learn and use in combination with other Champions to form superior hunting parties. Death is a mere setback for Champions and they continue to fight, earn experience points and level up toward reaching their full potential.<br/><br/><b style="color:#cc0;">Cards Only</b> - adds only Fighting Arts, Disorders and Terrain cards.<br/><b style="color:#cc0;">All content</b> - adds all expansion content.',
-        'enum': expansion_options,
+        'description': 'Created by <b>CCG</b>.<br/>Champions are special survivors with the potential to evolve into glorious, immortal warriors. They represent the classic character classes found throughout fantasy genres. Each champion comes with a wide array of potential new abilities to learn and use in combination with other Champions to form superior hunting parties. Death is a mere setback for Champions and they continue to fight, earn experience points and level up toward reaching their full potential.',
+        'enum': [
+          'Disabled',
+          'All content',
+        ],
       },
 
     },

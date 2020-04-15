@@ -125,13 +125,21 @@ module.exports = class ImageScene {
 
     var start_delay = 1000 // delay before speech playing starts
     var music_volume = 0.4 // music volume
+    var speech
+    if (!(events_table[myself].speech == '#')) {
+      speech = new Howl({
+        src: [pathToAssetL(events_table[myself].speech)],
+        volume: 1.0,
+      })
+    } else {
+      speech = new Howl({
+        src: [pathToAssetL(events_table['hunt'].speech)],
+        volume: 1.0,
+      })
+    }
 
-    var speech = new Howl({
-      src: [pathToAssetL(events_table[myself].speech)],
-      volume: 1.0,
-    })
 
-    if ((events_table[myself].speech == '') || (settings['narration'] == 'Off')) {
+    if ((events_table[myself].speech == '') || (settings['narration'] == 'Off') || (events_table[myself].speech == '#')) {
       var mute_narration = true
     } else {
       var mute_narration = false
@@ -144,6 +152,7 @@ module.exports = class ImageScene {
     })
 
     console.log('Music to play ' + events_table[myself].music)
+    console.log('Speech to play ' + events_table[myself].speech)
 
     createMenuButton()
     createToc()
