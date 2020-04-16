@@ -254,7 +254,7 @@ const texts = {
  'Infiltrator Cloak': {'resources':['1 x screaming brain', '1 x dark water', '1 x hide'], 'set':['Assassin']},
  'Infiltrator Mantle': {'resources':['1 x hide', '1 x scrap', '1 x dark water'], 'set':['Assassin']},
  'Infiltrator Pants': {'resources':['1 x hide', '1 x dark water'], 'set':['Assassin']},
- 'Iron Fists': {'resources':['1 x scrap', '2 x bone']},
+ 'Iron Fists': {'resources':['1 x scrap', '2 x bone'], 'set':['Monk Blue', 'Monk Green', 'Monk Red']},
  'Madness Mask': {'resources':['1 x Endeavor', '1 x screaming brain', '6 x bone', '4 x organ'], 'innovation': 'Mask Maker'},
  'Magus Digitabulum': {'resources':['1 x phoenix eye', '1 x hide'], 'set':['Mage']},
  'Magus Excerebro': {'resources':['1 x screaming brain', '1 x hide'], 'set':['Mage']},
