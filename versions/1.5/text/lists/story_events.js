@@ -108,6 +108,7 @@ const texts = {
     "label": "Herb Gathering",
     'music': 'music/herb gathering.mp3',
     'hide_label': true,
+    'speech': '#'
   },
   'hooded knight': {
     "label": "Hooded Knight",
@@ -178,16 +179,19 @@ const texts = {
     "label": "Legendary Monsters",
     'music': 'music/legendary monsters.mp3',
     'hide_label': true,
+    'speech': '#'
   },
   'mineral gathering': {
     "label": "Mineral Gathering",
     'music': 'music/mineral gathering.mp3',
     'hide_label': true,
+    'speech': '#'
   },
   'overwhelming darkness': {
     "label": "Overwhelming Darkness",
     'music': 'music/overwhelming darkness.mp3',
-    'music_delay': '3000',
+    'music_delay': '2000',
+    'speech': '#',
     'transition_button': [
     {
       'type':'back',
@@ -234,7 +238,7 @@ const texts = {
   },
   'first story': {
     "label": "First Story",
-
+    'speech': '#',
     'music': 'music/first story.mp3',
     'music_delay': 'speech+1000',
   },
@@ -256,6 +260,7 @@ const texts = {
   'returning survivors': {
     "label": "Returning Survivors",
     'campaign': ['Lantern'],
+    'speech': '#',
     'transition_button': [
     {
       'type':'menu',
@@ -267,6 +272,7 @@ const texts = {
   'run away': {
     "label": "Run Away",
     'music': 'music/run away.mp3',
+    'speech': '#',
     'transition_button': [
     {
       'type':'menu',
@@ -424,6 +430,7 @@ const texts = {
     "label": "Black Harvest",
     'expansion': 'dung beetle knight',
     'music': 'music/rumbling in the dark.mp3',
+    'speech': '#'
   },
   'rumbling in the dark': {
     "label": "Rumbling in the Dark",
@@ -438,6 +445,7 @@ const texts = {
     'music_delay': '500',
     'ltop': '35%',
     'lleft': '40%',
+    'speech': '#',
   },
   'spelunking of death': {
     "label": "Spelunking of Death",
@@ -567,6 +575,7 @@ const texts = {
     'ltop': '10%',
     'lleft': '75%',
     'campaign': ['Stars'],
+    'speech': '#',
     'transition_button': [
     {
       'type':'menu',
@@ -848,12 +857,14 @@ const texts = {
     'expansion': 'sunstalker',
     'music': 'music/the pool and the sun.mp3',
     'campaign': ['Sun'],
+    'speech': '#',
   },
   'umbilical symbiosis': {
     "label": "Umbilical Symbiosis",
     'expansion': 'sunstalker',
     'music': 'music/umbilical symbiosis.mp3',
     'campaign': ['Sun'],
+    'speech': '#'
   },
   'warriors of the sun': {
     "label": "Warriors of the Sun",
@@ -887,6 +898,7 @@ const texts = {
     'expansion': 'flower knight',
     'music': 'music/sense memory.mp3',
     'type': 'image',
+    'speech': '#'
   },
   'sense memory': {
     "label": "Sense Memory",

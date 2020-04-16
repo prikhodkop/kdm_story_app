@@ -1179,6 +1179,12 @@ const texts = {
      'description': 'Maybe she is a frantic Savior’s painting come to life. Or perhaps she comes from a small village at the center of a rainbowhued swamp that absorbs the life of its inhabitants for generations before it awakes and paints a tapestry across the horizon. She could also be a renegade from a far developed Sun Stalker settlement. One day we’ll set the record straight.<br/><br/>Secret Fighting Art roll: <b>7+</b>',
    },
 
+   'Set Aside Survivors' : {
+     'description': 'During the campaign, some survivors may be prompted to leave the settlement, with instructions that the survivor sheets must be set aside. Survivors that are set aside are removed from the settlement population and are treated as dead, with the exceptions that these survivors do not count towards the death count and an cursed gear must stay in their grid, unless otherwise prompted. Settlements also do not gain the benefits of its death principle when survivors are set aside. If a set aside survivor is directly stated to have died, archive their survivor sheet and grid as normal. When a set aside survivor is added back into the settlement, regain 1 population and return their survivor sheet and grid.',
+   },
+   'Patterns': {
+     'description': 'Patterns represent moments of ingenuity and unique circumstances coming together to inspire something new. In their own way, Patterns are the stories of crafting and are discovered in numerous ways through gameplay. They offer unique gear for a settlement to craft and often have challenging requirements. Pattern cards are not limited to just having resources as a cost; they may require a specialist, a disorder, or another item to use in their creation.'
+   },
 }
 
 module.exports = {
