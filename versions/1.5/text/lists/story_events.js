@@ -62,6 +62,7 @@ const texts = {
     'ltop': '50%',
     'lleft': '75%',
     'campaign': ['Lantern', 'Sun'],
+    'music_delay': 'speech-1000',
   },
   'bone witch': {
     "label": "Bone Witch",
@@ -119,6 +120,7 @@ const texts = {
   'insight': {
     "label": "Insight",
     'campaign': ['Lantern', 'Sun'],
+    'music_delay': 'speech-1000',
   },
   'intimacy': {
     "label": "Intimacy",
@@ -550,6 +552,7 @@ const texts = {
     'expansion': 'dragon king',
     'ltop': '50%',
     'lleft': '75%',
+    'music_delay': 'speech-1000',
     'campaign': ['Stars'],
   },
   'death of the dragon king': {
@@ -647,6 +650,7 @@ const texts = {
     'music': 'music/the hanged man.mp3',
     'music_delay': 'speech+1000',
     'ltop': '80%',
+    'speech': '#'
   },
   'death pit': {
     "label": "Death Pit",
@@ -654,6 +658,7 @@ const texts = {
     'music': 'music/crush and devour.mp3',
     'ltop': '25%',
     'lleft': '25%',
+    'speech': '#',
   },
   'lottery': {
     "label": "Lottery",
@@ -683,6 +688,7 @@ const texts = {
     'music': 'music/sonorous rest.mp3',
     'ltop': '15%',
     'lleft': '30%',
+    'speech': '#',
   },
   'the hanged man': {
     "label": "The Hanged Man",
@@ -703,6 +709,7 @@ const texts = {
     'music': 'music/lottery.mp3',
     'ltop': '7%',
     'lleft': '55%',
+    'speech': '#',
   },
   'dark place': {
     "label": "Dark Place",
@@ -1005,6 +1012,7 @@ const texts = {
     'expansion': 'storm knight',
     'music': 'music/kings curse.mp3',
     'type': 'image',
+    'speech': '#',
     // 'ltop': '5%',
     // 'lleft': '75%'
     // 'music_delay': 'speech-2000'
@@ -1061,7 +1069,8 @@ const texts = {
     'type': 'image',
     'ltop': '35%',
     // 'lleft': '75%'
-    'music_delay': 'speech-1000'
+    'music_delay': 'speech-1000',
+    'speech': '#',
   },
   'birth of a champion': {
     "label": "Birth of a Champion",

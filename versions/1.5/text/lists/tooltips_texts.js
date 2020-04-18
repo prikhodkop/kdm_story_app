@@ -278,7 +278,7 @@ const texts = {
  },
 
  'end_phase_button': {
-   'text': 'Lose unspent endeavors.<br/><br/><b style="color:#cc0;">Click</b> to start a new <b>Hunt</b>!'
+   'text': 'Lose unspent endeavors.<br/>Continue to <b>Hunt</b> or <b>Nemesis Encounter</b>.<br/><br/><b style="color:#cc0;">Click</b> to start a new <b>Hunt</b>!'
  },
 
  'innovations_filter': {
