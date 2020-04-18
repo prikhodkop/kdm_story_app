@@ -52,7 +52,7 @@ function createAbout (version) {
   <p id="about_p"><b style="color:#aaa">Voice acting</b>: @prikhodkop, Katya Prikhodko, Joseph Anthony (tweet: @JA_VOX).</p>
   <p id="about_p"><b style="color:#aaa">Testing</b>: Alexander Fedorov, Calibretto, Creepo, Cymbaline, Knolan.</p>
   <p id="about_p"><b style="color:#aaa">Polish translation</b>: Artur X, Sebastian Oleksa, Marcin „Szuwar” Niedzielski, Maciej Filipiak, Jarosław Czarniak, Damian Kopczyński, DsPkT.</p>
-  <p id="about_p"><b style="color:#aaa">Community Edition and Storm Knight</b> are created by CCG Team, check their other work at: <a href=https://www.patreon.com/ccgteam style="color:#888800;" target="_blank">https://www.patreon.com/ccgteam</a></p>
+  <p id="about_p"><b style="color:#aaa">Community Edition, Trial of Champions and Storm Knight</b> are created by CCG Team, check their other work at: <a href=https://www.patreon.com/ccgteam style="color:#888800;" target="_blank">https://www.patreon.com/ccgteam</a></p>
   <p id="about_p"><b style="color:#aaa">Weapon specialisation cards</b> are created by Fen, check his work at: <a href=https://www.patreon.com/FenPaints style="color:#888800;" target="_blank">https://www.patreon.com/FenPaints</a></p>
   <p id="about_p"><b style="color:#aaa">Patreon backers</b>: Bekil, Blair, Cymbaline, Frosty, Javier Salmeron, Jesús Martin-Davila, Jordan White, Kliff, Mithless_one, Royce, Scott M, timberwolfl.</p>
   <p id="about_p">If i missed someone or you want to discuss other app related topics, please reach me at <a href=mailto:prikhodkop@gmail.com style="color:#888800;" target="_blank">prikhodkop@gmail.com</a><br/><br/>Enjoy your play!</p></div>`).appendTo('#about-window-back')

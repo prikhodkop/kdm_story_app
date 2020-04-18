@@ -453,6 +453,7 @@ const texts = {
     "label": "Spelunking of Death",
     'expansion': 'dung beetle knight',
     'music': 'music/spelunking of death.mp3',
+    'music_delay': 'speech-1000',
     'ltop': '18%',
     'lleft': '63%',
   },
@@ -466,7 +467,8 @@ const texts = {
   'showdown dung beetle knight': {
     "label": "Showdown: Dung Beetle Knight",
     'expansion': 'dung beetle knight',
-    'music': 'music/showdown butcher.mp3',
+    'music': 'music/showdown dung beetle knight.mp3',
+    'music_delay': 'speech-1000',
     'ltop': '5%',
     'lleft': '55%',
     'transition_button': [
@@ -647,8 +649,8 @@ const texts = {
   'bleeding heart': {
     "label": "Bleeding Heart",
     'expansion': 'manhunter',
-    'music': 'music/the hanged man.mp3',
-    'music_delay': 'speech+1000',
+    'music': 'music/bleeding heart.mp3',
+    'music_delay': '1000',
     'ltop': '80%',
     'speech': '#'
   },

@@ -126,24 +126,26 @@ module.exports = class ImageScene {
     var start_delay = 1000 // delay before speech playing starts
     var music_volume = 0.4 // music volume
     var speech
+    var mute_narration = false
     if (!(events_table[myself].speech == '#')) {
       speech = new Howl({
         src: [pathToAssetL(events_table[myself].speech)],
         volume: 1.0,
       })
+
+      if ((events_table[myself].speech == '') || (settings['narration'] == 'Off') || (events_table[myself].speech == '#')) {
+        mute_narration = true
+      };
+
     } else {
       speech = new Howl({
         src: [pathToAssetL(events_table['hunt'].speech)],
         volume: 1.0,
       })
+
+      mute_narration = true
+
     }
-
-
-    if ((events_table[myself].speech == '') || (settings['narration'] == 'Off') || (events_table[myself].speech == '#')) {
-      var mute_narration = true
-    } else {
-      var mute_narration = false
-    };
 
     var music = new Howl({
       src: [pathToAssetL(events_table[myself].music)],
@@ -195,7 +197,7 @@ module.exports = class ImageScene {
 
       if (true) {
         $('#label_text').fadeIn(2000)
-        $('#img').delay(2000).fadeIn(1000)
+        $('#img').delay(1000).fadeIn(1000)
 
         if (!menus_appeared) {
           menus_appeared = true
@@ -205,7 +207,7 @@ module.exports = class ImageScene {
             createInnovationsList()
             createLocationsList()
             eventsSugar(myself)
-          }, 2000)
+          }, 1000)
         };
 
         if ((settings['music'] == 'On')&&(!music.playing())) {
@@ -219,7 +221,7 @@ module.exports = class ImageScene {
       var action = 'false' // flag to show if user clicked on #img_back
 
       if (myself == 'first story') {
-        $('#img_back').delay(4000).fadeIn(1000)
+        $('#img_back').delay(3000).fadeIn(1000)
       } else {
         $('#img_back').fadeIn(1000)
       }
@@ -256,7 +258,7 @@ module.exports = class ImageScene {
       console.log('I started anew!!')
       console.log(action)
       if (mute_narration) {
-        duration = 1000
+        duration = 2000
         // delay = 1000
         delay = 1000
       } else {
@@ -270,13 +272,13 @@ module.exports = class ImageScene {
       }
 
       if (myself == 'first story') {
-        duration = 3000
+        duration = 2000
         // delay = parseInt(events_table[myself].music_delay, 10)
         $('.srt').html(tooltips['first_story_event'].text)
         // $('.srt').html('Open rule book on page 22 and follow the instructions.')
 
         $('.srt').fadeIn(1000)
-        addTimer(function () { $('.srt').fadeOut(1000) }, 2000)
+        addTimer(function () { $('.srt').fadeOut(1000) }, 1000)
       }
 
       console.log('Speech ' + events_table[myself].speech)
@@ -313,7 +315,7 @@ module.exports = class ImageScene {
           }
           ;
         }
-      }, start_delay + duration + 2000)
+      }, start_delay + duration)
 
       addTimer(function () {
         console.log('I play the music')
