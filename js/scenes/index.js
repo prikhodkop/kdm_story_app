@@ -155,6 +155,7 @@ module.exports = class IndexScene {
         $('#settings').hide()
         $('#label_text').hide()
         $('#about_text').hide()
+        $('#reference').hide()
         $('.locations_button').hide()
         $('.innovations_button').hide()
 

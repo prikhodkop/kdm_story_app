@@ -272,13 +272,13 @@ module.exports = class ImageScene {
       }
 
       if (myself == 'first story') {
-        duration = 2000
+        duration = 4000
         // delay = parseInt(events_table[myself].music_delay, 10)
         $('.srt').html(tooltips['first_story_event'].text)
         // $('.srt').html('Open rule book on page 22 and follow the instructions.')
 
         $('.srt').fadeIn(1000)
-        addTimer(function () { $('.srt').fadeOut(1000) }, 1000)
+        addTimer(function () { $('.srt').fadeOut(1000) }, 2000)
       }
 
       console.log('Speech ' + events_table[myself].speech)
