@@ -687,7 +687,7 @@ const texts = {
   'sonorous rest': {
     "label": "Sonorous Rest",
     'expansion': 'manhunter',
-    'music': 'music/sonorous rest.mp3',
+    'music': 'music/sonorous rest old.mp3',
     'ltop': '15%',
     'lleft': '30%',
     'speech': '#',
