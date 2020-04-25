@@ -49,7 +49,7 @@ function createAbout (version) {
   <p id="about_p">Almost all the art and text presented in the app are the property of <b id="poots-text">Adam Poots</b>. The guy did a great job creating the game, so please pay respect and <b>use the app ONLY if you own a physical copy of the game</b> (no exceptions!!). Buy it here: <a href=https://shop.kingdomdeath.com style="color:#888800;" target="_blank">https://shop.kingdomdeath.com</a></p>
   <p id="about_p" style="color:#600;font-weight:600;"><u style="color:#900">And to stress that:</u> It's prohibited to use the app if you don't have correspond physical components on the table before you.</p>
   <p id="about_p"><b style="color:#aaa">Coding</b>: @prikhodkop, Justin Parker (jparkerweb), Andrew Mackrodt (andrewmackrodt).</p>
-  <p id="about_p"><b style="color:#aaa">Voice acting</b>: @prikhodkop, Katya Prikhodko, Joseph Anthony (tweet: @JA_VOX).</p>
+  <p id="about_p"><b style="color:#aaa">Voice acting</b>: Joseph Anthony (tweet: @JA_VOX).</p>
   <p id="about_p"><b style="color:#aaa">Testing</b>: Alexander Fedorov, Calibretto, Creepo, Cymbaline, Knolan.</p>
   <p id="about_p"><b style="color:#aaa">Polish translation</b>: Artur X, Sebastian Oleksa, Marcin „Szuwar” Niedzielski, Maciej Filipiak, Jarosław Czarniak, Damian Kopczyński, DsPkT.</p>
   <p id="about_p"><b style="color:#aaa">Community Edition, Trial of Champions and Storm Knight</b> are created by CCG Team, check their other work at: <a href=https://www.patreon.com/ccgteam style="color:#888800;" target="_blank">https://www.patreon.com/ccgteam</a></p>
