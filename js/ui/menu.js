@@ -200,6 +200,7 @@ function createMenuButton () {
         }, 200)
         addTimer(function(){
           menu_toggle_close.removeClass('swashIn')
+          $('#events_filter').focus()
         }, 400)
         // menu_toggle_wrapper.removeClass('swashIn')
         menu_toggle_wrapper.addClass('swashOut')

@@ -90,7 +90,7 @@ const texts = {
   'game over': {
     "label": "Game Over",
     'music': 'music/game over.mp3',
-    'ltop': '32%',
+    'ltop': '30%',
     'lleft': '47%',
   },
   'hammer and nail': {
@@ -561,9 +561,11 @@ const texts = {
     "label": "Death of the Dragon King",
     'expansion': 'dragon king',
     'music': 'music/death of the dragon king.mp3',
-    'ltop': '80%',
-    'lleft': '75%',
+    'ltop': '85%',
+    'lleft': '70%',
+    'music_delay': '2000',
     'campaign': ['Stars'],
+    'speech': '#',
   },
   'faces in the sky': {
     "label": "Faces in the Sky",
@@ -673,7 +675,7 @@ const texts = {
     "label": "Showdown: Manhunter",
     'expansion': 'manhunter',
     'music': 'music/showdown manhunter.mp3',
-    'music_delay': 'speech-2000',
+    'music_delay': '500',
     'ltop': '15%',
     'lleft': '70%',
     'transition_button': [
@@ -821,7 +823,7 @@ const texts = {
     "label": "Final Gift",
     'expansion': 'sunstalker',
     'music': 'music/final gift.mp3',
-    'music_delay': 'speech - 5000',
+    'music_delay': '8000',
     'campaign': ['Sun'],
   },
   'showdown sunstalker': {
@@ -841,7 +843,7 @@ const texts = {
     "label": "Sun Dipping",
     'expansion': 'sunstalker',
     'music': 'music/sun dipping.mp3',
-    'ltop': '12%',
+    'ltop': '10%',
     'lleft': '40%',
     'campaign': ['Sun'],
   },
@@ -858,7 +860,7 @@ const texts = {
     'music': 'music/the great sky gift.mp3',
     'music_delay': '1000',
     'ltop': '18%',
-    'lleft': '25%',
+    'lleft': '30%',
     'campaign': ['Sun'],
   },
   'the pool and the sun': {
@@ -964,7 +966,7 @@ const texts = {
   },
 
   'showdown spidicules': {
-    "label": "Showdown: Spidiclues",
+    "label": "Showdown: Spidicules",
     'expansion': 'spidicules',
     'music': 'music/showdown spidicules.mp3',
     'type': 'image',
@@ -987,7 +989,8 @@ const texts = {
     'music': 'music/taken.mp3',
     'type': 'image',
     'ltop': '9%',
-    'lleft': '49%'
+    'lleft': '49%',
+    // 'speech': '#',
     // 'music_delay': 'speech-2000'
   },
   'puppets embalming': {
