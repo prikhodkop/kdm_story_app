@@ -81,11 +81,15 @@ function pathToAsset(path, localization='', cdn_change=true) {
   if (localization == 'localize') {
     let lang = getSettings()['language']
     file = checkFile(path, '', lang, false)
+    file_default = checkFile(path, '', defaultLang(), false)
 
-    if ((lang == defaultLang())||(window.globals.translations['paths'][lang].includes(file))) {
-      result = file
-    } else {
+    // if ((lang == defaultLang())||(window.globals.translations['paths'][lang].includes(file))) {
+    if (window.globals.translations['paths'][lang].includes(file)) {
+      result = checkFile(path, '', lang, false)
+    } else if (window.globals.translations['paths'][defaultLang()].includes(file_default)) {
       result = checkFile(path, '', defaultLang(), false)
+    } else {
+      result = ''
     }
 
   } else {

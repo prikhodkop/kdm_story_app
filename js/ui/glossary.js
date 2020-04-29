@@ -334,7 +334,17 @@ function get_representation (word) {
    if (['(white lion)', '(sunstalker)', '(screaming antelope)', '(phoenix)', '(flower knight)', '(spidicules)', '(dung beetle knight)', '(gorm)', '(dragon king)'].some(substring=>word.toLowerCase().includes(substring))) {
      color = '#d3a52d'
    }
-  let result = '<b style="font-size:1.3em;">' + word + '</b><br/><i style="font-size:0.9em;color:'+color+';">('+resources[word]['type']+')</i> <hr/>' + resources[word]['text']
+   let result = ''
+   let image_path = pathToAssetL('images/reference/Resources/'+word+'.jpg')
+   if (image_path == '') {
+     image_path = pathToAssetL('images/reference/Resources/'+word+'.png')
+   }
+   if (image_path != '') {
+     result = '<div style="display:flex;"><div style="width: 15%; height: auto;display:inline;padding-right:2%;"><span class="helper" style="vertical-allign:middle;width:100%;"></span><img id=reference-image style="vertical-allign:middle;" src="'+image_path+'"/></div>'
+     result = result+'<div style="width:83%;display:fix;vertical-align:middle;"><b style="font-size:1.3em;">'+resources[word]['label']+'</b> <i style="font-size:0.9em;color:'+color+';">('+resources[word]['type']+')</i> <hr/><div  class="bottom-reference">'+ resources[word]['text']+'</div></div></div>'
+   } else {
+    result = '<b style="font-size:1.3em;">' + resources[word].label + '</b><br/><i style="font-size:0.9em;color:'+color+';">('+resources[word]['type']+')</i> <hr/>' + resources[word]['text']
+   }
 
   return result
 
