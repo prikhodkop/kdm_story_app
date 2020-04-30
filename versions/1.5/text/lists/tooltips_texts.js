@@ -174,7 +174,7 @@ const texts = {
  },
 
  '#random_event_icon': {
-   'text': 'Roll random <b>Hunt Event</b>',
+   'text': '<b style="color:#cc0">Click</b> above to roll random  or enter <b>Hunt Event</b> number',
  },
  '#random_event_close': {
    'text': '<b style="color:#cc0">Click</b> to close <b>Hunt Event</b>',

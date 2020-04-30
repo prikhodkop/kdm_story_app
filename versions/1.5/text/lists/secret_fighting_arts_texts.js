@@ -82,7 +82,7 @@ const texts = {
   "description": "Gain +2 accuracy, +2 strength, +2 evasion. You may <b>dodge</b> any number of times in a round. Only 1 survivor may have this Secret Fighting Art.",
  },
  'Kings Step': {
-   'label': 'Kings Step',
+   'label': 'King\'s Step',
   "description": "Whenever you attack, you may discard any number of <b>Battle Pressure</b> hit locations drawn and draw an equal number of new hit locations. Whenever you attack, after drawing hit locations, but before rolling to wound, you may choose one hit location drawn and discard it to draw a new hit location. <b>Traps</b> will cancel these effects.",
  },
  'Legendary Lungs': {

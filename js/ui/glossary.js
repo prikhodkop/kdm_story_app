@@ -179,20 +179,36 @@ function get_options (data, type, filter=false) {
    }
   if (!filter) {
     if (!('campaign' in data[key]) || !(data[key]['campaign'] == 'hidden')){
-       result.push({
-        class: type,
-        name: name,
-        value: key,
-       })
+      if ('group_name' in data[key]) {
+        result.push({
+         class: type,
+         name: name+' ('+data[key].group_name+')',
+         value: key,
+        })
+      } else {
+        result.push({
+         class: type,
+         name: name,
+         value: key,
+        })
+      }
      }
   } else {
    if (!('expansion' in data[key]) || (settings['expansions'][data[key]['expansion']] == 'All content')){
     if (!('campaign' in data[key]) || (data[key]['campaign'].indexOf(settings['campaign']) > -1)){
-     result.push({
-      class: type,
-      name: name,
-      value: key,
-     })
+      if ('group_name' in data[key]) {
+        result.push({
+         class: type,
+         name: name+' ('+data[key].group_name+')',
+         value: key,
+        })
+      } else {
+        result.push({
+         class: type,
+         name: name,
+         value: key,
+        })
+      }
     }
 
    }
@@ -325,13 +341,13 @@ function get_representation (word) {
   return result
  } else if (word in resources) {
    let color = ''
-   if (word.toLowerCase().includes('strange)')) {
+   if (resources[word].group_name.toLowerCase().includes('strange')) {
      color = '#9ca814'
    }
-   if (word.toLowerCase().includes('(basic)')) {
+   if (resources[word].group_name.toLowerCase().includes('basic')) {
      color = '#becd70'
    }
-   if (['(white lion)', '(sunstalker)', '(screaming antelope)', '(phoenix)', '(flower knight)', '(spidicules)', '(dung beetle knight)', '(gorm)', '(dragon king)'].some(substring=>word.toLowerCase().includes(substring))) {
+   if (['white lion', 'sunstalker', 'screaming antelope', 'phoenix', 'flower knight', 'spidicules', 'dung beetle knight', 'gorm', 'dragon king'].some(substring=>resources[word].group_name.toLowerCase().includes(substring))) {
      color = '#d3a52d'
    }
    let result = ''
@@ -344,7 +360,7 @@ function get_representation (word) {
      // result = result+'<div style="width:83%;display:fix;vertical-align:middle;"><b style="font-size:1.3em;">'+resources[word]['label']+'</b> <i style="font-size:0.9em;color:'+color+';">('+resources[word]['type']+')</i> <hr/><div  class="bottom-reference">'+ resources[word]['text']+'</div></div></div>'
 
      result = '<img id=reference-image style="vertical-allign:middle;width: 25%;" src="'+image_path+'"/><br/>'
-     result = result+'<div style="width:99%;display:fix;vertical-align:middle;"><b style="font-size:1.3em;">'+resources[word]['label']+'</b> <i style="font-size:0.9em;color:'+color+';">('+resources[word]['type']+')</i> <hr/><div  class="bottom-reference">'+ resources[word]['text']+'</div>'
+     result = result+'<div style="width:99%;display:fix;vertical-align:middle;"><b style="font-size:1.3em;">'+resources[word]['label']+'</b> <i style="font-size:0.9em;color:'+color+';">('+resources[word]['group_name']+')</i><br/><i style="font-size:1.0em;"> ('+resources[word]['type'].split('/').join(' | ')+') </i><hr/><div  class="bottom-reference">'+ resources[word]['text']+'</div>'
    } else {
     result = '<b style="font-size:1.3em;">' + resources[word].label + '</b><br/><i style="font-size:0.9em;color:'+color+';">('+resources[word]['type']+')</i> <hr/>' + resources[word]['text']
    }

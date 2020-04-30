@@ -578,7 +578,7 @@ const texts = {
  'Leap': {
    'label':'',
    'description':'A Dragon Armor set bonus.Spend Activation and Movement. You leap into the air! Place your survivor on an unoccupied space exactly 5 space away in a straight line, then activate a melee weapon and attack with +2 accuracy and +5 strength.',},
- 'Leather': {
+ 'Leather (keyword)': {
    'label':'',
    'description':'A gear keyword. Cured hides are a crucial component of this gear.',},
 
