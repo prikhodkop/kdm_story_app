@@ -54,11 +54,11 @@ function generate_events_table () {
     let event = events[event_ids[i]]
     for (let property in event) {
       if (event.hasOwnProperty(property)) {
-        if (property == 'music') {
-          events_table[event_ids[i]][property] = './' + event[property]
-        } else {
-          events_table[event_ids[i]][property] = event[property]
-        }
+        // if (property == 'music') {
+        //   events_table[event_ids[i]][property] = './' + event[property]
+        // } else {
+        events_table[event_ids[i]][property] = event[property]
+        // }
       }
     }
   }

@@ -2,7 +2,7 @@ const texts = {
   'gorm': {
     'board':'xmmrrmxrrmmr',
     'monster_position': [5, 8, 12],
-    'monster_icon':'./images/hunt/gorm.png',
+    'monster_icon':'images/hunt/gorm.png',
     'monster_icon_width':8,
     'monster_icon_height':40,
     'label': 'Gorm',
@@ -11,7 +11,7 @@ const texts = {
   'white lion': {
     'board':'xmmrrmxrmmrr',
     'monster_position': [5, 8, 12],
-    'monster_icon':'./images/hunt/white_lion.png',
+    'monster_icon':'images/hunt/white_lion.png',
     'monster_icon_width':8,
     'monster_icon_height':41,
     'label': 'White Lion',
@@ -20,7 +20,7 @@ const texts = {
   'screaming antelope': {
     'board':'xmrmrrxmrmrr',
     'monster_position': [5, 8, 11],
-    'monster_icon':'./images/hunt/screaming_antelope.png',
+    'monster_icon':'images/hunt/screaming_antelope.png',
     'monster_icon_width':7,
     'monster_icon_height':38,
     'label': 'Screaming Antelope',
@@ -29,7 +29,7 @@ const texts = {
   'flower knight': {
     'board':'xrrrrrxmmmmm',
     'monster_position': [9, 10, 11],
-    'monster_icon':'./images/hunt/flower knight.png',
+    'monster_icon':'images/hunt/flower knight.png',
     'monster_icon_width':9,
     'monster_icon_height':38.8,
     'label': 'Flower Knight',
@@ -38,7 +38,7 @@ const texts = {
   'spidicules': {
     'board':'xmmrrmxrmmrr',
     'monster_position': [5, 8, 11],
-    'monster_icon':'./images/hunt/spidicules.png',
+    'monster_icon':'images/hunt/spidicules.png',
     'monster_icon_width':9,
     'monster_icon_height':41,
     'label': 'Spidicules',
@@ -47,7 +47,7 @@ const texts = {
   'phoenix': {
     'board':'xrmrmrxmrmrr',
     'monster_position': [6, 9, 12],
-    'monster_icon':'./images/hunt/phoenix.png',
+    'monster_icon':'images/hunt/phoenix.png',
     'monster_icon_width':8,
     'monster_icon_height':42,
     'label': 'Phoenix',
@@ -56,7 +56,7 @@ const texts = {
   'dung beetle knight': {
     'board':'xrmmrrxmrrmr',
     'monster_position': [6, 9, 12],
-    'monster_icon':'./images/hunt/dung_beetle_knight.png',
+    'monster_icon':'images/hunt/dung_beetle_knight.png',
     'monster_icon_width':8,
     'monster_icon_height':40,
     'label': 'Dung Beetle Knight',
@@ -65,7 +65,7 @@ const texts = {
   'sunstalker': {
     'board':'xrmmrrxmrrmr',
     'monster_position': [5, 9, 12],
-    'monster_icon':'./images/hunt/sunstalker.png',
+    'monster_icon':'images/hunt/sunstalker.png',
     'monster_icon_width':8,
     'monster_icon_height':42,
     'label': 'Sunstalker',
@@ -74,7 +74,7 @@ const texts = {
   'dragon king': {
     'board':'xmrmmrxmrrmr',
     'monster_position': [6, 9, 12],
-    'monster_icon':'./images/hunt/dragon_king.png',
+    'monster_icon':'images/hunt/dragon_king.png',
     'monster_icon_width':8,
     'monster_icon_height':42,
     'label': 'Dragon King',
@@ -83,7 +83,7 @@ const texts = {
   'lion god': {
     'board':'xrmrmrxrmrmr',
     'monster_position': [8, 10, 12],
-    'monster_icon':'./images/hunt/lion_god.png',
+    'monster_icon':'images/hunt/lion_god.png',
     'monster_icon_width':9,
     'monster_icon_height':39,
     'label': 'Lion God',

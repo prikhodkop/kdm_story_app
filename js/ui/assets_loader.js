@@ -80,17 +80,26 @@ function pathToAsset(path, localization='', cdn_change=true) {
 
   if (localization == 'localize') {
     let lang = getSettings()['language']
+    let default_lang = defaultLang()
     file = checkFile(path, '', lang, false)
-    file_default = checkFile(path, '', defaultLang(), false)
+    file_default = checkFile(path, '', default_lang, false)
+
+    console.log(window.globals.translations['paths'][lang])
+    console.log('The path: '+path)
+    console.log('The file: '+file)
+    console.log('The default file: '+file_default)
 
     // if ((lang == defaultLang())||(window.globals.translations['paths'][lang].includes(file))) {
     if (window.globals.translations['paths'][lang].includes(file)) {
       result = checkFile(path, '', lang, false)
-    } else if (window.globals.translations['paths'][defaultLang()].includes(file_default)) {
+    } else if (window.globals.translations['paths'][default_lang].includes(file_default)) {
       result = checkFile(path, '', defaultLang(), false)
     } else {
       result = ''
     }
+    // else {
+    //   result = ''
+    // }
 
   } else {
     result = checkFile(path, '', '', false)

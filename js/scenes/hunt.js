@@ -870,8 +870,8 @@ module.exports = class HuntScene {
     }
 
     function place_events (events_string, size, height, id, sequence) {
-      var random_event = './images/hunt/random_hunt_event.png'
-      var monster_event = './images/hunt/monster_hunt_event.png'
+      var random_event = 'images/hunt/random_hunt_event.png'
+      var monster_event = 'images/hunt/monster_hunt_event.png'
 
       let q_event_idx = 0
 
