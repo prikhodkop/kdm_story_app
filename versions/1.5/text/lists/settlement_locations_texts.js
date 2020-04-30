@@ -240,7 +240,7 @@ const texts = {
   'armor_set': 'Rolling Armor',
  },
 
- 'HoH Druid': {
+ 'Hoh Druid': {
    'label':'HoH - Druid',
   'expansion': 'trial of champions',
   'group': 'HoH',
@@ -250,7 +250,7 @@ const texts = {
    '3': []},
   'armor_set': 'Druid Armor',
  },
- 'HoH Gladiator': {
+ 'Hoh Gladiator': {
    'label':'HoH - Gladiator',
   'expansion': 'trial of champions',
   'group': 'HoH',
@@ -260,7 +260,7 @@ const texts = {
    '3': []},
   'armor_set': 'Gladiator Armor',
  },
- 'HoH Mage': {
+ 'Hoh Mage': {
    'label':'HoH - Mage',
   'expansion': 'trial of champions',
   'group': 'HoH',
@@ -270,7 +270,7 @@ const texts = {
    '3': []},
   'armor_set': 'Mage Armor',
  },
- 'HoH Samurai': {
+ 'Hoh Samurai': {
    'label':'HoH - Samurai',
   'expansion': 'trial of champions',
   'group': 'HoH',
@@ -280,7 +280,7 @@ const texts = {
    '3': []},
   'armor_set': 'Samurai Armor',
  },
- 'HoL Bard': {
+ 'Hol Bard': {
    'label':'HoL - Bard',
   'expansion': 'trial of champions',
   'group': 'HoL',
@@ -290,7 +290,7 @@ const texts = {
    '3': ['Phoenix Flute', 'Bass Drum']},
   'armor_set': 'Bard Armor',
  },
- 'HoL Cleric': {
+ 'Hol Cleric': {
    'label':'HoL - Cleric',
   'expansion': 'trial of champions',
   'group': 'HoL',
@@ -300,7 +300,7 @@ const texts = {
    '3': []},
   'armor_set': 'Cleric Armor',
  },
- 'HoL Monk': {
+ 'Hol Monk': {
    'label':'HoL - Monk',
   'expansion': 'trial of champions',
   'group': 'HoL',
@@ -309,7 +309,7 @@ const texts = {
    '2': ['Verdant Shroud', 'Verdant Kashaya', 'Verdant Leg Wraps', 'Seer Mask', 'Twirling Blades'],
    '3': ['Sanguine Shroud', 'Sanguine Kashaya', 'Sanguine Leg Wraps', 'Prayer Beads']},
  },
- 'HoL Paladin': {
+ 'Hol Paladin': {
    'label':'HoL - Paladin',
   'expansion': 'trial of champions',
   'group': 'HoL',
@@ -319,7 +319,7 @@ const texts = {
    '3': []},
   'armor_set': 'Paladin Armor',
  },
- 'HoS Assassin': {
+ 'Hos Assassin': {
    'label':'HoS - Assassin',
   'expansion': 'trial of champions',
   'group': 'HoS',
@@ -329,7 +329,7 @@ const texts = {
    '3': []},
   'armor_set': 'Assassin Armor',
  },
- 'HoS Necromancer': {
+ 'Hos Necromancer': {
    'label':'HoS - Necromancer',
   'expansion': 'trial of champions',
   'group': 'HoS',
@@ -339,7 +339,7 @@ const texts = {
    '3': ['Spirit Scepter', 'Curse Box', 'Dissection Kit']},
   'armor_set': 'Necromancer Armor',
  },
- 'HoS Ranger': {
+ 'Hos Ranger': {
    'label':'HoS - Ranger',
   'expansion': 'trial of champions',
   'group': 'HoS',
@@ -349,7 +349,7 @@ const texts = {
    '3': ['Poison Arrow', 'Blood Bolt', 'Grapple Arrow']},
   'armor_set': 'Ranger Armor',
  },
- 'HoS Thief': {
+ 'Hos Thief': {
    'label':'HoS - Thief',
   'expansion': 'trial of champions',
   'group': 'HoS',
