@@ -244,8 +244,27 @@ module.exports = class ImageScene {
     if (anew) {
       $('#label_text').delay(1000).fadeIn(1000)
 
+      tippy('#label_text', {
+        placement: 'bottom-start',
+        content: tooltips['label_click'].text,
+        duration: 50,
+        delay: [600, 100],
+        animation: 'shift-away-subtle',
+        followCursor: true,
+        theme: 'kdm',
+      });
+
       if (subtitles)  {
         $('.srt').hide()
+        tippy('.srt', {
+          placement: 'bottom-start',
+          content: tooltips['subtitles_click'].text,
+          duration: 50,
+          delay: [600, 100],
+          animation: 'shift-away-subtle',
+          followCursor: true,
+          theme: 'kdm',
+        });
         $('.srt').html(getTerms('subtitle')[myself].text)
         $('.srt').css({'font-size': '2em'})
         $('.srt').delay(1500).fadeIn(1000)
@@ -372,15 +391,26 @@ module.exports = class ImageScene {
 
     $('.srt').click(function () {
       if ($('.srt').hasClass('hidden')) {
-        $('.srt').css({'opacity':'1.0'})
+        $('.srt').animate({opacity: 1.0}, 300)
       } else {
-        $('.srt').css({'opacity':'0'})
+        $('.srt').animate({opacity: 0.0}, 300)
       }
 
       $('.srt').toggleClass('hidden')
     })
 
+    $('#label_text').click(function () {
+      if ($('#label_text').hasClass('hidden')) {
+        $('#label_text').animate({opacity: 1.0}, 300)
+      } else {
+        $('#label_text').animate({opacity: 0.05}, 300)
+      }
+
+      $('#label_text').toggleClass('hidden')
+    })
+
     $('#img').click(function () {
+      $('#label_text').css({'opacity':'1.0'})
       $('#label_text').delay(300).fadeIn(400)
       if (subtitles)  {
         $('.srt').css({'opacity':'1.0'})

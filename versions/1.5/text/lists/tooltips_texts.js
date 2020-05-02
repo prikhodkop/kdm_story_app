@@ -358,6 +358,14 @@ const texts = {
    'text': 'Go to the <b>Settlement</b>',
  },
 
+ 'subtitles_click': {
+   'text': '<b style="color:#cc0;">Click</b> to hide/show subtitles.',
+ },
+
+ 'label_click': {
+   'text': '<b style="color:#cc0;">Click</b> to hide/show event name.',
+ },
+
 
  // tooltips['action_card'].text
 }

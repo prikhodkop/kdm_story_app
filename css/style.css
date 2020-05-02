@@ -131,6 +131,7 @@ input[type=number]::-webkit-inner-spin-button {
   margin-left: -20vw;
   font-family: 'Silverado';
   cursor: default;
+  /* transition: opacity 0.5s; */
 }
 
 
@@ -860,7 +861,7 @@ tr.spaceUnder>td {
   /* opacity: 0.9; */
   /* transform: translate(-50%, -50%); */
   cursor: default;
-  transition:all 0.5s;
+  /* transition:opacity 0.5s; */
 }
 
 .campaign_element {
