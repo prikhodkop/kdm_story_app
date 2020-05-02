@@ -354,10 +354,10 @@ function get_representation (word) {
    }
    let result = ''
    let image_path = pathToAssetL('images/reference/Resources/'+word+'.jpg')
-   if (image_path == '') {
+   if (image_path.includes('#')) {
      image_path = pathToAssetL('images/reference/Resources/'+word+'.png')
    }
-   if (image_path != '') {
+   if (!image_path.includes('#')) {
      // result = '<div style="display:flex;"><div style="width: 15%; height: auto;display:inline;padding-right:2%;"><span class="helper" style="vertical-allign:middle;width:100%;"></span><img id=reference-image style="vertical-allign:middle;" src="'+image_path+'"/></div>'
      // result = result+'<div style="width:83%;display:fix;vertical-align:middle;"><b style="font-size:1.3em;">'+resources[word]['label']+'</b> <i style="font-size:0.9em;color:'+color+';">('+resources[word]['type']+')</i> <hr/><div  class="bottom-reference">'+ resources[word]['text']+'</div></div></div>'
 

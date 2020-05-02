@@ -95,7 +95,7 @@ function pathToAsset(path, localization='', cdn_change=true) {
     } else if (window.globals.translations['paths'][default_lang].includes(file_default)) {
       result = checkFile(path, '', defaultLang(), false)
     } else {
-      result = ''
+      result = '#'
     }
     // else {
     //   result = ''
