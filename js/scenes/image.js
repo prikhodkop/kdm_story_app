@@ -127,6 +127,10 @@ module.exports = class ImageScene {
     var music_volume = 0.4 // music volume
     var speech
     var mute_narration = false
+    var subtitles = false
+    if ((settings['subtitles'] == 'On') && (myself in getTerms('subtitle'))) {
+      subtitles = true
+    }
     if (!(events_table[myself].speech == '#')) {
       speech = new Howl({
         src: [pathToAssetL(events_table[myself].speech)],
@@ -240,15 +244,23 @@ module.exports = class ImageScene {
     if (anew) {
       $('#label_text').delay(1000).fadeIn(1000)
 
+      if (subtitles)  {
+        $('.srt').hide()
+        $('.srt').html(getTerms('subtitle')[myself].text)
+        $('.srt').css({'font-size': '2em'})
+        $('.srt').delay(1500).fadeIn(1000)
+      }
+
       console.log('Muted naration: '+ mute_narration)
 
-      if (mute_narration) {
+      // if (mute_narration) {
+      //   start_anew();
+      // } else {
+      //
+      // };
+      speech.on('load', function () {
         start_anew();
-      } else {
-        speech.on('load', function () {
-          start_anew();
-        })
-      };
+      })
 
     };
 
@@ -257,7 +269,7 @@ module.exports = class ImageScene {
     function start_anew() {
       console.log('I started anew!!')
       console.log(action)
-      if (mute_narration) {
+      if (mute_narration && !subtitles) {
         duration = 2000
         // delay = 1000
         delay = 1000
@@ -287,6 +299,7 @@ module.exports = class ImageScene {
       console.log('Music delay ' + events_table[myself].music_delay)
 
       if (delay < 0) {
+        delay = 100
         throw 'Music delay at event ' + myself + " can't be negative!"
       }
 
@@ -302,6 +315,7 @@ module.exports = class ImageScene {
       addTimer(function () {
         if (action == 'false') {
           $('#img').fadeIn(1000)
+          $('.srt').fadeOut(500)
           action = 'true'
           if (!menus_appeared) {
             menus_appeared = true
@@ -330,6 +344,9 @@ module.exports = class ImageScene {
       action = 'true'
 
       $("#label_text").fadeOut(200);
+      if (subtitles)  {
+        $('.srt').fadeOut(200)
+      }
       $('#img').fadeIn(400)
       $('.settlement_return_button').fadeIn(500)
       $('.event_tooltip').fadeIn(500)
@@ -353,8 +370,22 @@ module.exports = class ImageScene {
       }
     })
 
+    $('.srt').click(function () {
+      if ($('.srt').hasClass('hidden')) {
+        $('.srt').css({'opacity':'1.0'})
+      } else {
+        $('.srt').css({'opacity':'0'})
+      }
+
+      $('.srt').toggleClass('hidden')
+    })
+
     $('#img').click(function () {
       $('#label_text').delay(300).fadeIn(400)
+      if (subtitles)  {
+        $('.srt').css({'opacity':'1.0'})
+        $('.srt').delay(800).fadeIn(400)
+      }
       $('#img').fadeOut(300)
       $('.settlement_return_button').fadeOut(300)
       $('.event_tooltip').fadeOut(300)

@@ -194,7 +194,7 @@ module.exports = class VideoScene {
     // if (settings['subtitles'] == 'On') {
     //   configureSubtitle(readFile(pathToAssetL('video/'+ myself + '.srt', false), 'root'))
     // };
-    if (settings['subtitles'] == 'On') {
+    if (settings['subtitles'] != 'Off') {
       let subtitles
       // configureSubtitle(readFile(pathToAssetL('video/intro.srt', false), 'root'))
       if (window.globals.process == 'local') {

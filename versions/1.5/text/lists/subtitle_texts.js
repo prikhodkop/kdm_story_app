@@ -228,9 +228,9 @@ const texts = {
       'text': 'There was once a White Lion cub whose belly yawned with hunger. It pushed in the gathered pack and always ate more than its share. Resentful, the pack nipped its hauches until they bled, but the cub\'s hunger never relented. The monster grew so large that the bites of its kin no longer penetrated its hide. Their resentment turned to dread, so they banished it. The monster cried for the love of its pack but they turned their shimmering manes away in unison. Perhaps it was a lifetime of deprivation and insults. Perhaps its family\'s intuition was right. It devoured them before wandering into the darkness, doomed to never find another like itself.'
   },
   'looming storm': {
-      'text': 'A distant clamor breaks the peaceful drumming of rain on metal, drawing the attention of the otherworldly Storm Knight to the world far beneath it\'s lofty domain. The abstruse being, obscured by a shroud of steam and water vapor issuing forth from the crevices of its ornate armor, had grown fond of the remote settlement developing below. The survivors\' growing potential as challengers had finally come to rouse the knight from its rainladen reverie. With a thought the atmosphere around the Storm Knight contorts to its tumultuous will. Billowing thunderclouds spread to the horizon as strong winds lash the stone-faced plains. A grand display of lightning illuminates the knight\'s floating castle, casting sword-shaped shadows against the backdrop of a churning mesocyclone. Bolts of lightning fall upon the settlement as the knight\'s decree issues forth, scarring the earth at it\'s center. Those capable of braving the inclement weather come upon a message: I demand metal, by offering or by sword.'
+      'text': 'A distant clamor breaks the peaceful drumming of rain on metal, drawing the attention of the otherworldly Storm Knight to the world far beneath it\'s lofty domain. The abstruse being, obscured by a shroud of steam and water vapor issuing forth from the crevices of its ornate armor, had grown fond of the remote settlement developing below. The survivors\' growing potential as challengers had finally come to rouse the knight from its rainladen reverie. With a thought the atmosphere around the Storm Knight contorts to its tumultuous will. Billowing thunderclouds spread to the horizon as strong winds lash the stone-faced plains. A grand display of lightning illuminates the knight\'s floating castle, casting sword-shaped shadows against the backdrop of a churning mesocyclone. Bolts of lightning fall upon the settlement as the knight\'s decree issues forth, scarring the earth at it\'s center. Those capable of braving the inclement weather come upon a message:<br />"I demand metal, by offering or by sword."'
   },
-  'showdown storm knight 1-2': {
+  'showdown storm knight lv.1-2': {
       'text': 'An elegant armored figure appears outside of the settlement in a flash of lightning. Its arrival is accompanied by a sudden downpour. The survivors brace themselves against the storm and struggle to behold the mystifying force. The knight slowly raises its many-faced helmet, taking a moment to cast a deep and synchronous glare, as the sound of rain striking metal rises above distant thunder.'
   },
   'ill-fated circumstance': {
@@ -239,7 +239,7 @@ const texts = {
   'rise to the challenge': {
       'text': 'The lantern hoard shudders beneath the unrelenting storm. Howling gales and brilliant flashes of lightning hush the weather-beaten settlement as the forms of the nominated survivors disappear into the darkness overhead. The hapless collective left behind huddle together in their vulnerable agglomerations of stone, wood, and hide. Undaunted survivors peer up and wonder what unknown curiosities and unfathomable destination await their companions. Above the rain-soaked plains, the violent tempest batters the remote hunting party.'
   },
-  'showdown storm knight 3': {
+  'showdown storm knight lv.3': {
       'text': 'A wearying, turbulent ascent rewards the battered survivors with a floating ruin. The weathered citadel, wreathed in billowing thunderclouds, mystifies the rain-soaked party. As biting winds force the survivors forward, silent bolts of lightning cleave through the swirling atmosphere around them. Boundless electricity dissipates along the elaborate protrusions mounted across the castle\'s crenelated parapets and archways. The end of the survivor\' long journey approaches. They say if you reach the peak of this castle hidden within the storm you will find a sublime sight, obscured by constant rainfall and blinding flashes of light. Treasured by a zealous cult of worshipers, the enigmatic knight awakens for only the strongest challengers. It\'s lingering will for combat sustains it.'
   },
   'showdown allison the twilight knight': {
@@ -266,27 +266,56 @@ const texts = {
   'sense memory': {
       'text': 'Rushing into the settlement, the returning survivors desperately attempt to convey to the others the powerful memories that dwelt in the very air of the glade. Even as they pass the settlement\'s threshold, the memories fade and the delicate blooms clutched in their hands wilt.'
   },
-  'a warm virus': {
-      'text': 'A warm virus.'
-  },
   'necrotoxic mistletoe': {
       'text': 'Small berried plants bloom all over the settlement, and airy pollen clusters dance in the lanter light as they fall from the atmosphere above.'
   },
   'spidisyphus': {
       'text': 'Survivors roll a legless ball to the settlement.'
   },
-  'puppet\'s embalming': {
+  'puppets embalming': {
       'text': 'By the time your body is freed from the stalk, all of your blood has been replaced.'
   },
   'silk surgery': {
       'text': 'Strange possibilities are proffered to those bold enough to gamble with their own flesh.'
   },
-  // 'taken': {
-  //     'text': 'The survivor is taken by monster!'
-  // },
+  'taken': {
+      'text': 'The monster has its revenge on the settlement...'
+  },
   'showdown spidicules': {
       'text': 'All good children know to hide when they hear the signs of the knocking ghost. A rapping outside your hovel, a laugh like dried leaves blowing over ground, the shadow of a familiar face disappearing around a corner. All bad children that dare go outside when it comes around will be snapped up, never to be seen again.'
   },
+  'a gracious host': {
+    'text': 'The worm\'s whispers overwhelm you, compelling you to consume it.' },
+  'death reading': {
+    'text': 'A ritual deciphering of ancient artifacts.'
+  },
+  'necropolis': {
+    'text': 'A frantic dive into the unknown.'
+  },
+  'showdown lion god': {
+    'text': 'There was once a ruler that outlived their kingdom. As their body began to pertrify, they were visited by a worm that offered them power in exchange for their memories. Now a mindless beast, silver oozes from its nails and warps its bones as it rages in the ruins of its city, always in pain.'
+  },
+  'conquer your shadow': {
+    'text': 'Pushed to your limits and barely conscious, your shadow confronts you. Grinning desperately, you are unable to tell if this is a delusion or a rare opportunity.'
+  },
+  'intimacy_stars': {
+      'text': 'The mystery of intimacy takes place in the settlement.'
+  },
+  'intimacy_sun': {
+      'text': 'The mystery of intimacy takes place in the settlement.'
+  },
+  'showdown lonely tree': {
+    'text': 'There was once a woman who loved a sad man with a hole in his heart. The harder she tried to fill it, the more drained she felt. When there was nothing left of her, she killed herself under an old tree and let its roots drink her blood. Soon after, the sad man disappeared from the settlement. The tree bore a tear-shaped fruit.'
+  },
+  'showdown sunstalker': {
+    'text': 'There is a great castle in the sky shaped like a sword. At the top stands the Storm. Tired of its ineffective challengers, the Storm sought to give them an advantage. The Storm dragged the oldest Sun into the Sky and chained it to the top of its castle to give its challengers light. Now, when a challenger is defeated and rain strikes the stone-faced floor, the Sun cries out for help, igniting the sky with desperate flashes of light.'
+  },
+  'sky fishing': {
+    'text': 'You inflate the lure and gently launch it into the air. It floats into the darkness, and the group nervously waits. After a time, you Feel a Bite'
+  },
+  'white speaker': {
+    'text': 'A large bizarrely dressed woman offers to share a story.'
+  }
 }
 
 module.exports = {

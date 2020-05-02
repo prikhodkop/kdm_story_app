@@ -845,6 +845,7 @@ tr.spaceUnder>td {
 
 .srt {
   color: #ffffff;
+  text-shadow: 0 0 0.5vw #000;
   overflow: visible;
   visibility: show;
   z-index: 20;
@@ -856,8 +857,10 @@ tr.spaceUnder>td {
   left: 10%;
   width: 80%;
   font-family: 'Silverado';
+  /* opacity: 0.9; */
   /* transform: translate(-50%, -50%); */
   cursor: default;
+  transition:all 0.5s;
 }
 
 .campaign_element {

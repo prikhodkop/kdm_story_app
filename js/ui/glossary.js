@@ -39,6 +39,7 @@ var tooltips
 var campaigns
 var quaries
 var random_draws
+var subtitle
 
 
 let glossary_list_translations = {
@@ -60,6 +61,7 @@ let glossary_list_translations = {
   'tags': ['label', 'color'],
   'quaries': ['label'],
   'random_draws': ['label'],
+  'subtitle': ['text'],
 }
 
 function init_glossary() {

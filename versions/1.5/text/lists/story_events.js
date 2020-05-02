@@ -151,7 +151,7 @@ const texts = {
   'kings curse': {
     "label": "King's Curse",
     'music': 'music/kings curse.mp3',
-    'ltop': '88%',
+    'ltop': '83%',
     'lleft': '50%',
     'transition_button': [
     {
@@ -211,8 +211,8 @@ const texts = {
   'phoenix feather': {
     "label": "Phoenix Feather",
     'music': 'music/legendary monsters.mp3',
-    'ltop': '85%',
-    'lleft': '75%',
+    'ltop': '3%',
+    // 'lleft': '25%',
   },
   'principle conviction': {
     "label": "Principle: Conviction",
@@ -228,7 +228,7 @@ const texts = {
     "label": "Principle: New Life",
     'music': 'music/principle.mp3',
     'music_delay': 'speech-1000',
-    'ltop': '85%',
+    'ltop': '80%',
     'lleft': '50%',
   },
   'principle society': {
@@ -290,6 +290,7 @@ const texts = {
   'showdown butcher': {
     "label": "Showdown: Butcher",
     'music': 'music/showdown butcher.mp3',
+    'ltop': '74%',
     'transition_button': [
     {
       'type':'back',
@@ -301,8 +302,8 @@ const texts = {
   'showdown gold smoke knight': {
     "label": "Showdown: Gold Smoke Knight",
     'music': 'music/showdown gold smoke knight.mp3',
-    'ltop': '87%',
-    'lleft': '80%',
+    'ltop': '65%',
+    // 'lleft': '80%',
     'campaign': ['Lantern'],
   },
   'showdown kings man': {
@@ -504,7 +505,7 @@ const texts = {
     "label": "Intermission",
     'expansion': 'lion knight',
     'music': 'music/lion knight main.mp3',
-    'ltop': '88%',
+    'ltop': '83%',
     'transition_button': [
     {
       'type':'back',
@@ -617,8 +618,8 @@ const texts = {
     'expansion': 'dragon king',
     'music': 'music/showdown dragon king.mp3',
     'music_delay': 'speech+500',
-    'ltop': '80%',
-    'lleft': '35%',
+    'ltop': '74%',
+    // 'lleft': '65%',
     'transition_button': [
     {
       'type':'menu',
@@ -637,7 +638,7 @@ const texts = {
     "label": "The Tomb",
     'expansion': 'dragon king',
     'music': 'music/the tomb.mp3',
-    'ltop': '85%',
+    'ltop': '82%',
     'campaign': ['Stars'],
   },
   'unveil the sky': {
@@ -668,8 +669,8 @@ const texts = {
     "label": "Lottery",
     'expansion': 'manhunter',
     'music': 'music/lottery.mp3',
-    'ltop': '80%',
-    'lleft': '40%',
+    // 'ltop': '80%',
+    // 'lleft': '40%',
   },
   'showdown manhunter': {
     "label": "Showdown: Manhunter",
@@ -720,7 +721,7 @@ const texts = {
     'expansion': 'slenderman',
     'music': 'music/dark place.mp3',
     'music_delay': 'speech+500',
-    'ltop': '85%',
+    'ltop': '80%',
   },
   'forgotten fear': {
     "label": "Forgotten Fear",
@@ -805,6 +806,7 @@ const texts = {
     'music': 'music/birth of color.mp3',
     'music_delay': 'speech-2000',
     'campaign': ['Sun'],
+    'ltop': '30%'
   },
   'conquer your shadow': {
     "label": "Conquer Your Shadow",
@@ -831,6 +833,7 @@ const texts = {
     'expansion': 'sunstalker',
     'music': 'music/showdown sunstalker.mp3',
     'music_delay': 'speech + 500',
+    'ltop': '71%'
   },
   'sky fishing': {
     "label": "Sky Fishing",
@@ -916,7 +919,8 @@ const texts = {
     'expansion': 'flower knight',
     'music': 'music/sense memory.mp3',
     'type': 'image',
-    'music_delay': '1000'
+    'music_delay': '1000',
+    'ltop': '74.5%'
   },
   'the forest wants what it wants': {
     "label": "The Forest Wants What it Wants",
@@ -948,7 +952,7 @@ const texts = {
     'music': 'music/showdown phoenix.mp3',
     'type': 'image',
     'lleft': '66%',
-    'ltop': '1%',
+    'ltop': '3%',
     'music_delay': '2000'
   },
   'the lonely lady': {
@@ -981,7 +985,8 @@ const texts = {
     'type': 'image',
     // 'music_delay': 'speech-2000'
     'ltop': '7%',
-    'lleft': '30%'
+    'lleft': '30%',
+    'speech': '#',
   },
   'taken': {
     "label": "Taken",
@@ -999,7 +1004,7 @@ const texts = {
     'music': 'music/taken.mp3',
     'type': 'image',
     // 'music_delay': 'speech-2000'
-    'ltop': '90%',
+    'ltop': '80%',
     // 'lleft': '49%'
   },
   'silk surgery': {
@@ -1027,7 +1032,7 @@ const texts = {
     'expansion': 'storm knight',
     'music': 'music/the approaching storm.mp3',
     'type': 'image',
-    // 'ltop': '5%',
+    'ltop': '35%',
     // 'lleft': '75%'
     'music_delay': '2000'
   },
@@ -1036,7 +1041,7 @@ const texts = {
     'expansion': 'storm knight',
     'music': 'music/looming storm.mp3',
     'type': 'image',
-    'ltop': '85%',
+    'ltop': '5%',
     'lleft': '75%',
     'music_delay': '1000'
   },
@@ -1054,8 +1059,8 @@ const texts = {
     'expansion': 'storm knight',
     'music': 'music/looming storm.mp3',
     'type': 'image',
-    'ltop': '85%',
-    // 'lleft': '75%'
+    'ltop': '70%',
+    // 'lleft': '35%',
     'music_delay': 'speech-2000'
   },
   'showdown storm knight lv.3': {
@@ -1063,7 +1068,7 @@ const texts = {
     'expansion': 'storm knight',
     'music': 'music/showdown lion god.mp3',
     'type': 'image',
-    'ltop': '70%',
+    'ltop': '52%',
     'lleft': '63%',
     'music_delay': 'speech-2000'
   },

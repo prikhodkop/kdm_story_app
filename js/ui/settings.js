@@ -445,10 +445,11 @@ var settings_schema = {
   'subtitles': {
     'type': 'option',
     'title': 'Subtitles',
-    'description': 'If "On" then videos are played with subtitles.',
+    'description': '<b style="color:#cc0;">"On"</b> - all story events are played with subtitles.<br /><b style="color:#cc0;">"Video Only"</b> - subtitles are only shown in videos.',
     'default': 'On',
     'enum': [
       'On',
+      'Video Only',
       'Off',
     ],
   },
