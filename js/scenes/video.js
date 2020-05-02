@@ -170,6 +170,25 @@ module.exports = class VideoScene {
       eventsSugar(myself)
     })
 
+    $('.srt').click(function () {
+      if ($('.srt').hasClass('hidden')) {
+        $('.srt').animate({opacity: 1.0}, 300)
+      } else {
+        $('.srt').animate({opacity: 0.1}, 300)
+      }
+
+      $('.srt').toggleClass('hidden')
+    })
+    tippy('.srt', {
+      placement: 'bottom-start',
+      content: tooltips['subtitles_click'].text,
+      duration: 50,
+      delay: [600, 100],
+      animation: 'shift-away-subtle',
+      followCursor: true,
+      theme: 'kdm',
+    });
+
     $('#video').on('click', function () {
       // this.currentTime = this.duration;
       this.pause()
