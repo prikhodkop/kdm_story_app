@@ -65,7 +65,8 @@
       "oneClick": false,
       "runAfterFinish": false,
       "allowToChangeInstallationDirectory": true,
-      "installerIcon": "icon.ico"
+      "installerIcon": "icon.ico",
+      "warningsAsErrors": false
     }
   },
   "devDependencies": {
