@@ -80,6 +80,9 @@ const texts = {
    'label':'Leyline Walker',
    'description': 'While there is no armor or accessory gear in your gear grid, gain +3 evasion.',
  },
+ 'Legs Locked': {
+   'label':'',
+   'description':'When you gain the Death Die, you stand. While you have the Death Die, you cannot be knocked down for any reason.',},
  'Life Exchange': {
    'label':'Life Exchange',
    'description': 'In the Aftermath, gain 1 additional Hunt XP. You may not wear other gear. If you trigger the White Secret story event, you cease to exist. When you retire, you cease to exist.',
@@ -109,12 +112,12 @@ const texts = {
    'description': 'Your bleeding tokens are also +1 evasion tokens.',
  },
  'Lucerna': {
-   'label':'Lucerna',
+   'label':'Lucernae',
    'description': 'For every blue affinity you have. your ranged weapons gain this amount of range and your me lee weapons gain this amount of reach.',
  },
  'Mad Oracle': {
    'label':'Mad Oracle',
-   'description': 'Once per showdown. as a monster draws an Al, name a card. If the Al card drawn is the named card. gain + 1 evasion token.',
+   'description': 'Once per showdown. as a monster draws an Al, name a card. If the Al card drawn is the named card. gain +1 evasion token.',
  },
  'Marrow Hunger': {
    'label':'Marrow Hunger',
@@ -140,8 +143,8 @@ const texts = {
    'label':'Nightmare Spurs',
    'description': 'Once per showdown, you may spend all your survival <i>(at least 1)</i> to lose all your +1 strength tokens and gain that many +1 luck tokens.',
  },
- 'Oracles eye': {
-   'label':'Oracles eye',
+ 'Oracles Eye': {
+   'label':'Oracle\'s eye',
    'description': 'At the start of the showdown, look through the AI deck then shuffle.',
    'type': 'dragon trait',
  },
@@ -162,12 +165,12 @@ const texts = {
    'description': 'When rolling to determine a straggler, add your hunt experience to your roll result.',
  },
  'Rivals Scar': {
-   'label':'Rivals Scar',
+   'label':'Rival\'s Scar',
    'description': 'You gain permanent +1 strength and permanent -1 evasion.',
  },
  'Sour Death': {
    'label':'Sour Death',
-   'description': 'When you are knocked down. you may encourage yourself. If you do, gain + 1 strength token.',
+   'description': 'When you are knocked down. you may encourage yourself. If you do, gain +1 strength token.',
  },
  'Stalwart': {
    'label':'Stalwart',
@@ -200,6 +203,10 @@ const texts = {
  'Tinker': {
    'label':'Tinker',
    'description': 'When you are a returning survivor, gain + 1 Endeavor.',
+ },
+ 'People of the Skull': {
+   // 'label':'Tinker',
+   'description': 'When you are named, if you have the word <b>skull</b> or <b>bone</b> in your name, gain a permanent +1 speed, accuracy, strength, evasion or luck.',
  },
 }
 

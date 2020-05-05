@@ -586,10 +586,6 @@ const texts = {
    'label':'',
    'description':'A survivor hit location. \nDamage to the legs beyond the heavy injury box will prompt a roll on the Legs section of the Severe Injury table.',},
 
-
- 'Legs Locked': {
-   'label':'',
-   'description':'When you gain the Death Die, you stand. While you have the Death Die, you cannot be knocked down for any reason.',},
  'Light Speed': {
    'label':'',
    'description':'A type of monster hit location. This hit location must be resolved before any others. except Traps and Light Speed hit locations. If multiple First Strike locations are drawn, the player decides the order in which to resolve them. Traps still precede and cancel all other hits.',},

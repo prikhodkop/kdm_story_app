@@ -409,6 +409,14 @@ function get_representation (word) {
      return '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+pathToAssetL('images/reference/Abilities/'+word+'.jpg')+'"/>'
    } else {
      let result = ''
+     let image_path = pathToAssetL('images/reference/Abilities/'+word+'.png')
+     if (image_path.includes('#')) {
+       image_path = pathToAssetL('images/reference/Abilities/'+word+'.jpg')
+     }
+     if (!image_path.includes('#')) {
+       result = '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+image_path+'"/>'
+     }
+
      if (('type' in abilities[word]) && (abilities[word]['type'] == 'dragon trait')) {
       header_style='color:#863a2a;'
      }
