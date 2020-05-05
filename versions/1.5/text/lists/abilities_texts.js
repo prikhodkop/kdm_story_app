@@ -208,6 +208,9 @@ const texts = {
    // 'label':'Tinker',
    'description': 'When you are named, if you have the word <b>skull</b> or <b>bone</b> in your name, gain a permanent +1 speed, accuracy, strength, evasion or luck.',
  },
+ 'Twilight Succession': {
+   'description': 'If you die during the showdown and you have a Twilight Sword, nominate another survivor on the showdown board to gain the Twilight Sword and this ability.'
+ }
 }
 
 module.exports = {

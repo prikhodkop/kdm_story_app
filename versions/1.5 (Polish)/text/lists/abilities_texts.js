@@ -13,7 +13,7 @@ const texts = {
  },
  'Bitter Frenzy': {
    'label':'Gorzka furia',
-   'description': 'Podczas starcia gdy pierwszy raz otrzymasz traumę umysłu furia, zyskujesz 1k10 przetrwania. Możesz wydawać przetrwanie będąc w furii.', 
+   'description': 'Podczas starcia gdy pierwszy raz otrzymasz traumę umysłu furia, zyskujesz 1k10 przetrwania. Możesz wydawać przetrwanie będąc w furii.',
  },
  'Burnt Nerves': {
    'label':'Spalone nerwy',
