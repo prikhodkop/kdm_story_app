@@ -566,9 +566,19 @@ var settings_schema = {
       'gorm': {
         'type': 'option',
         'title': 'Gorm',
-        'default': 'Cards only',
+        'default': 'Disabled',
         'description': 'The Gorm travel enormous distances in their life cycles, shaping the landscapes with their enormous appetites and extreme bodily functions. Young Gorm roam the darkness devouring anything that moves (and many things that don\'t). During their mating season, older Gorm produces storms of incredible destruction. Ancient Gorm that have lived hundreds of lantern years will make a final solitary march to the fabled gormyards to die. The Gorm is a volatile quarry, but the complexities of its anatomy can unlock powerful tools for the settlement.<br/><br/><b style="color:#cc0;">Cards Only</b> - adds only Fighting Arts, Disorders and Terrain cards.<br/><b style="color:#cc0;">All content</b> - adds all expansion content.',
         'enum': expansion_options,
+      },
+      'green knight armor': {
+        'type': 'option',
+        'title': 'Green Knight Armor',
+        'default': 'Disabled',
+        'description': 'The Green Knight Armor is a powerful seven-piece armor set. Crafting the entire set requires resources and innovations from the Gorm, Spidicules, Flower Knight and Dung Beetle Knight along with rare gear acquired by beating the Manhunter and Lion Knight.',
+        'enum': [
+          'Disabled',
+          'All content',
+        ],
       },
       'manhunter': {
         'type': 'option',

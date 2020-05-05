@@ -359,6 +359,16 @@ const texts = {
    '3': ['The Jury', 'Smoke Bomb']},
   'armor_set': 'Thief Armor',
  },
+
+ 'The Song Of Green Knight': {
+   'label':'The Song of the Green Knight',
+  'expansion': 'green knight armor',
+  'gear': {
+   '1': ['Green Helm', 'Green Gloves', 'Green Plate', 'Green Faulds', 'Green Boots'],
+   '2': ['Fetorsaurus', 'Griswaldo'],
+   '3': []},
+  'armor_set': 'Green Armor',
+ },
 }
 
 module.exports = {

@@ -855,7 +855,20 @@ const texts = {
 'The Perpetrator': {
   'campaign': 'hidden',
   'label': 'Heat, Weapon Crafter'
-}
+},
+
+'Green Helm': {
+  'campaign': 'hidden',
+  'label': 'Old Master on the Settlement\'s Quarry List'
+},
+'Green Gloves': {
+  'campaign': 'hidden',
+  'label': 'Scrap Smelting, Albedo'
+},
+'Griswaldo': {
+  'campaign': 'hidden',
+  'label': 'Rubedo, survivor with True Blade'
+},
 }
 
 module.exports = {

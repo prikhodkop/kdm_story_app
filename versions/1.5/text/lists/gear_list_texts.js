@@ -323,7 +323,15 @@ const texts = {
  'Verdant Leg Wraps': {'resources':['1 x leather', '1 x bone'], 'set':['Monk Green']},
  'Verdant Shroud': {'resources':['1 x silk', '1 x hide'], 'set':['Monk Green']},
  'Vigilance Mask': {'resources':['1 x Endeavor', '1 x iron', '6 x bone', '4 x organ'], 'innovation': 'Mask Maker'},
- 'Voodoo Doll': {'resources':['1 x crab spider', '1 x organ', '1 x ???']}
+ 'Voodoo Doll': {'resources':['1 x crab spider', '1 x organ', '1 x ???']},
+
+ 'Green Helm': {'resources':['1 x scell', '1 x iron', '1 x beetle horn', '1 x DBK Errant Badge'], 'innovation': 'Green Helm', 'set':['Green']},
+ 'Green Gloves': {'resources':['1 x Hunter\'s Heart', '1 x iron', '1 x jiggling lard'], 'innovation': 'Green Gloves', 'set':['Green']},
+ 'Green Plate': {'resources':['1 x Lion Knight\'s Left Claw', '2 x iron', '3 x leather', '1 x scarab shell'], 'innovation': 'Citrinitas', 'set':['Green']},
+ 'Green Faulds': {'resources':['1 x elytra', '1 x gormite', '1 x scell', '1 x lantern bloom'], 'innovation': 'Choreia', 'set':['Green']},
+ 'Green Boots': {'resources':['1 x iron', '1 x Flower Knight Badge', '1 x Calcified Greaves', '3 x bone'], 'innovation': 'Forbidden Dance', 'set':['Green']},
+ 'Griswaldo': {'resources':['1 x gormite', '1 x iron', '1 x stomach lining', '1 x Calcified Juggernaut Blade'], 'innovation': 'Griswaldo', 'set':['Green']},
+ 'Fetorsaurus': {'resources':['1 x Beacon Shield', '1 x underplate fungus', '1 x sleeping virus flower', '1 x Elixir of Life'], 'innovation': 'Blacksmith', 'set':['Green']},
 }
 
 module.exports = {
