@@ -86,7 +86,7 @@ const texts = {
  },
  'Heart of the Storm': {
    // 'label': 'Heart of the Sword (Storm)',
-   'type': 'consetellation ability',
+   'type': 'constellation ability',
    'group_name': 'Storm',
    'description':'If you gain weapon proficiency during the Aftermath, gain +3 additional ranks. You cough up a hunk of your own solidified blood and gain +1 Iron strange resource.',
  },
@@ -276,7 +276,7 @@ const texts = {
  'Twelve Fingers': {
    // 'label':'Tinker',
    'group_name': 'Gambler',
-   'type': 'consetellation ability',
+   'type': 'constellation ability',
    'description': 'You cannot carry two-handed gear.<br /><br /><div style="display:inline;color:#0c0;">On a <b>Perfect hit, your right hand pulses. Gain +5 insanity and +1 luck for that attack.</div><br /><br /><div style="display:inline;color:#c00;">However, for each natural 1 rolled when attempting to hit, your left hand shakes. Suffer 5 brain damage and -1 luck for that attack.</div>',
  },
  'Twilight Succession': {
