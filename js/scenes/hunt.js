@@ -672,7 +672,7 @@ module.exports = class HuntScene {
       // event_html.fadeIn(500)
 
       // $('#random_popup').scrollTo(event_html, duration=500)
-      $('#quary_popup').fadeOut(300)
+      $('#quary_popup').fadeOut(200)
       $('#random_popup').delay(300).fadeIn(300)
       $('#random_event_close').delay(300).fadeIn(300)
       $('#quary_popup_back').fadeIn(500)
