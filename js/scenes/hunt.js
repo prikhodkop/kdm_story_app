@@ -378,56 +378,6 @@ module.exports = class HuntScene {
       randomEventInputChange()
     })
 
-    $('body').on('click', '.re_key', function () {
-      let classList = $(this).attr('class').split(/\s+/)
-
-      let class_idx = classList[1]
-      let table_idx = classList[2]
-
-      console.log(class_idx + 'X' + table_idx)
-
-      // let template = document.getElementById('random_popup')
-
-      let event_idx = $('#hunt_event_title').attr('class')
-
-      console.log('Event id:')
-      console.log(event_idx)
-
-      let event_html = $(md_to_html_2(event_idx, false, table_idx, class_idx, $(
-        this).attr(
-        'condition')))
-
-      // template.innerHTML = event_html;
-      $('#random_popup').append(event_html)
-      event_html.show('slow')
-
-      $('#random_popup').delay(500).animate({
-        scrollTop: $('#random_popup').prop('scrollHeight'),
-      }, 500)
-
-      console.log('Table idx:')
-      console.log(table_idx)
-
-      let table_type = $('table.' + table_idx).attr('class').split(/\s+/)[0]
-
-      if (table_type == 'once') {
-        $('table.' + table_idx).fadeOut(500, function () {
-          $(this).css({
-            'visibility': 'hidden',
-            display: 'block',
-          }).slideUp()
-        })
-      }
-
-      // console.log('Classes are:');
-      // console.log(classList)
-      //  $.each(classList, function(index, item) {
-      //     if (item === 'someClass') {
-      //         //do something
-      //     }
-      // });
-    })
-
     // Hide show hunt event
     $('body').on('click', '#common', function () {
 
@@ -714,15 +664,20 @@ module.exports = class HuntScene {
 
     function showRandomEvent (event_idx) {
       $('#random_popup').hide()
-      let template = document.getElementById('random_popup')
-      let event_html = md_to_html_2(event_idx)
-      template.innerHTML = event_html
-      $('#quary_popup').fadeOut(500)
-      $('#random_popup').delay(500).fadeIn(500)
-      $('#random_event_close').delay(500).fadeIn(500)
-      $('#quary_popup_back').fadeIn(1000)
-      $('#random_event_icon').delay(1000).fadeIn(1500)
-      $('#random_event_input').delay(1000).fadeIn(1500)
+      let template = $('#random_popup')
+      let event_html = $(md_to_html_2(event_idx))
+      // event_html.hide()
+      // template.innerHTML += event_html
+      template.html(event_html)
+      // event_html.fadeIn(500)
+
+      // $('#random_popup').scrollTo(event_html, duration=500)
+      $('#quary_popup').fadeOut(300)
+      $('#random_popup').delay(300).fadeIn(300)
+      $('#random_event_close').delay(300).fadeIn(300)
+      $('#quary_popup_back').fadeIn(500)
+      $('#random_event_icon').delay(500).fadeIn(1000)
+      $('#random_event_input').delay(500).fadeIn(1000)
       $('#random_event_input').val('')
       $(':focus').blur()
     }

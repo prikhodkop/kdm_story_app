@@ -365,7 +365,9 @@ const texts = {
  'label_click': {
    'text': '<b style="color:#cc0;">Click</b> to hide/show event name.',
  },
-
+ 'event_dblclick': {
+   'text': '<b style="color:#cc0;">Double click</b> to hide event.'
+ },
 
  // tooltips['action_card'].text
 }
