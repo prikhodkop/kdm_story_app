@@ -661,6 +661,9 @@ const texts = {
  'Movement (Attribute)': {
    'label':'',
    'description':'The maximum amount of spaces a monster or survivor may move with in single move action. A monster or survivor with less than 1 movement may still move 1 space each move action.',},
+ 'Move into Range and Attack': {
+   'description': 'Let the monster has range: X.<br /><br />When the monster is instructed to <b>Move into Range and Attack</b>, end the monster\'s movement at X spaces away from the targer. If the monster is less than X spaces away, move it until it exactly X spaces away.'
+ },
  'Move Through Target': {
    'label':'',
    'description':'When a monster instructed to move through a target, it moves towards the target but instead of stopping when adjacent, its movement continues. This will normally cause collision with the target.',},
