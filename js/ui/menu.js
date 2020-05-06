@@ -516,7 +516,7 @@ function createReference () {
     },
     {
       value: 'abilities',
-      label: 'Abilities',
+      label: 'Abilities/Impairments',
     },
     {
       value: 'fighting arts',

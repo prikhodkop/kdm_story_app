@@ -420,7 +420,15 @@ function get_representation (word) {
      if (('type' in abilities[word]) && (abilities[word]['type'] == 'dragon trait')) {
       header_style='color:#863a2a;'
      }
-     return result+'<b style="font-size:1.3em;'+header_style+'">'+abilities[word]['label']+'</b> <i style="font-size:0.9em;color:#b7aa37;">(ability)</i> <hr/><div class="bottom-reference">'+abilities[word]['description']+'</div>'
+     let ability_type = 'ability'
+     if ('type' in abilities[word]) {
+       ability_type = abilities[word].type
+     }
+     let ability_name = abilities[word]['label']
+     if (('group_name' in abilities[word]) && (abilities[word].type == 'constellation ability')) {
+       ability_name = ability_name + ' <div style="display:inline;color:#5b58ba;font-size:1.1em;">('+abilities[word].group_name+')</div>'
+     }
+     return result+'<b style="font-size:1.3em;'+header_style+'">'+ability_name+'</b> <i style="font-size:0.9em;color:#b7aa37;">('+ability_type+')</i> <hr/><div class="bottom-reference">'+abilities[word]['description']+'</div>'
    }
  } else if (word in settlement_events) {
   // return '<b style="font-size:1.3em;">'+word+'</b> <i style="font-size:0.9em;color:#777;">(fighting art)</i> <hr/>'+fighting_arts[word]

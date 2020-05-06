@@ -5,9 +5,6 @@ const texts = {
  'Absorb': {
    'label':'',
    'description':'The Watcher\'s Instinct. Described on the Watcher\'s showdown story event.',},
- 'Acceleration': {
-   'label':'',
-   'description':'Add +1d10 movement to a move action. Before moving, you may roll the Death Die and the result to your movement for one move action this round.',},
  'Accessory': {
    'label':'',
    'description':'A gear special rule. Accessory gear may be worn in addition to armor on a hit location. Each accessory specifies the hit location it covers.',},
@@ -44,9 +41,6 @@ const texts = {
  'Aftermath': {
    'label':'',
    'description':'The end of a showdown Phase. Contains different outcomes based on the survivors\' success or failure.',},
- 'Agression Overload': {
-   'label':'',
-   'description':'Add an attack roll to an attack. During your attack, after making your attack rolls but before drawing hit locations, you may roll the Death Die as an additional attack roll.',},
  'AI Card': {
    'label':'',
    'description':'Al cards are made up of actions, flows and alerts, some cards also have persistent injury and/or definition boxes. There are four kinds of Al cards: Basic (B), Advanced (A), Legendary (L) and Special (S).',},
@@ -418,9 +412,9 @@ const texts = {
  'Graze': {
    'label':'',
    'description':'The Screaming Antelope\'s instinct. Described on the Screaming Antelope\'s showdown story event.',},
- 'Green Life Exchange': {
-   'label':'',
-   'description':'An ability. In the Aftermath, gain 3 additional Hunt XP. You may not place gear with the \"other\" keyword in your grid. Gain +I permanent evasion with each Age milestone. When you retire. you cease to exist.',},
+ // 'Green Life Exchange': {
+ //   'label':'',
+ //   'description':'An ability. In the Aftermath, gain 3 additional Hunt XP. You may not place gear with the \"other\" keyword in your grid. Gain +I permanent evasion with each Age milestone. When you retire. you cease to exist.',},
  'Guard': {
    'label':'',
    'description':'The King\'s Man\'s instinct. Described on the King\'s Man\'s showdown story event.',},
@@ -618,10 +612,6 @@ const texts = {
  'Metal': {
    'label':'',
    'description':'A gear keyword. This gear is substantively crafted of metal.',},
- 'Metabolic Surrender': {
-   'label':'',
-   'description':'Any time during the showdown, you may roll the Death Die. Gain twice that much survival. This round, ignore the negative effect of permanent injuries, impairments, disorders, and negative attributes (including tokens). At the end of the round, you die.',},
-
  'Milestone': {
    'label':'',
    'description':'Milestones are special story events that are performed during the <b>Check Milestones</b> step of the settlement phase only when certain in-game conditions are accomplished.',},
@@ -1048,9 +1038,6 @@ const texts = {
  'Turn (Survivors)': {
    'label':'',
    'description':'The second part of a round is the survivors turn. During the survivors\' turn, survivors act one at a time, each completing their entire act before another survivor may take their act. Survivors may choose to act in any order.',},
- 'Twelve Fingers (Gambler)': {
-   'label':'',
-   'description':'You cannot carry two-handed gear. On a Perfect Hit, your right arm pulses. Gain +5 insanity and +1 luck for the attack. However, for each natural 1 rolled when attempting to hit, your your left hand shakes. Suffer 5 brain damage and -1 luck for the attack.',},
  'Two-handed': {
    'label':'',
    'description':'A gear keyword. This weapon requires two hands to use. Some gear and rules do not work with two-handed weapons. Survivor can use two-handed and gain the benefits of a shield at the same time.',},
@@ -1063,9 +1050,6 @@ const texts = {
  'Understanding': {
    'label':'',
    'description':'A survivor attribute listed on the survivor record sheet. Represents a survivor\'s insight about the world. Reaching an understanding level of 3 will trigger the Insight Story Event, while reaching a level of 9 will trigger the White Secret Story Event.',},
- 'Uninhibited Rage': {
-   'label':'',
-   'description':'Add +1d10 strength to a wound attempt. After a wound attempt is rolled you may roll the Death Die and add the result to the strength of your wound attempt.',},
  'Unique': {
    'label':'',
    'description':'A gearlement may only have one copy of this gear card at a time.',},
