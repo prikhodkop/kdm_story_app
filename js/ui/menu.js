@@ -496,6 +496,10 @@ function createReference () {
   //
   // console.log(all_option)
 
+  $('#container').on('DOMNodeInserted', '#reference-window-back', function(){
+    $(this).children().last().delay(50).fadeIn(500)
+  })
+
   var selectize = $('#reference-window').selectize({
     options: all_option,
     optgroups: [{
@@ -1107,7 +1111,11 @@ function adapt_name (name) {
 }
 
 function show_element (value) {
-  $('#reference-window-back').append('<div id="reference-data" class="' + adapt_name(value) + '">' + get_representation(value) + '<br/><br/></div>')
-  $('#reference-data.' + adapt_name(value)).hide()
-  $('#reference-data.' + adapt_name(value)).delay(50).fadeIn(500)
+  let element = $('<div id="reference-data" class="' + adapt_name(value) + '">' + get_representation(value) + '<br/><br/></div>')
+  // .on('ready', function() {
+  element.hide()
+  $('#reference-window-back').append(element)
+
+    // element.delay(50).fadeIn(500)
+  // })
 }
