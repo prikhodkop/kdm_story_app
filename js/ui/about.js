@@ -43,7 +43,6 @@ function createAbout (version) {
   <p id="about_p"><b style="color:#aaa">Support project on Patreon</b>: <a href=https://www.patreon.com/kdmstoryapp style="color:#888800;" target="_blank">https://www.patreon.com/kdmstoryapp</a><br/></p>
   <p id="about_p">Web site: <a href=https://kdm-story.site style="color:#888800;" target="_blank">https://kdm-story.site</a></p>
   <p id="about_p">Telegram group: <a href=https://t.me/KDM_Story_App style="color:#888800;" target="_blank">https://t.me/KDM_Story_App</a></p>
-  <p id="about_p">GitHub: <a href=https://github.com/prikhodkop/kdm_story_app style="color:#888800;" target="_blank">https://github.com/prikhodkop/kdm_story_app</a><br/></p>
   <p id="about_p">Report issues <a href=https://github.com/prikhodkop/kdm_story_app/issues style="color:#888800;" target="_blank">here</a></p>
   <p id="about_p" style="color:#ddd"><b>Credits:</b></p>
   <p id="about_p">Almost all the art and text presented in the app are the property of <b id="poots-text">Adam Poots</b>. The guy did a great job creating the game, so please pay respect and <b>use the app ONLY if you own a physical copy of the game</b> (no exceptions!!). Buy it here: <a href=https://shop.kingdomdeath.com style="color:#888800;" target="_blank">https://shop.kingdomdeath.com</a></p>
