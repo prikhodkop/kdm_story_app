@@ -46,7 +46,7 @@ const texts = {
  'Champions Rite': {
   'expansion': 'dragon king',
   'type': 'dragon trait',
-  'label': 'Champions Rite',
+  'label': 'Champion\'s Rite',
   "description": "Before making an attack, you may add your understanding to your accuracy attribute for that attack. Limit, once per showdown."
  },
  'Clutch Fighter': {
@@ -93,7 +93,7 @@ const texts = {
  'Giants Blood': {
   'expansion': 'echoes of death',
   'type': 'strain',
-  'label': 'Giants Blood',
+  'label': 'Giant\'s Blood',
   "description": "You overproduce growth hormones! When you gain this fighting art, gain +1 strength, -1 evasion permanently.<br/><br/>You may <b>consume</b> skulls. If you do, gain the <b>Marrow Hunger</b> impairment.",
  },
  'Harvestman': {

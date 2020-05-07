@@ -90,7 +90,7 @@ const texts = {
   "description": "Once per attack, for each successful hit, make an additional attack roll.",
  },
  'Lucernaes Lantern': {
-   'label': 'Lucernaes Lantern',
+   'label': 'Lucernae\'s Lantern',
   "description": "You may <b>concentrate</b>. If you do, perform <b>Lucernae's Lantern</b> at the start of your next act: Reveal hit locations equal to half your blue affinities (rounded down) one at a time. The monster suffers a critical wound at any locations with critical wounds effects (ignore the effects of trap). Then reshuffle the hit location deck. Gain +6 Hunt XP.",
  },
  'Necromancer': {
@@ -122,7 +122,7 @@ const texts = {
   "description": "You no longer cast a shadow and you never hesitate. Ignore First Strike. On a <b>Perfect hit</b>, your first wound attempt of the attack automatically succeeds and inflicts a critical wound. If you die during the showdown, place a Shade minion in the space you occupied.",
  },
  'Swordsmans Promise': {
-   'label': 'Swordsmans Promise',
+   'label': 'Swordsman\'s Promise',
   "description": "At the start of each showdown, gain survival up to the settlement's survival limit if you have a sword in your gear grid.",
  },
  'Synchronised Strike': {
