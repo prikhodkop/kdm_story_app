@@ -9,6 +9,7 @@ module.exports = {
 function setup_md_events() {
   if (!('event_text' in window.globals)) {
     window.globals.event_text = {}
+  }
 
     // $('body').on('dblclick', '.event_wrapper', function () {
     //   $(this).hide('slow', function() {
@@ -24,7 +25,7 @@ function setup_md_events() {
       let class_idx = classList[1]
       let table_idx = classList[2]
 
-      console.log(class_idx + 'X' + table_idx)
+      console.log('I click here! '+class_idx + 'X' + table_idx)
 
       // let template = document.getElementById('random_popup')
 
@@ -66,7 +67,7 @@ function setup_md_events() {
         })
       }
     })
-  }
+
 }
 
 function md_to_html (event_text, init = true, current_table = 0, current_class = -1, condition = '') {

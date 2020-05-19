@@ -825,6 +825,40 @@ module.exports = class ImageScene {
         }
       }
 
+      if (['overwhelming darkness', 'herb gathering', 'mineral gathering', 'sky fishing'].includes(name)) {
+        if (sessionStorage.getItem('back_target') == 'hunt') {
+          let hunt_button = $('<button>', {
+            // id: 'settlement_return_button',
+            class: 'settlement_return_button hoverable',
+            // style: 'left: 22%;'
+          })
+          hunt_button.html(tooltips['back event_text'].text.replace('$E$', events_table['hunt'].label))
+          hunt_button.tooltipster({
+              contentAsHTML: 'true',
+              animation: 'grow',
+              content: tooltips['back event'].text.replace('$E$', events_table['hunt'].label),
+              position: 'bottom',
+              delay: [300, 100],
+              fixedWidth: 250,
+              trigger: 'custom',
+              triggerOpen: {
+                mouseenter: true,
+                // click: true
+              },
+              triggerClose: {
+                click: true,
+                mouseleave: true
+              }
+            });
+          // return_button.hide()
+          $('#container').append(hunt_button)
+          // return_button.delay(1000).fadeIn(2000)
+          $('#container').on('click', '.settlement_return_button', function () {
+            setTransition('hunt', 'back', name, current_state())
+          });
+        }
+      }
+
       if ((name == 'white speaker') && (settings['whiteboxes']['white speaker'] == 'Enabled')) {
         let tooltip = $('<div>', {
           // id: 'settlement_return_button',
