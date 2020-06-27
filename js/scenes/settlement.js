@@ -10,7 +10,7 @@ const { getSettings, addSettings, onSettingsSaved, initSettings } = require('./.
 const { render } = require('./../ui/template-renderer')
 const { addTimer } = require('./../ui/timer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
-const { addDevelopment, openLocation, getDevelopmentState, setDevelopmentState, updateActions } = require('./../ui/development')
+const { addDevelopment, getDevelopmentState, setDevelopmentState, updateActions } = require('./../ui/development')
 const { getTerms } = require('./../ui/glossary')
 
 module.exports = class SettlementScene {

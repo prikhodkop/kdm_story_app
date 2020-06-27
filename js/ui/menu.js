@@ -441,6 +441,8 @@ function hideLocationTable (location) {
 }
 
 function createReference () {
+  window.globals.reordering_happened = 0
+  window.globals.reordering_active = ''
   let settings = getSettings()
   window.blur_mode = false
 
@@ -821,7 +823,7 @@ function updateInnovationsList() {
     labelField: 'name',
     searchField: ['name'],
     maxItems: 100,
-    plugins: ['remove_button', 'silent_remove'],
+    plugins: ['remove_button', 'silent_remove', 'drag_drop'],
     hideSelected: true,
     sortField: [{
       field: 'name',
@@ -839,6 +841,27 @@ function updateInnovationsList() {
       selectize_innovations.setCaret(0)
     },
     onItemAdd: function (values, item) {
+
+      console.log('!!!Reordering: '+window.globals.reordering_happened)
+      if (window.globals.reordering_happened > 0) {
+        window.globals.reordering_happened -= 1
+        if (window.globals.reordering_happened == 0) {
+          let new_values = selectize_innovations.getValue()
+          console.log('!!!New innovations: '+new_values)
+          let dev_state = getDevelopmentState()
+          console.log('!!!Dev state: '+JSON.stringify(dev_state['innovations']))
+          for (let i=new_values.length-1; i>=0; i--) {
+            removeInnovation(new_values[i])
+            addInnovation(new_values[i])
+          }
+          dev_state = getDevelopmentState()
+          console.log('!!!Dev state2: '+JSON.stringify(dev_state['innovations']))
+          selectize_innovations.blur()
+          selectize_innovations.focus()
+        }
+
+        return
+      }
       console.log('Adding: '+values)
       addInnovation(values);
       selectize_innovations.setCaret(0)

@@ -3613,6 +3613,8 @@
 						$control.children('[data-value]').each(function() {
 							values.push($(this).attr('data-value'));
 						});
+            window.globals.reordering_happened = values.length
+            window.globals.reordering_active = active
 						self.setValue(values);
 						self.setActiveItem(active);
 					}

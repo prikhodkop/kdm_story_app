@@ -296,7 +296,7 @@ const texts = {
    'text': '<b style="color:#cc0;">Click</b> to <b>add innovation</b>.<br/>'
  },
  'innovation_card': {
-   'text': '<b style="color:#cc0;">Click</b> to activate.<br/><br/><b style="color:#cc0;">Double click</b> to remove.</b>.<br/><br/><b style="color:#cc0;">Drag</b> to rearrange.</b>.'
+   'text': '<b style="color:#cc0;">Click</b> to activate.<br/><b style="color:#cc0;">Double click</b> to remove.</b>.<br/><b style="color:#cc0;">Drag</b> to rearrange.</b>.'
  },
  'action_card': {
    'text': '<b style="color:#cc0;">Click</b> to activate.'
