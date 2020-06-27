@@ -320,11 +320,11 @@ const texts = {
  },
 
  'returning survivors_transition': {
-   'text': '<b style="color:#cc0;">Click</b> to learn <b>Language</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.'
+   'text': '<b style="color:#cc0;">Click</b> to learn <b>Language</b> innovation, create <b>Lantern Hoard</b> location and proceed to the <b>Settlement</b>.'
  },
 
  'the pool and the sun_transition': {
-   'text': '<b style="color:#cc0;">Click</b> to learn <b>Sun Language</b> innovation, create <b>Throne</b> location and proceed to the <b>Settlement</b>.'
+   'text': '<b style="color:#cc0;">Click</b> to learn <b>Sun Language</b> innovation, create <b>Sacreed Pool</b> location and proceed to the <b>Settlement</b>.'
  },
 
  'first story_text': {
