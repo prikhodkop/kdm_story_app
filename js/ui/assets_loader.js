@@ -114,3 +114,59 @@ function pathToAsset(path, localization='', cdn_change=true) {
   return result
 
 }
+
+function imageHTML(path, width='25%', class_name='', padding=false) {
+  let full_path = pathToAsset(path+'.svg', 'localize', true)
+  let is_svg = true
+  if (full_path.includes('#')) {
+    is_svg = false
+    full_path = pathToAsset(path+'.png', 'localize', true)
+  }
+  if (full_path.includes('#')) {
+    full_path = pathToAsset(path+'.jpg', 'localize', true)
+  }
+  let class_part
+  if (class_name == '') {
+    class_part = ''
+  } else {
+    class_part = ' ' +class_name
+  }
+
+  let padding_style
+  if (padding) {
+    padding_style = 'padding-bottom:0.5em;'
+  } else {
+    padding_style = 'padding:0em;padding-left:0.2em;padding-right:0.2em;'
+  }
+
+  console.log('Printing image...')
+
+  if (full_path.includes('#')) {
+    return '!!!'
+  } else {
+    return '<img class="reference-image'+class_part+'" style="width:'+width+';'+padding_style+'" src="'+full_path+'"/>'
+  }
+}
+
+function markButtonv2(match, p1, p2, offset, string) {
+  match = match.replace('{', '').replace('}', '').split('@')
+  console.log('This guy:' +match[0])
+  console.log('This guy:' +match[1])
+  let terms
+
+  let label = match[1]
+  let text = match[1]
+
+  if (match[0] == 'image') {
+    let img_width = '0.9em'
+    if (label != text) {
+      img_width = label
+    }
+    return imageHTML(text, img_width+';display:inline;opacity:0.8;vertical-allign:bottom')
+  } else {
+    return ''
+  }
+}
+
+window.imageHTML = imageHTML
+window.markButtonv2 = markButtonv2

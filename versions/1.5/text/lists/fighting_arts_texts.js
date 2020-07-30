@@ -7,7 +7,7 @@ const texts = {
  'Acrobatics': {
   'expansion': 'dragon king',
   'label': 'Acrobatics',
-  "description": "When you are adjacent to the monster, you may spend <b>Movement</b> to place your survivor on any other space adjacent to the monster.",
+  "description": "When you are adjacent to the monster, you may spend {image@images/icons/movement} to place your survivor on any other space adjacent to the monster.",
  },
  'Ambidextrous': {
    'label': 'Ambidextrous',
@@ -21,7 +21,7 @@ const texts = {
  },
  'Berserker': {
    'label': 'Berserker',
-  "description": "Once per showdown, you may spend <b>Activation</b> to suffer <b>bash</b> and the <b>frenzy</b> brain trauma."
+  "description": "Once per showdown, you may spend {image@images/icons/activation} to suffer <b>bash</b> and the <b>frenzy</b> brain trauma."
  },
  'Blotted Out': {
   'expansion': 'slenderman',
@@ -72,7 +72,7 @@ const texts = {
  },
  'Double Dash': {
    'label': 'Double Dash',
-  "description": "During your act, once per round, you may spend <b>Activation</b> to gain <b>Movement</b>."
+  "description": "During your act, once per round, you may spend {image@images/icons/activation} to gain {image@images/icons/movement}."
  },
  'Ethereal Pact': {
   'expansion': 'echoes of death',
@@ -128,7 +128,7 @@ const texts = {
  'Lure Epilepsy': {
   'expansion': 'gorm',
   'label': 'Lure Epilepsy',
-  "description": "Once per showdown, you may spend <b>Activation</b> to give yourself a seizure. You suffer a random brain trauma and are knocked down.",
+  "description": "Once per showdown, you may spend {image@images/icons/activation} to give yourself a seizure. You suffer a random brain trauma and are knocked down.",
  },
  'Mammoth Hunting': {
   'expansion': 'gorm',
@@ -145,7 +145,7 @@ const texts = {
  },
  'Orator of Death': {
    'label': 'Orator of Death',
-  "description": "Once per showdown, you may spend <b>Activation</b> to have all non-deaf survivors gain +2 insanity. When you die, you <b>encourage</b> all survivors with your last words.",
+  "description": "Once per showdown, you may spend {image@images/icons/activation} to have all non-deaf survivors gain +2 insanity. When you die, you <b>encourage</b> all survivors with your last words.",
  },
  'Otherworldly Luck': {
   'expansion': 'flower knight',

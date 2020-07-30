@@ -203,7 +203,7 @@ const texts = {
  'Tunnel Vision': {
   'expansion': 'lion god',
   'label': 'Tunnel Vision',
-  "description": "When you spend <b>Activation</b>, you may only activate weapons.",
+  "description": "When you spend {image@images/icons/activation}, you may only activate weapons.",
  },
  'Unlucky': {
   'expansion': 'lion knight',

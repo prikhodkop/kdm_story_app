@@ -19,7 +19,7 @@ const texts = {
 'Underplate Fungus': {'type': 'herb/hide/consumable', 'group_name':'Dung Beetle Knight', 'text': '<i>A corkscrew-shaped fungus that grows in the empty channels between the Dung Beetle Knight\'s armor plating.</i><br /><br />Drop chance: 1/11.'},
 
 'Lantern Bloom': {'type': 'flower/hide', 'group_name':'Flower Knight', 'text': '<b>Perishable</b>.<br />You may <b>consume</b> and archive this during the showdown to gain +3 luck tokens, -1 permanent luck, and the <b>Flower Addiction</b> disorder.<br /><br />Drop chance: 3/14.'},
-'Lantern Bud': {'type': 'flower/scrap', 'group_name':'Flower Knight', 'text': '<b>Perishable</b>.<br />You may <b>consume</b> and archive this during the settlement phase to gain +3 Endeavor, skip the next hunt, and gain the <b>Flower Addiction</b> disorder.<br /><br />Drop chance: 1/14.'},
+'Lantern Bud': {'type': 'flower/scrap', 'group_name':'Flower Knight', 'text': '<b>Perishable</b>.<br />You may <b>consume</b> and archive this during the settlement phase to gain {image@images/icons/endeavors}{image@images/icons/endeavors}{image@images/icons/endeavors}, skip the next hunt, and gain the <b>Flower Addiction</b> disorder.<br /><br />Drop chance: 1/14.'},
 'Osseous Bloom': {'type': 'flower/bone', 'group_name':'Flower Knight', 'text': '<b>Perishable</b>.<br />You may <b>consume</b> and archive this during the showdown to remove all your bleeding and negative attribute tokens and gain the <b>Flower Addiction</b> disorder.<br /><br />Drop chance: 5/14.'},
 'Sighing Bloom': {'type': 'flower/organ', 'group_name':'Flower Knight', 'text': '<b>Perishable</b>.<br />You may <b>consume</b> and archive this during the showdown to gain 3 survival, 3 insanity, and the <b>Flower Addiction</b> disorder.<br /><br />Drop chance: 3/14.'},
 'Warbling Bloom': {'type': 'flower/hide', 'group_name':'Flower Knight', 'text': '<b>Perishable</b>.<br />You may plant this during the settlement phase to archive it and gain +1 population. The survivor is born with the <b>Flower Addiction</b> disorder and a face just like the Warbling Bloom\'s.<br /><br />Drop chance: 2/14.'},
@@ -164,7 +164,7 @@ const texts = {
 'Pituitary Gland': {'type': 'organ', 'group_name':'Dragon King, Strange',
                 'text': '<b>Consume</b>: Archive this and roll <b>1d10</b>:<br /><b style=\"color:#cc0;\">1-3</b><div style="font-size:0.9em;display: inline;"> - you grow to gian size and die.</div><br /><b style=\"color:#cc0;\">4+</b><div style="font-size:0.9em;display: inline;"> - gain +1 permanent strength.</div>'},
 'Porous Flesh Fruit': {'type': 'hide/consumable', 'group_name':'Lonely Tree, Strange',
-                'text': 'You may consume and archive this to gain the following ability.<br /><br /><b>Nightmare Membrane</b>: You may spend <b>Movement</b> and <b>Activation</b> to exchange any 1 of your tokens for a +1 strength token.'},
+                'text': 'You may consume and archive this to gain the following ability.<br /><br /><b>Nightmare Membrane</b>: You may spend {image@images/icons/movement} and {image@images/icons/activation} to exchange any 1 of your tokens for a +1 strength token.'},
 'Preserved Caustic Dung': {'type': 'organ/consumable/dung', 'group_name':'Dung Beetle Knight, Strange',
                 'text': '<i>The live cultures in this exotic mixture of matured dung have been preserved within a delicate, airtight jelly casing.</i>'},
 'Pure Bulb': {'type': 'organ', 'group_name':'Gorm, Strange',

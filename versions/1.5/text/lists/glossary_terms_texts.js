@@ -16,13 +16,13 @@ const texts = {
    'description':'The number that each attack roll result must meet or exceed in order to be considered a hit. Listed on monster attack profiles and weapon gear.',},
  'Act': {
    'label':'',
-   'description':'The part of the survivors’ turn in which an individual survivor gains movement and activation. Each survivor must complete their act before another may start theirs, and all unused movement and activations are lost when a survivor ends their act.',},
+   'description':'The part of the survivors’ turn in which an individual survivor gains {image@images/icons/movement} and {image@images/icons/activation}. Each survivor must complete their act before another may start theirs, and all unused {image@images/icons/movement} and {image@images/icons/activation} are lost when a survivor ends their act.',},
  'Action': {
    'label':'',
    'description':'Most things a survivor or monster can do during the Showdown Phase, like moving and attacking, are actions. Monster cards are made up of multiple actions. For example, Pick Target is an action and a monster trap card has actions listed on it. With exception to survival actions being performed at specific opportunities, a survivor cannot perform an action while another action (survivor, survival or monster action) is being performed.',},
  'Activation': {
    'label':'',
-   'description':'Activation can be spent to attack, activate some gear, and interact with terrain. Survivors gain one activation during that survivor\'s act.',},
+   'description':'Activation ({image@images/icons/activation}) can be spent to attack, activate some gear, and interact with terrain. Survivors gain one {image@images/icons/activation} during that survivor\'s act.',},
  'Adjacent (Miniature)': {
    'label':'',
    'description':'A miniature is adjacent to another when it occupies a space one space in a cardinal (non-diagonal) direction from a square occupied by the other miniature.',},
@@ -149,7 +149,7 @@ const texts = {
    'description':'Usually the spaces directly behind the monster. Survivors attacking from the blind spot gain +l accuracy.',},
  'Block X': {
    'label':'',
-   'description':'A gear special rule. Spend activation to ignore X hits the next time you are attacked. Lasts until your next act. A survivor may not use block more than once per attack. Effects gaining block are not cumulative, only largest apply.',},
+   'description':'A gear special rule. Spend {image@images/icons/activation} to ignore X hits the next time you are attacked. Lasts until your next act. A survivor may not use block more than once per attack. Effects gaining block are not cumulative, only largest apply.',},
 
  'Body': {
    'label':'',
@@ -188,7 +188,7 @@ const texts = {
 
  'Charge': {
    'label':'',
-   'description':'A gear special rule. Survivors spend movement and activation to move the maximum available spaces in a straight line in one direction. At the end of movement, if in range, perform an attack using a melee weapon, adding the number of spaces moved in this way to your strength for the attack. Charge does not impact any further attacks this turn.',},
+   'description':'A gear special rule. Survivors spend {image@images/icons/movement} and {image@images/icons/activation} to move the maximum available spaces in a straight line in one direction. At the end of movement, if in range, perform an attack using a melee weapon, adding the number of spaces moved in this way to your strength for the attack. Charge does not impact any further attacks this turn.',},
  'Closest Survivor': {
    'label':'',
    'description':'The survivor the least number of cardinal spaces away from the monster.',},
@@ -228,7 +228,7 @@ const texts = {
 
  'Cumbersome': {
    'label':'',
-   'description':'A gear special rule. Survivors must spend both movement and activation to activate Cumbersome gear. During a survivor\'s act, it is possible for them to fire use cumbersome gear twice by using a surge in conjunction with their regular movement, then use a dash with their regular activation. A survivor cannot spend 2 survival to use cumbersome gear outside of their act.',},
+   'description':'A gear special rule. Survivors must spend both {image@images/icons/movement} and {image@images/icons/activation} to activate Cumbersome gear. During a survivor\'s act, it is possible for them to fire use cumbersome gear twice by using a surge in conjunction with their regular movement, then use a dash with their regular {image@images/icons/activation}. A survivor cannot spend 2 survival to use cumbersome gear outside of their act.',},
  'Cursed': {
    'label':'',
    'description':'A gear special rule. This gear cannot be removed from the gear grid for any reason. If the survivor dies, archive this gear.',},
@@ -255,7 +255,7 @@ const texts = {
    'description':'A hit damages a survivor if it removes armor points or causes an injury. Hits which are dodged, blocked, or ignored do not cause damage.',},
  'Dash': {
    'label':'',
-   'description':'A survival action. When opportunity permits, a survivor may spend 1 survival to dash. They gain +1 <b>Movement</b> action, which must be spent immediately. Each survivor may only Dash once per round. and only after the settlement has innovated the Paint innovation.',},
+   'description':'A survival action. When opportunity permits, a survivor may spend 1 survival to dash. They gain +1{image@images/icons/movement} action, which must be spent immediately. Each survivor may only Dash once per round. and only after the settlement has innovated the Paint innovation.',},
  'Deadly': {
    'label':'',
    'description':'A gear special rule. Gain +1 Luck while attacking with this weapon. This increases the odds of inflicting critical wounds.',},
@@ -331,7 +331,7 @@ const texts = {
    'description':'A survival action. A standing survivor may spend 1 survival at any time to encourage a knocked down survivor, letting them stand. Deaf survivors may not be encouraged. Each survivor may only Encourage once per round, and only if the settlement has the Language innovation.',},
  'Endeavors': {
    'label':'',
-   'description':'Each returning survivor contributes +1 endeavor to the settlement. Survivors can spend endeavors to innovate, build new settlement locations, or perform unique actions. To spend an endeavor, nominate a survivor. Reduce the settlement\'s total endeavors by 1, and follow the rules for the action the endeavor was spent on. Unless stated otherwise, the action\'s effects apply only to the nominated survivor.',},
+   'description':'Each returning survivor contributes +1{image@images/icons/endeavors}<i>(endeavor)</i> to the settlement. Survivors can spend {image@images/icons/endeavors} to innovate, build new settlement locations, or perform unique actions. To spend an {image@images/icons/endeavors}, nominate a survivor. Reduce the settlement\'s total {image@images/icons/endeavors} by 1, and follow the rules for the action the {image@images/icons/endeavors} was spent on. Unless stated otherwise, the action\'s effects apply only to the nominated survivor.',},
  'Endure': {
    'label':'',
    'description':'You may spend 7 survival minus your Luck to ignore severe injury before you roll a result. Your Luck is determined by the sum of your permanent luck attribute, and luck modifier tokens, and any other gear or abilities affecting your luck at the time you endire.',},
@@ -547,7 +547,7 @@ const texts = {
    'description':'Gear with this keyword is a katar weapon. Survivors may gain levels of katar weapon proficiency with this weapon.',},
  'Knights Charge': {
    'label':'',
-   'description':'A Green Armor set bonus. Spend Activation and Movement, full move in a straight line. At the end of the movement, activate <b>Griswaldo</b> and attack. If you moved more than 5 spaces, this attack gains <b>devastating 2</b>.',},
+   'description':'A Green Armor set bonus. Spend {image@images/icons/activation} and {image@images/icons/movement}, full move in a straight line. At the end of the movement, activate <b>Griswaldo</b> and attack. If you moved more than 5 spaces, this attack gains <b>devastating 2</b>.',},
  'Knockback X': {
    'label':'',
    'description':'Move the target of knockback X spaces directly away from the cause of this effect. If the survivor passes over or ends up in a space with another survivor, they are both knocked down. Survivors may not share spaces, move the knocked back survivor to an adjacent free space. If the survivor encounters a board edge, stop and end knockback. If the survivor suffers knockback on the board edge - they move along the edge.',},
@@ -556,7 +556,7 @@ const texts = {
    'description':'While a monster is knocked down, attack rolls hit on 3+ (in place of normal accuracy). Cancel all reactions, including reactions that might be beneficial to survivors. This does not cancel critical wounds effects (since they are not reactions). If the monster is knocked down during a flow, cancel any remaining actions on its card. A knocked down monster stands when it draws an Al card, a trap is played, or at the start of the next turn (monster or survivors\').',},
  'Knocked Down (Survivor)': {
    'label':'',
-   'description':'When a survivor is knocked down, turn the miniature on its side. Knocked down survivors always stand at the end of the next monster turn. If a survivor is knocked down in the middle of their attack, the remainder of that attack is canceled. Knocked down survivors may only spend survival to dodge (remaining knocked down), and cannot spend activation or movement.',},
+   'description':'When a survivor is knocked down, turn the miniature on its side. Knocked down survivors always stand at the end of the next monster turn. If a survivor is knocked down in the middle of their attack, the remainder of that attack is canceled. Knocked down survivors may only spend survival to dodge (remaining knocked down), and cannot spend {image@images/icons/activation} or {image@images/icons/movement}.',},
  'Lantern': {
    'label':'',
    'description':'A gear keyword. A lantern illuminates the darkness.',},
@@ -571,7 +571,7 @@ const texts = {
    'description':'The survivor who last wounded the monster.',},
  'Leap': {
    'label':'',
-   'description':'A Dragon Armor set bonus.Spend Activation and Movement. You leap into the air! Place your survivor on an unoccupied space exactly 5 space away in a straight line, then activate a melee weapon and attack with +2 accuracy and +5 strength.',},
+   'description':'A Dragon Armor set bonus.Spend {image@images/icons/activation} and {image@images/icons/movement}. You leap into the air! Place your survivor on an unoccupied space exactly 5 space away in a straight line, then activate a melee weapon and attack with +2 accuracy and +5 strength.',},
  'Leather (keyword)': {
    'label':'',
    'description':'A gear keyword. Cured hides are a crucial component of this gear.',},
@@ -741,7 +741,7 @@ const texts = {
 
  'Pounce': {
    'label':'',
-   'description':'A gear special rule. Spend Activation and Movement to move 3 spaces forward in a straight line and activate a melee weapon. This attack gains +1 strength.',},
+   'description':'A gear special rule. Spend {image@images/icons/activation} and {image@images/icons/movement} to move 3 spaces forward in a straight line and activate a melee weapon. This attack gains +1 strength.',},
 
 
  'Principle': {
@@ -806,7 +806,7 @@ const texts = {
    'description':'A type of monster reaction. This reaction occurs regardless of whether a wound attempt succeeds or fails.',},
  'Remove From The Showdown Board (Survivor)': {
    'label':'',
-   'description':'Remove the survivor miniature from the showdown board. Place it on its survivor status card, if it has one. A survivor removed from the showdown board has an Act, but may not spend movement, activation or perform survival actions. Unless stated otherwise, they do not affect and are not affected by anything on the showdown board. When the showdown ends, any survivors who are removed from the board (but not dead) continue to the Aftermath as normal.',},
+   'description':'Remove the survivor miniature from the showdown board. Place it on its survivor status card, if it has one. A survivor removed from the showdown board has an Act, but may not spend {image@images/icons/movement}, {image@images/icons/activation} or perform survival actions. Unless stated otherwise, they do not affect and are not affected by anything on the showdown board. When the showdown ends, any survivors who are removed from the board (but not dead) continue to the Aftermath as normal.',},
  'Resolved': {
    'label':'',
    'description':'A card is resolved when there are no more instructions to follow on it. This may be due to performing everyed action, or as a result of specific instructions on the card.',},
@@ -873,7 +873,7 @@ const texts = {
    'description':'An event occurring during the Settlement Phase.',},
  'Settlement Phase': {
    'label':'',
-   'description':'During the Settlement Phase. survivors experience settlement and story events, spend endeavors, craft gear, and determine which survivors depart on the next hunt. This is the only phase where survivors may change or rearrange their gear grids.',},
+   'description':'During the Settlement Phase. survivors experience settlement and story events, spend {image@images/icons/endeavors}, craft gear, and determine which survivors depart on the next hunt. This is the only phase where survivors may change or rearrange their gear grids.',},
  'Settlement Record Sheet': {
    'label':'',
    'description':'Helps the players keep track of the development of their settlement.',},
@@ -906,13 +906,13 @@ const texts = {
    'description':'A gear keyword. In certain situations, this can be used to harvest herbs.',},
  'Skewer': {
    'label':'',
-   'description':'A Screaming Armor set bonus. After you <b>slam</b> spend activation to move 1 space and activate a melee weapon with +2 strength, if you wound with a spear, apply that wound roll result to the next selected hit location this attack.',},
+   'description':'A Screaming Armor set bonus. After you <b>slam</b> spend {image@images/icons/activation} to move 1 space and activate a melee weapon with +2 strength, if you wound with a spear, apply that wound roll result to the next selected hit location this attack.',},
  'Skip Next Hunt': {
    'label':'',
    'description':'Fill in the Skip Next Hunt box on the survivor\'s record sheet. The survivor may not be selected as a departing survivor. After departing survivors are chosen, erase all filled Skip Next Hunt boxes on all survivor record sheets.',},
  'Slam': {
    'label':'',
-   'description':'A gear special rule. Spend Movement and full move forward in a straight line. If you move 4+ spaces and stop adjacent to a monster, it suffers knockback 1 and -1 Toughness until the end of the round.',},
+   'description':'A gear special rule. Spend {image@images/icons/movement} and full move forward in a straight line. If you move 4+ spaces and stop adjacent to a monster, it suffers knockback 1 and -1 Toughness until the end of the round.',},
  'Slow': {
    'label':'',
    'description':'A gear special rule. Slow weapons always have an attack speed of l. Do not add speed modifiers.',},
@@ -921,7 +921,7 @@ const texts = {
    'description':'The White Lion\'s instinct Described on the White Lion\'s showdown story event.',},
  'Shadow Walk': {
    'label':'',
-   'description':'When you spend movement, you may move through spaces survivors occupy without causing <b>collision</b>.',},
+   'description':'When you spend {image@images/icons/movement}, you may move through spaces survivors occupy without causing <b>collision</b>.',},
  'Soluble': {
    'label':'',
    'description':'A gear keyword. Able to be dissolved in liquid.',},
@@ -934,7 +934,7 @@ const texts = {
    'description':'Gear with this keyword is a spear weapon. Survivors may gain levels of spear weapon proficiency with this weapon.',},
  'Special Showdown': {
    'label':'',
-   'description':'Special Showdowns interrupt the Settlement Phase. After they conclude (regardless of victory or defeat), the Settlement Phase continues where it left off. Do not generate endeavors or trigger new story events. Each Special Showdown\'s details are listed on the story event or innovation that triggered it. After showdown heal all light and heavy injuries from the remaining survivors and remove all tokens.',},
+   'description':'Special Showdowns interrupt the Settlement Phase. After they conclude (regardless of victory or defeat), the Settlement Phase continues where it left off. Do not generate {image@images/icons/endeavors} or trigger new story events. Each Special Showdown\'s details are listed on the story event or innovation that triggered it. After showdown heal all light and heavy injuries from the remaining survivors and remove all tokens.',},
  'Speed (Attack Profile/Weapon)': {
    'label':'',
    'description':'The number of attack rolls (number of dice rolled). Usually determined by a monster Al card\'s attack profile or speed on a survivor\'s weapon.',},
@@ -971,7 +971,7 @@ const texts = {
    'description':'A type of hit location. This hit location is unusually hard. If a survivor attempts to wound one of these locations with a frail weapon, it is destroyed and archived at the end of the attack.',},
  'Surge': {
    'label':'',
-   'description':'A type of survival action. When opportunity permits, a survivor may spend 1 survival to surge. Gain +1 Activation, which must be spent immediately. This allows them to activate a weapon, interact with terrain, use gear, and anything else spending an activation allows them to do. Resolve the results of the surge (including any monster reactions) before resuming the tum. Each survivor may only surge once per round, and only if the settlement has the Inner Lantern Innovation.',},
+   'description':'A type of survival action. When opportunity permits, a survivor may spend 1 survival to surge. Gain +1{image@images/icons/activation}, which must be spent immediately. This allows them to activate a weapon, interact with terrain, use gear, and anything else spending an {image@images/icons/activation} allows them to do. Resolve the results of the surge (including any monster reactions) before resuming the tum. Each survivor may only surge once per round, and only if the settlement has the Inner Lantern Innovation.',},
  'Survival': {
    'label':'',
    'description':'Survival is the desperate desire to cling to life. Survival points are gained and lost throughout the campaign. They are spent to perform extraordinary feats and change your fate. Update the survival box on your character record sheet as it is gained and lost.',},

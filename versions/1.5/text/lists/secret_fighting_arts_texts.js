@@ -2,7 +2,7 @@ const texts = {
  'Acanthus Doctor': {
   'expansion': 'flower knight',
   'label': 'Acanthus Doctor',
-  "description": "You may wear up to 3 <b>satchel</b> gear cards. When you <b>depart</b>, if you are not wearing any armor, for each green affinity you have, gain +1 strength token and add 1 armor to all hit locations. Spend <b>Activation</b> and a Flower or <b>Fresh Acanthus</b> resource to heal a permanent injury you or an adjacent survivor suffered this showdown.",
+  "description": "You may wear up to 3 <b>satchel</b> gear cards. When you <b>depart</b>, if you are not wearing any armor, for each green affinity you have, gain +1 strength token and add 1 armor to all hit locations. Spend {image@images/icons/activation} and a Flower or <b>Fresh Acanthus</b> resource to heal a permanent injury you or an adjacent survivor suffered this showdown.",
  },
  'Ageless Apprentice': {
   'expansion': 'lion knight',
@@ -21,12 +21,12 @@ const texts = {
  'Beetle Strength': {
   'expansion': 'dung beetle knight',
   'label': 'Beetle Strength',
-  "description": "Once per showdown, you may spend <b>Activation</b> to shove an adjacent obstacle terrain. If you do, move the terrain directly away from you in a straight line until it encounters a board edge or another obstacle terrain. Any monsters the terrain passes over suffer a wound, and any survivors it <b>collides</b> with suffer <b>knockback 7</b>.<br/><br/>The display of strength is so exhausting it ages you. You are knocked down and gain +1 Hunt XP.",
+  "description": "Once per showdown, you may spend {image@images/icons/activation} to shove an adjacent obstacle terrain. If you do, move the terrain directly away from you in a straight line until it encounters a board edge or another obstacle terrain. Any monsters the terrain passes over suffer a wound, and any survivors it <b>collides</b> with suffer <b>knockback 7</b>.<br/><br/>The display of strength is so exhausting it ages you. You are knocked down and gain +1 Hunt XP.",
  },
  'Black Guard Style': {
   'whitebox': 'percival',
   'label': 'Black Guard Style',
-  "description": "Swords in your gear grid gain <b>Block 1</b>. When you block a hit with a sword, your next attack that round with a sword gains +2 accuracy, +2 strength, +2 speed. Limit, once per round.<br/><br/>During the settlement phase, you may spend <b>Endeavor</b> to train a survivor. They gain the <b>Black Guard Style</b> secret fighting art. You lose it and suffer the <b>broken arm</b> severe injury.",
+  "description": "Swords in your gear grid gain <b>Block 1</b>. When you block a hit with a sword, your next attack that round with a sword gains +2 accuracy, +2 strength, +2 speed. Limit, once per round.<br/><br/>During the settlement phase, you may spend {image@images/icons/endeavors} to train a survivor. They gain the <b>Black Guard Style</b> secret fighting art. You lose it and suffer the <b>broken arm</b> severe injury.",
  },
  'Bone Whisperer': {
    'label': 'Bone Whisperer',
@@ -109,7 +109,7 @@ const texts = {
  'Silk Surgeon': {
   'expansion': 'spidicules',
   'label': 'Silk Surgeon',
-  "description": "<b style=\"color:#cc0;\">Rank 1</b>: You may spend <b>Activation</b> while adjacent to another survivor to add 2 armor to one of their hit locations.<br/><b style=\"color:#cc0;\">Rank 2</b>: While all armor in your gear grid is silk and all jewelry is amber, gain +2 evasion.<br/><b style=\"color:#cc0;\">Rank 3</b>: During the aftermath, roll 1d10 for each other survivor that died during the showdown. On a 7+, revive them.",
+  "description": "<b style=\"color:#cc0;\">Rank 1</b>: You may spend {image@images/icons/activation} while adjacent to another survivor to add 2 armor to one of their hit locations.<br/><b style=\"color:#cc0;\">Rank 2</b>: While all armor in your gear grid is silk and all jewelry is amber, gain +2 evasion.<br/><b style=\"color:#cc0;\">Rank 3</b>: During the aftermath, roll 1d10 for each other survivor that died during the showdown. On a 7+, revive them.",
  },
  'Sun Eater': {
   'expansion': 'sunstalker',
@@ -141,11 +141,11 @@ const texts = {
 
  'Cloud Walk': {
   'expansion': 'storm knight',
-  "description": "Once per showdown, gain +1 <b>Movement</b> and immediately spend it to full move in any direction at any time. This movement can be used while <b>Doomed</b>. The survivor may move through impassible terrain and occupied spaces without causing collision.",
+  "description": "Once per showdown, gain +1{image@images/icons/movement} and immediately spend it to full move in any direction at any time. This movement can be used while <b>Doomed</b>. The survivor may move through impassible terrain and occupied spaces without causing collision.",
  },
  'High Frequency Agility': {
   'expansion': 'storm knight',
-  "description": "When you run out of survival, roll 1d10. On 7+, gain +1 <b>Activation</b> and a +1 speed token at the start of your next act.",
+  "description": "When you run out of survival, roll 1d10. On 7+, gain +1{image@images/icons/activation} and a +1 speed token at the start of your next act.",
  },
  'Mutual Induction': {
   'expansion': 'storm knight',

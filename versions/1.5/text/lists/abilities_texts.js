@@ -47,7 +47,7 @@ const texts = {
  },
  'Devoted Union': {
    'label':'Devoted Union',
-   'description': 'You may nominate only your <b>partner</b> and yourself for <b>Intimacy</b>. When your partner dies, gain random disorder and lose this ability.<br/><br/>During the survivor\'s turn, while you and your partner are within range of the monster, you may perform a <b<combined attack</b>. Limit, once per round.<br/><br/><b style="color:#cc0;">Combined attack</b>: Partners each spend <b>Activation</b> and activate a weapon. They simultaneously make attack rolls, determining hits based on their individual accuracy. Draw hit locations for all hits together. Reolve hit locations one at a time. Partners choose which survivor attempts to wound each hit location <i>(including the trap)</i>. Each partner may not make more wound attempts than the number of their attack rolls.',
+   'description': 'You may nominate only your <b>partner</b> and yourself for <b>Intimacy</b>. When your partner dies, gain random disorder and lose this ability.<br/><br/>During the survivor\'s turn, while you and your partner are within range of the monster, you may perform a <b<combined attack</b>. Limit, once per round.<br/><br/><b style="color:#cc0;">Combined attack</b>: Partners each spend {image@images/icons/activation} and activate a weapon. They simultaneously make attack rolls, determining hits based on their individual accuracy. Draw hit locations for all hits together. Reolve hit locations one at a time. Partners choose which survivor attempts to wound each hit location <i>(including the trap)</i>. Each partner may not make more wound attempts than the number of their attack rolls.',
  },
  'Dormenatus': {
    'label':'Dormenatus',
@@ -128,7 +128,7 @@ const texts = {
    // 'label': 'Limb-maker (Sculptor)',
    'type': 'constellation ability',
    'group_name': 'Sculptor',
-   'description': 'Once per settlement phase, spend 2 endeavors to carve a prosthetic limb. Remove a survivor\'s dismembered injury and add 1 bone to the settlement\'s storage.',
+   'description': 'Once per settlement phase, spend {image@images/icons/endeavors}{image@images/icons/endeavors} to carve a prosthetic limb. Remove a survivor\'s dismembered injury and add 1 bone to the settlement\'s storage.',
  },
  'Lucerna': {
    'label':'Lucernae',
@@ -149,7 +149,7 @@ const texts = {
  },
  'Matchmaker': {
    'label':'Matchmaker',
-   'description': 'When you are a returning survivor, once per lantern year you may spend an Endeavor to perform <b>Intimacy</b>.',
+   'description': 'When you are a returning survivor, once per lantern year you may spend an {image@images/icons/endeavors} to perform <b>Intimacy</b>.',
  },
  'Metabolic Surrender': {
    // 'label':'Metal Maw',
@@ -166,7 +166,7 @@ const texts = {
  },
  'Nightmare Membrane': {
    'label':'Nightmare Membrane',
-   'description': 'You may spend <b>Activation</b> + <b>Movement</b> to exchange any 1 of your tokens for a +1 strength token.',
+   'description': 'You may spend {image@images/icons/activation} + {image@images/icons/movement} to exchange any 1 of your tokens for a +1 strength token.',
  },
  'Nightmare Spurs': {
    'label':'Nightmare Spurs',
@@ -259,11 +259,11 @@ const texts = {
  },
  'Super Hair': {
    'label':'Super Hair',
-   'description': 'You may spend <b>Activation</b> to freely exchange any tokens with adjacent surivors who have <b>Super Hair</b>.',
+   'description': 'You may spend {image@images/icons/activation} to freely exchange any tokens with adjacent surivors who have <b>Super Hair</b>.',
  },
  'Sweet Battle': {
    'label':'Sweet Battle',
-   'description': 'You may surge without spending survival. If you do, the Activation must be used to activate a weapon.',
+   'description': 'You may surge without spending survival. If you do, the {image@images/icons/activation} must be used to activate a weapon.',
  },
  'Thundercaller': {
    'label':'Thundercaller',
@@ -271,7 +271,7 @@ const texts = {
  },
  'Tinker': {
    'label':'Tinker',
-   'description': 'When you are a returning survivor, gain + 1 Endeavor.',
+   'description': 'When you are a returning survivor, gain {image@images/icons/endeavors}.',
  },
  'Twelve Fingers': {
    // 'label':'Tinker',

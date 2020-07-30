@@ -136,7 +136,7 @@ const texts = {
   },
   'passive':{
     'settlement': [
-      '<b class="event-text">[Event]</b> Gain +2 Endeavor this settlement phase that could only be spent on Spidicules innovations.',
+      '<b class="event-text">[Event]</b> Gain {image@images/icons/endeavors}{image@images/icons/endeavors} this settlement phase that could only be spent on Spidicules innovations.',
       '<b class="event-text">[Event]</b> Survivors cannot <b>depart</b> this year unless they have at least 1 empty space in their gear grids.',
     ]
   },

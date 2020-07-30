@@ -1,3 +1,5 @@
+const endeavor_img = imageHTML('images/icons/endeavors', '0.9em;display:inline;opacity:0.8;vertical-allign:bottom')
+
 const random_hunt_events = {
   1: `1 | Broken Lanterns
 The survivors feel something crunching beneath their feet. The event revealer may choose to lower their lantern and <b>investigate</b> or ignore the sensation and continue their journey.
@@ -366,7 +368,7 @@ They slowly pull themselves to their feet, promising to never give up hope. Roll
 [c] 1-5
 [d] You rise, silent tears streaming down your face. with the settlement at your back, you are ready to face the darkness. Gain +1 courage and +1d10 survival.
 [c] 6+
-[dt] You briefly touch the bottom of your misery and return to full awareness with new experiences to share. If any survivors return to the settlement this year, gain +2 endeavors.
+[dt] You briefly touch the bottom of your misery and return to full awareness with new experiences to share. If any survivors return to the settlement this year, gain `+endeavor_img+endeavor_img+`.
 
 [>d]
 [c] No Society Principle
@@ -1686,7 +1688,7 @@ Your jaw clamps shut around the ember, the flesh of your mouth melts shut, muffl
 [c] 2-4
 [d] You sense the extreme danger from the golden embers and linger just long enough to grab a small trinket. Gain 1 <b>Broken Lantern</b> basic resource.
 [c] 5-8
-[d] You notice that the settlement is strewn with lanterns, all extinguished and smashed nearly beyond recognition. The survivors resolve that this will never happen to them. If any survivor returns to the settlement this year, gain +2 endeavors.
+[d] You notice that the settlement is strewn with lanterns, all extinguished and smashed nearly beyond recognition. The survivors resolve that this will never happen to them. If any survivor returns to the settlement this year, gain `+endeavor_img+endeavor_img+`.
 [c] 9+
 [dt] Amidst the ruins, you find only one unbroken object. A Twilight Sword. It rests, respectfully laid across a mostly undamaged survivor's skeleton. If the settlement does not have a <b>Twilight Sword</b>, and no survivor in the group has the <b>Honorable</b> disorder, you may nominate a survivor to gain the <b>Twilight Sword</b> rare gear. If you do and the <b>Hooded Knight</b> story event is not on the timeline, add it to the timeline 2 years from now.
 

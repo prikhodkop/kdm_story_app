@@ -259,7 +259,11 @@ function get_locations_list() {
  return options
 }
 
-function get_representation (word) {
+function get_representation(word) {
+  return get_representation_int(word).replace(/{(.*?)@(.*?)}/gi, markButtonv2)
+}
+
+function get_representation_int (word) {
  let settings = getSettings()
 
  if (word in glossary_terms) {
@@ -281,7 +285,9 @@ function get_representation (word) {
 
   if (['Movement (Attribute)', 'Endeavors'].includes(word)) {
    result = result + '<br/><br/><img id=reference-image style="width:99%;" src="'+pathToAssetL('images/reference/terms/'+word+'.png')+'"/>'
-   result = result + '<br\>Monster must move as close to straight line to target as possible:'
+   if (word == 'Movement (Attribute)') {
+      result = result + '<br\>Monster must move as close to straight line to target as possible:'
+   }
    result = result + '<br/><img id=reference-image style="width:99%;" src="'+pathToAssetL('images/reference/terms/'+word+' 2.png')+'"/>'
   }
 

@@ -1,3 +1,5 @@
+const endeavor_img = imageHTML('images/icons/endeavors', '0.9em;display:inline;opacity:0.8;vertical-allign:bottom')
+
 const texts = {
   // GENERAL
 
@@ -250,7 +252,7 @@ const texts = {
  },
 
  'gain_endeavors_button': {
-   'text': 'Gain 1 endeavor for each <b>returning survivor</b>.<br/><br/>Additional endeavors may be gained from principles, innovations and abilities.'
+   'text': 'Gain '+endeavor_img+' for each <b>returning survivor</b>.<br/><br/>Additional endeavors may be gained from principles, innovations and abilities.'
  },
 
  'update_deathcount_button': {
@@ -278,7 +280,7 @@ const texts = {
  },
 
  'end_phase_button': {
-   'text': 'Lose unspent endeavors.<br/>Continue to <b>Hunt</b> or <b>Nemesis Encounter</b>.<br/><br/><b style="color:#cc0;">Click</b> to start a new <b>Hunt</b>!'
+   'text': 'Lose unspent '+endeavor_img+'.<br/>Continue to <b>Hunt</b> or <b>Nemesis Encounter</b>.<br/><br/><b style="color:#cc0;">Click</b> to start a new <b>Hunt</b>!'
  },
 
  'innovations_filter': {

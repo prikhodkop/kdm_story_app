@@ -130,7 +130,7 @@ const texts = {
   'passive': {
     'settlement': [
       '<b>Survival Limit:</b> $1$',
-      'At the start of the Settlement Phase, gain +1 endeavor'
+      'At the start of the Settlement Phase, gain {image@images/icons/endeavors}'
     ],
   }
  },
@@ -705,7 +705,7 @@ const texts = {
   'tags': ['principle', 'society'],
   'passive': {
     'settlement': [
-      'At the start of the settlement phase, gain +1 <b>Endeavor</b> for every 10 population.',
+      'At the start of the settlement phase, gain {image@images/icons/endeavors} for every 10 population.',
     ],
   }
  },
@@ -714,16 +714,16 @@ const texts = {
   'tags': ['principle', 'death'],
   'passive': {
     'settlement': [
-      'When a survivor dies during the settlement phase, gain +1 <b>Endeavor</b>.',
+      'When a survivor dies during the settlement phase, gain {image@images/icons/endeavors}.',
     ],
     'all': [
       'All new survivors gain +$1$ understanding.',
     ],
     'showdown': [
-      'When a survivor dies during the showdown phase, gain +2 <b>Endeavors</b>.',
+      'When a survivor dies during the showdown phase, gain {image@images/icons/endeavors}{image@images/icons/endeavors}.',
     ],
     'hunt': [
-      'When a survivor dies during the hunt phase, gain +2 <b>Endeavors</b>.',
+      'When a survivor dies during the hunt phase, gain {image@images/icons/endeavors}{image@images/icons/endeavors}.',
     ],
   }
  },
