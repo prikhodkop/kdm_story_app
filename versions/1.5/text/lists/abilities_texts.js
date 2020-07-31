@@ -271,7 +271,7 @@ const texts = {
  },
  'Tinker': {
    'label':'Tinker',
-   'description': 'When you are a returning survivor, gain {image@images/icons/endeavors}.',
+   'description': 'When you are a returning survivor, gain +1{image@images/icons/endeavors}.',
  },
  'Twelve Fingers': {
    // 'label':'Tinker',

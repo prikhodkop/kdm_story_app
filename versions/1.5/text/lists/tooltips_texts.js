@@ -252,7 +252,7 @@ const texts = {
  },
 
  'gain_endeavors_button': {
-   'text': 'Gain '+endeavor_img+' for each <b>returning survivor</b>.<br/><br/>Additional endeavors may be gained from principles, innovations and abilities.'
+   'text': 'Gain +1'+endeavor_img+' for each <b>returning survivor</b>.<br/><br/>Additional '+endeavor_img+' may be gained from principles, innovations and abilities.'
  },
 
  'update_deathcount_button': {

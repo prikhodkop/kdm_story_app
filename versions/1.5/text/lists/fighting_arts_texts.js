@@ -72,7 +72,7 @@ const texts = {
  },
  'Double Dash': {
    'label': 'Double Dash',
-  "description": "During your act, once per round, you may spend {image@images/icons/activation} to gain {image@images/icons/movement}."
+  "description": "During your act, once per round, you may spend {image@images/icons/activation} to gain +1{image@images/icons/movement}."
  },
  'Ethereal Pact': {
   'expansion': 'echoes of death',

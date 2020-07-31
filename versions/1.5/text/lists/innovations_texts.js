@@ -1,4 +1,7 @@
 // It is assumed that first innovation tag is its type
+const endeavor_img = imageHTML('images/icons/endeavors', '0.9em;display:inline;opacity:0.8;vertical-allign:bottom')
+const movement_img = imageHTML('images/icons/movement', '0.9em;display:inline;opacity:0.8;vertical-allign:bottom')
+const activation_img = imageHTML('images/icons/activation', '0.9em;display:inline;opacity:0.8;vertical-allign:bottom')
 
 const texts = {
  'Albedo': {
@@ -130,7 +133,7 @@ const texts = {
   'passive': {
     'settlement': [
       '<b>Survival Limit:</b> $1$',
-      'At the start of the Settlement Phase, gain {image@images/icons/endeavors}'
+      'At the start of the settlement phase, gain +1'+endeavor_img
     ],
   }
  },
@@ -309,7 +312,7 @@ const texts = {
   'tags': ['faith', 'language'],
   'passive': {
     'actions': [
-      '<b class="action">Surge</b>: Once per round spend 1 survival to gain +1 <b>Action</b> and use it immediately.',
+      '<b class="action">Surge</b>: Once per round spend 1 survival to gain +1'+activation_img+' and use it immediately.',
     ],
   }
  },
@@ -370,7 +373,7 @@ const texts = {
       '<b>Survival Limit:</b> $1$',
     ],
     'actions': [
-      '<b class="action">Dash</b>: Once per round, spend 1 survival to gain +1 <b>Movemement</b> and use it immediately.',
+      '<b class="action">Dash</b>: Once per round, spend 1 survival to gain +1'+movement_img+' and use it immediately.',
     ],
   }
  },
@@ -705,7 +708,7 @@ const texts = {
   'tags': ['principle', 'society'],
   'passive': {
     'settlement': [
-      'At the start of the settlement phase, gain {image@images/icons/endeavors} for every 10 population.',
+      'At the start of the settlement phase, gain +1'+endeavor_img+' for every 10 population.',
     ],
   }
  },
@@ -714,16 +717,16 @@ const texts = {
   'tags': ['principle', 'death'],
   'passive': {
     'settlement': [
-      'When a survivor dies during the settlement phase, gain {image@images/icons/endeavors}.',
+      'When a survivor dies during the settlement phase, gain +1'+endeavor_img+'.',
     ],
     'all': [
       'All new survivors gain +$1$ understanding.',
     ],
     'showdown': [
-      'When a survivor dies during the showdown phase, gain {image@images/icons/endeavors}{image@images/icons/endeavors}.',
+      'When a survivor dies during the showdown phase, gain +2'+endeavor_img+'.',
     ],
     'hunt': [
-      'When a survivor dies during the hunt phase, gain {image@images/icons/endeavors}{image@images/icons/endeavors}.',
+      'When a survivor dies during the hunt phase, gain +2'+endeavor_img+'.',
     ],
   }
  },

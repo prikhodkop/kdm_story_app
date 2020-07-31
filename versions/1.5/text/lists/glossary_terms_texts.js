@@ -16,7 +16,7 @@ const texts = {
    'description':'The number that each attack roll result must meet or exceed in order to be considered a hit. Listed on monster attack profiles and weapon gear.',},
  'Act': {
    'label':'',
-   'description':'The part of the survivors’ turn in which an individual survivor gains {image@images/icons/movement} and {image@images/icons/activation}. Each survivor must complete their act before another may start theirs, and all unused {image@images/icons/movement} and {image@images/icons/activation} are lost when a survivor ends their act.',},
+   'description':'The part of the survivors’ turn in which an individual survivor gains +1{image@images/icons/movement} and +1{image@images/icons/activation}. Each survivor must complete their act before another may start theirs, and all unused {image@images/icons/movement} and {image@images/icons/activation} are lost when a survivor ends their act.',},
  'Action': {
    'label':'',
    'description':'Most things a survivor or monster can do during the Showdown Phase, like moving and attacking, are actions. Monster cards are made up of multiple actions. For example, Pick Target is an action and a monster trap card has actions listed on it. With exception to survival actions being performed at specific opportunities, a survivor cannot perform an action while another action (survivor, survival or monster action) is being performed.',},
@@ -255,7 +255,7 @@ const texts = {
    'description':'A hit damages a survivor if it removes armor points or causes an injury. Hits which are dodged, blocked, or ignored do not cause damage.',},
  'Dash': {
    'label':'',
-   'description':'A survival action. When opportunity permits, a survivor may spend 1 survival to dash. They gain +1{image@images/icons/movement} action, which must be spent immediately. Each survivor may only Dash once per round. and only after the settlement has innovated the Paint innovation.',},
+   'description':'A survival action. When opportunity permits, a survivor may spend 1 survival to dash. They gain +1{image@images/icons/movement}, which must be spent immediately. Each survivor may only Dash once per round. and only after the settlement has innovated the Paint innovation.',},
  'Deadly': {
    'label':'',
    'description':'A gear special rule. Gain +1 Luck while attacking with this weapon. This increases the odds of inflicting critical wounds.',},
@@ -571,7 +571,7 @@ const texts = {
    'description':'The survivor who last wounded the monster.',},
  'Leap': {
    'label':'',
-   'description':'A Dragon Armor set bonus.Spend {image@images/icons/activation} and {image@images/icons/movement}. You leap into the air! Place your survivor on an unoccupied space exactly 5 space away in a straight line, then activate a melee weapon and attack with +2 accuracy and +5 strength.',},
+   'description':'A Dragon Armor set bonus. Spend {image@images/icons/activation} and {image@images/icons/movement}. You leap into the air! Place your survivor on an unoccupied space exactly 5 space away in a straight line, then activate a melee weapon and attack with +2 accuracy and +5 strength.',},
  'Leather (keyword)': {
    'label':'',
    'description':'A gear keyword. Cured hides are a crucial component of this gear.',},
