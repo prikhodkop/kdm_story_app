@@ -1493,7 +1493,7 @@ Każdy <b>nie głuchy</b> Ocalały otrzymuje +1 do wiedzy, a następnie to wydar
 `,
 
   67: `67 | Stawy szlamu
-Teren na wprost jest podziurawiony sadzawkami zapełnionymi lepką cieczą, bulgoczącą beztrosko smrodem trawionego mięsa. Gdy Ocalali przechodzą między nimi, opanowują Jeśli ich którykolwiek fale mdłości.
+Teren na wprost jest podziurawiony sadzawkami zapełnionymi lepką cieczą, bulgoczącą beztrosko smrodem trawionego mięsa. Gdy Ocalali przechodzą między nimi, opanowują ich fale mdłości.
 
 [TO] Sprawdź
 [td] Czy jakiś Ocalały ma sierp?
