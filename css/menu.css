@@ -719,9 +719,9 @@ div#reference-window-back0 .selectize-control {
   background-color: Transparent;
   /* width: 100%; */
   /* text-align: right; */
-  color: #660;
+  color: #880;
   text-shadow: 0 0 1vmin #000;
-  padding-top: 0.5vmin;
+  padding-top: 2vmin;
   padding-bottom: 0.5vmin;
   padding-left: 1vmin;
   padding-right: 1vmin;
@@ -734,9 +734,11 @@ div#reference-window-back0 .selectize-control {
   overflow: hidden;
 }
 
+
 #summary-title.big {
 	font-size: 1.4em;
   padding-bottom: 1vmin;
+	padding-top: 0.5vmin;
 }
 
 #summary-text {

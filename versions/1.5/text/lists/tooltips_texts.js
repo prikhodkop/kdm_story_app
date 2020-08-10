@@ -89,6 +89,9 @@ const texts = {
   'actions_word': {
     'text': 'Actions'
   },
+  'survival_actions_word': {
+    'text': 'Survival Actions'
+  },
   'search_word': {
     'text': "Search..."
   },

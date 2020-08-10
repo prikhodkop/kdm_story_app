@@ -904,7 +904,12 @@ function form_bonuses_list(innovation_names, event_names) {
         if (!(keys[j] in set)) {
           set[keys[j]] = []
         }
-        set[keys[j]] = set[keys[j]].concat(innovations[innovation_names[i]]['passive'][keys[j]])
+        set[keys[j]] = set[keys[j]].concat(innovations[innovation_names[i]]['passive'][keys[j]].map(function(e) {
+          if (!innovations[innovation_names[i]].label.includes('#')) {
+              e += ' <i class="event_sup">['+innovations[innovation_names[i]].label+']</i>';
+          }
+          return e;
+        }))
       }
     }
   }
@@ -916,7 +921,12 @@ function form_bonuses_list(innovation_names, event_names) {
         if (!(keys[j] in set)) {
           set[keys[j]] = []
         }
-        set[keys[j]] = set[keys[j]].concat(settlement_events[event_names[i]]['passive'][keys[j]])
+        set[keys[j]] = set[keys[j]].concat(settlement_events[event_names[i]]['passive'][keys[j]].map(function(e) {
+          if (!settlement_events[event_names[i]].label.includes('#')) {
+            e += ' <i class="event_sup">['+settlement_events[event_names[i]].label+']</i>';
+          }
+          return e;
+        }))
       }
     }
   }
@@ -933,7 +943,7 @@ function form_bonuses_list(innovation_names, event_names) {
                'departing': tooltips['departing_word'].text+':',
                'hunt': '<img style="display: inline-block;width:3vmin;vertical-allign:middle;" src="'+pathToAssetL('images/hunt_icon.png')+'"/> '+tooltips['hunt_word'].text+':',
                'showdown': '<img style="display: inline-block;width:3vmin;vertical-allign:middle;" src="'+pathToAssetL('images/hunt/starvation_icon.png')+'"/> '+tooltips['showdown_word'].text+':',
-               'actions': tooltips['actions_word'].text+':',
+               'actions': tooltips['survival_actions_word'].text+':',
               }
 
 let categories_order
@@ -957,6 +967,7 @@ if (document.title == 'hunt') {
   })
 
   let cnts = {}
+  let cnts_labels = {}
   let cur
   let cur_label
   let cur_cnt
@@ -977,7 +988,7 @@ if (document.title == 'hunt') {
     set[set_keys[i]].sort()
     for (let j=0; j<set[set_keys[i]].length; j++) {
       if (set[set_keys[i]][j].includes('$')) {
-        cur = set[set_keys[i]][j]
+        cur = set[set_keys[i]][j].split(' <i')[0]
         cur_cnt = getNum(cur)
         cur_label = cur.replace(/\$.*\$/, 'XXX')
         // console.log('Proceesed string: '+cur+' '+cur_cnt+ ' '+cur_label)
@@ -985,6 +996,16 @@ if (document.title == 'hunt') {
           cnts[set_keys[i]+'_'+cur_label] = 0
         }
         cnts[set_keys[i]+'_'+cur_label] = cnts[set_keys[i]+'_'+cur_label] + cur_cnt
+        console.log('Current key: '+set_keys[i]+' '+set[set_keys[i]][j])
+        if (set[set_keys[i]][j].includes(['['])) {
+          if (!(set_keys[i]+'_'+cur_label in cnts_labels)) {
+            cnts_labels[set_keys[i]+'_'+cur_label] = []
+          }
+          cnts_labels[set_keys[i]+'_'+cur_label].push(set[set_keys[i]][j].split('[')[1].split(']')[0])
+        } else {
+          // cnts_labels[set_keys[i]+'_'+cur_label].push(set[set_keys[i]][j])
+        }
+
         set[set_keys[i]][j] = cur_label
       }
     }
@@ -1013,7 +1034,7 @@ if (document.title == 'hunt') {
       text = set[set_keys[i]][j]
       if (set_keys[i]+'_'+text in cnts) {
         // console.log('To replace: '+text)
-        text = text.replace('XXX', cnts[set_keys[i]+'_'+text])
+        text = text.replace('XXX', cnts[set_keys[i]+'_'+text])+' <i class="event_sup">['+cnts_labels[set_keys[i]+'_'+text].join(', ')+']</i>'
       }
       // if (set_keys[i] == 'newborn') {
       //   text = text.replace('Gain', 'All <b>newborn</b> survivors gain ')

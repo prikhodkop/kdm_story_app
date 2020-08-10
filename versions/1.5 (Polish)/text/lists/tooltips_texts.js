@@ -87,6 +87,9 @@ const texts = {
   'actions_word': {
     'text': 'Akcje'
   },
+  'survival_actions_word': {
+    'text': 'Akcje'
+  },
   'search_word': {
     'text': 'Szukaj...'
   },

@@ -776,7 +776,7 @@ const texts = {
   'campaign': 'hidden',
   'passive': {
     'actions': [
-      '<b class="action">Dodge</b>: When a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform. Each survivor may only Dodge once per round.',
+      '<b class="action">Dodge</b>: Once per round, when a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform.',
     ],
     'settlement': [
       '<b>Survival Limit:</b> $1$'
@@ -787,7 +787,7 @@ const texts = {
   'campaign': 'hidden',
   'passive': {
     'actions': [
-      '<b class="action">Dodge</b>: When a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform. Each survivor may only Dodge once per round.',
+      '<b class="action">Dodge</b>: Once per round, when a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform.',
     ],
     'settlement': [
       '<b>Survival Limit:</b> $1$'
@@ -798,7 +798,7 @@ const texts = {
   'campaign': 'hidden',
   'passive': {
     'actions': [
-      '<b class="action">Dodge</b>: When a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform. Each survivor may only Dodge once per round.',
+      '<b class="action">Dodge</b>: Once per round, when a survivor is hit, after rolling hit location dice but before damage, they may spend 1 survival to dodge, canceling one hit. The dodged hit becomes a failed attack roll and does not cause damage. Any additional un-dodged hits resolve normally. Dodge is the only survival action that knocked down survivors can perform.',
     ],
     'settlement': [
       '<b>Survival Limit:</b> $1$'

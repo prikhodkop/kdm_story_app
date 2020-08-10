@@ -598,6 +598,13 @@ tr.spaceUnder>td {
         display: none;
     }
 
+#hunt_table_wrapper {
+  scrollbar-width: none;
+}
+#hunt_table_wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
 @keyframes blink {
        0% {
           -webkit-transform: scale(1);
@@ -990,6 +997,7 @@ button.summary_button {
   text-align: center;
   margin: 0 auto;
   filter: drop-shadow(0 0 0.5vw #333);
+  
   transition: opacity 0.5s, border 0.5s, color 0.5s, filter 0.5s;
 }
 
@@ -1228,8 +1236,9 @@ div.selectize-dropdown-content::-webkit-scrollbar {
 }
 
 .event_sup {
-  font-size: 0.8em;
+  font-size: 0.75em;
   color: #888;
+  opacity:0.8;
 }
 
 .event-trigger {

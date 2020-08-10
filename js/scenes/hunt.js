@@ -120,6 +120,7 @@ module.exports = class HuntScene {
     var quaries = getTerms('quaries')
 
     createHuntTable()
+    $('#hunt_table_wrapper').hide()
     $('#quaries_table').hide()
 
     // $("#menu-toggle-wrapper").show();
@@ -217,6 +218,7 @@ module.exports = class HuntScene {
       $('#hunt_icon').fadeIn(1000)
       $('#label_text').fadeIn(1000)
       $('#hunt_desc_text').delay(1500).fadeIn(500)
+      $('#hunt_table_wrapper').delay(1500).fadeIn(500)
       $('#quaries_table').delay(1500).fadeIn(500)
       $('#hunt_icon').delay(500).fadeOut(300)
       $('#label_text').delay(500).fadeOut(300)
@@ -442,6 +444,7 @@ module.exports = class HuntScene {
       createLocationsList()
       init_hunt_events()
 
+      $('#hunt_table_wrapper').hide()
       $('#quaries_table').hide()
       $('#random_event_icon').hide()
 
@@ -765,12 +768,17 @@ module.exports = class HuntScene {
 
       let container = document.getElementById('container')
 
+      let wrapper = document.createElement('div')
+      wrapper.setAttribute('id', 'hunt_table_wrapper')
+      wrapper.style.cssText += 'width:80%; top:14%; height:85%;position: absolute; left:15%;overflow-y:scroll; overflow-x:hidden;'
+
       // CREATE QUARIES TABLE
       let tbl = document.createElement('table')
       // tbl1.style.width  = '80%';
       // tbl1.style.top  = '3%';
       tbl.setAttribute('id', 'quaries_table')
-      tbl.style.cssText += 'width:80%; top:14%; position: absolute; left:15%;overflow-y:scroll; overflow-x:hidden;'
+      // tbl.style.cssText += 'width:80%; top:14%; position: absolute; left:15%;overflow-y:scroll; overflow-x:hidden;'
+      tbl.style.cssText += 'top:0%;left:0%;width:100%; height:100%;'
 
       let tbdy = document.createElement('tbody')
 
@@ -807,7 +815,8 @@ module.exports = class HuntScene {
       }
 
       tbl.appendChild(tbdy)
-      container.appendChild(tbl)
+      container.appendChild(wrapper)
+      wrapper.appendChild(tbl)
 
       // var quary = ''
       var titled = []
