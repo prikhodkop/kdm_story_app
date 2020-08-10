@@ -105,6 +105,7 @@ input[type=number]::-webkit-inner-spin-button {
     z-index: 0;
     border: 0.1vw solid #000;
     box-shadow: 0 0 1vw 0.8vw #000;
+    background: transparent url('http://thinkfuture.com/wp-content/uploads/2013/10/loading_spinner.gif') center no-repeat;
 }
 
 #hunt_back {
@@ -997,7 +998,7 @@ button.summary_button {
   text-align: center;
   margin: 0 auto;
   filter: drop-shadow(0 0 0.5vw #333);
-  
+
   transition: opacity 0.5s, border 0.5s, color 0.5s, filter 0.5s;
 }
 
