@@ -17,6 +17,15 @@ const texts = {
     'label': 'White Lion',
     'showdown': 'showdown white lion',
   },
+  'gigalion': {
+    'board':'xrrrrmxmrmmr',
+    'monster_position': [0, 9, 12],
+    'monster_icon':'images/hunt/gigalion.png',
+    'monster_icon_width':8,
+    'monster_icon_height':41,
+    'label': 'White Giga Lion',
+    'showdown': 'showdown gigalion',
+  },
   'screaming antelope': {
     'board':'xmrmrrxmrmrr',
     'monster_position': [5, 8, 11],

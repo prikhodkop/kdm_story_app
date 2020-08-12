@@ -315,7 +315,11 @@ const texts = {
   },
   'white speaker': {
     'text': 'A large bizarrely dressed woman offers to share a story.'
-  }
+  },
+
+  'showdown gigalion': {
+    'text': 'There was once a White Lion cub whose belly yawned with hunger. It pushed into the gathered pack and always ate more than its share. Resentful, the pack nipped its haunches until they bled, but the cub\'s hunger never relented. The monster grew so large that the bites of its kin no longer penetrated its hide. Their resentment turned to dread, so they banished it. The monster cried for the love of its pack but they turned thir shimmering manes away in unison. Perhaps it was a lifetime of deprivation and insults. Perphaps its family\'s intuition was right. It devoured them before wandering into the darkness, doomed to never find another like itself.'
+  },
 }
 
 module.exports = {

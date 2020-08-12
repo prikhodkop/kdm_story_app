@@ -196,7 +196,10 @@ const texts = {
 'Web Silk': {'type': 'silk', 'group_name':'Spidicules, Strange',
                 'text': '<i>Impossible to tear.</i>'},
 
-'Metal Face': {'type':'scrap', 'group_name':'Strange', 'text': '<i>A magnetic force emanates from the metal.</i><br /><br />During the settlement phase, you may archive 3 <b>Metal Face</b> strange resources to add 1 <b>Storm Helmet</b> rare gear to settlement storage.'}
+'Metal Face': {'type':'scrap', 'group_name':'Strange', 'text': '<i>A magnetic force emanates from the metal.</i><br /><br />During the settlement phase, you may archive 3 <b>Metal Face</b> strange resources to add 1 <b>Storm Helmet</b> rare gear to settlement storage.'},
+
+'Hooked Claw': {'type':'bone', 'group_name':'White Gigalion, Strange', 'text': '<i>Stained with flecks of ancient dried blood and bits of ossified hair.</i>'},
+
 }
 
 module.exports = {

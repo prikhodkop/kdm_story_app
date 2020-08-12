@@ -105,7 +105,7 @@ input[type=number]::-webkit-inner-spin-button {
     z-index: 0;
     border: 0.1vw solid #000;
     box-shadow: 0 0 1vw 0.8vw #000;
-    background: transparent url('http://thinkfuture.com/wp-content/uploads/2013/10/loading_spinner.gif') center no-repeat;
+    background: transparent url('https://media.githubusercontent.com/media/prikhodkop/kdm_story_app/master/images/loading.gif') center no-repeat;
 }
 
 #hunt_back {
@@ -462,6 +462,10 @@ tr.spaceUnder>td {
     /* animation-iteration-count: infinite; */
     /* animation-delay: 0.3s; */
     filter: drop-shadow(0 0 0.5vw #660);
+    animation: blink 5s;
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+    animation-delay: 0.3s;
 }
 
 #darkness.token {
@@ -494,6 +498,10 @@ tr.spaceUnder>td {
     /* animation-iteration-count: infinite; */
     /* animation-delay: 0.3s; */
     filter: drop-shadow(0 0 0.5vw #660);
+    animation: blink 5s;
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+    animation-delay: 0.3s;
 }
 
 #sky_fishing.token:hover {
@@ -504,6 +512,10 @@ tr.spaceUnder>td {
     /* animation-iteration-count: infinite; */
     /* animation-delay: 0.3s; */
     filter: drop-shadow(0 0 0.5vw #660);
+    animation: blink 5s;
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+    animation-delay: 0.3s;
 }
 
 #sky_fishing.token {
@@ -612,20 +624,20 @@ tr.spaceUnder>td {
           transform: scale(1);
       }
       20% {
-         -webkit-transform: scale(0.9);
-         transform: scale(0.9);
+         -webkit-transform: scale(0.95);
+         transform: scale(0.95);
        }
        40% {
-          -webkit-transform: scale(0.8);
-          transform: scale(0.8);
+          -webkit-transform: scale(1);
+          transform: scale(1);
        }
        60% {
-           -webkit-transform: scale(0.6);
-           transform: scale(0.6);
+           -webkit-transform: scale(0.95);
+           transform: scale(0.95);
        }
        100% {
-           -webkit-transform: scale(0.3);
-           transform: scale(0.3);
+           -webkit-transform: scale(0.97);
+           transform: scale(0.97);
        }
 }
 

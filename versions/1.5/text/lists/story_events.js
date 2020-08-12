@@ -1092,6 +1092,16 @@ const texts = {
     'music_delay': 'speech-1000',
     'speech': '#'
   },
+
+  'showdown gigalion': {
+    "label": "Showdown: White Gigalion",
+    'expansion': 'gigalion',
+    'music': 'music/showdown query.mp3',
+    'type': 'image',
+    'ltop': '5%',
+    // 'lleft': '46%',
+    'music_delay': 'speech-1000',
+  },
 }
 
 module.exports = {

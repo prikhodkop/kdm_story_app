@@ -16,6 +16,7 @@ const { getTerms } = require('./../ui/glossary')
 const quaries_events = [
   'showdown gorm',
   'showdown white lion',
+  'showdown gigalion',
   'showdown screaming antelope',
   'showdown phoenix',
   'showdown dung beetle knight',

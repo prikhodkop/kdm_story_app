@@ -369,6 +369,15 @@ const texts = {
    '3': []},
   'armor_set': 'Green Armor',
  },
+
+ 'Gigacatarium': {
+   'label':'Giga-Catarium',
+   'expansion': 'gigalion',
+  'gear': {
+   '1': ['Hooked Claw Knife', 'Lion Slayer Cape', 'Dense Bone Arrows'],
+   '2': ['Oxidized Beast Katar'],
+   '3': []},
+ },
 }
 
 module.exports = {

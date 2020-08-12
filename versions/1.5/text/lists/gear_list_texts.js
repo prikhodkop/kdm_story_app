@@ -334,6 +334,11 @@ var texts = {
  'Green Boots': {'resources':['1 x iron', '1 x Flower Knight Badge', '1 x Calcified Greaves', '3 x bone'], 'innovation': 'Forbidden Dance', 'set':['Green']},
  'Griswaldo': {'resources':['1 x gormite', '1 x iron', '1 x stomach lining', '1 x Calcified Juggernaut Blade'], 'innovation': 'Griswaldo', 'set':['Green']},
  'Fetorsaurus': {'resources':['1 x Beacon Shield', '1 x underplate fungus', '1 x sleeping virus flower', '1 x Elixir of Life'], 'innovation': 'Blacksmith', 'set':['Green']},
+
+ 'Hooked Claw Knife': {'resources':['1 x hooked claw', '1 x elder cat teeth', '2 x organ']},
+'Lion Slayer Cape': {'resources':['1 x hooked claw', '2 x white fur', '1 x shimmering mane']},
+'Dense Bone Arrows':{'resources':['1 x hooked claw', '3 x great cat bone', '2 x leather', '2 x iron'], 'innovation': 'Blacksmith'},
+ 'Oxidized Beast Katar':{'resources':['1 x lion beast katar', '2 x hooked claw', '1 x iron', '2 x bone'], 'innovation': 'Oxidation'},
 }
 
 module.exports = {

@@ -802,12 +802,14 @@ module.exports = class HuntScene {
         for (let j = 1; j < 4; j++) {
           let td1 = document.createElement('td')
           td1.style.cssText += 'width:16%;'
-          let a1 = document.createElement('div')
-          a1.setAttribute('id', name.replace(/ /g, '_') + '_' + j)
-          a1.className = 'quarry'
-          a1.innerHTML += tooltips['lv'].text+' ' + j
+          if (quaries[name]['monster_position'][j-1] != 0) {
+            let a1 = document.createElement('div')
+            a1.setAttribute('id', name.replace(/ /g, '_') + '_' + j)
+            a1.className = 'quarry'
+            a1.innerHTML += tooltips['lv'].text+' ' + j
+            td1.appendChild(a1)
+          }
 
-          td1.appendChild(a1)
           tr.appendChild(td1)
         }
 

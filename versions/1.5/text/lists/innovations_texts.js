@@ -810,6 +810,11 @@ const texts = {
   'label': 'Heat'
 
 },
+'Oxidation': {
+  'campaign': 'hidden',
+  'label': 'Oxidation'
+
+},
 'Perfect Crucible': {
   'campaign': 'hidden',
   'label': 'Perfect Crucible'
