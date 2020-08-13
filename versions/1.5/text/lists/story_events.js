@@ -1096,7 +1096,7 @@ const texts = {
   'showdown gigalion': {
     "label": "Showdown: White Gigalion",
     'expansion': 'gigalion',
-    'music': 'music/showdown query.mp3',
+    'music': 'music/showdown gigalion.mp3',
     'type': 'image',
     'ltop': '5%',
     // 'lleft': '46%',
@@ -1107,7 +1107,7 @@ const texts = {
     "label": "Fresh Meat",
     'expansion': 'butcher intro',
     'campaign': ['Lantern'],
-    'music': 'music/overwhelming darkness.mp3',
+    'music': 'music/fresh meat.mp3',
     'type': 'image',
     'ltop': '25%',
     'lleft': '28%',
