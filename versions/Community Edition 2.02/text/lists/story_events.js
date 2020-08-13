@@ -2,8 +2,8 @@ const texts = {
   'inscruptable purpose': {
     "label": "Inscruptable Purpose",
     'music': 'music/showdown gold smoke knight.mp3',
-    // 'ltop': '87%',
-    // 'lleft': '80%',
+    'ltop': '25%',
+    'lleft': '30%',
     'campaign': ['Lantern'],
   },
 }

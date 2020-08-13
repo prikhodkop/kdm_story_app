@@ -1,9 +1,9 @@
 const remote = require('electron').remote
 
-const { get_all_options, is_random_draw, get_random_draws, get_representation, get_locations_list, get_innovations_list, init_glossary} = require('./glossary')
+const { get_all_options, is_random_draw, get_random_draws, get_representation, get_locations_list, get_bookmarks_list, get_innovations_list, init_glossary} = require('./glossary')
 // const { cdnUrl } = require('./template-renderer')
 const { addTimer, clearTimer } = require('./timer')
-const { getDevelopmentState, addInnovation, removeInnovation, addSettlementLocation, removeSettlementLocation, update_bonuses_list} = require('./development')
+const { getDevelopmentState, addInnovation, removeInnovation, addSettlementLocation, removeSettlementLocation, addBookmark, removeBookmark, update_bonuses_list, update_bookmarks, init_bookmarks} = require('./development')
 const { getSettings} = require('./settings')
 const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 const { getTerms } = require('./../ui/glossary')
@@ -53,6 +53,7 @@ module.exports = {
   createSevereTables,
   createInnovationsList,
   createLocationsList,
+  createBookmarksList,
   // bonusesSummary
 }
 
@@ -1000,6 +1001,69 @@ function updateLocationsList() {
   }
 }
 
+function updateBookmarksList() {
+  $( '.bookmarks-list' ).empty();
+
+  $('.bookmarks-list').append($('<select>', {
+    id: "bookmarks-list-window",
+    class: "bookmarks-list-window",
+    placeholder: "Type Bookmark..."
+  }))
+  $('.bookmarks-list').hide();
+
+  let options = get_bookmarks_list()
+
+  var selectize_bookmarks = $('#bookmarks-list-window').selectize({
+    options: options,
+    optgroups: [{
+      value: 'bookmarks',
+      label: 'Bookmarks',
+    },
+    ],
+    render: {
+        option: function an96(item, escape) {
+          let condition = getTerms('bookmarks')[item.value]['condition_text']
+          return '<div class="option" data-value="'+item.value+'" style="color:#fff;">'+ escape(item.name) + ' - <small style="color:#ccc;">'+condition+'</small></div>'
+        },
+    },
+    optgroupField: 'class',
+    labelField: 'name',
+    searchField: ['name'],
+    maxItems: 100,
+    plugins: ['remove_button', 'silent_remove'],
+    hideSelected: true,
+    sortField: [{
+      field: 'name',
+      direction: 'asc',
+    },
+    {
+      field: '$score',
+    },
+    ],
+    onItemRemove: function (values) {
+      // return confirm(values);
+      console.log('Removing: '+values)
+      removeBookmark(values)
+      selectize_bookmarks.setCaret(0)
+      update_bookmarks()
+    },
+    onItemAdd: function (values, item) {
+      console.log('Adding: '+values)
+      addBookmark(values);
+      selectize_bookmarks.setCaret(0)
+      update_bookmarks()
+    },
+  })[0].selectize
+
+  window.selectize_bookmarks = selectize_bookmarks
+
+  let learnt_bookmarks = getDevelopmentState()['bookmarks']
+
+  for (let i=learnt_bookmarks.length-1; i>=0; i--) {
+    selectize_bookmarks.addItem(learnt_bookmarks[i]);
+  }
+}
+
 function  createLocationsList() {
   if ($( ".locations-list" ).length) {
     $( '.locations-list' ).empty();
@@ -1062,6 +1126,73 @@ function  createLocationsList() {
     $('.locations-list').fadeOut(500)
     $('#locations-list_window-background').fadeOut(500)
     $('.locations_button').removeClass('active')
+  })
+
+}
+
+function  createBookmarksList() {
+  if ($( ".bookmarks-list" ).length) {
+    $( '.bookmarks-list' ).empty();
+    $('.bookmarks_button').off();
+    $('#bookmarks-list_window-background').off();
+  } else {
+
+    let bookmarks_button_icon = $('<img>', {
+      class: 'bookmarks_button',
+      src: pathToAssetL('images/icons/bookmarks_button.png'),
+    })
+
+    bookmarks_button_icon.hide()
+
+    $('#container').append(bookmarks_button_icon)
+
+    $('#container').append($('<div>', {
+      id: 'bookmarks-list_window-background',
+      class: 'window-background'
+    }))
+
+    $('#bookmarks-list_window-background').hide()
+
+    // $('.locations_button').hide()
+    $('.bookmarks_button').delay(100).fadeIn(500)
+
+    $('#container').append($('<div>', {
+      class: 'bookmarks-list',
+    }))
+
+    $('.bookmarks_button').tooltipster({animationDuration: 50,
+      contentAsHTML: 'true',
+      animation: 'fade',
+      content: tooltips['bookmarks_list'].text,
+      position: 'right',
+      delay: [0, 0],
+    })
+
+  }
+
+  updateBookmarksList()
+  init_bookmarks()
+
+  $('.bookmarks_button').click(function () {
+    if (!$(this).hasClass('active')) {
+      // $('#innovations-list-window').fadeIn(500)
+      updateBookmarksList()
+      $('.bookmarks-list').fadeIn(500);
+      $('#bookmarks-list_window-background').fadeIn(400)
+      window.selectize_bookmarks.focus()
+      window.selectize_bookmarks.setCaret(0)
+
+    } else {
+      $('.bookmarks-list').fadeOut(500);
+      $('#bookmarks-list_window-background').fadeOut(600)
+    }
+    $(this).toggleClass('active')
+  })
+
+  $('#bookmarks-list_window-background').on('click', function () {
+    $('.bookmarks-list').fadeOut(500)
+    $('#bookmarks-list_window-background').fadeOut(500)
+    $('.bookmarks_button').removeClass('active')
   })
 
 }

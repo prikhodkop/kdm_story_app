@@ -76,6 +76,9 @@ const texts = {
   'locations_list': {
     'text': '<b style="color:#cc0;">Click</b> to add/remove <b>Settlement Locations</b>.',
   },
+  'bookmarks_list': {
+    'text': '<b style="color:#cc0;">Click</b> to add/remove <b>Bookmarks</b>.<br/><br/>Bookmarks may affect various aspects of your campaign and events.<br/>Typically you are instructed to add or remove bookmark during play.',
+  },
   'severe_table': {
     'text': '<b style="color:#cc0;">Click</b> to hide.'
   },

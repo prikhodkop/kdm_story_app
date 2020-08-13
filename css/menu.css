@@ -636,7 +636,7 @@ div#reference-window-back0 .selectize-control {
 
 .innovations_button {
 	position: absolute;
-	top: 13%;
+	top: 12%;
 	left: 0.2%;
 	display: block;
 	width: 6%;
@@ -656,7 +656,7 @@ div#reference-window-back0 .selectize-control {
 
 .innovations-list {
 	left:6%;
-	top: 13%;
+	top: 12%;
 	/* height: 95%; */
 	width: 33%;
 	max-width: 50%;
@@ -673,7 +673,7 @@ div#reference-window-back0 .selectize-control {
 
 .locations_button {
 	position: absolute;
-	top: 22%;
+	top: 18.3%;
 	left: 0.2%;
 	display: block;
 	width: 6%;
@@ -689,13 +689,48 @@ div#reference-window-back0 .selectize-control {
 	opacity: 0.8;
 	filter: drop-shadow(0 0 0.5vmin #cc0);
 	animation: glowing-image_2 3000ms infinite;
-
-	/* color: #cc0; */
 }
 
 .locations-list {
 	left:6%;
-	top: 22%;
+	top: 18.3%;
+	/* height: 95%; */
+	width: 33%;
+	max-width: 50%;
+	position:absolute;
+	z-index: 84;
+	display:block;
+	-webkit-box-shadow: 0 0 8vmin #000;
+	box-shadow: 0 0 8vmin #000;
+	overflow: visible;
+	--borderWidth: 1em;
+	border-radius: var(--borderWidth);
+	border: 0.2rem solid #555;
+}
+
+.bookmarks_button {
+	position: absolute;
+	top: 25%;
+	left: 0.2%;
+	display: block;
+	width: 6%;
+	z-index: 80;
+	filter: drop-shadow(0 0 2vmin #333);
+	--borderWidth: 2em;
+	border-radius: var(--borderWidth);
+	opacity: 0.4;
+	transition: opacity 0.5s, filter 0.5s, animation 0.5s ease;
+}
+
+.bookmarks_button:hover {
+	opacity: 0.8;
+	filter: drop-shadow(0 0 0.5vmin #cc0);
+	animation: glowing-image_2 3000ms infinite;
+}
+
+.bookmarks-list {
+	left:6%;
+	top: 25%;
 	/* height: 95%; */
 	width: 33%;
 	max-width: 50%;

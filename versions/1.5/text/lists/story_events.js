@@ -1102,6 +1102,18 @@ const texts = {
     // 'lleft': '46%',
     'music_delay': 'speech-1000',
   },
+
+  'fresh meat': {
+    "label": "Fresh Meat",
+    'expansion': 'butcher intro',
+    'campaign': ['Lantern'],
+    'music': 'music/overwhelming darkness.mp3',
+    'type': 'image',
+    'ltop': '25%',
+    'lleft': '28%',
+    'music_delay': 'speech-1000',
+    'speech': '#',
+  }
 }
 
 module.exports = {

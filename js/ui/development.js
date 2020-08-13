@@ -1,7 +1,7 @@
 const { get_random_draws } = require('./../ui/glossary')
 const { titleCase } = require('./../ui/events')
 const { getSettings } = require('./../ui/settings')
-const { addTimer } = require('./../ui/timer')
+const { addTimer, clearTimer } = require('./../ui/timer')
 const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 // const { cdnUrl }
 
@@ -20,13 +20,17 @@ module.exports = {
   addElement,
   addInnovation,
   addSettlementLocation,
+  addBookmark,
   removeElement,
   removeInnovation,
   removeSettlementLocation,
+  removeBookmark,
   hasInnovation,
   getHuntInnovationEffects,
   update_bonuses_list,
   updateActions,
+  update_bookmarks,
+  init_bookmarks
 }
 
 const always_on_locations = ['Throne', 'Lantern Hoard', 'Sacred Pool', 'The Sun'];
@@ -36,6 +40,7 @@ var innovations = getTerms('innovations')
 var settlement_locations = getTerms('settlement_locations')
 var gear_list = getTerms('gear_list')
 var settlement_events = getTerms('settlement_events')
+var bookmarks = getTerms('bookmarks')
 var armor_sets = getTerms('armor_sets')
 var tooltips = getTerms('tooltips')
 var tags_list = getTerms('tags')
@@ -889,11 +894,11 @@ function update_bonuses_list(state='') {
   }
 
   if (('innovations' in state) && (state['innovations'].length > 0)) {
-      form_bonuses_list(state['innovations'], state['events'])
+      form_bonuses_list(state['innovations'], state['events'], state['bookmarks'])
   }
 }
 
-function form_bonuses_list(innovation_names, event_names) {
+function form_bonuses_list(innovation_names, event_names, bookmark_names) {
   let set = {}
   let keys = []
 
@@ -924,6 +929,23 @@ function form_bonuses_list(innovation_names, event_names) {
         set[keys[j]] = set[keys[j]].concat(settlement_events[event_names[i]]['passive'][keys[j]].map(function(e) {
           if (!settlement_events[event_names[i]].label.includes('#')) {
             e += ' <i class="event_sup">['+settlement_events[event_names[i]].label+']</i>';
+          }
+          return e;
+        }))
+      }
+    }
+  }
+
+  for (let i=0; i<bookmark_names.length; i++) {
+    if (toShow(bookmark_names[i])&&('passive' in bookmarks[bookmark_names[i]])) {
+      keys = Object.keys(bookmarks[bookmark_names[i]]['passive'])
+      for (let j=0; j<keys.length; j++) {
+        if (!(keys[j] in set)) {
+          set[keys[j]] = []
+        }
+        set[keys[j]] = set[keys[j]].concat(bookmarks[bookmark_names[i]]['passive'][keys[j]].map(function(e) {
+          if (!bookmarks[bookmark_names[i]].label.includes('#')) {
+            e += ' <i class="event_sup">['+bookmarks[bookmark_names[i]].label+']</i>';
           }
           return e;
         }))
@@ -1582,6 +1604,7 @@ function getDevelopmentState() {
     development_state = {}
     development_state['locations'] = always_on_locations
     development_state['innovations'] = [];
+    development_state['bookmarks'] = [];
     development_state['activated'] = {};
     development_state['events'] = [];
     development_state['disables'] = [];
@@ -1598,6 +1621,10 @@ function getDevelopmentState() {
     }
     if (!('events' in development_state)) {
       development_state['events'] = []
+      updated = true
+    }
+    if (!('bookmarks' in development_state)) {
+      development_state['bookmarks'] = []
       updated = true
     }
     if (!('disables' in development_state)) {
@@ -1640,6 +1667,10 @@ function setDevelopmentState(development_state) {
   })
   development_state['innovations'] = development_state['innovations'].filter(function(item, pos) {
     return development_state['innovations'].indexOf(item) == pos;
+  })
+
+  development_state['bookmarks'] = development_state['bookmarks'].filter(function(item, pos) {
+    return development_state['bookmarks'].indexOf(item) == pos;
   })
 
   development_state['activated']['innovations'] = development_state['activated']['innovations'].filter(function(item, pos) {
@@ -1772,6 +1803,11 @@ function toShow(name) {
     visibility = ['All content']
     console.log('It is location.')
   }
+  if (!($.inArray(name, Object.keys(bookmarks)) == -1)) {
+    list = bookmarks
+    visibility = ['All content']
+    console.log('It is location.')
+  }
   else if (!($.inArray(name, Object.keys(innovations)) == -1)) {
     list = innovations
     visibility = ['All content']
@@ -1846,6 +1882,9 @@ function addInnovation(name) {
 function addSettlementLocation(name) {
   addElement(name, 'locations')
 }
+function addBookmark(name) {
+  addElement(name, 'bookmarks')
+}
 
 function removeElement(name, type) {
   let development_state = getDevelopmentState();
@@ -1860,4 +1899,78 @@ function removeInnovation(name) {
 }
 function removeSettlementLocation(name) {
   removeElement(name, 'locations')
+}
+function removeBookmark(name) {
+  removeElement(name, 'bookmarks')
+}
+
+function init_bookmarks() {
+  $('#container').append($('<img>',{
+    src: pathToAssetL('#'),
+    id: 'bookmark_tooltip'
+  }))
+  $('#bookmark_tooltip').hide();
+
+  $('#container').on({
+    mouseenter: function (e) {
+      if (!$(e.target).hasClass('hover_tooltip')) {
+        return
+      }
+      $('#bookmark_tooltip').attr('src', pathToAssetL('images/reference/Bookmarks/'+$(e.target).val()+'.jpg'))
+      window.bookmark_timer = addTimer(function(){
+        $('#img').addClass('darkened')
+        $('#bookmark_tooltip').show("slide", { direction: "down" }, 200);
+      }, 400)
+    },
+    mouseleave: function (e) {
+      if (!$(e.target).hasClass('hover_tooltip')) {
+        return
+      }
+      console.log('leave')
+      clearTimer(window.bookmark_timer)
+      $('#bookmark_tooltip').hide("slide", { direction: "down" }, 100);
+      $('#img').removeClass('darkened')
+    },
+  }, '.bookmark')
+
+  update_bookmarks()
+}
+function update_bookmarks() {
+  let myself = sessionStorage.getItem('target')
+  $('.bookmark').remove()
+  let current_bookmarks = getDevelopmentState()['bookmarks']
+  let elems = []
+  let cur_height = 45
+  for (let i = 0; i < current_bookmarks.length; i++) {
+    let current = current_bookmarks[i]
+    let cur_obj = getTerms('bookmarks')[current]
+    if (!cur_obj.targets.includes(myself)) {
+      continue
+    }
+    let elem = $('<button>',{
+      class: 'bookmark',
+      value: current,
+    })
+    elem[0].innerHTML = cur_obj.button_text
+
+    if ('width' in cur_obj) {
+      elem.css('width', cur_obj.width)
+    } else {
+      elem.css('width', '10%')
+    }
+    elem.css('text-align', 'left')
+
+    if ('hover_tooltip' in cur_obj) {
+      elem.addClass('hover_tooltip')
+    }
+    elems.push(elem)
+    elem[0].style.visibility = "hidden";
+  }
+  $(container).append(elems)
+
+  for (let i=0; i<elems.length; i++) {
+    elems[i].css('top', cur_height+'%')
+    cur_height += 2 + elems[i][0].clientHeight/window.screen.height*100
+    elems[i][0].style.visibility = "";
+  }
 }

@@ -5,7 +5,7 @@ initAssets()
 
 const { createToc, generate_events_table } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
-const { createMenuButton, createReference, createSevereTables, createInnovationsList, createLocationsList } = require('./../ui/menu')
+const { createMenuButton, createReference, createSevereTables, createInnovationsList, createLocationsList, createBookmarksList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved, initSettings, defaultLang } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
@@ -139,6 +139,7 @@ module.exports = class VideoScene {
       createReference()
       createInnovationsList()
       createLocationsList()
+      createBookmarksList()
       eventsSugar(myself)
 
       $('#video').hide()
@@ -167,6 +168,7 @@ module.exports = class VideoScene {
       createReference()
       createInnovationsList()
       createLocationsList()
+      createBookmarksList()
       eventsSugar(myself)
     })
 
@@ -205,6 +207,7 @@ module.exports = class VideoScene {
       createReference()
       createInnovationsList()
       createLocationsList()
+      createBookmarksList()
       eventsSugar(myself)
     })
 

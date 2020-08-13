@@ -8,6 +8,7 @@ module.exports = {
  get_random_draws,
  get_locations_list,
  get_innovations_list,
+ get_bookmarks_list,
  getSettlementEventPath,
  clone,
  settlement_locations,
@@ -24,6 +25,7 @@ console.log('!! Setting up glossary !! ^_^')
 
 var abilities
 var armor_sets
+var bookmarks
 var disorders
 var secret_fighting_arts
 var gear_list
@@ -51,6 +53,7 @@ let glossary_list_translations = {
   'abilities': ['label', 'description'],
   'armor_sets': ['label'],
   'settlement_locations': ['label', 'gear'],
+  'bookmarks': ['label'],
   'settlement_events': ['label', 'passive'],
   'survivor_statuses': ['label', 'description'],
   'terrain': ['label', 'description'],
@@ -91,6 +94,7 @@ function init_glossary() {
     abilities = window.globals.glossary[lang].abilities
     armor_sets = window.globals.glossary[lang].armor_sets
     settlement_locations = window.globals.glossary[lang].settlement_locations
+    bookmarks = window.globals.glossary[lang].bookmarks
     settlement_events = window.globals.glossary[lang].settlement_events
     survivor_statuses = window.globals.glossary[lang].survivor_statuses
     terrain = window.globals.glossary[lang].terrain
@@ -197,22 +201,23 @@ function get_options (data, type, filter=false) {
      }
   } else {
    if (!('expansion' in data[key]) || (settings['expansions'][data[key]['expansion']] == 'All content')){
-    if (!('campaign' in data[key]) || (data[key]['campaign'].indexOf(settings['campaign']) > -1)){
-      if ('group_name' in data[key]) {
-        result.push({
-         class: type,
-         name: name+' ('+data[key].group_name+')',
-         value: key,
-        })
-      } else {
-        result.push({
-         class: type,
-         name: name,
-         value: key,
-        })
+     if (!('whitebox' in data[key]) || (settings['whiteboxes'][data[key]['whitebox']] == 'Enabled')){
+      if (!('campaign' in data[key]) || (data[key]['campaign'].indexOf(settings['campaign']) > -1)){
+        if ('group_name' in data[key]) {
+          result.push({
+           class: type,
+           name: name+' ('+data[key].group_name+')',
+           value: key,
+          })
+        } else {
+          result.push({
+           class: type,
+           name: name,
+           value: key,
+          })
+        }
       }
     }
-
    }
   }
 
@@ -242,6 +247,13 @@ function get_all_options () {
 
 function get_innovations_list() {
  let options = get_options(innovations, 'innovations', true)
+
+ return options
+
+}
+
+function get_bookmarks_list() {
+ let options = get_options(bookmarks, 'bookmarks', true)
 
  return options
 

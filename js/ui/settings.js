@@ -639,6 +639,17 @@ var settings_schema = {
           'All content',
         ],
       },
+      'butcher intro': {
+        'type': 'option',
+        'group': 'fan',
+        'title': 'Butcher Intro (CCG)',
+        'default': 'Disabled',
+        'description': 'Adds Butcher introduction event <b>Fresh Meat</b> to be played at <b>Lantern Year 3</b> of People of the Lantern campaign.',
+        'enum': [
+          'Disabled',
+          'All content',
+        ],
+      },
       'storm knight': {
         'type': 'option',
         'group': 'fan',
@@ -760,6 +771,16 @@ var settings_schema = {
         'title': 'Percival',
         'default': 'Disabled',
         'description': 'Percival is a member of a small order called the Black Knights. The Black Knights were founded by a militaristic settlement that hoped to conqueror the darkness and provide a safe haven for humanity. A great crusade called the Black Knights into action and Percival left her home, never to be seen again. Before leaving, though, she commanded her loyal companion, a young puppy, to wait for her safe return. He still waits to this day.<br/><br/><b style="color:#cc0;">Enabling</b> this expansion adds <b>Random</b> Hunt event.',
+        'enum': [
+          'Disabled',
+          'Enabled',
+        ],
+      },
+      'ringtail vixen': {
+        'type': 'option',
+        'title': 'Ringtail Vixen',
+        'default': 'Disabled',
+        'description': 'The survivors found a baby floating in the Swamp in a basket of woven fur. Strong and preternaturally fast, the child grew into a wild, beautiful woman bearing strange features like needle sharp teeth and strong fingernails that grew at an alarming rate. Finding an affinity with the fierce fox monsters that stalk their lands, she crafted her armor with clawed feet, a hood with vulpine ears, and fox tails. She protects her people with her keen sense of smell that allows her to detect the shifting levels of sulfur that occur when the Fox God awakens. She has led her people to the safety of the swamp burrows whenever the Ringtail Fox God and its aspects begin their hunt.<br/><br/><b style="color:#cc0;">Enabling</b> this expansion adds bookmark that could be used to alter <b>Intimacy</b> story event.',
         'enum': [
           'Disabled',
           'Enabled',

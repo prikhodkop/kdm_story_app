@@ -1196,6 +1196,60 @@ div.selectize-dropdown-content::-webkit-scrollbar {
   border-bottom-left-radius: var(--borderWidth);
 }
 
+#bookmark_tooltip {
+	left:11%;
+	bottom: 0%;
+	width: 23%;
+  max-height: 95%;
+	position:absolute;
+	z-index: 97;
+	display:block;
+	-webkit-box-shadow: 0 0 5vw 0 #000;
+	box-shadow: 0 0 0.5vw 0 #000;
+  --borderWidth: 1em;
+  border-top-left-radius: var(--borderWidth);
+  border-top-right-radius: var(--borderWidth);
+}
+
+.bookmark {
+    position: absolute;
+    display:block;
+    /* width: 100%; */
+    /* top: 95%; */
+    width: 10%;
+    left: 0%;
+    min-height:5%;
+    /* margin: 0 auto; */
+    color: #aaa;
+    background-color: #333;
+    cursor: pointer;
+    z-index: 80;
+    opacity: 0.8;
+    --borderWidth: 1em;
+    border-top-right-radius: var(--borderWidth);
+    border-bottom-right-radius: var(--borderWidth);
+    border: 0.1rem solid #555;
+    font-family: 'Silverado';
+    font-size: 1em;
+    /* font-weight: 600; */
+    text-align: center;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 0.5vw #333);
+    transition: opacity 0.5s, border 0.5s, color 0.5s, filter 0.5s;
+  }
+
+  .bookmark:hover {
+  /* opacity: 0.8; */
+  /* animation: glowing 3000ms infinite; */
+  color: #ccc;
+  border: 0.1rem solid #ccc;
+  filter: drop-shadow(0 0 0.5vw #ccc);
+  }
+
+  .darkened {
+    filter: brightness(70%)
+  }
+
 .settlement_return_button.to_grotto {
   left: 50%;
   top: 70.5%;

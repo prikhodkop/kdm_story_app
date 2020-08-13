@@ -4,7 +4,7 @@ const { pathToAsset, pathToAssetL, initAssets } = require('./../ui/assets_loader
 initAssets()
 
 const { createToc, generate_events_table } = require('./../ui/events')
-const { createMenuButton, createReference, createSevereTables, createInnovationsList, createLocationsList } = require('./../ui/menu')
+const { createMenuButton, createReference, createSevereTables, createInnovationsList, createLocationsList, createBookmarksList } = require('./../ui/menu')
 const { getSettings, addSettings, onSettingsSaved, initSettings } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
 const { addTimer, clearTimer } = require('./../ui/timer')
@@ -211,6 +211,7 @@ module.exports = class ImageScene {
             createReference()
             createInnovationsList()
             createLocationsList()
+            createBookmarksList()
             eventsSugar(myself)
           }, 1000)
         };
@@ -344,6 +345,7 @@ module.exports = class ImageScene {
               createReference()
               createInnovationsList()
               createLocationsList()
+              createBookmarksList()
               eventsSugar(myself)
             }, 1000);
           }
@@ -377,6 +379,7 @@ module.exports = class ImageScene {
           createReference()
           createInnovationsList()
           createLocationsList()
+          createBookmarksList()
           eventsSugar(myself)
         }, 500);
       };
