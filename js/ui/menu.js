@@ -785,7 +785,7 @@ function createReference () {
       $('#reference-window-back0').fadeOut(500)
       $('#reference-window-background').fadeOut(500)
       $('#reference').attr('src', pathToAssetL('images/icons/reference.png'))
-      selectize.clear()
+      // selectize.clear()
       $('#reference').tooltipster('content', tooltips['reference_open'].text)
     }
     $(this).toggleClass('active')
