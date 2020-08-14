@@ -53,7 +53,7 @@ let glossary_list_translations = {
   'abilities': ['label', 'description'],
   'armor_sets': ['label'],
   'settlement_locations': ['label', 'gear'],
-  'bookmarks': ['label'],
+  'bookmarks': ['label','condition_text','button_text','passive'],
   'settlement_events': ['label', 'passive'],
   'survivor_statuses': ['label', 'description'],
   'terrain': ['label', 'description'],
@@ -127,6 +127,7 @@ function localized_require2(text, lang, args) {
     if (!('label' in data_en[keys[j]])||(data_en[keys[j]]['label'] == '')) {
       data_en[keys[j]]['label'] = keys[j]
     }
+    data_en[keys[j]]['label_eng'] = data_en[keys[j]]['label']
     if ((args.includes('color'))&&(!('color' in data_en[keys[j]])||(data_en[keys[j]]['color'] == ''))) {
       data_en[keys[j]]['color'] = '#ccc'
     }
@@ -136,7 +137,10 @@ function localized_require2(text, lang, args) {
     for (let j=0; j<keys.length; j++) {
       for (let i=0; i<args.length; i++) {
         if ((keys[j] in data_local)&&(args[i] in data_local[keys[j]])) {
-           data_en[keys[j]][args[i]] = data_local[keys[j]][args[i]]
+          if (data_local[keys[j]][args[i]] == '') {
+            continue
+          }
+          data_en[keys[j]][args[i]] = data_local[keys[j]][args[i]]
         }
       }
     }
@@ -148,18 +152,15 @@ function localized_require2(text, lang, args) {
 
         let new_keys = $.grep(keys_local, function(el){return $.inArray(el, keys) == -1});
 
-        console.log('new_keys!!! '+JSON.stringify(new_keys))
+        // console.log('new_keys!!! '+JSON.stringify(new_keys))
         for (let j=0; j<new_keys.length; j++) {
-          // data_en[new_keys[j]] = {}
 
           if (!('label' in data_local[new_keys[j]])||(data_local[new_keys[j]]['label'] == '')) {
             data_local[new_keys[j]]['label'] = new_keys[j]
           }
 
-          // for (let i=0; i<args.length; i++) {
           data_en[new_keys[j]] = data_local[new_keys[j]]
-          // }
-          console.log(data_en[new_keys[j]])
+
         }
 
       }
@@ -183,19 +184,31 @@ function get_options (data, type, filter=false) {
    } else {
      name = key
    }
+ let search_name = name + ' ' + data[key]['label_eng'] + type+ (('group_name' in data[key])? ' '+data[key].group_name: '')
+ if ('type' in data[key]) {
+   search_name += data[key]['type']
+ }
   if (!filter) {
     if (!('campaign' in data[key]) || !(data[key]['campaign'] == 'hidden')){
       if ('group_name' in data[key]) {
         result.push({
          class: type,
          name: name+' ('+data[key].group_name+')',
+         group_name: (('group_name' in data[key])? data[key].group_name: ''),
+         label: data[key].label,
+         label_eng: data[key].label_eng,
          value: key,
+         search_name: search_name,
         })
       } else {
         result.push({
          class: type,
          name: name,
+         group_name: (('group_name' in data[key])? data[key].group_name: ''),
+         label: data[key].label,
+         label_eng: data[key].label_eng,
          value: key,
+         search_name: search_name,
         })
       }
      }
@@ -207,13 +220,21 @@ function get_options (data, type, filter=false) {
           result.push({
            class: type,
            name: name+' ('+data[key].group_name+')',
+           group_name: (('group_name' in data[key])? data[key].group_name: ''),
+           label: data[key].label,
+           label_eng: data[key].label_eng,
            value: key,
+           search_name: search_name,
           })
         } else {
           result.push({
            class: type,
            name: name,
+           group_name: (('group_name' in data[key])? data[key].group_name: ''),
+           label: data[key].label,
+           label_eng: data[key].label_eng,
            value: key,
+           search_name: search_name,
           })
         }
       }
@@ -499,6 +520,8 @@ function get_random_draws (word, randomize=true, ) {
   list = clone(fighting_arts)
  } else if (word.includes('Disorder')) {
   list = clone(disorders)
+}else if (word.includes('Terrain')) {
+ list = clone(terrain)
 } else if (word.includes('Event')) {
   list = clone(settlement_events)
   delete list['First Day']

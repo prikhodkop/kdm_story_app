@@ -31,6 +31,18 @@ const texts = {
      'type': 'random',
      'label': '1 losowe wydarzenie osady'
    },
+   // '1 random Terrain card': {
+   //   'type': 'random',
+   //   'label': '1 random Terrain card'
+   // },
+   // '2 random Terrain cards': {
+   //   'type': 'random',
+   //   'label': '2 random Terrain cards'
+   // },
+   // '3 random Terrain cards': {
+   //   'type': 'random',
+   //   'label': '3 random Terrain cards'
+   // },
 }
 
 module.exports = {

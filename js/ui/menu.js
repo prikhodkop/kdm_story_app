@@ -516,21 +516,19 @@ function createReference () {
   var selectize = $('#reference-window').selectize({
     options: all_option,
     openOnFocus: true,
+    searchField: ['search_name'],
+    render: {
+        option: function (item, escape) {
+          if (item.label_eng != item.label) {
+            return '<div class="option" data-value="'+item.value+'">'+ escape(item.label) + ((item.group_name == '')? '': ' <small style="color:#660;">('+escape(item.group_name)+')</small>')+' - <div style="color:#666;display:inline;font-size:0.9em;">'+escape(item.label_eng)+'</div>'+'</div>'
+          } else {
+            return '<div class="option" data-value="'+item.value+'">'+ escape(item.label) + ((item.group_name == '')? '': ' <small style="color:#660;">('+escape(item.group_name)+')</small>')+'</div>'
+          }
+        },
+    },
     optgroups: [{
       value: 'random draws',
       label: 'Random Draws',
-    },
-    {
-      value: 'settlement events',
-      label: 'Settlement Events',
-    },
-    {
-      value: 'settlement locations',
-      label: 'Settlement Locations',
-    },
-    {
-      value: 'glossary',
-      label: 'Glossary',
     },
     {
       value: 'abilities',
@@ -553,6 +551,18 @@ function createReference () {
       label: 'Survivor Statuses',
     },
     {
+      value: 'settlement events',
+      label: 'Settlement Events',
+    },
+    {
+      value: 'settlement locations',
+      label: 'Settlement Locations',
+    },
+    {
+      value: 'glossary',
+      label: 'Glossary',
+    },
+    {
       value: 'armor sets',
       label: 'Armor Sets',
     },
@@ -570,16 +580,13 @@ function createReference () {
     },
     ],
     optgroupField: 'class',
+    lockOptgroupOrder: true,
     labelField: 'name',
-    searchField: ['name'],
+    // searchField: ['name'],
     maxItems: 10,
 
     plugins: ['remove_button_2', 'silent_remove'],
-    // render: {
-    //     optgroup_header: function(data, escape) {
-    //         return '<div class="optgroup-header">' + escape(data.label) + ' <span class="scientific">' + escape(data.label_scientific) + '</span></div>';
-    //     }
-    // }
+
     hideSelected: true,
     closeAfterSelect: true,
     sortField: [{
@@ -833,7 +840,7 @@ function updateInnovationsList() {
     ],
     optgroupField: 'class',
     labelField: 'name',
-    searchField: ['name'],
+    searchField: ['search_name'],
     maxItems: 100,
     plugins: ['remove_button', 'silent_remove', 'drag_drop'],
     hideSelected: true,
@@ -978,7 +985,7 @@ function updateLocationsList() {
     ],
     optgroupField: 'class',
     labelField: 'name',
-    searchField: ['name'],
+    searchField: ['search_name'],
     maxItems: 100,
     plugins: ['remove_button', 'silent_remove'],
     hideSelected: true,
@@ -1039,7 +1046,7 @@ function updateBookmarksList() {
     },
     optgroupField: 'class',
     labelField: 'name',
-    searchField: ['name'],
+    searchField: ['search_name'],
     maxItems: 100,
     plugins: ['remove_button', 'silent_remove'],
     hideSelected: true,
