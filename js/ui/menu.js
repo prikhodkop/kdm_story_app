@@ -33,6 +33,16 @@ document.onkeydown = function (evt) {
       $('#reference-window-background').fadeOut(100)
     }
     escMenuEl.toggleClass('active')
+  } else {
+
+    if (selectize.$dropdown.css('display') == 'none') {
+        $('.selectize-control').slideDown(0)
+    }
+    if ($('#reference').hasClass('active')&&!$('.selectize-input').hasClass('input-active')) {
+      selectize.open()
+      selectize.focus()
+    }
+
   }
 
   // // down arrow
@@ -505,6 +515,7 @@ function createReference () {
 
   var selectize = $('#reference-window').selectize({
     options: all_option,
+    openOnFocus: true,
     optgroups: [{
       value: 'random draws',
       label: 'Random Draws',
@@ -562,7 +573,7 @@ function createReference () {
     labelField: 'name',
     searchField: ['name'],
     maxItems: 10,
-    openOnFocus: false,
+
     plugins: ['remove_button_2', 'silent_remove'],
     // render: {
     //     optgroup_header: function(data, escape) {
@@ -778,7 +789,7 @@ function createReference () {
       $('#reference-window-back0').fadeIn(500)
       $('#reference-window-background').fadeIn(500)
       $('#reference').attr('src', pathToAssetL('images/icons/reference_active.png'))
-      selectize.focus()
+      // selectize.focus()
       $('#reference').tooltipster('content', tooltips['reference_close'].text)
 
     } else {
