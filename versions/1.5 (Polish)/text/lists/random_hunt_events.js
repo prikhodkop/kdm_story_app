@@ -1493,7 +1493,7 @@ Każdy <b>nie głuchy</b> Ocalały otrzymuje +1 do wiedzy, a następnie to wydar
 `,
 
   67: `67 | Stawy szlamu
-Teren na wprost jest podziurawiony sadzawkami zapełnionymi lepką cieczą, bulgoczącą beztrosko smrodem trawionego mięsa. Gdy Ocalali przechodzą między nimi, opanowują Jeśli ich którykolwiek fale mdłości.
+Teren na wprost jest podziurawiony sadzawkami zapełnionymi lepką cieczą, bulgoczącą beztrosko smrodem trawionego mięsa. Gdy Ocalali przechodzą między nimi, opanowują ich fale mdłości.
 
 [TO] Sprawdź
 [td] Czy jakiś Ocalały ma sierp?
@@ -1944,7 +1944,7 @@ Każdy Ocalały rzuca 1k10.
 [TA] 1k10
 [td] Każdy Ocalały
 [c] 1-8
-[d] Powstajesz się od badania.
+[d] Powstrzymujesz się od badania.
 [c] 9+
 [dt] Wchodzisz do jednego z tuneli i odkrywasz grupę chorych nieszczęśliwców, żyjących w smrodzie i brudzie. Wszyscy Ocalali wchodzący do jaskini, nabywają <b>Gnilną chorobę</b>. Stają się trędowaci. Zmniejsz im wszystkie otrzymywane obrażenia o 1, minimalnie do 1. Otrzymują -2 do rzutów na ciężkie urazy. Zanotuj to upośledzenie.
 `,
