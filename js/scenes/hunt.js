@@ -523,6 +523,7 @@ module.exports = class HuntScene {
       console.log(name)
 
       $('#random_event_input_big_text').html(tooltips['hunt_random_event_popup_text'].text)
+      $('#padSubmit').html(tooltips['padSubmit'].text)
 
       $('<img class="token" id="herb_gathering" title="" src="' + pathToAssetL('images/hunt/herbs_gathering.png') + '" width="8%" style="left:25%; top:74%;">')
         .on('load', function () {

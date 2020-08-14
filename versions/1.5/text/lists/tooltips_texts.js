@@ -381,6 +381,10 @@ const texts = {
    'text': 'Click icon or type hunt event number',
  },
 
+ 'padSubmit': {
+   'text': 'submit',
+ },
+
  'random draws': {
    'text': 'Random Draws',
  },
@@ -436,6 +440,7 @@ const texts = {
  'bookmarks': {
    'text': 'Bookmarks',
  },
+
 
 
  // tooltips['action_card'].text
