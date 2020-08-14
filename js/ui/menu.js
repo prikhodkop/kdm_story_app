@@ -1263,7 +1263,7 @@ function refPadEntry (refValue) {
     window.selectize.open()
   } else if (refValue == 'random') {
     let text = refInput.val()
-    window.selectize.setTextboxValue(text + ' '+tooltips['random_key'].text+' ')
+    window.selectize.setTextboxValue(tooltips['random_key'].text)
     window.selectize.open()
   } else if (refValue == "\u2190") {
     window.selectize.setTextboxValue('')
