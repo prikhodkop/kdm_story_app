@@ -159,6 +159,7 @@ module.exports = class IndexScene {
         $('#reference').hide()
         $('.locations_button').hide()
         $('.innovations_button').hide()
+        $('.bookmarks_button').hide()
 
         console.log('Here2!')
       } else {
