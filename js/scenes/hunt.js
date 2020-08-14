@@ -259,6 +259,7 @@ module.exports = class HuntScene {
 
     $('body').on('click', '#random_event_close', function () {
       $('#random_popup').fadeOut(500)
+      $('#quary_popup').fadeOut(500)
       $('#random_event_close').fadeOut(500)
       $('#quary_popup_back').delay(500).fadeOut(500)
     })
@@ -1102,6 +1103,7 @@ module.exports = class HuntScene {
                   document.querySelector('#quary_popup').classList.add('magictime', QUARRY_CARD_SHOW)
                   $('#quary_popup').toggleClass('hidden')
                   $('#quary_popup_back').fadeIn(1000)
+                  $('#random_event_close').delay(300).fadeIn(300)
                 }
 
                 if (value == 'random_hunt_event') {
