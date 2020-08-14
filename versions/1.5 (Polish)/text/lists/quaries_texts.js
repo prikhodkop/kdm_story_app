@@ -19,7 +19,7 @@ const texts = {
   },
   'screaming antelope': {
     'board':'xmrmrrxmrmrr',
-    'monster_position': [5, 8, 11],
+    'monster_position': [5, 9, 11],
     'monster_icon':'./images/hunt/screaming_antelope.png',
     'monster_icon_width':7,
     'monster_icon_height':38,
