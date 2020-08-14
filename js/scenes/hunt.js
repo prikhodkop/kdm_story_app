@@ -1044,6 +1044,68 @@ module.exports = class HuntScene {
             delay: '600',
             plugins: ['follower'],
           })
+          $(this).droppable({
+            drop: function (event, ui) {
+              if (ui.draggable[0]['id'] == 'monster') {
+                if ($('#monster').attr('position') == 13) {
+                  $('#starvation_popup_back').fadeIn(500)
+                  var temp_text = document.getElementById(
+                    'label_text').innerHTML
+                  document.getElementById('label_text').innerHTML = tooltips['starvation_window'].text
+                  // $('#label_text').innerHTML = 'Starvation<br/>Survivors must spend <b>1d5</b> basic resources!'
+                  $('#hunt_icon').attr('src', pathToAssetL('images/hunt/starvation_icon.png'))
+                  $('#label_text').css('z-index', '9')
+                  $('#hunt_icon').css('z-index', '9')
+                  $('#label_text').css('color', '#fff')
+                  $('#label_text').delay(500).fadeIn(1000)
+                  $('#hunt_icon').delay(500).fadeIn(1000)
+                  $('#random_event_icon').fadeOut(1000)
+                  $('#random_event_input').fadeOut(1000)
+
+                  $('#container').append($('<button>', {
+                    id: 'starvation_button',
+                  }))
+                  $('#starvation_button').html(tooltips['starvation_showdown'].text)
+                  $('#starvation_button').hide()
+                  $('#starvation_button').delay(1500).fadeIn(500)
+
+                  $('#starvation_button').click(function() {
+                    $('#label_text').fadeOut(500, function() {
+                      $('#label_text').hide();
+                      $('#label_text').html(temp_text)
+                      addTimer(function () {
+                        let target = $('#monster').attr('target')
+                        // if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.2') {
+                        if ((window.globals.quarry_key == 'gorm')&&(window.globals.quarry_level==2)) {
+                          target = 'fetid grotto'
+                        }
+                        // if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.3') {
+                        if ((window.globals.quarry_key == 'gorm')&&(window.globals.quarry_level==3)) {
+                          target = 'final march'
+                        }
+                        setTransition(target, 'menu', document.title, current_state())
+                      }, 100)
+                    })
+                    $('#hunt_icon').fadeOut(500)
+                  })
+                } else {
+                  let target = $('#monster').attr('target')
+
+                  // if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.2') {
+                  if ((window.globals.quarry_key == 'gorm')&&(window.globals.quarry_level==2)) {
+                    target = 'fetid grotto'
+                  }
+                  // if ($('#hunt_desc_text').text().toLowerCase() == 'gorm lv.3') {
+                  if ((window.globals.quarry_key == 'gorm')&&(window.globals.quarry_level==3)) {
+                    target = 'final march'
+                  }
+                  setTransition(target,
+                    'menu', document.title,
+                    current_state())
+                }
+              }
+            }
+          })
         };
 
         if (type == 'darkness' || type == 'starvation') {
