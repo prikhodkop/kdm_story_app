@@ -812,7 +812,7 @@ const texts = {
 },
 'Oxidation': {
   'campaign': 'hidden',
-  'label': 'Oxidation'
+  'label': 'Oxidation<br/><i style="color:#aa0;">Total cost is shown (including coating and protective gear)</i>'
 
 },
 'Perfect Crucible': {

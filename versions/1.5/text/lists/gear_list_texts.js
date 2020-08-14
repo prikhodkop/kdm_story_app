@@ -1,4 +1,4 @@
-const endeavor_img = imageHTML('images/icons/endeavors', '0.9em;display:inline;opacity:0.8;vertical-allign:bottom')
+const endeavor_img = '1 x'+imageHTML('images/icons/endeavors', '0.9em;display:inline;opacity:0.8;vertical-allign:bottom')
 
 var texts = {
  'Tabard': {'resources':['1 x cloth', '1 x organ'], 'innovation': 'Paint', 'set':['Vagabond']},
@@ -338,7 +338,14 @@ var texts = {
  'Hooked Claw Knife': {'resources':['1 x hooked claw', '1 x elder cat teeth', '2 x organ']},
 'Lion Slayer Cape': {'resources':['1 x hooked claw', '2 x white fur', '1 x shimmering mane']},
 'Dense Bone Arrows':{'resources':['1 x hooked claw', '3 x great cat bone', '2 x leather', '2 x iron'], 'innovation': 'Blacksmith'},
- 'Oxidized Beast Katar':{'resources':['1 x lion beast katar', '2 x hooked claw', '1 x iron', '2 x bone'], 'innovation': 'Oxidation'},
+ 'Oxidized Beast Katar':{'resources':[endeavor_img, '1 x Lion Beast Katar', '2 x hooked claw', '1 x iron', '3 x leather', '5 x bone', '3 x organ', '1 x black lichen', '1 x cocoon membrane'], 'innovation': 'Oxidation'},
+ 'Oxidized Lantern Sword': {'resources':[endeavor_img, '1 x Lantern Sword', '1 x Lantern Tube', '3 x leather', '3 x bone', '3 x organ', '1 x black lichen', '1 x cocoon membrane'], 'innovation': 'Oxidation'},
+ 'Oxidized Beacon Shield': {'resources':[endeavor_img, '1 x Beacon Shield', '2 x iron', '1 x hide', '3 x leather', '3 x bone', '3 x organ', '1 x black lichen', '1 x cocoon membrane'], 'innovation': 'Oxidation'},
+ 'Oxidized Lantern Dagger': {'resources':[endeavor_img, '1 x Lantern Dagger', '1 x iron', '4 x hide', '3 x leather', '3 x bone', '3 x organ', '1 x black lichen', '1 x cocoon membrane'], 'innovation': 'Oxidation'},
+ 'Oxidized Lantern Glaive': {'resources':[endeavor_img, '1 x Lantern Glaive', '1 x iron', '3 x leather', '7 x bone', '3 x organ', '1 x black lichen', '1 x cocoon membrane'], 'innovation': 'Oxidation'},
+ 'Oxidized Ring Whip': {'resources':[endeavor_img, '1 x Ring Whip', '1 x iron', '3 x leather', '3 x bone', '7 x organ', '1 x black lichen', '1 x cocoon membrane'], 'innovation': 'Oxidation'},
+ 'Oxidized Lantern Helm': {'resources':[endeavor_img, '1 x Lantern Helm', '1 x iron', '3 x leather', '7 x bone', '3 x organ', '1 x black lichen', '1 x cocoon membrane'], 'innovation': 'Oxidation'},
+
 }
 
 module.exports = {

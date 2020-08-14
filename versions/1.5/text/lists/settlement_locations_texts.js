@@ -45,12 +45,13 @@ const texts = {
    'label':'',
   'campaign': 'Lantern',
   'gear': {
-   '1': [],
-   '2': ['Survivors Lantern'],
-   '3': []},
+   '1': ['Survivors Lantern'],
+   '2': ['Oxidized Lantern Sword','Oxidized Beacon Shield','Oxidized Lantern Dagger'],
+   '3': ['Oxidized Lantern Glaive','Oxidized Ring Whip','Oxidized Lantern Helm']},
   'action': true,
   'num_actions': 3,
  },
+
  'Gormchymist': {
    'label':'',
   'expansion': 'gorm',
