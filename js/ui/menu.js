@@ -528,55 +528,55 @@ function createReference () {
     },
     optgroups: [{
       value: 'random draws',
-      label: 'Random Draws',
+      label: tooltips['random draws'].text,
     },
     {
       value: 'abilities',
-      label: 'Abilities/Impairments',
+      label: tooltips['abilities'].text,
     },
     {
       value: 'fighting arts',
-      label: 'Fighting Arts',
+      label: tooltips['fighting arts'].text,
     },
     {
       value: 'disorders',
-      label: 'Disorders',
+      label: tooltips['disorders'].text,
     },
     {
       value: 'secret fighting arts',
-      label: 'Secret Fighting Arts',
+      label: tooltips['secret fighting arts'].text,
     },
     {
       value: 'survivor statuses',
-      label: 'Survivor Statuses',
+      label: tooltips['survivor statuses'].text,
     },
     {
       value: 'settlement events',
-      label: 'Settlement Events',
+      label: tooltips['settlement events'].text,
     },
     {
       value: 'settlement locations',
-      label: 'Settlement Locations',
+      label: tooltips['settlement locations'].text,
     },
     {
       value: 'glossary',
-      label: 'Glossary',
+      label: tooltips['glossary'].text,
     },
     {
       value: 'armor sets',
-      label: 'Armor Sets',
+      label: tooltips['armor sets'].text,
     },
     {
       value: 'innovations',
-      label: 'Innovations',
+      label: tooltips['innovations'].text,
     },
     {
       value: 'resources',
-      label: 'Resources',
+      label: tooltips['resources'].text,
     },
     {
       value: 'terrain',
-      label: 'Terrain',
+      label: tooltips['terrain'].text,
     },
     ],
     optgroupField: 'class',
@@ -833,9 +833,18 @@ function updateInnovationsList() {
 
   var selectize_innovations = $('#innovations-list-window').selectize({
     options: options,
+    render: {
+        option: function (item, escape) {
+          if (item.label_eng != item.label) {
+            return '<div class="option" data-value="'+item.value+'">'+ escape(item.label) + ((item.group_name == '')? '': ' <small style="color:#660;">('+escape(item.group_name)+')</small>')+' - <div style="color:#666;display:inline;font-size:0.9em;">'+escape(item.label_eng)+'</div>'+'</div>'
+          } else {
+            return '<div class="option" data-value="'+item.value+'">'+ escape(item.label) + ((item.group_name == '')? '': ' <small style="color:#660;">('+escape(item.group_name)+')</small>')+'</div>'
+          }
+        },
+    },
     optgroups: [{
       value: 'innovations',
-      label: 'Innovations',
+      label: tooltips['innovations'].text,
     },
     ],
     optgroupField: 'class',
@@ -978,9 +987,18 @@ function updateLocationsList() {
 
   var selectize_locations = $('#locations-list-window').selectize({
     options: options,
+    render: {
+        option: function (item, escape) {
+          if (item.label_eng != item.label) {
+            return '<div class="option" data-value="'+item.value+'">'+ escape(item.label) + ((item.group_name == '')? '': ' <small style="color:#660;">('+escape(item.group_name)+')</small>')+' - <div style="color:#666;display:inline;font-size:0.9em;">'+escape(item.label_eng)+'</div>'+'</div>'
+          } else {
+            return '<div class="option" data-value="'+item.value+'">'+ escape(item.label) + ((item.group_name == '')? '': ' <small style="color:#660;">('+escape(item.group_name)+')</small>')+'</div>'
+          }
+        },
+    },
     optgroups: [{
       value: 'settlement locations',
-      label: 'Settlement Locations',
+      label: tooltips['settlement locations'].text,
     },
     ],
     optgroupField: 'class',
@@ -1035,13 +1053,23 @@ function updateBookmarksList() {
     options: options,
     optgroups: [{
       value: 'bookmarks',
-      label: 'Bookmarks',
+      label: tooltips['bookmarks'].text,
     },
     ],
+    // render: {
+    //     option: function an96(item, escape) {
+    //       let condition = getTerms('bookmarks')[item.value]['condition_text']
+    //       return '<div class="option" data-value="'+item.value+'" style="color:#fff;">'+ escape(item.name) + ' - <small style="color:#ccc;">'+condition+'</small></div>'
+    //     },
+    // },
     render: {
-        option: function an96(item, escape) {
+        option: function (item, escape) {
           let condition = getTerms('bookmarks')[item.value]['condition_text']
-          return '<div class="option" data-value="'+item.value+'" style="color:#fff;">'+ escape(item.name) + ' - <small style="color:#ccc;">'+condition+'</small></div>'
+          if (item.label_eng != item.label) {
+            return '<div class="option" data-value="'+item.value+'">'+ escape(item.label) + ((item.group_name == '')? '': ' <small style="color:#660;">('+escape(item.group_name)+')</small>')+' - <div style="color:#666;display:inline;font-size:0.9em;">'+escape(item.label_eng)+'</div>'+' - <small style="color:#ccc;">'+condition+'</small></div>'
+          } else {
+            return '<div class="option" data-value="'+item.value+'">'+ escape(item.label) + ((item.group_name == '')? '': ' <small style="color:#660;">('+escape(item.group_name)+')</small>')+' - <small style="color:#ccc;">'+condition+'</small></div>'
+          }
         },
     },
     optgroupField: 'class',

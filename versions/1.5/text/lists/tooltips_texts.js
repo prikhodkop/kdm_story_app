@@ -377,6 +377,67 @@ const texts = {
    'text': '<b style="color:#cc0;">Double click</b> to hide event.'
  },
 
+ 'hunt_random_event_popup_text': {
+   'text': 'Click icon or type hunt event number',
+ },
+
+ 'random draws': {
+   'text': 'Random Draws',
+ },
+
+ 'abilities': {
+   'text': 'Abilities/Impairments',
+ },
+
+ 'fighting arts': {
+   'text': 'Fighting Arts',
+ },
+
+ 'disorders': {
+   'text': 'Disorders',
+ },
+
+ 'secret fighting arts': {
+   'text': 'Secret Fighting Arts',
+ },
+
+ 'survivor statuses': {
+   'text': 'Survivor Statuses',
+ },
+
+ 'settlement events': {
+   'text': 'Settlement Events',
+ },
+
+ 'settlement locations': {
+   'text': 'Settlement Locations',
+ },
+
+ 'glossary': {
+   'text': 'Glossary Terms',
+ },
+
+ 'armor sets': {
+   'text': 'Armor Sets',
+ },
+
+ 'innovations': {
+   'text': 'Innovations',
+ },
+
+ 'resources': {
+   'text': 'Resources',
+ },
+
+ 'terrain': {
+   'text': 'Terrain',
+ },
+
+ 'bookmarks': {
+   'text': 'Bookmarks',
+ },
+
+
  // tooltips['action_card'].text
 }
 

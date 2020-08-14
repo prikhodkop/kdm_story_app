@@ -184,7 +184,7 @@ function get_options (data, type, filter=false) {
    } else {
      name = key
    }
- let search_name = name + ' ' + data[key]['label_eng'] + type+ (('group_name' in data[key])? ' '+data[key].group_name: '')
+ let search_name = name + ' ' + data[key]['label_eng'] + type+' '+tooltips[type]+ (('group_name' in data[key])? ' '+data[key].group_name: '')
  if ('type' in data[key]) {
    search_name += data[key]['type']
  }
