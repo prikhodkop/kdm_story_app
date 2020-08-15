@@ -62,6 +62,13 @@ const texts = {
     'text': '<b style="color:#cc0;">Kliknij</b> aby wyświetlić okno <b>słowniczka</b>.',
   },
 
+  'random_key': {
+    'text': 'losow',
+  },
+  'space_key': {
+    'text': 'spacja',
+  },
+
   'innovations_list': {
     'text': '<b style="color:#cc0;">Kliknij</b> aby dodać/usunąć <b>innowacje</b> osady.',
   },
@@ -80,8 +87,11 @@ const texts = {
   'actions_word': {
     'text': 'Akcje'
   },
+  'survival_actions_word': {
+    'text': 'Akcje'
+  },
   'search_word': {
-    'text': 'Szukaj'
+    'text': 'Szukaj...'
   },
   'type_term': {
     'text': 'Wpisz hasło'
@@ -122,24 +132,19 @@ const texts = {
   'settlement_has_5_innovations': {
     'text': 'Osada wprowadza 5 innowację'
   },
-  'principle_new_life': {
-    'text': 'Doktryna: Nowe zycie'
-  },
-  'principle_death': {
-    'text': 'Doktryna: Śmierć'
-  },
-  'principle_society': {
-    'text': 'Doktryna: Społeczeństwo'
-  },
-  'principle_conviction': {
-    'text': 'Doktryna: Przekonania'
-  },
-  'space': {
-    'text': 'Spacja'
-  },
-  'random': {
-    'text': 'losow'
-  },
+  // 'principle_new_life': {
+  //   'text': 'Doktryna: Nowe zycie'
+  // },
+  // 'principle_death': {
+  //   'text': 'Doktryna: Śmierć'
+  // },
+  // 'principle_society': {
+  //   'text': 'Doktryna: Społeczeństwo'
+  // },
+  // 'principle_conviction': {
+  //   'text': 'Doktryna: Przekonania'
+  // },
+
 
   // ŁOWY
 
@@ -224,7 +229,7 @@ const texts = {
    'text': '<b style="color:#cc0;">Przenieś</b> Ocalałych aby kontynuować <b>łowy</b>.</br></br><i><b style="color:#cc0;">Kliknij</b> na wydarzenie aby je wyłączyć/włączyć.</i>',
  },
  'forest_wants_what_it_wants': {
-   'text': '<b>The Forest Wants What it Wants</b>',
+   'text': '<b>Las chce czego chce</b>',
  },
  'overwhelming_darkness': {
    'text': '<b>Przytłaczająca ciemność</b>',
@@ -364,6 +369,82 @@ const texts = {
  'to_settlement_text': {
    'text': 'Idź do <b>osady</b>',
  },
+
+ 'subtitles_click': {
+   'text': '<b style="color:#cc0;">Kliknij</b> aby ukryć/pokazać napisy.',
+ },
+
+ 'label_click': {
+   'text': '<b style="color:#cc0;">Kliknij</b> aby ukryć/pokazać nazwę wydarzenia.',
+ },
+ 'event_dblclick': {
+   'text': '<b style="color:#cc0;">Klijnij podwójnie</b> aby ukryć wydarzenie.'
+ },
+
+ 'hunt_random_event_popup_text': {
+   'text': 'Kliknij na ikonę lub wprowadź numer wydarzenia na łowach',
+ },
+
+ 'padSubmit': {
+   'text': 'wyślij',
+ },
+
+ 'random draws': {
+   'text': 'Losowe karty',
+ },
+
+ 'abilities': {
+   'text': 'Umiejętności/upośledzenia',
+ },
+
+ 'fighting arts': {
+   'text': 'Sztuki walki',
+ },
+
+ 'disorders': {
+   'text': 'Zaburzenia',
+ },
+
+ 'secret fighting arts': {
+   'text': 'Sekretne sztuki walki',
+ },
+
+ 'survivor statuses': {
+   'text': 'Statusy Ocalałych',
+ },
+
+ 'settlement events': {
+   'text': 'Wydarzenia osady',
+ },
+
+ 'settlement locations': {
+   'text': 'Lokacje osady',
+ },
+
+ 'glossary': {
+   'text': 'Słowniczek',
+ },
+
+ 'armor sets': {
+   'text': 'Zestawy pancerzy',
+ },
+
+ 'innovations': {
+   'text': 'Innowacje',
+ },
+
+ 'resources': {
+   'text': 'Zasoby',
+ },
+
+ 'terrain': {
+   'text': 'Tereny',
+ },
+
+ 'bookmarks': {
+   'text': 'Zakładki',
+ },
+
 
 
  // tooltips['action_card'].text
