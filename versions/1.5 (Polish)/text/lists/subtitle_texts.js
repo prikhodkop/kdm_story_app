@@ -87,28 +87,28 @@ const texts = {
   //     'text': 'Another day in the settlement.'
   // },
   'showdown butcher': {
-      'text': 'There was once a man who could not hide his fear. He wore a mask that transformed his cowardice to rage. In turn, the man transformed into a monster. All that remained was a devouring fury that stalked the night, collecting the fearful faces of others.'
+      'text': 'Był kiedyś człowiek, który nie potrafił ukryć swojego strachu. Nosił maskę, która zmieniała jego tchórzostwo w furię. Zmieniło to mężczyznę w potwora. Aż pozostała tylko niszcząca furia, nocny prześladowca kolekcjonujący przerażone twarze.'
   },
   'showdown gold smoke knight': {
-      'text': 'A mantle of ash falls over the settlement. As the survivors gather, a roasting gust of cinder blazes through the crowd. The smell of lingering hair and skin stings their nostrils. A flash of light splits the darkness, illuminating the approaching shape of an enormous knight holding a massive ornate maul. Great plumes of inky smoke pour from every gap of the knight’s golden armor. The Gold Smoke Knight speaks in an unknown language, a hollow metallic voice echoing from its armor. It stands at ease, awaiting its challengers.'
+      'text': 'Na osadę opada całun popiołu. Gdy Ocalali się gromadzą, podmuchy płonącego żużlu buchają w tłum. Zapach przypalanych włosów i skóry uderza w nozdrza. Błysk światła rozświetla ciemność, ukazując ogromny kształt zbliżającego się kondotiera, ściskającego masywny, ozdobny młot. Wielkie pióropusze atramentowego dymu, wylewają się z każdej szczeliny złocistego pancerza. Złoty Kondotier przemawia w nieznanym języku. Donośny, metaliczny głos, dudni echem w jego pancerzu. Jest spokojny, czeka na swoich przeciwników.'
   },
   'showdown kings man': {
-      'text': 'There was once a monster that was to lead its master’s regal procession. First the monster came as a herald, then its hungry masters. So fierce were the monster’s masters that it never thought to protect its own back, knowing what horrors lay behind it.'
+      'text': 'Był kiedyś potwór, który miał poprowadzić królewską procesję swojego pana. Najpierw przybył potwór jako herold, następnie jego głodni panowie. Pan potwora był tak potężny, że nigdy nie myślał o obronie swoich pleców, wiedząc, jaki pełen grozy stwór stoi za nim.'
   },
   'showdown phoenix': {
-      'text': 'The Phoenix fills the horizon of your mind. Complex and disturbing, your very essence seems to flicker like a dying lantern. A perfect mixture of excitement and dread shakes up your insides. Before you realise it, you find yourself stepping forward to battle.'
+      'text': 'Feniks wypełnił ci umysł aż po horyzonty. Twoje jestestwo przepełnione niepokojem, zdaje się migotać niczym umierająca latarnia. Miesza się w tobie idealna mieszanka ekscytacji i strachu. Zanim zdasz sobie z tego sprawę, zaczynasz walczyć.'
   },
   'showdown screaming antelope': {
-      'text': 'There was once a fearsome monster that was trained by the Hand to be a steed for the Goblin. However, upon smelling its new master, the monster’s mind shattered and it ran into the unknown, foaming at the most and biting the noses off the stone faced floor.'
+      'text': 'Był kiedyś przerażający potwór, wyszkolony przez Namiestnika, by być rumakiem dla Goblina. Potwór wyczuł jednak nowego pana. Jego umysł rozpadł się, a on pomknął w nieznane, tocząc pianę z pyska i gryząc nosy kamiennych twarzy na ziemi.'
   },
   'showdown the hand': {
-      'text': 'There was once an entity that knew everything, but never spoke. For every secret that escaped, it became weaker and its enemies stronger.'
+      'text': 'Była kiedyś istota, która wiedziała wszystko, ale nigdy się nie odzywała. Z każdą tajemnicą, która uciekła, stawała się słabsza, a jej wrogowie silniejsi.'
   },
   'showdown watcher': {
-      'text': 'Long ago, ravenous beasts searched the darkness using their keen senses to find their prey. In the distance, they saw a blooming pillar of light surrounded by tasty morsels busting their tiny industry. Icing their chops, they approached. But the beasts halted mid-step. The wind carried a mould, menacing presence. Surely the busy creatures were harmless. Yet, the menacing warning persisted, felt in their very bones. Instinctively, the beasts turned away, seeking their meals elsewhere.'
+      'text': 'Dawno temu, drapieżne bestie przeszukiwały ciemność. Używały swoich bystrych zmysłów, by wytropić zdobycz. W oddali ujrzały rozkwitający słup światła, otoczony smacznymi kąskami, stworzeniami pochłoniętymi swoją pracą. Oblizując się, nadchodziły cicho. Wtem bestie zatrzymały się w pół kroku. Wiatr niósł woń odrażającej, groźnej obecności. Ruchliwe stworzenia z całą pewnością były nieszkodliwe. Jednak groźne ostrzeżenie przewiercało aż do szpiku kości. Instynktownie bestie odwróciły się i odbiegły szukając posiłku gdzie indziej.'
   },
   'showdown white lion': {
-      'text': 'There was once a beast that wanted to feel how soft its fur was. Since it could not reach its own back, it killed many other creatures and spent time rubbing its paws over them. They say that when the monster finally killed a human, it fell in love with their soft hair and its paws grew into a pair of fine human hands.'
+      'text': 'Była kiedyś bestia, która chciała poczuć, jak miękkie ma futro. Ponieważ sama nie mogła dosięgnąć własnych pleców, zabiła wiele inych stworzeń, by móc spędzać czas na drapaniu się ich łapami. Powiadają, że gdy potwór ostatecznie zabił człowieka, mógł rozkochać się w swych miękkich włosach. Ponieważ jego łapy wyrosły w parę pięknych ludzkich dłoni.'
   },
   'watched': {
       'text': 'Dark spots across the lantern hoard. A nervous hush falls over the settlement. Slowly, the most daring survivors peer past the darkened lanterns, venturing beneath them into a vast chamber, unknown and undreamed of. Slumbering in the center of the chamber, the survivors can feel a presence of immense danger. Their ultimate predator would soon wake, extinguishing the lantern light that holds the endless darkness at bay.'
