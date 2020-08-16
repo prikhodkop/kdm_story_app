@@ -967,8 +967,7 @@ Ocalali kontunuują łowy.
 `,
 
   36: `36 | Na szlaku
-Ocalali ruszają naprzód czując, że tropiona zdobycz jest już blisko. Pomiń następne pole łowów.Jeśli ten ruch rozpoczyna  starcie, Ocalali organizują <b>zasadzkę</b> na zdobycz. Jeśli którykolwiek z Ocalałych ma <b>hałaśliwy</b> ekwipunek, Oca-
-lali nie organizują zasadzki. Rozpocznij Starcie normalnie.
+Ocalali ruszają naprzód czując, że tropiona zdobycz jest już blisko. Pomiń następne pole łowów.Jeśli ten ruch rozpoczyna  starcie, Ocalali organizują <b>zasadzkę</b> na zdobycz. Jeśli którykolwiek z Ocalałych ma <b>hałaśliwy</b> ekwipunek, Ocalali nie organizują zasadzki. Rozpocznij Starcie normalnie.
 `,
 
   37: `37 | Zagubieni
