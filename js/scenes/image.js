@@ -22,6 +22,7 @@ const quaries_events = [
   'showdown dung beetle knight',
   'showdown sunstalker',
   'showdown dragon king',
+  'showdown allison the twilight knight',
   'showdown lion god',
   'showdown flower knight',
   'showdown spidicules',

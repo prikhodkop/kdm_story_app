@@ -1118,11 +1118,11 @@ const texts = {
     "label": "Showdown: Allison the Twiilight Knight",
     'expansion': 'allison ccg',
     'campaign': ['Lantern'],
-    // 'music': 'music/fresh meat.mp3',
+    'music': 'music/showdown allison the twilight knight.mp3',
     'type': 'image',
     'ltop': '60%',
     // 'lleft': '28%',
-    'music_delay': 'speech-1000',
+    'music_delay': 'speech-500',
 
   },
 
@@ -1132,7 +1132,7 @@ const texts = {
     'campaign': ['Lantern'],
     // 'music': 'music/fresh meat.mp3',
     'type': 'image',
-
+    'music': 'music/the duel.mp3',
     'music_delay': 'speech-1000',
     'speech': '#',
   },
@@ -1141,6 +1141,7 @@ const texts = {
     'campaign': ['Lantern'],
     // 'music': 'music/fresh meat.mp3',
     'type': 'image',
+    'music': 'music/return of the order.mp3',
     // 'ltop': '25%',
     // 'lleft': '28%',
     'music_delay': 'speech-1000',
@@ -1148,20 +1149,20 @@ const texts = {
   'return of the order': {
     'expansion': 'allison ccg',
     'campaign': ['Lantern'],
-    // 'music': 'music/fresh meat.mp3',
+    'music': 'music/the order.mp3',
     'type': 'image',
     // 'ltop': '25%',
     // 'lleft': '28%',
-    'music_delay': 'speech-1000',
+    'music_delay': 'speech-2000',
   },
   'who watches the watcher': {
     'expansion': 'allison ccg',
     'campaign': ['Lantern'],
-    // 'music': 'music/fresh meat.mp3',
+    'music': 'music/who watches the watcher.mp3',
     'type': 'image',
     // 'ltop': '25%',
     // 'lleft': '28%',
-    'music_delay': 'speech-1000',
+    'music_delay': 'speech-2000',
   },
 
 
