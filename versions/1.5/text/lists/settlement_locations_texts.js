@@ -379,6 +379,18 @@ const texts = {
    '2': ['Oxidized Beast Katar'],
    '3': []},
  },
+
+ 'Bronzesmith': {
+   'label':'Bronzesmith',
+   'expansion': 'allison ccg',
+   'action': true,
+'armor_set': 'Bronze Armor',
+  'gear': {
+   '1': ['Bronze Gauntlets', 'Bronze Cuirass', 'Bronze Greaves'],
+   '2': ['Bronze Sword', 'Twilight Knight Amulet'],
+   '3': []},
+
+ },
 }
 
 module.exports = {

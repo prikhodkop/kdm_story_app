@@ -200,6 +200,19 @@ const texts = {
 
 'Hooked Claw': {'type':'bone', 'group_name':'White Gigalion, Strange', 'text': '<i>Stained with flecks of ancient dried blood and bits of ossified hair.</i>'},
 
+'Allisons Legacy': {'label':'Allison\'s Legacy', 'type': 'hide/other', 'group_name':'Strange',
+                'text': '<i>A personal account detailing the selfless work of Allison, the Twilight Knight.</i><br/><br/>During the settlement phase, a survivor may spend {image@images/icons/endeavors} to read from the book. The secrets within are so profound, they gain the <b>Fear of the Dark</b> disorder.<br/><br/>If the book is read, all <b>Apprentices</b> gain +1 permanent strength. If a survivor with Twilight Sword proficiency has 8 weapon XP, they gain <b>Twilight Sword Mastery</b>.<br/><br/>Archive this card.'},
+'Copper': {'type': 'scrap', 'group_name':'Strange',
+                'text': '<i>Rarer than iron.</i>'},
+'Lantern Nerve Bundle': {'type': 'organ/consumable', 'group_name':'Strange',
+                'text': 'Archive this to put on an electrifying display of strength.<br/><br/><b style=\"color:#cc0;\">1-3</b><div style="font-size:0.9em;display: inline;"> - Lose 1 weapon proficieny level.</div><br /><b style=\"color:#cc0;\">4-8</b><div style="font-size:0.9em;display: inline;"> - gain +1 permanent strength.</div><br /><b style=\"color:#cc0;\">9+</b><div style="font-size:0.9em;display: inline;"> - Suffer 2 brain damage. Your Fist&Tooth attack gains <b>devastating</b> for the next showdwon with a quarry.</div>'},
+'Skeletal Shards': {'type': 'bone', 'group_name':'Strange',
+                'text': '<i>The pulsating, blue marrow appears soft and malleable, before hardening.</i><br/><br/>Skeletal Shards may be substituted in any recipe that requires a monster specific bone.'},
+'Watcher Jelly': {'type': 'organ/consumable', 'group_name':'Strange',
+                'text': '<b>Apply</b>: Archive this and roll <b>1d10</b>.<br/><br/><b style=\"color:#cc0;\">1-3</b><div style="font-size:0.9em;display: inline;"> - The substance hardens uncomfortably. Suffer -1 permanent movement.</div><br /><b style=\"color:#cc0;\">4-8</b><div style="font-size:0.9em;display: inline;"> - It hardens into a strong shell. When you <b>depart</b>, add +3 armor to the body location.</div><br /><b style=\"color:#cc0;\">9+</b><div style="font-size:0.9em;display: inline;"> - Gain +1 permanent evasion.</div>'},
+'Whispering Whetstone': {'type': 'scrap/other', 'group_name':'Strange',
+                'text': '<i>It whispers only to you.</i><br/><br/>{image@images/icons/endeavors}: Archive this to give one axe, sword, dagger, scythe, katana, or katar gear in the settlement storage <b>sharp</b>. Lasts until end of the next showdown. After archiving gain 1 <b>iron</b> strange resource.'},
+
 }
 
 module.exports = {

@@ -376,7 +376,11 @@ function get_representation_int (word) {
   let weapons = ['Axe', 'Bow', 'Club', 'Dagger', 'Fist & Tooth', 'Grand', 'Katana', 'Katar', 'Scythe', 'Shield', 'Spear', 'Sword', 'Twilight Sword', 'Whip', 'Thrown']
 
   if (weapons.includes(word)) {
-   result = result + '<br/><br/><img id=reference-image style="width:100%;" src="' + pathToAssetL('images/reference/Weapon Masteries/' + word + '.png') + '"/>'
+    if ((word == 'Twilight Sword')&&(getSettings()['expansions']['allison ccg'] == 'All content')) {
+      result = result + '<br/><br/><i>Spec and mastery modified by Allison the Twilight Knight (CCG) expansion.<br/><br/><img id=reference-image style="width:100%;" src="' + pathToAssetL('images/reference/Weapon Masteries/Twilight Sword_allison.png') + '"/>'
+    } else {
+        result = result + '<br/><br/><img id=reference-image style="width:100%;" src="' + pathToAssetL('images/reference/Weapon Masteries/' + word + '.png') + '"/>'
+    }
   }
 
   return result

@@ -292,6 +292,23 @@ const texts = {
    'group_name': 'Rust',
    'description': 'Your bleeding tokens are also +1 evasion tokens.',
  },
+
+ 'Archivist': {
+   // 'label': 'Way of the Rust',
+   'expansion': 'allison ccg',
+   'description': 'If the bearer of the <b>Twilight Sword</b> dies, retires, or reaches Twilight Sword Mastery, nominate another survivor. They gain the <b>Twilight Sword</b> rare gear, the Twilight Sword proficiency, and half the Weapon XP of the previous bearer of the <b>Twilight Sword</b>, rounded up.',
+ },
+
+ 'Loyal to the Order': {
+   // 'label': 'Way of the Rust',
+   'expansion': 'allison ccg',
+   'description': 'You can only encourage other <b>Apprentices</b>.<br/>During the showdown, if another <b>Apprentice</b> in on the showdown board, you may spend their survival instead of your own.<br/><br/>When you defear a level 3+ monster, you ignore <b>cursed</b> on the <b>Relic Hood</b> rare gear.',
+ },
+ 'Twilight Deserter': {
+   'type': 'impairment',
+   'expansion': 'allison ccg',
+   'description': 'When you gain this impairment, if you do not ignore <b>cursed</b> on the <b>Relic Hood</b>, flip it to the <b>Tattered Relic Hood</b> side.<br/><br/>When the settlement gains the <b>Mumbling Blade</b> innovation</b>, you steal it and flee. Archive <b>Mumbling Blade</b>.<br/>You are exiled and never return.',
+ },
 }
 
 module.exports = {

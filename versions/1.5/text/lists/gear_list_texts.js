@@ -346,6 +346,12 @@ var texts = {
  'Oxidized Ring Whip': {'resources':[endeavor_img, '1 x Ring Whip', '1 x iron', '3 x leather', '3 x bone', '7 x organ', '1 x black lichen', '1 x cocoon membrane'], 'innovation': 'Oxidation'},
  'Oxidized Lantern Helm': {'resources':[endeavor_img, '1 x Lantern Helm', '1 x iron', '3 x leather', '7 x bone', '3 x organ', '1 x black lichen', '1 x cocoon membrane'], 'innovation': 'Oxidation'},
 
+
+ 'Bronze Cuirass': {'resources':['2 x copper', '1 x iron', '2 x leather'], 'set':['Bronze']},
+ 'Bronze Gauntlets': {'resources':['2 x copper', '1 x leather'], 'set':['Bronze']},
+ 'Bronze Sword': {'resources':['1 x copper', '2 x bone', '1 x leather'], 'innovation': 'Heat'},
+ 'Bronze Greaves': {'resources':['2 x copper', '1 x leather'], 'set':['Bronze']},
+ 'Twilight Knight Amulet': {'resources':['1 x copper', '1 x scrap'], 'innovation': 'Heat'},
 }
 
 module.exports = {

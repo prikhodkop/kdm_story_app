@@ -176,6 +176,27 @@ const texts = {
    'expansion': 'storm knight',
    // 'action': true,
  },
+
+ 'Coming of Age': {
+   'label':'Coming of Age',
+  'expansion': 'allison ccg',
+ },
+ 'Training Day': {
+   'label':'Training Day',
+  'expansion': 'allison ccg',
+  'action': true,
+  'num_actions': 1,
+  'action_enabler': {
+    0: {'innovation': ['Symposium']},
+  },
+  'passive':{
+    'settlement': [
+      '<b class="event-text">[Event]</b> The cacophony of training overwhelms all sounds of rhythm and prevents <b class="music-text">Music</b> endeavors.',
+      '<b class="event-text">[Event]</b> The training display inspires all. +1 to the result of <b>Nightmare Training</b> endeavors.',
+    ]
+  },
+
+ },
 }
 
 module.exports = {

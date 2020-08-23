@@ -1112,8 +1112,60 @@ const texts = {
     'ltop': '25%',
     'lleft': '28%',
     'music_delay': 'speech-1000',
+  },
+
+  'showdown allison the twilight knight': {
+    "label": "Showdown: Allison the Twiilight Knight",
+    'expansion': 'allison ccg',
+    'campaign': ['Lantern'],
+    // 'music': 'music/fresh meat.mp3',
+    'type': 'image',
+    'ltop': '60%',
+    // 'lleft': '28%',
+    'music_delay': 'speech-1000',
+
+  },
+
+  'the duel': {
+
+    'expansion': 'allison ccg',
+    'campaign': ['Lantern'],
+    // 'music': 'music/fresh meat.mp3',
+    'type': 'image',
+
+    'music_delay': 'speech-1000',
     'speech': '#',
-  }
+  },
+  'the order': {
+    'expansion': 'allison ccg',
+    'campaign': ['Lantern'],
+    // 'music': 'music/fresh meat.mp3',
+    'type': 'image',
+    // 'ltop': '25%',
+    // 'lleft': '28%',
+    'music_delay': 'speech-1000',
+  },
+  'return of the order': {
+    'expansion': 'allison ccg',
+    'campaign': ['Lantern'],
+    // 'music': 'music/fresh meat.mp3',
+    'type': 'image',
+    // 'ltop': '25%',
+    // 'lleft': '28%',
+    'music_delay': 'speech-1000',
+  },
+  'who watches the watcher': {
+    'expansion': 'allison ccg',
+    'campaign': ['Lantern'],
+    // 'music': 'music/fresh meat.mp3',
+    'type': 'image',
+    // 'ltop': '25%',
+    // 'lleft': '28%',
+    'music_delay': 'speech-1000',
+  },
+
+
+
 }
 
 module.exports = {

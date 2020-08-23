@@ -103,6 +103,9 @@ const texts = {
    'label': 'Shadow Armor',
    'expansion': 'trial of champions'
  },
+ 'Bronze Armor': {
+   'expansion': 'allison ccg'
+ },
 }
 
 module.exports = {

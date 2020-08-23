@@ -639,6 +639,30 @@ var settings_schema = {
           'All content',
         ],
       },
+      'allison ccg': {
+        'type': 'option',
+        'group': 'fan',
+        'title': 'Allison the Twilight Knight (CCG)',
+        'default': 'Disabled',
+        'description': `Clad in dark bronze armor and robed in deep hooded cloaks, the
+                        Twilight Knights stand on the edge of the known world, their lives
+                        devoted to battling foul creatures and horrifying abominations to
+                        shield the weak from such peril.<br/><br/>
+                        Allison was once like you, a survivor outmatched by the terrors of
+                        a dark world. Now, those terrors flee from her lantern light. She
+                        has walked the road of plenty and need, pleasure and pain, gain
+                        and loss. Nothing ever came to Allison without a fight, a lesson
+                        the players will soon learn.<br/><br/>
+                        Allison matches the players’ survival abilities with her own. She
+                        is deadly and unpredictable, preparing players to confront a
+                        more challenging Watcher, should players mishandle the Twilight
+                        Sword. For those survivors who prove their worth, a new life in
+                        the Twilight Order awaits them.`,
+        'enum': [
+          'Disabled',
+          'All content',
+        ],
+      },
       'butcher intro': {
         'type': 'option',
         'group': 'fan',

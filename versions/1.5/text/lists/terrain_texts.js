@@ -96,6 +96,11 @@ const texts = {
    'description': '#',
   'expansion': 'storm knight'
  },
+ 'Mineral Vein': {
+   'label':'',
+   'description': '#',
+  'expansion': 'allison ccg'
+ },
 }
 
 module.exports = {

@@ -98,6 +98,14 @@ module.exports = class ImageScene {
        img_path = img_path.replace('.jpg', '_wb.jpg')
     }
 
+    if ((myself == 'hooded knight') && (settings['expansions']['allison ccg'] == 'All content')) {
+      img_path = 'images/story events/content/hooded knight_allison.jpg'
+    }
+
+    if ((myself == 'showdown watcher') && (settings['expansions']['allison ccg'] == 'All content')) {
+      img_path = 'images/story events/content/showdown watcher_allison.jpg'
+    }
+
     // if ((myself == 'intimacy') && (settings['campaign'] == 'Stars')) {
     //   img_back = img_back.replace('.jpg', '_stars.jpg')
     //   img_path = img_path.replace('.jpg', '_stars.jpg')

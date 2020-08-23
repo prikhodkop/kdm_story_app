@@ -251,6 +251,11 @@ const texts = {
   'label': 'Wardrobe Expert',
   "description": "When you suffer a severe injury at a hit location, you may archive a gear worn at that location to ignore it and gain +1 survival.",
  },
+
+ 'Quick Strike': {
+  'expansion': 'allison ccg',
+  "description": "During your act, you may spend {image@images/icons/movement}and{image@images/icons/activation} to full move forward in a straight line. If you do, and you moved 5+ spaces with the last 2 spaces of movement adjacent to the monster roll 1d10. On a result 5+, place the survivor in the monster\'s blind spot and the monster suffers 1 wound. Otherwise, gain 2 bleeding tokens.",
+ },
 }
 
 module.exports = {

@@ -877,6 +877,39 @@ const texts = {
   'campaign': 'hidden',
   'label': 'Rubedo, survivor with True Blade'
 },
+
+'Initiation': {
+ 'label': '',
+ 'tags': ['other'],
+ 'action': true,
+
+ 'passive': {
+   'settlement': [
+     'Once per lanter year, during the <b>Develop</b> step, you may remove 1 consumable resource from settlement storage and place it on the Initiates\' survivor sheets as <b>Supplies</b>',
+     'At the end for each settlement phase, roll 1d10. On a result of 1-3 archive 1 resource from the <b>Supplies</b>, otherwise 1 Initiate dies of starvation. If all initiates are dead, remove <b>Remove of the Order</b> event from the timeline.',
+   ],
+ }
+},
+
+'Muttering Blade': {
+ 'label': '',
+ 'tags': ['other'],
+ 'action': true,
+
+ 'passive': {
+   'all': [
+     'In any survivor becomes the bearer of the Twilight Sword, archive <b>Muttering Blade</b> innovation.',
+   ],
+ }
+},
+
+'The Order is Watching': {
+ 'label': '',
+ 'action': true,
+
+ 'tags': ['other'],
+},
+
 }
 
 module.exports = {

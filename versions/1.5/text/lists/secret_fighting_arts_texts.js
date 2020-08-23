@@ -151,6 +151,11 @@ const texts = {
   'expansion': 'storm knight',
   "description": "At the start of your act, if you have 0 survival, roll 1d10. On a 6+, gain a <b>Charge</b> token that may be placed on this card or any gear that uses <b>Charge</b> tokens. When you are <b>knocked down</b>, remove all <b>Charge</b> tokens from this card.<br/><br/>When this card had 3+ <b>Charge</b> tokens, you may remove them all to gain +1 survival and +1 movement token.",
  },
+
+ 'Survivorship': {
+  'expansion': 'allison ccg',
+  "description": "On Arrival, randomly select 1 of your survival actions. For that action, it costs you 1 less survival to perform for the remainder of the showdown.",
+ },
 }
 
 module.exports = {

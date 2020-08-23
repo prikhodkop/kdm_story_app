@@ -234,6 +234,11 @@ const texts = {
   'label': 'Static Conductor',
   "description": "Whenever you suffer damage to the <b>Legs</b> location, you are <b>knocked down</b> and suffer <b>knockback 3</b>.",
  },
+
+ 'Impetous': {
+  'expansion': 'allison ccg',
+  "description": "<i style='color:#aaa;'>Your overconfidence is your weakness.</i><br/><br/>You must always <b>depart</b>, unless you are forced to skip next hunt.<br/>If you <b>retire</b>, you would rather face exile. You are dead.",
+ },
 }
 
 module.exports = {
