@@ -54,7 +54,7 @@ const texts = {
    'label':'',
    'passive':{
      'settlement': [
-       '<b class="event-text">[Event]</b> The storm prevents <b class="science-text">Science</b> and <b class="education-text">Education</b> Endeavors.',
+       '<b class="event-text">[Event]</b> Glossolalia prevents <b class="science-text">Science</b> and <b class="education-text">Education</b> Endeavors.',
        // '<b class="event-text">[Event]</b> The storm prevents <b class="education-text">Education</b> Endeavors.',
      ]
    },

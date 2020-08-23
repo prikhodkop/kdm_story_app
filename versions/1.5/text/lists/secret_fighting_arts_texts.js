@@ -1,3 +1,5 @@
+const event_img = imageHTML('images/icons/book', '0.9em;display:inline;vertical-allign:bottom')
+
 const texts = {
  'Acanthus Doctor': {
   'expansion': 'flower knight',
@@ -70,7 +72,7 @@ const texts = {
  'Hellfire': {
   'expansion': 'sunstalker',
   'label': 'Hellfire',
-  "description": "You cannot lose or remove this fighting art. Gain +1 strength for each red affinity you have. You cannot be nominated for <b>Intimacy</b>. You ignore <b>Extreme Heat</b>. At the start of your act, lose 1 survival. At the end of your act, if your survival is 0 or you have any +1 strength tokens, your organs cook themselves and you die.",
+  "description": "You cannot lose or remove this fighting art. Gain +1 strength for each red affinity you have. You cannot be nominated for "+event_img+"<b>Intimacy</b>. You ignore <b>Extreme Heat</b>. At the start of your act, lose 1 survival. At the end of your act, if your survival is 0 or you have any +1 strength tokens, your organs cook themselves and you die.",
  },
  'Immovable Object': {
   'expansion': 'gorm',

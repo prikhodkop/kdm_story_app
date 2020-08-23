@@ -1,3 +1,5 @@
+const event_img = imageHTML('images/icons/book', '0.9em;display:inline;vertical-allign:bottom')
+
 const texts = {
  'Abyssal Sadist': {
   'expansion': 'manhunter',
@@ -78,7 +80,7 @@ const texts = {
   'expansion': 'echoes of death',
   'type': 'strain',
   'label': 'Ethereal Pact',
-  "description": "Add +3 to your brain trauma rolls.<br/><br/>When you suffer the <b>Impossible!</b> brain trauma, the fungus in your head connects to the dreaming. Read <b>Birth of a Savior</b> story event and choose a dream. (if you\'ve already reached Age 2, you cannot gain your dream\'s secret fighting art)<br/><br/>If you are a Savior, this Fighting Art has no effect."
+  "description": "Add +3 to your brain trauma rolls.<br/><br/>When you suffer the <b>Impossible!</b> brain trauma, the fungus in your head connects to the dreaming. Read "+event_img+"<b>Birth of a Savior</b> and choose a dream. (if you\'ve already reached Age 2, you cannot gain your dream\'s secret fighting art)<br/><br/>If you are a Savior, this Fighting Art has no effect."
  },
  'Extra Sense': {
    'label': 'Extra Sense',

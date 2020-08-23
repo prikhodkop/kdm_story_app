@@ -22,7 +22,7 @@ const quaries_events = [
   'showdown dung beetle knight',
   'showdown sunstalker',
   'showdown dragon king',
-  'showdown allison the twilight knight',
+  // 'showdown allison the twilight knight',
   'showdown lion god',
   'showdown flower knight',
   'showdown spidicules',
@@ -499,6 +499,37 @@ module.exports = class ImageScene {
             contentAsHTML: 'true',
             animation: 'grow',
             content: tooltips['return_button_settlement_new'].text, //'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b><br/><br/>This will start new <b>Lantern Year</b>.',
+            position: 'bottom',
+            delay: [300, 100],
+            fixedWidth: 250,
+            trigger: 'custom',
+            triggerOpen: {
+              mouseenter: true,
+              // click: true
+            },
+            triggerClose: {
+              click: true,
+              mouseleave: true
+            }
+          });
+        // return_button.hide()
+        $('#container').append(return_button)
+        // return_button.delay(1000).fadeIn(2000)
+        $('#container').on('click', '.settlement_return_button.to_settlement', function () {
+          setTransition('settlement', 'menu', name, current_state())
+        });
+      }
+
+      if (name.includes('showdown allison the twilight knight')) {
+        let return_button = $('<button>', {
+          // id: 'settlement_return_button',
+          class: 'settlement_return_button to_settlement hoverable'
+        })
+        return_button.html(tooltips['unfinished_business_text'].text)
+        return_button.tooltipster({
+            contentAsHTML: 'true',
+            animation: 'grow',
+            content: tooltips['unfinished_business_tooltip'].text, //'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b><br/><br/>This will start new <b>Lantern Year</b>.',
             position: 'bottom',
             delay: [300, 100],
             fixedWidth: 250,

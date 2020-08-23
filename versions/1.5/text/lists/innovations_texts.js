@@ -2,6 +2,7 @@
 const endeavor_img = imageHTML('images/icons/endeavors', '0.9em;display:inline;opacity:0.8;vertical-allign:bottom')
 const movement_img = imageHTML('images/icons/movement', '0.9em;display:inline;opacity:0.8;vertical-allign:bottom')
 const activation_img = imageHTML('images/icons/activation', '0.9em;display:inline;opacity:0.8;vertical-allign:bottom')
+const event_img = imageHTML('images/icons/book', '0.9em;display:inline;vertical-allign:bottom')
 
 const texts = {
  'Albedo': {
@@ -220,7 +221,7 @@ const texts = {
       'All <b>departing</b> survivors gain +$1$ survival.'
     ],
     'settlement': [
-      'Survivors nominated for <b class="event">Intimacy</b> may give themselves a surname if they  do not have one.'
+      'Survivors nominated for '+event_img+'<b class="event">Intimacy</b> may give themselves a surname if they  do not have one.'
     ],
     'newborn': [
       'A newborn survivor inherits the surname of one parent, their weapon type, and half (rounded down) of their weapon proficiency levels.'
@@ -401,10 +402,10 @@ const texts = {
   'tags': ['art', 'paint'],
   'passive': {
     'showdown': [
-      'At the start of a survivors\'s act they may decide to skip their act and - <b class="event-trigger" target="run away">Run Away</b>.',
+      'At the start of a survivors\'s act they may decide to skip their act and - '+event_img+'<b class="event-trigger" target="run away">Run Away</b>.',
     ],
     'hunt': [
-      'After a hunt event is resolved, a survivor may decide it\'s time to go home and - <b class="event-trigger" target="run away">Run Away</b>.',
+      'After a hunt event is resolved, a survivor may decide it\'s time to go home and - '+event_img+'<b class="event-trigger" target="run away">Run Away</b>.',
     ],
   }
  },
@@ -544,7 +545,7 @@ const texts = {
       'On <b>arrival</b>, each non-deaf survivor may remove 1 negative attribute token.',
     ],
     'hunt': [
-      'During the <b class="event">Overwhelming Darkness</b> story event, each non-deaf survivor may select the Path of the Brave.',
+      'During the '+event_img+'<b class="event">Overwhelming Darkness</b>, each non-deaf survivor may select the Path of the Brave.',
     ],
   }
  },
@@ -623,7 +624,7 @@ const texts = {
     'departing': [
       'All <b>departing</b> survivors gain +$3$ survival.',
       'All <b>departing</b> survivors gain +$3$ insanity.',
-      'If any of <b>departing survivors</b> have 10+ insanity, <b class="event">Gracious Host</b>',
+      'If any of <b>departing survivors</b> have 10+ insanity, '+event_img+'<b class="event">Gracious Host</b>',
     ],
   }
  },
@@ -735,7 +736,7 @@ const texts = {
   'tags': ['principle', 'birth', 'new life'],
   'passive': {
     'settlement': [
-      'When rolling on the <b class="event">Intimacy</b> story event, roll twice and pick 1 result.',
+      'When rolling on the '+event_img+'<b class="event">Intimacy</b>, roll twice and pick 1 result.',
     ],
   }
  },
@@ -759,7 +760,7 @@ const texts = {
       '<b>Survival Limit:</b> $1$',
     ],
     'settlement': [
-      'When rolling on the <b class="event">Intimacy</b> story event, roll twice and pick lowest result.',
+      'When rolling on the '+event_img+'<b class="event">Intimacy</b>, roll twice and pick lowest result.',
     ],
     'newborn': [
       'All <b>newborn</b> survivors gain +$1$ strength.',
@@ -886,7 +887,7 @@ const texts = {
  'passive': {
    'settlement': [
      'Once per lanter year, during the <b>Develop</b> step, you may remove 1 consumable resource from settlement storage and place it on the Initiates\' survivor sheets as <b>Supplies</b>',
-     'At the end for each settlement phase, roll 1d10. On a result of 1-3 archive 1 resource from the <b>Supplies</b>, otherwise 1 Initiate dies of starvation. If all initiates are dead, remove <b>Remove of the Order</b> event from the timeline.',
+     'At the end for each settlement phase, roll 1d10. On a result of 1-3 archive 1 resource from the <b>Supplies</b>, otherwise 1 Initiate dies of starvation. If all initiates are dead, remove '+event_img+'<b>Remove of the Order</b> from the timeline.',
    ],
  }
 },

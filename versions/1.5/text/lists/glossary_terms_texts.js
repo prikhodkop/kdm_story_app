@@ -1,3 +1,5 @@
+const event_img = imageHTML('images/icons/book', '0.9em;display:inline;vertical-allign:bottom')
+
 const texts = {
  'Abilities': {
    'label':'',
@@ -218,7 +220,7 @@ const texts = {
    'description':'A special rule. This consumable gear or resources may be ingested by survivors for a listed result. Some are archived after use.',},
  'Courage': {
    'label':'',
-   'description':'A survivor attribute listed on the survivor record sheet. Courage is a survivor\'s potentially ill-advised bravery. Reaching a courage level of 3 will trigger the <b>Bold</b> Story Event, while reaching a level of 9 will trigger the <b>See the Truth</b> Story Event.',},
+   'description':'A survivor attribute listed on the survivor record sheet. Courage is a survivor\'s potentially ill-advised bravery. Reaching a courage level of 3 will trigger the '+event_img+'<b>Bold</b> Story Event, while reaching a level of 9 will trigger the '+event_img+'<b>See the Truth</b> Story Event.',},
  'Critical Wound': {
    'label':'',
    'description':'Critical wounds are lucky blows that always wound a monster, even if the wound attempt does not exceed the monster\'s toughness. A critical wound occurs when a wound roll result is a Lantern 10 on a hit location with a critical wound effect. The Luck attribute modifies the roll needed for a critical wound.',},
@@ -273,7 +275,7 @@ const texts = {
    'description':'A survivor can die in a variety of ways. Remove their miniature from the board. They can no longer participate in the hunt or showdown. Return their gear to the settlement storage and move their resources to another survivor. If all the survivors die during the showdown, all of their gear returns to the settlement, and all resources not in the settlement storage are lost.',},
  'Death Count': {
    'label':'',
-   'description':'Part of the settlement record sheet. During the Settlement Phase, if any survivors perished during the previous Hunt or Showdown Phase, update the death count. If survivors perish during the Settlement Phase, update the death count immediately. The first time a settlement\'s death count is updated. trigger the Principle: Death story event.',},
+   'description':'Part of the settlement record sheet. During the Settlement Phase, if any survivors perished during the previous Hunt or Showdown Phase, update the death count. If survivors perish during the Settlement Phase, update the death count immediately. The first time a settlement\'s death count is updated. trigger the '+event_img+'<b>Principle: Death</b>.',},
  'Death Die': {
    'label':'',
    'description':'A special orange ten sided die. The Death Die replaces the Monster Controller tile. The player of the survivor with the Death Die controls the monster. At the start of the showdown, the player with the Final Lantern starts with the Death Die on Horripilation. At the start of each subsequent round, pass the Death Die to the Horripilation card to the left. The Watcher\'s final emanations continue to jump between lanterns of survivors that cannot act, including dead or abscent survivors. Instead of the benefits on the Monster Controller tile, you may use Pulse Discoveries baed on your settlements Lantern Research Level. Once per round, the survivor with the Death Die may use one of the settlement\'s unlocked Pulse Discoveries. After rolling the Death Die, return it to its current Horripilation card. If the Final Lantern is lost or archived, it is gone forever. Survivors cannot use the Death Die. Return to using the Monster Controller tile.',},
@@ -303,7 +305,7 @@ const texts = {
    'description':'Put the card into the appropriate discard pile. It is no longer in play.',},
  'Disdain': {
    'label':'',
-   'description':'The Phoenix\'s instinct. Described on the Showdown: Phoenix story event.',},
+   'description':'The Phoenix\'s instinct. Described on the '+event_img+'<b>Showdown: Phoenix</b>.',},
  'Disorder': {
    'label':'',
    'description':'A mental impairment. Disorders are found on disorder cards. When a disorder is gained, record its rules on the survivor record sheet and return the card to the box. Survivors can have up to 3 disorders. Additional disorders gained must replace a disorder of your choice. If a survivor would gain a disorder that they already have. nothing happens.',},
@@ -706,7 +708,7 @@ const texts = {
    'description':'A gear keyword. This completes an armor set if you\'re wearing the rest of the set and it shares a material keyword with the missing armor gear. For example, if you\'re wearing an Oxidized Lantern Helm and Phoenix Armor on every other hit location, you would gain the Phoenix Armor Set bonus because the Phoenix Helm also has the metal keyword.',},
  'Overwhelming Darkness': {
    'label':'',
-   'description':'A space on the Hunt Board. The first time each hunt the survivors move into the Overwhelming Darkness space, they trigger the overwhelming Darkness story event. The survivors cannot skip Overwhelming Darkness. If they move through the space, instead stop all movement and resolve Overwhelming Darkness before any other events or effects. Then, resolve other events or effects on this space. If, for some reason, the survivors move into or through Overwhelming Darkness more than once in a single Hunt Phase, treat it as a blank space. If the monster is on the Overwhelming Darkness Space when the survivors move into it, skip its event and start the showdown immediately.',},
+   'description':'A space on the Hunt Board. The first time each hunt the survivors move into the Overwhelming Darkness space, they trigger the '+event_img+'<b>Overwhelming Darkness</b> story event. The survivors cannot skip Overwhelming Darkness. If they move through the space, instead stop all movement and resolve Overwhelming Darkness before any other events or effects. Then, resolve other events or effects on this space. If, for some reason, the survivors move into or through Overwhelming Darkness more than once in a single Hunt Phase, treat it as a blank space. If the monster is on the Overwhelming Darkness Space when the survivors move into it, skip its event and start the showdown immediately.',},
  'Parry': {
    'label':'',
    'description':'When attempting to wound a Parry hit locations all attempts fall unless the wound roll result is critical. This Failure triggers any Failure reactions as normal.',},

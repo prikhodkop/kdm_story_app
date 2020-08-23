@@ -1,3 +1,5 @@
+const event_img = imageHTML('images/icons/book', '0.9em;display:inline;vertical-allign:bottom')
+
 const texts = {
 'Acceleration': {
   'label':'',
@@ -92,7 +94,7 @@ const texts = {
  },
  'Homing Instinct': {
    'label':'Homing Instinct',
-   'description': 'Add +5 to your rolls on the Run Away story event.',
+   'description': 'Add +5 to your rolls on the '+event_img+'<b>Run Away</b>.',
  },
  'Iridescent Hide': {
    'label':'Iridescent Hide',
@@ -122,7 +124,7 @@ const texts = {
  },
  'Life Exchange': {
    'label':'Life Exchange',
-   'description': 'In the Aftermath, gain 1 additional Hunt XP. You may not wear other gear. If you trigger the White Secret story event, you cease to exist. When you retire, you cease to exist.',
+   'description': 'In the Aftermath, gain 1 additional Hunt XP. You may not wear other gear. If you trigger the '+event_img+'<b>White Secret</b>, you cease to exist. When you retire, you cease to exist.',
  },
  'Limb-maker': {
    // 'label': 'Limb-maker (Sculptor)',
@@ -149,7 +151,7 @@ const texts = {
  },
  'Matchmaker': {
    'label':'Matchmaker',
-   'description': 'When you are a returning survivor, once per lantern year you may spend an {image@images/icons/endeavors} to perform <b>Intimacy</b>.',
+   'description': 'When you are a returning survivor, once per lantern year you may spend an {image@images/icons/endeavors} to perform '+event_img+'<b>Intimacy</b>.',
  },
  'Metabolic Surrender': {
    // 'label':'Metal Maw',
