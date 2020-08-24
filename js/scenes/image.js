@@ -32,16 +32,19 @@ const quaries_events = [
   'showdown butcher',
   'showdown kings man',
   'showdown kings man',
+  'kings curse',
+  'the knowledge worm',
+  'intermission',
+  'taken'
 ]
 
 const special_events = [
   'showdown manhunter',
   'showdown lion knight',
-  'kings curse',
-  'the knowledge worm',
+  // 'kings curse',
+
   // 'an uninvited guest',
-  'intermission',
-  'taken'
+
   // 'lottery',
 ]
 
@@ -84,6 +87,7 @@ module.exports = class ImageScene {
       'the hanged man': ['showdown manhunter', tooltips['start showdown'].text],
       'showdown storm knight lv.1-2': ['aftermath', tooltips['to event_text'].text.replace('$E$', events_table['aftermath'].label),],
       'showdown storm knight lv.3': ['storm break', tooltips['to event_text'].text.replace('$E$', events_table['storm break'].label),],
+            // 'the duel': ['showdown allison the twilight knight', tooltips['to event_text'].text.replace('$E$', events_table['showdown allison the twilight knight'].label),],
     }
 
     $('body').css('font-size', parseInt(settings['fontSize'].replace('px',''))/10+'vmin')
