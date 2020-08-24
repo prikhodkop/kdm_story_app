@@ -186,16 +186,16 @@ const texts = {
       'text': 'The Manhunter is pleased with how easy it is to cull your settlement. It returns to claim a survivor for an unknown purpose.'
   },
   'showdown slenderman': {
-      'text': 'One day, a lonely man came home and found his long, lonely hours no longer troubled him. In fact, he could not remember them at all. Each day, he left home with a chilling ache in his bones and no memory of the day before. One day, he came home to find that he was not alone after all. Then he was gone.'
+      'text': 'Pewnego dnia, samotny mężczyzna wrócił do domu i stwierdził, że jego długie, samotne godziny już go nie martwią. W rzeczywistości nie mógł ich w ogóle zapamiętać. Każdego dnia wychodził z domu pełen lodowatego bólu w kościach i bez wspomnień z poprzedniego dnia. Pewnego dnia wrócił do domu i stwierdził, że nie był przecież sam. Potem już go nie było.'
   },
   'dark place': {
-      'text': 'The survivor looks on in horror as black water inexplicably pools around their feet.'
+      'text': 'Ocalały patrzy w przerażeniujak czarna woda w niewytłumaczalny sposób rozlewa się wokółjego stóp.'
   },
   'light-forging': {
-      'text': 'For a short time, the bizzare physical and chemical properties of the Dark Place are recreated in a pressurized crustal chamber.'
+      'text': 'Przez krótki czas dziwaczne właściwości fizyczne i chemiczne ciemnego miejsca zostają odtworzone w kryształowej komorze ciśnieniowej.'
   },
   'forgotten fear': {
-      'text': 'In an instant, you recall the horrors of the past and see a familiar, delicate figure standing unheeded among the survivors. Your screams are choked by gouts of black water spewing from your mouth.'
+      'text': 'W jednej chwili przypominasz sobie koszmary z przeszłości kiedy widzisz znajomą, wiotką postać stojącą beztrosko pośród Ocalałych. Twoje krzyki dławią strużki mrocznej wody wylewające się z twoich ust.'
   },
   'glowing crater': {
       'text': 'A secret glimpsed becomes an obsession.'

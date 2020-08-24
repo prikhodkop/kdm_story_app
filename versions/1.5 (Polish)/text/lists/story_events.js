@@ -170,15 +170,15 @@ var texts = {
   "tools of war": {
    'label': "Tools of War",},
   "dark place": {
-   'label': "Dark Place",},
+   'label': "Ciemne miejsce",},
   "forgotten fear": {
-   'label': "Forgotten Fear",},
+   'label': "Zapomniany strach",},
   "light-forging": {
-   'label': "Light-Forging",},
+   'label': "Kucie światłem",},
   "showdown slenderman": {
-   'label': "Showdown: Slenderman",},
+   'label': "Starcie: Smukłak",},
   "it's already here": {
-   'label': "It's Already Here",},
+   'label': "Już tu jest",},
   "a gracious host": {
    'label': "A Gracious Host",},
   "death reading": {
