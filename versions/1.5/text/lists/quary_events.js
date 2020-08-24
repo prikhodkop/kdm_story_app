@@ -89,6 +89,15 @@ const quary_events = [
   'spidicules 7.jpg',
   'spidicules 8.jpg',
   'spidicules 9.jpg',
+  'drifter knight 1.jpg',
+  'drifter knight 2.jpg',
+  'drifter knight 3.jpg',
+  'drifter knight 4.jpg',
+  'drifter knight 5.jpg',
+  'drifter knight 6.jpg',
+  'drifter knight 7.jpg',
+  'drifter knight 8.jpg',
+  'drifter knight 9.jpg',
 ]
 
 module.exports = {

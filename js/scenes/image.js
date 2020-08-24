@@ -22,6 +22,7 @@ const quaries_events = [
   'showdown dung beetle knight',
   'showdown sunstalker',
   'showdown dragon king',
+  // 'showdown allison the twilight knight',
   'showdown lion god',
   'showdown flower knight',
   'showdown spidicules',
@@ -31,16 +32,19 @@ const quaries_events = [
   'showdown butcher',
   'showdown kings man',
   'showdown kings man',
+  'kings curse',
+  'the knowledge worm',
+  'intermission',
+  'taken'
 ]
 
 const special_events = [
   'showdown manhunter',
   'showdown lion knight',
-  'kings curse',
-  'the knowledge worm',
+  // 'kings curse',
+
   // 'an uninvited guest',
-  'intermission',
-  'taken'
+
   // 'lottery',
 ]
 
@@ -83,6 +87,7 @@ module.exports = class ImageScene {
       'the hanged man': ['showdown manhunter', tooltips['start showdown'].text],
       'showdown storm knight lv.1-2': ['aftermath', tooltips['to event_text'].text.replace('$E$', events_table['aftermath'].label),],
       'showdown storm knight lv.3': ['storm break', tooltips['to event_text'].text.replace('$E$', events_table['storm break'].label),],
+            // 'the duel': ['showdown allison the twilight knight', tooltips['to event_text'].text.replace('$E$', events_table['showdown allison the twilight knight'].label),],
     }
 
     $('body').css('font-size', parseInt(settings['fontSize'].replace('px',''))/10+'vmin')
@@ -96,6 +101,14 @@ module.exports = class ImageScene {
       img_path = img_path.replace('.jpg', '_wb.jpg')
     } else if ((myself == 'hooded knight') && (settings['whiteboxes']['allison the twilight knight'] == 'Enabled')) {
        img_path = img_path.replace('.jpg', '_wb.jpg')
+    }
+
+    if ((myself == 'hooded knight') && (settings['expansions']['allison ccg'] == 'All content')) {
+      img_path = 'images/story events/content/hooded knight_allison.jpg'
+    }
+
+    if ((myself == 'showdown watcher') && (settings['expansions']['allison ccg'] == 'All content')) {
+      img_path = 'images/story events/content/showdown watcher_allison.jpg'
     }
 
     // if ((myself == 'intimacy') && (settings['campaign'] == 'Stars')) {
@@ -490,6 +503,37 @@ module.exports = class ImageScene {
             contentAsHTML: 'true',
             animation: 'grow',
             content: tooltips['return_button_settlement_new'].text, //'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b><br/><br/>This will start new <b>Lantern Year</b>.',
+            position: 'bottom',
+            delay: [300, 100],
+            fixedWidth: 250,
+            trigger: 'custom',
+            triggerOpen: {
+              mouseenter: true,
+              // click: true
+            },
+            triggerClose: {
+              click: true,
+              mouseleave: true
+            }
+          });
+        // return_button.hide()
+        $('#container').append(return_button)
+        // return_button.delay(1000).fadeIn(2000)
+        $('#container').on('click', '.settlement_return_button.to_settlement', function () {
+          setTransition('settlement', 'menu', name, current_state())
+        });
+      }
+
+      if (name.includes('showdown allison the twilight knight')) {
+        let return_button = $('<button>', {
+          // id: 'settlement_return_button',
+          class: 'settlement_return_button to_settlement hoverable'
+        })
+        return_button.html(tooltips['unfinished_business_text'].text)
+        return_button.tooltipster({
+            contentAsHTML: 'true',
+            animation: 'grow',
+            content: tooltips['unfinished_business_tooltip'].text, //'<b style="color:#cc0;">Click</b> to return to <b>Settlement</b><br/><br/>This will start new <b>Lantern Year</b>.',
             position: 'bottom',
             delay: [300, 100],
             fixedWidth: 250,

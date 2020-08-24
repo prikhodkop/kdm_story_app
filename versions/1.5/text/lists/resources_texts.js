@@ -1,3 +1,5 @@
+const event_img = imageHTML('images/icons/book', '0.9em;display:inline;vertical-allign:bottom')
+
 const texts = {
 'Cabled Vein': {'label':'', 'group_name':'Dragon King', 'type': 'organ', 'text': '<i>A dense bundle of bloody tubes.</i><br /><br />Drop chance: 2/21.'},
 'Dragon Iron': {'type': 'iron', 'group_name':'Dragon King', 'text': '<i>It feels heavy, but when dropped, falls as slowly as a feather.</i><br /><br />Drop chance: 1/21.'},
@@ -9,7 +11,7 @@ const texts = {
 'Radioactive Drug': {'type': 'organ/scrap', 'group_name':'Dragon King', 'text': '<i>Gives off smoke with an acrid odor.</i><br /><br />Drop chance: 2/21.'},
 'Veined Wing': {'type': 'hide', 'group_name':'Dragon King', 'text': '<i>Blood drips from it at a constant rate.</i><br /><br />Drop chance: 3/21.'},
 
-'Beetle Horn': {'type': 'bone', 'group_name':'Dung Beetle Knight', 'text': '<b>Brain Stimulation</b> <i style="color:#999">(requires Scarification)</i><br />Archive and Roll <b>1d10</b>:<br /> <b style=\"color:#cc0;\">1-4</b><div style="font-size:0.9em;display: inline;"> - Your brain is punctured and you die.</div><br /> <b style=\"color:#cc0;\">5+</b><div style="font-size:0.9em;display: inline;"> - Gain the benefits of <b>Age 1</b> and <b>Age 2</b> without gaining Hunt XP. Brain Stimulation ignores the "once a lifetime" rule on the <b>Age</b> story event.</div><br /><br />Drop chance: 1/11.'},
+'Beetle Horn': {'type': 'bone', 'group_name':'Dung Beetle Knight', 'text': '<b>Brain Stimulation</b> <i style="color:#999">(requires Scarification)</i><br />Archive and Roll <b>1d10</b>:<br /> <b style=\"color:#cc0;\">1-4</b><div style="font-size:0.9em;display: inline;"> - Your brain is punctured and you die.</div><br /> <b style=\"color:#cc0;\">5+</b><div style="font-size:0.9em;display: inline;"> - Gain the benefits of <b>Age 1</b> and <b>Age 2</b> without gaining Hunt XP. Brain Stimulation ignores the "once a lifetime" rule on the '+event_img+'<b>Age</b>.</div><br /><br />Drop chance: 1/11.'},
 'Century Fingernails': {'type': 'bone', 'group_name':'Dung Beetle Knight', 'text': '<i>These nails are never clipped. Instead, they are folded and hammered hundreds of times into an impossibly fine edge.</i><br /><br />Drop chance: 2/11.'},
 'Century Shell': {'type': 'hide/iron', 'group_name':'Dung Beetle Knight', 'text': '<i>This ancient and mineral-rich armor plate is covered with razor wind scratches.</i><br /><br />You may spend this as if it were a Scarab Shell resource.<br /><br />Drop chance: 1/11.'},
 'Compound Eye': {'type': 'organ/consumable', 'group_name':'Dung Beetle Knight', 'text': '<i>A cluster of differently colored eyes, each filled with a creamy, tangy syrup.</i><br /><br />If you have 3+ courage, you may consume and archive this to gain +3d10 insanity.<br /><br />Drop chance: 1/11.'},
@@ -103,7 +105,7 @@ const texts = {
 
 'qqq': {'label': '???', 'group_name':'Basic', 'image': 'true', 'type': 'organ/bone/hide/consumable', 'text': '<i>You have no idea what monster bit this is.</i><br /><br />Can be used as a bone, organ, or hide!<br /><br />Drop chance: 2/21.'},
 'Broken Lantern': {'image': 'true', 'group_name':'Basic', 'type': 'scrap', 'text': '<i>Remains of an extinguished lantern.</i><br /><br />Drop chance: 2/21.'},
-'Love Juice': {'image': 'true', 'group_name':'Basic', 'type': 'organ/consumable', 'text': 'During the settlement phase, you may archive this to trigger <b>Intimacy</b> story event. Nominated survivors must be able to consume.<br /><br />Drop chance: 2/21.'},
+'Love Juice': {'image': 'true', 'group_name':'Basic', 'type': 'organ/consumable', 'text': 'During the settlement phase, you may archive this to trigger '+event_img+'<b>Intimacy</b>. Nominated survivors must be able to consume.<br /><br />Drop chance: 2/21.'},
 'Monster Bone': {'image': 'true', 'group_name':'Basic', 'type': 'bone', 'text': '<i>A bone suitable for crafting.</i><br /><br />Drop chance: 4/21.'},
 'Monster Hide': {'image': 'true', 'group_name':'Basic', 'type': 'hide', 'text': '<i>The skin of a beast.</i><br /><br />Drop chance: 7/21.'},
 'Monster Organ': {'image': 'true', 'group_name':'Basic', 'type': 'organ/consumable', 'text': 'If you <b>consume</b> this, archive this card. Roll 1d10:<br /><b style=\"color:#cc0;\">6+</b><div style="font-size:0.9em;display: inline;"> - you contract a parasite. Archive all consumable gear in your grid now.</div><br /><br />Drop chance: 3/21.'},
@@ -122,7 +124,7 @@ const texts = {
 'Bugfish': {'type': 'fish/organ', 'group_name':'Sunstalker, Strange',
                 'text': '<b>Consume</b>: Gain +2 survival. <i>There is something in its belly!</i> Gain 1 random vermin and <b>consume</b> it immediately. Archive this card.'},
 'Canopic Jar': {'type': 'organ/scrap', 'group_name':'Lion God, Strange',
-                'text': 'When you gain this, remove 2 bleeding tokens.<br /><br />During the settlement phase, you may archive this to <b>Death Reading</b> event.'},
+                'text': 'When you gain this, remove 2 bleeding tokens.<br /><br />During the settlement phase, you may archive this to '+event_img+'<b>Death Reading</b>.'},
 'Cocoon Membrane': {'type': 'organ/other', 'group_name':'Strange',
                 'text': '<i>Thin copper hairs permeate this jellylike substance. Lanterns are repelled by the copper hairs, their light bending to avoid them.</i>'},
 'Crimson Vial': {'type': 'iron/consumable', 'group_name':'Manhunter, Strange',
@@ -132,7 +134,7 @@ const texts = {
 'Dark Water': {'type': 'other', 'group_name':'Slenderman, Strange',
                 'text': 'You may <b>consume</b> and archive this to remove all your disorders, then gain a random disorder.'},
 'Drifting Dream Fruit': {'type': 'consumable', 'group_name':'Lonely Tree, Strange',
-                'text': 'You may <b>consume</b> and archive this to select a Dream on the <b>Birth of a Savior</b> story event and gain all associated abilities.'},
+                'text': 'You may <b>consume</b> and archive this to select a Dream on the '+event_img+'<b>Birth of a Savior</b> and gain all associated abilities.'},
 'Elder Cat Teeth': {'type': 'bone', 'group_name':'White Lion, Strange',
                 'text': '<i>As sharp as they are strange</i>'},
 'Fresh Acanthus': {'type': 'herb', 'group_name':'Strange',
@@ -154,9 +156,9 @@ const texts = {
 'Legendary Horns': {'type': 'bone/scrap', 'group_name':'Screaming Antelope, Strange',
                 'text': '<i>Holding them fills you with power.</i>'},
 'Lonely Fruit': {'type': 'consumable', 'group_name':'Lonely Tree, Strange',
-                'text': 'During the settlement phase, you may <b>consume</b> and archive this to <b>Lonely Lady</b> event.'},
+                'text': 'During the settlement phase, you may <b>consume</b> and archive this to '+event_img+'<b>Lonely Lady</b>.'},
 'Old Blue Box': {'type': 'scrap', 'group_name':'Lion God, Strange',
-                'text': 'During the settlement phase, you may archive this to <b>Death Reading</b> event.'},
+                'text': 'During the settlement phase, you may archive this to '+event_img+'<b>Death Reading</b>.'},
 'Perfect Crucible': {'type': 'iron', 'group_name':'Strange',
                 'text': 'When you craft with Perfect Crucible, an ancient bacteria is released into the air. Suffer -1d10 population and archive this card.'},
 'Phoenix Crest': {'type': 'organ', 'group_name':'Phoenix, Strange',
@@ -178,7 +180,7 @@ const texts = {
 'Scell': {'type': 'organ/consumable', 'group_name':'Dung Beetle Knight, Strange',
                 'text': '<i>As the monster ages, this sticky and corrosive material builds between the thin layers of its scarab shells. It breaks down fecal product, preventing the knight\'s joints from locking up.</i><br /><br />During <b>Black Harvest</b>, a Restorer can make excellent use of a Scell, using it to nearly perfect the final step of the calcification process.'},
 'Sarcophagus': {'type': 'iron', 'group_name':'Lion God, Strange',
-                'text': '-2 movement while you have this.<br /><br />During the settlement phase, you may archive this to <b>Death Reading</b> event.'},
+                'text': '-2 movement while you have this.<br /><br />During the settlement phase, you may archive this to '+event_img+'<b>Death Reading</b>.'},
 'Second Heart': {'type': 'organ/bone', 'group_name':'Screaming Antelope, Strange',
                 'text': '<i>It still tries to bite you.</i>'},
 'Shining Liver': {'type': 'organ', 'group_name':'Dragon King, Strange',
@@ -186,13 +188,13 @@ const texts = {
 'Silken Nervous System': {'type': 'organ', 'group_name':'Spidicules, Strange',
                 'text': '<i>Separates into tiny golden treads.</i>'},
 'Silver Urn': {'type': 'bone/scrap', 'group_name':'Lion God, Strange',
-                'text': 'During the settlement phase, you may archive this to <b>Death Reading</b> event.'},
+                'text': 'During the settlement phase, you may archive this to '+event_img+'<b>Death Reading</b>.'},
 'Stomach Lining': {'type': 'organ', 'group_name':'Gorm, Strange',
                 'text': '<i>Steadily expands and contracts.</i>'},
 'Sunstones': {'type': 'bone', 'group_name':'Sunstalker, Strange',
                 'text': '<i>Small and warm.</i>'},
 'Triptych': {'type': 'hide/scrap', 'group_name':'Lion God, Strange',
-                'text': 'When you gain this, gain +3 insanity.<br /><br />During the settlement phase, you may archive this to <b>Death Reading</b> event.'},
+                'text': 'When you gain this, gain +3 insanity.<br /><br />During the settlement phase, you may archive this to '+event_img+'<b>Death Reading</b>.'},
 'Web Silk': {'type': 'silk', 'group_name':'Spidicules, Strange',
                 'text': '<i>Impossible to tear.</i>'},
 
@@ -200,6 +202,29 @@ const texts = {
 
 'Hooked Claw': {'type':'bone', 'group_name':'White Gigalion, Strange', 'text': '<i>Stained with flecks of ancient dried blood and bits of ossified hair.</i>'},
 
+'Allisons Legacy': {'label':'Allison\'s Legacy', 'type': 'hide/other', 'group_name':'Strange',
+                'text': '<i>A personal account detailing the selfless work of Allison, the Twilight Knight.</i><br/><br/>During the settlement phase, a survivor may spend {image@images/icons/endeavors} to read from the book. The secrets within are so profound, they gain the <b>Fear of the Dark</b> disorder.<br/><br/>If the book is read, all <b>Apprentices</b> gain +1 permanent strength. If a survivor with Twilight Sword proficiency has 8 weapon XP, they gain <b>Twilight Sword Mastery</b>.<br/><br/>Archive this card.'},
+'Copper': {'type': 'scrap', 'group_name':'Strange',
+                'text': '<i>Rarer than iron.</i>'},
+'Lantern Nerve Bundle': {'type': 'organ/consumable', 'group_name':'Strange',
+                'text': 'Archive this to put on an electrifying display of strength.<br/><br/><b style=\"color:#cc0;\">1-3</b><div style="font-size:0.9em;display: inline;"> - Lose 1 weapon proficieny level.</div><br /><b style=\"color:#cc0;\">4-8</b><div style="font-size:0.9em;display: inline;"> - gain +1 permanent strength.</div><br /><b style=\"color:#cc0;\">9+</b><div style="font-size:0.9em;display: inline;"> - Suffer 2 brain damage. Your Fist&Tooth attack gains <b>devastating</b> for the next showdwon with a quarry.</div>'},
+'Skeletal Shards': {'type': 'bone', 'group_name':'Strange',
+                'text': '<i>The pulsating, blue marrow appears soft and malleable, before hardening.</i><br/><br/>Skeletal Shards may be substituted in any recipe that requires a monster specific bone.'},
+'Watcher Jelly': {'type': 'organ/consumable', 'group_name':'Strange',
+                'text': '<b>Apply</b>: Archive this and roll <b>1d10</b>.<br/><br/><b style=\"color:#cc0;\">1-3</b><div style="font-size:0.9em;display: inline;"> - The substance hardens uncomfortably. Suffer -1 permanent movement.</div><br /><b style=\"color:#cc0;\">4-8</b><div style="font-size:0.9em;display: inline;"> - It hardens into a strong shell. When you <b>depart</b>, add +3 armor to the body location.</div><br /><b style=\"color:#cc0;\">9+</b><div style="font-size:0.9em;display: inline;"> - Gain +1 permanent evasion.</div>'},
+'Whispering Whetstone': {'type': 'scrap/other', 'group_name':'Strange',
+                'text': '<i>It whispers only to you.</i><br/><br/>{image@images/icons/endeavors}: Archive this to give one axe, sword, dagger, scythe, katana, or katar gear in the settlement storage <b>sharp</b>. Lasts until end of the next showdown. After archiving gain 1 <b>iron</b> strange resource.'},
+
+
+'Destroyed Barb': {'type': 'bone', 'group_name':'Drifter Knight, Strange', 'text': '<i>Merely handling it draws blood.</i>'},
+'Neurotoxin': {'type': 'organ', 'group_name':'Drifter Knight, Strange', 'text': '<i>Causes instant death to survivors and other vermin.</i>'},
+
+'Bile duct': {'type': 'bone/hide/organ', 'group_name':'Drifter Knight', 'text': '<i>Ignore the fact that it has no stomach.</i><br /><br />Drop chance: 2/15.'},
+'Exquisite Fabric': {'type': 'hide/silk', 'group_name':'Drifter Knight', 'text': '<i>One look and it pull you right in.</i><br /><br />Drop chance: 1/15.'},
+'Fleshy Armor': {'type': 'hide', 'group_name':'Drifter Knight', 'text': '<i>Surprisingly durable, tastes like hagfish.</i><br /><br />Drop chance: 4/15.'},
+'Petrified Plate': {'type': 'bone/scrap', 'group_name':'Drifter Knight', 'text': '<i>A thousands years of heat in one plate.</i><br /><br />Drop chance: 2/15.'},
+'Silken Skin': {'type': 'organ/slik', 'group_name':'Drifter Knight', 'text': '<i>Looks fabulous in any lighting.</i><br /><br />Drop chance: 2/15.'},
+'Stinging Tendrils': {'type': 'organ', 'group_name':'Drifter Knight', 'text': '<i>Hard to grasp without gloves.</i><br /><br />Drop chance: 4/15.'},
 }
 
 module.exports = {

@@ -320,6 +320,22 @@ const texts = {
   'showdown gigalion': {
     'text': 'There was once a White Lion cub whose belly yawned with hunger. It pushed into the gathered pack and always ate more than its share. Resentful, the pack nipped its haunches until they bled, but the cub\'s hunger never relented. The monster grew so large that the bites of its kin no longer penetrated its hide. Their resentment turned to dread, so they banished it. The monster cried for the love of its pack but they turned their shimmering manes away in unison. Perhaps it was a lifetime of deprivation and insults. Perphaps its family\'s intuition was right. It devoured them before wandering into the darkness, doomed to never find another like itself.'
   },
+
+  'fresh meat': {
+    'text': 'Emboldened by the exhilaration of their previous kill, the hunting party tracks down the source of such horrific noise.'
+  },
+
+  'show me your motivation': {
+    'text': `The knight sets a hidden gaze upon
+              her attacker, curious how they could
+              have made it past her defense. A
+              silent offer is made to the survivor.
+              "Impress me!"`
+  },
+
+  'showdown drifter knight': {
+    'text': `There was once a woman born without a lantern behind her eyes. She could not hunt and could not work, but her fellow survivors saw her as already dead. So she trained under the scorching sun every waking moment. When that sun awoke and devoured her people, the woman was left unharmed. She was already dead to the world.`
+  },
 }
 
 module.exports = {

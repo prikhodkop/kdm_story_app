@@ -1,7 +1,7 @@
 {
   "name": "kdm_1.5_story",
   "productName": "KDM Story app",
-  "version": "3.2.0",
+  "version": "4.0.0",
   "description": "Once, there was a man, who loved Kingdom Death and praised Poots for what he created, but hated the need to browse several books and shuffle decks all the time. One day he built an app to fix that.",
   "main": "main.js",
   "scripts": {

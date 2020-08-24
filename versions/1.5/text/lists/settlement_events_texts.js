@@ -54,7 +54,7 @@ const texts = {
    'label':'',
    'passive':{
      'settlement': [
-       '<b class="event-text">[Event]</b> The storm prevents <b class="science-text">Science</b> and <b class="education-text">Education</b> Endeavors.',
+       '<b class="event-text">[Event]</b> Glossolalia prevents <b class="science-text">Science</b> and <b class="education-text">Education</b> Endeavors.',
        // '<b class="event-text">[Event]</b> The storm prevents <b class="education-text">Education</b> Endeavors.',
      ]
    },
@@ -176,6 +176,30 @@ const texts = {
    'expansion': 'storm knight',
    // 'action': true,
  },
+
+ 'Coming of Age': {
+   'label':'Coming of Age',
+  'expansion': 'allison ccg',
+ },
+ 'Training Day': {
+   'label':'Training Day',
+  'expansion': 'allison ccg',
+  'action': true,
+  'num_actions': 1,
+  'action_enabler': {
+    0: {'innovation': ['Symposium']},
+  },
+  'passive':{
+    'settlement': [
+      '<b class="event-text">[Event]</b> The cacophony of training overwhelms all sounds of rhythm and prevents <b class="music-text">Music</b> endeavors.',
+      '<b class="event-text">[Event]</b> The training display inspires all. +1 to the result of <b>Nightmare Training</b> endeavors.',
+    ]
+  },
+ },
+
+ 'Ghostly Carrion': {
+    'expansion': 'drifter knight',
+ }
 }
 
 module.exports = {

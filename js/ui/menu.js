@@ -1066,9 +1066,9 @@ function updateBookmarksList() {
         option: function (item, escape) {
           let condition = getTerms('bookmarks')[item.value]['condition_text']
           if (item.label_eng != item.label) {
-            return '<div class="option" data-value="'+item.value+'">'+ escape(item.label) + ((item.group_name == '')? '': ' <small style="color:#660;">('+escape(item.group_name)+')</small>')+' - <div style="color:#666;display:inline;font-size:0.9em;">'+escape(item.label_eng)+'</div>'+' - <small style="color:#ccc;">'+condition+'</small></div>'
+            return '<div class="option" data-value="'+item.value+'">'+ escape(item.label) + ((item.group_name == '')? '': ' <small style="color:#660;">('+escape(item.group_name)+')</small>')+' - <div style="color:#666;display:inline;font-size:0.9em;">'+escape(item.label_eng)+'</div>'+' - <small style="color:#fff;">'+condition+'</small></div>'
           } else {
-            return '<div class="option" data-value="'+item.value+'">'+ escape(item.label) + ((item.group_name == '')? '': ' <small style="color:#660;">('+escape(item.group_name)+')</small>')+' - <small style="color:#ccc;">'+condition+'</small></div>'
+            return '<div class="option" data-value="'+item.value+'">'+ escape(item.label) + ((item.group_name == '')? '': ' <small style="color:#660;">('+escape(item.group_name)+')</small>')+' - <small style="color:#fff;">'+condition+'</small></div>'
           }
         },
     },

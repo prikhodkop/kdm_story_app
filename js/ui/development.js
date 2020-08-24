@@ -1596,7 +1596,7 @@ function getColorTag(name) {
 // #### General purpose functions
 function getDevelopmentState() {
   let development_state = JSON.parse(localStorage.getItem('development'));
-  console.log('Get state: '+JSON.stringify(development_state))
+  // console.log('Get state: '+JSON.stringify(development_state))
 
   let updated = false
   // check if development has the right format and is stored in local storage, and if not initialize it
@@ -1798,21 +1798,21 @@ function toShow(name) {
   let visibility = []
 
   console.log('To consider: '+name)
-  if (!($.inArray(name, Object.keys(settlement_locations)) == -1)) {
+  if (name in settlement_locations) { //!($.inArray(name, Object.keys(settlement_locations)) == -1)) {
     list = settlement_locations
     visibility = ['All content']
     console.log('It is location.')
   }
-  if (!($.inArray(name, Object.keys(bookmarks)) == -1)) {
+  else if (name in bookmarks) {
     list = bookmarks
     visibility = ['All content']
     console.log('It is location.')
   }
-  else if (!($.inArray(name, Object.keys(innovations)) == -1)) {
+  else if (name in innovations) {
     list = innovations
     visibility = ['All content']
     console.log('It is innovation.')
-  } else if (!($.inArray(name, Object.keys(settlement_events)) == -1)) {
+  } else if (name in settlement_events) {
     list = settlement_events
     visibility = ['All content']
     console.log('It is settlement event.')
@@ -1913,23 +1913,21 @@ function init_bookmarks() {
 
   $('#container').on({
     mouseenter: function (e) {
-      if (!$(e.target).hasClass('hover_tooltip')) {
-        return
+      if ($(e.target).closest('.bookmark').hasClass('hover_tooltip')) {
+        $('#bookmark_tooltip').attr('src', pathToAssetL('images/reference/Bookmarks/'+$(e.target).val()+'.jpg'))
+        window.bookmark_timer = addTimer(function(){
+          $('#img').addClass('darkened')
+          $('#bookmark_tooltip').show("slide", { direction: "down" }, 200);
+        }, 400)
       }
-      $('#bookmark_tooltip').attr('src', pathToAssetL('images/reference/Bookmarks/'+$(e.target).val()+'.jpg'))
-      window.bookmark_timer = addTimer(function(){
-        $('#img').addClass('darkened')
-        $('#bookmark_tooltip').show("slide", { direction: "down" }, 200);
-      }, 400)
     },
     mouseleave: function (e) {
-      if (!$(e.target).hasClass('hover_tooltip')) {
-        return
+      if ($(e.target).closest('.bookmark').hasClass('hover_tooltip')) {
+        console.log('leave')
+        clearTimer(window.bookmark_timer)
+        $('#bookmark_tooltip').hide("slide", { direction: "down" }, 100);
+        $('#img').removeClass('darkened')
       }
-      console.log('leave')
-      clearTimer(window.bookmark_timer)
-      $('#bookmark_tooltip').hide("slide", { direction: "down" }, 100);
-      $('#img').removeClass('darkened')
     },
   }, '.bookmark')
 

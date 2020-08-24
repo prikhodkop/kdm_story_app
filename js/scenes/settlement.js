@@ -401,7 +401,10 @@ module.exports = class SettlementScene {
         $(this).addClass('active')
         $('#cheatsheet_buttons').addClass('active')
         if ($('#locations_button').hasClass('active')) {
-          document.getElementById("defaultOpen").click();
+          let elem = document.getElementById("defaultOpen")
+          if ($('#defaultOpen').length>0) {
+            elem.click()
+          }
         } else {
           updateActions()
         }

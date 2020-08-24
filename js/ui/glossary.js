@@ -376,20 +376,24 @@ function get_representation_int (word) {
   let weapons = ['Axe', 'Bow', 'Club', 'Dagger', 'Fist & Tooth', 'Grand', 'Katana', 'Katar', 'Scythe', 'Shield', 'Spear', 'Sword', 'Twilight Sword', 'Whip', 'Thrown']
 
   if (weapons.includes(word)) {
-   result = result + '<br/><br/><img id=reference-image style="width:100%;" src="' + pathToAssetL('images/reference/Weapon Masteries/' + word + '.png') + '"/>'
+    if ((word == 'Twilight Sword')&&(getSettings()['expansions']['allison ccg'] == 'All content')) {
+      result = result + '<br/><br/><i>Spec and mastery modified by Allison the Twilight Knight (CCG) expansion.<br/><br/><img id=reference-image style="width:100%;" src="' + pathToAssetL('images/reference/Weapon Masteries/Twilight Sword_allison.png') + '"/>'
+    } else {
+        result = result + '<br/><br/><img id=reference-image style="width:100%;" src="' + pathToAssetL('images/reference/Weapon Masteries/' + word + '.png') + '"/>'
+    }
   }
 
   return result
  } else if (word in resources) {
    let color = ''
-   if (resources[word].group_name.toLowerCase().includes('strange')) {
-     color = '#9ca814'
-   }
    if (resources[word].group_name.toLowerCase().includes('basic')) {
      color = '#becd70'
    }
-   if (['white lion', 'sunstalker', 'screaming antelope', 'phoenix', 'flower knight', 'spidicules', 'dung beetle knight', 'gorm', 'dragon king'].some(substring=>resources[word].group_name.toLowerCase().includes(substring))) {
+   else if (['white lion', 'sunstalker', 'screaming antelope', 'phoenix', 'flower knight', 'spidicules', 'dung beetle knight', 'gorm', 'dragon king', 'drifter knight', 'gigalion'].some(substring=>resources[word].group_name.toLowerCase().includes(substring))) {
      color = '#d3a52d'
+   }
+   else if (resources[word].group_name.toLowerCase().includes('strange')) {
+     color = '#9ca814'
    }
    let result = ''
    let image_path = pathToAssetL('images/reference/Resources/'+word+'.jpg')

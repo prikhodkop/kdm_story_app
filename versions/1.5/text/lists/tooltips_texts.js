@@ -1,5 +1,5 @@
 const endeavor_img = imageHTML('images/icons/endeavors', '0.9em;display:inline;opacity:0.8;vertical-allign:bottom')
-
+const event_img = imageHTML('images/icons/book', '0.9em;display:inline;vertical-allign:bottom')
 const texts = {
   // GENERAL
 
@@ -27,14 +27,14 @@ const texts = {
     'text': 'To $E$'
   },
   'to event': {
-    'text': '<b style="color:#cc0;">Click</b> to start <b>$E$</b>.'
+    'text': '<b style="color:#cc0;">Click</b> to start '+event_img+'<b>$E$</b>.'
   },
 
   'back event_text': {
     'text': 'Back to $E$'
   },
   'back event': {
-    'text': '<b style="color:#cc0;">Click</b> to return to <b>$E$</b>.'
+    'text': '<b style="color:#cc0;">Click</b> to return to '+event_img+'<b>$E$</b>.'
   },
 
   'set_word': {
@@ -441,8 +441,13 @@ const texts = {
    'text': 'Bookmarks',
  },
 
+ 'unfinished_business_text': {
+   'text': 'Unfinished Business'
+ },
 
-
+ 'unfinished_business_tooltip': {
+   'text': 'Add '+event_img+'<b>Hooded Knight</b> to the timeline four years from now.<br/><br/><b style="color:#cc0;">Click</b> to return to <b>Settlement</b><br/><br/>This will start new <b>Lantern Year</b>.'
+ }
  // tooltips['action_card'].text
 }
 

@@ -319,13 +319,16 @@ function createTable (schema, defaults = undefined, level = 0, group = '') {
       }).appendTo(td2)
 
       sel.tooltipster({
-            animationDuration: 50,
+            animationDuration: 0,
             contentAsHTML: 'true',
             animation: 'fade',
             content: schema[key].description,
             position: 'right',
-            delay: 0,
-            maxWidth: 300,
+            delay: [25,25],
+            maxWidth: 400,
+            interactive: true,
+            onlyOne:true,
+
       })
 
       $(schema[key]['enum']).each(function () {
@@ -408,7 +411,7 @@ var settings_schema = {
   'language': {
     'type': 'option',
     'title': 'Version',
-    'description': 'Sets the game version.',
+    'description': 'Sets the game version.<br/><br/><b style="color:#eaa;">To play Community Edition you need to print gear cards from here:</b><br/><a style="color:#e55;" href="https://drive.google.com/open?id=1WppaDkubNEqVJnA0S6VlrYObHuZsVyD6">https://drive.google.com/open?id=1WppaDkubNEqVJnA0S6VlrYObHuZsVyD6</a>',
     'default': '1.5',
     'enum': []
   },
@@ -639,23 +642,68 @@ var settings_schema = {
           'All content',
         ],
       },
+      'allison ccg': {
+        'type': 'option',
+        'group': 'fan',
+        'title': 'Allison the Twilight Knight (CCG)',
+        'default': 'Disabled',
+        'description': `<b style="color:#eaa;">To play you need to print gear, pattern, terrain, resource, tactics and HL/AI/CD cards from here:</b><br/><a style="color:#e55;" href="https://www.patreon.com/posts/allison-twilight-35517511">https://www.patreon.com/posts/allison-twilight-35517511</a><br/><br/>
+                        Clad in dark bronze armor and robed in deep hooded cloaks, the
+                        Twilight Knights stand on the edge of the known world, their lives
+                        devoted to battling foul creatures and horrifying abominations to
+                        shield the weak from such peril.<br/><br/>
+                        Allison was once like you, a survivor outmatched by the terrors of
+                        a dark world. Now, those terrors flee from her lantern light. She
+                        has walked the road of plenty and need, pleasure and pain, gain
+                        and loss. Nothing ever came to Allison without a fight, a lesson
+                        the players will soon learn.<br/><br/>
+                        Allison matches the players’ survival abilities with her own. She
+                        is deadly and unpredictable, preparing players to confront a
+                        more challenging Watcher, should players mishandle the Twilight
+                        Sword. For those survivors who prove their worth, a new life in
+                        the Twilight Order awaits them.<br/><br/><b style="color:#cc0;">Cards Only</b> - adds only Fighting Arts, Disorders and Terrain cards.<br/><b style="color:#cc0;">All content</b> - adds all expansion content.`,
+        'enum': expansion_options,
+      },
       'butcher intro': {
         'type': 'option',
         'group': 'fan',
         'title': 'Butcher Intro (CCG)',
         'default': 'Disabled',
-        'description': 'Adds Butcher introduction event <b>Fresh Meat</b> to be played at <b>Lantern Year 3</b> of People of the Lantern campaign.',
+        'description': '<b style="color:#eaa;">To play you need to print a gear card from here:</b><br/><a style="color:#e55;" href="https://www.patreon.com/posts/butcher-intro-37279049">https://www.patreon.com/posts/butcher-intro-37279049</a><br/><br/>Adds Butcher introduction event <b>Fresh Meat</b> to be played at <b>Lantern Year 3</b> of People of the Lantern campaign.',
         'enum': [
           'Disabled',
           'All content',
         ],
+      },
+      'drifter knight': {
+        'type': 'option',
+        'group': 'fan',
+        'title': 'Drifter Knight (CCG)',
+        'default': 'Disabled',
+        'description': `<b style="color:#eaa;">To play you need to print gear, terrain, tactics, resource and HL/AI cards from here:</b><br/><a style="color:#e55;" href="https://www.patreon.com/posts/drifter-knight-33914652">https://www.patreon.com/posts/drifter-knight-33914652</a><br/><br/>
+                        Deep within the maddening darkness, a pale light shimmers.
+                        Amongst alien flora, buried beneath noxious fog, rests a
+                        lonesome creature. A knight without a charge. A protector with
+                        nothing to protect. A drifting monster who stalks the deep fog.
+                        Where the spartina grass grows thick, and the mist condenses in
+                        pools, that is the lair of the Drifter Knight.
+                        <br/><br/>
+                        This race of noble beings live for one purpose: to find those
+                        worthy of a dance. They will often cross blades with Manhunters,
+                        other Knights, and of course heroes of the dark. The foolish seek
+                        Drifters out. Not for honor, but through the seductive scent of
+                        death that lingers around these Knights. Beware the curtain of
+                        fog. Keep your lantern close.<br/><br/><b style="color:#cc0;">Cards Only</b> - adds only Fighting Arts, Disorders and Terrain cards.<br/><b style="color:#cc0;">All content</b> - adds all expansion content.`,
+        'enum': expansion_options,
       },
       'storm knight': {
         'type': 'option',
         'group': 'fan',
         'title': 'Storm Knight (CCG)',
         'default': 'Disabled',
-        'description': 'Created by <b>CCG</b>.<br/>There was once a man, fascinated by clouds, that ardently followed storms into the darkness. He sought dominion over the heavens and built himself a floaring castle to chase the clouds until they accepted him and the man became a storm itself.<br/><br/><b style="color:#cc0;">Cards Only</b> - adds only Fighting Arts, Disorders and Terrain cards.<br/><b style="color:#cc0;">All content</b> - adds all expansion content.',
+        'description': `
+        <b style="color:#eaa;">To play you need to print gear, terrain, resource and HL/AI cards from here:</b><br/><a style="color:#e55;" href="https://www.patreon.com/posts/storm-knight-33555687">https://www.patreon.com/posts/storm-knight-33555687</a><br/><br/>
+        There was once a man, fascinated by clouds, that ardently followed storms into the darkness. He sought dominion over the heavens and built himself a floaring castle to chase the clouds until they accepted him and the man became a storm itself.<br/><br/><b style="color:#cc0;">Cards Only</b> - adds only Fighting Arts, Disorders and Terrain cards.<br/><b style="color:#cc0;">All content</b> - adds all expansion content.`,
         'enum': expansion_options,
       },
       'trial of champions': {
@@ -663,7 +711,8 @@ var settings_schema = {
         'group': 'fan',
         'title': 'Trial of Champions (CCG)',
         'default': 'Disabled',
-        'description': 'Created by <b>CCG</b>.<br/>Champions are special survivors with the potential to evolve into glorious, immortal warriors. They represent the classic character classes found throughout fantasy genres. Each champion comes with a wide array of potential new abilities to learn and use in combination with other Champions to form superior hunting parties. Death is a mere setback for Champions and they continue to fight, earn experience points and level up toward reaching their full potential.',
+        'description': `<b style="color:#eaa;">To play you need to print gear cards from here:</b><br/><a style="color:#e55;" href="https://www.patreon.com/posts/trial-of-33556064">https://www.patreon.com/posts/trial-of-33556064</a><br/><br/>
+        Champions are special survivors with the potential to evolve into glorious, immortal warriors. They represent the classic character classes found throughout fantasy genres. Each champion comes with a wide array of potential new abilities to learn and use in combination with other Champions to form superior hunting parties. Death is a mere setback for Champions and they continue to fight, earn experience points and level up toward reaching their full potential.`,
         'enum': [
           'Disabled',
           'All content',

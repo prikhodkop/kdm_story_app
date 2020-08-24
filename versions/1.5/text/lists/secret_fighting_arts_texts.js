@@ -1,3 +1,5 @@
+const event_img = imageHTML('images/icons/book', '0.9em;display:inline;vertical-allign:bottom')
+
 const texts = {
  'Acanthus Doctor': {
   'expansion': 'flower knight',
@@ -70,7 +72,7 @@ const texts = {
  'Hellfire': {
   'expansion': 'sunstalker',
   'label': 'Hellfire',
-  "description": "You cannot lose or remove this fighting art. Gain +1 strength for each red affinity you have. You cannot be nominated for <b>Intimacy</b>. You ignore <b>Extreme Heat</b>. At the start of your act, lose 1 survival. At the end of your act, if your survival is 0 or you have any +1 strength tokens, your organs cook themselves and you die.",
+  "description": "You cannot lose or remove this fighting art. Gain +1 strength for each red affinity you have. You cannot be nominated for "+event_img+"<b>Intimacy</b>. You ignore <b>Extreme Heat</b>. At the start of your act, lose 1 survival. At the end of your act, if your survival is 0 or you have any +1 strength tokens, your organs cook themselves and you die.",
  },
  'Immovable Object': {
   'expansion': 'gorm',
@@ -150,6 +152,15 @@ const texts = {
  'Mutual Induction': {
   'expansion': 'storm knight',
   "description": "At the start of your act, if you have 0 survival, roll 1d10. On a 6+, gain a <b>Charge</b> token that may be placed on this card or any gear that uses <b>Charge</b> tokens. When you are <b>knocked down</b>, remove all <b>Charge</b> tokens from this card.<br/><br/>When this card had 3+ <b>Charge</b> tokens, you may remove them all to gain +1 survival and +1 movement token.",
+ },
+
+ 'Survivorship': {
+  'expansion': 'allison ccg',
+  "description": "On Arrival, randomly select 1 of your survival actions. For that action, it costs you 1 less survival to perform for the remainder of the showdown.",
+ },
+ 'Drifting Dance': {
+  'expansion': 'drifter knight',
+  "description": "When you draw a trap card while attacking with a weapon that you have achieved either specialization or mastery with, you may suffer 1d10+3 brain damage to cancel the trap. If you do, shuffle it back into the hit location deck and attempt to wound previously drawn hit locations normally.<br/><br/>Limit, once per showdown.",
  },
 }
 

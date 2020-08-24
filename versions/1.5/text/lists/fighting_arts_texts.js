@@ -1,3 +1,5 @@
+const event_img = imageHTML('images/icons/book', '0.9em;display:inline;vertical-allign:bottom')
+
 const texts = {
  'Abyssal Sadist': {
   'expansion': 'manhunter',
@@ -78,7 +80,7 @@ const texts = {
   'expansion': 'echoes of death',
   'type': 'strain',
   'label': 'Ethereal Pact',
-  "description": "Add +3 to your brain trauma rolls.<br/><br/>When you suffer the <b>Impossible!</b> brain trauma, the fungus in your head connects to the dreaming. Read <b>Birth of a Savior</b> story event and choose a dream. (if you\'ve already reached Age 2, you cannot gain your dream\'s secret fighting art)<br/><br/>If you are a Savior, this Fighting Art has no effect."
+  "description": "Add +3 to your brain trauma rolls.<br/><br/>When you suffer the <b>Impossible!</b> brain trauma, the fungus in your head connects to the dreaming. Read "+event_img+"<b>Birth of a Savior</b> and choose a dream. (if you\'ve already reached Age 2, you cannot gain your dream\'s secret fighting art)<br/><br/>If you are a Savior, this Fighting Art has no effect."
  },
  'Extra Sense': {
    'label': 'Extra Sense',
@@ -250,6 +252,29 @@ const texts = {
   'expansion': 'lion knight',
   'label': 'Wardrobe Expert',
   "description": "When you suffer a severe injury at a hit location, you may archive a gear worn at that location to ignore it and gain +1 survival.",
+ },
+
+ 'Quick Strike': {
+  'expansion': 'allison ccg',
+  "description": "During your act, you may spend {image@images/icons/movement}and{image@images/icons/activation} to full move forward in a straight line. If you do, and you moved 5+ spaces with the last 2 spaces of movement adjacent to the monster roll 1d10. On a result 5+, place the survivor in the monster\'s blind spot and the monster suffers 1 wound. Otherwise, gain 2 bleeding tokens.",
+ },
+
+ 'Graceful Retreat': {
+  'expansion': 'drifter knight',
+  "description": "Whenever you <b>dash</b>, you gain +1 evasion token until the start of your next act.",
+ },
+ 'Lethal Blood': {
+  'expansion': 'drifter knight',
+  "description": "It takes one less bleeding token to kill you.<br/><br/>While you are adjacent to the monster, it has <b>-X</b> toughness where <b>X</b> is equal to the number of bleeding tokens you have. ",
+ },
+ 'Man of War': {
+   'label': 'Man o\' War',
+  'expansion': 'drifter knight',
+  "description": "When you attack from the blind spot, on a <b>perfect hit</b>, you may turn the monster to face you.<br/><br/>While you are in the monster's facing, your attacks gain +1 strength.",
+ },
+ 'Veiled Strike': {
+  'expansion': 'drifter knight',
+  "description": "When you attack with a spear wile you are in a space adjacent to the blind spot, you are considered to be in the blind spot.",
  },
 }
 

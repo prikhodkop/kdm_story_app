@@ -346,6 +346,21 @@ var texts = {
  'Oxidized Ring Whip': {'resources':[endeavor_img, '1 x Ring Whip', '1 x iron', '3 x leather', '3 x bone', '7 x organ', '1 x black lichen', '1 x cocoon membrane'], 'innovation': 'Oxidation'},
  'Oxidized Lantern Helm': {'resources':[endeavor_img, '1 x Lantern Helm', '1 x iron', '3 x leather', '7 x bone', '3 x organ', '1 x black lichen', '1 x cocoon membrane'], 'innovation': 'Oxidation'},
 
+
+ 'Bronze Cuirass': {'resources':['2 x copper', '1 x iron', '2 x leather'], 'set':['Bronze']},
+ 'Bronze Gauntlets': {'resources':['2 x copper', '1 x leather'], 'set':['Bronze']},
+ 'Bronze Sword': {'resources':['1 x copper', '2 x bone', '1 x leather'], 'innovation': 'Heat'},
+ 'Bronze Greaves': {'resources':['2 x copper', '1 x leather'], 'set':['Bronze']},
+ 'Twilight Knight Amulet': {'resources':['1 x copper', '1 x scrap'], 'innovation': 'Heat'},
+
+ 'Vile Concoction':{'resources':['1 x bile duct', '1 x skull', '3 x organ']},
+ 'Morbid Concoction':{'resources':['1 x stinging tendrils', '1 x hide']},
+ 'Bloated Drinking Bladder':{'resources':['1 x exquisite fabric', '2 x organ']},
+ 'Drifters Pendant':{'resources':['1 x bile duct', '1 x exquisite fabric']},
+ 'Numbing Concoction':{'resources':['1 x exquisite fabric', '2 x fleshy armor']},
+ 'Psychedelic Concoction':{'resources':['1 x neurotoxin', '2 x stinging tendrils'], 'innovation': 'Nightmare Training'},
+ 'Naginata':{'resources':['1 x destroyed barb', '1 x silken skin', '2 x bone'], 'innovation': 'Weapon Crafter'},
+ 'Iron Parasol':{'resources':['1 x pertrified plate', '1 x leather', '2 x iron'], 'innovation': 'Blacksmith'},
 }
 
 module.exports = {

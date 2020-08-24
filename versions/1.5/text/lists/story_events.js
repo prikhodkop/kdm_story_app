@@ -1112,8 +1112,86 @@ const texts = {
     'ltop': '25%',
     'lleft': '28%',
     'music_delay': 'speech-1000',
+  },
+
+  'showdown allison the twilight knight': {
+    "label": "Showdown: Allison the Twiilight Knight",
+    'expansion': 'allison ccg',
+    'campaign': ['Lantern'],
+    'music': 'music/showdown allison the twilight knight.mp3',
+    'type': 'image',
+    'ltop': '60%',
+    // 'lleft': '28%',
+    'music_delay': 'speech-500',
+
+  },
+
+  'the duel': {
+
+    'expansion': 'allison ccg',
+    'campaign': ['Lantern'],
+    // 'music': 'music/fresh meat.mp3',
+    'type': 'image',
+    'music': 'music/the duel.mp3',
+    'music_delay': 'speech-1000',
     'speech': '#',
-  }
+  },
+  'the order': {
+    'expansion': 'allison ccg',
+    'campaign': ['Lantern'],
+    // 'music': 'music/fresh meat.mp3',
+    'type': 'image',
+    'music': 'music/return of the order.mp3',
+    // 'ltop': '25%',
+    // 'lleft': '28%',
+    'music_delay': 'speech-1000',
+  },
+  'return of the order': {
+    'expansion': 'allison ccg',
+    'campaign': ['Lantern'],
+    'music': 'music/the order.mp3',
+    'type': 'image',
+    // 'ltop': '25%',
+    // 'lleft': '28%',
+    'music_delay': 'speech-2000',
+  },
+  'who watches the watcher': {
+    'expansion': 'allison ccg',
+    'campaign': ['Lantern'],
+    'music': 'music/who watches the watcher.mp3',
+    'type': 'image',
+    // 'ltop': '25%',
+    // 'lleft': '28%',
+    'music_delay': 'speech-2000',
+  },
+
+
+  'show me your motivation': {
+    'expansion': 'drifter knight',
+    'music': 'music/show me your motivation.mp3',
+    'type': 'image',
+    // 'ltop': '25%',
+    // 'lleft': '28%',
+    'music_delay': 'speech+500',
+  },
+
+  'showdown drifter knight': {
+    'expansion': 'drifter knight',
+    'music': 'music/showdown drifter knight.mp3',
+    'type': 'image',
+    'ltop': '68%',
+    // 'lleft': '28%',
+    'music_delay': 'speech-4000',
+  },
+
+  'a parade of ghosts': {
+    "label": "A Parade of Ghosts",
+    'expansion': 'drifter knight',
+    'type': 'video',
+    'music': 'music/a parade of ghosts.mp3',
+  },
+
+
 }
 
 module.exports = {
