@@ -675,27 +675,27 @@ var settings_schema = {
           'All content',
         ],
       },
-      // 'drifter knight': {
-      //   'type': 'option',
-      //   'group': 'fan',
-      //   'title': 'Drifter Knight (CCG)',
-      //   'default': 'Disabled',
-      //   'description': `<b style="color:#eaa;">To play you need to print gear, terrain, tactics, resource and HL/AI cards from here:</b><br/><a style="color:#e55;" href="https://www.patreon.com/posts/drifter-knight-33914652">https://www.patreon.com/posts/drifter-knight-33914652</a><br/><br/>
-      //                   Deep within the maddening darkness, a pale light shimmers.
-      //                   Amongst alien flora, buried beneath noxious fog, rests a
-      //                   lonesome creature. A knight without a charge. A protector with
-      //                   nothing to protect. A drifting monster who stalks the deep fog.
-      //                   Where the spartina grass grows thick, and the mist condenses in
-      //                   pools, that is the lair of the Drifter Knight.
-      //                   <br/><br/>
-      //                   This race of noble beings live for one purpose: to find those
-      //                   worthy of a dance. They will often cross blades with Manhunters,
-      //                   other Knights, and of course heroes of the dark. The foolish seek
-      //                   Drifters out. Not for honor, but through the seductive scent of
-      //                   death that lingers around these Knights. Beware the curtain of
-      //                   fog. Keep your lantern close.<br/><br/><b style="color:#cc0;">Cards Only</b> - adds only Fighting Arts, Disorders and Terrain cards.<br/><b style="color:#cc0;">All content</b> - adds all expansion content.`,
-      //   'enum': expansion_options,
-      // },
+      'drifter knight': {
+        'type': 'option',
+        'group': 'fan',
+        'title': 'Drifter Knight (CCG)',
+        'default': 'Disabled',
+        'description': `<b style="color:#eaa;">To play you need to print gear, terrain, tactics, resource and HL/AI cards from here:</b><br/><a style="color:#e55;" href="https://www.patreon.com/posts/drifter-knight-33914652">https://www.patreon.com/posts/drifter-knight-33914652</a><br/><br/>
+                        Deep within the maddening darkness, a pale light shimmers.
+                        Amongst alien flora, buried beneath noxious fog, rests a
+                        lonesome creature. A knight without a charge. A protector with
+                        nothing to protect. A drifting monster who stalks the deep fog.
+                        Where the spartina grass grows thick, and the mist condenses in
+                        pools, that is the lair of the Drifter Knight.
+                        <br/><br/>
+                        This race of noble beings live for one purpose: to find those
+                        worthy of a dance. They will often cross blades with Manhunters,
+                        other Knights, and of course heroes of the dark. The foolish seek
+                        Drifters out. Not for honor, but through the seductive scent of
+                        death that lingers around these Knights. Beware the curtain of
+                        fog. Keep your lantern close.<br/><br/><b style="color:#cc0;">Cards Only</b> - adds only Fighting Arts, Disorders and Terrain cards.<br/><b style="color:#cc0;">All content</b> - adds all expansion content.`,
+        'enum': expansion_options,
+      },
       'storm knight': {
         'type': 'option',
         'group': 'fan',

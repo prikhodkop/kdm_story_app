@@ -1166,6 +1166,31 @@ const texts = {
   },
 
 
+  'show me your motivation': {
+    'expansion': 'drifter knight',
+    'music': 'music/show me your motivation.mp3',
+    'type': 'image',
+    // 'ltop': '25%',
+    // 'lleft': '28%',
+    'music_delay': 'speech+500',
+  },
+
+  'showdown drifter knight': {
+    'expansion': 'drifter knight',
+    'music': 'music/showdown drifter knight.mp3',
+    'type': 'image',
+    'ltop': '68%',
+    // 'lleft': '28%',
+    'music_delay': 'speech-4000',
+  },
+
+  'a parade of ghosts': {
+    "label": "A Parade of Ghosts",
+    'expansion': 'drifter knight',
+    'type': 'video',
+    'music': 'music/a parade of ghosts.mp3',
+  },
+
 
 }
 

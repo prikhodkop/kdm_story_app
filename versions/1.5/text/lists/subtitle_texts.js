@@ -323,7 +323,19 @@ const texts = {
 
   'fresh meat': {
     'text': 'Emboldened by the exhilaration of their previous kill, the hunting party tracks down the source of such horrific noise.'
-  }
+  },
+
+  'show me your motivation': {
+    'text': `The knight sets a hidden gaze upon
+              her attacker, curious how they could
+              have made it past her defense. A
+              silent offer is made to the survivor.
+              "Impress me!"`
+  },
+
+  'showdown drifter knight': {
+    'text': `There was once a woman born without a lantern behind her eyes. She could not hunt and could not work, but her fellow survivors saw her as already dead. So she trained under the scorching sun every waking moment. When that sun awoke and devoured her people, the woman was left unharmed. She was already dead to the world.`
+  },
 }
 
 module.exports = {

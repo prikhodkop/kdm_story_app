@@ -258,6 +258,24 @@ const texts = {
   'expansion': 'allison ccg',
   "description": "During your act, you may spend {image@images/icons/movement}and{image@images/icons/activation} to full move forward in a straight line. If you do, and you moved 5+ spaces with the last 2 spaces of movement adjacent to the monster roll 1d10. On a result 5+, place the survivor in the monster\'s blind spot and the monster suffers 1 wound. Otherwise, gain 2 bleeding tokens.",
  },
+
+ 'Graceful Retreat': {
+  'expansion': 'drifter knight',
+  "description": "Whenever you <b>dash</b>, you gain +1 evasion token until the start of your next act.",
+ },
+ 'Lethal Blood': {
+  'expansion': 'drifter knight',
+  "description": "It takes one less bleeding token to kill you.<br/><br/>While you are adjacent to the monster, it has <b>-X</b> toughness where <b>X</b> is equal to the number of bleeding tokens you have. ",
+ },
+ 'Man of War': {
+   'label': 'Man o\' War',
+  'expansion': 'drifter knight',
+  "description": "When you attack from the blind spot, on a <b>perfect hit</b>, you may turn the monster to face you.<br/><br/>While you are in the monster's facing, your attacks gain +1 strength.",
+ },
+ 'Veiled Strike': {
+  'expansion': 'drifter knight',
+  "description": "When you attack with a spear wile you are in a space adjacent to the blind spot, you are considered to be in the blind spot.",
+ },
 }
 
 module.exports = {

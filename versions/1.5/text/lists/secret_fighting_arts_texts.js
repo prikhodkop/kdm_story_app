@@ -158,6 +158,10 @@ const texts = {
   'expansion': 'allison ccg',
   "description": "On Arrival, randomly select 1 of your survival actions. For that action, it costs you 1 less survival to perform for the remainder of the showdown.",
  },
+ 'Drifting Dance': {
+  'expansion': 'drifter knight',
+  "description": "When you draw a trap card while attacking with a weapon that you have achieved either specialization or mastery with, you may suffer 1d10+3 brain damage to cancel the trap. If you do, shuffle it back into the hit location deck and attempt to wound previously drawn hit locations normally.<br/><br/>Limit, once per showdown.",
+ },
 }
 
 module.exports = {

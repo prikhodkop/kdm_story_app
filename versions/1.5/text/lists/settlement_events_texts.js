@@ -195,8 +195,11 @@ const texts = {
       '<b class="event-text">[Event]</b> The training display inspires all. +1 to the result of <b>Nightmare Training</b> endeavors.',
     ]
   },
-
  },
+
+ 'Ghostly Carrion': {
+    'expansion': 'drifter knight',
+ }
 }
 
 module.exports = {

@@ -101,6 +101,22 @@ const texts = {
    'description': '#',
   'expansion': 'allison ccg'
  },
+
+ '3 Dead Coral': {
+   'label':'',
+   'description': '#',
+  'expansion': 'drifter knight'
+ },
+ '3 Living Coral': {
+   'label':'',
+   'description': '#',
+  'expansion': 'drifter knight'
+ },
+ 'Tidal Pool': {
+   'label':'',
+   'description': '#',
+  'expansion': 'drifter knight'
+ },
 }
 
 module.exports = {

@@ -53,6 +53,15 @@ const texts = {
     'label': 'Spidicules',
     'showdown': 'showdown spidicules',
   },
+  'drifter knight': {
+    'board':'xmrrmrxmrmrr',
+    'monster_position': [6, 9, 11],
+    'monster_icon':'images/hunt/drifter knight.png',
+    'monster_icon_width':7,
+    'monster_icon_height':38,
+    'label': 'Drifter Knight',
+    'showdown': 'showdown drifter knight',
+  },
   'phoenix': {
     'board':'xrmrmrxmrmrr',
     'monster_position': [6, 9, 12],

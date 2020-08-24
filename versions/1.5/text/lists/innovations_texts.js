@@ -880,6 +880,7 @@ const texts = {
 },
 
 'Initiation': {
+  'expansion': 'allison ccg',
  'label': '',
  'tags': ['other'],
  'action': true,
@@ -893,6 +894,7 @@ const texts = {
 },
 
 'Muttering Blade': {
+  'expansion': 'allison ccg',
  'label': '',
  'tags': ['other'],
  'action': true,
@@ -906,9 +908,33 @@ const texts = {
 
 'The Order is Watching': {
  'label': '',
+ 'expansion': 'allison ccg',
  'action': true,
 
  'tags': ['other'],
+},
+
+'Stone Garden': {
+  'expansion': 'drifter knight',
+ 'label': '',
+ 'tags': ['faith', 'shrine'],
+ 'action': true,
+ 'parent': 'Shrine',
+},
+
+'Venom Wine': {
+  'expansion': 'drifter knight',
+ 'label': '',
+ 'tags': ['art'],
+ 'action': true,
+ 'passive': {
+   'settlement': [
+     '<b>Survival Limit:</b> $1$'
+   ],
+   'departing': [
+     'All <b>departing</b> survivors gain +$3$ insanity.'
+   ],
+ }
 },
 
 }

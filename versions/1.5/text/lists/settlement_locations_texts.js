@@ -389,9 +389,19 @@ const texts = {
    '1': ['Bronze Gauntlets', 'Bronze Cuirass', 'Bronze Greaves'],
    '2': ['Bronze Sword', 'Twilight Knight Amulet'],
    '3': []},
-
  },
+
+ 'Jellyfish Apothecary': {
+   'expansion': 'drifter knight',
+   'action': true,
+  'gear': {
+   '1': ['Vile Concoction', 'Morbid Concoction', 'Bloated Drinking Bladder'],
+   '2': ['Drifters Pendant', 'Numbing Concoction'],
+   '3': ['Psychedelic Concoction', 'Naginata', 'Iron Parasol']},
+   'action_disabler': {'innovation': ['Venom Wine']},
+  },
 }
+
 
 module.exports = {
  texts,

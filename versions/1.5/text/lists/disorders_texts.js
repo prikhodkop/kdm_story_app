@@ -239,6 +239,34 @@ const texts = {
   'expansion': 'allison ccg',
   "description": "<i style='color:#aaa;'>Your overconfidence is your weakness.</i><br/><br/>You must always <b>depart</b>, unless you are forced to skip next hunt.<br/>If you <b>retire</b>, you would rather face exile. You are dead.",
  },
+
+ 'Enervated System': {
+  'expansion': 'drifter knight',
+  "description": "<i style='color:#aaa;'>Your central nervous system has been torn asunder.</i><br/><br/>On <b>Arrival</b>, add +1 to each hit location.<br/>You cannot gain positive attribute tokens. If you would, suffer 1 damage to a random hit location instead.",
+ },
+ 'Misaligned Chakras': {
+  'expansion': 'drifter knight',
+  "description": "<i style='color:#aaa;'>Your natural balance has been sent off kilter.</i><br/><br/>While you have this disorder, you have -1 evasion and -1 accuracy.<br/>When you roll on an event table, roll twice and keep the lowest result.",
+ },
+ 'Morbid Curiosity': {
+  'expansion': 'drifter knight',
+  "description": "<i style='color:#aaa;'>Your thrist for knowledge is unquenchable.</i><br/><br/>You must investigate if the opportunity to do so arises.<br/>Whenever a random survivor is nominated to roll on a table, you are nominated instead.",
+ },
+ 'Respectful': {
+  'expansion': 'drifter knight',
+  "description": `<i style='color:#aaa;'>
+  You feel a great deal of respect for the beasts you hunt, and would never disgrace them.
+  </i><br/><br/>
+  You may only attack while in the monster's facing. If you do, gain +1 strength for that attack.`,
+ },
+ 'Toxiphobia': {
+  'expansion': 'drifter knight',
+  "description": `<i style='color:#aaa;'>
+  Is that safe to eat? Are you sure?
+  </i><br/><br/>
+  Whenever you <b>consume</b>, roll 1d10.<br/>
+  On a 1-5, suffer brain damage equal to the roll result. On a 6+, gain insanity equal to the roll result.`,
+ },
 }
 
 module.exports = {

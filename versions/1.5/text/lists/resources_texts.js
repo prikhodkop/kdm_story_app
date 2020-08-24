@@ -215,6 +215,16 @@ const texts = {
 'Whispering Whetstone': {'type': 'scrap/other', 'group_name':'Strange',
                 'text': '<i>It whispers only to you.</i><br/><br/>{image@images/icons/endeavors}: Archive this to give one axe, sword, dagger, scythe, katana, or katar gear in the settlement storage <b>sharp</b>. Lasts until end of the next showdown. After archiving gain 1 <b>iron</b> strange resource.'},
 
+
+'Destroyed Barb': {'type': 'bone', 'group_name':'Drifter Knight, Strange', 'text': '<i>Merely handling it draws blood.</i>'},
+'Neurotoxin': {'type': 'organ', 'group_name':'Drifter Knight, Strange', 'text': '<i>Causes instant death to survivors and other vermin.</i>'},
+
+'Bile duct': {'type': 'bone/hide/organ', 'group_name':'Drifter Knight', 'text': '<i>Ignore the fact that it has no stomach.</i><br /><br />Drop chance: 2/15.'},
+'Exquisite Fabric': {'type': 'hide/silk', 'group_name':'Drifter Knight', 'text': '<i>One look and it pull you right in.</i><br /><br />Drop chance: 1/15.'},
+'Fleshy Armor': {'type': 'hide', 'group_name':'Drifter Knight', 'text': '<i>Surprisingly durable, tastes like hagfish.</i><br /><br />Drop chance: 4/15.'},
+'Petrified Plate': {'type': 'bone/scrap', 'group_name':'Drifter Knight', 'text': '<i>A thousands years of heat in one plate.</i><br /><br />Drop chance: 2/15.'},
+'Silken Skin': {'type': 'organ/slik', 'group_name':'Drifter Knight', 'text': '<i>Looks fabulous in any lighting.</i><br /><br />Drop chance: 2/15.'},
+'Stinging Tendrils': {'type': 'organ', 'group_name':'Drifter Knight', 'text': '<i>Hard to grasp without gloves.</i><br /><br />Drop chance: 4/15.'},
 }
 
 module.exports = {

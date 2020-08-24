@@ -386,14 +386,14 @@ function get_representation_int (word) {
   return result
  } else if (word in resources) {
    let color = ''
-   if (resources[word].group_name.toLowerCase().includes('strange')) {
-     color = '#9ca814'
-   }
    if (resources[word].group_name.toLowerCase().includes('basic')) {
      color = '#becd70'
    }
-   if (['white lion', 'sunstalker', 'screaming antelope', 'phoenix', 'flower knight', 'spidicules', 'dung beetle knight', 'gorm', 'dragon king'].some(substring=>resources[word].group_name.toLowerCase().includes(substring))) {
+   else if (['white lion', 'sunstalker', 'screaming antelope', 'phoenix', 'flower knight', 'spidicules', 'dung beetle knight', 'gorm', 'dragon king', 'drifter knight', 'gigalion'].some(substring=>resources[word].group_name.toLowerCase().includes(substring))) {
      color = '#d3a52d'
+   }
+   else if (resources[word].group_name.toLowerCase().includes('strange')) {
+     color = '#9ca814'
    }
    let result = ''
    let image_path = pathToAssetL('images/reference/Resources/'+word+'.jpg')
