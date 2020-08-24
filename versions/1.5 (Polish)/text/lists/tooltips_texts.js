@@ -45,7 +45,7 @@ const texts = {
     'text': '<b>Źródło: $G$</b>'
   },
   'required_word': {
-    'text': '<b style="color:#cc0;font-size:1em;">Wymaga: $G$d10</b>'
+    'text': '<b style="color:#cc0;font-size:1em;">Wymaga: $G$</b>'
   },
 
   'start showdown': {
