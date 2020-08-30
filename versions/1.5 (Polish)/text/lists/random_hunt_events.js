@@ -1715,7 +1715,7 @@ Każdy Ocalały rzuca 1k10.
 `,
 
   75: `75 | Ups!
-Potykając się w ciemności, wykonawca zdarzenia wuwraca się na ziemię, miażdżąc pod sobą latarnię. Gorejące światło z wnętrza latarni, przypala jego ekwipunek. Wykonawca wydarzenia archiwizuje 1 wybrany przez siebie ekwipunek, ze swojej siatki ekwipunku.
+Potykając się w ciemności, wykonawca zdarzenia wywraca się na ziemię, miażdżąc pod sobą latarnię. Gorejące światło z wnętrza latarni, przypala jego ekwipunek. Wykonawca wydarzenia archiwizuje 1 wybrany przez siebie ekwipunek, ze swojej siatki ekwipunku.
 `,
 
   76: `76 | Wyśniona droga
