@@ -446,7 +446,7 @@ Pośród morza kamiennych twarzy, jedna przyciąga spojrzenie wykonawcy wydarzen
 
 [img] 18 # no-shadow # width:35%
 
-Znajdujesz dziwną roślinę wyrastającą z oczu kamiennejtwarzy. Wykonawca wydarzenia próbuje ją wyrwać. Rzuć 1k10.
+Znajdujesz dziwną roślinę wyrastającą z oczu kamiennej twarzy. Wykonawca wydarzenia próbuje ją wyrwać. Rzuć 1k10.
 
 [i] Jeśli jakikolwiek Ocalały ma sierp, dodaj +4 do swojego rzutu.
 
