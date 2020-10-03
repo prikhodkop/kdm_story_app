@@ -758,8 +758,6 @@ const texts = {
   'passive': {
     'settlement': [
       '<b>Survival Limit:</b> $1$',
-    ],
-    'settlement': [
       'When rolling on the '+event_img+'<b class="event">Intimacy</b>, roll twice and pick lowest result.',
     ],
     'newborn': [

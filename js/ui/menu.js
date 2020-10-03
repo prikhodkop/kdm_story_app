@@ -582,7 +582,6 @@ function createReference () {
     optgroupField: 'class',
     lockOptgroupOrder: true,
     labelField: 'name',
-    // searchField: ['name'],
     maxItems: 10,
 
     plugins: ['remove_button_2', 'silent_remove'],
@@ -597,9 +596,7 @@ function createReference () {
       field: '$score',
     },
     ],
-    // ignoreFocusOpen: true,
     onItemRemove: function (values) {
-      // return confirm(values);
       console.log('Removing: '+values)
       $('#reference-data.' + adapt_name(values)).fadeOut(500, function () {
         $(this).css({
@@ -607,21 +604,12 @@ function createReference () {
           display: 'block',
         }).slideUp()
       })
-      // $('.selectize-dropdown').css("display", "none");
 
       addTimer(function () {
         $('#reference-data.' + adapt_name(values)).remove()
-        // window.selectize.blur()
       }, 1500)
-      // addTimer(function () {
-      //   window.selectize.blur()
-      // }, 100)
-      // $('#reference-window').selectize.close();
-      // $('#reference-window').setValue('Type here...');
     },
     onItemAdd: function (values, item) {
-      // return confirm(item);
-      // console.log(item);
       $('#glossary-symbols').hide()
       if (is_random_draw(values)) {
         let draws = get_random_draws(values)
@@ -630,13 +618,11 @@ function createReference () {
         console.log(draws)
 
         selectize.removeItem(values, true)
-        // $('#glossary-symbols').fadeOut(200)
         window.blur_mode = true;
         for (let i = 0; i < draws.length; i++) {
           console.log(draws[i])
           addTimer(function () {
             selectize.addItem(draws[i], false)
-            // $('#glossary-symbols').hide()
           }, 1000 * i)
         }
         addTimer(function () {
@@ -650,36 +636,10 @@ function createReference () {
       addTimer(function(){
         $('#reference-window-back').scrollTo($('#reference-data.' + adapt_name(values)), duration = 100)
       }, 100)
-      // selectize.setCaret(0);
-      // selectize.blur();
     },
 
     onDropdownOpen: function ($dropdown) {
-      // if (!this.lastQuery.length) {
-      //   this.close()
-      // } else {
-      //   $('#glossary-symbols').hide()
-      // }
-      // if (window.blur_mode) {
-      //
-      //   window.selectize.close();
-      // }
-      // window.selectize.setCaret(0);
-      // if (!this.lastQuery.length) {
-      //   this.close()
-      // }
-      // $('#glossary-symbols').hide()
     },
-    //
-    // onDropdownClose: function ($dropdown) {
-    //   // if (!$('.selectize-input').hasClass('has-items')) {
-    //   //   $('#glossary-symbols').fadeIn(100)
-    //   // }
-    //   window.selectize.blur();
-    // },
-    // onClear: function() {
-    //   window.selectize.blur();
-    // }
   })[0].selectize
 
   window.selectize = selectize
