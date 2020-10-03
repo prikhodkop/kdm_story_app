@@ -45,7 +45,7 @@ const texts = {
     'text': '<b>Źródło: $G$</b>'
   },
   'required_word': {
-    'text': '<b style="color:#cc0;font-size:1em;">Wymaga: $G$d10</b>'
+    'text': '<b style="color:#cc0;font-size:1em;">Wymaga: $G$</b>'
   },
 
   'start showdown': {
@@ -74,6 +74,9 @@ const texts = {
   },
   'locations_list': {
     'text': '<b style="color:#cc0;">Kliknij</b> aby dodać/usunąć <b>lokacje osady</b>.',
+  },
+  'bookmarks_list': {
+    'text': '<b style="color:#cc0;">Kliknij</b> aby dodadać/usunąć <b>zakładki</b>.<br/><br/>Zakładki mogą wpływać na różne aspekty twojej kampanii i wydarzenia.<br/>Zwykle jesteś informowany aby dodać lub usunąć zakładkę podczas gry.',
   },
   'severe_table': {
     'text': '<b style="color:#cc0;">Kliknij</b> aby ukryć.'
