@@ -446,7 +446,7 @@ Pośród morza kamiennych twarzy, jedna przyciąga spojrzenie wykonawcy wydarzen
 
 [img] 18 # no-shadow # width:35%
 
-Znajdujesz dziwną roślinę wyrastającą z oczu kamiennejtwarzy. Wykonawca wydarzenia próbuje ją wyrwać. Rzuć 1k10.
+Znajdujesz dziwną roślinę wyrastającą z oczu kamiennej twarzy. Wykonawca wydarzenia próbuje ją wyrwać. Rzuć 1k10.
 
 [i] Jeśli jakikolwiek Ocalały ma sierp, dodaj +4 do swojego rzutu.
 
@@ -1715,7 +1715,7 @@ Każdy Ocalały rzuca 1k10.
 `,
 
   75: `75 | Ups!
-Potykając się w ciemności, wykonawca zdarzenia wuwraca się na ziemię, miażdżąc pod sobą latarnię. Gorejące światło z wnętrza latarni, przypala jego ekwipunek. Wykonawca wydarzenia archiwizuje 1 wybrany przez siebie ekwipunek, ze swojej siatki ekwipunku.
+Potykając się w ciemności, wykonawca zdarzenia wywraca się na ziemię, miażdżąc pod sobą latarnię. Gorejące światło z wnętrza latarni, przypala jego ekwipunek. Wykonawca wydarzenia archiwizuje 1 wybrany przez siebie ekwipunek, ze swojej siatki ekwipunku.
 `,
 
   76: `76 | Wyśniona droga
