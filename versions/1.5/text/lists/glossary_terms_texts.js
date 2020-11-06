@@ -751,7 +751,7 @@ const texts = {
    'description':'Principles are your settlement\'s guiding philosophies. When a principle\'s story event triggers, your settlement must make a choice. Record the chosen principle on the settlement record sheet and add that principle\'s card to the settlement play area.',},
  'Priority Target': {
    'label':'',
-   'description':'When a survivor gains the priority target token, it signifies that the survivor has captured the monster\'s attention. Only 1 survivor may have the priority target token at a time. Whenever a monster picks a target, the survivor with the priority target token will always be the target of an Al card. The priority target token is removed only when: another survivor gains the priority target token, an effect causes the priority target token to be removed, or at the end of the next monster turn.',},
+   'description':'When a survivor gains the priority target token they have captured monster\'s attention. Only 1 survivor may have the priority target token at a time. Whenever a monster performs a pick target action, the survivor with the priority target token will always be picked. The priority target token is removed when: the survivor with the token is picked, another survivor gains the priority target token, an effect causes the priority target token to be removed.',},
  'Prismatic': {
    'label':'',
    'description':'Your complete affinities and incomplete affinity halves count as all colors.',},

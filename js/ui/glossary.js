@@ -147,7 +147,7 @@ function localized_require2(text, lang, args) {
 
     if ('params' in data_local_init) {
       // console.log('!!!Params found!!')
-      if (data_local_init.params.interaction == 'outer_join') {
+      if (data_local_init.params.interaction != 'inner_join') {
         let keys_local = Object.keys(data_local)
 
         let new_keys = $.grep(keys_local, function(el){return $.inArray(el, keys) == -1});
