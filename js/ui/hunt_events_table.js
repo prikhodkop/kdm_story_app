@@ -16,7 +16,8 @@ module.exports = {
   md_to_html_2,
   is_promo_event,
   get_sequence,
-  init_hunt_events
+  init_hunt_events,
+  init_promos
 }
 
 const path_to_quary_events = 'images/hunt/quary_events/'
@@ -78,6 +79,8 @@ function init_hunt_events() {
      }
   }
 
+  init_promos()
+
 }
 
 // var no_reload = false
@@ -135,9 +138,7 @@ function removePromoCard(card) {
 }
 window.removePromoCard = removePromoCard
 
-
-
-function is_promo_event () {
+function init_promos () {
   let settings = getSettings();
 
   let promos = []
@@ -152,13 +153,26 @@ function is_promo_event () {
     promos.push('baby and the sword')
   }
 
+  if (settings['expansions']['lonely tree'] != 'Disabled') {
+    promos.push('object of desire')
+  }
+
+  sessionStorage.setItem('kdm_app_promos', JSON.stringify(shuffle(promos)))
+}
+
+function is_promo_event () {
+  let settings = getSettings();
+  let size_of_base = settings['size_of_basic_hunt_deck']
+  let promos = JSON.parse(sessionStorage.getItem('kdm_app_promos'))
+
   if (promos.length == 0) {
     return 'false'
   }
 
-  let_guess = Math.random()
+  let let_guess = Math.random()
 
   let promos_length = promos.length
+  // size_of_base = 1
   let promo_probability = 1/(1+size_of_base/promos_length)
 
   console.log('Num of promos: '+promos.length+' Size of base: '+size_of_base)
@@ -167,7 +181,9 @@ function is_promo_event () {
   if (let_guess > promo_probability) {
     return 'false'
   } else {
-    return promos[Math.floor(Math.random() * promos.length)];
+    let the_promo = promos.pop()
+    sessionStorage.setItem('kdm_app_promos', JSON.stringify(promos))
+    return the_promo;
   }
 
 }
