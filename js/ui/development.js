@@ -1019,10 +1019,10 @@ if (document.title == 'hunt') {
         }
         cnts[set_keys[i]+'_'+cur_label] = cnts[set_keys[i]+'_'+cur_label] + cur_cnt
         console.log('Current key: '+set_keys[i]+' '+set[set_keys[i]][j])
+        if (!(set_keys[i]+'_'+cur_label in cnts_labels)) {
+          cnts_labels[set_keys[i]+'_'+cur_label] = []
+        }
         if (set[set_keys[i]][j].includes(['['])) {
-          if (!(set_keys[i]+'_'+cur_label in cnts_labels)) {
-            cnts_labels[set_keys[i]+'_'+cur_label] = []
-          }
           cnts_labels[set_keys[i]+'_'+cur_label].push(set[set_keys[i]][j].split('[')[1].split(']')[0])
         } else {
           // cnts_labels[set_keys[i]+'_'+cur_label].push(set[set_keys[i]][j])
@@ -1056,7 +1056,9 @@ if (document.title == 'hunt') {
       text = set[set_keys[i]][j]
       if (set_keys[i]+'_'+text in cnts) {
         // console.log('To replace: '+text)
-        text = text.replace('XXX', cnts[set_keys[i]+'_'+text])+' <i class="event_sup">['+cnts_labels[set_keys[i]+'_'+text].join(', ')+']</i>'
+        console.log('Text: '+set_keys[i]+'_'+text)
+        console.log('Labels: '+JSON.stringify(Object.keys(cnts_labels)))
+        text = text.replace('XXX', cnts[set_keys[i]+'_'+text])+(cnts_labels[set_keys[i]+'_'+text]==''?'':' <i class="event_sup">['+cnts_labels[set_keys[i]+'_'+text].join(', ')+']</i>')
       }
       // if (set_keys[i] == 'newborn') {
       //   text = text.replace('Gain', 'All <b>newborn</b> survivors gain ')
