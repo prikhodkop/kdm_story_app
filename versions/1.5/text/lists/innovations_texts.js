@@ -370,9 +370,6 @@ const texts = {
   'parent': 'Language',
   'tags': ['art', 'language'],
   'passive': {
-    'settlement': [
-      '<b>Survival Limit:</b> $1$',
-    ],
     'actions': [
       '<b class="action">Dash</b>: Once per round, spend 1 survival to gain +1'+movement_img+' and use it immediately.',
     ],

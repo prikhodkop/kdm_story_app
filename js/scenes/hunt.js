@@ -416,13 +416,17 @@ module.exports = class HuntScene {
         q_event_sequence = get_sequence(ref)
         q_event_idx = 0
 
-        if ((key == 'flower knight') && (level == 3)) {
+        if ((key == 'flower knight') && (level == 1)) {
           survivors_pos = 3
           board_state = 'ooo----------'
         }
         if ((key == 'flower knight') && (level == 2)) {
           survivors_pos = 2
           board_state = 'oo-----------'
+        }
+        if ((key == 'flower knight') && (level == 3)) {
+          survivors_pos = 1
+          board_state = 'o------------'
         }
 
       } else {
