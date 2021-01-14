@@ -570,13 +570,14 @@ module.exports = class IndexScene {
         urls.push('images/settlement/actions/'+item)
       });
 
-      categories.forEach((item, i) => {
+      for (let i=0; i<categories.length; i++) {
         let items = getTerms(item[0])
 
-        for(key in items) {
-          urls.push(item[1]+key+item[2])
+        let items_keys = Object.keys(items)
+        for (let j=0; j<items_keys.length; j++) {
+          urls.push(categories[i][1]+items_keys[j]+categories[i][2])
         }
-      });
+      }
 
       preloadImgs(urls)
     }
