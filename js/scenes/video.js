@@ -29,9 +29,9 @@ module.exports = class VideoScene {
     document.title = myself
     // #############
 
-    preloadImgs([
-      'video/'+myself+'.mp4',
-    ], 'icons')
+    // preloadImgs([
+    //   'video/'+myself+'.mp4',
+    // ], 'icons')
 
     if ($('#back').attr('src') == '#') {
         $('#back').attr('src', pathToAssetL('images/back.jpg'))

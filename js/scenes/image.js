@@ -64,11 +64,11 @@ module.exports = class ImageScene {
     var myself = sessionStorage.getItem('target')
     document.title = myself
 
-    preloadImgs([
-      'images/story events/backs/'+myself+'.jpg',
-      'images/story events/content/'+myself+'.jpg',
-
-    ], 'icons')
+    // preloadImgs([
+    //   'images/story events/backs/'+myself+'.jpg',
+    //   'images/story events/content/'+myself+'.jpg',
+    //
+    // ], 'icons')
 
     if ($('#back').attr('src') == '#') {
         $('#back').attr('src', pathToAssetL('images/back.jpg'))
