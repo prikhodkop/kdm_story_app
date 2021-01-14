@@ -170,6 +170,9 @@ function markButtonv2(match, p1, p2, offset, string) {
 }
 
 function preloadImgs(urls, additional_class='') {
+  if (getSettings()['preload'] == 'Off') {
+    return
+  }
   let to_append = []
   for (let i=0; i<urls.length; i++)
   to_append.push($('<img>',

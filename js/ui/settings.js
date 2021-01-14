@@ -418,7 +418,17 @@ var settings_schema = {
   'fullscreen': {
     'type': 'option',
     'title': 'FullScreen',
-    'description': 'Sets fullscreen or windowed mode for the app.',
+    'description': '<b style="color:#eaa;">(desktop version only)</b><br/>Sets fullscreen or windowed mode for the app.',
+    'default': 'On',
+    'enum': [
+      'On',
+      'Off'
+    ],
+  },
+  'preload': {
+    'type': 'option',
+    'title': 'Preload',
+    'description': '<b style="color:#eaa;">(web version only)</b><br/>Preloads images on app start. Takes longer to start, but ensures smoother user experience in the web version.',
     'default': 'On',
     'enum': [
       'On',
