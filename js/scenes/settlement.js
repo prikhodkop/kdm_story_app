@@ -15,6 +15,12 @@ const { getTerms } = require('./../ui/glossary')
 
 module.exports = class SettlementScene {
   render () {
+
+    $('#loading').fadeIn(300)
+    $(window).on('load', function(){
+      $('#loading').fadeOut(200)
+    });
+
     if ($('#back').attr('src') == '#') {
         $('#back').attr('src', pathToAssetL('images/back.jpg'))
     }

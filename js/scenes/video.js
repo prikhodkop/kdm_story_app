@@ -15,6 +15,12 @@ const special_events = []
 
 module.exports = class VideoScene {
   render () {
+
+    $('#loading').fadeIn(300)
+    $(window).on('load', function(){
+      $('#loading').fadeOut(200)
+    });
+
     if ($('#back').attr('src') == '#') {
         $('#back').attr('src', pathToAssetL('images/back.jpg'))
     }
