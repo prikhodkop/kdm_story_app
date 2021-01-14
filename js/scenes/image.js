@@ -155,7 +155,7 @@ module.exports = class ImageScene {
     $('#img').hide()
     $('#menu').hide()
 
-  $('#img_back').on('load', function(){
+  // $('#img_back').on('load', function(){
     var start_delay = 1000 // delay before speech playing starts
     var music_volume = 0.4 // music volume
     var speech
@@ -235,13 +235,14 @@ module.exports = class ImageScene {
         anew = false
 
 
-
+        $('#img_back').on('load', function(){
           $('#img_back').delay(100).fadeIn(500)
-
+        })
           if (true) {
             $('#label_text').fadeIn(2000)
-            $('#img').delay(1000).fadeIn(1000)
-
+            $('#img').on('load', function(){
+              $('#img').delay(1000).fadeIn(1000)
+            })
             if (!menus_appeared) {
               menus_appeared = true
               addTimer(function () {
@@ -264,12 +265,13 @@ module.exports = class ImageScene {
       } else {
         console.log('No initialized state!')
         action = 'false' // flag to show if user clicked on #img_back
-
-          if (myself == 'first story') {
-            $('#img_back').delay(3000).fadeIn(1000)
-          } else {
-            $('#img_back').fadeIn(1000)
-          }
+          $('#img_back').on('load', function(){
+            if (myself == 'first story') {
+              $('#img_back').delay(3000).fadeIn(1000)
+            } else {
+              $('#img_back').fadeIn(1000)
+            }
+          })
 
           $('#label_text').delay(1000).fadeIn(1000)
 
@@ -312,7 +314,7 @@ module.exports = class ImageScene {
         start_anew();
       })
 
-    })
+    // })
 
     if ((back_target == null) || (back_target == 'null') || (back_target == 'undefined')) {
       $('#back_button').hide()
@@ -376,7 +378,9 @@ module.exports = class ImageScene {
 
       addTimer(function () {
         if (action == 'false') {
-          $('#img').fadeIn(1000)
+          $('#img').on('load', function(){
+            $('#img').fadeIn(1000)
+          })
           $('.srt').fadeOut(500)
 
           action = 'true'
@@ -410,10 +414,11 @@ module.exports = class ImageScene {
       if (subtitles)  {
         $('.srt').fadeOut(200)
       }
-      $('#img').fadeIn(400)
-      $('.settlement_return_button').fadeIn(500)
-      $('.event_tooltip').fadeIn(500)
-
+      $('#img').on('load', function(){
+        $('#img').fadeIn(400)
+        $('.settlement_return_button').fadeIn(500)
+        $('.event_tooltip').fadeIn(500)
+      })
       if ((!menus_appeared) && anew) {
         menus_appeared = true
         addTimer(function () {
