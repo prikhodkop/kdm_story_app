@@ -220,56 +220,97 @@ module.exports = class ImageScene {
 
     let menus_appeared = false
 
-    if ((transition == 'back') && !(state == null) && !(state == 'undefined')) {
-      console.log('State loaded successfully!')
-      state = JSON.parse(state)
-      console.log(state)
+    var action='false'
 
-      back_target = state.back_target
-      var action = state.action
-      anew = false
+    $('#img_back').on('load', function(){
+
+      if ((transition == 'back') && !(state == null) && !(state == 'undefined')) {
+        console.log('State loaded successfully!')
+        state = JSON.parse(state)
+        console.log(state)
+
+        back_target = state.back_target
+        action = state.action
+        anew = false
 
 
-      $('#img_back').on('load', function(){
-        $('#img_back').delay(100).fadeIn(500)
-      })
 
+          $('#img_back').delay(100).fadeIn(500)
 
-      if (true) {
-        $('#label_text').fadeIn(2000)
-        $('#img').delay(1000).fadeIn(1000)
+          if (true) {
+            $('#label_text').fadeIn(2000)
+            $('#img').delay(1000).fadeIn(1000)
 
-        if (!menus_appeared) {
-          menus_appeared = true
-          addTimer(function () {
-            createSevereTables()
-            createReference()
-            createInnovationsList()
-            createLocationsList()
-            createBookmarksList()
-            eventsSugar(myself)
-          }, 1000)
-        };
+            if (!menus_appeared) {
+              menus_appeared = true
+              addTimer(function () {
+                createSevereTables()
+                createReference()
+                createInnovationsList()
+                createLocationsList()
+                createBookmarksList()
+                eventsSugar(myself)
+              }, 1000)
+            };
 
-        if ((settings['music'] == 'On')&&(!music.playing())) {
-          music.volume(0.0)
-          music.play();
-          music.fade(0.0, music_volume, 500)
-        }
-      }
-    } else {
-      console.log('No initialized state!')
-      var action = 'false' // flag to show if user clicked on #img_back
+            if ((settings['music'] == 'On')&&(!music.playing())) {
+              music.volume(0.0)
+              music.play();
+              music.fade(0.0, music_volume, 500)
+            }
+          }
 
-      $('#img_back').on('load', function(){
-        if (myself == 'first story') {
-          $('#img_back').delay(3000).fadeIn(1000)
-        } else {
-          $('#img_back').fadeIn(1000)
-        }
-      })
-    };
+      } else {
+        console.log('No initialized state!')
+        action = 'false' // flag to show if user clicked on #img_back
 
+            if (myself == 'first story') {
+              $('#img_back').delay(3000).fadeIn(1000)
+            } else {
+              $('#img_back').fadeIn(1000)
+            }
+
+          $('#label_text').delay(1000).fadeIn(1000)
+
+          tippy('#label_text', {
+            placement: 'bottom-start',
+            content: tooltips['label_click'].text,
+            duration: 50,
+            delay: [600, 100],
+            animation: 'shift-away-subtle',
+            followCursor: true,
+            theme: 'kdm',
+          });
+
+          if (subtitles)  {
+            $('.srt').hide()
+            tippy('.srt', {
+              placement: 'bottom-start',
+              content: tooltips['subtitles_click'].text,
+              duration: 50,
+              delay: [600, 100],
+              animation: 'shift-away-subtle',
+              followCursor: true,
+              theme: 'kdm',
+            });
+            $('.srt').html(getTerms('subtitle')[myself].text)
+            $('.srt').css({'font-size': '2em'})
+            $('.srt').delay(1500).fadeIn(1000)
+          }
+
+          console.log('Muted naration: '+ mute_narration)
+
+          // if (mute_narration) {
+          //   start_anew();
+          // } else {
+          //
+          // };
+          speech.on('load', function () {
+            start_anew();
+          })
+
+      };
+    })
     if ((back_target == null) || (back_target == 'null') || (back_target == 'undefined')) {
       $('#back_button').hide()
     } else {
@@ -280,47 +321,7 @@ module.exports = class ImageScene {
 
     // SET UP EVENT START IF IT HAS NO INITIALIZED STATE
     // #############
-    if (anew) {
-      $('#label_text').delay(1000).fadeIn(1000)
 
-      tippy('#label_text', {
-        placement: 'bottom-start',
-        content: tooltips['label_click'].text,
-        duration: 50,
-        delay: [600, 100],
-        animation: 'shift-away-subtle',
-        followCursor: true,
-        theme: 'kdm',
-      });
-
-      if (subtitles)  {
-        $('.srt').hide()
-        tippy('.srt', {
-          placement: 'bottom-start',
-          content: tooltips['subtitles_click'].text,
-          duration: 50,
-          delay: [600, 100],
-          animation: 'shift-away-subtle',
-          followCursor: true,
-          theme: 'kdm',
-        });
-        $('.srt').html(getTerms('subtitle')[myself].text)
-        $('.srt').css({'font-size': '2em'})
-        $('.srt').delay(1500).fadeIn(1000)
-      }
-
-      console.log('Muted naration: '+ mute_narration)
-
-      // if (mute_narration) {
-      //   start_anew();
-      // } else {
-      //
-      // };
-      speech.on('load', function () {
-        start_anew();
-      })
-
-    };
 
 
 
@@ -374,6 +375,7 @@ module.exports = class ImageScene {
         if (action == 'false') {
           $('#img').fadeIn(1000)
           $('.srt').fadeOut(500)
+
           action = 'true'
           if (!menus_appeared) {
             menus_appeared = true
@@ -386,7 +388,6 @@ module.exports = class ImageScene {
               eventsSugar(myself)
             }, 1000);
           }
-          ;
         }
       }, start_delay + duration)
 
@@ -409,6 +410,7 @@ module.exports = class ImageScene {
       $('#img').fadeIn(400)
       $('.settlement_return_button').fadeIn(500)
       $('.event_tooltip').fadeIn(500)
+
       if ((!menus_appeared) && anew) {
         menus_appeared = true
         addTimer(function () {
