@@ -181,7 +181,7 @@ function preloadImgs(urls, additional_class='') {
     src:pathToAssetL(urls[i])
   }))
 
-  $('#preload).append(to_append)
+  $('#preload').append(to_append)
 }
 
 window.imageHTML = imageHTML
