@@ -264,6 +264,7 @@ module.exports = class HuntScene {
       document.querySelector('#quary_popup').classList.remove('magictime', QUARRY_CARD_SHOW, QUARRY_CARD_HIDE)
       document.querySelector('#quary_popup').classList.add('magictime', QUARRY_CARD_HIDE)
       $('#quary_popup').toggleClass('hidden')
+      $('#random_event_close').fadeOut(500)
       $('#quary_popup_back').delay(500).fadeOut(500)
       $('#quary_popup').delay(1000).fadeOut(100)
 
