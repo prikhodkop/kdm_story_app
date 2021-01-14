@@ -230,7 +230,9 @@ module.exports = class ImageScene {
       anew = false
 
 
-      $('#img_back').delay(100).fadeIn(500)
+      $('#img_back').on('load', function(){
+        $('#img_back').delay(100).fadeIn(500)
+      })
 
 
       if (true) {
@@ -259,11 +261,13 @@ module.exports = class ImageScene {
       console.log('No initialized state!')
       var action = 'false' // flag to show if user clicked on #img_back
 
-      if (myself == 'first story') {
-        $('#img_back').delay(3000).fadeIn(1000)
-      } else {
-        $('#img_back').fadeIn(1000)
-      }
+      $('#img_back').on('load', function(){
+        if (myself == 'first story') {
+          $('#img_back').delay(3000).fadeIn(1000)
+        } else {
+          $('#img_back').fadeIn(1000)
+        }
+      })
     };
 
     if ((back_target == null) || (back_target == 'null') || (back_target == 'undefined')) {
