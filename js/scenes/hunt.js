@@ -414,6 +414,7 @@ module.exports = class HuntScene {
         var monster_pos = null
         var board_state = '-------------'
         q_event_sequence = get_sequence(ref)
+        preloadImgs(q_event_sequence)
         q_event_idx = 0
 
         if ((key == 'flower knight') && (level == 1)) {
