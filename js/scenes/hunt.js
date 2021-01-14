@@ -19,6 +19,17 @@ const QUARRY_CARD_HIDE = 'vanishOut' // 'SlideDown'
 module.exports = class HuntScene {
   render () {
 
+    preloadImgs([
+      'images/story events/backs/overwhelming darkness.jpg',
+      'images/story events/content/overwhelming darkness.jpg',
+      'images/story events/backs/herb gathering.jpg',
+      'images/story events/content/herb gathering.jpg',
+      'images/story events/backs/mineral gathering.jpg',
+      'images/story events/content/mineral gathering.jpg',
+      'images/story events/backs/sky fishing.jpg',
+      'images/story events/content/sky fishing.jpg',
+    ])
+
     $('#loading').fadeIn(300)
     $(window).on('load', function(){
       $('#loading').fadeOut(200)
@@ -420,7 +431,6 @@ module.exports = class HuntScene {
         var monster_pos = null
         var board_state = '-------------'
         q_event_sequence = get_sequence(ref)
-        preloadImgs(q_event_sequence, 'hunt')
         q_event_idx = 0
 
         if ((key == 'flower knight') && (level == 1)) {
@@ -443,6 +453,12 @@ module.exports = class HuntScene {
         q_event_sequence = state.q_event_sequence
         q_event_idx = state.q_event_idx
       };
+
+      preloadImgs(q_event_sequence, 'hunt')
+      preloadImgs([
+        'images/story events/backs/showdown '+key+'.jpg',
+        'images/story events/content/showdown '+key+'.jpg',
+      ])
 
       if (monster_pos == 7) {
         window.darkness_enabled = false
