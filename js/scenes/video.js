@@ -23,6 +23,10 @@ module.exports = class VideoScene {
       $('#loading').fadeIn(300)
     });
 
+    preloadImgs([
+      'video/'+myself+'.mp4',
+    ], 'icons')
+
     if ($('#back').attr('src') == '#') {
         $('#back').attr('src', pathToAssetL('images/back.jpg'))
     }

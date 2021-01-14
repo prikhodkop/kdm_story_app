@@ -1,6 +1,6 @@
 const { app } = require('electron').remote
 
-const { pathToAsset, pathToAssetL, initAssets } = require('./../ui/assets_loader')
+const { pathToAsset, pathToAssetL, initAssets, preloadImgs  } = require('./../ui/assets_loader')
 initAssets()
 
 const { createToc, generate_events_table } = require('./../ui/events')
@@ -58,6 +58,12 @@ module.exports = class ImageScene {
     $(window).on('beforeload', function(){
       $('#loading').fadeIn(300)
     });
+
+    preloadImgs([
+      'images/story events/backs/'+myself+'.jpg',
+      'images/story events/content/'+myself+'.jpg',
+
+    ], 'icons')
 
     if ($('#back').attr('src') == '#') {
         $('#back').attr('src', pathToAssetL('images/back.jpg'))

@@ -170,16 +170,28 @@ function markButtonv2(match, p1, p2, offset, string) {
 }
 
 function preloadImgs(urls, additional_class='') {
+
+  if (!('preloads' in window.globals)) {
+    window.globals.preloads = []
+  }
+
   if (getSettings()['preload'] == 'Off') {
     return
   }
   let to_append = []
-  for (let i=0; i<urls.length; i++)
-  to_append.push($('<img>',
-  {
-    class:additional_class,
-    src:pathToAssetL(urls[i])
-  }))
+  for (let i=0; i<urls.length; i++) {
+    let path = pathToAssetL(urls[i])
+    if (window.globals.preloads.includes(path)) {
+      continue
+    }
+    to_append.push($('<img>',
+    {
+      class:additional_class,
+      src:path
+    }))
+    window.globals.preloads.push(path)
+  }
+
 
   $('#preload').append(to_append)
 }
