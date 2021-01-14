@@ -240,9 +240,8 @@ module.exports = class ImageScene {
         })
           if (true) {
             $('#label_text').fadeIn(2000)
-            $('#img').on('load', function(){
-              $('#img').delay(1000).fadeIn(1000)
-            })
+            $('#img').delay(1000).fadeIn(1000)
+
             if (!menus_appeared) {
               menus_appeared = true
               addTimer(function () {
@@ -378,9 +377,7 @@ module.exports = class ImageScene {
 
       addTimer(function () {
         if (action == 'false') {
-          $('#img').on('load', function(){
-            $('#img').fadeIn(1000)
-          })
+          $('#img').fadeIn(1000)
           $('.srt').fadeOut(500)
 
           action = 'true'
@@ -414,11 +411,10 @@ module.exports = class ImageScene {
       if (subtitles)  {
         $('.srt').fadeOut(200)
       }
-      $('#img').on('load', function(){
-        $('#img').fadeIn(400)
-        $('.settlement_return_button').fadeIn(500)
-        $('.event_tooltip').fadeIn(500)
-      })
+      $('#img').fadeIn(400)
+      $('.settlement_return_button').fadeIn(500)
+      $('.event_tooltip').fadeIn(500)
+
       if ((!menus_appeared) && anew) {
         menus_appeared = true
         addTimer(function () {
