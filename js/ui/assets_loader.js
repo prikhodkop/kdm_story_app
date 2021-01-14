@@ -180,11 +180,8 @@ function preloadImgs(urls, additional_class='') {
     class:additional_class,
     src:pathToAssetL(urls[i])
   }))
-  let div = $('<div>', {
-    class: 'preload '+additional_class
-  })
-  div.append(to_append)
-  $('#container0').append(div)
+
+  $('#preload).append(to_append)
 }
 
 window.imageHTML = imageHTML
