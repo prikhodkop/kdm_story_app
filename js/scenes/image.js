@@ -230,9 +230,7 @@ module.exports = class ImageScene {
       anew = false
 
 
-      $('#img_back').on('load', function(){
-        $('#img_back').delay(100).fadeIn(500)
-      })
+      $('#img_back').delay(100).fadeIn(500)
 
 
       if (true) {
