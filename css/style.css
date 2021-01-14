@@ -35,6 +35,10 @@ button:focus {
                                   not supported by any browser */
 }
 
+#preload {
+  display: none;
+}
+
 /* @font-face {
     font-family: 'Silverado';
     src: url('../font/svcm____-webfont.woff2') format('woff2'),

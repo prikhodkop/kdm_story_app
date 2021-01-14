@@ -14,7 +14,8 @@ const { cdnUrl } = require('./template-cdnurl')
 module.exports = {
   pathToAsset,
   pathToAssetL,
-  initAssets
+  initAssets,
+  preloadImgs
 }
 
 // const ContentTree = require('./../../_content.json')
@@ -166,6 +167,17 @@ function markButtonv2(match, p1, p2, offset, string) {
   } else {
     return ''
   }
+}
+
+function preloadImgs(urls) {
+  let to_append = []
+  for (let i=0; i<urls.length; i++)
+  to_append.push($('<img>',
+  {
+    src:pathToAssetL(urls[i])
+  }))
+
+  $('#preload').append(to_append)
 }
 
 window.imageHTML = imageHTML

@@ -1,6 +1,6 @@
 const { app } = require('electron').remote
 
-const { pathToAsset, pathToAssetL, initAssets } = require('./../ui/assets_loader')
+const { pathToAsset, pathToAssetL, initAssets, preloadImgs } = require('./../ui/assets_loader')
 initAssets()
 
 const { createAbout } = require('./../ui/about')
@@ -19,6 +19,78 @@ const { getTerms } = require('./../ui/glossary')
 
 module.exports = class IndexScene {
   render () {
+
+    preloadImgs([
+      'images/back.jpg',
+      'images/icons/book.png',
+      'images/icons/bookmarks_button.png',
+      'images/icons/innovations_button.png',
+      'images/icons/locations_button.png',
+      'images/icons/reference.png',
+      'images/icons/campaigns/lantern_campaign_icon.png',
+      'images/icons/campaigns/stars_campaign_icon.png',
+      'images/icons/campaigns/sun_campaign_icon.png',
+      'images/icons/arms.png',
+      'images/icons/body.png',
+      'images/icons/brain.png',
+      'images/icons/head.png',
+      'images/icons/legs.png',
+      'images/icons/waist.png',
+      'images/icons/endeavors.png',
+      'images/icons/activation.png',
+      'images/icons/movement.png',
+      'images/icons/about.png',
+      'images/icons/skull.png',
+      'images/icons/swords_inv.png',
+
+      'images/icons/allison ccg_c.png',
+      'images/icons/butcher intro_c.png',
+      'images/icons/dragon king_c.png',
+      'images/icons/drifter knight_c.png',
+      'images/icons/dung beetle knight_c.png',
+      'images/icons/flower knight_c.png',
+      'images/icons/gigalion_c.png',
+      'images/icons/gorm_c.png',
+      'images/icons/lion god_c.png',
+      'images/icons/lion knight_c.png',
+      'images/icons/lonely tree_c.png',
+      'images/icons/manhunter_c.png',
+      'images/icons/slenderman_c.png',
+      'images/icons/spidicules_c.png',
+      'images/icons/storm knight_c.png',
+      'images/icons/sunstalker_c.png',
+      'images/icons/trial of champions_c.png',
+      'images/reference/reference_back.png',
+      'images/reference/symbols.png',
+
+      pathToAssetL('video/intro.mp4'),
+
+      'images/reference/severe injuries/arms.jpg',
+      'images/reference/severe injuries/body.jpg',
+      'images/reference/severe injuries/brain.jpg',
+      'images/reference/severe injuries/head.jpg',
+      'images/reference/severe injuries/legs.jpg',
+      'images/reference/severe injuries/waist.jpg',
+      'images/reference/disorder_head.png',
+
+
+      'images/reference/hunt_board_old.jpg',
+      'images/settlement/turn.jpg',
+      'images/settlement/background.jpg',
+      'images/settlement/settlement.png',
+
+      'images/hunt_icon.png',
+      'images/hunt/darkness.png',
+      'images/hunt/monster_hunt_event.png',
+      'images/hunt/random_hunt_event.png',
+      'images/hunt/random_hunt_event_old.png',
+      'images/hunt/survivors.png',
+
+      'images/story events/backs/age.jpg',
+      'images/story events/contents/age.jpg',
+
+    ])
+
     if ($('#back').attr('src') == '#') {
         $('#back').attr('src', pathToAssetL('images/back.jpg'))
     }
@@ -93,6 +165,8 @@ module.exports = class IndexScene {
     createReference()
     addSettings(settings)
     let gallery = setupCampaignSelect()
+
+    preloadCards()
 
     $('#video').attr('src', pathToAssetL('video/intro.mp4'))
 
@@ -358,6 +432,153 @@ module.exports = class IndexScene {
       // campaign_element.delay(1000).fadeIn(6000)
 
       return campaign_element
+    }
+
+    function preloadCards() {
+
+      let categories = [
+        ['innovations', 'images/Innovations/', '.jpg'],
+        ['fighting_arts', 'images/Fighting Arts/', '.jpg'],
+        ['secret_fighting_arts', 'images/Fighting Arts/', '.jpg'],
+        ['settlement_locations', 'images/Settlement Locations/', '.jpg'],
+        ['armor_sets', 'images/Armor Sets/', '.jpg'],
+        ['abilities', 'images/Abilities/', '.png'],
+        ['resources', 'images/Resources/', '.png'],
+        ['gear_list', 'images/Gear/', '.jpg']
+      ]
+
+      let actions = [
+        'Acid Storm.jpg',
+         'Acid Storm_1.jpg',
+         'Albedo.jpg',
+         'Aquarobotics.jpg',
+         'Arena.jpg',
+         'Barber Surgeon.jpg',
+         'Bed.jpg',
+         'Black Mask.jpg',
+         'Bloodletting.jpg',
+         'Bone Smith.jpg',
+         'Bronzesmith.jpg',
+         'Choreia.jpg',
+         'Citrinitas.jpg',
+         'Cooking.jpg',
+         'Cracks in the Ground.jpg',
+         'Cracks in the Ground_1.jpg',
+         'Crimson Candy.jpg',
+         'Dark Dentist.jpg',
+         'Dark Trader.jpg',
+         'Dark Water Research.jpg',
+         'Drums.jpg',
+         'Exhausted Lantern Hoard.jpg',
+         'Exhausted Lantern Hoard_1.jpg',
+         'Exhausted Lantern Hoard_2.jpg',
+         'Exhausted Lantern Hoard_old.jpg',
+         'Face Painting.jpg',
+         'Filleting Table.jpg',
+         'Forbidden Dance.jpg',
+         'Glossolalia.jpg',
+         'Glossolalia_1.jpg',
+         'Gormchymist.jpg',
+         'Guidepost.jpg',
+         'Heart Flute.jpg',
+         'Heat Wave.jpg',
+         'Heat Wave_1.jpg',
+         'Initiation.jpg',
+         'Jellyfish Apothecary.jpg',
+         'Lantern Hoard.jpg',
+         'Lantern Hoard_1.jpg',
+         'Lantern Hoard_2.jpg',
+         'Lantern Hoard_3.jpg',
+         'Lantern Hoard_4.jpg',
+         'Lantern Hoard_old.jpg',
+         'Leather Worker.jpg',
+         'Legless Ball.jpg',
+         'Light Forging.jpg',
+         'Lights in the Sky.jpg',
+         'Lights in the Sky_1.jpg',
+         'Lights in the Sky_2.jpg',
+         'Mask Maker.jpg',
+         'Momento Mori.jpg',
+         'Muttering Blade.jpg',
+         'Nickname.jpg',
+         'Nightmare Training.jpg',
+         'Nigredo.jpg',
+         'Organ Grinder.jpg',
+         'Organ Grinder_1.jpg',
+         'Organ Grinder_old.jpg',
+         'Partnership.jpg',
+         'Petal Spiral.jpg',
+         'Plague.jpg',
+         'Pottery.jpg',
+         'Records.jpg',
+         'Rivalry.jpg',
+         'Round Stone Training.jpg',
+         'Rubedo.jpg',
+         'Sacred Pool.jpg',
+         'Sacred Pool_1.jpg',
+         'Sacred Pool_2.jpg',
+         'Sacred Pool_old.jpg',
+         'Sacrifice.jpg',
+         'Sauna Shrine.jpg',
+         'Scarification.jpg',
+         'Scrap Smelting.jpg',
+         'Scrap Smelting_1.jpg',
+         'Scrap Smelting_old.jpg',
+         'Sculpture.jpg',
+         'Settlement Watch.jpg',
+         'Shadow Dancing.jpg',
+         'Shrine.jpg',
+         'Silk Storm.jpg',
+         'Silk Storm_1.jpg',
+         'Silk Storm_2.jpg',
+         'Silk-refining.jpg',
+         'Skinnery.jpg',
+         'Stoic Statue.jpg',
+         'Stone Circle.jpg',
+         'Stone Garden.jpg',
+         'Storytelling.jpg',
+         'Subterranean Agriculture.jpg',
+         'Subterranean Agriculture_1.jpg',
+         'Subterranean Agriculture_old.jpg',
+         'The Order is Watching.jpg',
+         'The Sun.jpg',
+         'The Sun_1.jpg',
+         'The Sun_2.jpg',
+         'The Sun_3.jpg',
+         'The Sun_4.jpg',
+         'Throne.jpg',
+         'Throne_1.jpg',
+         'Throne_2.jpg',
+         'Throne_3.jpg',
+         'Throne_4.jpg',
+         'Training Day.jpg',
+         'Umbilical Bank.jpg',
+         'Umbilical Bank_1.jpg',
+         'Umbilical Bank_old.jpg',
+         'Venom Wine.jpg',
+         'Wandering Master.jpg',
+         'War Room.jpg',
+         'Weapon Crafter.jpg',
+         'Weapon Crafter_1.jpg',
+         'Weapon Crafter_old.jpg',
+         'White Mask.jpg'
+      ]
+
+      let urls = []
+
+      actions.forEach((item, i) => {
+        urls.push('images/settlement/actions'+item)
+      });
+
+      categories.forEach((item, i) => {
+        let items = getTerms(item[0])
+
+        for(key in items) {
+          urls.push(item[1]+key+item[2])
+        }
+      });
+
+      preloadImgs(urls)
     }
   }
 }
