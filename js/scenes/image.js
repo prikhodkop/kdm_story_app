@@ -138,6 +138,7 @@ module.exports = class ImageScene {
     //   img_path = img_path.replace('.jpg', '_sun.jpg')
     // }
 
+
     $('#img_back').attr('src', pathToAssetL(img_back))
     $('#img').attr('src', pathToAssetL(img_path))
 
@@ -228,7 +229,11 @@ module.exports = class ImageScene {
       var action = state.action
       anew = false
 
-      $('#img_back').delay(100).fadeIn(500)
+
+      $('#img_back').on('load', function(){
+        $('#img_back').delay(100).fadeIn(500)
+      })
+
 
       if (true) {
         $('#label_text').fadeIn(2000)
