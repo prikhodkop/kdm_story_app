@@ -89,7 +89,7 @@ module.exports = class IndexScene {
       'images/story events/backs/age.jpg',
       'images/story events/content/age.jpg',
 
-    ])
+    ], 'icons')
 
     if ($('#back').attr('src') == '#') {
         $('#back').attr('src', pathToAssetL('images/back.jpg'))
@@ -580,7 +580,7 @@ module.exports = class IndexScene {
         }
       }
 
-      preloadImgs(urls)
+      preloadImgs(urls, 'cards')
     }
   }
 }

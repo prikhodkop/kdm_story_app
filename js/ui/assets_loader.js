@@ -169,16 +169,19 @@ function markButtonv2(match, p1, p2, offset, string) {
   }
 }
 
-function preloadImgs(urls) {
+function preloadImgs(urls, additional_class='') {
   let to_append = []
   for (let i=0; i<urls.length; i++)
   to_append.push($('<img>',
   {
+    class:additional_class,
     src:pathToAssetL(urls[i])
   }))
-
-  $('#preload').append(to_append)
-  $('#preload').addClass('initialized')
+  let div = $('<div>', {
+    class: 'preload '+additional_class
+  })
+  div.append(to_append)
+  $('#container0').append(div)
 }
 
 window.imageHTML = imageHTML
