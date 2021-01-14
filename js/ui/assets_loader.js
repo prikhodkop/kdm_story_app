@@ -178,6 +178,7 @@ function preloadImgs(urls) {
   }))
 
   $('#preload').append(to_append)
+  $('#preload').addClass('initialized')
 }
 
 window.imageHTML = imageHTML

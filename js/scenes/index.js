@@ -27,9 +27,9 @@ module.exports = class IndexScene {
       'images/icons/innovations_button.png',
       'images/icons/locations_button.png',
       'images/icons/reference.png',
-      'images/icons/campaigns/lantern_campaign_icon.png',
-      'images/icons/campaigns/stars_campaign_icon.png',
-      'images/icons/campaigns/sun_campaign_icon.png',
+      'images/icons/campaigns/Lantern_campaign_icon.png',
+      'images/icons/campaigns/Stars_campaign_icon.png',
+      'images/icons/campaigns/Sun_campaign_icon.png',
       'images/icons/arms.png',
       'images/icons/body.png',
       'images/icons/brain.png',
@@ -43,27 +43,27 @@ module.exports = class IndexScene {
       'images/icons/skull.png',
       'images/icons/swords_inv.png',
 
-      'images/icons/allison ccg_c.png',
-      'images/icons/butcher intro_c.png',
-      'images/icons/dragon king_c.png',
-      'images/icons/drifter knight_c.png',
-      'images/icons/dung beetle knight_c.png',
-      'images/icons/flower knight_c.png',
-      'images/icons/gigalion_c.png',
-      'images/icons/gorm_c.png',
-      'images/icons/lion god_c.png',
-      'images/icons/lion knight_c.png',
-      'images/icons/lonely tree_c.png',
-      'images/icons/manhunter_c.png',
-      'images/icons/slenderman_c.png',
-      'images/icons/spidicules_c.png',
-      'images/icons/storm knight_c.png',
-      'images/icons/sunstalker_c.png',
-      'images/icons/trial of champions_c.png',
+      'images/icons/expansions/allison ccg_c.png',
+      'images/icons/expansions/butcher intro_c.png',
+      'images/icons/expansions/dragon king_c.png',
+      'images/icons/expansions/drifter knight_c.png',
+      'images/icons/expansions/dung beetle knight_c.png',
+      'images/icons/expansions/flower knight_c.png',
+      'images/icons/expansions/gigalion_c.png',
+      'images/icons/expansions/gorm_c.png',
+      'images/icons/expansions/lion god_c.png',
+      'images/icons/expansions/lion knight_c.png',
+      'images/icons/expansions/lonely tree_c.png',
+      'images/icons/expansions/manhunter_c.png',
+      'images/icons/expansions/slenderman_c.png',
+      'images/icons/expansions/spidicules_c.png',
+      'images/icons/expansions/storm knight_c.png',
+      'images/icons/expansions/sunstalker_c.png',
+      'images/icons/expansions/trial of champions_c.png',
       'images/reference/reference_back.png',
       'images/reference/symbols.png',
 
-      pathToAssetL('video/intro.mp4'),
+      'video/intro.mp4',
 
       'images/reference/severe injuries/arms.jpg',
       'images/reference/severe injuries/body.jpg',
@@ -74,7 +74,7 @@ module.exports = class IndexScene {
       'images/reference/disorder_head.png',
 
 
-      'images/reference/hunt_board_old.jpg',
+      'images/hunt_board_old.jpg',
       'images/settlement/turn.jpg',
       'images/settlement/background.jpg',
       'images/settlement/settlement.png',
@@ -87,7 +87,7 @@ module.exports = class IndexScene {
       'images/hunt/survivors.png',
 
       'images/story events/backs/age.jpg',
-      'images/story events/contents/age.jpg',
+      'images/story events/content/age.jpg',
 
     ])
 
@@ -437,14 +437,15 @@ module.exports = class IndexScene {
     function preloadCards() {
 
       let categories = [
-        ['innovations', 'images/Innovations/', '.jpg'],
-        ['fighting_arts', 'images/Fighting Arts/', '.jpg'],
-        ['secret_fighting_arts', 'images/Fighting Arts/', '.jpg'],
-        ['settlement_locations', 'images/Settlement Locations/', '.jpg'],
-        ['armor_sets', 'images/Armor Sets/', '.jpg'],
-        ['abilities', 'images/Abilities/', '.png'],
-        ['resources', 'images/Resources/', '.png'],
-        ['gear_list', 'images/Gear/', '.jpg']
+        ['innovations', 'images/reference/Innovations/', '.jpg'],
+        ['fighting_arts', 'images/reference/Fighting Arts/', '.jpg'],
+        ['secret_fighting_arts', 'images/reference/Fighting Arts/', '.jpg'],
+        ['settlement_locations', 'images/reference/Settlement Locations/', '.jpg'],
+        ['gear_list', 'images/reference/Gear/', '.jpg'],
+        ['armor_sets', 'images/reference/Armor Sets/', '.jpg'],
+        ['abilities', 'images/reference/Abilities/', '.png'],
+        ['resources', 'images/reference/Resources/', '.jpg'],
+
       ]
 
       let actions = [
@@ -571,7 +572,7 @@ module.exports = class IndexScene {
       });
 
       for (let i=0; i<categories.length; i++) {
-        let items = getTerms(item[0])
+        let items = getTerms(categories[i][0])
 
         let items_keys = Object.keys(items)
         for (let j=0; j<items_keys.length; j++) {
