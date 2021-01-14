@@ -155,6 +155,7 @@ module.exports = class ImageScene {
     $('#img').hide()
     $('#menu').hide()
 
+  $('#img_back').on('load', function(){
     var start_delay = 1000 // delay before speech playing starts
     var music_volume = 0.4 // music volume
     var speech
@@ -222,7 +223,7 @@ module.exports = class ImageScene {
 
     var action
 
-    $('#img_back').on('load', function(){
+
 
       if ((transition == 'back') && !(state == null) && !(state == 'undefined')) {
         console.log('State loaded successfully!')
