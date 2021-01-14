@@ -23,6 +23,12 @@ module.exports = class VideoScene {
       $('#loading').fadeIn(300)
     });
 
+    // UNDERSTAND WHAT EVENT TO SHOW
+    // #############
+    var myself = sessionStorage.getItem('target')
+    document.title = myself
+    // #############
+
     preloadImgs([
       'video/'+myself+'.mp4',
     ], 'icons')
@@ -48,11 +54,7 @@ module.exports = class VideoScene {
 
     console.log(sessionStorage)
 
-    // UNDERSTAND WHAT EVENT TO SHOW
-    // #############
-    var myself = sessionStorage.getItem('target')
-    document.title = myself
-    // #############
+
 
     initSettings();
 

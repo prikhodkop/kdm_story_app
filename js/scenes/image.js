@@ -59,6 +59,11 @@ module.exports = class ImageScene {
       $('#loading').fadeIn(300)
     });
 
+    // UNDERSTAND WHAT EVENT TO SHOW
+    // #############
+    var myself = sessionStorage.getItem('target')
+    document.title = myself
+
     preloadImgs([
       'images/story events/backs/'+myself+'.jpg',
       'images/story events/content/'+myself+'.jpg',
@@ -82,10 +87,7 @@ module.exports = class ImageScene {
 
     console.log(sessionStorage)
 
-    // UNDERSTAND WHAT EVENT TO SHOW
-    // #############
-    var myself = sessionStorage.getItem('target')
-    document.title = myself
+
     // #############
 
     console.log(myself)
