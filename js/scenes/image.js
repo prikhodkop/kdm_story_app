@@ -220,7 +220,7 @@ module.exports = class ImageScene {
 
     let menus_appeared = false
 
-    var action='false'
+    var action
 
     $('#img_back').on('load', function(){
 
@@ -264,11 +264,11 @@ module.exports = class ImageScene {
         console.log('No initialized state!')
         action = 'false' // flag to show if user clicked on #img_back
 
-            if (myself == 'first story') {
-              $('#img_back').delay(3000).fadeIn(1000)
-            } else {
-              $('#img_back').fadeIn(1000)
-            }
+          if (myself == 'first story') {
+            $('#img_back').delay(3000).fadeIn(1000)
+          } else {
+            $('#img_back').fadeIn(1000)
+          }
 
           $('#label_text').delay(1000).fadeIn(1000)
 
@@ -305,12 +305,14 @@ module.exports = class ImageScene {
           // } else {
           //
           // };
-          speech.on('load', function () {
-            start_anew();
-          })
-
       };
+
+      speech.on('load', function () {
+        start_anew();
+      })
+
     })
+
     if ((back_target == null) || (back_target == 'null') || (back_target == 'undefined')) {
       $('#back_button').hide()
     } else {
