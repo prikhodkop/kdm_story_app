@@ -567,7 +567,7 @@ module.exports = class IndexScene {
       let urls = []
 
       actions.forEach((item, i) => {
-        urls.push('images/settlement/actions'+item)
+        urls.push('images/settlement/actions/'+item)
       });
 
       categories.forEach((item, i) => {
