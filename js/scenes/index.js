@@ -20,6 +20,15 @@ const { getTerms } = require('./../ui/glossary')
 module.exports = class IndexScene {
   render () {
 
+    // $(window).onbeforeload(function(){
+    //   $('#loading').show()
+    // })
+    $('#loading').fadeIn(300)
+    $(window).on('load', function(){
+      $('#loading').fadeOut(200)
+    });
+
+
     preloadImgs([
       'images/back.jpg',
       'images/icons/book.png',

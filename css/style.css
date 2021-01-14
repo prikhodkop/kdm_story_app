@@ -39,6 +39,30 @@ button:focus {
   display: none;
 }
 
+/* #loading {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: none;
+
+  background-color: Transparent;
+  z-index: 99;
+  text-align: center;
+} */
+
+#loading {
+  position: absolute;
+  color: #cc0;
+  display: block;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 100;
+  animation: glowing-image_3 3000ms infinite;
+}
+
 /* @font-face {
     font-family: 'Silverado';
     src: url('../font/svcm____-webfont.woff2') format('woff2'),
