@@ -19,6 +19,14 @@ const QUARRY_CARD_HIDE = 'vanishOut' // 'SlideDown'
 module.exports = class HuntScene {
   render () {
 
+    $(window).on('beforeload', function(){
+      $('#loading').fadeIn(300)
+    });
+    $(window).on('load', function(){
+      $('#loading').fadeOut(200)
+    });
+
+
     preloadImgs([
       'images/story events/backs/overwhelming darkness.jpg',
       'images/story events/content/overwhelming darkness.jpg',
@@ -30,10 +38,6 @@ module.exports = class HuntScene {
       'images/story events/content/sky fishing.jpg',
     ])
 
-    $('#loading').fadeIn(300)
-    $(window).on('load', function(){
-      $('#loading').fadeOut(200)
-    });
 
     if ($('#back').attr('src') == '#') {
         $('#back').attr('src', pathToAssetL('images/back.jpg'))

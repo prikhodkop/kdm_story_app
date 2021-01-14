@@ -16,9 +16,11 @@ const special_events = []
 module.exports = class VideoScene {
   render () {
 
-    $('#loading').fadeIn(300)
     $(window).on('load', function(){
       $('#loading').fadeOut(200)
+    });
+    $(window).on('beforeload', function(){
+      $('#loading').fadeIn(300)
     });
 
     if ($('#back').attr('src') == '#') {
