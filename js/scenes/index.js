@@ -63,7 +63,7 @@ module.exports = class IndexScene {
       'images/reference/reference_back.png',
       'images/reference/symbols.png',
 
-      'video/intro.mp4',
+      // 'video/intro.mp4',
 
       'images/reference/severe injuries/arms.jpg',
       'images/reference/severe injuries/body.jpg',
@@ -438,13 +438,13 @@ module.exports = class IndexScene {
 
       let categories = [
         ['innovations', 'images/reference/Innovations/', '.jpg'],
-        ['fighting_arts', 'images/reference/Fighting Arts/', '.jpg'],
-        ['secret_fighting_arts', 'images/reference/Fighting Arts/', '.jpg'],
+        // ['fighting_arts', 'images/reference/Fighting Arts/', '.jpg'],
+        // ['secret_fighting_arts', 'images/reference/Fighting Arts/', '.jpg'],
         ['settlement_locations', 'images/reference/Settlement Locations/', '.jpg'],
         ['gear_list', 'images/reference/Gear/', '.jpg'],
         ['armor_sets', 'images/reference/Armor Sets/', '.jpg'],
-        ['abilities', 'images/reference/Abilities/', '.png'],
-        ['resources', 'images/reference/Resources/', '.jpg'],
+        // ['abilities', 'images/reference/Abilities/', '.png'],
+        // ['resources', 'images/reference/Resources/', '.jpg'],
 
       ]
 
