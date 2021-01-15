@@ -10,14 +10,14 @@ const texts = {
  },
  'Left Overs': {
   'label':'',
-  'condition_text': 'Add if you lost 1 settlement.',
+  'condition_text': 'Add if you lost 5 settlement.',
   'button_text': '<b style="color:#fff;">Left Overs:</b> At the start of the showdown with the First Story White Lion, set up 1 Survivor Corpse terrain card',
   'width': '20%',
    'targets': ['first story']
  },
  'Those before us': {
   'label':'',
-  'condition_text': 'Add if you lost 2 settlements.',
+  'condition_text': 'Add if you lost 10 settlements.',
   'button_text': '<b style="color:#fff;">Those before us:</b> When survivors reach the settlement, they find small traces of human life before them. Gain 1 skull basic resource and increase the survival limit by 1',
    'passive': {
      'settlement': [
@@ -29,7 +29,7 @@ const texts = {
  },
  'Ocular Parasites': {
   'label':'',
-  'condition_text': 'Add if you lost 3 settlements.',
+  'condition_text': 'Add if you lost 15 settlements.',
   'button_text': '<b style="color:#fff;">Ocular Parasites:</b> This new generation of survivor\' eyes have better adapted to the darkness. All survivors gain +1 permanent accuracy.<br/>However, the First Story White Lion has grown fat from all the survivors it\'s eaten. At the start of the showdown, it gains +1 damage token and -1 movement token.',
   'passive': {
     'all': [
@@ -41,7 +41,7 @@ const texts = {
  },
  'Rainy Season': {
   'label':'',
-  'condition_text': 'Add if you lost 4 settlements.',
+  'condition_text': 'Add if you lost 20 settlements.',
   'button_text': '<b style="color:#fff;">Rainy Season:</b> The weather is extremely temperamental. Add the <b>Acid Storm</b> settlement event to the timeline years <b>3</b>, <b>7</b>, <b>13</b>, <b>19</b>.',
    'passive': {
      'settlement': [
