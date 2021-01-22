@@ -42,6 +42,7 @@ var campaigns
 var quaries
 var random_draws
 var subtitle
+var tactics
 
 
 let glossary_list_translations = {
@@ -62,6 +63,7 @@ let glossary_list_translations = {
   'tooltips': ['text'],
   'campaigns': ['label', 'description'],
   'tags': ['label', 'color'],
+  'tactics': ['label', 'description'],
   'quaries': ['label'],
   'random_draws': ['label'],
   'subtitle': ['text'],
@@ -102,6 +104,7 @@ function init_glossary() {
     resources = window.globals.glossary[lang].resources
     tooltips = window.globals.glossary[lang].tooltips
     random_draws = window.globals.glossary[lang].random_draws
+    tactics = window.globals.glossary[lang].tactics
 
     tags = window.globals.glossary[lang].tags
   }
@@ -184,6 +187,7 @@ function get_options (data, type, filter=false) {
    } else {
      name = key
    }
+   console.log('Option type: '+type)
  let search_name = name + ' ' + data[key]['label_eng'] + ' '+type+' '+tooltips[type].text+ (('group_name' in data[key])? ' '+data[key].group_name: '')
  if ('type' in data[key]) {
    search_name += data[key]['type']
@@ -261,8 +265,9 @@ function get_all_options () {
  options = options.concat(get_options(armor_sets, 'armor sets', true))
  options = options.concat(get_options(survivor_statuses, 'survivor statuses'))
  options = options.concat(get_options(innovations, 'innovations', true))
+ options = options.concat(get_options(tactics, 'tactics'))
  options = options.concat(get_options(terrain, 'terrain'))
- options = options.concat(get_options(resources, 'resources'))
+ options = options.concat(get_options(resources, 'resources', true))
  return options.concat(get_options(settlement_events, 'settlement events', true))
 }
 
@@ -424,6 +429,15 @@ function get_representation_int (word) {
     return result+'<b style="font-size:1.3em;'+header_style+'">'+fighting_arts[word]['label']+'</b> <i style="font-size:0.9em;color:#cd4c39;">(fighting art)</i> <hr/><div class="bottom-reference">'+fighting_arts[word]['description']+'</div>'
   }
 
+} else if (word in tactics) {
+  let header_style = 'color:#efefef;'
+  if (tactics[word]['description'] == '#') {
+    return '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+pathToAssetL('images/reference/Tactics/'+word+'.jpg')+'"/>'
+  } else {
+    let result = '<img id=reference-image style="width:50%;padding-bottom:0.5em;" src="'+pathToAssetL('images/reference/Tactics/'+word+'.jpg')+'"/>'
+    return result+'<b style="font-size:1.3em;'+header_style+'">'+tactics[word]['label']+'</b> <i style="font-size:0.9em;color:#ccc;">(tactic)</i> <hr/><div class="bottom-reference">'+tactics[word]['description']+'</div>'
+  }
+
  } else if (word in secret_fighting_arts) {
   let header_style = ''
   if (secret_fighting_arts[word]['description'] == '#') {
@@ -521,12 +535,14 @@ function get_random_draws (word, randomize=true, ) {
  let list = []
 
  if (word.includes('Fighting')) {
-  list = clone(fighting_arts)
- } else if (word.includes('Disorder')) {
-  list = clone(disorders)
-}else if (word.includes('Terrain')) {
- list = clone(terrain)
-} else if (word.includes('Event')) {
+    list = clone(fighting_arts)
+   } else if (word.includes('Disorder')) {
+    list = clone(disorders)
+  } else if (word.includes('Tactics')) {
+   list = clone(tactics)
+  } else if (word.includes('Terrain')) {
+   list = clone(terrain)
+  } else if (word.includes('Event')) {
   list = clone(settlement_events)
   delete list['First Day']
  } else if (word.includes('Location')) {
@@ -585,6 +601,15 @@ function get_random_draws (word, randomize=true, ) {
 }
 
 function getRandom (arr, n) {
+
+  if (arr.length == 0) {
+    return []
+  }
+  if (arr.length<n) {
+    return arr
+  }
+
+
  var result = new Array(n)
  var len = arr.length
  var taken = new Array(len)

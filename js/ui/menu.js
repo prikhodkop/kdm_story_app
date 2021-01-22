@@ -571,6 +571,10 @@ function createReference () {
       label: tooltips['innovations'].text,
     },
     {
+      value: 'tactics',
+      label: tooltips['tactics'].text,
+    },
+    {
       value: 'resources',
       label: tooltips['resources'].text,
     },

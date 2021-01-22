@@ -401,6 +401,10 @@ const texts = {
    'text': 'Disorders',
  },
 
+ 'tactics': {
+   'text': 'Tactics',
+ },
+
  'secret fighting arts': {
    'text': 'Secret Fighting Arts',
  },
