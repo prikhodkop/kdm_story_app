@@ -429,7 +429,7 @@ var settings_schema = {
     'type': 'option',
     'title': 'Preload',
     'description': '<b style="color:#eaa;">(web version only)</b><br/>Preloads images on app start. Takes longer to start, but ensures smoother user experience in the web version.',
-    'default': 'On',
+    'default': 'Off',
     'enum': [
       'On',
       'Off'
