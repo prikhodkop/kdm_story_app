@@ -452,9 +452,9 @@ module.exports = class IndexScene {
         ['innovations', 'images/reference/Innovations/', '.jpg'],
         // ['fighting_arts', 'images/reference/Fighting Arts/', '.jpg'],
         // ['secret_fighting_arts', 'images/reference/Fighting Arts/', '.jpg'],
-        ['settlement_locations', 'images/reference/Settlement Locations/', '.jpg'],
-        ['gear_list', 'images/reference/Gear/', '.jpg'],
-        ['armor_sets', 'images/reference/Armor Sets/', '.jpg'],
+        // ['settlement_locations', 'images/reference/Settlement Locations/', '.jpg'],
+        // ['gear_list', 'images/reference/Gear/', '.jpg'],
+        // ['armor_sets', 'images/reference/Armor Sets/', '.jpg'],
         // ['abilities', 'images/reference/Abilities/', '.png'],
         // ['resources', 'images/reference/Resources/', '.jpg'],
 
@@ -579,9 +579,9 @@ module.exports = class IndexScene {
 
       let urls = []
 
-      actions.forEach((item, i) => {
-        urls.push('images/settlement/actions/'+item)
-      });
+      // actions.forEach((item, i) => {
+      //   urls.push('images/settlement/actions/'+item)
+      // });
 
       for (let i=0; i<categories.length; i++) {
         let items = getTerms(categories[i][0])
