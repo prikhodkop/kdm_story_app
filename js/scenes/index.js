@@ -178,7 +178,7 @@ module.exports = class IndexScene {
     addSettings(settings)
     let gallery = setupCampaignSelect()
 
-    preloadCards()
+    // preloadCards()
 
     $('#video').attr('src', pathToAssetL('video/intro.mp4'))
 
