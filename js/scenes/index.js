@@ -231,8 +231,8 @@ module.exports = class IndexScene {
     $('.campaign_image').click(function () {
       if (!$(this).hasClass('active')) {
         // $("#open_audio").get(0).pause();
+        music.mute(true)
         music.stop()
-
         $('#video').get(0).currentTime = 0
         // $("#open_audio").get(0).currentTime = 0
         $('#video').show()
@@ -250,9 +250,9 @@ module.exports = class IndexScene {
         console.log('Here2!')
       } else {
         // $("#open_audio").currentTime = 0
-        addTimer(function () {
-          music.play()
-        }, 500)
+        // addTimer(function () {
+        //   music.play()
+        // }, 500)
 
         $('#video').get(0).pause()
         $('#video').hide()
