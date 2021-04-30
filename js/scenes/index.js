@@ -98,8 +98,8 @@ module.exports = class IndexScene {
       'images/hunt/random_hunt_event_old.png',
       'images/hunt/survivors.png',
 
-      'images/story events/backs/age.jpg',
-      'images/story events/content/age.jpg',
+      // 'images/story events/backs/age.jpg',
+      // 'images/story events/content/age.jpg',
 
     ], 'icons')
 
