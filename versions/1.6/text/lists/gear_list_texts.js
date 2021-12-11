@@ -106,7 +106,7 @@ var texts = {
  'Hollow Sword': {'resources':['1 x hollow wing bone', '2 x bone', '2 x hide']},
  'Arc Bow': {'resources':['1 x phoenix whisker', '1 x wishbone', '1 x scrap']},
  'Phoenix Helm': {'resources':['1 x hollow wing bone', '1 x small feather', '1 x bone'], 'set':['Phoenix', 'Dancer']},
- 'Phoenix Gauntlet': {'resources':['1 x iron', '1 x leather', '1 x small feathers', '1 x bone'], 'set':['Phoenix']},
+ 'Phoenix Gauntlets': {'resources':['1 x iron', '1 x leather', '1 x small feathers', '1 x bone'], 'set':['Phoenix']},
  'Phoenix Plackart': {'resources':['1 x iron', '1 x leather', '1 x tail feathers', '1 x hide'], 'set':['Phoenix', 'Warlord']},
  'Phoenix Faulds': {'resources':['1 x iron', '1 x leather', '1 x tail feathers', '1 x organ'], 'set':['Phoenix', 'Brawler']},
  'Phoenix Greaves': {'resources':['1 x iron', '1 x leather', '1 x small feathers', '1 x organ'], 'set':['Phoenix', 'Brawler']},
