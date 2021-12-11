@@ -2,7 +2,7 @@
 const { loadJSON, pathToAssetL } = require('./assets_loader')
 const { cdnUrl } = require('./template-cdnurl')
 
-const { getSettings, defaultLang } = require('./settings')
+const { getSettings, getVersion } = require('./settings')
 
 const { app } = require('electron').remote
 
@@ -69,12 +69,12 @@ function generate_events_table () {
 
 function localized_require(text, lang, args) {
 
-  data_en = require('../../versions/'+defaultLang()+'/text/lists/'+text+'.js').texts
+  data_en = require('../../versions/'+getVersion()+'/text/lists/'+text+'.js').texts
 
   // console.log('!!!Data: '+JSON.stringify(data_en))
 
   let data_local = ''
-  if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('versions/'+lang+'/text/lists/'+text+'.js')) {
+  if (!(lang == getVersion())&&window.globals.translations['paths'][lang].includes('versions/'+lang+'/text/lists/'+text+'.js')) {
     data_local_init = require('../../versions/'+lang+'/'+'text/lists/'+text+'.js')
     data_local = data_local_init.texts
   }

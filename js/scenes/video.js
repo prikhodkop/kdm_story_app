@@ -6,7 +6,7 @@ initAssets()
 const { createToc, generate_events_table } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton, createReference, createSevereTables, createInnovationsList, createLocationsList, createBookmarksList } = require('./../ui/menu')
-const { getSettings, addSettings, onSettingsSaved, initSettings, defaultLang } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved, initSettings, getVersion } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
 const { setTransition, getBackTarget, getBackBackTarget } = require('./../ui/transition')
 const { getTerms } = require('./../ui/glossary')
@@ -237,10 +237,10 @@ module.exports = class VideoScene {
         console.log('Loading local video')
           subtitles = readFile(pathToAssetL('video/'+myself+'.srt', false), 'root')
       } else {
-        if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('versions/'+lang+'/video/'+myself+'.srt')) {
+        if (!(lang == getVersion())&&window.globals.translations['paths'][lang].includes('versions/'+lang+'/video/'+myself+'.srt')) {
           subtitles = require('./../../versions/'+lang+'/video/'+myself+'.srt').default
         } else {
-          subtitles = require('./../../versions/'+defaultLang()+'/video/'+myself+'.srt').default
+          subtitles = require('./../../versions/'+getVersion()+'/video/'+myself+'.srt').default
         }
       }
       configureSubtitle(subtitles)

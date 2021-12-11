@@ -7,7 +7,7 @@ const { createAbout } = require('./../ui/about')
 const { createToc, generate_events_table } = require('./../ui/events')
 const { readFile } = require('./../ui/files')
 const { createMenuButton, createReference, createInnovationsList, createLocationsList, createBookmarksList } = require('./../ui/menu')
-const { getSettings, addSettings, onSettingsSaved, setSettings, saveSettings, initSettings, defaultLang } = require('./../ui/settings')
+const { getSettings, addSettings, onSettingsSaved, setSettings, saveSettings, initSettings, getVersion } = require('./../ui/settings')
 const { render } = require('./../ui/template-renderer')
 const { cdnUrl } = require('./../ui/template-cdnurl')
 const { addTimer } = require('./../ui/timer')
@@ -209,10 +209,10 @@ module.exports = class IndexScene {
       if (window.globals.process == 'local') {
           subtitles = readFile(pathToAssetL('video/intro.srt', false), 'root')
       } else {
-        if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('versions/'+lang+'/video/intro.srt')) {
+        if (!(lang == getVersion())&&window.globals.translations['paths'][lang].includes('versions/'+lang+'/video/intro.srt')) {
           subtitles = require('./../../versions/'+lang+'/video/intro.srt').default
         } else {
-          subtitles = require('./../../versions/'+defaultLang()+'/video/intro.srt').default
+          subtitles = require('./../../versions/'+getVersion()+'/video/intro.srt').default
         }
       }
 

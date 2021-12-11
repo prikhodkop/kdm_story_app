@@ -154,6 +154,10 @@ const texts = {
  'Stranger in the Dark': {
    'label':'',
  },
+ 'Sword Hunter': {
+   'label':'',
+   'whitebox': 'sword hunter - settlement event',
+ },
  'Triathlon of Death': {
    'label':'',
  },

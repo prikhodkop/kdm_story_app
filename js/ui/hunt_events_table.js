@@ -1,6 +1,6 @@
-const {setSettings, getSettings, silentSaveSettings, defaultLang} = require('./../ui/settings')
+const {setSettings, getSettings, silentSaveSettings, getVersion} = require('./../ui/settings')
 
-const { quary_events } = require('../../versions/'+defaultLang()+'/text/lists/quary_events.js')
+const { quary_events } = require('../../versions/'+getVersion()+'/text/lists/quary_events.js')
 const { md_to_html, setup_md_events } = require('./../ui/md_to_html.js')
 
 
@@ -32,7 +32,7 @@ function init_hunt_events() {
   //## Random Hunt Events Localization ##
   found = false
   let random_hunt_events_local
-  if (!(lang == defaultLang())) {
+  if (!(lang == getVersion())) {
     console.log('Random Hunt Events Trying: '+lang)
     try {
       random_hunt_events_local = require('../../versions/'+lang+'/text/lists/random_hunt_events')
@@ -44,7 +44,7 @@ function init_hunt_events() {
 
   setup_md_events()
 
-  let random_hunt_events_en = require('../../versions/'+defaultLang()+'/text/lists/random_hunt_events')
+  let random_hunt_events_en = require('../../versions/'+getVersion()+'/text/lists/random_hunt_events')
 
   // if (found) {
     for (let key in random_hunt_events_en.random_hunt_events) {
@@ -59,7 +59,7 @@ function init_hunt_events() {
   //## Promo Hunt Events Localization ##
   found = false
   let promo_hunt_events_local
-  if (!(lang == defaultLang())) {
+  if (!(lang == getVersion())) {
     console.log('Promo Hunt Events Trying: '+lang)
     try {
       promo_hunt_events_local = require('../../versions/'+lang+'/text/lists/promo_hunt_events')
@@ -69,7 +69,7 @@ function init_hunt_events() {
     }
   }
 
-  var promo_hunt_events_en = require('../../versions/'+defaultLang()+'/text/lists/promo_hunt_events')
+  var promo_hunt_events_en = require('../../versions/'+getVersion()+'/text/lists/promo_hunt_events')
 
   for (let key in promo_hunt_events_en.promo_hunt_events) {
      if ((found)&&(key in promo_hunt_events_local.promo_hunt_events)) {
@@ -126,11 +126,13 @@ function shuffle (a) {
   return a
 }
 
-function removePromoCard(card) {
+function removePromoCard (card) {
   let settings = getSettings()
+  if (card === 'sword hunter - hunt event') {
+    settings['whiteboxes']['sword hunter - settlement event'] = 'Enabled'
+  }
   settings['whiteboxes'][card] = 'Disabled'
-  setSettings(settings);
-  silentSaveSettings(settings)
+  setSettings(settings)
   // no_reload = true
 
   $('.hunt_event_action_button#'+card).fadeOut(300)
@@ -157,6 +159,10 @@ function init_promos () {
     promos.push('object of desire')
   }
 
+  if (settings['whiteboxes']['sword hunter - hunt event'] == 'Enabled') {
+    promos.push('sword in the stone')
+  }
+
   sessionStorage.setItem('kdm_app_promos', JSON.stringify(shuffle(promos)))
 }
 
@@ -173,7 +179,7 @@ function is_promo_event () {
 
   let promos_length = promos.length
   // size_of_base = 1
-  let promo_probability = 1/(1+size_of_base/promos_length)
+  let promo_probability = 1
 
   console.log('Num of promos: '+promos.length+' Size of base: '+size_of_base)
   console.log('Promo probability: '+ promo_probability+' Guess: '+let_guess)

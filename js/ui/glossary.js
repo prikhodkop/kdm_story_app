@@ -1,4 +1,4 @@
-const { getSettings, defaultLang, getLanguage } = require('./../ui/settings')
+const { getSettings, getVersion, getLanguage } = require('./../ui/settings')
 const { pathToAsset, pathToAssetL } = require('./../ui/assets_loader')
 
 module.exports = {
@@ -116,10 +116,10 @@ function getTerms(name) {
 
 function localized_require2(text, lang, args) {
 
-  data_en = require('../../versions/'+defaultLang()+'/text/lists/'+text+'_texts.js').texts
+  data_en = require('../../versions/'+getVersion()+'/text/lists/'+text+'_texts.js').texts
 
   let data_local = ''
-  if (!(lang == defaultLang())&&window.globals.translations['paths'][lang].includes('versions/'+lang+'/text/lists/'+text+'_texts.js')) {
+  if (!(lang == getVersion())&&window.globals.translations['paths'][lang].includes('versions/'+lang+'/text/lists/'+text+'_texts.js')) {
       data_local_init = require('../../versions/'+lang+'/text/lists/'+text+'_texts.js')
       data_local = data_local_init.texts
   }
@@ -218,7 +218,7 @@ function get_options (data, type, filter=false) {
      }
   } else {
    if (!('expansion' in data[key]) || (settings['expansions'][data[key]['expansion']] == 'All content')){
-     if (!('whitebox' in data[key]) || (settings['whiteboxes'][data[key]['whitebox']] == 'Enabled')){
+     if (!('whitebox' in data[key]) || (settings['whiteboxes'][data[key]['whitebox']] === 'Enabled')){
       if (!('campaign' in data[key]) || (data[key]['campaign'].indexOf(settings['campaign']) > -1)){
         if ('group_name' in data[key]) {
           result.push({
@@ -657,6 +657,10 @@ function getSettlementEventPath () {
 
   if (('expansion' in list[key]) && !(settings['expansions'][list[key]['expansion']] == 'All content')) {
    remove = true
+  }
+
+  if (('whitebox' in list[key]) && !(settings['whiteboxes'][list[key]['whitebox']] === 'Enabled')) {
+    remove = true
   }
 
   if (remove) {

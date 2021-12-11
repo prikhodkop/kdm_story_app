@@ -14,15 +14,20 @@ module.exports = {
   saveSettings,
   silentSaveSettings,
   initSettings,
-  defaultLang,
+  getVersion,
   resetSettings,
   getLanguage
 }
 
 const settings_string_default = require('./../../settings.json')
 
-function defaultLang(){
-  return settings_schema['language']['default']
+function getVersion(){
+  var version = getSettings()['language']
+  if (version == null) {
+    return settings_schema['language']['default']
+  } else {
+    return version
+  }
 }
 
 function initSettings() {
@@ -845,6 +850,30 @@ var settings_schema = {
           'Enabled',
         ],
       },
+      /* 'sword hunter - hunt event': {
+        'type': 'option',
+        'title': 'Sword Hunter - Hunt Event',
+        'default': 'Disabled',
+        'conflicts': ['sword hunter - settlement event'],
+        'priority': 1,
+        'description': 'The survivors chance upon an exquisite sword, embedded in a stone. Can they pull it from where it lies? <br/><br/><b style="color:#cc0;">Enabling</b> this adds the <b>Sword in the Stone</b> random hunt event and <b style="color:#cc0;">Disables</b> the <b>Sword Hunter - Settlement Event</b> expansion. Encountering the <b>Sword in the Stone</b> may lead to  <b style="color:#cc0;">Enabling</b> the <b>Sword Hunter - Settlement Event</b> expansion.',
+        'enum': [
+          'Disabled',
+          'Enabled',
+        ],
+      },
+      'sword hunter - settlement event': {
+        'type': 'option',
+        'title': 'Sword Hunter - Settlement Event',
+        'default': 'Disabled',
+        'conflicts': ['sword hunter - hunt event'],
+        'priority': 2,
+        'description': 'The sword hunter searches the darkness for sublime blades to add to her collection. Pray that you meet her expectations. <br/><br/><b style="color:#cc0;">Enabling</b> this adds the <b>Sword Hunter</b> settlement event and <b style="color:#cc0;">Disables</b> the <b>Sword Hunter - Hunt Event</b> expansion. Once it is encountered, it is automatically <b style="color:#cc0;">Disabled</b>.',
+        'enum': [
+          'Disabled',
+          'Enabled',
+        ],
+      }, */
       'white speaker': {
         'type': 'option',
         'title': 'White Speaker',

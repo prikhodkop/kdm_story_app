@@ -8,7 +8,7 @@
 // 4. Take en file from the root (it is assumed that it always exists) -> load it and return
 
 const { readFile, checkFile } = require('./files')
-const { getSettings, defaultLang } = require('./settings')
+const { getSettings, getVersion } = require('./settings')
 const { cdnUrl } = require('./template-cdnurl')
 
 module.exports = {
@@ -81,7 +81,7 @@ function pathToAsset(path, localization='', cdn_change=true) {
 
   if (localization == 'localize') {
     let lang = getSettings()['language']
-    let default_lang = defaultLang()
+    let default_lang = getVersion()
     file = checkFile(path, '', lang, false)
     file_default = checkFile(path, '', default_lang, false)
 
@@ -90,11 +90,11 @@ function pathToAsset(path, localization='', cdn_change=true) {
     // console.log('The file: '+file)
     // console.log('The default file: '+file_default)
 
-    // if ((lang == defaultLang())||(window.globals.translations['paths'][lang].includes(file))) {
+    // if ((lang == getVersion())||(window.globals.translations['paths'][lang].includes(file))) {
     if (window.globals.translations['paths'][lang].includes(file)) {
       result = checkFile(path, '', lang, false)
     } else if (window.globals.translations['paths'][default_lang].includes(file_default)) {
-      result = checkFile(path, '', defaultLang(), false)
+      result = checkFile(path, '', getVersion(), false)
     } else {
       result = '#'
     }
