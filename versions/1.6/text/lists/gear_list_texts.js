@@ -36,7 +36,7 @@ var texts = {
  'Lantern Sword': {'resources':['1 x iron', '4 x bone', '3 x hide']},
  'Lantern Dagger': {'resources':['1 x iron', '3 x leather', '2 x bone']},
  'Lantern Glaive': {'resources':['2 x iron', '2 x leather', '4 x bone']},
- 'Dragon Slayer': {'resources':['5 x iron', '3 x organ'], 'innovation': 'Paint'},
+ 'Dragon Slayer': {'resources':['5 x iron', '3 x organ']},
  'Perfect Slayer': {'resources':['9 x iron', '3 x organ'], 'innovation': 'Perfect Crucible'},
  'Lantern Helm': {'resources':['1 x iron', '7 x bone'], 'set':['Lantern']},
  'Lantern Gauntlets': {'resources':['2 x iron', '6 x leather'], 'set':['Lantern']},
