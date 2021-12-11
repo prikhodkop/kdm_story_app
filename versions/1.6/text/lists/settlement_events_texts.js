@@ -1,6 +1,10 @@
 const endeavor_img = imageHTML('images/icons/endeavors', '0.9em;display:inline;opacity:0.8;vertical-allign:bottom')
 
 const texts = {
+  'A Strange Spot': {
+    'label':'',
+    'whitebox': 'a strange spot',
+  },
  'Acid Storm': {
    'label':'',
    'passive':{
@@ -39,6 +43,11 @@ const texts = {
  'Dark Dentist': {
    'label':'',
    'action': true,
+ },
+ 'Dark Seamstress': {
+   'label':'',
+   'action': true,
+   'whitebox': 'dark seamstress'
  },
  'Dark Trader': {
    'label':'',
@@ -150,6 +159,10 @@ const texts = {
  'Slender Blight': {
    'label':'',
   'expansion': 'slenderman',
+ },
+ 'Story in the Snow': {
+   'label':'',
+   'whitebox': 'story in the snow',
  },
  'Stranger in the Dark': {
    'label':'',
