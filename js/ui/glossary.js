@@ -162,6 +162,10 @@ function localized_require2(text, lang, args) {
             data_local[new_keys[j]]['label'] = new_keys[j]
           }
 
+          if (!('label_eng' in data_local[new_keys[j]])||(data_local[new_keys[j]]['label_eng'] == '')) {
+              data_local[new_keys[j]]['label_eng'] = new_keys[j]
+          }
+
           data_en[new_keys[j]] = data_local[new_keys[j]]
 
         }

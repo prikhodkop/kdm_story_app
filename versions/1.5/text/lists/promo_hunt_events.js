@@ -80,6 +80,27 @@ Add <b>Lonely Tree</b> terrain card to the showdown setup and roll 1d10.
 [c] Go away
 [dt] Roll a random hunt event.`,
 
+'sword in the stone': `* | Sword in the Stone
+Crusted with flaking layers of dried blood, an obelisk juts form the ground. From its center protrudes a pristine hilt. Nominate survivor to reach for it. Roll 1d10 and add their sword proficiency to the roll result.
+
+[TO] 1d10 + sword nominated survivors sword proficiency
+[td] Nominated survivor
+[c] 1
+[d] As your hand grasps the hilt, the arteries of your arms writhe and burst. Dead.
+[c] 2-4
+[d] You drag the blade out but it slams back into the stone with bone-crushing force. Suffer 2 event damage to the arms hit location.
+[c] 5-9
+[c] 10+
+[d<]
+
+The sword glides out, pulsing blood pounds in your ears. Gain the <b>Excalibur</b> rare gear. Add settlement event card <b>Sword Hunter</b> to the settlement event deck and remove this card from the game box.
+
+<i>Remove the card from the hunt event deck permanently:</i>
+<button class="hunt_event_action_button hoverable" id="sword hunter" onClick="removePromoCard('sword hunter - hunt event')">Remove card</button>
+<div class="button_outcome" id="sword hunter - hunt event"> Card removed from the deck.<br/><i>You may enable it again in the <b>Settings</b> menu</i></div>
+[>d]
+[dt]`,
+
 }
 
 module.exports = {
