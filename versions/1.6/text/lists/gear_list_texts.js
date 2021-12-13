@@ -13,7 +13,7 @@ var texts = {
  'Scrap Lantern': {'resources':['1 x scrap', '1 x perfect organ']},
  'Ring Whip': {'resources':['1 x iron', '2 x organ', '3 x bone']},
  'Sonic Tomahawk': {'resources':['1 x small feathers', '1 x iron', '1 x hollow wing bone']},
- 'Phoenix Gauntlets': {'resources':['1 x iron', '1 x leather', '1 x small feathers', '1 x bone'], 'set':['Phoenix']},
+ 'Phoenix Gauntlet': {'resources':['1 x iron', '1 x leather', '1 x small feathers', '1 x bone'], 'set':['Phoenix']},
  'Boss Mehndi': {'resources':['1 x beast steak', '1 x bone']},
  'Red Charm': {'resources':['1 x perfect bone'], 'innovation': 'Pottery'},
  'Screaming Skirt': {'resources':['1 x pelt', '1 x hide'], 'set':['Screaming']},

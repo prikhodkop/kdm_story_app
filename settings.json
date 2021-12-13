@@ -2,6 +2,7 @@
   "campaign": "Lantern",
   "language": "en",
   "fullscreen": "On",
+  "preload": "Off",
   "subtitles": "On",
   "music": "On",
   "narration": "On",
