@@ -13,9 +13,7 @@ const texts = {
 'Perfect Hide': {'image': 'true', 'group_name':'Basic', 'type': 'perfect/hide', 'text': '<i>Supreme texture.</i><br /><br />Drop chance: 1/24.'},
 'Perfect Organ': {'image': 'true', 'group_name':'Basic', 'type': 'perfect/organ/consumable', 'text': 'If you <b>consume</b> this, archive this card. Roll 1d10:<br /><b style=\"color:#cc0;\">6+</b><div style="font-size:0.9em;display: inline;"> - you contract a millenium parasite and gain +10 Hunt XP.</div><br /><br />Drop chance: 1/24.'},
 'Skull': {'image': 'true', 'group_name':'Basic', 'type': 'bone', 'text': 'When you gain this, a survivor of your choice gains +1 insanity.<br /><br />Drop chance: 1/24.'},
-
-'Life String': {'type': 'organ', 'group_name':'Sunstalker, Strange',
-                      'text': '<i>A thread of history.</i>'},
+'Life String': {'type': 'organ', 'group_name':'Sunstalker, Strange', 'text': '<i>A thread of history.</i>'},
 }
 
 const params = {
