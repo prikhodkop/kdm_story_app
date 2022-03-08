@@ -31,6 +31,7 @@ To build the app one needs to:
 > \>\> npm run webpack
 
 The app will run in browser at http://0.0.0.0:8080
+
 This also updates in-app directory tree. So run it if you are adding new app version, as well.
 
 ### For release build:
