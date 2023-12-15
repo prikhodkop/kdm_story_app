@@ -30,7 +30,7 @@ const texts = {
  'Plumery': {
    'label':'',
   'gear': {
-   '1': ['Phoenix Helm', 'Phoenix Gauntlets', 'Phoenix Plackart', 'Phoenix Faulds', 'Phoenix Greaves'],
+   '1': ['Phoenix Helm', 'Phoenix Gauntlet', 'Phoenix Plackart', 'Phoenix Faulds', 'Phoenix Greaves'],
    '2': ['Feather Shield', 'Bloom Sphere', 'Sonic Tomahawk', 'Hollow Sword', 'Arc Bow', 'Finger of God', 'Rainbow Katana'],
    '3': ['Feather Mantle', 'Bird Bread', 'Hours Ring', 'Crest Crown', 'Hollowpoint Arrow', 'Blood Sheath']},
   'armor_set': 'Phoenix Armor',
