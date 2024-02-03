@@ -216,7 +216,10 @@ const texts = {
 
     'Ghostly Carrion': {
         'expansion': 'drifter knight',
-    }
+    },
+    'Morbid Fog Bank': {
+        'expansion': 'drifter knight',
+    },
 }
 
 module.exports = {

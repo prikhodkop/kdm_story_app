@@ -553,8 +553,8 @@ const texts = {
   'awake': {
     "label": "Awake",
     'expansion': 'dragon king',
-    'ltop': '50%',
-    'lleft': '75%',
+    'ltop': '15%',
+    'lleft': '70%',
     'music_delay': 'speech-1000',
     'campaign': ['Stars'],
   },
@@ -1120,7 +1120,7 @@ const texts = {
     'campaign': ['Lantern'],
     'music': 'music/showdown allison the twilight knight.mp3',
     'type': 'image',
-    'ltop': '60%',
+    'ltop': '65%',
     // 'lleft': '28%',
     'music_delay': 'speech-500',
 

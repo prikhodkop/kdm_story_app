@@ -883,7 +883,7 @@ const texts = {
  'passive': {
    'settlement': [
      'Once per lanter year, during the <b>Develop</b> step, you may remove 1 consumable resource from settlement storage and place it on the Initiates\' survivor sheets as <b>Supplies</b>',
-     'At the end for each settlement phase, roll 1d10. On a result of 1-3 archive 1 resource from the <b>Supplies</b>, otherwise 1 Initiate dies of starvation. If all initiates are dead, remove '+event_img+'<b>Remove of the Order</b> from the timeline.',
+     'At the end for each settlement phase, roll 1d10. On a result of 1-3 archive 1 resource from the <b>Supplies</b>, otherwise 1 Initiate dies of starvation. If all initiates are dead, remove '+event_img+'<b>Return of the Order</b> from the timeline.',
    ],
  }
 },

@@ -691,6 +691,7 @@ var settings_schema = {
         'title': 'Drifter Knight (CCG)',
         'default': 'Disabled',
         'description': `<b style="color:#eaa;">To play you need to print gear, terrain, tactics, resource and HL/AI cards from here:</b><br/><a style="color:#e55;" href="https://www.patreon.com/posts/drifter-knight-33914652">https://www.patreon.com/posts/drifter-knight-33914652</a><br/><br/>
+                        <b>Vesion 2.0</b><br/><br/>
                         Deep within the maddening darkness, a pale light shimmers.
                         Amongst alien flora, buried beneath noxious fog, rests a
                         lonesome creature. A knight without a charge. A protector with

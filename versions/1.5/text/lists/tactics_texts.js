@@ -37,6 +37,14 @@ const texts = {
   'expansion': 'lion knight',
   "description": "#",
  },
+ 'Form of Rust': {
+  'expansion': 'drifter knight',
+  "description": "#",
+ },
+ 'Form of Sun': {
+  'expansion': 'drifter knight',
+  "description": "#",
+ },
 }
 
 module.exports = {

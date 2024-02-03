@@ -11,9 +11,13 @@ Every so often a lantern in the hoard would be snuffed by some unseen force. Thi
 One year, when the light was extinguished, the girl noticed that it was not extinguished at all, but had drifted off into the darkness. As she peered past the inky veil at the edge of the settlement, she could see the pale light of a lantern!
 
 4
-00:00:53,000 --> 00:01:20,000
-Then, another lantern. And another. And another! Until the sky was blanketed in soft, ghostly lanterns. The soft lights illuminated the settlement with a foreign light, waking its sleeping denizens. Panic descended upon the settlers, as the nature of these floating lanterns was foreign to them.
+00:00:53,000 --> 00:01:05,000
+Then, another lantern. And another. And another! Until the sky was blanketed in soft, ghostly lanterns.
 
 5
+00:01:05,000 --> 00:01:21,000
+The soft lights illuminated the settlement with a foreign light, waking its sleeping denizens. Panic descended upon the settlers, as the nature of these floating lanterns was foreign to them.
+
+6
 00:01:21,000 --> 00:01:38,000
 But the girl, as curious as she was wise, studied these floating lanterns, and listened. They sung to her of a very quiet, very lonely girl living in the darkness. A girl who needed a friend.
