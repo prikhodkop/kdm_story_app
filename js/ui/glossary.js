@@ -26,6 +26,7 @@ console.log('!! Setting up glossary !! ^_^')
 var abilities
 var armor_sets
 var bookmarks
+var permanentmarks
 var disorders
 var secret_fighting_arts
 var gear_list
@@ -55,6 +56,7 @@ let glossary_list_translations = {
   'armor_sets': ['label'],
   'settlement_locations': ['label', 'gear'],
   'bookmarks': ['label','condition_text','button_text','passive'],
+  'permanentmarks': ['label','condition_text','button_text'],
   'settlement_events': ['label', 'passive'],
   'survivor_statuses': ['label', 'description'],
   'terrain': ['label', 'description'],
@@ -97,6 +99,7 @@ function init_glossary() {
     armor_sets = window.globals.glossary[lang].armor_sets
     settlement_locations = window.globals.glossary[lang].settlement_locations
     bookmarks = window.globals.glossary[lang].bookmarks
+    permanentmarks = window.globals.glossary[lang].permanentmarks
     settlement_events = window.globals.glossary[lang].settlement_events
     survivor_statuses = window.globals.glossary[lang].survivor_statuses
     terrain = window.globals.glossary[lang].terrain

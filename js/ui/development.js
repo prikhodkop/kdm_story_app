@@ -892,6 +892,7 @@ function update_bonuses_list(state='') {
     console.log('Adding hidden!')
     state['innovations'].push(settings['campaign']+'#Hidden')
   }
+  console.log(state['bookmarks'])
 
   if (('innovations' in state) && (state['innovations'].length > 0)) {
       form_bonuses_list(state['innovations'], state['events'], state['bookmarks'])
@@ -1941,9 +1942,19 @@ function update_bookmarks() {
   let current_bookmarks = getDevelopmentState()['bookmarks']
   let elems = []
   let cur_height = 45
-  for (let i = 0; i < current_bookmarks.length; i++) {
-    let current = current_bookmarks[i]
-    let cur_obj = getTerms('bookmarks')[current]
+  let permanentmarks_list = ['First Day']
+  let joint_bookmarks = []
+  joint_bookmarks = joint_bookmarks.concat(permanentmarks_list)
+  joint_bookmarks = joint_bookmarks.concat(current_bookmarks)
+  for (let i = 0; i < joint_bookmarks.length; i++) {
+    let current = joint_bookmarks[i]
+    let obj_type = ''
+    if (permanentmarks_list.includes(joint_bookmarks[i])){
+      obj_type = 'permanentmarks'
+    } else {
+      obj_type = 'bookmarks'
+    }
+    let cur_obj = getTerms(obj_type)[current]
     if (!cur_obj.targets.includes(myself)) {
       continue
     }
