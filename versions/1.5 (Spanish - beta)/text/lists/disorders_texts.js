@@ -88,7 +88,7 @@ const texts = {
  },
  'Immortal': {
    'label': 'Inmortal',
-  "description": "Mientras estés cuerdo, convierte todo el daño infligido a tus lugares de impacto en daño cerebral. Estás tan ocupado celebrando tu propia gloria que no puedes gastar supervivencia mientras estés cuerdo.",
+  "description": "Mientras estés cuerdo, convierte todo el daño infligido a tus ubicaciones de impacto en daño cerebral. Estás tan ocupado celebrando tu propia gloria que no puedes gastar supervivencia mientras estés cuerdo.",
  },
  'Indecision': {
    'label': 'Indecisión',

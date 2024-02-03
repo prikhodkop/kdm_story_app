@@ -121,7 +121,7 @@ const texts = {
 'Black Lichen': {'type': 'hueso/órgano/piel/consumible/otro', 'group_name':'Extraño',
                 'text': '<i>Maleable, punzante y atractivo.</i><br/><br/>Puedes <b>consumir</b> esto. Si lo haces, tus labios se vuelven grises, tu cabello blanquea y te vuelves infértil. Ganas +1 coraje, +1 comprensión y sufres la lesión de cintura grave <b>genitales destruidos</b>.'},
 'Blistering Plasma Fruit': {'type': 'órgano/consumible', 'group_name':'Árbol Solitario, Extraño',
-                'text': 'Puedes <b>consumir</b> y archivar esto para obtener la siguiente habilidad.<br /><br /><b>Sangre de Pesadilla</b>: Siempre que obtengas un token de sangrado, suma +1 a todos los lugares de impacto.'},
+                'text': 'Puedes <b>consumir</b> y archivar esto para obtener la siguiente habilidad.<br /><br /><b>Sangre de Pesadilla</b>: Siempre que obtengas un token de sangrado, suma +1 a todos las ubicaciones de impacto.'},
 'Bugfish': {'type': 'pez/órgano', 'group_name':'Sunstalker, Extraño',
                 'text': '<b>Consume</b>: Gana +2 supervivencia. <i>¡Hay algo en su vientre!</i> Gana 1 verme aleatorio y <b>consume</b>lo inmediatamente. Archiva esta carta.'},
 'Canopic Jar': {'type': 'órgano/desperdicio', 'group_name':'Dios León, Extraño',

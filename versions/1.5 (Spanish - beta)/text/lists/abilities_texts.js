@@ -17,7 +17,7 @@ const texts = {
 'Aggression Overload': {
    'label':'Sobrecarga de Agresión',
    'type': 'descubrimiento de pulso',
-   'description':'Agrega un lanzamiento de ataque a un ataque. Durante tu ataque, después de hacer tus lanzamientos de ataque pero antes de sacar lugares de impacto, puedes tirar el Dado de la Muerte como un lanzamiento de ataque adicional.',
+   'description':'Agrega un lanzamiento de ataque a un ataque. Durante tu ataque, después de hacer tus lanzamientos de ataque pero antes de sacar ubicaciones de impacto, puedes tirar el Dado de la Muerte como un lanzamiento de ataque adicional.',
 },
 'Analyse': {
    'label':'Analizar',
@@ -41,7 +41,7 @@ const texts = {
 },
 'Crystal Skin': {
    'label':'Piel de Cristal',
-   'description': 'No puedes colocar armaduras en tu cuadrícula de equipo. Cuando te embarques, obtén 3 puntos de armadura en todos los lugares de impacto. Sufre -2 en el resultado de todas las tiradas de lesiones graves.',
+   'description': 'No puedes colocar armaduras en tu cuadrícula de equipo. Cuando te embarques, obtén 3 puntos de armadura en todos las ubicaciones de impacto. Sufre -2 en el resultado de todas las tiradas de lesiones graves.',
 },
 'Dead Inside': {
    'label':'Muerto por Dentro',
@@ -50,7 +50,7 @@ const texts = {
 },
 'Devoted Union': {
    'label':'Unión Devota',
-   'description': 'Solo puedes nominar a tu <b>pareja</b> y a ti mismo para la <b>Intimidad</b>. Cuando tu pareja muera, obtén un trastorno aleatorio y pierde esta habilidad.<br/><br/>Durante el turno del superviviente, mientras tú y tu pareja estén dentro del alcance del monstruo, pueden realizar un <b>ataque combinado</b>. Límite, una vez por ronda.<br/><br/><b style="color:#cc0;">Ataque combinado</b>: Los socios gastan {image@images/icons/activation} y activan un arma. Realizan simultáneamente lanzamientos de ataque, determinando los impactos según su precisión individual. Sacar lugares de impacto para todos los impactos juntos. Resuelve los lugares de impacto uno a la vez. Los socios eligen qué superviviente intenta herir cada ubicación de impacto <i>(incluida la trampa)</i>. Cada compañero no puede hacer más intentos de herir que la cantidad de lanzamientos de ataque que tienen.',
+   'description': 'Solo puedes nominar a tu <b>pareja</b> y a ti mismo para la <b>Intimidad</b>. Cuando tu pareja muera, obtén un trastorno aleatorio y pierde esta habilidad.<br/><br/>Durante el turno del superviviente, mientras tú y tu pareja estén dentro del alcance del monstruo, pueden realizar un <b>ataque combinado</b>. Límite, una vez por ronda.<br/><br/><b style="color:#cc0;">Ataque combinado</b>: Los socios gastan {image@images/icons/activation} y activan un arma. Realizan simultáneamente lanzamientos de ataque, determinando los impactos según su precisión individual. Sacar ubicaciones de impacto para todos los impactos juntos. Resuelve las ubicaciones de impacto uno a la vez. Los socios eligen qué superviviente intenta herir cada ubicación de impacto <i>(incluida la trampa)</i>. Cada compañero no puede hacer más intentos de herir que la cantidad de lanzamientos de ataque que tienen.',
 },
 'Dormenatus': {
    'label':'Dormenatus',
@@ -97,7 +97,7 @@ const texts = {
 },
 'Iridescent Hide': {
    'label':'Piel Iridescente',
-   'description': 'Obtén +1 de armadura en todos los lugares de impacto por cada afinidad de color diferente en tu cuadrícula de equipo.',
+   'description': 'Obtén +1 de armadura en todos las ubicaciones de impacto por cada afinidad de color diferente en tu cuadrícula de equipo.',
    'type': 'rasgo de dragón',
 },
  'Iron Will': {
@@ -164,7 +164,7 @@ const texts = {
 },
 'Nightmare Blood': {
    'label':'Sangre de Pesadilla',
-   'description': 'Cada vez que obtengas un token de sangrado, agrega 1 de armadura a todos los lugares de impacto.',
+   'description': 'Cada vez que obtengas un token de sangrado, agrega 1 de armadura a todos las ubicaciones de impacto.',
 },
 'Nightmare Membrane': {
    'label':'Membrana de Pesadilla',
@@ -203,7 +203,7 @@ const texts = {
 	 'label':'Presagio',
    'type': 'habilidad de constelación',
    'group_name': 'Bruja',
-   'description': 'Cada vez que atacas, antes de sacar lugares de impacto, di en voz alta un nombre.<br /><br /><i>Muerdes ligeramente el ojo en tu mejilla para ver lo que ve.</i> Si sacas lugares de impacto con ese nombre, obtén +3 de cordura y +10 de fuerza al intentar herirlas.',
+   'description': 'Cada vez que atacas, antes de sacar ubicaciones de impacto, di en voz alta un nombre.<br /><br /><i>Muerdes ligeramente el ojo en tu mejilla para ver lo que ve.</i> Si sacas ubicaciones de impacto con ese nombre, obtén +3 de cordura y +10 de fuerza al intentar herirlas.',
 },
 'Pristine': {
    'label': 'Inmaculado',

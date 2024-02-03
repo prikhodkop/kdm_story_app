@@ -227,7 +227,7 @@ const texts = {
 
 'Before Damage': {
    'label':'Antes del Daño',
-   'description':'Un desencadenante que se encuentra en algunos perfiles de ataque de monstruos. Aplica el efecto de ataque de este desencadenante después de que se lancen los golpes y los dados de ubicación de impacto, pero antes de que se aplique el daño a los lugares de impacto.',
+   'description':'Un desencadenante que se encuentra en algunos perfiles de ataque de monstruos. Aplica el efecto de ataque de este desencadenante después de que se lancen los golpes y los dados de ubicación de impacto, pero antes de que se aplique el daño a las ubicaciones de impacto.',
 },
 
 'Bleed X': {
@@ -277,7 +277,7 @@ const texts = {
 
 'Brain': {
    'label':'Cerebro',
-   'description':'El Cerebro es una ubicación de sobreviviente diferente de los lugares de impacto y representa la salud mental de un sobreviviente. Dado que la mente humana es frágil, solo hay un nivel de herida para el Cerebro (indicado por el cuadro sin rellenar con líneas ligeras). El Cerebro solo se daña por daño cerebral. \nCualquier daño más allá del nivel de herida leve resulta en un lanzamiento en la tabla de Trauma Cerebral.',
+   'description':'El Cerebro es una ubicación de sobreviviente diferente de las ubicaciones de impacto y representa la salud mental de un sobreviviente. Dado que la mente humana es frágil, solo hay un nivel de herida para el Cerebro (indicado por el cuadro sin rellenar con líneas ligeras). El Cerebro solo se daña por daño cerebral. \nCualquier daño más allá del nivel de herida leve resulta en un lanzamiento en la tabla de Trauma Cerebral.',
 },
 
 'Brain Damage': {
@@ -302,7 +302,7 @@ const texts = {
 
 'Canceled Attack': {
    'label':'Ataque Cancelado',
-   'description':'Un ataque cancelado termina de inmediato. Descarta todos los lugares de impacto no resueltas. No realices ninguna acción, regla especial, efectos críticos o reacciones en estas cartas.',
+   'description':'Un ataque cancelado termina de inmediato. Descarta todos las ubicaciones de impacto no resueltas. No realices ninguna acción, regla especial, efectos críticos o reacciones en estas cartas.',
 },
 
 'Charge': {
@@ -402,7 +402,7 @@ const texts = {
 
 'Damage (Attack Profile)': {
    'label':'Daño (Perfil de Ataque)',
-   'description':'La cantidad de daño infligido por cada impacto en un ataque de un monstruo. Tira lugares de impacto separadas para cada impacto.',
+   'description':'La cantidad de daño infligido por cada impacto en un ataque de un monstruo. Tira ubicaciones de impacto separadas para cada impacto.',
 },
 
 'Damage (Attribute)': {
@@ -561,7 +561,7 @@ const texts = {
 },
  'Failure (Reaction)': {
    'label':'Fracaso (Reacción)',
-   'description':'Una reacción del monstruo. Realizada en respuesta a intentos fallidos de herir en ciertas lugares de impacto de monstruos.',
+   'description':'Una reacción del monstruo. Realizada en respuesta a intentos fallidos de herir en ciertas ubicaciones de impacto de monstruos.',
 },
  'Feather (Gear)': {
    'label':'Pluma (Equipo)',
@@ -700,7 +700,7 @@ const texts = {
 },
  'Hit Location (Survivors)': {
    'label':'Ubicación de Impacto (Supervivientes)',
-   'description':'Los lugares de impacto son áreas del cuerpo de los supervivientes que pueden llevar armadura y sufrir daño. Los lugares de impacto son: Cabeza, Brazos, Cuerpo, Cintura y Piernas. Los lugares de impacto pueden ganar puntos de armadura de la armadura. Sin armadura, los lugares de impacto tienen 0 puntos de armadura.',
+   'description':'las ubicaciones de impacto son áreas del cuerpo de los supervivientes que pueden llevar armadura y sufrir daño. las ubicaciones de impacto son: Cabeza, Brazos, Cuerpo, Cintura y Piernas. las ubicaciones de impacto pueden ganar puntos de armadura de la armadura. Sin armadura, las ubicaciones de impacto tienen 0 puntos de armadura.',
 },
  'Hit Location Dice': {
    'label':'Dados de Ubicación de Impacto',
@@ -740,7 +740,7 @@ const texts = {
 },
  'Injury Level': {
    'label':'Nivel de Lesión',
-   'description':'Indica el daño en una ubicación de impacto. Se registra en la hoja de registro del superviviente. La mayoría de los lugares de impacto tienen dos niveles, ligero y pesado, excepto la Cabeza (que solo tiene un nivel de lesión pesado).',
+   'description':'Indica el daño en una ubicación de impacto. Se registra en la hoja de registro del superviviente. La mayoría de las ubicaciones de impacto tienen dos niveles, ligero y pesado, excepto la Cabeza (que solo tiene un nivel de lesión pesado).',
 },
  'Innovation': {
    'label':'Innovación',
@@ -837,7 +837,7 @@ const texts = {
 },
  'Light Speed': {
    'label':'Velocidad de la Luz',
-   'description':'Un tipo de ubicación de impacto de monstruo. Esta ubicación de impacto debe resolverse antes que cualquier otra, excepto los lugares de impacto de Primero en Golpear y Light Speed. Si se sacan varias lugares de impacto de Primero en Golpear, el jugador decide el orden en que se resuelven. Las trampas aún preceden y cancelan todos los demás impactos.',
+   'description':'Un tipo de ubicación de impacto de monstruo. Esta ubicación de impacto debe resolverse antes que cualquier otra, excepto las ubicaciones de impacto de Primero en Golpear y Light Speed. Si se sacan varias ubicaciones de impacto de Primero en Golpear, el jugador decide el orden en que se resuelven. Las trampas aún preceden y cancelan todos los demás impactos.',
 },
  'Life Trait': {
    'label':'Rasgo de Vida',
@@ -989,7 +989,7 @@ const texts = {
 },
 'Outfit': {
    'label':'Equipo de Vestimenta',
-   'description':'Una palabra clave de equipo. Esto completa un conjunto de armadura si estás usando el resto del conjunto y comparte una palabra clave de material con la armadura faltante. Por ejemplo, si estás usando un Casco de Linterna Oxidado y la Armadura Fénix en todas las demás lugares de impacto, obtendrías el bono del Conjunto de Armadura Fénix porque el Casco Fénix también tiene la palabra clave metal.',
+   'description':'Una palabra clave de equipo. Esto completa un conjunto de armadura si estás usando el resto del conjunto y comparte una palabra clave de material con la armadura faltante. Por ejemplo, si estás usando un Casco de Linterna Oxidado y la Armadura Fénix en todas las demás ubicaciones de impacto, obtendrías el bono del Conjunto de Armadura Fénix porque el Casco Fénix también tiene la palabra clave metal.',
 },
 'Overwhelming Darkness': {
    'label':'Oscuridad Abrumadora',
@@ -997,7 +997,7 @@ const texts = {
 },
 'Parry': {
    'label':'Parar',
-   'description':'Cuando se intenta herir lugares de impacto Parry, todos los intentos fallan a menos que el resultado del lanzamiento de herida sea crítico. Este fallo desencadena cualquier reacción de Fallo como de costumbre.',
+   'description':'Cuando se intenta herir ubicaciones de impacto Parry, todos los intentos fallan a menos que el resultado del lanzamiento de herida sea crítico. Este fallo desencadena cualquier reacción de Fallo como de costumbre.',
 },
 'Paired': {
    'label':'Emparejado',
@@ -1166,7 +1166,7 @@ const texts = {
 },
 'Savage': {
    'label': 'Salvaje',
-   'description': 'Una regla especial de equipo. Después de la primera herida crítica en un ataque, las armas salvajes causan 1 herida adicional. Esta regla no se activa en lugares de impacto Impenetrables.',
+   'description': 'Una regla especial de equipo. Después de la primera herida crítica en un ataque, las armas salvajes causan 1 herida adicional. Esta regla no se activa en ubicaciones de impacto Impenetrables.',
 },
 'Scythe': {
    'label': 'Guadaña',
@@ -1219,7 +1219,7 @@ const texts = {
 },
 'Severe Injury Tables': {
    'label': 'Tablas de Heridas Graves',
-   'description': 'Contienen secciones de posibles heridas graves en lugares de impacto. Cada impacto que cause una herida grave provoca un lanzamiento en la tabla de heridas graves de esa ubicación.',
+   'description': 'Contienen secciones de posibles heridas graves en ubicaciones de impacto. Cada impacto que cause una herida grave provoca un lanzamiento en la tabla de heridas graves de esa ubicación.',
 },
 'Sharp': {
    'label': 'Afilado',
@@ -1408,7 +1408,7 @@ const texts = {
 
 'Trap': {
    'label':'Trampa',
-   'description':'Un tipo de ubicación de impacto de monstruo. Una trampa cancela todos los impactos del atacante, termina su ataque y hace que el monstruo se levante, además de las acciones enumeradas en la carta. Después de que se resuelvan las acciones de la Trampa, baraja todo el mazo de lugares de impacto.',},
+   'description':'Un tipo de ubicación de impacto de monstruo. Una trampa cancela todos los impactos del atacante, termina su ataque y hace que el monstruo se levante, además de las acciones enumeradas en la carta. Después de que se resuelvan las acciones de la Trampa, baraja todo el mazo de ubicaciones de impacto.',},
 
 'Trigger': {
    'label':'Disparador',
@@ -1444,7 +1444,7 @@ const texts = {
 
 'Unshakable': {
    'label':'Inquebrantable',
-   'description':'Una regla especial de equipo. Cuando este superviviente saque una carta de trampa, tira 1d10. Con un resultado de 6 o más, ignora la trampa. Descártala y baraja el mazo de lugares de impacto.',},
+   'description':'Una regla especial de equipo. Cuando este superviviente saque una carta de trampa, tira 1d10. Con un resultado de 6 o más, ignora la trampa. Descártala y baraja el mazo de ubicaciones de impacto.',},
 
 'Unstoppable': {
    'label':'Imparable',
@@ -1496,7 +1496,7 @@ const texts = {
 
 'Wound (Reaction)': {
 'label':'Herida (Reacción)',
-'description':'Listado en algunas cartas de ubicación de impacto de monstruos. Una acción que un monstruo realiza en respuesta a un intento de herida exitoso en ciertas lugares de impacto.',},
+'description':'Listado en algunas cartas de ubicación de impacto de monstruos. Una acción que un monstruo realiza en respuesta a un intento de herida exitoso en ciertas ubicaciones de impacto.',},
 
 'Wound Attempt': {
 'label':'Intento de Herida',

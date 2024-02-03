@@ -1302,7 +1302,7 @@ Pueden <b>enfrentar la tormenta</b> o <b>esperarla</b>.
 [TO] Elección
 [td] ¿Qué hacen?
 [c] Enfrentar la tormenta
-[d] Todos los sobrevivientes obtienen +1 coraje y sufren 1 daño de evento en 3 lugares de impacto aleatorias. Archiva todo el equipo <b>frágil</b>.
+[d] Todos los sobrevivientes obtienen +1 coraje y sufren 1 daño de evento en 3 ubicaciones de impacto aleatorias. Archiva todo el equipo <b>frágil</b>.
 [c] Esperarla
 [dt] Tira dos veces en la tabla de eventos de caza antes de avanzar en el tablero de caza.
 `,
@@ -1410,7 +1410,7 @@ Cada sobreviviente tira 1d10. El sobreviviente con la puntuación más baja (o l
 [TO] 1d10
 [td] Determinar rezagado
 [c] Rezagado elegido
-[dt] Un rayo cae junto al rezagado, atrapándolo en una explosión de cristales afilados como navajas. Sufre 1d5 de daño de evento en 2 lugares de impacto aleatorias. Archiva todo el equipo <b>frágil</b> en su cuadrícula de equipo.
+[dt] Un rayo cae junto al rezagado, atrapándolo en una explosión de cristales afilados como navajas. Sufre 1d5 de daño de evento en 2 ubicaciones de impacto aleatorias. Archiva todo el equipo <b>frágil</b> en su cuadrícula de equipo.
 `,
 
 62: `62 | Espacio Entre las Rocas
@@ -1596,7 +1596,7 @@ El revelador de eventos <b>investiga</b> y tira 1d10.
 [d<]
 
 La puerta de la tumba está enmarcada con una madera que tiene pequeñas manos como grano. Dentro, los murales representan a un héroe en el centro de un laberinto que sostiene una fruta gigante llena de humanos sobre su cabeza. Cada sobreviviente obtiene +1 de entendimiento.
-[i] Si el asentamiento tiene <b>Pictogramas</b>, los sobrevivientes encuentran información sobre su presa. Al comienzo del enfrentamiento, pueden colocar la trampa del monstruo en la parte inferior del deck de lugares de impacto.
+[i] Si el asentamiento tiene <b>Pictogramas</b>, los sobrevivientes encuentran información sobre su presa. Al comienzo del enfrentamiento, pueden colocar la trampa del monstruo en la parte inferior del deck de ubicaciones de impacto.
 
 <button class="hunt_event_action_button hoverable" id="tomb_of_excelence" onClick="placeReminder('tomb_of_excelence')">[Pictogramas] Colocar recordatorio</button>
 
@@ -1650,7 +1650,7 @@ El revelador de eventos <b>investiga</b> y tira 1d10.
 [d<]
 
 La puerta de la tumba está enmarcada con una madera que tiene pequeñas manos como grano. Dentro, los murales representan a un héroe en el centro de un laberinto que sostiene una fruta gigante llena de humanos sobre su cabeza. Cada sobreviviente obtiene +1 de entendimiento.
-[i] Si el asentamiento tiene <b>Pictogramas</b>, los sobrevivientes encuentran información sobre su presa. Al comienzo del enfrentamiento, pueden colocar la trampa del monstruo en la parte inferior del deck de lugares de impacto.
+[i] Si el asentamiento tiene <b>Pictogramas</b>, los sobrevivientes encuentran información sobre su presa. Al comienzo del enfrentamiento, pueden colocar la trampa del monstruo en la parte inferior del deck de ubicaciones de impacto.
 
 <button class="hunt_event_action_button hoverable" id="tomb_of_excelence" onClick="placeReminder('tomb_of_excelence')">[Pictogramas] Colocar recordatorio</button>
 

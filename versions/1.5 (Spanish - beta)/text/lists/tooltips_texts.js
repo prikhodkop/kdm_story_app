@@ -155,7 +155,7 @@ const texts = {
     'text': 'Al comienzo de la próxima fase de asentamiento, roba 3 innovaciones del deck de innovaciones y agrega una a tu asentamiento sin costo alguno.<sup class="event_sup">[Reliquia Encontrada]</sup>'
 },
 'tomb_of_excelence': {
-    'text': 'Al comienzo del enfrentamiento, coloca la trampa del monstruo en la parte inferior del deck de lugares de impacto.<sup class="event_sup">[Tumba de la Excelencia]</sup>'
+    'text': 'Al comienzo del enfrentamiento, coloca la trampa del monstruo en la parte inferior del deck de ubicaciones de impacto.<sup class="event_sup">[Tumba de la Excelencia]</sup>'
 },
 'gorm_lv3': {
     'text': 'Cuando el Cebo de Gorm Antiguo sería el revelador del evento de caza, en su lugar es<b style="color:#cc0;" id="gorm_digested">Digerido</b>.<sup class="event_sup">[Gorm Nv.3 - Marcha Final]</sup>'

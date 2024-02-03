@@ -65,7 +65,7 @@ const texts = {
  },
  'Crossarm Block': {
    'label': 'Bloqueo de Brazos Cruzados',
-  "description": "Cuando te golpean, después de que se tiren los lugares de impacto, puedes cambiar 1 resultado a la ubicación de impacto <b>brazos</b>."
+  "description": "Cuando te golpean, después de que se tiren las ubicaciones de impacto, puedes cambiar 1 resultado a la ubicación de impacto <b>brazos</b>."
  },
  'Defender': {
   'expansion': 'sunstalker',
